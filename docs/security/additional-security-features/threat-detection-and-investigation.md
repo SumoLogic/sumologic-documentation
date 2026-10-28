@@ -356,7 +356,7 @@ At minimum, monitor authentication events, network traffic, and infrastructure c
 
 ### How do I detect security threats in my cloud environment?
 
-Collect your cloud audit logs, such as AWS CloudTrail, then build searches and dashboards for suspicious activity. This page shows how to [detect brute force attempts](#step-5-detect-brute-force-attacks) from failed logins, find impossible travel, and look up IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/). Use [monitors](/docs/alerts/monitors/create-monitor/) to be alerted when these conditions occur.
+Collect your cloud audit logs, such as AWS CloudTrail, then build searches and dashboards for suspicious activity. This page shows how to [detect brute force attempts](#step-5-detect-brute-force-attacks) from failed logins, [detect landspeed violations](#step-6-detect-landspeed-violations), and look up IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/). Use [monitors](/docs/alerts/monitors/create-monitor/) to be alerted when these conditions occur.
 
 ### How do I centralize security log data for threat detection?
 
@@ -364,20 +364,20 @@ Send logs from your workloads, databases, and other sources to Sumo Logic using 
 
 ### What logs do I need to investigate a phishing incident?
 
-Typically, you need email gateway or email security logs, sign-in and authentication logs for the affected users, and DNS, web proxy, or firewall logs that show who visited the linked sites. Check any URLs, domains, and IP addresses you find against [threat intelligence](/docs/security/threat-intelligence/find-threats/). Sumo Logic has [Cloud-to-Cloud sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) for collecting many email and security tools.
+Start with the logs from your email security tools and your sign-in and authentication logs. Sumo Logic has [Cloud-to-Cloud sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) for tools such as [Proofpoint](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source/), [Mimecast](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/), and [Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/). Check any IP addresses you find against [threat intelligence](/docs/security/threat-intelligence/find-threats/).
 
 ### What is a checklist for investigating a compromised account?
 
-1. Review sign-in logs for the account for failed logins, logins from unusual locations, and impossible travel.
-1. Search the account's activity, for example by user in your AWS CloudTrail logs, to see what it accessed or changed.
-1. Check the source IP addresses against threat intelligence.
-1. Look for privilege changes and use of root or administrator accounts.
-1. Contain the account, for example by resetting credentials, then keep monitoring it with a [monitor](/docs/alerts/monitors/create-monitor/).
+1. Review failed logins and [brute force attempts](#step-5-detect-brute-force-attacks) for the account.
+1. Check [console login locations](#step-3-monitor-geolocation-of-console-logins) and [landspeed violations](#step-6-detect-landspeed-violations).
+1. Look up the source IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/).
+1. Search the account's activity in your AWS CloudTrail logs to see what it accessed or changed.
+1. Contain the account, then keep monitoring it with a [monitor](/docs/alerts/monitors/create-monitor/). See [What is incident response?](/docs/cloud-soar/introduction/#what-is-incident-response).
 
 ### What information do I need to collect during a security incident?
 
-Collect who was involved (users and hosts), what happened (actions and events), when it happened (timestamps), and where it came from (source IP addresses and locations). Also gather related logs from the affected systems and any threat intelligence matches, so you can build a timeline and decide how to respond.
+Try to answer who, what, where, when, why, and how the event occurred. In Cloud SIEM, open the insight to see its entities, signals, and timeline. You can also pivot to Sumo Logic search for deeper investigation. See [Investigating an insight](/docs/cse/get-started-with-cloud-siem/intro-for-analysts/#investigating-an-insight).
 
 ### How do I build an incident response runbook?
 
-Define what triggers the runbook, who is responsible for each step, and the actions for containment, eradication, and recovery. Then automate repeatable steps with [Cloud SOAR playbooks](/docs/cloud-soar/introduction/), which can help with incident containment, eradication, and recovery.
+Base the runbook on the [incident response cycle](/docs/cloud-soar/introduction/#what-is-incident-response): preparation, identification, containment, eradication, recovery, and lessons learned. Then automate steps with [Cloud SOAR playbooks](/docs/cloud-soar/introduction/#how-can-playbooks-help-with-incident-response), which can help with incident containment, eradication, and recovery.

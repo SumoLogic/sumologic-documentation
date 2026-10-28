@@ -604,7 +604,7 @@ Access uses OAuth 2.0, and tools are scoped to the connecting user's role permis
 
 ### How do I build guardrails for agents using MCP?
 
-Use OAuth scopes and role permissions to limit which tools an agent can call. Remove scopes you don't want the client to have, and use a dedicated role for the client's user or service account. Rate limits of 4 requests per second per user and 10 concurrent requests also cap how fast an agent can act. See [What are the MCP server rate limits?](#what-are-the-mcp-server-rate-limits).
+Use OAuth scopes and role permissions to limit which tools an agent can call. Remove scopes you don't want the client to have, and use a dedicated role for the client's user or service account. Rate limits of 4 requests per second per user and 10 concurrent requests per access key also cap how fast an agent can act. See [What are the MCP server rate limits?](#what-are-the-mcp-server-rate-limits).
 
 ### Can MCP servers or agents access data they shouldn't?
 

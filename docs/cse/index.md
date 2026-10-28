@@ -129,7 +129,7 @@ SIEM (Security Information and Event Management) collects, correlates, and prior
 
 ### What is a security operations center (SOC) and how does a SIEM fit into it?
 
-A SOC is the team and process that monitors for and responds to security threats. A SIEM supports it by collecting, correlating, and prioritizing security data so analysts can investigate threats, and a SOAR tool is typically used to respond. Both work together as part of the security pipeline in your SOC.
+A SOC is the team and process that monitors for and responds to security threats. Cloud SIEM supports SOC analysts with prioritized insights, automatic entity correlation, and a low false-positive rate, so analysts spend less time triaging and more time investigating. [Cloud SOAR](/docs/cloud-soar/) then adds playbook automation to respond. See [What's the best software to support Tier 1 and Tier 2 SOC analysts?](/docs/cse/get-started-with-cloud-siem/intro-for-analysts/#whats-the-best-software-to-support-tier-1-and-tier-2-soc-analysts).
 
 ### What is SIEM and how does it help with SOC log management?
 
@@ -145,11 +145,11 @@ A SIEM collects and correlates security data in one place, which helps you monit
 
 ### Which SOC SIEM integrates with log management tools, handles alerts, and supports playbooks?
 
-Cloud SIEM works with the logs you already collect (see [What is SIEM and how does it help with SOC log management?](#what-is-siem-and-how-does-it-help-with-soc-log-management)). It creates insights from the signals it detects, and the [Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem/) runs playbooks that act on those insights. Cloud SOAR offers a broader set of automation capabilities. See [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
+Cloud SIEM works with the logs you already collect (see [What is SIEM and how does it help with SOC log management?](#what-is-siem-and-how-does-it-help-with-soc-log-management)). It creates prioritized insights from the activity it detects, and the [Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem/) runs playbooks that act on those insights. Cloud SOAR offers a broader set of automation capabilities. See [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
 ### Are there scalable SIEM options designed for hybrid IT infrastructures?
 
-Yes. Cloud SIEM ingests and correlates data from cloud, hybrid, and on-premises sources. The Automation Service can run playbooks from the Sumo Logic cloud or from your own environment through the Automation Service Bridge, so automation can follow your hybrid infrastructure.
+Yes. Cloud SIEM ingests and correlates data from cloud, hybrid, and on-premises sources. The Automation Service can run playbooks from the Sumo Logic cloud or from your own environment through the Automation Bridge, so automation can follow your hybrid infrastructure.
 
 ### What's the difference between SOC, SIEM, SOAR, and XDR?
 
