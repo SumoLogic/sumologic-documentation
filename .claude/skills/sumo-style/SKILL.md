@@ -219,6 +219,7 @@ Every post filename must start with `YYYY-MM-DD-`. Docusaurus takes the publish 
 - **Be concise.** Two to three sentences for a feature. One sentence per list item.
 - **End the opening paragraph with a "Learn more" link** to the relevant doc, using a relative path starting with `/docs/`.
 - **Mark breaking changes and prerequisites** with an admonition.
+- **Add screenshots** with `useBaseUrl`.
 - **Title dates as Month D, YYYY.** Full month name, no ordinal, no leading zero: "March 9, 2026", not "March 9th, 2026" or "March 09, 2026".
 
 ### Structure and frontmatter
@@ -227,6 +228,7 @@ Every post filename must start with `YYYY-MM-DD-`. Docusaurus takes the publish 
 - Copy frontmatter from a recent post in the same folder. Two fields matter for every release note:
   - `hide_table_of_contents: true` — renders the note clean and full-width.
   - `image` — used by the RSS feed and social card. Use a screenshot from the note if it has one, otherwise the Sumo Logic logo: `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg`
+- Add `keywords` when they aid discoverability.
 
 ### Per-folder conventions
 
@@ -251,4 +253,4 @@ These are Sumo Logic- and repo-specific facts that override general assumptions.
 - **Numbered list items always use `1.`** (not `1.`, `2.`, `3.`). Docusaurus handles rendering.
 - **Capitalized product terms.** Collector, Source, Hosted Collector, Library. User-created objects (dashboards, folders) are lowercase.
 - **C2C sources and apps have distinct openers.** Do not use the app opener for a source doc or vice versa.
-- **Release notes have their own rules.** Apply the section below when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`. The live style guide at [Release notes](/docs/contributing/style-guide/#release-notes) takes precedence if fetched.
+- **Release notes have their own rules.** Apply the [Release notes](#release-notes) section above when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`. The live style guide at [Release notes](/docs/contributing/style-guide/#release-notes) takes precedence if fetched.
