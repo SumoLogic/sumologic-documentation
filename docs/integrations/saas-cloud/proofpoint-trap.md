@@ -84,7 +84,7 @@ This app uses Sumo Logic’s [Proofpoint TRAP Source](/docs/send-data/hosted-col
 
 ### Sample queries
 
-```sql title="Delivered High-Risk Threat Messages"
+```metrics title="Delivered High-Risk Threat Messages"
 _sourceCategory=proofpoint-trap-app disposition pps_guid
 | json "id","disposition","recipient_address","sender_address","email_subject","created_at","remediation_status","tap_threat_types[*]","sources[*].type","clear_confidence", "message_status.message_delivered" as msg_id,disposition,recipient_address,sender_address,email_subject,created_at,remediation_status,tap_threat_types_list,source_type_list,clear_confidence,message_delivered nodrop
 | extract field=source_type_list "\"?(?<source_type>[\\w\\s\\-&.,]*)\"?[,\\n\\]]" multi

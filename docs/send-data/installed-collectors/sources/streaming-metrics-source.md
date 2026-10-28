@@ -6,7 +6,7 @@ description: Add a streaming metric source  to an installed collector to collect
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use Sumo’s streaming metrics source with an installed collector to collect metrics from any application that emits metrics over TCP or UDP in the Graphite, Carbon 2.0, or Prometheus plaintext protocols. The streaming metrics source is analogous to a Syslog server, but for receiving metrics rather than logs.
+You can use Sumo Logic’s streaming metrics source with an installed collector to collect metrics from any application that emits metrics over TCP or UDP in the Graphite, Carbon 2.0, or Prometheus plaintext protocols. The streaming metrics source is analogous to a Syslog server, but for receiving metrics rather than logs.
 
 :::note
 Metrics support for Carbon 2.0 format requires collector version 19.216-22 or higher.
@@ -112,7 +112,7 @@ For example:
 metric=request_rate site=mydomain mtype=rate unit=Req/s host=web12 agent=statsdaemon1  234 1234567890
 ```
 
-Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [Health Events](/docs/manage/health-events)).
+Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [Health Events](/docs/manage/health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```
@@ -156,7 +156,7 @@ The streaming metrics source can receive Prometheus data as long as that data is
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
-The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
+The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo Logic. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
 
 :::important
 The streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.

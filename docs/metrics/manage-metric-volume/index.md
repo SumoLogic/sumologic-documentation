@@ -5,7 +5,7 @@ sidebar_label: Understand and Manage Metric Volume
 description: Learn about how metric ingestion and storage, metric data limits, and how metric throttling works.
 ---
 
-This guide has information about how Sumo ingests and saves metric data, source-specific metric collection volume facts, Sumo features for limiting excessive metric ingestion, and how to track your metrics ingestion.
+This guide has information about how Sumo Logic ingests and saves metric data, source-specific metric collection volume facts, Sumo Logic features for limiting excessive metric ingestion, and how to track your metrics ingestion.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -34,6 +34,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/metrics/manage-metric-volume/metric-throttling')}><img src={useBaseUrl('img/icons/cloud/performance.png')} alt="Performance icon" width="40"/><h4>Metric Throttling</h4></a>
   <p>Get information on how Sumo Logic throttles metric when metrics ingestion exceeds your DPM limit.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/metrics/source-and-collector-cardinality')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Source and Collector Wise Cardinality</h4></a>
+  <p>Identify and analyze source and collector-level cardinality to pinpoint high-cardinality sources.</p>
   </div>
 </div>
 </div>

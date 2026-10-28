@@ -1,13 +1,13 @@
 ---
 id: traceid-spanid-injection-into-logs
-title: .NET TraceId and SpanId Injection into Logs Configuration
-sidebar_label: TraceId and SpanId injection into logs
-description: Learn how to configure traceId, spanId, and trace flags data injection into user logs in .NET applications.
+title: .NET Trace ID and Span ID Injection into Logs
+sidebar_label: Trace ID and Span ID injection into logs
+description: Learn how to configure trace ID, span ID, and trace flags data injection into user logs in .NET applications.
 ---
 
 This page describes how to configure traceId and spanId data injection into user logs from ASP.NET and .Net core. The goal is to correlate the relevant logs with your corresponding traces and spans.
 
-The injection allows you to click a link from the Trace View tab and launch a search tab that displays the logs with the linked trace ID and span ID. These logs should be stored in the Continuous data tier, as the links in Sumo Logic default to searching there instead of other data tiers. It's worth noting that to search actual traces and not the logs, those can be found in `_index=_trace_spans`.
+The injection allows you to click a link from the Trace View tab and launch a search tab that displays the logs with the linked trace ID and span ID. These logs should be stored in the Continuous data tier, as the links in Sumo Logic default to searching there instead of other data tiers. To search actual traces and not the logs, use `_index=_trace_spans`.
 
 ## .NET Core
 
@@ -46,7 +46,7 @@ The injection allows you to click a link from the Trace View tab and launch a se
   log4net.ThreadContext.Properties["span_id"] = Tracer.CurrentSpan.Context.SpanId;
   ```
 2. Extend log pattern layout in log4net.config file, like in the attached configuration, with two additional properties `%property{trace_id}` and `%property{span_id}`:
-  ```
+  ```xml
   <appender name="textFileAppender" type="log4net.Appender.FileAppender">
             <file value="log-log4net-textFile.log" />
             <layout type="log4net.Layout.PatternLayout">

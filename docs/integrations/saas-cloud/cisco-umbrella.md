@@ -36,7 +36,7 @@ _sourceCategory=Labs/cisco_umbrella
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,policy_identity_label,internal_client_ip,external_client_ip,destination_ip,content_type,action,url,referer,user_agent,status_code,request_size,response_size,response_body_size,sha256,categories,av_detections,PUAs,AMP_disposition,AMP_malware_name,AMP_score,policy_identity_type,blocked_categories,identities,identity_types,request_method,DLP_status,certificate_errors,file_name,ruleset_ID,rule_ID,destination_list_IDs,isolate_action,file_action,warn_status
 ```
 
-```sumo title=Admin Logs"
+```sumo title="Admin Logs"
 _sourceCategory=Labs/cisco_umbrella
 | where _sourceName matches "*auditlogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as  id, timestamp, email, user, type, action, ip, before, after
@@ -95,6 +95,24 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Cisco Umbrella - Proxy**. This dashboard provides insights into the traffic that has gone through Umbrella's Secure Web Gateway (SWG) or Selective Proxy. It gives you a clear view of the geographical location of the traffic sources, client requests by blocked or allowed actions, malware detections, blocked sources and URLs, anti-virus detections, traffic request/response size, and an overall traffic summary.
 By using the dashboard's filters, you can easily analyze the data by different key fields such as action, identity, malware, anti-virus detection, blocked category, referrer, and category.<br/><img src={useBaseUrl('img/integrations/saas-cloud/cisco-umbrella-proxy.png')} alt="cisco umbrella proxy" width="750"/>
+
+## Create monitors for Cisco Umbrella app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cisco Umbrella alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Cisco Umbrella - Admin Setting Deletion` | This alert is triggered when an admin deletes a setting in Cisco Umbrella. Any destructive delete action by an administrator may indicate unauthorized access or accidental misconfiguration. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - Bulk Admin Changes` | This alert is triggered when a single admin user makes more than 5 changes to Cisco Umbrella settings within 5 minutes. High-velocity changes from a single user may indicate a compromised admin account or unauthorized bulk modifications. | Count > 5 | Count < = 5 |
+| `Cisco Umbrella - High Volume DNS Blocks per Identity` | This alert is triggered when a single identity has more than 5 DNS requests blocked by Cisco Umbrella within 5 minutes. High-volume DNS blocks for a single identity may indicate malware probing C2 infrastructure or a device actively circumventing security policy. | Count > 5 | Count < = 5 |
+| `Cisco Umbrella - Proxy Malware Detection` | This alert is triggered when Cisco Umbrella proxy detects malware via AV scanning or AMP threat intelligence. Any AV detection or AMP malware identification in proxy traffic indicates a direct malware delivery attempt. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - Proxy DLP Violation` | This alert is triggered when Cisco Umbrella proxy detects a DLP policy violation. A non-empty DLP status indicates sensitive data was identified in outbound traffic, which may indicate data exfiltration. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - Proxy File Blocked` | This alert is triggered when Cisco Umbrella proxy blocks or quarantines a file transfer. A blocked or quarantined file action indicates a direct malware delivery attempt was stopped at the proxy layer. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - High Volume Proxy Blocks per Identity` | This alert is triggered when a single identity has more than 5 requests blocked by the Cisco Umbrella proxy within 5 minutes. High-volume proxy blocks for a single identity may indicate repeated policy violations or automated scanning activity. | Count > 5 | Count < = 5 |
 
 ## Upgrade/Downgrade the Cisco Umbrella app (Optional)
 

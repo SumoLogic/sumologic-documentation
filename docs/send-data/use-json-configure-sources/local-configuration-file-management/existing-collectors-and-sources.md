@@ -1,17 +1,17 @@
 ---
 id: existing-collectors-and-sources
-title: Local Configuration File Management for Existing Collectors and Sources
+title: Config File Management for Existing Collectors
 sidebar_label: For Existing Collectors and Sources
 description: Managing existing deployments means making changes only to a JSON file.
 ---
 
 With [Local Configuration File](/docs/send-data/use-json-configure-sources/local-configuration-file-management) management, all configuration is done through a configuration file. This approach allows you to create scripts to configure multiple Collectors and Sources or to create configuration backups.
 
-If you're using local configuration file management, you cannot use the API or the Sumo web app to modify the configuration.
+If you're using local configuration file management, you cannot use the API or the Sumo Logic web app to modify the configuration.
 
 ## Step 1. Get a configuration file
 
-The Sumo web application can generate ready-to-use JSON for the Sources that are already configured for the Collector. For additional details, see [View or Download Collector or Source JSON Configuration](view-download-source-json-configuration.md). 
+The Sumo Logic web application can generate ready-to-use JSON for the Sources that are already configured for the Collector. For additional details, see [View or Download Collector or Source JSON Configuration](view-download-source-json-configuration.md). 
 
 To get the JSON configuration and create a configuration file:
 
@@ -56,12 +56,12 @@ To add the syncSources parameter:
 
 ## Step 3. Make the switch
 
-You can now move to the local configuration file management option, using the Sumo web application or the Collector Management API.
+You can now move to the local configuration file management option, using the Sumo Logic web application or the Collector Management API.
 
 Do one of the following:
 
-* In the Sumo web app, choose **Local Configuration File** in the **Edit Collector** dialog box.
-* In the Collector Management API, use the PUT method to update the Collector's `sourceSyncMode` to "`Json`". For more information, see Collector API Methods and Examples. The following example shows the `sourceSyncMode` of a Collector using UI mode: `"sourceSyncMode":"UI",`
+* In the Sumo Logic web app, choose **Local Configuration File** in the **Edit Collector** dialog box.
+* In the Collector Management API, use the PUT method to update the Collector's `sourceSyncMode` to "`Json`". For more information, see [Collector API Methods and Examples](/docs/api/collector-management/collector-api-methods-examples). The following example shows the `sourceSyncMode` of a Collector using UI mode: `"sourceSyncMode":"UI",`
 
 ## Step 4. Restart the Collector
 

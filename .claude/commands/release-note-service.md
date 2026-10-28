@@ -196,11 +196,9 @@ This enhancement streamlines your workflow by providing quick access to frequent
 
 ### Step 6: Content formatting guidelines
 
-**Write for clarity:**
-* Start with a clear statement of what the feature is
-* Explain the benefit or business value in 2-3 sentences
-* Use "What's new:" section for bulleted specifics (optional)
-* End with a "Learn more" link to relevant docs
+**Voice and wording:** follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide (direct-statement openers, no announcement framing, conciseness, "Learn more" links). Service-specific structure is below.
+
+* Use a "What's new:" section for bulleted specifics (optional).
 
 **Use formatting for readability:**
 * Use **bold** for section labels like "What's new:"
@@ -281,6 +279,7 @@ Before finishing, verify:
 * [ ] Standard image URL is used
 * [ ] Keywords confirmed with user
 * [ ] Category label uses correct format: (Apps), (Collection), (Manage), (Search), (New UI)
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] Content is clear and focused on user benefits
 * [ ] Documentation link uses relative path (starts with `/docs/`)
 * [ ] No trailing whitespace
@@ -400,6 +399,7 @@ Checklist:
 * [ ] Standard image URL is used
 * [ ] hide_table_of_contents: true is present
 * [ ] Documentation link uses relative path
+* [ ] Content opens with a direct statement — no announcement framing
 * [ ] Content is clear and concise
 * [ ] Keywords confirmed with user
 
@@ -443,11 +443,8 @@ Would you like me to help refine the content or add additional details?
 ## Tips and best practices
 
 **For all Service releases:**
-* Lead with user benefit, not technical implementation
-* Explain "what" and "why", not "how"
-* Keep descriptions concise (2-3 sentences)
-* Link to comprehensive documentation for details
-* Use "What's new" bullets for multiple specific changes
+* Voice, openers, conciseness, and "Learn more" links follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide.
+* Use "What's new" bullets for multiple specific changes.
 
 **Title guidelines:**
 * Be specific about the feature (not "New Collection Feature")
@@ -471,4 +468,4 @@ Would you like me to help refine the content or add additional details?
 
 * [Service Release Notes](https://sumologic.com/help/release-notes-service)
 * [Release Notes Index](/docs/release-notes)
-* [Style Guide](/docs/contributing/style-guide)
+* [Style Guide: Release notes](/docs/contributing/style-guide/#release-notes)

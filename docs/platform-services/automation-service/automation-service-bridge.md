@@ -2,7 +2,7 @@
 id: automation-service-bridge
 title: Automation Bridge
 sidebar_label: Automation Bridge
-description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
+description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 
 ## Version
 
-The current version of the Automation Bridge is 3.3.0.
+The current version of the Automation Bridge is 4.0.0.
 
 :::warning
 Versions 2.1.1 and earlier are obsolete, no longer supported, and no longer visible in the UI. Customers must upgrade to a supported version to ensure proper functionality and continued support.
@@ -24,7 +24,7 @@ Versions 2.1.1 and earlier are obsolete, no longer supported, and no longer visi
 * OS:
    * Ubuntu 18.04, 20.04, or 24.04
    * CentOS 7 or 8
-   * RedHat 8
+   * RedHat 8 or 9
 * RAM: 8GB
 * CPU: 4 Core
 * DISK: 160GB
@@ -65,7 +65,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
    systemctl enable docker
    ```
 
-### Using a proxy   
+### Using a proxy
 1. If Docker has to use a proxy to pull images, follow the below instructions:
    ```sh
    mkdir -p /etc/systemd/system/docker.service.d
@@ -99,7 +99,7 @@ You must prefix your installation token with `csoar-bridge-token` in order for t
 
 ### Ubuntu
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. --><br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. --><br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right.
 1. In the **Automation Bridge Manual** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine.
@@ -110,7 +110,7 @@ You must prefix your installation token with `csoar-bridge-token` in order for t
 
 ### CentOS/RedHat
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. --><br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).. In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  <!-- There is no option to install a bridge in the new UI. --><br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).. In the main Sumo Logic menu, select **Automation** and then click the **?** icon in the top right.
 1. In the **Automation Bridge Manual** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine.
@@ -174,9 +174,9 @@ If you are not using the SIEM:
 
 You may elect to deploy and register multiple bridges to your tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation.
 
-When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution.
+When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes using the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution.
 
-It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
+Integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration, and connectivity can be established with the appropriate resources. Advanced playbooks may elect to use multiple bridge clusters leveraging multiple aliases.
 
 ### Post-installation checks
 
@@ -316,7 +316,7 @@ The first step to troubleshooting any bridge-related issue is to access the brid
       ```bash
       docker ps -a | grep "automation-bridge*"
       ```
-   1. Extract container ID of the bridge in contention and check logs for any error: 
+   1. Extract container ID of the bridge in contention and check logs for any error:
       ```bash
       docker logs CONTAINER_NAME_OR_ID | grep -i "error"
       ```
@@ -341,8 +341,8 @@ In both the setups, check the **Bridge** tab in the [Automation Service UI](/doc
          time="2026-01-19T12:29:23Z" level=error msg="Error response from request getBridgeConf" error=401 fields.time="2026-01-19 12:29:23.933671925 +0000 UTC m=+2.250123502"
          time="2026-01-19T12:29:23Z" level=error msg="Error getting initial conf from cloud" error="Error getting configuration at startup: 401" fields.time="2026-01-19 12:29:23.933849675 +0000 UTC m=+2.250301252" workerIdentifier=worker@95138086f341
          ```
-      
-        ##### Resolution: 
+
+        ##### Resolution:
 
            * Create a new token or update the existing token to meet the required format. Ensure the token prefix starts with: `csoar-bridge-token-`
 
@@ -356,7 +356,7 @@ In both the setups, check the **Bridge** tab in the [Automation Service UI](/doc
 
         ##### Resolution:
 
-           * Consider upgrading bridge to version v3.2.2 and later.  
+           * Consider upgrading bridge to version v3.2.2 and later.
            * Start the bridge using a new installation token.
 
    * #### Bridge runs for a while and then goes offline
@@ -365,12 +365,12 @@ In both the setups, check the **Bridge** tab in the [Automation Service UI](/doc
 
         When the limit is breached, the bridge responds with HTTP `429 (Too Many Requests)` status codes. The bridge logs generally include messages similar to the example below:
         ```text
-        time="2026-01-14T08:53:04Z" level=error msg="Error sending request keepAlive" 
-        error="all retries failed for https://<SOAR_URL>/api/auth-gateway/csoar/bridge/keepAlive/⁠ with response: 
+        time="2026-01-14T08:53:04Z" level=error msg="Error sending request keepAlive"
+        error="all retries failed for https://<SOAR_URL>/api/auth-gateway/csoar/bridge/keepAlive/⁠ with response:
         &{Status:429 Too Many Requests StatusCode:429 Proto:HTTP/2.0 ProtoMajor:2 ProtoMinor:0
         ```
 
           ##### Resolution:
-           * Ensure that the bridge is running the latest available version. 
-           * For bridge versions v3.2.2 and later, this issue should go away on its own after a while. The bridge will automatically try again after some time and will reconnect once the rate limits are cleared, which can be monitored in the **Bridge** tab of the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui). The recovery duration depends on the number of bridges sharing the same token. 
+           * Ensure that the bridge is running the latest available version.
+           * For bridge versions v3.2.2 and later, this issue should go away on its own after a while. The bridge will automatically try again after some time and will reconnect once the rate limits are cleared, which can be monitored in the **Bridge** tab of the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui). The recovery duration depends on the number of bridges sharing the same token.
            * When multiple bridges are operating with the same token and self-healing is slow, a quick workaround is to stop a subset of the bridges and monitor the health of the remaining bridges until stability is restored.

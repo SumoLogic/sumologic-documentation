@@ -22,12 +22,27 @@ If there is no data in the selected tier or Flex, a warning message will be disp
 
 ## Dashboard scan estimates
 
+### Panel scan estimates
+
 When you enter a query to [create a dashboard](/docs/dashboards/create-dashboard-new/) panel, Sumo Logic will estimate and display the amount of data scanned. You can view the scan detail by clicking the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" />. A popup appears that displays the estimated scan data:
 
-- For Data Tier mode:.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-estimates-datatier-dashboard-creation.png')} alt="Scan estimates dashboard creation" style={{border:'1px solid gray'}} width="800" />
+- For Data Tier mode:<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-estimates-datatier-dashboard-creation.png')} alt="Scan estimates dashboard creation" style={{border:'1px solid gray'}} width="800" />
 - For Flex model:<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-estimates-flex-dashboard-creation.png')} alt="Scan estimates dashboard creation" style={{border:'1px solid gray'}} width="800" />
 
 The **Indexes Scanned** dropdown in the Scan Estimates pop-up displays all indexes that were scanned for the entered dashboard query, along with their corresponding estimate details.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/indexes-scanned.png')} alt="Indexes scanned" style={{border:'1px solid gray'}} width="300" />
+
+### Dashboard-level scan estimates
+
+When you run a dashboard that includes [sections (collapsible panels)](/docs/dashboards/panels/section/#how-to-add-a-section), you can view the projected scan size for the entire dashboard broken down by section state. Click the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" /> in the dashboard toolbar. A **Scan Estimates** popup appears showing:
+
+- **Active Panels**. The estimated scan for all panels in currently active sections.
+- **Collapsed Panels**. The estimated scan for all panels in currently collapsed sections.
+
+<img src={useBaseUrl('/img/dashboards/dashboard-scan-estimate.png')} alt="Dashboard scan estimate" style={{border:'1px solid gray'}} width="800" />
+
+:::note
+If all sections have a default state of **Expanded** and the dashboard is fully expanded, the **Collapsed Panels** scan estimate does not appear. Similarly, if all sections have a default state of **Collapsed** and the dashboard is fully collapsed, the **Active Panels** scan estimate does not appear.
+:::
 
 ## Monitors
 

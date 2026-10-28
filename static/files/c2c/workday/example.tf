@@ -16,7 +16,7 @@ resource "sumologic_cloud_to_cloud_source" "workday_source" {
       "signOnReportURL": "https://wd2-impl-services1.workday.com...-_Copy",
       "restApiURL": "https://wd2-impl-services1.workday.com...activityLogging",
       "backfillDays": 1,
-      "pollingIntervalMinutes": 10
+      "pollingInterval": "10m"
   })
 }
 resource "sumologic_collector" "collector" {

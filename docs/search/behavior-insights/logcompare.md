@@ -11,6 +11,10 @@ LogCompare allows you to easily compare log data from different time periods to
 For example, you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
 
 
+:::note
+LogCompare truncates raw 256KB messages to 64KB before matching and grouping the logs into signatures, so content beyond 64KB is not compared. This can also affect response time when you run LogCompare against large messages.
+:::
+
 ## How LogCompare works
 
 LogCompare creates a baseline (historical) query and compares it to a target (current) query. Logs from each query are clustered into patterns, called signatures, then compared and ranked based on the significance of change.
@@ -272,7 +276,7 @@ To prevent gaps in your LogCompare results, configure the **time range** of your
 When selecting the time range of your search, keep in mind:
 
 *   With a smaller time range, more emails will be generated, unless you configure it so that an email is only sent when there are results.
-*   When the time range is smaller, the LogReduce results are also less accurate. For example, if you were to use a 1s time range, any new signature information would likely be useless.
+*   When the time range is smaller, the LogReduce® results are also less accurate. For example, if you were to use a 1s time range, any new signature information would likely be useless.
 *   The larger the time range, the longer it takes for the email alert to be generated.
 
 By default, LogCompare email notifications provide details on the **Score**, **Count**, and **Signature**, as shown in the following email example. This is not configurable.

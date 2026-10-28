@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 JFrog Artifactory is a universal artifact repository manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The Sumo Logic app for Artifactory 7 provides insight into your JFrog Artifactory binary repository. Our preconfigured dashboards provide an overview of your system as well as Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
+:::info
+This app includes [built-in monitors](#jfrog-artifactory-classic-alerts). For details on creating custom monitors, see [Create monitors for JFrog Artifactory app](#create-monitors-for-jfrog-artifactory-app).
+:::
+
 If you _do not_ have a Sumo Logic account and want to get up and running quickly, the [JFrog Artifactory Sumo Logic integration](#if-you-do-not-have-a-sumo-logic-account) is the most convenient way to get started. It allows you to access Sumo Logic directly from Artifactory.
 
 If you have an existing Sumo Logic account, you can still use the integration, however, this will create a secondary Sumo Logic account. To use your existing account, install the [Sumo Logic app for Artifactory](#installing-the-artifactory-app) instead of the integration and access your Artifactory data from Sumo Logic, rather than your Artifactory instance.  
@@ -232,7 +236,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Overview
+### Artifactory (Classic) - Overview
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Overview.png')} alt="JFROG artifactory" />
 
@@ -240,7 +244,7 @@ import JfrogOv from '../../reuse/apps/jfrog/artifactory-overview.md';
 
 <JfrogOv/>
 
-### Traffic
+### Artifactory (Classic) - Traffic
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Traffic.png')} alt="JFROG artifactory" />
 
@@ -248,7 +252,7 @@ import JfrogTr from '../../reuse/apps/jfrog/artifactory-traffic.md';
 
 <JfrogTr/>
 
-### Request and Access
+### Artifactory (Classic) - Request and Access
 
 <img src={useBaseUrl('img/integrations/app-development/artifactory_app_request_access.png')} alt="JFROG artifactory" />
 
@@ -256,7 +260,7 @@ import JfrogReq from '../../reuse/apps/jfrog/artifactory-request-access.md';
 
 <JfrogReq/>
 
-### Download Activity
+### Artifactory (Classic) - Download Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Download.png')} alt="JFROG artifactory" />
 
@@ -264,7 +268,7 @@ import JfrogDl from '../../reuse/apps/jfrog/artifactory-download.md';
 
 <JfrogDl/>
 
-### Cached Deployment Activity
+### Artifactory (Classic) - Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Cached.png')} alt="JFROG artifactory" />
 
@@ -272,13 +276,31 @@ import JfrogCache from '../../reuse/apps/jfrog/artifactory-cached.md';
 
 <JfrogCache/>
 
-### Non-Cached Deployment Activity
+### Artifactory (Classic) - Non-Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Non-Cached.png')} alt="JFROG artifactory" />
 
 import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
 
 <JfrogNon/>
+
+## Create monitors for JFrog Artifactory app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### JFrog Artifactory (Classic) alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Artifactory (Classic) - Excessive Denied Login Attempts` | This alert is triggered when there are multiple denied login attempts from the same IP or user. | Count > 5 | Count \<= 5 |
+| `Artifactory (Classic) - High 4xx Status Codes` | This alert is triggered when there's a high number of HTTP 4xx error responses. | Count > 10 | Count \<= 10 |
+| `Artifactory (Classic) - High 5xx Status Codes` | This alert is triggered when there's a high number of HTTP 5xx error responses. | Count > 10 | Count \<= 10 |
+| `Artifactory (Classic) - High Denied Deploys to Cached Repos` | This alert is triggered when there's a high number of denied deploy attempts to cached repositories. | Count > 5 | Count \<= 5 |
+| `Artifactory (Classic) - High Denied Deploys to Non-Cached Repos` | This alert is triggered when there's a spike in denied deploy attempts to non-cached repositories. | Count > 5 | Count \<= 5 |
+| `Artifactory (Classic) - High Denied Downloads` | This alert is triggered when there's a high number of denied download attempts. | Count > 5 | Count \<= 5 |
+| `Artifactory (Classic) - Slow HTTP Response Times` | This alert is triggered when Artifactory response times are high. | Count > 5 | Count \<= 5 |
 
 ## Upgrade/Downgrade the Artifactory app (Optional)
 

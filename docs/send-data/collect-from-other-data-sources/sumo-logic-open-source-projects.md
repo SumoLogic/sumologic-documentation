@@ -13,7 +13,7 @@ Submit issues or questions about Sumo Logic open-source solutions through GitHub
 Sumo Logic Developers on GitHub is a central location that lists all of the open-source repositories that Sumo Logic is aware of. Repos are divided into two categories:
 
 1. [Official Sumo Logic Repositories](https://github.com/SumoLogic)
-1. [Sumo Experts](http://sumologic.github.io/sumo-experts.html)
+1. [Sumo Logic Experts](http://sumologic.github.io/sumo-experts.html)
 
 For complete details, visit http://sumologic.github.io.
 
@@ -70,7 +70,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 |:-- |:--|
 | [dmail](https://github.com/SumoLogic/dmail) | A simple way to capture a screenshot of a Sumo Logic Dashboard, which is then embedded into an email. |
 | [livetail-cli](https://github.com/SumoLogic/livetail-cli)                              | The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line, similar to tail -f The output is directed to stdout - so you can pipe the output to commands (grep, awk, etc.). For complete details, see Live Tail CLI. |
-| [sumo-report-generator](https://github.com/SumoLogic/sumo-report-generator)   | This tool allows a user to execute multiple searches, and compile the data in a single report. Currently, the only format is Excel. Each tab in Excel would correspond to a search executed in Sumo Logic. NOTE: You must have access to the Sumo Search API in order to use this tool.                     |
+| [sumo-report-generator](https://github.com/SumoLogic/sumo-report-generator)   | This tool allows a user to execute multiple searches, and compile the data in a single report. Currently, the only format is Excel. Each tab in Excel would correspond to a search executed in Sumo Logic. NOTE: You must have access to the Sumo Logic Search API in order to use this tool.                     |
 | [sumobot](https://github.com/SumoLogic/sumobot) | This solution is a Sumo Logic Slack bot. |
 | [Terraform](https://github.com/SumoLogic/terraform-provider-sumologic "https://github.com/SumoLogic/terraform-provider-sumologic") | Terraform provider for Sumo Logic. |
 | [Tailing Sidecar](https://github.com/SumoLogic/tailing-sidecar) | Tailing Sidecar is a streaming sidecar container, the cluster-level logging agent for Kubernetes. |

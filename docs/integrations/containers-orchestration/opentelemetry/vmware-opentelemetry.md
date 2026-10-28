@@ -61,6 +61,10 @@ In this step, we will configure the YAML file required for VMWare Collection. He
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 
 <EnvVar/>
@@ -148,7 +152,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample query is from the **VMWare - Overview** > **Top 25 ESXi Hosts - CPU Utilization** panel.
 
-```sql title="Metric query"
+```metrics title="Metric query"
 sumo.datasource=vmware  metric=vcenter.host.cpu.utilization vcenter.datacenter.name=* vcenter.cluster.name=* vcenter.host.name=* | topk(25,avg)
 ```
 

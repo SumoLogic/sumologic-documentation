@@ -258,7 +258,7 @@ Find version numbers that match numeric values 2, 3 or 1. Use the num operator t
 For more information, see [`where` operator](/docs/search/search-query-language/search-operators/where) and [`if` operator](/docs/search/search-query-language/search-operators/if).
 :::
 
-## LogReduce operator
+## LogReduce® operator
 
 Use Sumo Logic’s clustering algorithm to look for patterns in error/exception incidents in your deployment.
 

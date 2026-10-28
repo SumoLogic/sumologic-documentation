@@ -2,7 +2,7 @@
 id: gmail-tracelogs-source
 title: Gmail Trace Logs Source
 sidebar_label: Gmail Trace Logs
-tags:
+keywords:
   - cloud-to-cloud
   - gmail-tracelogs
 description: The Sumo Logic Gmail Trace Logs source pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.

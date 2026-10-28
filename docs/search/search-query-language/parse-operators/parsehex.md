@@ -18,9 +18,9 @@ The parseHex operator allows you to convert a hexadecimal string of 16 or fewer 
 
 * `parseHex("ABCD")` and `parseHex("0xABCD")` are both valid formats.
 
-## Example
+## Examples
 
-Parse a hexadecimal value to a decimal value.
+### Convert a literal hex string to a decimal value
 
 The following query will convert a hexadecimal string to a decimal number.
 
@@ -31,3 +31,13 @@ The following query will convert a hexadecimal string to a decimal number.
 It provides the following results:
 
 <img src={useBaseUrl('img/reuse/query-search/parsehex_operator.png')} alt="Parse hex" style={{border: '1px solid gray'}} width="700" />
+
+### Convert a hex field parsed from logs using 0x prefix format
+
+```sumo
+_sourceCategory=application/backend
+| parse "error_code=*" as hex_code
+| parseHex(hex_code) as error_number
+| count by error_number
+| sort by _count desc
+```

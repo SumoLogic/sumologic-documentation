@@ -2,7 +2,7 @@
 id: cyberark-source
 title: CyberArk EPM Source
 sidebar_label: CyberArk EPM
-tags:
+keywords:
   - cloud-to-cloud
   - cyberark
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.

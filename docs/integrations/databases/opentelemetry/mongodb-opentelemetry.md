@@ -108,7 +108,11 @@ Below are the inputs required:
 - **`username (optional)`**. If authentication is required, the user can with clusterMonitor permissions can be provided here.
 - **`password (optional)`**. If authentication is required, the password can be provided here.
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the YAML file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 

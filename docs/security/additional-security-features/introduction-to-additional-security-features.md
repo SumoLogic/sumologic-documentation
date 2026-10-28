@@ -3,11 +3,16 @@ id: introduction
 title: Introduction to Logs for Security
 sidebar_label: Introduction
 description: Learn basic concepts about using logs for security use cases. 
+keywords:
+  - logs for security
+  - security analytics
+  - log management
+  - threat detection
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic’s Logs for Security provides a comprehensive foundation for security operations, with a unified platform to ingest, store, and analyze security logs in real time. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
+Logs for Security is Sumo Logic's unified platform to ingest, store, and analyze security logs in real time for security analytics, threat detection, and compliance reporting. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
 
 Unlike fragmented log solutions, Sumo Logic seamlessly integrates across cloud, hybrid, and on-prem environments, reducing complexity and ensuring complete visibility into your infrastructure.
 
@@ -28,15 +33,15 @@ You can use Sumo Logic logs for:
 After you have collected logs for security, you can use them with [Cloud SIEM](/docs/cse/) and [Cloud SOAR](/docs/cloud-soar/), our solutions for threat detection, investigation, and response.
 :::
 
-## The Sumo Logic data pipeline
+## How does the Sumo Logic data pipeline work?
 
 The Sumo Logic data pipeline makes collected data available for security analysis. At a high level, it follows four steps:
 
 <img src={useBaseUrl('img/csa/data-pipeline.png')} alt="A diagram showing the data flow in Sumo Logic: Data collection, to searching and analyzing, to visualizing and monitoring, ending with sharing the findings." width="700"/>
 
 1. **Data collection**. First, you must set up an [OpenTelemetry collector](/docs/send-data/opentelemetry-collector), [installed collector](/docs/send-data/installed-collectors), or a [hosted collector](/docs/send-data/hosted-collectors) and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
-2. **Search and analyze**. Once data is in Sumo Logic, you can [write queries](/docs/search/get-started-with-search) to search events in real-time from the analytics platform UI.
-3. **Visualize and monitor**. Once you’ve found and analyzed data that’s interesting, you can [create dashboards](/docs/dashboards/create-dashboard-new) to visualize it and set up alerts to monitor your data in real-time. Certain pre-built [apps](/docs/integrations) come pre-configured with dashboards designed for security.
+2. **Search and analyze**. Once data is in Sumo Logic, you can [write queries](/docs/search/get-started-with-search) to search events in real time from the analytics platform UI.
+3. **Visualize and monitor**. Once you’ve found and analyzed data that’s interesting, you can [create dashboards](/docs/dashboards/create-dashboard-new) to visualize it and set up alerts to monitor your data in real time. Certain pre-built [apps](/docs/integrations) come pre-configured with dashboards designed for security.
 4. **Share the findings**. [Export your dashboards](/docs/dashboards/export-dashboard-new) or [share with others on your team](/docs/dashboards/share-dashboard-new). You can control who can view and edit your dashboards to keep your data secure.
 
 ## Build security analytics assets
@@ -49,7 +54,7 @@ Using the following skills with Sumo Logic's core platform, build the infrastruc
 Once your data is ingested, you’ll need to search and filter it to find log messages of interest for your security analytics. With field extraction rules (FERs) and scheduled searches, data processing and querying can be automated. Finally, once you've written these queries, you can visualize them with dashboards and create alerts based on certain thresholds.
 
 In addition to queries, dashboards, and alerts, Sumo Logic offers many other features for security analysis, including:
-* Integrations for common applications and services like AWS, Office365, SalesForce, and others
+* Integrations for common applications and services like AWS, Office 365, Salesforce, and others
 * Threat intelligence and security from CrowdStrike, AWS GuardDuty, Cylance, Cisco, and others
 * Maintains major compliance certifications, including PCI DSS, ISO 27001, and FedRAMP
 * Multi-cloud, hybrid cloud, and full stack security visibility
@@ -72,3 +77,25 @@ Queries are the core of Sumo Logic's data processing platform. With queries, you
    * [How log management protects your security stack](https://www.sumologic.com/blog/log-management-security)
    * [Cloud security vs. traditional security](https://www.sumologic.com/blog/cloud-security-why-its-different)
 * Glossary: [Threat detection and response (TDR) - definition and overview](https://www.sumologic.com/glossary/threat-detection-response/)
+
+## FAQ
+
+### What is Logs for Security?
+
+Logs for Security is Sumo Logic's set of features that use logs for security use cases, including threat detection and investigation, security data lake storage, audit and compliance, application security, and cloud infrastructure security.
+
+### What can I do with Logs for Security?
+
+You can write queries to search security logs in real time, build dashboards to visualize findings, and create alerts based on thresholds. You can also use integrations for common applications and threat intelligence from sources like CrowdStrike and AWS GuardDuty.
+
+### How does Logs for Security relate to Cloud SIEM and Cloud SOAR?
+
+After you've collected logs for security, you can use that data with [Cloud SIEM](/docs/cse/) for threat detection and investigation, and [Cloud SOAR](/docs/cloud-soar/) for automated incident response.
+
+### What tools does Sumo Logic provide for security analysis?
+
+Sumo Logic provides queries, dashboards, and alerts as the core building blocks for security analysis, along with lookup tables to enrich log data and integrations for common applications like AWS, Office 365, and Salesforce.
+
+### Does Logs for Security support compliance reporting?
+
+Yes. Sumo Logic maintains major compliance certifications, including PCI DSS, ISO 27001, and FedRAMP, so you can use Logs for Security for audit and compliance reporting alongside threat detection.

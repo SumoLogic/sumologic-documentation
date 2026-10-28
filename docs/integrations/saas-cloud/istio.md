@@ -36,7 +36,7 @@ namespace=istio-system cluster={{cluster}}
 
 ## Collecting logs and metrics for the Istio App
 
-This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
+This section provides instructions for collecting logs and metrics for the Sumo Logic App for Istio. Logs and metrics are collected with the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
 If you've not yet set up Kubernetes Collection, visit our [Kubernetes](/docs/observability/kubernetes) and [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart) docs to learn how to install.
 
 This app supports Istio versions 1.8.x and 1.9.x+. Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
@@ -153,7 +153,7 @@ Metrics Collection:
        max_backoff: 100ms
    ```
 
-   Above remotewrite configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Helm Chart.
+   Above remotewrite configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Logic Helm Chart.
 
 1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following scrape configs are present:
 

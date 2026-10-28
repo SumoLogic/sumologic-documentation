@@ -17,7 +17,7 @@ Following are the updates made in January, 2026.
 
 #### Automation Bridge
 
-We're delighted to announce [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge) version 3.3.0, which: 
+[Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge) version 3.3.0 is now available and:
 * Ensures stability while scaling.
 * Improves observability into bridge instances reducing dependence on customer logs for debugging common issues.
 

@@ -22,7 +22,7 @@ This section provides information about the baseline and throttling limits set. 
 Only users with administrator access can enable this feature.
 :::
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**. <br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences"style={{border: '1px solid gray'}}  width="300"/>
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" style={{border: '1px solid gray'}} width="20"/> and then **Preferences**.
 1. Access your [preferences](/docs/get-started/account-settings-preferences/#my-preferences).
 1. Navigate to **My Preferences** and check the **Enable ingestion throttling notifications** checkbox.<br/><img src={useBaseUrl('img/get-started/enable-ingestion-throttling-notifications.png')} alt="Enable ingestion throttling notifications"style={{border: '1px solid gray'}}  width="500"/>
 

@@ -371,8 +371,6 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
+## Additional resources
 
-
-
-
-
+- Use the [Snyk Automation Service Integration](/docs/integrations/automation-integrations/snyk/) to automate response actions directly from Cloud SOAR playbooks.

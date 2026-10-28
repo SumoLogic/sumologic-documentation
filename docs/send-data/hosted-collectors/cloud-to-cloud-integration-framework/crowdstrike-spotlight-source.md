@@ -2,7 +2,7 @@
 id: crowdstrike-spotlight-source
 title: CrowdStrike Spotlight Source
 sidebar_label: CrowdStrike Spotlight
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-spotlight
 description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.

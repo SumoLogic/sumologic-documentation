@@ -2,7 +2,7 @@
 id: digital-guardian-arc-source
 title: Digital Guardian ARC Source
 sidebar_label: Digital Guardian ARC
-tags:
+keywords:
   - cloud-to-cloud
   - digital-guardian
 description: Learn how to collect export data from the Digital Guardian ARC and send it to Sumo Logic.

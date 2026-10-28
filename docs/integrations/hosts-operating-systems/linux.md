@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux icon" width="45"/>
 
-The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
+The Sumo Logic app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
 :::note
 You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/linux.md).
@@ -19,11 +19,11 @@ You may also be interested in the [Sumo Logic App for Linux Cloud Security Monit
 
 This procedure describes how to collect logs from Linux into Sumo Logic.
 
-Sumo apps gather data from the log messages collected from sources by collectors. The Sumo app for Linux requires specific Linux log types, which are set up during the collector and source configuration process.
+Sumo Logic apps gather data from the log messages collected from sources by collectors. The Sumo Logic app for Linux requires specific Linux log types, which are set up during the collector and source configuration process.
 
 ### Required logs for Ubuntu
 
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
+The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with Ubuntu:
 * auth.log
 * syslog
 * daemon.log
@@ -32,7 +32,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 
 ### Required logs for CentOS, Amazon Linux, and Red Hat
 
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with  CentOS, Amazon Linux, and most Red Hat forks:
+The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with  CentOS, Amazon Linux, and most Red Hat forks:
 * audit/audit.log
 * secure
 * messages
@@ -293,6 +293,23 @@ _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "term
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 | where process_name !=""
 ```
+
+## Create monitors for the Linux app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Linux alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Linux (Classic) - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed authentication attempts within 5 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - Root Login Detected` | This alert is triggered when a root login session is opened. This may indicate unauthorized privileged access to the system. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - Sudo Attempt by Non-Root User` | This alert is triggered when a non-root user executes a sudo command. Unusual sudo activity from unexpected users may indicate privilege escalation attempts. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - System Shutdown or Restart` | This alert is triggered when a Linux system shutdown or restart event is detected. This may indicate unscheduled downtime or malicious activity. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - User Added to Privileged Group` | This alert is triggered when a user is added to a privileged group (root, wheel, or adm). This may indicate privilege escalation or unauthorized access. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - User Account Created` | This alert is triggered when a new user account is created on a Linux host. This should be reviewed to ensure it is an authorized change. | Count > 0 | Count &lt;= 0 |
 
 ## Upgrade/Downgrade the Linux app (Optional)
 

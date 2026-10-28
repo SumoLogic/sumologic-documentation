@@ -37,7 +37,7 @@ To configure an Okta Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Okta**.
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
+1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
@@ -51,7 +51,7 @@ To configure an Okta Source:
 1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
+:::tip
 After configuring the Okta source, consider installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -108,3 +108,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 ## Limitation
 
 During a polling interval, an Okta Source will make a request for every 1,000 logs available. The Okta API uses paging and only 1,000 logs are returned at a time.
+
+## Additional resources
+
+- Use the [Okta Automation Service Integration](/docs/integrations/automation-integrations/okta/) to automate response actions directly from Cloud SOAR playbooks.

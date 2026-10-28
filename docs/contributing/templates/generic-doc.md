@@ -4,7 +4,17 @@ title: Doc (Generic) Template
 description: Use this generic template to create a Sumo Logic doc.
 ---
 
-Use this generic template to create a new doc. Copy and paste this into your new .md file and refer to the [Style Guide](/docs/contributing/style-guide).
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+Use this template to create a new generic doc.
+
+:::tip Recommended: Use Claude Code
+Skip copying this template by hand. If you have [Claude Code](https://claude.ai/code) installed, use the `/doc` slash command to scaffold a new doc for you. See the [README](https://github.com/SumoLogic/sumologic-documentation#claude-code-tooling) for the full command list.
+:::
+
+Copy and paste this into your new .md file and refer to the [Style Guide](/docs/contributing/style-guide).
 
 ```md
 
@@ -13,10 +23,6 @@ id: doc
 title: Doc Title
 description: Use this generic template to create a Sumo Logic doc.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

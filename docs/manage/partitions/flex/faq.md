@@ -3,11 +3,16 @@ id: faq
 title: Flex Pricing FAQ
 sidebar_label: FAQ
 description: Answers to frequently asked questions about Sumo Logic Flex Pricing.
+keywords:
+  - flex pricing
+  - flex faq
+  - partitions
+  - search cost
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page answers frequently asked questions about Flex pricing.
+This page answers frequently asked questions about Flex pricing, Sumo Logic's default plan for new customers where you pay for analytics and search rather than data ingestion.
 
 ## What is Flex Pricing?
 
@@ -120,3 +125,7 @@ Queries to the following [audit indexes](/docs/manage/security/audit-indexes/) a
 * `sumologic_audit_events`
 * `sumologic_system_events`
 * `sumologic_search_usage_per_query`
+
+## Are Cloud SIEM scans charged as Flex scans?
+
+No. [Cloud SIEM](/docs/cse/) records and signals are stored in a dedicated security data tier that's separate from your Flex partitions. Queries that scan the security indexes, for example `_index=sec_record_*`, run against the [security data tier](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#security-index-search-limitations), not Flex, so they don't count toward your Flex scan usage and aren't billed as Flex scans.

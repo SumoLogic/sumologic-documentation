@@ -17,7 +17,7 @@ _sourceCategory=Labs/Apache/Access
 | count by _timeslice, status_code
 ```
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/TableWithoutTranspose.png')} alt="Table without transpose" style={{border: '1px solid gray'}} width="400>" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/transpose/TableWithoutTranspose.png')} alt="Table without transpose" style={{border: '1px solid gray'}} width="400" />
 
 With `transpose`, you can use your query to define your rows as the `timeslice` and the columns as the status code:
 

@@ -101,6 +101,10 @@ For metrics, you're required to provide the JMX endpoint (default is `localhost:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
 <EnvVarOpt/>

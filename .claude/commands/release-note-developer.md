@@ -1,6 +1,6 @@
 # Create New Developer Release Note
 
-Automates the creation of Developer release notes for APIs, SDKs, integrations, and platform changes relevant to developers.
+Automates the creation of Developer release notes for APIs, integrations, and platform changes relevant to developers.
 
 ## What this command does
 
@@ -13,11 +13,12 @@ When you invoke `release-note-developer`, Claude will guide you through:
 
 ## When to use this command
 
+Use this feed when the **primary audience is someone writing code to connect to Sumo Logic** — a developer building an integration, not a Sumo Logic end user. If the feature is something a user accesses in the UI that also happens to have an API, it belongs in the Service release notes instead.
+
 * Announcing new API endpoints or features
 * Documenting API changes, deprecations, or breaking changes
-* Publishing SDK updates or new SDK versions
 * Releasing developer tools or CLI updates
-* Announcing platform changes affecting developers
+* Announcing platform changes affecting developers (MCP server, OAuth, auth flows)
 * Documenting authentication or integration changes
 * Publishing deprecation notices
 
@@ -26,7 +27,6 @@ When you invoke `release-note-developer`, Claude will guide you through:
 Developer release notes typically cover:
 
 * **APIs**. New endpoints, changes, deprecations
-* **SDKs**. New SDKs, version updates, improvements
 * **CLI**. Command-line tool updates
 * **Integrations**. New integrations or integration changes
 * **Platform**. Platform changes affecting developers
@@ -72,7 +72,6 @@ blog-developer/YYYY-MM-DD-{slug}.md
 Examples:
 * `blog-developer/2026-03-23-api-endpoints.md`
 * `blog-developer/2026-04-09-india-datacenter-deprecation.md`
-* `blog-developer/2026-05-15-python-sdk-v2.md`
 
 **Important**: Files are created in `/blog-developer/` directory (root level, no subdirectories)
 
@@ -94,9 +93,7 @@ hide_table_of_contents: true
 * Keep topic concise but descriptive
 
 **Date formatting:**
-* Use full month name (January, February, March, etc.)
-* Use day without ordinal suffix (1, 9, 23, not 1st, 9th, 23rd)
-* Format: "Month Day, YYYY"
+* `Month D, YYYY`, per the [style guide](/docs/contributing/style-guide/#release-notes): full month name, no ordinal, no leading zero.
 
 **Image:**
 * Always use the standard Sumo Logic preview image
@@ -106,7 +103,6 @@ hide_table_of_contents: true
 * **Always ask user if they want to include keywords**
 * Suggest keywords based on content type:
   * API changes: `api`, `endpoints`, `rest-api`
-  * SDK updates: `sdk`, `python`, `java`, etc.
   * Deprecations: `deprecation`, `end-of-life`
   * Breaking changes: `breaking-change`
   * Platform updates: `platform`, `datacenter`
@@ -130,8 +126,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Title guidelines:**
 * Keep concise (2-5 words)
 * Use title case
-* Common patterns: "APIs", "SDKs", "CLI Tools", "Platform Updates"
-* Can be more specific: "Python SDK", "REST API", "Management APIs"
+* Common patterns: "APIs", "CLI Tools", "Platform Updates"
+* Can be more specific: "REST API", "Management APIs"
 
 ### Step 5: Write content
 
@@ -156,6 +152,8 @@ hide_table_of_contents: true
 
 ### Step 6: Content formatting guidelines
 
+Follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide for voice, conciseness, and "Learn more" links. The guidance below is only what is specific to developer release notes.
+
 #### API Changes
 
 For API announcements, include:
@@ -172,7 +170,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 hide_table_of_contents: true
 ---
 
-We're excited to announce new API endpoints for managing Field Extraction Rules (FERs) programmatically. These endpoints enable you to create, update, delete, and list FERs via the REST API, making it easier to automate and scale your field extraction configurations.
+New API endpoints for managing Field Extraction Rules (FERs) are now available. These endpoints enable you to create, update, delete, and list FERs via the REST API, making it easier to automate and scale your field extraction configurations.
 
 #### New endpoints
 
@@ -182,42 +180,6 @@ We're excited to announce new API endpoints for managing Field Extraction Rules 
 #### Breaking changes
 
 **Monitors API**: The `notificationGroupFields` parameter is now required when creating monitors. Update your integrations before June 1, 2026. See the [Monitors API documentation](/docs/api/monitors) for details.
-```
-
-#### SDK Updates
-
-For SDK releases:
-* Version number
-* What's new or changed
-* Installation instructions
-* Link to SDK docs or GitHub
-
-**Example:**
-```markdown
----
-title: March 23, 2026 - Python SDK Version 2.0
-image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
-hide_table_of_contents: true
-keywords:
-  - sdk
-  - python
----
-
-We've released version 2.0 of the Sumo Logic Python SDK with support for the latest APIs and improved error handling.
-
-#### What's new
-
-* Support for Field Extraction Rules API
-* Async client support for better performance
-* Improved error messages and debugging
-
-#### Installation
-
-```python
-pip install sumologic-sdk==2.0.0
-```
-
-Learn more in the [Python SDK documentation](/docs/api/python-client).
 ```
 
 #### Deprecations
@@ -286,7 +248,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 hide_table_of_contents: true
 ---
 
-We've made the following improvements to our APIs:
+The following API improvements are now available:
 
 * **Audit logging**: When performing create, update, and delete requests through Sumo Logic APIs, the API accessID is now included within the operator field of your related [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) messages.
 * **Search Job API**: Now returns query execution statistics in response headers for better monitoring and debugging.
@@ -302,10 +264,11 @@ Before finishing, verify:
 * [ ] Date format uses full month name, no ordinal (e.g., "April 9" not "April 9th")
 * [ ] `hide_table_of_contents: true` is present
 * [ ] Standard image URL is used
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] Content is clear and includes relevant links
 * [ ] Breaking changes are clearly marked (use bold or H4 sections)
 * [ ] Documentation links use relative paths (start with `/docs/`)
-* [ ] Keywords added if applicable (deprecation, api, sdk, etc.)
+* [ ] Keywords added if applicable (deprecation, api, etc.)
 * [ ] No trailing whitespace
 
 ## Example usage
@@ -352,19 +315,13 @@ Claude:
 
 ## Date formatting rules
 
-**Format: "Month Day, YYYY"**
-
-Month names (full):
-* January, February, March, April, May, June
-* July, August, September, October, November, December
-
-Day: No ordinal suffix (use 1, 2, 3... not 1st, 2nd, 3rd)
+Titles use the [style guide](/docs/contributing/style-guide/#release-notes) date format: `Month D, YYYY`, full month name, no ordinal, no leading zero.
 
 **Examples:**
 * ✅ March 23, 2026
 * ✅ January 1, 2026
 * ✅ December 31, 2025
-* ❌ March 23rd, 2026 (no ordinal)
+* ❌ March 23rd, 2026 (ordinal)
 * ❌ Mar 23, 2026 (abbreviated month)
 * ❌ 2026-03-23 (wrong format)
 
@@ -483,12 +440,6 @@ Would you like me to help refine the content or add additional details?
 * Provide migration path with examples
 * Offer support contact for questions
 
-**For SDK releases:**
-* Include version number prominently
-* Show installation/upgrade commands
-* Highlight breaking changes separately
-* Link to changelog or GitHub release
-
 **All release notes:**
 * Write for developers (assume technical knowledge)
 * Focus on impact and action items
@@ -501,4 +452,4 @@ Would you like me to help refine the content or add additional details?
 * [Developer Release Notes](https://sumologic.com/help/release-notes-developer)
 * [Release Notes Index](/docs/release-notes)
 * [API Documentation](/docs/api)
-* [Style Guide](/docs/contributing/style-guide)
+* [Style Guide: Release notes](/docs/contributing/style-guide/#release-notes)

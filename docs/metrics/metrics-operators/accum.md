@@ -14,11 +14,11 @@ values.
 
 ## Syntax
 
-```sql
+```metrics
 accum
 ```
 
-## Example
+## Examples
 
 This query calculates the running total for the `success.count` metric: `success.count | accum`.
 

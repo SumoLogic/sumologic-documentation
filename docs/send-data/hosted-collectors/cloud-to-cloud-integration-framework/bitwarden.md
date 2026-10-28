@@ -2,7 +2,7 @@
 id: bitwarden-source
 title: Bitwarden Source
 sidebar_label: Bitwarden
-tags:
+keywords:
   - cloud-to-cloud
   - bitwarden
 description: Learn how to collect event logs from the Bitwarden API.

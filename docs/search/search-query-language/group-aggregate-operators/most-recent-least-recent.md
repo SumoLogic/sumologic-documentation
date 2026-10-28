@@ -42,3 +42,14 @@ Say we would like to keep an eye on visitors that hit our site from different co
 produces results like:
 
 <img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/mostrecent.png')} alt="Most recent" style={{border: '1px solid gray'}} width="400" />
+
+### Find the least recent action per user
+
+Use `least_recent` to surface the oldest recorded action for each user:
+
+```sumo
+_sourceCategory=auth/login
+| parse "user=* action=*" as user, action
+| withtime action
+| least_recent(action_withtime) as oldest_action by user
+```

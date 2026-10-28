@@ -34,7 +34,7 @@ The Sumo Logic Kubernetes Solution provides observability into all the critical 
 
 The critical areas for monitoring in Kubernetes include the control plane, individual nodes, and pods. The following graphic provides a high-level view of the Kubernetes cluster architecture.
 
-<img src={useBaseUrl('img/kubernetes/Intro_K8s_architecture.png')} alt="Intro to Kubernetes architecture" style={{border: '1px solid gray'}} width="600>" />
+<img src={useBaseUrl('img/kubernetes/Intro_K8s_architecture.png')} alt="Intro to Kubernetes architecture" style={{border: '1px solid gray'}} width="600" />
 
 ### Control plane
 

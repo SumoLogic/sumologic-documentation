@@ -2,7 +2,7 @@
 id: cse-aws-ec-inventory-source
 title: Cloud SIEM AWS EC2 Inventory Source
 sidebar_label: Cloud SIEM AWS EC2 Inventory
-tags:
+keywords:
   - cloud-to-cloud
   - cse-aws-ec-inventory
 description: The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the EC2 describe instances API.
@@ -93,7 +93,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Cloud SIEM AWS EC2 Inventory"}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{"type":"CSE AWS EC2 Inventory"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
@@ -101,16 +101,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
-| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
-| description | String | No | `null` | Type a description of the source. | `"Testing source"`
-| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| limitToRegions | String array | Yes | | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to collect data from all regions supported by source, as mentioned in [Step 9 of source configuration](#source-configuration). Make sure that the selected region is enabled in your AWS account. | modifiable |
-| authentication.type | String | Yes | `null` | AWS Role Based Authentication | Select how Sumo Logic should access your AWS account. |  |
-| authentication.roleARN | String | Yes | `null` | Provide the IAM Role ARN you want to use to authenticate collection requests. |  |
-| authentication.awsId | String | Yes |`null` | Provide the IAM User access key ID you want to use to authenticate collection requests. |  |
-| authentication.roleARN | String | Yes | `null` |Provide the Secret Key you want to use to authenticate collection requests. |  |
-| polling_interval | Integer | No | 600 | The minutes in between checks for new data. |  |
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"AWS EC2 Inventory"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"` |
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"AWSEC2Inventory"` |
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | `{"_siemForward": true, "fieldA": "valueA"}` |
+| regionType | String | Yes | `"standardRegions"` | The type of AWS regions to collect from. Supported values are `standardRegions` and `sovereignRegions`. | `"standardRegions"` |
+| limitToRegions | String array | Yes, if `regionType` is `standardRegions` | | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to collect data from all supported standard regions, as mentioned in [Step 9 of source configuration](#source-configuration). Make sure that the selected region is enabled in your AWS account. | `["us-east-2", "ca-central-1"]` |
+| sovereignRegions | String array | Yes, if `regionType` is `sovereignRegions` | | Provide a list of AWS sovereign regions to query EC2 instances. Use `["all"]` to collect data from all supported sovereign regions. Supported values are `all` and `eusc-de-east-1`. | `["eusc-de-east-1"]` |
+| authentication.type | String | Yes | `"AWSRoleBasedAuthentication"` | Select how Sumo Logic should access your AWS account. Use `AWSRoleBasedAuthentication` for **Role Based Access** or `S3BucketAuthentication` for **Key Access**. | `"AWSRoleBasedAuthentication"` |
+| authentication.roleARN | String | Yes, for role based access | `null` | Provide the IAM Role ARN you want to use to authenticate collection requests. | `"arn:aws:iam::9568827XXXX:role/C2C_EC2InventoryTest"` |
+| authentication.awsId | String | Yes, for key access | `null` | Provide the IAM User access key ID you want to use to authenticate collection requests. | `"XXXXXXSVHNHFXXXXXXX"` |
+| authentication.awsKey | String | Yes, for key access | `null` | Provide the secret access key you want to use to authenticate collection requests. | `"XXXXXtrrIqHvXgMYJEQcwLfEQtyNXXXXXXXX"` |
+| polling_interval | Integer | No | 600 | The minutes in between checks for new data. The maximum value is 86400. | `600` |
 
 ### JSON example
 

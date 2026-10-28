@@ -144,7 +144,7 @@ There are two places you can access the Sumo Logic add-on for Heroku: from the H
 
 Heroku users can use all Sumo Logic features associated with their account type, with a few exceptions.
 
-All Heroku add-on user accounts are created as Sumo Logic administrators, but no user information or roles can be added or edited in Sumo. You can only log into Sumo Logic from the Heroku application panel. For this reason, you cannot change your password once your account is created, and as required by Heroku, you cannot log out of Sumo Logic once you have installed the add-on.
+All Heroku add-on user accounts are created as Sumo Logic administrators, but no user information or roles can be added or edited in Sumo Logic. You can only log into Sumo Logic from the Heroku application panel. For this reason, you cannot change your password once your account is created, and as required by Heroku, you cannot log out of Sumo Logic once you have installed the add-on.
 
 In addition, the following features are not supported:
 
@@ -194,7 +194,7 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
         * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
-        * **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
+        * **Parse Expression**. For each Heroku application reporting data to Sumo Logic, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
 
         ```sumo
         if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName
@@ -360,6 +360,31 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 - **App Error Details**. Shows the count of different types of error messages for different Heroku components.
 - **App Errors by Component**. Shows the distribution of application errors for different Heroku components.
 - **App Error Trend by Component**. Shows the count of application errors for different Heroku components over a period of time.
+
+## Create monitors for Heroku app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Heroku monitors
+
+| Name | Description | Trigger Type | Alert Condition |
+|:--|:--|:--|:--|
+| `Heroku - App Boot Timeout (H20)` | H20 fires when a web dyno fails to bind its assigned port within 60 seconds of startup. The app is completely unreachable during this window. Common causes include long-running startup tasks, migrations, or misconfigured PORT bindings. A single occurrence is enough to alert, since no requests are being served. | Critical | Count > 0 |
+| `Heroku - App Crashed (H10)` | Detects when a dyno process exits unexpectedly. Any crash means all in-flight requests to that dyno return 503 errors. | Critical | Count > 0 |
+| `Heroku - Dyno Restarting Repeatedly` | Detects when a web dyno repeatedly transitions from up to starting, indicating a crash-looping process. A single restart during a deploy is normal; repeated restarts outside of deploy windows indicate an unstable process dropping all active connections on each cycle. | Warning | Count >= 3 |
+| `Heroku - Dyno Restarting Repeatedly` | Detects when a web dyno repeatedly transitions from up to starting, indicating a crash-looping process. A single restart during a deploy is normal; repeated restarts outside of deploy windows indicate an unstable process dropping all active connections on each cycle. | Critical | Count >= 5 |
+| `Heroku - High HTTP 5xx Error Rate` | Detects HTTP 5xx errors returned by the application (distinct from Heroku platform H-errors). A rising 5xx rate indicates unhandled exceptions, broken deployments, or backend dependency failures. | Warning | Count >= 5 |
+| `Heroku - High HTTP 5xx Error Rate` | Detects HTTP 5xx errors returned by the application (distinct from Heroku platform H-errors). A rising 5xx rate indicates unhandled exceptions, broken deployments, or backend dependency failures. | Critical | Count >= 10 |
+| `Heroku - High Memory Usage (Approaching R14 Quota)` | Fires when a dyno's memory usage crosses 90% of its quota. Exceeding the quota triggers an R14 error, causing the dyno to swap heavily and producing severe latency degradation before an eventual crash. Non-zero swap memory in the output is a strong secondary signal. | Warning | Count >= 3 |
+| `Heroku - High Memory Usage (Approaching R14 Quota)` | Fires when a dyno's memory usage crosses 90% of its quota. Exceeding the quota triggers an R14 error, causing the dyno to swap heavily and producing severe latency degradation before an eventual crash. Non-zero swap memory in the output is a strong secondary signal. | Critical | Count >= 5 |
+| `Heroku - High Request Latency` | Detects requests taking over 5 seconds, a leading indicator of degraded user experience and a risk of hitting the 30-second H12 cutoff. Common causes include slow database queries, external API calls without timeouts, and GC pauses. | Warning | Count >= 3 |
+| `Heroku - High Request Latency` | Detects requests taking over 5 seconds, a leading indicator of degraded user experience and a risk of hitting the 30-second H12 cutoff. Common causes include slow database queries, external API calls without timeouts, and GC pauses. | Critical | Count >= 10 |
+| `Heroku - Request Timeout (H12)` | The Heroku router enforces a hard 30-second response deadline and logs H12 when a dyno fails to respond in time. Sustained H12 spikes indicate blocking I/O, unoptimized database calls, or under-provisioned dynos for current traffic. | Warning | Count >= 3 |
+| `Heroku - Request Timeout (H12)` | The Heroku router enforces a hard 30-second response deadline and logs H12 when a dyno fails to respond in time. Sustained H12 spikes indicate blocking I/O, unoptimized database calls, or under-provisioned dynos for current traffic. | Critical | Count >= 5 |
+| `Heroku - Router Connection Errors (H13 or H15 or H18)` | Detects H13 (connection closed without response), H15 (idle connection timeout beyond the router's patience), and H18 (server interrupted an in-progress response) errors. These codes often appear in the minutes before a full dyno crash and serve as early warning indicators. | Warning | Count >= 3 |
+| `Heroku - Router Connection Errors (H13 or H15 or H18)` | Detects H13 (connection closed without response), H15 (idle connection timeout beyond the router's patience), and H18 (server interrupted an in-progress response) errors. These codes often appear in the minutes before a full dyno crash and serve as early warning indicators. | Critical | Count >= 5 |
 
 ## Upgrade/Downgrade the Heroku app (Optional)
 

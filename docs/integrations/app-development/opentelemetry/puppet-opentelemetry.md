@@ -33,7 +33,7 @@ We use OpenTelemetry collector to gather the following data from Puppet:
 
 The default Puppet Server Access log file is: `/var/log/puppetlabs/puppetserver/puppetserver-access.log`. If your Puppet Server Access logs are located elsewhere, please note the path this will be used later while app installation.
 
-Puppet reports are in YAML format. They must be converted into JSON format before Sumo ingests them. You can convert the YAML files using the Sumo-provided shell script below:
+Puppet reports are in YAML format. They must be converted into JSON format before Sumo Logic ingests them. You can convert the YAML files using the Sumo-provided shell script below:
 
 ```json
 MaxFileSize=20
@@ -156,6 +156,10 @@ In this step, you will configure the yaml required for Puppet collection.
 Path of the log file configured to capture puppet access logs and puppet report are needed to be given here. Refer to the Prerequisites section of this document.
 
 Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 

@@ -1,13 +1,13 @@
 ---
 id: create-amazon-lambda-function
-title: Create a Sumo Lambda Function
+title: Create a Sumo Logic Lambda Function
 sidebar_label: AWS Lambda - Create Function
 description: Sumo Logic has created an Amazon Lambda function that you can use with AWS.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
+Sumo Logic provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
 
 **To add an Amazon Lambda function:**
 

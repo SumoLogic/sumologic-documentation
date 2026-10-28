@@ -2,7 +2,7 @@
 id: box-source
 title: Box Source
 sidebar_label: Box
-tags:
+keywords:
   - cloud-to-cloud
   - box
 description: The Box API integration ingests events from the Get Events API.

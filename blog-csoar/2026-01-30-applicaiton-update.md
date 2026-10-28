@@ -11,6 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### New feature: Playbook Executions
 
-We are excited to announce that you can now monitor the outcome of playbook runs on the new **Playbook Executions** screen. The screen shows both currently running and completed playbook executions, with clear status and timestamps. The screen makes it easier to monitor automation health and troubleshoot playbook issues. [Learn more](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#playbook-executions).
+You can now monitor the outcome of playbook runs on the new **Playbook Executions** screen. The screen shows both currently running and completed playbook executions, with clear status and timestamps. The screen makes it easier to monitor automation health and troubleshoot playbook issues. [Learn more](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#playbook-executions).
 
 <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions.png')} alt="Playbook Executions screen" style={{border:'1px solid gray'}} width="800"/>
