@@ -20,6 +20,8 @@ The following operators cannot be used with dashboards:
 
 ## Auto refresh and public dashboard restrictions
 
+These restrictions apply to dashboards using auto refresh. Public dashboards also use auto refresh, so the same restrictions apply when you [share a dashboard outside your organization](/docs/dashboards/share-dashboard-outside-org#restrictions-and-limitations-for-external-sharing).
+
 * The following operators cannot be used:
   * `Compare With` can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice).
   * [`Cat`](/docs/search/search-query-language/search-operators/cat/)
