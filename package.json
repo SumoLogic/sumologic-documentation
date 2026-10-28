@@ -182,7 +182,7 @@
     "webpack-merge": "6.0.1",
     "wildcard": "2.0.1",
     "yaml": "^2.8.3",
-    "zod": "4.1.11"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.2",
