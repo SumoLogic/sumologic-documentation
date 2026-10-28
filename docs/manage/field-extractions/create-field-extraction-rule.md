@@ -54,7 +54,7 @@ To create a Field Extraction Rule:
     * **Applied At**. There are two types available, Ingest Time and Run Time. The main differences are Run Time only supports JSON data and the time that Sumo Logic parses the fields. The following is an overview of the differences:
       * Ingest Time
         * Parsing support - any data format, requires manually written parser expressions.
-        * Rule limit - There is a limit of 50 Field Extraction Rules and 200 fields. This includes the default fields defined by Sumo Logic (about 16). The 200-field limit is per account, and deleting rules does not create more space.
+        * Rule limit - There is a limit of 50 Field Extraction Rules and 200 fields. This includes the default fields defined by Sumo Logic (about 16). The 200-field limit is per account, and deleting rules does not create more space. A single rule can extract a maximum of 200 fields.
         * Time - At the time of ingestion, only applies to data moving forward. If you want to parse data ingested before the creation of your FER, you can either parse your data in your query, or create Scheduled Views to extract fields for your historical data.
       * Run Time
         * Parsing support - JSON, automatically
