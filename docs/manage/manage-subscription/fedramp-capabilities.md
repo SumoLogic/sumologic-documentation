@@ -24,11 +24,11 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Abilities - Platform  | [App catalog](/docs/get-started/apps-integrations/) | &#10003; | &#10003; |
 | Abilities - Platform | [Training: Learn and certification](/docs/get-started/training-certification-faq/) | &#10003; | &#10003; |
 | Abilities - Solutions | [Application observability](/docs/observability/application-components/) | &#10003; ||
-| Abilities - Solutions | [AWS observability](/docs/observability/aws/) | &#10003; ||
+| Abilities - Solutions | [AWS observability](/docs/observability/aws/) | &#10003; | &#10003; |
 | Abilities - Solutions | [Logs for Security](/docs/security/additional-security-features/) | &#10003; | &#10003; |
 | Abilities - Solutions | [Cloud SIEM](/docs/cse/) | &#10003; | &#10003; |
 | Abilities - Solutions | [Cloud SOAR](/docs/cloud-soar/) / [Automation Service](/docs/platform-services/automation-service/) | &#10003; |
-| Abilities - Solutions | [Software Development Optimization](/docs/observability/sdo/) | &#10003; ||
+| Abilities - Solutions | [Software Development Optimization](/docs/observability/sdo/) | &#10003; | &#10003; |
 | Abilities - Solutions | [Kubernetes observability](/docs/observability/kubernetes/) | &#10003; | &#10003; |
 | Administration - Account | [Account overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) | &#10003; | &#10003; |
 | Administration - Account | [Data management](/docs/manage/users-roles/roles/role-capabilities/#data-management) | &#10003; | &#10003; |
@@ -54,10 +54,10 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Amazon Web Services | [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) | &#10003; | &#10003; |
 | Collection - Amazon Web Services | [AWS Inventory](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/resources/) | &#10003; | |
 | Collection - Amazon Web Services | [AWS Metadata](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/) | &#10003; | &#10003; |
-| Collection - Amazon Web Services | [CSE AWS EC2 Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source/) | &#10003; | |
+| Collection - Amazon Web Services | [CSE AWS EC2 Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source/) | &#10003; | &#10003; |
 | Collection - Archive | [AWS S3 archive](/docs/manage/data-archiving/archive) | &#10003; | &#10003; |
 | Collection - Cloud APIs | [Akamai SIEM API](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
-| Collection - Cloud APIs | [Azure Event Hubs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) | &#10003; | &#10003; |
+| Collection - Cloud APIs | [Azure Event Hubs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) | &#10003; | &#10003; |
 | Collection - Cloud APIs | [Box](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Carbon Black Cloud](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Carbon Black Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source/) | &#10003; | &#10003;<br/>Available upon request within 5 business days. |

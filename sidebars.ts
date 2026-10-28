@@ -478,7 +478,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
@@ -1521,6 +1520,7 @@ module.exports = {
           'dashboards/create-panel-with-mobot',
           'alerts/monitors/create-monitor-with-mobot',
           'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
+          'cse/rules/create-rules-with-mobot',
       ],
     },
     {
@@ -3177,6 +3177,7 @@ integrations: [
           link: {type: 'doc', id: 'cse/rules/index'},
           items: [
             'cse/rules/about-cse-rules',
+            'cse/rules/create-rules-with-mobot',
             'cse/rules/rules-status',
             'cse/rules/before-writing-custom-rule',
             'cse/rules/cse-rules-syntax',
