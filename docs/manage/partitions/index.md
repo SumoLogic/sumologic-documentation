@@ -116,5 +116,11 @@ In this section, we'll introduce the following concepts:
   <p>Answers to frequently asked questions about Sumo Logic partitions.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/partitions/flex-to-tier-migration-report')}><img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="40"/><h4>Flex to Tier Migration Report</h4></a>
+  <p>Learn how to use the Flex to Tier Migration Report to assess partition readiness and act on migration recommendations.</p>
+  </div>
+</div>
 </div>
 
