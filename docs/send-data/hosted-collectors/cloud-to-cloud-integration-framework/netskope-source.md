@@ -5,7 +5,7 @@ sidebar_label: Netskope
 keywords:
   - cloud-to-cloud
   - netskope
-description: The Netskope Source provides a secure endpoint to receive event data from the Netskope API.
+description: Netskope Source provides a secure endpoint for receiving event data from the Netskope API.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -17,7 +17,7 @@ The Netskope Source provides a secure endpoint to receive event data from the [
 
 The following event types are available to collect:
 
-* alert events from `/alerts` are always collected
+* alert (collected by default, can be turned off with **Disable Alerts**)
 * application
 * audit
 * infrastructure
@@ -37,6 +37,13 @@ Upgrade the Netskope source to the latest version 2.x.x for a seamless data coll
 | :--- | :--- |
 | 5 sec |  [Event data](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints/) |
 
+:::note
+* The Source is limited to 4 requests per second per endpoint.
+* The Source retries requests that return `429`, `409`, or `5xx` errors, up to 10 times.
+* A new Source starts collecting from its creation time. Historical events are not backfilled.
+* If Netskope returns a `401` or `403` error, the Source shows a configuration error. Check that your API token is valid and has the required permissions.
+:::
+
 ## Setup
 
 ### Vendor configuration
@@ -52,8 +59,8 @@ Netskope REST API v2 provides an easy way to extend the Netskope platform to bui
 To obtain a Netskope REST API v2 auth token, do the following:
 
 1. Log in to Netskope as the Tenant Admin.
-1. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API v2**.
-1. Click "New Token", provide the token name and expiration duration, then add the following endpoints with READ privilege, depending on the events that you want to collect from: `/api/v2/events/dataexport/events/alert`, `/api/v2/events/dataexport/events/page`, `/api/v2/events/dataexport/events/infrastructure`, `/api/v2/events/dataexport/events/application`, `/api/v2/events/dataexport/events/network`, `/api/v2/events/dataexport/events/audit`, `/api/v2/events/dataexport/events/connection`, `/api/v2/events/dataexport/events/incident`, `/api/v2/events/dataexport/events/endpoint`, and `/api/v2/events/data/alert`.
+1. Go to the API section of Netskope: **Settings** > **Tools** > ** REST API v2**.
+1. Click **New Token** and provide the token name and expiration duration, then add the READ privilege to `/api/v2/events/dataexport/events/<type>` for every event type you want to collect, where `<type>` is one of `page`, `application`, `infrastructure`, `audit`, `network`, `connection`, `incident`, or `endpoint`. Also add READ permission for `/api/v2/events/dataexport/events/alert` unless you enable **Disable Alerts** in the Source configuration.
 1. Copy the token in the next dialog box and save it somewhere, as it won't be visible after.
 
 #### Netskope REST API v2 with RBAC v3
@@ -110,8 +117,8 @@ user interface (UI).
 To obtain a Netskope auth token, do the following:
 
 1. Log in to Netskope as the Tenant Admin.
-1. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API v1**.
-1. Copy the existing token to your clipboard, or you can generate a new token and copy that token.
+1. Go to the API section of Netskope: **Settings** > **Tools** > ** REST API v1**.
+1. Copy the existing token to your clipboard, or generate a new token and copy it.
 
 ### Source configuration
 
@@ -128,12 +135,14 @@ To configure a Netskope Source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and a value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
-1. Enter your Netskope customer-specific **Tenant ID**. Do not provide the entire URL, just the Tenant ID. For example, if your URL is `https://tenant.eu.sumologic.com`, then `tenant.eu` will be your Tenant ID.
-1. Enter the Netskope **API Token** you want to use to authenticate requests.
-1. **Event Types** (Optional). By default, *all* event types are collected. You can specify certain event types to collect. Make sure to have the corresponding token privileges to the event types. If this field is empty, all event types are collected. Be aware that if you want to collect all event types, and a new event type is added in the future, your token might need to be updated accordingly.
-    :::note
-    Add only the Event Types that you provided permissions to in step 3 of the Vendor configuration. For example, if you have added permission to `/api/v2/events/dataexport/events/application` during Netskope configuration, enter `Application` in the **Event Types** section. Inconsistencies will throw an error, so ensure that all specified permissions given in the Netskope configuration are added to the Sumo Logic **Event Types** section.
-    :::
+1. Enter your Netskope **Tenant ID**. Enter only the subdomain of your Netskope tenant URL, without `https://` and without the top-level domain (`goskope.com`, or `govskope.us` for government accounts). The Source adds the domain automatically. For example:
+   * `https://tenant.goskope.com` becomes `tenant`
+   * `https://tenant.eu.goskope.com` becomes `tenant.eu`
+1. **Government Account**. Select **Government Account** if your tenant is a Netskope government account. The Source then uses `https://<tenant>.govskope.us` instead of `goskope.com`.
+1. Enter the Netskope **API Token** you want to use to authenticate requests.
+1. (Optional) **Event Types**. Select the event types to collect. If this field is empty, Netskope collects all eight event types (page, application, infrastructure, audit, network, connection, incident, and endpoint). Your token needs READ permission for every selected event type. If you collect all event types and Netskope adds a new type later, you might need to update your token.
+1. **Disable Alerts**. Alert events are collected by default. Select **Disable Alerts** to stop collecting them.
+1. **Processing Rules**. Configure any desired filters, such as include, exclude, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
@@ -147,11 +156,11 @@ After configuring the Netskope source, consider installing the Sumo Logic app fo
 | `_siemVendor` | `Netskope` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Security Cloud` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types, with one exception. If the eventType is audit and the description contains logon/login or logoff/logout, the eventType field will be the eventType with the value -logon or -logoff added respectively, such as: audit-logon or audit-logoff. |
+| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types, with one exception. If the eventType is audit and the description contains logon/login or logoff/logout, the eventType field will be the eventType with the value -logon or -logoff added respectively, such as audit-logon or audit-logoff. |
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+You can configure sources using UTF-8-encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -167,9 +176,11 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| tenantID | String | Yes | `null` | Netskope customer specific Tenant ID. Do not provide the entire URL, just the Tenant ID. |  |
+| tenantID | String | Yes | `null` | Subdomain of your Netskope tenant URL, without `https://` and without the domain (`goskope.com`, or `govskope.us` for government accounts). The Source adds the domain automatically. | `"tenant.eu"` |
+| isGovAccount | Boolean | No | `false` | Set to `true` for a Netskope government account. The Source then uses `https://<tenant>.govskope.us` instead of `goskope.com`. | `false` |
 | apiToken | String | Yes | `null` | The Netskope API Token you want to use to authenticate requests. |  |
-| eventTypes | Array of Strings | No | all | Defines the types of events to collect. Accepted values are page, application, infrastructure, audit, network, connection, incident, and endpoint. Alerts are always collected. |  |
+| eventTypes | Array of Strings | No | all | Defines the types of events to collect. Accepted values are `page`, `application`, `infrastructure`, `audit`, `network`, `connection`, `incident`, and `endpoint`. If empty, all eight types are collected. | `["page","audit"]` |
+| disableAlerts | Boolean | No | `false` | Alert events are collected by default. Set to `true` to stop collecting them. | `false` |
 
 ### JSON example
 
@@ -191,4 +202,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Netskope Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/netskope/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Netskope Automation Service Integration](/docs/integrations/automation-integrations/netskope/) to automate response actions directly from Cloud SOAR playbooks.

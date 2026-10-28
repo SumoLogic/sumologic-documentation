@@ -10,9 +10,9 @@ import Iframe from 'react-iframe';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
-<img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="35"/>
+<img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="40"/>
 
-The SOC Analyst Agent automatically investigates Cloud SIEM insights and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already laid. Your team can continue any investigation conversationally with [Mobot](/docs/search/mobot/), Dojo AI's chat interface.
+The SOC Analyst Agent automatically investigates Cloud SIEM insights and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already laid. Your team can continue any investigation conversationally with [Mobot](/docs/search/mobot/), DojoAI's chat interface.
 
 By cutting manual triage and reducing mean time to resolution, the agent lets SOC teams focus on real threats instead of repetitive work. It shows the data it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith.
 
@@ -44,7 +44,7 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 <Iframe url="https://fast.wistia.net/embed/iframe/3ppvthpmdd?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Dojo AI SOC Analyst Agent"
+  title="Micro Lesson: DojoAI SOC Analyst Agent"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -106,7 +106,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
        1. Click **View Details** on the confirmation to see details about the playbook automation, and then you should see a confirmation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
        1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
           :::note
-          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication/).
           :::
           -->
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
@@ -116,7 +116,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 
 Follow these steps once you're in Mobot:
 
-1. From the insight's **Details** page, click **Ask Mobot** to open the investigation in [Mobot](/docs/search/mobot/), Dojo AI's chat interface.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
+1. From the insight's **Details** page, click **Ask Mobot** to open the investigation in [Mobot](/docs/search/mobot/), DojoAI's chat interface.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
 1. The full AI investigation appears in Mobot. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="800" />
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (i.e., hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can also query other data in your account, such as raw cloud logs, metrics, lookup tables, and collector health. When Mobot returns information from outside the Cloud SIEM index, it indicates the source.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
 1. After executing a prompt like the one above, Mobot analyzes your request and fashions a log search query based on it.
@@ -224,7 +224,7 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 ### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks such as MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts with an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), Dojo AI's chat interface, to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks such as MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts with an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface, to map relationships, connect entities, and summarize findings.
 
 ### Will the agent increase scanning or data-processing costs?
 
@@ -326,7 +326,7 @@ Cloud SIEM groups related signals for the same entity into insights, so analysts
 
 ## Additional resources
 
-* [Sumo Logic | Dojo AI](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
+* [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). See how the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
 * [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
 * [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats)

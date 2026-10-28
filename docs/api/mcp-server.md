@@ -624,7 +624,7 @@ Review the scopes you grant each client, the roles of the connecting users or se
 
 ## Additional resources
 
-* [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
+* [DojoAI](https://www.sumologic.com/solutions/dojo-ai)
 * [Skills vs. MCP: You’re probably reaching for the wrong one | Sumo Logic Blog](https://www.sumologic.com/blog/skills-vs-model-context-protocol-mcp)
 * [Token Torching: How I’d burn your AI budget (so you can fix it) | Sumo Logic Blog](https://www.sumologic.com/blog/token-torching-ai-attack)
 * [Closing the AI compliance and visibility gap: Integrate the Claude Compliance API with Sumo Logic | Sumo Logic Blog](https://www.sumologic.com/blog/sumo-logic-claude-compliance-api-integration)

@@ -24,7 +24,7 @@ The Sumo Logic app for AWS EC2 Host Metrics uses the following metrics:
 
 ### Sample queries  
 
-```sql title="Average CPU Utilization"
+```metrics title="Average CPU Utilization"
 _sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
 ```
 

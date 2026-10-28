@@ -15,7 +15,7 @@ This page describes the recommended best practices for high performance Dashboar
 
 Sumo Logic implements multiple layers of throttling to ensure a balanced system load, which protects you and Sumo Logic from performance degradation. The throttling mechanism is applied on a per-user basis and is as detailed below:
 
-- **Panel queries**. Sumo Logic limits concurrency to 10 queries per user, to a maximum of two nodes per user across all sessions. It's important to note that if a panel contains multiple queries, each query will be counted separately towards the concurrency limit.
+- **Panel queries**. Sumo Logic runs up to 10 panel queries at a time per user across all sessions. If a dashboard has more queries than that, the remaining queries start as earlier ones finish, so large dashboards may take longer to load. If a panel contains multiple queries, each query counts separately toward this limit.
 - **Template variable queries**. Sumo Logic applies throttling to template variable queries separately, limiting them to a maximum of 10 concurrent queries per user across all sessions.
 - **Scheduled export**. Sumo Logic applies throttling on scheduled exports to five concurrent jobs per user, each with a timeout of five minutes.
 

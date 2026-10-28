@@ -172,7 +172,7 @@ To use metadata to view Kubernetes components and display Kubernetes label resul
 1. Click **Start** to run the query, then under **Hidden Fields** on the **Messages** tab, click **namespace** to display the metadata for that Kubernetes component. Notice that the namespace field moves **Hidden Fields** to **Display Fields**.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace_Display_Fields.png')} alt="Namespace display fields" style={{border: '1px solid gray'}} width="500" />
 1. To view metadata for a key-value pair, enter the key-value pair in the query text field. In our example, we wanted to view the metadata for the prometheus container and entered `container=prometheus`.
 1. Then we expanded the search range by changing the time interval from the last 15 minutes to the **Last 60 minutes**.
-1. To further investigate the container, we clicked **Logreduce**, which groups common log messages into signature groupings. 
+1. To further investigate the container, we clicked **LogReduce®**, which groups common log messages into signature groupings. 
 1. To examine the details of the smaller set of signatures that appear, under **Select Count** we selected. Oftentimes when troubleshooting a problem, our lesser quantity contains the root cause.<br/><img src={useBaseUrl('img/kubernetes/MWT_LogReduce_1.png')} alt="Select Count" style={{border: '1px solid gray'}} width="800" /><br/>
     The warning `Endpoints ended with: too old resource version` may be something to investigate or just the indication of an ongoing upgrade.
 1. To view data for other Kubernetes components, we can enable them one by one by selecting the checkbox next to **namespace**, **cluster**, **container**, **pod**, **service**, and/or **Source Host**.
