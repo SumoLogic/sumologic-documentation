@@ -29,7 +29,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Aggregate](/docs/search/search-query-language/group-aggregate-operators)**. A group of data returned by a search, displayed in a simple table in the Aggregates tab of the Search page.
 
-**[Alert](/docs/alerts)**. A notification triggered when a monitoring condition is met. In [monitors](/docs/alerts/monitors/overview), an alert is created when critical, warning, or missing data trigger conditions are satisfied. It includes contextual information to help investigate the issue. In [scheduled searches](/docs/alerts/scheduled-searches/schedule-search), alert types include Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
+**[Alert](/docs/alerts)**. A notification triggered when a monitoring condition is met. In [monitors](/docs/alerts/monitors/about), an alert is created when critical, warning, or missing data trigger conditions are satisfied. It includes contextual information to help investigate the issue. In [scheduled searches](/docs/alerts/scheduled-searches/schedule-search), alert types include Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
 
 **[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. A list of IP addresses or CIDR ranges that are explicitly granted access to logins, APIs, and dashboards. Configured on the **Service Allowlist Settings** tab in Account Security Settings.
 
@@ -357,5 +357,3 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 ## U
 
 **[user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties)**. The user.properties file is used to pass collector parameters for some installation methods.
-
-

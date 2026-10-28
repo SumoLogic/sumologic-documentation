@@ -1256,7 +1256,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
-            'alerts/monitors/overview',
+            'alerts/monitors/about',
             'alerts/monitors/create-monitor',
             'alerts/monitors/create-monitor-with-mobot',
             'alerts/monitors/settings',
