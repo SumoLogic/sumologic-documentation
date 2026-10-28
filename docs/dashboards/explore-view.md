@@ -26,7 +26,7 @@ To navigate, do the following:
 
 ### Stack linking
 
-Stack linking connects dashboards so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards/explore/stack-linking.png')} alt="Stack linking" style={{border: '1px solid gray'}}  width="500"/>
+Stack linking connects dashboards so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards/explore/stack-linking.png')} alt="Stack linking" style={{border: '1px solid gray'}} width="500"/>
 
 ## Monitoring dashboard categories
 
@@ -48,7 +48,7 @@ Application Monitoring provides three Service and Application dashboard views. T
 
 [Real User Monitoring](/docs/apm/real-user-monitoring) allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards/explore/real-user-monitoring.png')} alt="RUM" style={{border: '1px solid gray'}} width="500" />
 
-### Database View​
+### Database View
 
 Sumo Logic provides a set of dashboards for various components of your application that allow you to review the state of individual parts of your system. You can track errors, performance, and usage of application components, grouped by their type and logical clusters.
 
@@ -187,4 +187,4 @@ To further pinpoint the problem with our cluster, we investigated the namespace 
 
 ### Step 3: Drilling down into a pod
 
-Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example,  you can select the **Details** icon for a panel to view that data in a search. Or, you can review the actual logs in the Log Stream panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" />
+Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example, you can select the **Details** icon for a panel to view that data in a search. Or, you can review the actual logs in the Log Stream panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" />

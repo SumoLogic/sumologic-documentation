@@ -22,7 +22,7 @@ Before you share a dashboard with users external to your organization, you must 
 
 In this step, you'll enable the ability to share dashboards outside your organization. You must have admin privileges to enable the policy.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Administration > Security > Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
 1. Select the **Enable** checkbox for **Share Dashboards Outside of the Organization**.
 1. The policy is changed. It can take up to 5 minutes for the policy to go into effect.
 
@@ -47,13 +47,13 @@ Administrator privileges are required to enable the service allowlist.
 
 1. Go to your **Library** and search for the dashboard you want to share.
 1. Right-click the dashboard name in the resulting list.
-1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="Share option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click the share icon next to the dashboard title.  <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="Share option 2" style={{border: '1px solid gray'}} width="400"/>
-1.  The **Share Dashboard** dialog appears.
-1.  Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="Share outside" width="800"/>
-1.  If you want viewers to see the current time range in the URL, toggle the **Include current time range in the URL** option.
-1.  If you want viewers to see the current variable values in the URL, toggle the **Include current variable values in the URL** option.
-1.  Toggle the **Public Dashboard** on.
-1.  Select **Anyone** or **Allowlist only** as the visibility access, and click **Save**.
+1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="Share option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click the share icon next to the dashboard title. <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="Share option 2" style={{border: '1px solid gray'}} width="400"/>
+1. The **Share Dashboard** dialog appears.
+1. Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="Share outside" width="800"/>
+1. If you want viewers to see the current time range in the URL, toggle the **Include current time range in the URL** option.
+1. If you want viewers to see the current variable values in the URL, toggle the **Include current variable values in the URL** option.
+1. Toggle the **Public Dashboard** on.
+1. Select **Anyone** or **Allowlist only** as the visibility access, and click **Save**.
 
 The URL that external users can use to access the dashboard appears under the **Shareable URL** section of the page.
 

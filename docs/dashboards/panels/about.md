@@ -119,7 +119,7 @@ Only [map charts](map-charts.md) are supported.<br/><img src={useBaseUrl('/img/d
 
 <img src={useBaseUrl('/img/dashboards/panels/text-panel.png')} style={{border: '1px solid gray'}} alt="text panel" width="75"/>
 
-Text can clarify what you are showing on dashboards or act as a note to your viewer. Text  panels provide the flexibility to display descriptive text in or above other panels.
+Text can clarify what you are showing on dashboards or act as a note to your viewer. Text panels provide the flexibility to display descriptive text in or above other panels.
 
 Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](markdown-syntax.md).
 
@@ -207,7 +207,7 @@ To add a Traces panel:
     | Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
     | Root Service | api | The service that started the trace. |
     | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
-    | Duration | 12.582 ms | The amount of time the trace spans.  |
+    | Duration | 12.582 ms | The amount of time the trace spans. |
     | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
     | Duration Breakdown | <img src={useBaseUrl('/img/apm/traces/breakdown.png')} style={{border: '1px solid gray'}} alt="breakdown" width="800"/> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('/img/apm/traces/span-hover-view.png')} style={{border: '1px solid gray'}} alt="span hover" width="800"/> |
     | Number of errors | 0 | The number of errors in the trace. |

@@ -41,7 +41,7 @@ When you rename or add a panel to a dashboard it is automatically saved in your
 
 There are two ways to create a **Dashboard**, either by using the following method, or by creating it directly from the [Log Search page](#log-search-page) or [Metrics page](#metrics-page). Panels and customized charts will be added in later steps.
 
-1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
 1. Select the dashboard text field at the top of the window and enter a unique name for your new dashboard.
 
 import TerraformLink from '../reuse/terraform-link.md';
@@ -91,7 +91,7 @@ You can customize a chart on a dashboard panel in a variety of ways. To include�
 
 ## Add to dashboard
 
-Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  <br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
+Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard. <br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
 That's it, start using your dashboard.
 
