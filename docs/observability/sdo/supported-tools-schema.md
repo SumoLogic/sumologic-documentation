@@ -8,31 +8,31 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Software Development Optimization (SDO) Solution comes bundled with Terraform support for the following tools in each phase of the DevOps lifecycle. While tools not listed in the table below lack Terraform support for automated installation, virtually any DevOps tool can be configured to work with SDO through manual configuration by transforming the structure of data ingested by these tools — using Sumo Logic Field Extraction Rules (FERs) — to adhere to the schema defined below.
 
-| DevOps phases             | Supported with Terraform                                          |
+| DevOps phases | Supported with Terraform |
 |:---------------------------|:-----------------------------------------------------------|
-| Planning Phase            | Jira Cloud, Jira Server                                   |
-| Dev/Code                  | GitHub, Bitbucket, GitLab                                 |
+| Planning Phase | Jira Cloud, Jira Server |
+| Dev/Code | GitHub, Bitbucket, GitLab |
 | Build/Test/Deploy/Release | Jenkins, Bitbucket Pipelines, CircleCI  Pipelines, GitLab |
-| Monitor/Operate           | PagerDuty, Opsgenie                                       |
+| Monitor/Operate | PagerDuty, Opsgenie |
 
 ## Software Development Optimization dashboards
 
 The apps and dashboards that are part of this solution are organized into:
 
 * Tool specific dashboards that are based on the logs from individual DevOps tools to monitor the operations and security of individual tools.
-* Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you don’t have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
+* Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you do not have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
 
 ##  Schema overview
 
-As discussed earlier, the abstraction of tools is achieved via a common event schema model, where events from DevOps tools are mapped to fields via Sumo Logic [Field Extraction Rules (FERs)](/docs/manage/field-extractions). 
+As discussed earlier, the abstraction of tools is achieved via a common event schema model, where events from DevOps tools are mapped to fields via Sumo Logic [Field Extraction Rules (FERs)](/docs/manage/field-extractions).
 
-This model also enables you to integrate events from any of your tools, that may not be supported at present to the Software Development Optimization solution. 
+This model also enables you to integrate events from any of your tools, that may not be supported at present to the Software Development Optimization solution.
 
 <img src={useBaseUrl('img/sdo/SchemaTool.png')} alt="Schema diagram" style={{border: '1px solid gray'}} width="800" />
 
 ## Schema definition
 
-The tables below show the schema for various events from DevOps pipeline. These fields are required by Software Development Optimization Solutions dashboards and queries. 
+The tables below show the schema for various events from DevOps pipeline. These fields are required by Software Development Optimization Solutions dashboards and queries.
 
 **Deploy Event** - A deploy event describes when an artifact is deployed to dev, test, stage, or production. This event belongs to the Deploy and Release **DevOps Phase.**
 
@@ -55,9 +55,9 @@ The table below shows how deploy events are defined in the schema:
 | `service` | This field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
 | `team` | This field indicates the team for which a deploy event occurred. Set the value of this field to “N/A” if not available. | Optional |
 
-**Build Event.** These events describe the chain of events when a  source code repository is compiled into executable artifacts, after which a series of automated unit and regressions tests are run.  
+**Build Event.** These events describe the chain of events when a  source code repository is compiled into executable artifacts, after which a series of automated unit and regressions tests are run.
 
-**DevOps Phase.** Build and Test  
+**DevOps Phase.** Build and Test
 
 The table below shows how build events are defined in the schema:
 
@@ -68,7 +68,7 @@ The table below shows how build events are defined in the schema:
 | link | This field is used to provide a URL pointer to the build event. | Required |
 | datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
 | status | This field is used to indicate the status of the build event. Values for this field should be set to one of the following: "Success", "Failure", "Unstable", or "Unknown". You can also send in other values if applicable as well. | Required |
-| commit_id | This field is used to indicate the commit ID associated with a build event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required | 	 	 
+| commit_id | This field is used to indicate the commit ID associated with a build event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required |
 | target_branch | This field is used to indicate the target code branch associated with a build event. Set the value of this field to “N/A” if not available. | Optional |
 | repository_name | This field is used to indicate the code repository associated with the build event. Set the value of this field to “N/A” if not available. | Optional |
 | message | This field is used to indicate any message Set the value of this field to “N/A” if not available. | Optional |
@@ -99,7 +99,7 @@ The table below shows how Push events are represented in the schema:
 
 **DevOps Phase.** Code
 
-The table below shows how Pull Request events are represented in the schema: 
+The table below shows how Pull Request events are represented in the schema:
 
 | Field | Explanation | Required/Optional |
 | :-- | :-- | :-- |
@@ -108,10 +108,10 @@ The table below shows how Pull Request events are represented in the schema: 
 | link | This field is used to provide a URL pointer to the pull_request event. | Required |
 | commit_id | This field is used to indicate the commit ID associated with a pull_request event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required |
 | head_commit_id | This field is used to indicate the commit_id of the head commit associated with a pull_request event. | Required |
-| reviewers | This field represents a list of  reviewers. This data is expected to be in the following format: `["john","bob",..]` | Required |
+| reviewers | This field represents a list of reviewers. This data is expected to be in the following format: `["john","bob",..]` | Required |
 | datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
 | status | This field represents the status of the pull request event. Values for this field should be set to one of: “merged”, “declined” or “created”. You can also send in other values if applicable as well. | Required |
-| closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (e.g.  created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
+| closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (for example, created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
 | updateddatetime_epoch | This field is used to indicate the last updated date and time in UTC epoch milliseconds of the event. | Required |
 | target_branch | This field is used to indicate the target code branch associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |
 | user | This field indicates the user associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |
@@ -119,7 +119,7 @@ The table below shows how Pull Request events are represented in the schema: 
 | service | This field indicates the service that got pull_request. Set the value of this field to “N/A” if not available. | Optional |
 | repository_name | This field is used to indicate the code repository associated with the pull request event. Set the value of this field to “N/A” if not available. | Optional |
 
-**Incident/Alert Event.** These events identify when a production or customer-facing incident is created, resolved, and managed through an incident management system.     
+**Incident/Alert Event.** These events identify when a production or customer-facing incident is created, resolved, and managed through an incident management system.
 
 **DevOps Phase.** Monitor and Operate
 
@@ -132,11 +132,11 @@ The table below shows how Incident/Alert events are represented in the schema.
 | priority | Values for this field should be set to one of: “high”, “medium”, “low”. You can also send in other values if applicable as well. | Required |
 | link | This field is used to provide a URL pointer to the alert event. | Required |
 datetime_epoch	This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
-| closeddate_epoch | For closed alerts, this field represents the date and time when the alert was closed in epoch milliseconds. For alert creation, or other alert events,  this field can be empty, "n/a" or "000000"	 | Required |
+| closeddate_epoch | For closed alerts, this field represents the date and time when the alert was closed in epoch milliseconds. For alert creation, or other alert events, this field can be empty, "n/a" or "000000"	 | Required |
 | service | This field indicates the service that got pull_request. Set the value of this field to “N/A” if not available. | Optional |
 | team | This field indicates the team for which an alert event occurred. Set the value of this field to “N/A” if not available. | Optional |
 
-**Issue Event.** These events describe events when a task, bug, issue, or work item is created and updated.   
+**Issue Event.** These events describe events when a task, bug, issue, or work item is created and updated.
 
 **DevOps Phase.** Plan
 
@@ -151,9 +151,9 @@ The table below shows how Issue events are represented in the schema.
 | priority | This field represents the Priority of an Issue. Values for this field should be set to one of: “Major”, “Critical”, “Medium”, “Blocker”, “Minor”, “Low”, “High”, “Highest”, “Trivial”. You can also send in other values if applicable as well. | Required |
 | closeddate_epoch | For closed alerts, this field represents the date and time when the alert was closed in epoch milliseconds. For alert creation, or other alert events, this field can be empty, "n/a" or "000000" | Required |
 | event_type | This field indicates the type of DevOps log event. The value of this field should be set to “issue.” | Required |
-| issue_event_type | This field indicates the type of event related to an issue.  Values for this field should be set to one of: “Created”, “Deleted”, “Updated”, “Reopened” or “Closed” | Optional |
+| issue_event_type | This field indicates the type of event related to an issue. Values for this field should be set to one of: “Created”, “Deleted”, “Updated”, “Reopened” or “Closed” | Optional |
 | project_name | This field represents the project associated with an issue event. Set the value of this field to “N/A” if not available. | Optional |
-| service | This field indicates the service that got an alert. Set the value of this field to “N/A” if not available.  | Optional |
+| service | This field indicates the service that got an alert. Set the value of this field to “N/A” if not available. | Optional |
 | team | This field indicates the team for which an alert event occurred. Set the value of this field to “N/A” if not available. | Optional |
 | datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Optional |
 
@@ -172,7 +172,7 @@ parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..
 | if (alert_type matches "*trigger", "alert_created", if(alert_type matches "*resolve", "alert_closed", "other") ) as event_type
 ```
 
-The field extraction rule created is shown in the diagram below: 
+The field extraction rule created is shown in the diagram below:
 
 <img src={useBaseUrl('img/sdo/pagerduty-v2-alerts.png')} alt="PagerDuty alerts" style={{border: '1px solid gray'}} width="400" />
 
@@ -181,11 +181,11 @@ Examples of mapping field extraction rules to the other out-of-the-box tools ca
 
 ## Enriching the schema with additional fields
 
-You can add additional fields such as project, product, or server names to the above schema by following the steps below: 
+You can add additional fields such as project, product, or server names to the above schema by following the steps below:
 
 1. Modify the existing set of FERs, by adding a new field in the definition of that FER . For example, if you are modifying the Sumo Logic Jenkins FER, then you can add this field either in:
     * The [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload) function in the Jenkins plugin.
-    * Add [metadata fields](/docs/manage/fields) at the Sumo Logic source.  
+    * Add [metadata fields](/docs/manage/fields) at the Sumo Logic source.
 1. Write and test Sumo Logic searches using this new field to derive the insights you want.
 1. Add [panels](/docs/dashboards/panels) based on the above searches to the existing set of dashboards.
 1. Add [filters](/docs/dashboards/filter-template-variables) to the dashboards.
