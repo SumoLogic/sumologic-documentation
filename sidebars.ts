@@ -34,22 +34,15 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
+        'preview/index',
         'get-started/help',
         'get-started/faq',
       ],
     },
-    {
-      type: 'category',
-      label: 'Preview Releases',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'preview/index'},
-      items: [],
-    },
     //Contribution guide for documentation
     {
       type: 'category',
-      label: 'Contribution Guide',
+      label: 'Docs Contribution Guide',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'contributing/index'},
@@ -1246,12 +1239,12 @@ module.exports = {
   },
 ],
 // **ALERTS:
-  alerts: [
+  alertsdashboards: [
     {
       type: 'category',
       label: 'Alerts',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'alerts/index'},
       items: [
         'alerts/difference-from-scheduled-searches',
@@ -1262,7 +1255,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
-            'alerts/monitors/overview',
+            'alerts/monitors/about',
             'alerts/monitors/create-monitor',
             'alerts/monitors/create-monitor-with-mobot',
             'alerts/monitors/settings',
@@ -1333,14 +1326,11 @@ module.exports = {
         },
       ],
     },
-  ],
-  // ** DASHBOARDS:
-  dashboards: [
     {
       type: 'category',
       label: 'Dashboards',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'dashboards/index'},
       items: [
         'dashboards/about',
@@ -1357,6 +1347,7 @@ module.exports = {
           link: {type: 'doc', id: 'dashboards/panels/index'},
           items: [
             'dashboards/panels/modify-chart',
+            'dashboards/panels/section',
             'dashboards/panels/area-charts',
             'dashboards/panels/bar-charts',
             'dashboards/panels/box-plot-charts',
@@ -1369,7 +1360,6 @@ module.exports = {
             'dashboards/panels/pie-charts',
             'dashboards/panels/sankey-charts',
             'dashboards/panels/scatter-charts',
-            'dashboards/panels/section',
             'dashboards/panels/single-value-charts',
             'dashboards/panels/table-charts',
           ],
@@ -1783,9 +1773,6 @@ module.exports = {
     'search/faq',
     ],
   },
-],
-// *** METRICS & LOGS: all metrics content
-  metricslogs: [
     {
       type: 'category',
       label: 'Metrics',
@@ -1897,7 +1884,7 @@ module.exports = {
       type: 'category',
       label: 'Traces',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'apm/traces/index'},
       items: [
         'apm/traces/quickstart',
@@ -2026,9 +2013,6 @@ module.exports = {
    'apm/services-list-map',
  ],
 },
-],
-// *** OBSERVABILITY: aws, kubernetes, root cause analysis
-  observability: [
     {
       type: 'category',
       label: 'Observability',
@@ -2214,31 +2198,31 @@ module.exports = {
           ],
         },
         'observability/work-from-home-vpn',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Software Dev Optimization (SDO)',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'observability/sdo/index'},
-      items: [
-        'observability/sdo/about-sdo',
         {
           type: 'category',
-          label: 'Setting Up SDO',
+          label: 'Software Dev Optimization (SDO)',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'observability/sdo/set-up-sdo/index'},
+          link: {type: 'doc', id: 'observability/sdo/index'},
           items: [
-            'observability/sdo/set-up-sdo/sdo-manual-configuration',
-            'observability/sdo/set-up-sdo/sdo-setup-with-terraform-script',
+            'observability/sdo/about-sdo',
+            {
+              type: 'category',
+              label: 'Setting Up SDO',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'observability/sdo/set-up-sdo/index'},
+              items: [
+                'observability/sdo/set-up-sdo/sdo-manual-configuration',
+                'observability/sdo/set-up-sdo/sdo-setup-with-terraform-script',
+              ],
+            },
+            'observability/sdo/install-sdo-app-view-dashboards',
+            'observability/sdo/supported-tools-schema',
+            'observability/sdo/jenkins-plugin-build-deploy-events',
+            'observability/sdo/integrate-tools-with-sdo',
           ],
         },
-        'observability/sdo/install-sdo-app-view-dashboards',
-        'observability/sdo/supported-tools-schema',
-        'observability/sdo/jenkins-plugin-build-deploy-events',
-        'observability/sdo/integrate-tools-with-sdo',
       ],
     },
   ],
@@ -3213,20 +3197,6 @@ integrations: [
             'cse/schema/parsing-language-reference-guide',
             'cse/schema/parsing-patterns',
             'cse/schema/username-and-hostname-normalization',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Sensors',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'cse/sensors/index'},
-          items: [
-            'cse/sensors/ingest-zeek-logs',
-            'cse/sensors/sensor-download-locations',
-            'cse/sensors/network-sensor-deployment-guide',
-            'cse/sensors/network-sensor-troubleshooting',
-            'cse/sensors/log-sensor-troubleshooting',
           ],
         },
         {

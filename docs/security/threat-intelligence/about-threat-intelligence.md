@@ -53,7 +53,7 @@ To access Threat Intelligence in Sumo Logic,
 Access to the Threat Intelligence tab requires Cloud SIEM. Without Cloud SIEM, you will not see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches.
 :::
 
-Cloud SIEM analysts can use all sources shown in the **Sources** tab of the **Threat Intelligence** page to find threats (see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). All Sumo Logic users can also run queries against the indicators in the Sumo Logic threat intelligence sources (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
+Cloud SIEM analysts can use all sources shown in the **Sources** tab of the **Threat Intelligence** page to find threats (see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). All Sumo Logic users can also run log search queries against the indicators in their threat intelligence sources using the [`threatlookup`](/docs/search/search-query-language/search-operators/threatlookup/) search operator, or against the Sumo Logic threat intelligence sources using the [`lookup`](/docs/search/search-query-language/search-operators/lookup/) and [`threatip`](/docs/search/search-query-language/search-operators/threatip/) operators. For more information, see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/).
 
 <CloudSIEMThreatIntelNote/>
 
