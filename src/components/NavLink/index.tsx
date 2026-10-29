@@ -11,6 +11,13 @@ const dropdownLinkActiveClass = 'dropdown__link--active';
 export interface ExtendedNavLinkProps extends NavLinkProps {
   sublabel?: string;
   icon?: string;
+  // Raw SVG path `d` data, for reproducing a product-UI icon instead of a
+  // Material Icons ligature. Takes precedence over `icon` when set.
+  svgIcon?: string;
+  // viewBox for svgIcon; product icons aren't all drawn on the same grid.
+  svgViewBox?: string;
+  // fill-rule for svgIcon, when the path relies on it (e.g. a cutout shape).
+  svgFillRule?: 'nonzero' | 'evenodd';
 }
 
 export default function NavLink({
@@ -21,6 +28,9 @@ export default function NavLink({
   label,
   sublabel,
   icon,
+  svgIcon,
+  svgViewBox = '0 0 96 96',
+  svgFillRule,
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
   ...props
@@ -57,7 +67,13 @@ export default function NavLink({
       {...props}
     >
       <div className='link'>
-      {icon && <div className='link__icon'><span className="material-icons-outlined">{icon}</span></div>}
+      {svgIcon ? (
+        <div className='link__icon'>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox={svgViewBox} width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d={svgIcon} fillRule={svgFillRule} />
+          </svg>
+        </div>
+      ) : icon && <div className='link__icon'><span className="material-icons-outlined">{icon}</span></div>}
         <div className='link__body'>
           <div className='link__label'>
             {isExternalLink ? (

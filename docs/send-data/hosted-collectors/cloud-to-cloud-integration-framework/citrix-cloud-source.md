@@ -2,7 +2,7 @@
 id: citrix-cloud-source
 title: Citrix Cloud Source
 sidebar_label: Citrix Cloud
-tags:
+keywords:
   - cloud-to-cloud
   - citrix-cloud
 description: Learn how to collect System Log from the Citrix Cloud and send it to Sumo Logic.

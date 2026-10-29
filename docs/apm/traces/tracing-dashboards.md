@@ -23,7 +23,7 @@ Each dashboard is a fully customizable set of panels based on automatically gene
 * **Requests**: (real-time counter) the number of entry spans reported by the service.
 * **Errors**: (real-time counter) the number of entry spans for the service that finished with an error.
 
-By clicking on any data point on the chart, you can view the side panel's **Entities** tab and drill down to related metrics or traces for the selected service.
+By clicking any data point on the chart, you can view the side panel's **Entities** tab and drill down to related metrics or traces for the selected service.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png' alt="Explore coffee app to drill down on infrastructure tab" width="950"/>
 
@@ -32,32 +32,32 @@ By clicking on any data point on the chart, you can view the side panel's **Enti
 Tracing metrics retention has [default metrics retention](/docs/apm/traces/view-and-investigate-traces#set-time-range).
 :::
 
-## Installing the Tracing App (Optional)
+## Installing the Tracing app (Optional)
 
-The **Tracing - Application Services Health** app is automatically installed for all users of your organization once Sumo Logic detects OpenTelemetry-compatible tracing data coming from your instrumented services. The content is placed in **Sumo Logic Tracing - default dashboards** inside the **Installed Apps** folder and is automatically available for all users in the organization.
+The **Tracing - Application Services Health** app is automatically installed for all users of your org once Sumo Logic detects OpenTelemetry-compatible tracing data coming from your instrumented services. The content is placed in **Sumo Logic Tracing - default dashboards** inside the **Installed Apps** folder and is automatically available for all users in the organization.
 
 :::note
-Do not modify or delete content in the **Installed Apps** folder as it is maintained by Sumo Logic. If for any reason this gets removed, you can install the App manually from App Catalog.
+Do not modify or delete content in the **Installed Apps** folder as it is maintained by Sumo Logic. If for any reason this gets removed, you can install the app manually from the App Catalog.
 :::
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-## Upgrade/Downgrade the Tracing App (Optional)
+## Upgrade/Downgrade the Tracing app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Tracing App (Optional)
+## Uninstalling the Tracing app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
 
-## Dashboard Panels
+## Dashboard panels
 
-There are three tracing-specific dashboard panels available out of the box: **Services Map**, **Services List**, and **Trace List** panels, which explore your application environment and review all traces from your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
+There are three tracing-specific dashboard panels available out of the box: **Services Map**, **Services List**, and **Trace List** panels, which explore your application environment and review all traces from your dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your org.
 
 See the [Dashboard guide](/docs/dashboards) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
@@ -65,7 +65,7 @@ See the [Dashboard guide](/docs/dashboards) for additional information and optio
 
 The **Services Table** and **Services Graph** panels display a services list and services map, respectively, for filtered applications and services, with the ability to explore the environment.
 
-To add a Service Map panel to your Dashboard, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
+To add a Service Map panel to your dashboard, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
 
 ### Trace List panel
 
@@ -75,12 +75,12 @@ The Trace List panel displays the [Traces page](view-and-investigate-traces.md) 
 You are limited to three Trace List panels in a dashboard.
 :::
 
-To add a Trace List panel to your Dashboard:
-1. Open or create a new Dashboard.
-2. Click **Add Panel** and select **Trace List**. Or select the **Trace List** option on a new Dashboard.<br/><img src={useBaseUrl('img/apm/traces/add-tracelist.png')} alt="Add tracelist" style={{border: '1px solid gray'}} width="400" />
+To add a Trace List panel to your dashboard:
+1. Open or create a new dashboard.
+2. Click **Add Panel** and select **Trace List**. Or select the **Trace List** option on a new dashboard.<br/><img src={useBaseUrl('img/apm/traces/add-tracelist.png')} alt="Add tracelist" style={{border: '1px solid gray'}} width="400" />
     <br/>A panel configuration page opens.<br/><img src={useBaseUrl('img/apm/traces/create-tracelist.png')} alt="Create tracelist" style={{border: '1px solid gray'}} width="800" />
 3. Configure a [Trace query](view-and-investigate-traces.md) to search for desired set of traces.
-4. Select a time range or create a custom range for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/><img src={useBaseUrl('img/apm/traces/timerange.png')} alt="Time range" style={{border: '1px solid gray'}} width="300" />
+4. Select a time range or create a custom range for the panel. You can set this when creating or at any time when viewing the dashboard panel.<br/><img src={useBaseUrl('img/apm/traces/timerange.png')} alt="Time range" style={{border: '1px solid gray'}} width="300" />
 5. The **Chart Type** is set to Table.
 6. Enter the **Rows Per Page** for the panel, between 5 to 100. The default amount is 15. The panel automatically paginates traces to browse through and view all traces.
 7. Select the Table columns of trace data to load in the panel:
@@ -92,15 +92,15 @@ To add a Trace List panel to your Dashboard:
   | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
   | Duration | 12.582 ms | The amount of time the trace spans.  |
   | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-  | Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="300" style={{border: '1px solid gray'}} width="<insert-pixel-number>" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Duration breakdown legend" style={{border: '1px solid gray'}} width="300" /> |
+  | Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="300" style={{border: '1px solid gray'}} width="<insert-pixel-number>" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Duration breakdown legend" style={{border: '1px solid gray'}} width="300" /> |
   | Number of errors | 0 | The number of errors in the trace. |
   | Status | 200 | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/><img src={useBaseUrl('img/apm/traces/similar-traces-menu.png')} alt="Traces status" style={{border: '1px solid gray'}} width="200" /> |
 
 8. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('img/apm/traces/tracelist-details.png')} alt="Trace list" width="400"/>
-9. Click **Add to Dashboard**. The panel loads in your Dashboard to review all traces according to the query.<br/><img src={useBaseUrl('img/apm/traces/panel-trace.png')} alt="Panel trace" style={{border: '1px solid gray'}} width="500" />
+9. Click **Add to Dashboard**. The panel loads in your dashboard to review all traces according to the query.<br/><img src={useBaseUrl('img/apm/traces/panel-trace.png')} alt="Panel trace" style={{border: '1px solid gray'}} width="500" />
 
 
-### Dashboard Examples
+### Dashboard examples
 
 #### 01. Application Service Overview
 

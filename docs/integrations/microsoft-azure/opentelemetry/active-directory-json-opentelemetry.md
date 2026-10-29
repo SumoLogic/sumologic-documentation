@@ -60,7 +60,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 In this step, we will configure the YAML required for Active Directory Collection.
 
-You can add any custom fields that you want to tag along with the data ingested in Sumo.
+You can add any custom fields that you want to tag along with the data ingested in Sumo Logic.
 
 Click on the **Download YAML File** button to get the YAML file.
 

@@ -73,7 +73,7 @@ The Sumo Logic app for AWS EC2 CloudWatch Metrics uses the following metrics:
 
 ### Sample queries
 
-```sql title="CPU utilization (CloudWatch metric-based)"
+```metrics title="CPU utilization (CloudWatch metric-based)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
 ```
 
@@ -164,7 +164,7 @@ Follow the steps below to collect logs for AWS API Gateway:
 
 If you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_created_in_sumo>

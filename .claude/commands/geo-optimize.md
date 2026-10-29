@@ -115,87 +115,16 @@ After applying changes, tell the user:
 
 ## GEO improvement patterns
 
-### Pattern 1: Strengthen the opening paragraph
+Full rules and examples for each pattern live in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md). Use this table as a quick reference when proposing changes.
 
-The opening paragraph is the highest-leverage GEO change. LLMs pull from the first few sentences more than anywhere else on the page.
-
-**Weak opener (do not leave as-is):**
-> This document provides information about configuring the AWS Observability solution.
-
-**Strong opener:**
-> The Sumo Logic AWS Observability solution collects metrics and logs from Amazon Web Services, including EC2, RDS, ELB, and Lambda, and correlates them in pre-built dashboards. It uses CloudFormation templates to deploy collectors automatically, requiring no manual source configuration.
-
-Rules for a strong GEO opener:
-- State what the subject is or does in the first sentence
-- State the mechanism, scope, or key capability in the second sentence
-- Do not start with "This document", "This page", "Overview", or "Welcome"
-- Aim for 2–4 sentences, 50–100 words
-
-### Pattern 2: Add an "At a glance" section
-
-Place this immediately after the opening paragraph for docs over 600 words.
-
-```markdown
-## At a glance
-
-- **What it does**: [One sentence — the core capability]
-- **How it works**: [One sentence — the mechanism]
-- **Supported [versions/types/platforms]**: [Specific list]
-- **Prerequisites**: [Specific list]
-- **Limitations**: [Key limits, if any]
-```
-
-Adapt the labels to fit the doc type. For reference docs, use "Key fields" or "Parameters at a glance." For how-to guides, use "Before you begin."
-
-**Prose variant (no heading).** For shorter docs, or when a bulleted block reads as boilerplate, fold the same at-a-glance facts into a short prose paragraph immediately after the opening paragraph, with no `## At a glance` heading. Use whichever form reads more naturally. The goal is a citable summary of what the feature is, what it supports, and what it does near the top of the page, not a specific layout.
-
-### Pattern 3: Reframe headings as questions
-
-AI tools and featured snippet algorithms favor pages where headings signal the question being answered.
-
-| Original heading | Question-format alternative |
-|-----------------|----------------------------|
-| Overview | What is [feature]? |
-| How it works | How does [feature] work? |
-| Configuring the source | How to configure the source |
-| Prerequisites | What do you need before you start? |
-| Limitations | What are the limitations of [feature]? |
-| Troubleshooting | Why is [feature] not working? |
-
-Only reframe headings where the question form is natural and specific. Do not reframe step headings like "Step 1: Configure the source" — those are correct as-is.
-
-For procedural sections, use a "How to X" statement (for example, `How to configure the source`), not "How do I X". Keep every heading in the second person or neutral phrasing, never the first person ("How do I", "What do I need").
-
-### Pattern 4: Make facts citation-ready
-
-LLMs extract facts that are stated as short, explicit, standalone sentences.
-
-**Hard to cite (buried fact):**
-> The integration, which was released in version 3.5 and works with both hosted and installed collectors, supports up to 10,000 events per second depending on the instance size.
-
-**Easy to cite (explicit facts):**
-> The integration supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors. It was introduced in version 3.5.
-
-### Pattern 5: Replace vague version references
-
-AI tools reproduce whatever is on the page. Vague references become stale citations.
-
-| Vague | Specific |
-|-------|----------|
-| the latest version | version 3.10 |
-| the current release | the May 2026 release |
-| recent updates | updates added in Q1 2026 |
-
-If the doc intentionally stays version-agnostic, add a note like "See the release notes for the current version number."
-
-### Pattern 6: Define acronyms and terms
-
-LLMs cannot infer definitions. If an acronym or domain term appears without definition, an AI may generate an incorrect expansion.
-
-Define on first use in body text:
-> Sumo Logic uses Field Extraction Rules (FERs) to parse key-value pairs from raw log messages at ingest time.
-
-After the first use, the abbreviation alone is fine. Define the term once at its genuine first use (often the opening paragraph). Do not re-expand the same acronym in later tables or sections.
+| Pattern | What it addresses | Rule source |
+|---------|------------------|-------------|
+| Strengthen the opening paragraph | Weak openers that bury the point | [Principle 1 — Answer first (BLUF)](.claude/skills/geo-guide/SKILL.md#principle-1--answer-first-bluf) |
+| Add an "At a glance" section | No citable summary near the top | [Principle 1 — Answer first (BLUF)](.claude/skills/geo-guide/SKILL.md#principle-1--answer-first-bluf) |
+| Reframe headings as questions | Section headings that don't signal the question being answered | [Principle 3 — Question-style headings](.claude/skills/geo-guide/SKILL.md#principle-3--question-style-headings) |
+| Make facts citation-ready | Key facts buried in long sentences | [AEO patterns — Make facts citation-ready](.claude/skills/geo-guide/SKILL.md#make-facts-citation-ready) |
+| Replace vague version references | "latest", "current", "recent" without specifics | [AEO patterns — Replace vague version references](.claude/skills/geo-guide/SKILL.md#replace-vague-version-references) |
+| Define acronyms and terms | Undefined abbreviations or domain terms | [AEO patterns — Define acronyms and terms](.claude/skills/geo-guide/SKILL.md#define-acronyms-and-terms) |
 
 ---
 

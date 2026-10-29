@@ -12,6 +12,6 @@ When you need to create a JSON file to configure your Collectors or Sources, the
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
 :::
 
-For more information about configuring sources in JSON files, and how to configure Sumo to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+For more information about configuring sources in JSON files, and how to configure Sumo Logic to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
 <img src={useBaseUrl('img/send-data/api-usage-cloud-syslog.png')} alt="JSON dialog" style={{border: '1px solid gray'}} width="600" />

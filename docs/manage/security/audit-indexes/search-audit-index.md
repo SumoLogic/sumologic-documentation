@@ -88,7 +88,7 @@ The table below shows the possible values for the `query_type` field.
 | Interactive Dashboard | Search queries run from dashboards in the UI only. |
 | Scheduled Search | [Scheduled sSearch](/docs/alerts/scheduled-searches) queries run as per the frequency specified by users in the org. |
 | View Maintenance | [Scheduled View](/docs/manage/scheduled-views) queries run on behalf of the users in the org. |
-| Sumo Internal | The internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, etc.).                                    |
+| Sumo Logic Internal | The internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, etc.).                                    |
 | Auto Refresh Dashboard | Search queries used to power auto refresh dashboard panels. |
 | Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
 | Span Analytics | Queries run for filtering and aggregating trace data based on [span attributes](/docs/apm/spans) to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |

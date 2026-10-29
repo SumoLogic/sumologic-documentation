@@ -110,13 +110,13 @@ export const features2 = [
 ];
 
 
-// Tab 3: Dojo AI
+// Tab 3: DojoAI
 export const features3 = [
   {
     title: translate({
       id: 'landing.feature.mobot.title',
-      message: 'Mobot (Dojo AI)',
-      description: 'Title for Dojo AI / Mobot',
+      message: 'Mobot (DojoAI)',
+      description: 'Title for DojoAI / Mobot',
     }),
     imageUrl: 'img/icons/operations/human-to-machine.png',
     description: (<Translate
@@ -129,23 +129,48 @@ export const features3 = [
   {
     title: translate({
       id: 'landing.feature.dojo-ai.title',
-      message: 'Dojo AI Platform',
-      description: 'Title for Dojo AI platform overview',
+      message: 'DojoAI Platform',
+      description: 'Title for DojoAI platform overview',
     }),
     imageUrl: 'img/icons/operations/human-to-machine.png',
     description: (
       <Translate
         id='landing.feature.dojo-ai.desc'
-        description='Dojo AI platform teaser description'>
+        description='DojoAI platform teaser description'>
         Explore our evolving AI capabilities built to accelerate investigation, automate workflows, and surface insights across your observability and security data.
       </Translate>
     ),
     link: 'https://www.sumologic.com/solutions/dojo-ai',
   },
+  {
+    title: translate({
+      id: 'landing.feature.soc-analyst-agent.title',
+      message: 'SOC Analyst Agent',
+      description: 'Title for SOC Analyst Agent',
+    }),
+    imageUrl: 'img/icons/operations/soc-analyst-agent.png',
+    description: (<Translate
+      id='landing.feature.soc-analyst-agent.desc'
+      description='SOC Analyst Agent description'>
+      Automatically investigate Cloud SIEM insights and get an AI verdict with supporting evidence.
+    </Translate>),
+    link: 'docs/cse/get-started-with-cloud-siem/soc-analyst-agent',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.mcp-server.title',
+      message: 'MCP Server',
+      description: 'Title for MCP Server',
+    }),
+    imageUrl: 'img/icons/operations/mcp-server.png',
+    description: (<Translate
+      id='landing.feature.mcp-server.desc'
+      description='MCP Server description'>
+      Connect external AI tools to Sumo Logic to query logs, investigate insights, and manage alerts and dashboards.
+    </Translate>),
+    link: 'docs/api/mcp-server',
+  },
 ];
-
-// After it goes GA: docs/cse/get-started-with-cloud-siem/soc-analyst-agent
-// After it goes GA: mcp-server
 
 // Tab 4: Observability
 export const features4 = [
@@ -244,7 +269,7 @@ export const features5 = [
 export const features = [
   features1, // Security
   features2, // Log Search
-  features3, // Dojo AI
+  features3, // DojoAI
   features4, // Observability
   features5, // Alerts, Dashboards, and Apps
 ];

@@ -2,7 +2,7 @@
 id: airtable-source
 title: Airtable Source
 sidebar_label: Airtable
-tags:
+keywords:
   - cloud-to-cloud
   - airtable
 description: Learn how to retrieve Airtable audit logs into the Sumo Logic environment.
@@ -103,4 +103,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Airtable Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/airtable/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Airtable Automation Service Integration](/docs/integrations/automation-integrations/airtable/) to automate response actions directly from Cloud SOAR playbooks.

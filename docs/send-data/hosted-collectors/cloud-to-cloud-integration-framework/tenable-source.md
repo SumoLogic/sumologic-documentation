@@ -2,7 +2,7 @@
 id: tenable-source
 title: Tenable Source
 sidebar_label: Tenable
-tags:
+keywords:
   - cloud-to-cloud
   - tenable
 description: The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.

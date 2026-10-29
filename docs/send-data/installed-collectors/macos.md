@@ -31,7 +31,7 @@ Download the Collector in either of the following ways.
 
 ### Via browser
 
-Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/about-apis/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
+Open a browser and enter the static URL for your Sumo Logic deployment. See [Which endpoint should I use?](/docs/api/about-apis/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install Collector
 
@@ -145,7 +145,7 @@ This issue only applies to Collector versions prior to 19.361-8.
 
 When you try to install a Sumo Logic Collector on a Mac running OS X Mountain Lion or later, you may see the error message "App cannot be opened because it is from an unidentified developer". This message appears to prevent installing applications from developers that aren't verified through the Mac App Store:
 
-<img src={useBaseUrl('img/send-data/Mac_OSX_Gatekeeper.png')} alt="Installation error message" style={{border: '1px solid gray'}} width="400>" />
+<img src={useBaseUrl('img/send-data/Mac_OSX_Gatekeeper.png')} alt="Installation error message" style={{border: '1px solid gray'}} width="400" />
 
 This doesn't mean that you cannot install a Sumo Logic Collector. The Sumo Logic Collector app is a legitimate and safe download. It just takes an extra step.
 

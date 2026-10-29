@@ -2,7 +2,7 @@
 id: google-threat-intel-source
 title: Google Threat Intel Source
 sidebar_label: Google Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - google-threat-intel
 description: Learn how to collect Google Threat Intel data and send it to Sumo Logic.
@@ -52,7 +52,7 @@ Follow the steps below to obtain the API key:
 
 1. Log in to your Google Threat Intelligence account.
 1. Select **API key** under your user name, or visit [https://www.virustotal.com/gui/my-apikey](https://www.virustotal.com/gui/my-apikey).
-1. Copy your API key from the **Google Threat Intelligence API Key** section and use it to set up the Sumo Logic source.
+1. Copy your API key from the **Google Threat Intelligence API Key** section and use it to set up the Sumo Logic Logic source.
 
 ### Source configuration
 

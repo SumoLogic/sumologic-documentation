@@ -6,7 +6,7 @@ description: Learn how to use Sumo Logic apps for container management and orche
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide has documentation Sumo apps for container management and orchestration tools.  
+This guide has documentation Sumo Logic apps for container management and orchestration tools.  
 
 <div className="box-wrapper" >
 <div className="box smallbox card">

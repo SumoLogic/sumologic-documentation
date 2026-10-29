@@ -14,7 +14,7 @@ You can observe apps and microservices at the level of individual requests to p
 
 | Account Type | Account Level |
 |:--|:--|
-| Credits | Enterprise Operations and Enterprise Suite. Essentials get up to 5 GB a day. |
+| Credits | Enterprise Operations and Enterprise Suite. Essentials get up to 5GB a day. |
 
 You can access Traces if your Sumo Logic service package has been upgraded to include it.
 
@@ -42,10 +42,10 @@ This micro lesson can help you get started with Tracing.
 
 :::
 
-Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily. See how easy it is to [view and investigate traces](view-and-investigate-traces.md).
+Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions. Learn how to [view and investigate traces](view-and-investigate-traces.md).
 
-Traces are collected with [SumoLogic Kubernetes Collection](https://github.com/open-telemetry/opentelemetry-collector) through an [HTTP Traces Source](get-started-transaction-tracing/http-traces-source.md). HTTP Trace Sources are set up automatically with Sumo Logic Kubernetes Collection version 1.1.0+. 
+Traces are collected with [SumoLogic Kubernetes Collection](https://github.com/open-telemetry/opentelemetry-collector) through an [HTTP Traces source](get-started-transaction-tracing/http-traces-source.md). HTTP Trace sources are set up automatically with Sumo Logic Kubernetes Collection version 1.1.0+. 
 
-## Next Steps
+## Next steps
 
 See [Getting Started with Transaction Tracing](/docs/apm/traces/get-started-transaction-tracing) for details on how to set up your collection environment.

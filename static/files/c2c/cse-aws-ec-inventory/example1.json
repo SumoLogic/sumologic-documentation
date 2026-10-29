@@ -1,25 +1,28 @@
 {
-    "api.version":"v1",
-    "source":{
-      "config":{
-        "name":"AWS Inventory",
-        "fields":{
-          "_siemForward":true
-        },
-        "category":"aws/inventory",
-        "limitToRegions":["all"],
-        "authentication":{
-          "type": "AWSRoleBasedAuthentication",
-          "roleARN": "arn:aws:iam::9568827XXXX:role/C2C_EC2InventoryTest"
-        },
-        "polling_interval":600
+  "api.version": "v1",
+  "source": {
+    "config": {
+      "name": "AWS EC2 Inventory",
+      "fields": {
+        "_siemForward": true
       },
-      "state":{
-        "state":"Collecting"
+      "category": "AWSEC2Inventory",
+      "limitToRegions": [
+        "all"
+      ],
+      "regionType": "standardRegions",
+      "authentication": {
+        "type": "AWSRoleBasedAuthentication",
+        "roleARN": "arn:aws:iam::9568827XXXX:role/C2C_EC2InventoryTest"
       },
-      "schemaRef":{
-        "type":"Cloud SIEM AWS EC2 Inventory"
-      },
-      "sourceType":"Universal"
-    }
+      "polling_interval": 600
+    },
+    "state": {
+      "state": "Collecting"
+    },
+    "schemaRef": {
+      "type": "CSE AWS EC2 Inventory"
+    },
+    "sourceType": "Universal"
   }
+}

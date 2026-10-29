@@ -380,7 +380,7 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 
 ## Collecting logs for the Jira app
 
-This section has instructions for collecting logs from Jira for the Sumo app for Jira.
+This section has instructions for collecting logs from Jira for the Sumo Logic app for Jira.
 
 The Jira app supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud app](/docs/integrations/app-development/jira-cloud).
 

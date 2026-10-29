@@ -2,7 +2,7 @@
 id: aws-dynamodb
 title: AWS DynamoDB
 sidebar_label: AWS DynamoDB
-description: The Sumo app for AWS Observability DynamoDB is a unified logs and metrics (ULM) app that provides operational insights into DynamoDB instances across your infrastructure.
+description: The Sumo Logic app for AWS Observability DynamoDB is a unified logs and metrics (ULM) app that provides operational insights into DynamoDB instances across your infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

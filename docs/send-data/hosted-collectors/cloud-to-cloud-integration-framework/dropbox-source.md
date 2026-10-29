@@ -2,7 +2,7 @@
 id: dropbox-source
 title: Dropbox Source
 sidebar_label: Dropbox
-tags:
+keywords:
   - cloud-to-cloud
   - dropbox
 description: The Dropbox Source provides a secure endpoint to receive team events from the Get Events API.
@@ -111,4 +111,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Dropbox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/dropbox/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Dropbox Automation Service Integration](/docs/integrations/automation-integrations/dropbox/) to automate response actions directly from Cloud SOAR playbooks.

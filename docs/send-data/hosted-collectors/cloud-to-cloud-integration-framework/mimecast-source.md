@@ -2,7 +2,7 @@
 id: mimecast-source
 title: Mimecast Source
 sidebar_label: Mimecast
-tags:
+keywords:
   - cloud-to-cloud
   - mimecast
 description: The Mimecast source collects SIEM, DLP, Audit, and Hold Message List data from the Mimecast API.
@@ -131,4 +131,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Mimecast Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mimecast/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Mimecast Automation Service Integration](/docs/integrations/automation-integrations/mimecast/) to automate response actions directly from Cloud SOAR playbooks.

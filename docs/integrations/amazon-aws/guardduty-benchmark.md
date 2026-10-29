@@ -43,7 +43,7 @@ Sumo Logic provides a SAM application based on [AWS Serverless Application Model
 After completing this process, logs are ingested into Sumo Logic in the following way:
 
 1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
-2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
+2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo Logic CloudWatchEventFunction Lambda function.
 3. The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Collection_Overview.png')} alt="flow" />
 
 This section shows you how to generate an access key and access ID for log collection, and then how to deploy the Amazon GuardDuty Benchmark App.
@@ -66,7 +66,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_Benchmark_App_dialog.png')} alt="flow" />
-3. When the page for the Sumo app appears, click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_App_dialog.png')} alt="flow" />
+3. When the page for the Sumo Logic app appears, click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_App_dialog.png')} alt="flow" />
 4. In **Configure application parameters** panel, enter the following parameters:
     * Access ID (Required): Sumo Logic Access ID generated from Step 1.
     * Access Key (Required): Sumo Logic Access Key generated from Step 1.

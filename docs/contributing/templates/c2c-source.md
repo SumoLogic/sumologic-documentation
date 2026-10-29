@@ -22,7 +22,7 @@ Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/con
 id: {{vendor-name}}-source #example: druva-source
 title: {{Vendor Name}} Source #example: Druva Source
 sidebar_label: {{Vendor Name}} #example: Druva
-tags:
+keywords:
   - cloud-to-cloud
   - {{vendor-name}} #example: druva
 description: Short description. #aim for 140–160 characters. Example: Learn how to configure the Druva Cloud-to-Cloud Source to collect backup and recovery activity logs from Druva into your Sumo Logic environment.

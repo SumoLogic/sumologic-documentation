@@ -137,12 +137,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source')}><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="Azure Event Hub icon" width="40"/><h4>Azure Event Hubs</h4></a>
-  <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="Bitwarden icon" width="80" /><h4>Bitwarden</h4></a>
   <p>Learn how to collect event logs from the Bitwarden API.</p>
   </div>
@@ -359,6 +353,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-activities')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="180"/><h4>Google Workspace Activities</h4></a>
+  <p>Configure Google Workspace Activities Cloud-to-Cloud connector.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="180"/><h4>Google Workspace AlertCenter</h4></a>
   <p>Configure Google Workspace AlertCenter Cloud-to-Cloud connector.</p>
   </div>
@@ -487,6 +487,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
     <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source')}><img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="Onelogin icon" width="75"/><h4>OneLogin</h4></a>
     <p>Provides a secure and centralized access to user lists from the OneLogin API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source')}><img src={useBaseUrl('/img/send-data/openAI-logo.png')} alt="OpenAI logo" width="75"/><h4>OpenAI</h4></a>
+    <p>Collects organization usage costs and audit logs from the OpenAI Administration API.</p>
   </div>
 </div>
   <div className="box smallbox card">

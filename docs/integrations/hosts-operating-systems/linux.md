@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux icon" width="45"/>
 
-The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
+The Sumo Logic app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
 :::note
 You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/linux.md).
@@ -19,11 +19,11 @@ You may also be interested in the [Sumo Logic App for Linux Cloud Security Monit
 
 This procedure describes how to collect logs from Linux into Sumo Logic.
 
-Sumo apps gather data from the log messages collected from sources by collectors. The Sumo app for Linux requires specific Linux log types, which are set up during the collector and source configuration process.
+Sumo Logic apps gather data from the log messages collected from sources by collectors. The Sumo Logic app for Linux requires specific Linux log types, which are set up during the collector and source configuration process.
 
 ### Required logs for Ubuntu
 
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
+The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with Ubuntu:
 * auth.log
 * syslog
 * daemon.log
@@ -32,7 +32,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 
 ### Required logs for CentOS, Amazon Linux, and Red Hat
 
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with  CentOS, Amazon Linux, and most Red Hat forks:
+The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with  CentOS, Amazon Linux, and most Red Hat forks:
 * audit/audit.log
 * secure
 * messages

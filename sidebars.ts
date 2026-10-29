@@ -29,28 +29,20 @@ module.exports = {
         'get-started/training-certification-faq',
         'get-started/account-settings-preferences',
         'get-started/sumo-logic-ui',
-        'get-started/sumo-logic-ui-classic',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
+        'preview/index',
         'get-started/help',
         'get-started/faq',
       ],
     },
-    {
-      type: 'category',
-      label: 'Preview Releases',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'preview/index'},
-      items: [],
-    },
     //Contribution guide for documentation
     {
       type: 'category',
-      label: 'Contribution Guide',
+      label: 'Docs Contribution Guide',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'contributing/index'},
@@ -88,7 +80,17 @@ module.exports = {
       link: {type: 'doc', id: 'send-data/index'},
       items: [
         'send-data/choose-collector-source',
-        'send-data/ic-vs-ot-collector-performance-benchmarks',
+        {
+          type: 'category',
+          label: 'IC vs OTel Performance Benchmarks',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/ic-vs-ot-collector-performance-benchmarks/index'},
+          items: [
+            'send-data/ic-vs-ot-collector-performance-benchmarks/local-file-source-benchmarks',
+            'send-data/ic-vs-ot-collector-performance-benchmarks/remote-windows-event-log-benchmarks',
+          ],
+        },
         'send-data/setup-wizard',
         {
           type: 'category',
@@ -468,7 +470,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
@@ -505,6 +506,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-activities',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source',
@@ -527,6 +529,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source',
@@ -649,7 +652,7 @@ module.exports = {
           items: [
             {
               type: 'category',
-              label: 'v5 (latest)',
+              label: 'v6 (latest)',
               collapsible: true,
               collapsed: true,
               items: [
@@ -677,6 +680,17 @@ module.exports = {
                     'send-data/kubernetes/troubleshoot-collection/common-issues',
                   ],
                 },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'v6 Upgrade Guide',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v6/important-changes',
+                'send-data/kubernetes/v6/how-to-upgrade',
+                'send-data/kubernetes/v6/full-list-of-changes',
               ],
             },
             {
@@ -1225,12 +1239,12 @@ module.exports = {
   },
 ],
 // **ALERTS:
-  alerts: [
+  alertsdashboards: [
     {
       type: 'category',
       label: 'Alerts',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'alerts/index'},
       items: [
         'alerts/difference-from-scheduled-searches',
@@ -1241,7 +1255,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
-            'alerts/monitors/overview',
+            'alerts/monitors/about',
             'alerts/monitors/create-monitor',
             'alerts/monitors/create-monitor-with-mobot',
             'alerts/monitors/settings',
@@ -1312,14 +1326,11 @@ module.exports = {
         },
       ],
     },
-  ],
-  // ** DASHBOARDS:
-  dashboards: [
     {
       type: 'category',
       label: 'Dashboards',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'dashboards/index'},
       items: [
         'dashboards/about',
@@ -1336,6 +1347,7 @@ module.exports = {
           link: {type: 'doc', id: 'dashboards/panels/index'},
           items: [
             'dashboards/panels/modify-chart',
+            'dashboards/panels/section',
             'dashboards/panels/area-charts',
             'dashboards/panels/bar-charts',
             'dashboards/panels/box-plot-charts',
@@ -1348,7 +1360,6 @@ module.exports = {
             'dashboards/panels/pie-charts',
             'dashboards/panels/sankey-charts',
             'dashboards/panels/scatter-charts',
-            'dashboards/panels/section',
             'dashboards/panels/single-value-charts',
             'dashboards/panels/table-charts',
           ],
@@ -1495,6 +1506,10 @@ module.exports = {
       link: {type: 'doc', id: 'search/mobot/index'},
       items: [
           'search/mobot/example-prompts',
+          'dashboards/create-panel-with-mobot',
+          'alerts/monitors/create-monitor-with-mobot',
+          'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
+          'cse/rules/create-rules-with-mobot',
       ],
     },
     {
@@ -1758,9 +1773,6 @@ module.exports = {
     'search/faq',
     ],
   },
-],
-// *** METRICS & LOGS: all metrics content
-  metricslogs: [
     {
       type: 'category',
       label: 'Metrics',
@@ -1872,7 +1884,7 @@ module.exports = {
       type: 'category',
       label: 'Traces',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'apm/traces/index'},
       items: [
         'apm/traces/quickstart',
@@ -2001,9 +2013,6 @@ module.exports = {
    'apm/services-list-map',
  ],
 },
-],
-// *** OBSERVABILITY: aws, kubernetes, root cause analysis
-  observability: [
     {
       type: 'category',
       label: 'Observability',
@@ -2029,25 +2038,94 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/index'},
               items: [
-                'observability/aws/deploy-use-aws-observability/before-you-deploy',
                 {
                   type: 'category',
-                  label: 'Deploy with AWS CloudFormation',
+                  label: 'v3.0.0 (latest)',
                   collapsible: true,
                   collapsed: true,
-                  link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/index'},
+                  link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.0.0/index'},
                   items: [
-                    'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
-                    'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/automatic-installation-script',
-                    'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
+                    'observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy',
+                    {
+                      type: 'category',
+                      label: 'Deploy with AWS CloudFormation',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/index'},
+                      items: [
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/automatic-installation-script',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/update-aws-observability-stack-cloudformation',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Deploy with Terraform',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/index'},
+                      items: [
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/update-aws-observability-stack-terraform',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform',
+                      ],
+                    },
+                    'observability/aws/deploy-use-aws-observability/v3.0.0/view-dashboards',
+                    'observability/aws/deploy-use-aws-observability/v3.0.0/configure-alerts',
+                    'observability/aws/deploy-use-aws-observability/v3.0.0/resources',
                   ],
                 },
-                'observability/aws/deploy-use-aws-observability/deploy-with-terraform',
-                'observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform',
-                'observability/aws/deploy-use-aws-observability/view-dashboards',
-                'observability/aws/deploy-use-aws-observability/configure-alerts',
-                'observability/aws/deploy-use-aws-observability/update-aws-observability-stack',
-                'observability/aws/deploy-use-aws-observability/resources',
+                {
+                  type: 'category',
+                  label: 'v2.15.0',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v2.15.0/index'},
+                  items: [
+                    'observability/aws/deploy-use-aws-observability/v2.15.0/before-you-deploy',
+                    {
+                      type: 'category',
+                      label: 'Deploy with AWS CloudFormation',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/index'},
+                      items: [
+                        'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
+                        'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/automatic-installation-script',
+                        'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
+                        'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources',
+                      ],
+                    },
+                    'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-terraform',
+                    'observability/aws/deploy-use-aws-observability/v2.15.0/migration-strategy-using-terraform',
+                    'observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards',
+                    'observability/aws/deploy-use-aws-observability/v2.15.0/configure-alerts',
+                    'observability/aws/deploy-use-aws-observability/v2.15.0/update-aws-observability-stack',
+                    'observability/aws/deploy-use-aws-observability/v2.15.0/resources',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Migrate to v3.0.0',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/migration/index'},
+                  items: [
+                    {
+                      type: 'category',
+                      label: 'CloudFormation',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/migration/cloudformation/index'},
+                      items: [
+                        'observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-cloudformation',
+                        'observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-manual',
+                      ],
+                    },
+                    'observability/aws/deploy-use-aws-observability/migration/terraform/migration-strategy-v2x-to-v300-terraform',
+                  ],
+                },
                 'observability/aws/deploy-use-aws-observability/changelog',
               ],
             },
@@ -2058,9 +2136,8 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'observability/aws/other-configurations-tools/index'},
               items: [
-                'observability/aws/other-configurations-tools/add-new-aws-service',
-                'observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources',
                 'observability/aws/other-configurations-tools/integrate-control-tower-accounts',
+                'observability/aws/other-configurations-tools/backfill-aws-account-alias',
               ],
             },
             {
@@ -2121,31 +2198,31 @@ module.exports = {
           ],
         },
         'observability/work-from-home-vpn',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Software Dev Optimization (SDO)',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'observability/sdo/index'},
-      items: [
-        'observability/sdo/about-sdo',
         {
           type: 'category',
-          label: 'Setting Up SDO',
+          label: 'Software Dev Optimization (SDO)',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'observability/sdo/set-up-sdo/index'},
+          link: {type: 'doc', id: 'observability/sdo/index'},
           items: [
-            'observability/sdo/set-up-sdo/sdo-manual-configuration',
-            'observability/sdo/set-up-sdo/sdo-setup-with-terraform-script',
+            'observability/sdo/about-sdo',
+            {
+              type: 'category',
+              label: 'Setting Up SDO',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'observability/sdo/set-up-sdo/index'},
+              items: [
+                'observability/sdo/set-up-sdo/sdo-manual-configuration',
+                'observability/sdo/set-up-sdo/sdo-setup-with-terraform-script',
+              ],
+            },
+            'observability/sdo/install-sdo-app-view-dashboards',
+            'observability/sdo/supported-tools-schema',
+            'observability/sdo/jenkins-plugin-build-deploy-events',
+            'observability/sdo/integrate-tools-with-sdo',
           ],
         },
-        'observability/sdo/install-sdo-app-view-dashboards',
-        'observability/sdo/supported-tools-schema',
-        'observability/sdo/jenkins-plugin-build-deploy-events',
-        'observability/sdo/integrate-tools-with-sdo',
       ],
     },
   ],
@@ -2167,6 +2244,39 @@ integrations: [
         items: [
           'integrations/product-list/product-list-a-l',
           'integrations/product-list/product-list-m-z',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Apps',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/apps'},
+        items: [
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Automation Integrations',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/automation-integrations/index'},
+        items: [
+          'integrations/automation-integrations/install-automation-integrations',
+          'integrations/automation-integrations/configure-authentication',
+          {
+            type: 'autogenerated',
+            dirName: 'integrations/automation-integrations'
+          },
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Playbook Templates',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/playbook-templates'},
+        items: [
         ],
       },
       {
@@ -2211,6 +2321,7 @@ integrations: [
         'integrations/amazon-aws/kinesis-streams',
         'integrations/amazon-aws/amazon-opensearch',
         'integrations/amazon-aws/amazon-sagemaker',
+        'integrations/amazon-aws/amazon-security-lake',
         'integrations/amazon-aws/rds',
         'integrations/amazon-aws/redshift-ulm',
         'integrations/amazon-aws/route-53-resolver-security',
@@ -2255,9 +2366,6 @@ integrations: [
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
         'security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
-        'integrations/amazon-aws/global-intelligence-guardduty',
-        'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
-        'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
         'integrations/amazon-aws/vpc-flow-logs-pci-compliance',
         'integrations/amazon-aws/cloudtrail-pci-compliance'
       ],
@@ -2407,6 +2515,7 @@ integrations: [
           'integrations/google/cloud-vpc',
           'integrations/google/compute-engine',
           'integrations/google/kubernetes-engine',
+          'integrations/google/workspace-activities',
           {
             type: 'category',
             label: 'Google Workspace',
@@ -2602,9 +2711,6 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/global-intelligence/index'},
         items: [
-          'integrations/amazon-aws/global-intelligence-guardduty',
-          'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
-          'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
         ],
       },
@@ -2725,6 +2831,7 @@ integrations: [
           'integrations/saas-cloud/microsoft-graph-azure-ad-reporting',
           'integrations/saas-cloud/netskope-webtx',
           'integrations/saas-cloud/netskope-webtx-streaming',
+          'integrations/saas-cloud/openai',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
@@ -3053,6 +3160,7 @@ integrations: [
           link: {type: 'doc', id: 'cse/rules/index'},
           items: [
             'cse/rules/about-cse-rules',
+            'cse/rules/create-rules-with-mobot',
             'cse/rules/rules-status',
             'cse/rules/before-writing-custom-rule',
             'cse/rules/cse-rules-syntax',
@@ -3068,6 +3176,7 @@ integrations: [
             'cse/rules/rule-tuning-expressions',
             'cse/rules/tailor-global-rule',
             'cse/rules/insight-trainer',
+            'cse/rules/convert-sigma-rules',
           ],
         },
         {
@@ -3088,20 +3197,6 @@ integrations: [
             'cse/schema/parsing-language-reference-guide',
             'cse/schema/parsing-patterns',
             'cse/schema/username-and-hostname-normalization',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Sensors',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'cse/sensors/index'},
-          items: [
-            'cse/sensors/ingest-zeek-logs',
-            'cse/sensors/sensor-download-locations',
-            'cse/sensors/network-sensor-deployment-guide',
-            'cse/sensors/network-sensor-troubleshooting',
-            'cse/sensors/log-sensor-troubleshooting',
           ],
         },
         {
@@ -3260,6 +3355,7 @@ integrations: [
           ],
         },
         'api/connections-management',
+        'api/content-config-management',
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
@@ -3324,31 +3420,6 @@ integrations: [
           items: [
             'platform-services/automation-service/about-automation-service',
             'platform-services/automation-service/intro-to-automation-service',
-            {
-              type: 'category',
-              label: 'App Central',
-              collapsible: true,
-              collapsed: true,
-              link: {type: 'doc', id: 'platform-services/automation-service/app-central/index'},
-              items: [
-                'platform-services/automation-service/automation-service-app-central',
-                'platform-services/automation-service/playbooks-in-app-central',
-                'platform-services/automation-service/configure-authentication-for-integrations',
-                {
-                  type: 'category',
-                  label: 'Automation Integrations in App Central',
-                  collapsible: true,
-                  collapsed: true,
-                  link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},
-                  items: [
-                    {
-                      type: 'autogenerated',
-                      dirName: 'platform-services/automation-service/app-central/integrations'
-                    }
-                  ],
-                }
-              ],
-            },
             {
               type: 'category',
               label: 'Playbooks',

@@ -2,7 +2,7 @@
 id: jamf-source
 title: Jamf Source
 sidebar_label: Jamf
-tags:
+keywords:
   - cloud-to-cloud
   - jamf
 description: Learn how to collect data from the Jamf platform.
@@ -99,4 +99,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Jamf Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/jamf/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Jamf Automation Service Integration](/docs/integrations/automation-integrations/jamf/) to automate response actions directly from Cloud SOAR playbooks.

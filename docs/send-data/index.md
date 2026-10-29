@@ -42,6 +42,12 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/send-data/ic-vs-ot-collector-performance-benchmarks')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>IC vs OTel Performance Benchmarks</h4></a>
+  <p>Compare Installed Collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/send-data/setup-wizard')}><img src={useBaseUrl('img/icons/get-started.png')} alt="Get started icon" width="40"/><h4>Sumo Logic Setup Wizard</h4></a>
   <p>Use the Setup Wizard to quickly get started sending data to Sumo Logic.</p>
   </div>

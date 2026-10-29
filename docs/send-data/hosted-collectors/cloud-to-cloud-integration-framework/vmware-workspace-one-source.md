@@ -2,7 +2,7 @@
 id: vmware-workspace-one-source
 title: VMware Workspace One Source
 sidebar_label: VMware Workspace One
-tags:
+keywords:
     - vmware-workspace-one
 description: Collect the device details and corresponding list of applications for the devices from the VMware Workspace One platform.
 ---
@@ -131,4 +131,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [VMware Workspace ONE Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/vmware-workspace-one/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [VMware Workspace ONE Automation Service Integration](/docs/integrations/automation-integrations/vmware-workspace-one/) to automate response actions directly from Cloud SOAR playbooks.

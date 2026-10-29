@@ -2,7 +2,7 @@
 id: crowdstrike-fdr-source
 title: Crowdstrike FDR Source
 sidebar_label: Crowdstrike FDR
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-fdr
 description: The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest Falcon Data Replicator events using the S3 ingestion capability by consumed SQS notifications of new S3 objects.

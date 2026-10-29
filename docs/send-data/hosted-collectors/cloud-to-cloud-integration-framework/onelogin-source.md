@@ -2,7 +2,7 @@
 id: onelogin-source
 title: OneLogin Source
 sidebar_label: OneLogin
-tags:
+keywords:
   - cloud-to-cloud
   - onelogin-source
 description: Learn how to collect the users list from the OneLogin API and send it to Sumo Logic.
@@ -105,4 +105,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [OneLogin Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/onelogin/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [OneLogin Automation Service Integration](/docs/integrations/automation-integrations/onelogin/) to automate response actions directly from Cloud SOAR playbooks.
