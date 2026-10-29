@@ -65,9 +65,9 @@ If you do not use the `quantize to INTERVAL` in your metric query, Sumo Logic au
 
 The age of the metrics in the time range governs the minimum quantization interval (based on what rollups are available for the query time range). Sumo Logic retains only the last 30 days of raw metric data. So, when you query metrics that are more than 30 days old, Sumo Logic must quantize the data to at least 1 hour, because that’s the minimum resolution rollup available given the age of the data.
 
-If you want, you can override the automatic quantization interval. In the Metrics Search’s basic mode you can set the quantization interval in the row creator in the UI. In advanced mode, use the `quantize` operator and specify the interval that fits your need
+If you want, you can override the automatic quantization interval. In the Metrics Search’s basic mode you can set the quantization interval in the row creator in the UI. In advanced mode, use the `quantize` operator and specify the interval that fits your need.
 
-Sumo Logic sets the actual quantization interval to be as close to your selection as possible. If it is not possible to set the actual interval to the targeted interval—typically because too many buckets would be produced to reasonably show on the chart—Sumo Logic displays a message like the following:
+Sumo Logic sets the actual quantization interval to be as close to your selection as possible. If it is not possible to set the actual interval to the targeted interval (typically because too many buckets would be produced to reasonably show on the chart), Sumo Logic displays a message like the following:
 
 <img src={useBaseUrl('img/metrics/quantization-warning.png')} alt="metrics" />
 
@@ -98,7 +98,7 @@ The table below shows how Sumo Logic selects a quantization interval based on qu
 
 ### Explicit quantization at query time  
 
-When you run a metric query, you can optionally use the [quantize metrics operator](/docs/metrics/metrics-operators/quantize) to specify a quantization interval, rollup type, or both.
+When you run a metric query, you can optionally use the [`quantize` metrics operator](/docs/metrics/metrics-operators/quantize) to specify a quantization interval, rollup type, or both.
 
 When you run a query with the `quantize` operator, the way that Sumo Logic quantizes your metric data points depends on the rollup type you specify, if any, in the `quantize` clause of your query. Rollup types include `avg`, `min`, `max`, `sum`, and `count`.
 
@@ -125,7 +125,7 @@ metric=CPU_Idle | quantize using max
 In this case, Sumo Logic will automatically determine appropriate quantization interval and quantize to the `max` rollup type.
 
 :::note
-If the `quantize` operator in your query is preceded by another metrics operator, a rollup type you specify with `using` will be ignored – it will not be applied at the selector level.
+If the `quantize` operator in your query is preceded by another metrics operator, a rollup type you specify with `using` will be ignored. It will not be applied at the selector level.
 :::
 
 #### Quantize with no rollup type specified  

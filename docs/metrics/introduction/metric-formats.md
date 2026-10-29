@@ -39,7 +39,7 @@ You can use Sumo Logic's metric rules editor to tag metrics with key-value pair
 
 ### Inferred metric name
 
-The Graphite format doesn't have a notion of named tags. Since Sumo Logic requires each metric to have a valid metric name, for Graphite metrics, the metric name must be inferred. To accomplish that, for every Graphite metric sent to our backend, Sumo Logic adds an additional `metric` tag, whose value is equal to the last segment of a dot-separated `metric_path`.
+The Graphite format does not have a notion of named tags. Since Sumo Logic requires each metric to have a valid metric name, for Graphite metrics, the metric name must be inferred. To accomplish that, for every Graphite metric sent to our backend, Sumo Logic adds an additional `metric` tag, whose value is equal to the last segment of a dot-separated `metric_path`.
 
 For example, for the below Graphite metric sent to Sumo Logic:
 ```
@@ -58,7 +58,7 @@ intrinsic_tags  meta_tags value timestamp
 ```
 
 :::tip
-There are two spaces between `intrinsic_tags` and `meta_tags`. If a tag is listed before the double space, then it is an intrinsic tag. If a tag is listed after the double space, then it is a meta tag.
+There are two spaces between `intrinsic_tags` and `meta_tags`. This is intentional. If a tag is listed before the double space, then it is an intrinsic tag. If a tag is listed after the double space, then it is a meta tag.
 :::
 
 Where:
@@ -69,7 +69,7 @@ Where:
   `intrinsic_tags` must be followed by two spaces.
   :::
 
-* `meta_tags` is zero or more space-separated key-value pairs that provide additional, but not identifying information about the thing being measured. A meta tag is a piece of metadata that might be useful in querying your metrics. It doesn’t identify the thing being measured, but provides additional information of interest. Meta tags are meant to be used in addition to intrinsic tags so that you can more conveniently select the metrics. For example, it might be interesting to know the collection agent that obtained the measurement. 
+* `meta_tags` is zero or more space-separated key-value pairs that provide additional, but not identifying information about the thing being measured. A meta tag is a piece of metadata that might be useful in querying your metrics. It does not identify the thing being measured, but provides additional information of interest. Meta tags are meant to be used in addition to intrinsic tags so that you can more conveniently select the metrics. For example, it might be interesting to know the collection agent that obtained the measurement. 
 * `value` is any numeric value.
 * `timestamp` is a UNIX timestamp.
 
@@ -77,7 +77,7 @@ Where:
 Currently Sumo Logic interprets meta tags as non-identifying dimensions. This is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions in the future. To conform to the target behavior from the beginning, we suggest to place all your metric metadata in the `intrinsic_tags` section.
 :::
 
-In the Graphite-formatted metric described above, the bit that identifies the thing being measured—the `metric_path`—is:
+In the Graphite-formatted metric described above, the bit that identifies the thing being measured, the `metric_path`, is:
 
 ```
 cluster-1.node-1.cpu-1.cpu-idle
@@ -97,7 +97,7 @@ cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 1460061337
 
 ### Mandatory metric name
 
-Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Health Events, see [Health Events](/docs/manage/health-events)).
+Unlike Prometheus, Carbon 2.0 format does not enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Health Events, see [Health Events](/docs/manage/health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```
