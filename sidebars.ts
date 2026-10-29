@@ -2238,13 +2238,13 @@ integrations: [
     items: [
       {
         type: 'category',
-        label: 'Product List',
+        label: 'Content Matrix',
         collapsible: true,
         collapsed: true,
-        link: {type: 'doc', id: 'integrations/product-list/index'},
+        link: {type: 'doc', id: 'integrations/content-matrix/index'},
         items: [
-          'integrations/product-list/product-list-a-l',
-          'integrations/product-list/product-list-m-z',
+          'integrations/content-matrix/content-matrix-a-l',
+          'integrations/content-matrix/content-matrix-m-z',
         ],
       },
       {
