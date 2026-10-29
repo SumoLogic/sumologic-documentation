@@ -2,7 +2,7 @@
 id: collector-faq
 title: Collector Troubleshooting and FAQ
 sidebar_label: Troubleshooting
-description: Frequently asked questions about collecting data into Sumo Logic that provide the how-to answers you need to setup and troubleshoot collectors.
+description: Frequently asked questions about collecting data into Sumo Logic that provide the how-to answers you need to set up and troubleshoot collectors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,7 +19,7 @@ For this issue, the failure to connect may be due to the target server failed to
 
 #### Question
 
-I'm not receiving any data from my new Collectors located in AWS EC2. Why do I see the following error in my collector.log files?
+I'm not receiving any data from my new collectors located in AWS EC2. Why do I see the following error in my collector.log files?
 
 ```json
 2015-01-12 17:29:48,216 [HTTP Sender - 15] WARN com.sumologic.scala.collector.CommonsHTTPTransmitter - ConnectException for receiver url: 'collectors.sumologic.com:443'; on attempt: '2'
@@ -28,9 +28,9 @@ org.apache.http.NoHttpResponseException: The target server failed to respond
 
 #### Answer
 
-This warning indicates that a brief lapse in network connectivity between your Collector and Sumo Logic has occurred. Normally it can be safely ignored because the Collector will automatically retry once per minute until a successful connection is established.
+This warning indicates that a brief lapse in network connectivity between your collector and Sumo Logic has occurred. Normally it can be safely ignored because the collector will automatically retry once per minute until a successful connection is established.
 
-Here are a few troubleshooting steps to try when your Collector is consistently unable to connect to the Service:
+Here are a few troubleshooting steps to try when your collector is consistently unable to connect to the Service:
 
 1. Test DNS resolution and connectivity to the Sumo Logic servers: 
      ```bash
@@ -69,25 +69,25 @@ The value name is MTU and the data value should be set to 1500. This setting is 
 
 ## Collector locking log files on Windows servers
 
-The Sumo Logic Collector will hold a log file open for read while log messages are actively being written to the file, and may not close the file for up to a couple minutes after the log has stopped being written to. In some instances, this could prevent the log file from properly rotating. This issue can be resolved on 64-bit versions of Windows by upgrading to the 64-bit version of the Collector. This is a one-time manual update to existing Collectors. Any further upgrades of the Collectors through the UI will continue to update using the same 64-bit version.
+The Sumo Logic collector will hold a log file open for read while log messages are actively being written to the file, and may not close the file for up to a couple minutes after the log has stopped being written to. In some instances, this could prevent the log file from properly rotating. This issue can be resolved on 64-bit versions of Windows by upgrading to the 64-bit version of the collector. This is a one-time manual update to existing collectors. Any further upgrades of the collectors through the UI will continue to update using the same 64-bit version.
 
-To manually upgrade the Collector from 32-bit to 64-bit
+To manually upgrade the collector from 32-bit to 64-bit
 
-1. Stop the existing Collector service.
+1. Stop the existing collector service.
 1. Make a backup copy of the current `C:\Program Files (x86)\config` directory and place this in a safe temporary location.
 1. Make a backup copy of the current `C:\Program Files (x86)\cache` directory and place this in a safe temporary location.
-1. Run the Collector uninstall to completely remove the existing 32bit Collector.
-1. Run the new 64-bit Collector install to reinstall the Collector.
+1. Run the collector uninstall to completely remove the existing 32-bit collector.
+1. Run the new 64-bit collector install to reinstall the collector.
 
     :::note
     The new install will create a new collector in the UI with an appended epoch time. Deleted this from the UI as the last step in this process.
     :::
 
-1. Stop the new Collector service. (It will have automatically started.)
-1. Copy the previously backed up `/config` and `/cache` directories and put them into the new Collector installation directory, overwriting the existing `/config` and `/cache` directories.
-1. Restart the Collector service.
+1. Stop the new collector service. (It will have automatically started.)
+1. Copy the previously backed up `/config` and `/cache` directories and put them into the new collector installation directory, overwriting the existing `/config` and `/cache` directories.
+1. Restart the collector service.
 
-This should safely update the Collector and keep all your existing configurations and Sources. The Collector will start back where it left off in the logs when the previous Collector was stopped.
+This should safely update the collector and keep all your existing configurations and sources. The collector will start back where it left off in the logs when the previous collector was stopped.
 
 
 ## Windows - This Collector does not seem to have tanuki wrapper integration enabled
@@ -96,83 +96,83 @@ Error messages on Windows: "This Collector does not seem to have tanuki wrapper 
 
 #### Question
 
-When attempting to upgrade a Windows Collector from the UI, the upgrade fails and the following error is reported in the tool tip of the failed Collector:
+When attempting to upgrade a Windows collector from the UI, the upgrade fails and the following error is reported in the tool tip of the failed collector:
 
 `"This Collector does not seem to have tanuki wrapper integration enabled."`
 
 #### Answer
 
-This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the Collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
+This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
 
 1. Download the <a href={useBaseUrl('files/wrapper-dll.zip')} target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
-1. Stop the Sumo Logic Collector service running on the host.
+1. Stop the Sumo Logic collector service running on the host.
 1. Unzip the downloaded file and place the extracted .dll files into the following directory, where \<version\> is the "current version" listed in the upgrade UI in Sumo Logic:
 
     `C:\Program Files\Sumo Logic Collector\<version-specific>\bin\native\lib`
 
-1. Restart the Sumo Logic Collector service.
+1. Restart the Sumo Logic collector service.
 
      1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 
-     1. Click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
+     1. Click **Upgrade Collectors**, and select the **Retry** option next to the failed collector.
 
 
 ## Configure Limits for Collector Caching
 
-Caching of outbound data is supported for Installed Collectors when a Collector is throttled or paused or the connection is broken. Data is cached first in memory and then on disk.
+Caching of outbound data is supported for installed collectors when a collector is throttled or paused or the connection is broken. Data is cached first in memory and then on disk.
 
 You can configure the amount of space available for caching of log and metric data on disk.
 
-By default, the Collector supports caching the following amount of compressed data:
+By default, the collector supports caching the following amount of compressed data:
 
 * Up to 4GB total disk space, including:  
 
   * Up to 3GB for log data
   * Up to 1GB for metric data
 
-To raise or lower the disk limits for Collector caching:
+To raise or lower the disk limits for collector caching:
 
-1. Stop the Sumo Logic Collector service.
+1. Stop the Sumo Logic collector service.
 
     * On Windows: `net stop sumo-collector`
     * On Linux:   `sudo ./collector stop`    
 
-1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic Collector installation directory.  Make the following changes and save the file.
+1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic collector installation directory.  Make the following changes and save the file.
 
     * To set the limit for disk caching for logs (for example, 2GB), add the following line: `queue.max.disk.gb = 2`
     * To set the limit for disk caching for metrics (for example, 2GB), add the following line: `queue.metrics.max.disk.gb = 2`    
 
-1. Start the Sumo Logic Collector service.
+1. Start the Sumo Logic collector service.
 
     * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
 
-You can revert back to a default configuration by removing the corresponding line from the **collector.properties** file and restarting the Collector service.
+You can revert back to a default configuration by removing the corresponding line from the **collector.properties** file and restarting the collector service.
 
 #### Flushing Mode
 
 Unlike the fixed size cache, which evicts old data to make room for new data, Flushing Mode stops collection of new data and focuses only on sending existing data (flushing the cache).
 
-The Collector enters Flushing Mode when less than 10% of free disk space remains on the disk where the Collector is installed.
+The collector enters Flushing Mode when less than 10% of free disk space remains on the disk where the collector is installed.
 
 **To raise or lower the disk limits for Flushing Mode:**
 
-1. Stop the Sumo Logic Collector service.
+1. Stop the Sumo Logic collector service.
 
     * On Windows: `net stop sumo-collector`
     * On Linux: `sudo ./collector stop`    
 
-1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic Collector installation directory. Make the following changes and save the file.
+1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic collector installation directory. Make the following changes and save the file.
 
     * To set the free space percentage threshold for entering flush mode (by default, 10%), add the following line: `freeSpace.threshold.percent = 10`
     * To disable Flushing Mode: `freeSpace.threshold.percent = 0`
 
-1. Start the Sumo Logic Collector service.
+1. Start the Sumo Logic collector service.
 
     * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
 
-You can revert back to a default configuration by removing the corresponding line from **collector.properties** file and restarting the Collector service.
+You can revert back to a default configuration by removing the corresponding line from **collector.properties** file and restarting the collector service.
 
 
 ## Delete data already collected to Sumo Logic
@@ -229,17 +229,17 @@ You can revert back to legacy WMI-based event collection at any time by removi
 ## File Locking problems when using Windows UNC with Local File Sources
 
 :::note
-The contents of this article are only valid for Collector versions later than 19.73.
+The contents of this article are only valid for collector versions later than 19.73.
 :::
 
-The Sumo Logic Collector uses two different code paths when attempting to Collect from local file sources on Windows:
+The Sumo Logic collector uses two different code paths when attempting to collect from local file sources on Windows:
 
-1. "Windows Rollable" path: This code path will be used by a Collector for local files that are not UNC paths. 
+1. "Windows Rollable" path: This code path will be used by a collector for local files that are not UNC paths. 
 1. Normal code path: Anything else. This code path is more efficient, but it could block rolling on some Windows files.
 
 Historically, the Windows Rollable path had some issues collecting from UNC file paths that pointed to mounted network drives, which is why the "Windows Rollable" option for UNC paths was disabled altogether. If you're collecting local files via UNC paths, its likely the locking semantics of the local filesystem are preserved, which does not allow for the rotation.
 
-The Collector has an option to override the default path it uses for collection. The following flag will tell the Collector to use the Windows Rollable path for UNC file paths and should address any problems with file locking on the remote system.
+The collector has an option to override the default path it uses for collection. The following flag will tell the collector to use the Windows Rollable path for UNC file paths and should address any problems with file locking on the remote system.
 
 1. Open `/<sumo_home>/config/collector.properties` to edit.
 1. Add the following parameter to the end of the file or update the existing parameter:
@@ -249,16 +249,16 @@ The Collector has an option to override the default path it uses for collection.
     ```
 
 1. Save the new **collector.properties** file.
-1. Restart the Collector service.
+1. Restart the collector service.
 
 
 ## Increase Collector Memory
 
-Collectors are set to use 128MB of RAM by default. If your Collectors ingest more than a few files, you should consider increasing the max heap size the Collector can use.
+Collectors are set to use 128MB of RAM by default. If your collectors ingest more than a few files, you should consider increasing the max heap size the collector can use.
 
 #### Memory Error
 
-A Collector may fail to launch if there isn't adequate memory available. The Collector logs will have the following error: 
+A collector may fail to launch if there is not adequate memory available. The collector logs will have the following error: 
 
 ```
 WrapperSimpleApp Error: java.lang.OutOfMemoryError: GC overhead limit exceeded
@@ -266,7 +266,7 @@ WrapperSimpleApp Error: java.lang.OutOfMemoryError: GC overhead limit exceeded
 
 #### New Collector
 
-When registering a new Collector you can specify the parameter `wrapper.java.maxmemory` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) with a higher memory value than the default 128MB. For example, a user.properties file with a memory setting of 2048MB would look like:
+When registering a new collector you can specify the parameter `wrapper.java.maxmemory` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) with a higher memory value than the default 128MB. For example, a user.properties file with a memory setting of 2048MB would look like:
 
 ```
 name = My Collector
@@ -277,11 +277,11 @@ wrapper.java.maxmemory = 2048
 
 | Parameter | Description | Can be changed after installation? |
 |:--|:--|:--|
-| `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with Collector restart. |
+| `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with collector restart. |
 
 #### Command line installer
 
-When using the [command line (shell script) installer](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can specify the parameter `-Vwrapper.java.maxmemory` with a higher memory value than the default 128MB. For details and example commands on Collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
+When using the [command line (shell script) installer](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can specify the parameter `-Vwrapper.java.maxmemory` with a higher memory value than the default 128MB. For details and example commands on collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
 
 For example, the parameter with a memory setting of 2048MB would look like:
 
@@ -291,7 +291,7 @@ For example, the parameter with a memory setting of 2048MB would look like:
 
 | Parameter | Description | Can be changed after installation? |
 |:--|:--|:--|
-| `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with Collector restart. |
+| `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with collector restart. |
 
 #### Existing Collector
 
@@ -301,7 +301,7 @@ If user.properties contains the content listed in [Increase memory for collect
 
 To increase the maximum Java Heap size:
 
-1. On the computer running the Collector, open `install_directory/config/user.properties`.
+1. On the computer running the collector, open `install_directory/config/user.properties`.
 1. Add or locate the following parameter:
 
      ```
@@ -360,30 +360,30 @@ Then update `user.properties` as follows:
 * Delete the above-mentioned three lines (the lines that begin with `wrapper.`)
 * Add the following line: `wrapper.java.maxmemory=<some_value>`
 
-You can now restart the Collector as described in Start or Stop a Collector Using Scripts.
+You can now restart the collector as described in Start or Stop a Collector Using Scripts.
 
 
 ## Increase Max Threads for Collector
 
-The Collector will use three threads per available CPU by default. For example, if you have a six CPU system the default number of threads used by Sources would be 18. This may not be enough to keep up with data collection.
+The collector will use three threads per available CPU by default. For example, if you have a six CPU system the default number of threads used by sources would be 18. This may not be enough to keep up with data collection.
 
-If you're noticing a delay in ingestion and the data you do see is being ingested in batches check your Collector **/logs/** directory for the following type of log:
+If you're noticing a delay in ingestion and the data you do see is being ingested in batches check your collector **/logs/** directory for the following type of log:
 
 ```
 2018-09-26 15:14:15,701 -0400 [Blade0000000000000000-Scanner] INFO  com.sumologic.scala.collector.blade.wildcard.WildcardBlade$$anon$1 - purely dealing with non backlog items with 6 threads
 ```
 
-If this log is present you need to increase the threads available to the Collector or reduce the rate and volume of data for it to collect. To increase the thread count:
+If this log is present you need to increase the threads available to the collector or reduce the rate and volume of data for it to collect. To increase the thread count:
 
-1. Stop the current Collector service/process.
-1. Locate the Collector configuration file `/<sumo_install_dir>/config/collector.properties`.
+1. Stop the current collector service/process.
+1. Locate the collector configuration file `/<sumo_install_dir>/config/collector.properties`.
 1. Add the following parameter to increase the max threads count. We suggest a max setting of 60.
 
     ```
     source.max.threads.num = 60
     ```
 
-1. Restart the Collector process/service.
+1. Restart the collector process/service.
 
 
 ## Increase the number of Windows Event messages a Collector can retrieve
@@ -391,13 +391,13 @@ If this log is present you need to increase the threads available to the Collec
 
 
 
-The Sumo Logic Collector currently has a hard limit on the number of events a Source can retrieve from an Event Log Source every second. This limit is set to 512 events every 300ms by default. The following message in the Collector logs reference this setting.
+The Sumo Logic collector currently has a hard limit on the number of events a source can retrieve from an Event Log source every second. This limit is set to 512 events every 300ms by default. The following message in the collector logs reference this setting.
 
 ```
 2015-01-12 11:20:10,616 -0800 [Blade: 00000000074AB69D - localWinEvent]  INFO com.sumologic.scala.collector.blade.win.LocalWinEventLogJNIInput - Retrieved 512 from Security log from RN 2118395523
 ```
 
-On Windows servers where the generated number of events is much higher than approximately 1536 events per second, for any single event type, the Collector could start to fall behind on Collection. To address this issue there is a parameter that can be set within the Collector to increase this limit.
+On Windows servers where the generated number of events is much higher than approximately 1536 events per second, for any single event type, the collector could start to fall behind on collection. To address this issue there is a parameter that can be set within the collector to increase this limit.
 
 1. Open `/<sumo_home>/config/collector.properties` for editing. 
 1. Add the following parameter to the end of the file, or update the existing parameter.
@@ -407,7 +407,7 @@ On Windows servers where the generated number of events is much higher than appr
     ```
 
 1. Save the new `collector.properties` file.
-1. Restart the Collector service.
+1. Restart the collector service.
 
 
 
@@ -457,19 +457,19 @@ See details on the supported [Timestamps, Time Zones, Time Ranges, and Date For
 
 #### Message time, Receipt time, and Searchable time
 
-* **Message time** represents the time of your log events. This is parsed from your logs by the Collector. When adding a Source to a Collector, most users choose to automatically detect timestamps in their logs and parse them by selecting **Extract timestamp information from log file entries** in the Source configuration settings.
-* **Receipt time** is the timestamp the log message was received by the Collector. See [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) for details.
+* **Message time** represents the time of your log events. This is parsed from your logs by the collector. When adding a source to a collector, most users choose to automatically detect timestamps in their logs and parse them by selecting **Extract timestamp information from log file entries** in the source configuration settings.
+* **Receipt time** is the timestamp the log message was received by the collector. See [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) for details.
 * **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall searchable time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
 
 :::note
-If Enable Timestamp Parsing is not selected for your Source, Sumo Logic automatically sets the message time to be equivalent to the receipt time.
+If Enable Timestamp Parsing is not selected for your source, Sumo Logic automatically sets the message time to be equivalent to the receipt time.
 :::
 
 #### Time zone configuration
 
-Large time discrepancies are typically related to time zone settings that were specified for a Source during the Collector setup process. When a time zone is incorrectly configured for a data source, it can lead to message time and receipt time discrepancies.
+Large time discrepancies are typically related to time zone settings that were specified for a source during the collector setup process. When a time zone is incorrectly configured for a data source, it can lead to message time and receipt time discrepancies.
 
-Pay careful attention to the Time Zone specified for a Source. The **Use time zone from log file** option assumes that a time zone is part of the message timestamp and that it is in a supported [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html), as shown below:
+Pay careful attention to the time zone specified for a source. The **Use time zone from log file** option assumes that a time zone is part of the message timestamp and that it is in a supported [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html), as shown below:
 
 | Letter | Date or Time Component | Example |
 |:--|:--|:--|
@@ -499,11 +499,11 @@ Source Time Zone selection: None Selected (”Select a Time Zone” appears in t
 Sample Message Timestamp: Sep 28 19:00:00
 ```
 
-In this scenario, there is no time zone in the sample message at all. However, the server where the logs were sourced from is located in Los Angeles, so the *expectation* is that the time zone is GMT-08:00. Because no time zone option was actually selected for the Source,  Sumo Logic applies the default UTC  time zone to these messages. And similar to the first example, when users run a search for the “last 15 minutes”, the events being retrieved are inaccurate.
+In this scenario, there is no time zone in the sample message at all. However, the server where the logs were sourced from is located in Los Angeles, so the *expectation* is that the time zone is GMT-08:00. Because no time zone option was actually selected for the source,  Sumo Logic applies the default UTC  time zone to these messages. And similar to the first example, when users run a search for the “last 15 minutes”, the events being retrieved are inaccurate.
 
 #### Troubleshooting a misconfigured time zone
 
-If you are experiencing apparent delays during ingest (receiving data), select the **Use Receipt Time** check box under the time picker. This will present data in the order in which it was received by Sumo Logic, as well as display the timestamp that has been detected/applied.
+If you are experiencing apparent delays during ingest (receiving data), select the **Use Receipt Time** checkbox under the time picker. This will present data in the order in which it was received by Sumo Logic, as well as display the timestamp that has been detected/applied.
 
 <img src={useBaseUrl('img/send-data/UseReceiptTime_chekcbox.png')} alt="Use receipt time checkbox" style={{border: '1px solid gray'}} width="800" />
 
@@ -511,11 +511,11 @@ A gap between the two values indicates a potential misconfiguration of the time 
 
 <img src={useBaseUrl('img/send-data/TimeDiscrepancy.png')} alt="Time discrepancy" style={{border: '1px solid gray'}} width="500" />
 
-Review your time zone settings, and apply a time zone on the Source that reflects what the time zone is of the sending application. For example, if your application is sending events with a UTC timestamp, you can specify this in the Source configuration.
+Review your time zone settings, and apply a time zone on the source that reflects what the time zone is of the sending application. For example, if your application is sending events with a UTC timestamp, you can specify this in the source configuration.
 
 #### Finding timestamp deltas
 
-The query below can be executed in your account to find the number of messages for each of your Sources where the receipt time and message time are more than 30 minutes apart. This should at least give you a good starting place for you to run additional analysis.
+The query below can be executed in your account to find the number of messages for each of your sources where the receipt time and message time are more than 30 minutes apart. This should at least give you a good starting place for you to run additional analysis.
 
 ```sumo
 *
@@ -533,7 +533,7 @@ The query below can be executed in your account to find the number of messages f
 | order by _count
 ```
 
-After identifying a list of (problematic) Sources in the previous search, you can then use the query below to view the time delay average, the max delay, and the min delay for each Source. Substitute `<problem_child>` with the Source(s) that you uncovered in the initial query above.  
+After identifying a list of (problematic) sources in the previous search, you can then use the query below to view the time delay average, the max delay, and the min delay for each source. Substitute `<problem_child>` with the source(s) that you uncovered in the initial query above.  
 
 ```sumo
 _source=<problem_child>
@@ -544,7 +544,7 @@ _source=<problem_child>
 | min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourceName
 ```
 
-If the average, max, and min delay values are very close in range, then the time difference is most likely the symptom of an incorrect time zone setting. You’ll want to go back and ensure that your Source configurations line up correctly with the log messages. Switch to the raw messages tab and the “format” field shows how the timestamp is parsed from the file.
+If the average, max, and min delay values are close in range, then the time difference is most likely the symptom of an incorrect time zone setting. You’ll want to go back and ensure that your source configurations line up correctly with the log messages. Switch to the raw messages tab and the “format” field shows how the timestamp is parsed from the file.
 
 For both searches above, it’s a good idea to use a relative time range that locates messages over the last 30 minutes based on receipt time.
 
@@ -552,63 +552,63 @@ For both searches above, it’s a good idea to use a relative time range that lo
 
 ## How can I tell if I'm collecting data?
 
-After installing a Collector and configuring a Source, your data should appear in Sumo Logic in a matter of minutes. How can you confirm that your data is being collected? Try any of the following options. 
+After installing a collector and configuring a source, your data should appear in Sumo Logic in a matter of minutes. How can you confirm that your data is being collected? Try any of the following options. 
 
 #### Check the Status page of Sumo Logic
 
-You can view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+You can view the total message volume (the volume of all collectors in your account) and the volume of data from each collector.
 
 [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Status**.
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
 :::note
-Make sure that you're viewing Running Collectors or All Collectors in the Status page. If the Stopped Collectors option is selected, you won't see accurate message volume information.
+Make sure that you're viewing Running Collectors or All Collectors in the Status page. If the Stopped Collectors option is selected, you will not see accurate message volume information.
 :::
 
 #### Try a search
 
-Collected data should be searchable within a couple of minutes. You can run a search based on when Sumo Logic received your data by running a search by **Receipt Time** timestamp or run a search based on when the log data is ready for search after they are received by the Sumo Logic system by **Searchable Time** timestamp. Try specifying the Collector with the metadata field `_collector` and the Collector name, like `_collector=<name>`.
+Collected data should be searchable within a couple of minutes. You can run a search based on when Sumo Logic received your data by running a search by **Receipt Time** timestamp or run a search based on when the log data is ready for search after they are received by the Sumo Logic system by **Searchable Time** timestamp. Try specifying the collector with the metadata field `_collector` and the collector name, like `_collector=<name>`.
 
 If your user account is not an administrator check your role assignment for any search filters that may be restricting access to the data.
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/>. Stopped Collectors do not send any data.
+Collectors and sources in your account are listed on the Collectors page. Collectors and sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/>. Stopped collectors and sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/>. Stopped collectors do not send any data.
 
-If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
+If a collector is stopped, you can verify the collector's status and restart it if necessary.
 
-To check a Collector's status:
+To check a collector's status:
 
-1. On the host with the Collector navigate to the Collector's \[install_dir\]/ and run `#./collector status`.   The default Collector installation locations are:
+1. On the host with the collector navigate to the collector's \[install_dir\]/ and run `#./collector status`.   The default collector installation locations are:
 
     * **Linux**: `/opt/SumoCollector/` or `/usr/local/SumoCollector`
     * **Windows**: `C:\Program Files (x86)\Sumo Logic Collector` or `C:\Program Files\Sumo Logic Collector`
 
-1. If the status is "stopped" you can restart the Collector by running `#./collector start`.
+1. If the status is "stopped" you can restart the collector by running `#./collector start`.
 
-    Running a Collector on Windows? The Collector's status can be found by running services.msc from an Admin cmd.exe shell, or from the Control Panel. The service is listed under SumoLogic Collector; the startup type should be set to Automatic.
+    Running a collector on Windows? The collector's status can be found by running services.msc from an Admin cmd.exe shell, or from the Control Panel. The service is listed under SumoLogic Collector; the startup type should be set to Automatic.
 
 #### Check timestamp settings
 
-If your log files have missing or faulty time stamp data it can affect the log messages you'll see collected; search results are also affected if time stamp information is incorrect. For example, if a Collector is running on a computer that doesn't contain a UTC offset time (like UTC-0800), the time stamp could be off by several hours, so if you attempted to search logs within the past 15 minutes no search results will appear. 
+If your log files have missing or faulty timestamp data it can affect the log messages you'll see collected; search results are also affected if timestamp information is incorrect. For example, if a collector is running on a computer that does not contain a UTC offset time (like UTC-0800), the timestamp could be off by several hours, so if you attempted to search logs within the past 15 minutes no search results will appear. 
 
-When you configure a Source, you can choose one of three timestamp options. First, make sure that your log data is using a [supported timestamp and date format](/docs/send-data/reference-information/time-reference.md). 
+When you configure a source, you can choose one of three timestamp options. First, make sure that your log data is using a [supported timestamp and date format](/docs/send-data/reference-information/time-reference.md). 
 
-To view Source settings:
+To view source settings:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
-1. Click **Edit** to the right of the Source's name.
+1. Click **Edit** to the right of the source's name.
 1. Under **Advanced**, choose one of the following:
 
     <img src={useBaseUrl('img/send-data/timezone_parsing_options.png')} alt="Time zone parsing options" style={{border: '1px solid gray'}} width="500" />
 
    * Extract timestamp information from log file entries. Select this option if you'd like Sumo Logic to always extract timestamps from log messages. If no timestamp is detected, Sumo Logic uses the time when the data is received. Generally, this is the best option (it's also selected by default).
-   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files do not have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
-   * Ignore time zone from log file. Choose a time zone to override any time zone information found in log files. If you're collecting log files from disparate time zones, choose this option to set all your Sources to the same time zone.
+   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files do not have a timestamp. If a collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
+   * Ignore time zone from log file. Choose a time zone to override any time zone information found in log files. If you're collecting log files from disparate time zones, choose this option to set all your sources to the same time zone.
 
 :::important
-Changes you make to this option aren't applied retroactively; they are applied to log messages moving forward. 
+Changes you make to this option are not applied retroactively; they are applied to log messages moving forward. 
 :::
 
 For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md). 
