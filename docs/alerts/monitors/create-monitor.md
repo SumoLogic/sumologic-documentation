@@ -31,26 +31,8 @@ There are several ways to create a new monitor, depending on where you are in Su
 
 ### From Monitors
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**.
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
-
-<!-- These options are not appearing
-
-### From a Dashboard
-
-1. From a Dashboard, hover your mouse over any panel, click the three-dot kebab icon, then click **Open in Log Search**.
-1. From your Log Search view, click the three-dot kebab icon in the upper right corner, then **Create a Monitor**.
-
-### From the App Catalog
-
-1. Search for your app in the **App Catalog > Search Apps** field.
-1. Navigate to **What's Included** tab, scroll down to the **Monitors** section, then click **Create** next to the pre-configured monitors.
-
-### From Log Search
-
-Click the kebab icon in the upper right corner, then **Create a Monitor**.
-
--->
 
 ### From Metrics Search
 
@@ -128,7 +110,7 @@ Watch this micro lesson to learn about anomaly monitors.
 
 **Use Outlier**
 
-If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**. This detects unusual changes or spikes in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. <br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
+If you want to trigger alerts on outlier direction rather than anomaly detection, select **Anomaly** and enable **Use Outlier**. This detects unusual changes or spikes in a time series of a key indicator. Use this detection method when you are alerting on KPIs that do not have well-defined constant thresholds for what's good and bad. You want the monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. <br/><img src={useBaseUrl('img/alerts/monitors/monitor-detector-types-for-anomaly.png')} alt="Screenshot of the Monitor Type and Detection Method options in Sumo Logic's 'New Monitor' setup page. Logs is selected as the Monitor Type, and Anomaly is selected as the Detection Method. There is an option to use Outlier detection, which is currently toggled off." width="300"/>
 
 #### Anomaly or Outlier Direction
 
@@ -328,7 +310,7 @@ The Alert and recovery setting affects both the alert generation logic and the a
 |:--|:--|
 | `<count>` | The minimum number of data points required within the configured window to trigger an alert or recover from an alert. This means that if Sumo Logic receives fewer data points in a given window, no alert will be triggered (even if all those data points exceed the threshold).
 
-For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you won't get an alert.
+For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you will not get an alert.
 
 **Example: Metrics - Static - Missing Data**
 
@@ -415,7 +397,7 @@ Example: `{{Resultsjson.Env}}` - High CPU. This alert will produce an Alert with
 
 ### Evaluation Delay
 
-Use this setting to delay monitor processing by the specified interval of time to account for data ingestion delays. It delays the evaluation of a monitor so that it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.
+Use this setting to delay monitor processing by the specified interval of time to account for data ingestion delays. It delays the evaluation of a monitor so that it does not look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.
 
 Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since monitors run on data from the most current time period, it's possible for them to evaluate against incomplete data. As a result, monitors can generate false positives or negatives that can cause confusion.
 
@@ -441,7 +423,7 @@ Notifications will be sent when the monitor is triggered as configured in the [A
 <img src={useBaseUrl('img/alerts/monitors/new-monitor-notifications.png')} alt="Screenshot of the Notifications section in Sumo Logic's 'New Monitor' setup page. It includes an option to select the preferred notification time zone, set to (GMT-06:00) America/Chicago. Below is a section to configure connection types for notifications, with options for Critical, Alert, Recovery, Warning, and Missing Data. There is also a button to add a new notification." style={{border: '1px solid gray'}} width="800"/>
 
 * **Preferred Notification Time Zone**. Set the time zone for your alert notifications. If you do not select anything, it will default to the time zone specified in your user preferences.
-* **Connection Type**. Choose the [connection](/docs/alerts/webhook-connections) notification method (e.g., email, Webhook, PagerDuty). Monitor notifications support [Alert Variables](/docs/alerts/monitors/alert-variables) to reference its configuration settings or your raw data.
+* **Connection Type**. Choose the [connection](/docs/alerts/webhook-connections) notification method (for example, email, Webhook, PagerDuty). Monitor notifications support [Alert Variables](/docs/alerts/monitors/alert-variables) to reference its configuration settings or your raw data.
    * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body. You can also include additional context in the email notification:
       * **Include Query** (`includeQuery`). Adds the monitor's search query to the email notification. Supported for Logs, Metrics, and SLO monitors.
       * **Include Results** (`includeResultSet`). Adds the search results to the email notification. Supported for Logs and Metrics monitors. SLO monitors do not support this option. Setting `includeResultSet` on an SLO monitor returns an error indicating that the flag is not applicable.

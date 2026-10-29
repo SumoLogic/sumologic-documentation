@@ -2,7 +2,7 @@
 id: alert-variables
 title: Alert Variables
 sidebar_label: Alert Variables
-description: Alerts support variables allowing you to customize notifications with the information you need. You can use alert variables to customize your notification payload from monitors, Scheduled Searches, and metrics monitors.
+description: Alerts support variables allowing you to customize notifications with the information you need. You can use alert variables to customize your notification payload from monitors, scheduled searches, and metrics monitors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ Variables are used as parameters that allow you to customize the JSON payload ob
 
 ## Common variables for alerts
 
-You can use the following built-in variables when specifying the notification payload for log and metric monitors and Scheduled Searches. They allow you to reference specific configurations of your monitor.
+You can use the following built-in variables when specifying the notification payload for log and metric monitors and scheduled searches. They allow you to reference specific configurations of your monitor.
 
 The table below lists the variable descriptions along with which areas of the product you can use them.
 
@@ -44,7 +44,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 
 :::info Legacy variables
 
-Here are legacy variables available for alert notifications from metrics monitors and Scheduled Searches.
+Here are legacy variables available for alert notifications from metrics monitors and scheduled searches.
 
 <details>
 <summary>Click to view</summary>
@@ -83,7 +83,7 @@ You can choose one of the following formats. The Legacy format is enabled by def
 | Legacy (default) | `06/23/2025 09:19:45 AM AEST` | 12-hour time with AM/PM, in `MM/dd/yyyy hh:mm:ss a z` format. |
 | ISO | `2025-06-23 09:19:45 AEST` | 24-hour time without AM/PM, in `yyyy-MM-dd HH:mm:ss z` format. |
 
-The selected format applies to all timestamp fields in alert and recovery notifications, including **Created On Date**, **Trigger Time Range**, and **Recovery Time**. It applies consistently across Connections, Webhooks, Slack, and Microsoft Teams, for both Monitor alerts and Scheduled Search notifications.
+The selected format applies to all timestamp fields in alert and recovery notifications, including **Created On Date**, **Trigger Time Range**, and **Recovery Time**. It applies consistently across Connections, Webhooks, Slack, and Microsoft Teams, for both monitor alerts and scheduled search notifications.
 
 <img src={useBaseUrl('img/get-started/timestamp-policies.png')} alt="Notification Settings Standards policy showing Legacy and ISO date and time format options" style={{border: '1px solid gray'}} width="700"/>
 

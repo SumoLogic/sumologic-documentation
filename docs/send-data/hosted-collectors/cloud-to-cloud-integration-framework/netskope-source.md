@@ -59,7 +59,7 @@ Netskope REST API v2 provides an easy way to extend the Netskope platform to bui
 To obtain a Netskope REST API v2 auth token, do the following:
 
 1. Log in to Netskope as the Tenant Admin.
-1. Go to the API section of Netskope: **Settings** > **Tools** > ** REST API v2**.
+1. Go to the API section of Netskope: **Settings** > **Tools** > **REST API v2**.
 1. Click **New Token** and provide the token name and expiration duration, then add the READ privilege to `/api/v2/events/dataexport/events/<type>` for every event type you want to collect, where `<type>` is one of `page`, `application`, `infrastructure`, `audit`, `network`, `connection`, `incident`, or `endpoint`. Also add READ permission for `/api/v2/events/dataexport/events/alert` unless you enable **Disable Alerts** in the Source configuration.
 1. Copy the token in the next dialog box and save it somewhere, as it won't be visible after.
 

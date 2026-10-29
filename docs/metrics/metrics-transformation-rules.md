@@ -40,9 +40,9 @@ Metrics transformation rules are useful when:
 1. **Selector.** The selector that matches the metrics to which you
     want to apply the transformation rule. (The scope of a metric query.)
 1. **Retention**. The period of time you want to retain the metrics that match the selector. Available options are:
-    * **Do Not Store**. This option does not appear until and unless you specify one or more aggregation dimensions in the **Aggregate on** section below. (This is to ensure that your raw metrics are not deleted if they haven’t been aggregated.)
+    * **Do Not Store**. This option does not appear until and unless you specify one or more aggregation dimensions in the **Aggregate on** section below. (This is to ensure that your raw metrics are not deleted if they have not been aggregated.)
     * **400 days**
-1. **Aggregate On**. (Optional) If you would like to aggregate the raw metrics by one or more dimensions, click **+Add** and enter the dimension name. Upon ingestion, Sumo Logic will [quantize](/docs/metrics/introduction/metric-quantization/) the aggregated metrics to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.  You can aggregate raw metrics on a maximum of 10 dimensions
+1. **Aggregate On**. (Optional) If you would like to aggregate the raw metrics by one or more dimensions, click **+Add** and enter the dimension name. Upon ingestion, Sumo Logic will [`quantize`](/docs/metrics/introduction/metric-quantization/) the aggregated metrics to one minute and one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, and `count`.  You can aggregate raw metrics on a maximum of 10 dimensions
 1. **Aggregate Retention**. (Required if you entered an aggregation dimension). The retention period for the aggregated metrics is **400 days**.
 1. **Transformations**. (Optional) If you want to add a new dimension, or transform a dimension of the aggregated metrics, click **+Add**:
     * **Dimension to replace or add**. Enter the dimension you want to transform, for example:   `metric`
@@ -83,7 +83,7 @@ All metrics that match the selector `environment=dev` are aggregated and the raw
 
 ### Aggregate high cardinality and ephemeral data for long term trending
 
-You can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time. Container metrics are an example of such data. Containers are ephemeral, created and destroyed as appropriate, resulting in a high volume of short-lived time series. More often than not, container-level metrics are not useful over the long term. However, container metrics that are aggregated at the service or deployment level can be very useful for longer term trend analysis. 
+You can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time. Container metrics are an example of such data. Containers are ephemeral, created and destroyed as appropriate, resulting in a high volume of short-lived time series. More often than not, container-level metrics are not useful over the long term. However, container metrics that are aggregated at the service or deployment level can be useful for longer term trend analysis. 
 
 <img src={useBaseUrl('img/metrics/add-a-rule.png')} alt="Add a metrics transformation rule with aggregation" style={{border: '1px solid gray'}} width="400" />
 
@@ -97,7 +97,7 @@ Here’s what the rule does:
     metric=container_fs_bytes service=foo container=4321 pod=dcba
     ```
 1. The matching metrics shown above are set to **Do Not Store**, so the raw metrics are discarded once they're aggregated.
-1. Matching metrics will be aggregating by the `metric` and `service` dimensions. The aggregated metrics are quantized to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.
+1. Matching metrics will be aggregating by the `metric` and `service` dimensions. The aggregated metrics are quantized to one minute and one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, and `count`.
 1. The aggregated metrics shown above will be retained for 400 days, then discarded. Only the dimensions upon which the raw metrics were aggregated are preserved in the aggregated metrics. The `container` and `pod` dimensions are not included in the aggregated metrics.
 1. The aggregated metrics will have the value of the metric dimension modified to have a suffix of `_agg`, like this:  
     ```metrics

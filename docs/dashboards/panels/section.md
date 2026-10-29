@@ -1,6 +1,7 @@
 ---
 id: section
 title: Group Dashboard Panels into Sections
+sidebar_label: Group Panels into Sections
 description: Group related dashboard panels into collapsible sections to improve organization, navigation, and query performance in Sumo Logic.
 ---
 
@@ -17,7 +18,7 @@ The following limits apply to sections:
 
 ## How to add a section
 
-To add a section to your dashboard, follow the below steps: 
+To add a section to your dashboard, follow the below steps:
 
 1. Create or open a **Dashboard**, then click **Add Panel** > **Section**.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section.png')} alt="dashboard_section" style={{border: '1px solid gray'}} width="600"/>
 1. Drag and drop panels into the newly added section as needed.
@@ -33,7 +34,7 @@ To add a section to your dashboard, follow the below steps:
 ## How to set a section as default
 
 To save the current state of a section as its default, click the three-dot kebab menu icon in the upper-right corner of the section and select **Set as Default**. This sets the section's default state to match how it is currently displayed.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_set_as_default.png')} alt="Set as Default option in the section kebab menu" style={{border: '1px solid gray'}} width="800"/>
-    
+
 :::note
 The **Set as Default** option is greyed out when the section is in a collapsed state and its default state is already set to **Collapsed** in the edit window. Expand the section first to make the option clickable.
 :::

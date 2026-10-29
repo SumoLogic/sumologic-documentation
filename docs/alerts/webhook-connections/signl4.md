@@ -33,7 +33,7 @@ In Sumo Logic, scheduled searches send alerts to other tools via webhook connect
 1. [Create a Webhook Connection](#create-a-webhook-connection).
 1. Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections)  or [Monitor](/docs/alerts/monitors).
 
-## Create a Webhook Connection
+## Create a webhook connection
 
 :::note
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
@@ -91,7 +91,7 @@ To create a webhook:
 1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
 
-### Configure a Scheduled Search
+### Configure a scheduled search
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 
