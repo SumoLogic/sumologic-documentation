@@ -1,6 +1,7 @@
 ---
 id: about
 title: About Monitors
+sidebar_label: Overview
 description: Sumo Logic monitors continuously query your logs or metrics and sends notifications when specific events occur, such as critical, warning, and missing data.
 ---
 
