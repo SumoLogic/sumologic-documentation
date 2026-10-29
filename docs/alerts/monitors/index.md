@@ -14,7 +14,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/alerts/monitors/overview')}><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="Monitor and Visualize icon" width="40"/><h4>Overview</h4></a>
+  <a href={useBaseUrl('docs/alerts/monitors/about')}><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="Monitor and Visualize icon" width="40"/><h4>Overview</h4></a>
   <p>Set up monitors to continuously query your logs or metrics and send notifications when specific events occur.</p>
   </div>
 </div>

@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs and basic infrastructure details. Oracle CloudTrail and CloudWatch Logs dashboards provide monitoring for error logs and essential infrastructure details.
 
-## Log and metrics types  
+## Log and metrics types
 
 The Amazon RDS app uses the following logs and metrics:
 * [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), and [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html).
@@ -283,7 +283,7 @@ account=* region=* namespace=aws/rds "\"eventSource\":\"rds.amazonaws.com\"" !er
 | parse field=arn ":assumed-role/*" as user nodrop | parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
 | json field=requestParameters "dBInstanceIdentifier", "resourceName", "dBClusterIdentifier" as dBInstanceIdentifier1, resourceName, dBClusterIdentifier1 nodrop
 | json field=responseElements "dBInstanceIdentifier" as dBInstanceIdentifier3 nodrop
-| parse field=resourceName "arn:aws:rds:*:db:*" as f1, dBInstanceIdentifier2 nodrop 
+| parse field=resourceName "arn:aws:rds:*:db:*" as f1, dBInstanceIdentifier2 nodrop
 | if (resourceName matches "arn:aws:rds:*:db:*", dBInstanceIdentifier2, if (!isEmpty(dBInstanceIdentifier1), dBInstanceIdentifier1, dBInstanceIdentifier3) ) as dBInstanceIdentifier
 | where !isEmpty(dBInstanceIdentifier)
 | count as freq by engine, dBInstanceIdentifier
@@ -294,14 +294,14 @@ account=* region=* namespace=aws/rds "\"eventSource\":\"rds.amazonaws.com\"" !er
 
 ```sumo title="ORA Messages Over Time (Oracle CloudWatch log based)"
 account=* region=* namespace=aws/rds dbidentifier=*  _sourceHost=/aws/rds/*alert ORA-*
-| json "message" nodrop | if (_raw matches "{*", message, _raw) as message 
+| json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse regex field=message "(?<oraerr>ORA-\d{5}): (?<oramsg>.*)" multi
 | timeslice 1s
 | count as eventCount by oraerr, _timeslice
 | transpose row _timeslice column oraerr
 ```
 
-## Viewing the RDS dashboards  
+## Viewing the RDS dashboards
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
@@ -354,14 +354,14 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview-By-Database-Instance.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### 02. Amazon RDS - Performance Insights   
+### 02. Amazon RDS - Performance Insights
 
 The **Amazon RDS - Performance Insights** dashboard provides intuitive performance data from throughout your RDS infrastructure across CPU load, non-CPU load, active sessions, and performance trends.
 
 Use this dashboard to:
 * Monitor Amazon RDS DB instance loads to analyze and troubleshoot database performance.
 * Identify when the CPU is overloaded, so you can throttle connections to the instance, tune SQL queries with a high CPU load, or consider a larger instance class to remedy the situation.
-* Identify high and consistent instances of any wait state (Non-CPU Load)  that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load doesn't exceed maximum CPU.
+* Identify high and consistent instances of any wait state (Non-CPU Load) that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load does not exceed maximum CPU.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -513,7 +513,7 @@ Use this dashboard to:
 * Obtain count of slow queries and unique slow queries.
 * Identify number of slow queries by user, host and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
-* Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
+* Obtain unique slow queries along with execution time, analyzing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
