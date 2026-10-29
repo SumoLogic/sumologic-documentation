@@ -2,7 +2,7 @@
 id: threat-intel-ingest
 title: Threat Intel Ingest Management APIs
 sidebar_label: Threat Intel
-description: The Threat Intel Ingest Management API allows you to upload STIX 2.x threat intel indicators, view storage status of threat intel ingest service, and view and set the retention period for threat intel indicators.
+description: The Threat Intel Ingest Management API allows you to upload STIX 2.x threat intel indicators and view storage status of threat intel ingest service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,9 +13,13 @@ import ApiRoles from '../reuse/api-roles.md';
 
 The Threat Intel Ingest Management API allows you to:
 
-* Upload threat intelligence indicators
-* View storage status of threat intelligence ingest service
-* View and set the retention period for threat intelligence indicators
+* Upload threat intelligence indicators.
+* View storage status of threat intelligence ingest service.
+
+:::note
+* The `GET` and `POST /api/v1/threatIntel/datastore/retentionPeriod` endpoints have been removed.
+* The `diskSize` field is no longer returned by `GET /api/v1/threatIntel/datastore/db`.
+:::
 
 For more information about threat intelligence, see [About Sumo Logic Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/).
 
