@@ -76,6 +76,16 @@ The log level of a log line is stored under the `_loglevel` field. You can overr
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/add-field-extraction-rule.png')} alt="Add field extraction rule" width="400"/>
 
-:::note
- Log level detection is for qualitative purposes only and will not be perfect. So it is not recommended to use the `_loglevel` field for routing data to different data tiers based on its value.
-:::
+## Limitations
+
+* **Qualitative use only.** Log level detection is for qualitative purposes only and will not be perfect. Do not use the `_loglevel` field to route data to different data tiers based on its value.
+* **Duplicate keys.** Log level detection can break when a JSON payload contains duplicate key values. Logs with the same structure can end up classified under different log levels, which leaves your results inconsistent. To avoid this, make sure each key appears only once in your JSON log messages. For example, the following payload contains the `to_timestamp` key twice:
+
+  ```json
+  {
+    "level": "info",
+    "message": "Request processed",
+    "to_timestamp": "2026-10-28T10:15:00Z",
+    "to_timestamp": "2026-10-28T10:20:00Z"
+  }
+  ```
