@@ -95,7 +95,7 @@ All variables are case-insensitive.
 | `{{TriggerTimeStart}}` | The start time of the time range that triggered the monitor in Unix format. For example, `1626189692042`. | &#10003; | &#10003; |
 | `{{TriggerTimeEnd}}` | The end time of the time range that triggered the monitor in Unix format. For example, `1626190592042`. | &#10003; | &#10003; |
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | &#10003; |  |
-| `{{AlertResponseUrl}}` | When your Monitor is triggered, it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#10003; | &#10003; |
+| `{{AlertResponseUrl}}` | When your monitor is triggered, it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#10003; | &#10003; |
 
 
 <details>
@@ -110,7 +110,7 @@ We recommend using the new common variables instead of these legacy variables, w
 | Variable | Description | Metrics Monitors | Scheduled Searches |
 | :-- | :-- | :-- | :--|
 | ` {{SearchName}}` |  | &#10003; | &#10003; |
-| `{{SearchDescription}}` | Description of the saved search or Monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or Monitor when you created it. | &#10003; | &#10003; |
+| `{{SearchDescription}}` | Description of the saved search or monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or monitor when you created it. | &#10003; | &#10003; |
 | `{{SearchQuery}}` | The query used to run the saved search. In the delivered payload, this variable is replaced by your saved search query or metric query. | &#10003; | &#10003; |
 | `{{SearchQueryUrl}}` | The URL to the search or metrics query. In the delivered payload, this is a URL that you can click to run the saved logs or metric query. | &#10003; | &#10003; |
 | `{{TimeRange}}` | The time range that triggered the alert. | &#10003; | &#10003; |

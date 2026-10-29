@@ -2,7 +2,7 @@
 id: alert-variables
 title: Alert Variables
 sidebar_label: Alert Variables
-description: Alerts support variables allowing you to customize notifications with the information you need. You can use alert variables to customize your notification payload from monitors, Scheduled Searches, and metrics monitors.
+description: Alerts support variables allowing you to customize notifications with the information you need. You can use alert variables to customize your notification payload from monitors, scheduled searches, and metrics monitors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ Variables are used as parameters that allow you to customize the JSON payload ob
 
 ## Common variables for alerts
 
-You can use the following built-in variables when specifying the notification payload for log and metric monitors and Scheduled Searches. They allow you to reference specific configurations of your monitor.
+You can use the following built-in variables when specifying the notification payload for log and metric monitors and scheduled searches. They allow you to reference specific configurations of your monitor.
 
 The table below lists the variable descriptions along with which areas of the product you can use them.
 
@@ -44,7 +44,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 
 :::info Legacy variables
 
-Here are legacy variables available for alert notifications from metrics monitors and Scheduled Searches.
+Here are legacy variables available for alert notifications from metrics monitors and scheduled searches.
 
 <details>
 <summary>Click to view</summary>

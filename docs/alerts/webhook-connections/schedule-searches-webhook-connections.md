@@ -2,7 +2,7 @@
 id: schedule-searches-webhook-connections
 title: Scheduled Searches for Webhook Connections
 sidebar_label: Sumo Logic Scheduled Searches
-description: Create a Scheduled Search to send alerts to a third-party tool via Webhook Connections.
+description: Create a scheduled search to send alerts to a third-party tool via webhook connections.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

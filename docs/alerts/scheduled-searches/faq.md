@@ -2,7 +2,7 @@
 id: faq
 title: Scheduled Search FAQ
 sidebar_label: FAQ
-description: You can edit or cancel a Scheduled Search at any time.
+description: You can edit or cancel a scheduled search at any time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -66,7 +66,7 @@ To create a scheduled search:
 
 ## Why would a scheduled search fail?
 
-A Scheduled Search may fail and be suspended for several reasons:
+A scheduled search may fail and be suspended for several reasons:
 
 ### Scheduled search query issues
 
@@ -87,7 +87,7 @@ Failures can be seen across many scheduled searches due to backend infrastructur
 
 ### Other issues
 
-Scheduled Search failures could result from:
+Scheduled search failures could result from:
 
 * A spike in data being processed by the scheduled search.
 * If you have a query that normally runs, but is close to reaching the [timeout period limit](#how-do-i-prevent-my-scheduled-search-from-timing-out), it could finally fail due to changes in your account, such as the content and size of log messages, or the volume or number of messages sent during a specific time range. Choosing a narrower time range can help.
@@ -151,7 +151,7 @@ First, we recommend that you review the scheduled search. (Just click the link a
 
 ### Why was my scheduled search suspended?
 
-Scheduled Searches must run within the limits of a [timeout period](#how-do-i-prevent-my-scheduled-search-from-timing-out), which can be 20 minutes to an hour, depending on the time range set for the query. If for some reason, a scheduled search cannot complete within the confines of the timeout period, such as connectivity problems or heavy load, the query will timeout and fail.
+Scheduled searches must run within the limits of a [timeout period](#how-do-i-prevent-my-scheduled-search-from-timing-out), which can be 20 minutes to an hour, depending on the time range set for the query. If for some reason, a scheduled search cannot complete within the confines of the timeout period, such as connectivity problems or heavy load, the query will timeout and fail.
 
 When a scheduled search query fails Sumo Logic attempts to run the query again a few more times. If all attempts fail the scheduled search is temporarily or permanently suspended depending on the issue detected. The owner of the scheduled search will receive an email alert with details of the suspension including the reason.
 
@@ -159,7 +159,7 @@ The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events
 
 ### Is there a limit on number of scheduled searches?
 
-A maximum of 6000 Scheduled Searches are allowed per account.
+A maximum of 6000 scheduled searches are allowed per account.
 
 ### Examples of scheduled search suspensions
 

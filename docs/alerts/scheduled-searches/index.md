@@ -30,13 +30,13 @@ A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and 
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/save-to-index')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Save to Index</h4></a>
-  <p>Learn how to save the results to an Index after creating a scheduled search email alert.</p>
+  <p>Learn how to save the results to an index after creating a scheduled search email alert.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/save-to-lookup')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Save to Lookup</h4></a>
-  <p>Learn how to save the results of a scheduled search to a Lookup Table.</p>
+  <p>Learn how to save the results of a scheduled search to a lookup table.</p>
   </div>
 </div>
 <div className="box smallbox card">

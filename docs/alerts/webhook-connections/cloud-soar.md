@@ -2,7 +2,7 @@
 id: cloud-soar
 title: Webhook Connection for Cloud SOAR
 sidebar_label: Cloud SOAR
-description: Create incidents in Cloud SOAR from Monitor and Scheduled Search alerts.
+description: Create incidents in Cloud SOAR from monitor and scheduled search alerts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

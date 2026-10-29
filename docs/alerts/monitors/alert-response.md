@@ -147,7 +147,7 @@ The following images and lists describe alert element on the page.<br/><img src=
 
 :::info Limitations
 * The alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
-* Related Alerts and Monitor History show the top 250 alerts.
+* Related Alerts and monitor history show the top 250 alerts.
 :::
 
 ## Alert Context cards

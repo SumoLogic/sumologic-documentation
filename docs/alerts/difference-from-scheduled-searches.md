@@ -2,14 +2,14 @@
 id: difference-from-scheduled-searches
 title: Difference between Monitors and Scheduled Searches
 sidebar_label: Monitors vs. Scheduled Searches
-description: Learn why you should use monitors instead of Scheduled Searches and metrics monitors.
+description: Learn why you should use monitors instead of scheduled searches and metrics monitors.
 ---
 
 To understand the difference between monitors and scheduled searches, it's essential to recognize the specific use cases each solution addresses.
 
-## Scheduled Searches
+## Scheduled searches
 
-Scheduled Searches address two primary use cases:
+Scheduled searches address two primary use cases:
 
 * Alerting about specific issues in your application. For example, you can create scheduled searches to notify you about a spike in the error rate for a service or a stopped process.
 * Reporting specific insights from searches on a periodic schedule. For instance, you can schedule a search to run daily, notifying you about the Daily Active Users on your platform.
