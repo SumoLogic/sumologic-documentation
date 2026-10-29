@@ -16,11 +16,11 @@ Metrics rules are especially useful for Graphite metrics, although they can also
 
 Consider a Graphite metric with the following structure: `cluster.node.cpu.metric-name`. Here are some metrics with that structure: `cluster-1.node-1.cpu-1.cpu-idle Cluster-2.node-1.cpu-6.cpu-user cluster-6.node-1.cpu-2.cpu-sys`.
 
-Without applying a metrics rule, you can’t search these metrics using key-value pairs. You can type the Graphite string into a metric query tab and use an asterisk for one or more segments, like this: `cluster-1.node-1.*.cpu-idle`.
+Without applying a metrics rule, you cannot search these metrics using key-value pairs. You can type the Graphite string into a metric query tab and use an asterisk for one or more segments, like this: `cluster-1.node-1.*.cpu-idle`.
 
 In contrast, after we apply a rule to our metrics, a user can interactively construct an analogous query formed of key-value pairs: `cluster=cluster-1 node=node-1 cpu=* metric-name=cpu-idle`.
 
-Building a query made up of key-value pairs is easier, because Sumo Logic prompts you with keys and values. You don’t need to know the exact name of the key, and as you build up the query, you can see matching time series in the metric query tab.  
+Building a query made up of key-value pairs is easier, because Sumo Logic prompts you with keys and values. You do not need to know the exact name of the key, and as you build up the query, you can see matching time series in the metric query tab.  
 
 ## Supported Metrics
 
@@ -61,7 +61,7 @@ Given a dot-delimited match expression, Sumo Logic applies the match expression 
 A match expression can be one or more key-value pairs, each of which specify a field available for the metric and a field value, like this: `_sourceCategory=training/shipping/metrics type=payment`, which matches all metrics with the source category `training/shipping/metrics`, whose `type` field is `payment`.
 
 :::tip
-If you don’t know what fields are available for a metric, you can see what they are on the **Legend** tab when you run a query that returns the metric. 
+If you do not know what fields are available for a metric, you can see what they are on the **Legend** tab when you run a query that returns the metric. 
 :::
 
 If a match expression is made up of key-value pairs, Sumo Logic applies it to metric fields *other* than the `_rawName` field. If a key you specify does not exist as a metric field, no matches will be found.
