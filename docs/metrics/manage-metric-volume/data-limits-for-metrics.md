@@ -103,7 +103,7 @@ The value of a metadata item, whether it is a dimension, metatag, or metadata re
 
 When one of the limits described above is exceeded, Sumo Logic creates a [`MetricsMetadataLimitsExceeded`](https://service.sumologic.com/audit/docs/#operation/getMetricsMetadataLimitsExceeded) Health Event for the associated metric source and writes an error or warning message to the [System Event Index](/docs/manage/security/audit-indexes/system-event-index/).
 
-Here is an example of a [Health Event](/docs/manage/health-events) for a Metrics source that sent offending metrics:
+Here is an example of a [Health Event](/docs/manage/health-events) for a metrics source that sent offending metrics:
 
 <img src={useBaseUrl('/img/metrics/metadata-health-event.png')} alt="MetricsMetadataLimitsExceeded health event error" style={{border: '1px solid gray'}} width="400" />
 
