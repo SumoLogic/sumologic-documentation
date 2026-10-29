@@ -11,7 +11,7 @@ import CloudSIEMThreatIntelNote from '../../reuse/cloud-siem-threat-intelligence
 
 Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known possible sources of attack and compromise.
 
-Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
+Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack. You can view and search the indicators in your threat intelligence data store on the [Indicators](#threat-intelligence-indicators) tab of the Threat Intelligence page.
 
 :::note
 Only active indicators are available for search and enrichment.
@@ -41,6 +41,11 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
 :::
 -->
 
+The Threat Intelligence page has two sections:
+
+* **Sources**. Lists the sources that supply threat intelligence indicators, including Sumo Logic-managed sources and custom sources you configure.
+* **Indicators**. Lists the individual indicators from your sources so you can search, filter, sort, and inspect them.
+
 ## Threat intelligence sources
 
 In Sumo Logic, threat intelligence indicators are supplied by sources listed on the **Sources** tab of the Threat Intelligence page, including Sumo Logic-managed sources and custom sources you configure.
@@ -52,6 +57,8 @@ To access Threat Intelligence in Sumo Logic,
 :::note
 Access to the Threat Intelligence tab requires Cloud SIEM. Without Cloud SIEM, you will not see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches.
 :::
+
+To learn how to add threat intelligence sources to your datastore, see [Add a source](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-a-source).
 
 Cloud SIEM analysts can use all sources shown in the **Sources** tab of the **Threat Intelligence** page to find threats (see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). All Sumo Logic users can also run log search queries against the indicators in their threat intelligence sources using the [`threatlookup`](/docs/search/search-query-language/search-operators/threatlookup/) search operator, or against the Sumo Logic threat intelligence sources using the [`lookup`](/docs/search/search-query-language/search-operators/lookup/) and [`threatip`](/docs/search/search-query-language/search-operators/threatip/) operators. For more information, see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/).
 
@@ -93,7 +100,7 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
 
-After threat indicator sources are ingested, they appear on the Threat Intelligence **Sources** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-to-use-the-hasthreatmatch-function-to-detect-threat-indicators).
+After threat indicator sources are ingested, they appear on the Threat Intelligence **Sources** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-to-use-the-hasthreatmatch-function-to-detect-threat-indicators). You can view the individual indicators on the [**Indicators** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators).
 
 <CloudSIEMThreatIntelNote/>
 
@@ -102,6 +109,10 @@ After threat indicator sources are ingested, they appear on the Threat Intellige
 * The limit of the number of indicators that can be uploaded in one API call is 100.
 * When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
 :::
+
+## Threat intelligence indicators
+
+Use the **Indicators** tab to view, search, and filter the individual indicators in your threat intelligence data store. For example, you can confirm that an indicator was ingested, check which source supplied it, or verify that a source is delivering data. For details, see [View and search indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators).<br/><img src={useBaseUrl('img/security/indicators-threat-intelligence.png')} alt="Threat Intelligence indicators" style={{border: '1px solid gray'}} width="800" />
 
 ## Prerequisites
 
@@ -114,8 +125,8 @@ To view and manage [threat intelligence indicators](/docs/security/threat-intell
 1. Click **Add Role** to create a new role. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 Add the following capabilities:
    * **Threat Intel**
-       * **View Threat Intel Data Store**
-       * **Manage Threat Intel Data Store**
+      * **View Threat Intel Data Store**
+      * **Manage Threat Intel Data Store**
 
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
 
@@ -133,11 +144,11 @@ Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) and configure the source such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source) to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the Threat Intelligence **Sources** tab. You can manually add more indicators as needed, such as your own private indicators, using the Threat Intelligence **Sources** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
 1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
-1. A system administrator occasionally checks to see why a connector is not ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
+1. A system administrator occasionally checks to see why a connector is not ingesting data, or to see how much storage all the indicators are using. They can use the [**Indicators** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators) to search for and examine indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
 
 ## Audit logging for threat intelligence
 
-Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) to view events for threat indicators, such as adding indicators, removing indicators, or changing the retention period.
+Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) to view events for threat indicators, such as adding indicators or removing indicators.
 
 Use a search like the following:
 
