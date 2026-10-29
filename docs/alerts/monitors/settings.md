@@ -88,7 +88,7 @@ Click the **More Actions** menu to view more options, including:
    :::important
    The Sumo Logic JSON format may change without notice, and future compatibility with imported JSON is not guaranteed.
    :::
-* **Copy Link**. Copies a link to the monitor. Provide the link to any Sumo Logic user in your organization so they can view the monitor. While this option doesn't allow you to share the monitor in the same way you can share a dashboard, you can use this option to quickly allow others in your Sumo Logic organization to view the monitor details.
+* **Copy Link**. Copies a link to the monitor. Provide the link to any Sumo Logic user in your organization so they can view the monitor. While this option does not allow you to share the monitor in the same way you can share a dashboard, you can use this option to quickly allow others in your Sumo Logic organization to view the monitor details.
 
 <img src={useBaseUrl('img/alerts/monitors/more-actions.png')} alt="monitor more actions" style={{border: '1px solid gray'}} width="300"/>
 
@@ -137,7 +137,7 @@ When setting up a new monitor, follow the steps in the [Monitor Details](/docs/a
 You can also add tags to monitors that are already created.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to **Monitoring > Monitors** from the main menu, or use the **Go To...** menu at the top of the screen to navigate to **Monitors**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
-1. Select a monitor from the list and double-click on it.
+1. Select a monitor from the list and double-click it.
 1. In the side panel, click **Edit**.
 1. Under the **Monitor details** step, create a tag using the `key=value` format, following these syntax rules:
    - Tag keys cannot start with the prefixes `sumo.` or `_`
@@ -168,7 +168,7 @@ Access to folders that contain monitors is controlled by permissions. If you hav
 
 To set permissions for a monitors folder:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
-2. Right-click on the folder whose permissions you want to set, and click **Edit Permissions**.
+2. Right-click the folder whose permissions you want to set, and click **Edit Permissions**.
 This option is present only if you have been granted **Manage** permission for the folder.
 3. On the edit popup, note that the user who created the folder, and roles with the **Admin Monitors** capability, automatically have all permissions to the folder.  
 4. You can make the following edits:
