@@ -6,41 +6,41 @@ keywords:
   - cloud-to-cloud
   - github-copilot
   - github
-description: Learn to collect the organization metrics and team metrics from GitHub Copilot platform.
+description: Learn how to collect daily Copilot organization, user, and user team usage metrics from GitHub into Sumo Logic with the Cloud-to-Cloud source.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/github_copilot.png')} alt="GitHub Copilot-icon" width="40" />
 
-GitHub is a web-based platform that uses Git for version control and collaboration in software development. It enables developers to create, store, manage, and share code in repositories, track changes, and collaborate on projects with features such as branches, pull requests, and issue tracking.
+The Sumo Logic source for GitHub Copilot is a Cloud-to-Cloud (C2C) integration that collects daily Copilot usage metrics from the GitHub Copilot usage metrics API and sends them to Sumo Logic. Use it to analyze Copilot adoption, usage, and activity across your organization.
 
-Copilot is an AI-powered pair programmer that integrates with various development environments. It leverages machine learning models trained on publicly available code to provide real-time code suggestions, explanations, and even generate entire functions or tests based on context and natural language prompts. Copilot's features aim to enhance developer productivity, accelerate coding, and improve code quality.
+GitHub is a web-based platform that uses Git for version control and enables developers to manage code repositories, track changes, and collaborate through features such as branches, pull requests, and issue tracking. GitHub Copilot is an AI-powered coding assistant that provides code suggestions, explanations, and code generation to improve developer productivity and code quality.
 
 ## Data collected
 
 | Source | Description | Polling interval |
 | :-- | :-- | :-- |
-| [Organization Metrics](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-an-organization) | Provides aggregated usage data for Copilot features within an organization, including code completions, chat, and pull request summaries. | 24 hours |
-| [Team Metrics](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-a-team) | Provides feature usage for specific teams, with breakdowns by language, editor, and model. | 24 hours |
+| [Organization Metrics](https://docs.github.com/en/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10#get-copilot-organization-usage-metrics-for-a-specific-day) | Aggregated Copilot usage data for the organization for a specific day, including usage statistics for Copilot features, user engagement data, and feature adoption metrics. | 24 hours |
+| [User Metrics](https://docs.github.com/en/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10#get-copilot-organization-users-usage-metrics-for-a-specific-day) | (Optional, enabled with **Collect User Metrics**) User-level Copilot usage data for the organization for a specific day, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. | 24 hours |
+| [User Team Metrics](https://docs.github.com/en/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10#get-copilot-organization-user-teams-report-for-a-specific-day) | (Optional, enabled with **Collect User Teams**) User-team membership data for Copilot across the organization, with one entry per user-team pair. Join this data with the User Metrics to compute team-level usage metrics. | 24 hours |
 
 ## Setup
 
 ### Vendor configuration
 
-You are required to provide the **Organization Name** and **PAT Token** to configure the GitHub Copilot source.
+You need to provide the **Organization Name** and a **PAT Token** to configure the GitHub Copilot Source.
 
-1. **Organization Name**: Name of the organization. The name is not case sensitive.
-2. **PAT Token**: Fine-grained PAT (Personal Access Token) token of the account. Follow the steps from the [GitHub Documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) to generate the fine-grained token. Configure a never-expiring fine-grained token for smooth integration.
+1. **Organization Name**: Name of the GitHub organization. The name is not case sensitive.
+1. **PAT Token**: A fine-grained personal access token (PAT) for the account. To generate one, follow the steps in the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token). We recommend configuring a never-expiring fine-grained token for a smooth integration.
 
-#### Pre-requisites
+#### Prerequisites
 
-1. The fine-grained PAT token must have at least one of the following permission sets:
-    - "Github Copilot Business" organization permissions (read).
-    - "Administration" organization permissions (read).
-2. To access any of the above endpoints, the Copilot metrics API access policy must be enabled for the organization (or organization containing the team if team metrics is configured).
-3. Only organization owners and billing managers of the parent enterprise can view Copilot metrics.
-    - The PAT tokens need either (`manage_billing:copilot`, `read:org`), or `read:enterprise` scopes to use the endpoints. Refer to the [GitHub Documentation](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-an-organization) for further details.
+1. The fine-grained PAT needs the "Organization Copilot metrics" organization permission (read).
+1. The Copilot usage metrics API access policy needs to be enabled for the organization.
+1. Only organization owners and authorized users with the fine-grained "View Organization Copilot Metrics" permission can retrieve Copilot metrics reports for the organization.
+    - If you use a personal access token (classic) instead, it needs the `read:org` scope.
+    - Refer to the GitHub documentation for the [organization](https://docs.github.com/en/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10#get-copilot-organization-usage-metrics-for-a-specific-day), [user](https://docs.github.com/en/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10#get-copilot-organization-users-usage-metrics-for-a-specific-day), and [user-team](https://docs.github.com/en/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10#get-copilot-organization-user-teams-report-for-a-specific-day) reports for further details.
 
 ### Source configuration
 
@@ -55,11 +55,13 @@ To configure a GitHub Copilot Source, follow the steps below:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Organization Name**. Name of the organization. The name is not case sensitive.
-1. **PAT Token**. Enter the PAT token generated from the [GitHub Copilot platform](#vendor-configuration).
-1. (Optional) **Collect Team Metric Logs**. Select this checkbox to collect the team metric logs from the Copilot platform.
-    1. **Team Names**. Write the team names of which you want to collect metric logs.
-1. **Metrics Period(in days)**. Specifies the number of past days for which metrics data should be collect. This is set to 1 day by default. You can adjust it based on your needs.
+1. (Optional) **Base URL**. Base URL of the GitHub REST API. The default value is `https://api.github.com`. Change it only if your GitHub organization is accessed through a different API base URL.
+1. **Organization Name**. Name of the GitHub organization. The name is not case sensitive.
+1. **PAT Token**. Enter the PAT generated from GitHub, as described in [Vendor configuration](#vendor-configuration).
+1. (Optional) **Collect User Teams**. Select this check box to collect the Copilot user team report, which contains the team memberships of the users in your organization.
+1. (Optional) **Collect User Metrics**. Select this check box to collect the daily Copilot usage metrics of each user in your organization.
+1. **Metrics Aggregation Period (in days)**. Specifies the number of past days for which to collect metrics data. The range is 1 to 28 days, and the default is 1 day. You can adjust it based on your needs.
+1. (Optional) **Processing Rules for Logs**. Expand the section to add filters that exclude, include, hash, or mask log messages that match a regular expression.
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
@@ -76,7 +78,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-### Configuration Object
+### Configuration object
 
 | Parameter | Type | Required | Default | Description | Example |
 |:--|:--|:--|:--|:--|:--|
@@ -84,11 +86,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | description | String | No | `null` | Type a description of the source. | `"Testing source"` |
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
-| organization | String | Yes | `null` | Name of your organization. | sanlabs |
-| patToken | String | Yes | `null` | PAT Token of the account. | pat_gitxxxxx |
-| collectTeamMetrics | Boolean | No | `false` | Specify if we need to collect the team metrics logs. | true |
-| teamNames | String Array | No | `null` | List of teams of which the metrics should be collected. | dev-team |
-| metricPeriodInDays | Integer | Yes | 1 | Specifies the number of past days for which metrics data should be collect. Range 1-28. | 2 |
+| baseURL | String | No | `"https://api.github.com"` | Base URL of the GitHub REST API. Must begin with `https://`. | `https://api.github.com` |
+| filters | JSON Array | No | `null` | [Processing rules](/docs/send-data/collection/processing-rules) (filters) to apply to the collected logs. Each filter requires a `name`, a regular expression (`regexp`), and a `filterType` (`Exclude`, `Include`, `Hash`, or `Mask`). | `[{"name": "filter1", "regexp": ".*test.*", "filterType": "Exclude"}]` |
+| organization | String | Yes | `null` | Name of your GitHub organization. | `sanlabs` |
+| patToken | String | Yes | `null` | PAT of the account. | `github_pat_xxxz7ARP6EABxxxxxxx` |
+| collectUserTeamReport | Boolean | No | `false` | Specify whether to collect the user team report (the team memberships of the users in your organization). | `true` |
+| collectUserMetrics | Boolean | No | `false` | Specify whether to collect the daily Copilot usage metrics of each user in your organization. | `true` |
+| metricPeriodInDays | Integer | Yes | `1` | Specifies the number of past days for which to collect metrics data. Range 1-28. | `2` |
 
 ### JSON example
 
@@ -104,7 +108,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Limitations
 
-Due to the behavior of both APIs, data is only available for the previous day, there will be 24 hours latency at any given point in time. Refer to the [GitHub Documentation](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-an-organization) for further details.
+GitHub returns an HTTP 204 status (no content) when the API call requests data for the current day. Data for a given day is available only after 24 hours.
 
 ## FAQ
 
