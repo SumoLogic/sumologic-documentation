@@ -15,13 +15,13 @@ For information on metrics retention, see [Metric Ingestion and Storage](/docs/m
 
 It is important to understand the volume of metrics that you are ingesting into Sumo Logic.
 
-For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. To check your current account usage relative to your available DPM limit, see the **Account Overview** tab.  
+For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the source is throttled. To check your current account usage relative to your available DPM limit, see the **Account Overview** tab.  
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Account Overview** tab, in the main Sumo Logic menu select **Administration** and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access the **Account Overview** tab, in the main Sumo Logic menu select **Administration > Account**. 
 
-The calculation of DPM varies according to the type of metric Source.
+The calculation of DPM varies according to the type of metric source.
 
 The examples in this topic assume a one-minute scan interval, but shorter scan intervals will increase the DPM.  For example, collecting at a 10-second scan interval will lead to six times the DPM of a one-minute scan interval. 
 
@@ -29,7 +29,7 @@ The examples in this topic assume a one-minute scan interval, but shorter scan 
 
 For host metrics, DPM depends on the number of hosts, the number of unique data points, and the scan interval. See [Collected Metrics](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics) for a list of the specific host metrics that you can collect.
 
-* **Disk metrics.** Approximately 10 metrics are collected for each Source disk on each host.  
+* **Disk metrics.** Approximately 10 metrics are collected for each source disk on each host.  
 
     Total disk metrics for single host = 10 x number of disks  
 
@@ -101,9 +101,9 @@ The value of a metadata item, whether it is a dimension, metatag, or metadata re
 
 #### Audit logging 
 
-When one of the limits described above is exceeded, Sumo Logic creates a [`MetricsMetadataLimitsExceeded`](https://service.sumologic.com/audit/docs/#operation/getMetricsMetadataLimitsExceeded) Health Event for the associated Metric Source and writes an error or warning message to the [System Event Index](/docs/manage/security/audit-indexes/system-event-index/).
+When one of the limits described above is exceeded, Sumo Logic creates a [`MetricsMetadataLimitsExceeded`](https://service.sumologic.com/audit/docs/#operation/getMetricsMetadataLimitsExceeded) Health Event for the associated metric source and writes an error or warning message to the [System Event Index](/docs/manage/security/audit-indexes/system-event-index/).
 
-Here is an example of a [Health Event](/docs/manage/health-events) for a Metrics Source that sent offending metrics:
+Here is an example of a [Health Event](/docs/manage/health-events) for a Metrics source that sent offending metrics:
 
 <img src={useBaseUrl('/img/metrics/metadata-health-event.png')} alt="MetricsMetadataLimitsExceeded health event error" style={{border: '1px solid gray'}} width="400" />
 

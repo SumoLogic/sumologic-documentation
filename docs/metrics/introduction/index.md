@@ -57,13 +57,13 @@ Currently available metric sources are:
 
 * [Host Metrics source.](/docs/send-data/installed-collectors/sources/host-metrics-source) You can use a host metrics source on an installed collector to collect CPU, memory, TCP, networking, and disk metrics on Linux and Windows machines.
 
-* [Amazon CloudWatch Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
+* [Amazon CloudWatch source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
 
-* [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from Amazon Kinesis Data Firehose.
+* [AWS Kinesis Firehose for Metrics source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from Amazon Kinesis Data Firehose.
 
-* [Streaming Metrics Source.](/docs/send-data/installed-collectors/sources/streaming-metrics-source/) You can use Sumo Logic’s streaming metrics source with an installed collector to collect metrics over TCP or UDP in Graphite, Carbon 2.0, or Prometheus format.
+* [Streaming Metrics source.](/docs/send-data/installed-collectors/sources/streaming-metrics-source/) You can use Sumo Logic’s streaming metrics source with an installed collector to collect metrics over TCP or UDP in Graphite, Carbon 2.0, or Prometheus format.
 
-* [AWS Metadata (Tag) Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source) This is a special type of source, in that it does not collect metrics, but instead collects tags from EC2 instances running on AWS. Sumo Logic applies the collected tags to metrics ingested by two Sumo Logic source types: the streaming metric source and the host metrics source. Tagging metrics with the EC2 tags allows you to query metrics using EC2 tags.
+* [AWS Metadata (Tag) source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source) This is a special type of source, in that it does not collect metrics, but instead collects tags from EC2 instances running on AWS. Sumo Logic applies the collected tags to metrics ingested by two Sumo Logic source types: the streaming metric source and the host metrics source. Tagging metrics with the EC2 tags allows you to query metrics using EC2 tags.
 
 * [Docker Stats source.](/docs/send-data/installed-collectors/sources/docker-sources) You can use the Docker Stats source on an installed collector to collect Docker container metrics, such as CPU usage, memory usage, network IO, and disk IO.
 
@@ -126,13 +126,13 @@ For instructions on how to create a metric query, see [Create a metric query](/d
 
 You can configure a metric monitor for a metric query so that Sumo Logic will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and webhook. 
 
-You can set up several types of monitors: Critical, Warning, and Missing Data. Critical and Warning result in value-based alerts. They are triggered when a metric in a time series varies from a threshold for a specified period of time.  A Missing Data monitor triggers an alert when no data is received for a specified period of time.  
+You can set up several types of monitors: Critical, Warning, and Missing Data. Critical and Warning result in value-based alerts—they are triggered when a metric in a time series varies from a threshold for a specified period of time.  A Missing Data monitor triggers an alert when no data is received for a specified period of time.  
 
 For more information, see [Monitors](/docs/alerts/monitors).
 
 ## Metrics throttling
 
-With Sumo Logic metrics, an account has Data Points per Minute (DPM) limit, which is shown on the **Account Page**. To allow for spikes in metrics ingestion, Sumo Logic applies a multiplier to your DPM limit to allow you send metrics at a higher rate, referred as your *DPM burst limit*, before Sumo Logic starts to throttle your sources. The multiplier depends on your daily DPM account limit. When you exceed your DPM burst limit, Sumo Logic throttles your metric sources. Your ingestion will be slowed down until the rate of ingestion returns is within the allowable contracted limits. For more information, see [Metric Throttling](/docs/metrics/manage-metric-volume/metric-throttling/).
+With Sumo Logic metrics, an account has Data Points per Minute (DPM) limit, which is shown on the **Account Page**. To allow for spikes in metrics ingestion, Sumo Logic applies a multiplier to your DPM limit to allow you send metrics at a higher rate, referred as your *DPM burst limit*, before Sumo Logic starts to throttle your sources. The multiplier depends on your daily DPM account limit. When you exceed your DPM burst limit, Sumo Logic throttles your metric sources—your ingestion will be slowed down until the rate of ingestion returns is within the allowable contracted limits. For more information, see [Metric Throttling](/docs/metrics/manage-metric-volume/metric-throttling/).
 
 ## Metrics ingest data volume index
 

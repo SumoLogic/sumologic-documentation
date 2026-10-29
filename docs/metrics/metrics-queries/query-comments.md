@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In the Metrics Search, in [advanced mode](/docs/metrics/metrics-queries/metrics-explorer#switch-betweenbasic-and-advancedmode) you can add comments to a metrics query and comment out portions of the query by using comment formatting.
 
-Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date. Comments you add will be visible in saved and shared queries.
+Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries.
 
-You cannot add or view comments in basic mode, but any comments that were added in advanced mode persist when you switch to basic mode. You cannot see them in basic mode.
+You cannot add or view comments in basic mode, but any comments that were added in advanced mode persist when you switch to basic mode—you cannot see them in basic mode.
 
 | Comment characters | Usage |
 |:---|:---|

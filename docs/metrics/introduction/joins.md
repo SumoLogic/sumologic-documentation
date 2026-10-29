@@ -37,11 +37,11 @@ Here’s an example of a simple join that sums two metrics:
 
 This join works fine, if each of the joined queries returns a single result. But, if a query contains references to multiple rows, and two or more of the referenced rows return more than one result, you need to use an `along` statement to match time series from different rows using one or more fields that you specify.
 
-For such a query, by default we calculate results for all combinations of result sets from the referenced rows, like a cross-join in SQL.
+For such a query, by default we calculate results for all combinations of result sets from the referenced rows—like a cross-join in SQL.
 
 Summing the `CPU_User` and `CPU_System` metric when the referenced rows return metrics for multiple environments (like lab, prod, stage) will result in many matchings which are not useful. For example, you’d end up summing the `CPU_User` and `CPU_System` values for your lab and prod environments, the `CPU_User` and `CPU_System` values for your lab and stage environments, and so on.
 
-It’s a good idea to use `along` in your queries to exclude excessive results when comparing and using data from multiple queries, unless you are sure that the cross-join is what you need. Most likely, it is not.
+It’s a good idea to use `along` in your queries to exclude excessive results when comparing and using data from multiple queries, unless you are sure that the cross-join is what you need—most likely, it is not.
 
 ## Understanding along
 

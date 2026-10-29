@@ -34,7 +34,7 @@ Avoid extracting metrics that contain too many unique groupings or contain dimen
 When you create a Logs-to-Metrics rule, you can test it to see how many metrics it would have created in the last 60 minutes.
 
 :::note
-When you create a Logs-to-Metrics rule, you select the metrics and dimensions the rule will extract from messages that match the rule's parse expression. You should *not* select a timestamp field as a dimension. A timestamp is inherently high cardinality, and Sumo Logic will disable a Logs-to-Metrics rule that specifies a timestamp field as a dimension.
+When you create a Logs-to-Metrics rule, you select the metrics and dimensions the rule will extract from messages that match the rule's parse expression. You should *not* select a timestamp field as a dimension—a timestamp is inherently high cardinality, and Sumo Logic will disable a Logs-to-Metrics rule that specifies a timestamp field as a dimension.
 :::
 
 ### Long dimension values
@@ -113,7 +113,7 @@ You must be a Sumo Logic admin to create a Logs-to-Metrics rule, or have a role 
     1. **Name**. Specify a rule name.
     1. **Scope**. Enter a query that returns the log messages from which you want to extract or calculate metrics. For best performance, enter a scope that returns only the log messages from which you want to create metrics. For example: `_sourceCategory=alert !info !warn ``error`. Once you enter a valid scope, 10 recent matching log lines appear in the **Preview Parse Expression** section of the page.
         :::note
-        The preview pane of parsed messages will respect the role search query of the user creating the rule. However, the Logs-to-Metrics rule will run globally. The rule author's role search query will not be applied.
+        The preview pane of parsed messages will respect the role search query of the user creating the rule. However, the Logs-to-Metrics rule will run globally—the rule author's role search query will not be applied.
         :::
     1. **Parse Expression**. Enter a parse expression to extract desired fields from the logs that match the scope query. The parse operators supported in logs to metrics rules are listed below. Other parse operators are not supported.
          * `parse multi`

@@ -67,7 +67,7 @@ The age of the metrics in the time range governs the minimum quantization interv
 
 If you want, you can override the automatic quantization interval. In the Metrics Search’s basic mode you can set the quantization interval in the row creator in the UI. In advanced mode, use the `quantize` operator and specify the interval that fits your need.
 
-Sumo Logic sets the actual quantization interval to be as close to your selection as possible. If it is not possible to set the actual interval to the targeted interval (typically because too many buckets would be produced to reasonably show on the chart), Sumo Logic displays a message like the following:
+Sumo Logic sets the actual quantization interval to be as close to your selection as possible. If it is not possible to set the actual interval to the targeted interval—typically because too many buckets would be produced to reasonably show on the chart—Sumo Logic displays a message like the following:
 
 <img src={useBaseUrl('img/metrics/quantization-warning.png')} alt="metrics" />
 

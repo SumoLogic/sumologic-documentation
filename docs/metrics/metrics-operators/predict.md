@@ -24,8 +24,8 @@ predict [model=<model>] [forecast=<forecast>] [ar.window=<ar.window>]
 Where:
 
 * `model` specifies the type of regression you want to perform:
-  * *linear*. Use the linear regression model. This is the default value if `model` is not specified.
-  * *ar*. Use the auto-regression model.
+  * *linear*—use the linear regression model. This is the default value if `model` is not specified.
+  * *ar*—use the auto-regression model.
 * `forecast` specifies how far into the future you want to forecast.
   * You can specify `forecast` in either in data points or in seconds (s), minutes (m), or hours (h). If no unit of time is specified, the value is interpreted as data points.
   * The default `forecast` value is 3 data points.

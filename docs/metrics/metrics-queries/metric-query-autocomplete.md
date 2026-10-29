@@ -12,9 +12,9 @@ The [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer) provides an
 ## Basic mode autocomplete
 
 In basic mode, the Metrics Search provides a query builder UI with three fields for building a query:
-* **Metric**. When you click the field, a list of metrics is displayed. As you start to enter text, the metrics that match your entry appear.
-* **Filter**. When you click the field, a list of Sumo Logic metadata fields, metric dimensions, and metatags is displayed. As you start to enter text, the items that match your entry appear.
-* **Add Operator**. When you click the field a list of operators is displayed. After you select an operator, you’re prompted to supply the appropriate options for that operator. <br/><img src={useBaseUrl('img/metrics/basic-autocomplete.png')} alt="Basic autocomplete" style={{border: '1px solid gray'}} width="800" />
+* **Metric** — When you click the field, a list of metrics is displayed. As you start to enter text, the metrics that match your entry appear.
+* **Filter** — When you click the field, a list of Sumo Logic metadata fields, metric dimensions, and metatags is displayed. As you start to enter text, the items that match your entry appear.
+* **Add Operator** — When you click the field a list of operators is displayed. After you select an operator, you’re prompted to supply the appropriate options for that operator. <br/><img src={useBaseUrl('img/metrics/basic-autocomplete.png')} alt="Basic autocomplete" style={{border: '1px solid gray'}} width="800" />
 
 ## Advanced mode autocomplete
 

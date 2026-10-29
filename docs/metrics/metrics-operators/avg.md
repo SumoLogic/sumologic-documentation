@@ -29,7 +29,7 @@ Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=
 
 ### Average by one field
 
-This query returns the average value of the `RequestCount` metric by one field, `TargetGroup`, across all matching time series, for the selected query range. Each line on the chart corresponds to a `TargetGroup`.
+This query returns the average value of the `RequestCount` metric by one field—`TargetGroup`—across all matching time series, for the selected query range. Each line on the chart corresponds to a `TargetGroup`.
 
 ```metrics
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg by TargetGroup
@@ -37,7 +37,7 @@ Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=
  
 ### Average by two fields
 
-Returns the average value of the metric by two fields, `TargetGroup` and `_sourceName`, across all matching time series, for the selected query range. Each line on the chart corresponds to a `_resourceName-TargetGroup` combination.
+Returns the average value of the metric by two fields—`TargetGroup` and `_sourceName`—across all matching time series, for the selected query range. Each line on the chart corresponds to a `_resourceName-TargetGroup` combination.
 
 ```metrics
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg by TargetGroup, _sourceName

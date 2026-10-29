@@ -77,7 +77,7 @@ Where:
 Currently Sumo Logic interprets meta tags as non-identifying dimensions. This is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions in the future. To conform to the target behavior from the beginning, we suggest to place all your metric metadata in the `intrinsic_tags` section.
 :::
 
-In the Graphite-formatted metric described above, the bit that identifies the thing being measured, the `metric_path`, is:
+In the Graphite-formatted metric described above, the bit that identifies the thing being measured—the `metric_path`—is:
 
 ```
 cluster-1.node-1.cpu-1.cpu-idle
@@ -97,7 +97,7 @@ cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 1460061337
 
 ### Mandatory metric name
 
-Unlike Prometheus, Carbon 2.0 format does not enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Health Events, see [Health Events](/docs/manage/health-events)).
+Unlike Prometheus, Carbon 2.0 format does not enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated metric source will be triggered (for more information on Health Events, see [Health Events](/docs/manage/health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```
