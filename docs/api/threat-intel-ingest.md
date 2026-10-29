@@ -17,7 +17,7 @@ The Threat Intel Ingest Management API allows you to:
 * View storage status of threat intelligence ingest service.
 
 :::note
-* The `GET` and `POST /api/v1/threatIntel/datastore/retentionPeriod` endpoints have been removed.
+* The `GET /api/v1/threatIntel/datastore/retentionPeriod` and `POST /api/v1/threatIntel/datastore/retentionPeriod` endpoints have been removed.
 * The `diskSize` field is no longer returned by `GET /api/v1/threatIntel/datastore/db`.
 :::
 
