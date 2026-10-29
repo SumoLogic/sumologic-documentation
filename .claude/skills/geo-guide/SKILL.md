@@ -1,6 +1,6 @@
 ---
 name: geo-guide
-description: SEO and GEO (Generative Engine Optimization) principles and patterns for Sumo Logic documentation in the sumologic-documentation repo. Use when creating or updating a doc to improve Google search visibility and AI citation. Covers search intent, title and description tuning, heading structure, internal links, image alt text, BLUF writing, question-style headings, FAQ sections, and frontmatter keywords. Trigger for requests like "SEO optimize this doc", "GEO optimize this page", "SEO and GEO this folder", "make my doc AI-friendly", "optimize for AI citation", "improve search ranking", "add FAQ schema", or any task about search discoverability or LLM citation of Sumo Logic docs. Do not use for general documentation updates, routine edits, standard page creation, or any PR that does not explicitly ask for SEO, GEO, or AI optimization.
+description: SEO and GEO (Generative Engine Optimization) principles and patterns for Sumo Logic documentation in the sumologic-documentation repo. Use when creating or updating a doc to improve Google search visibility and AI citation. Covers search intent, title and description tuning, heading structure, internal links, image alt text, BLUF writing, statement-style headings, FAQ sections, and frontmatter keywords. Trigger for requests like "SEO optimize this doc", "GEO optimize this page", "SEO and GEO this folder", "make my doc AI-friendly", "optimize for AI citation", "improve search ranking", "add FAQ schema", or any task about search discoverability or LLM citation of Sumo Logic docs. Do not use for general documentation updates, routine edits, standard page creation, or any PR that does not explicitly ask for SEO, GEO, or AI optimization.
 ---
  
 # SEO + GEO Reference — Sumo Logic Docs
@@ -23,7 +23,7 @@ Apply this skill only when the prompt explicitly asks for it. Choose a mode from
 | Prompt wording | Mode |
 |----------------|------|
 | "SEO optimize", "improve search ranking", "improve Google visibility", "optimize meta title/description" | **SEO only** (Part A) |
-| "GEO optimize", "make this AI-friendly", "optimize for AI citation", "add FAQ schema", "apply BLUF", "rewrite headings as questions", "add structured metadata" | **GEO only** (Part B) |
+| "GEO optimize", "make this AI-friendly", "optimize for AI citation", "add FAQ schema", "apply BLUF", "rewrite headings for AI queries", "add structured metadata" | **GEO only** (Part B) |
 | "SEO and GEO", "optimize this doc", "optimize this folder", "make this rank and get cited" | **Both** (Parts A and B) |
  
 Do not apply for:
@@ -59,7 +59,7 @@ If the prompt says only "update the authentication page", make the content chang
 **GEO**
 - [ ] First sentence of the page and of every section answers the question (BLUF)
 - [ ] Page answers exactly one question and is self-contained
-- [ ] H2/H3 headings are question-style or "How to" task statements
+- [ ] H2/H3 headings are statement-style (no question marks) or "How to" task statements
 - [ ] FAQ section with 3–8 distinct, self-contained Q&As
 - [ ] `keywords` present in frontmatter
 
@@ -195,24 +195,26 @@ Each page answers exactly one clearly scoped question. AI cannot follow cross-re
 - Every answer must be complete without requiring the reader to visit another page.
 - Cross-link related pages for further reading, but never for required context.
 
-### Principle 3 — Question-style headings
- 
-Rewrite every H2 and H3 as the question a user would type into an AI tool, or as a "How to" task statement for procedural sections.
- 
+### Principle 3 — Statement-style headings
+
+Rewrite every H2 and H3 using the phrasing a user would type into an AI tool, but as a statement, not a literal question. Use a "How to" task statement for procedural sections. Question marks are reserved for FAQ entries (Principle 4) — a body heading never ends in one.
+
 | Before | After |
 |--------|-------|
-| `## Prerequisites` | `## What do you need before getting started?` |
+| `## Prerequisites` | `## What you need before getting started` |
 | `## Configuration` | `## How to configure [feature] in Sumo Logic` |
 | `## Log Collection` | `## How to collect [source] logs in Sumo Logic` |
-| `## Dashboards` | `## What dashboards does [feature] include?` |
-| `## Limitations` | `## What are the limitations of [feature]?` |
+| `## Dashboards` | `## Dashboards for [feature]` |
+| `## Limitations` | `## Limitations of [feature]` |
  
 **Rules:**
-- Use "How to X" for procedural headings (not "How do I X"). Use What, Why, When, or Which for conceptual headings.
-- Write headings in the second person or as a neutral task statement, never the first person ("How do I", "What do I need"). FAQ questions follow the rule in [Principle 4](#principle-4--add-faq-sections).
+- **Never end a body heading with a question mark.** Headings are statements, even when phrased like what a user would ask ("What you need...", "Dashboards for..."). Only FAQ entries (Principle 4) are literal questions.
+- **If a section's natural phrasing is a question** (e.g. "What are the limitations of [feature]?"), don't force it into a statement heading — move that question into the FAQ (Principle 4) instead, and give the body heading a plain statement form ("Limitations of [feature]").
+- Use "How to X" for procedural headings (not "How do I X"). Use What, Why, When, or Which to open conceptual headings, phrased as a statement.
+- Write headings in the second person or as a neutral task statement, never the first person ("How do I", "What do I need"). This rule is for H2/H3 body headings only — FAQ questions always use first person; see [Principle 4](#principle-4--add-faq-sections).
 - Include "Sumo Logic" and the feature name where it reads naturally.
 - Apply to H2 and H3 only. H1 is generated from `title:` frontmatter.
-- **Preserve anchors.** Rewriting a heading changes its auto-generated anchor (`#prerequisites` becomes `#what-do-you-need-before-getting-started`). Search the repo for links to the old anchor and update them, or keep the old anchor with an explicit heading ID (`## New heading {#old-anchor}`) so existing links and external references keep working.
+- **Preserve anchors.** Rewriting a heading changes its auto-generated anchor (`#prerequisites` becomes `#what-you-need-before-getting-started`). Search the repo for links to the old anchor and update them, or keep the old anchor with an explicit heading ID (`## New heading {#old-anchor}`) so existing links and external references keep working.
 
 ### Principle 4 — Add FAQ sections
  
@@ -224,7 +226,7 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 ### What is [feature name] in Sumo Logic?
 [One-sentence BLUF answer.]
  
-### How do you [primary task for this page]?
+### How do I [primary task for this page]?
 [Direct answer with inline code or steps if relevant.]
  
 ### What happens if [common error or edge case]?
@@ -238,7 +240,7 @@ Every major page ends with a structured FAQ block. These are the highest-value c
  
 - Minimum 3 questions per FAQ but aim for 5 to 8.
 - Cover distinct intents (scope, capabilities, limitations, editing, prerequisites), not variations of one question.
-- Prefer second person for task questions ("How do you X?", "How to X"). Use first person for personal or eligibility questions ("Can I opt out?", "Do I need a credit card?"). Forcing those into second person ("Can you opt out?") reads like the document interrogating the reader. Answers respond in second person either way.
+- **All FAQ questions must be in question form, first person** — "How do I X?", "Can I opt out?", "Do I need a credit card?", never second person ("How do you X?", "Can you opt out?"). Rewrite "How to X" as "How do I X?" and "your" as "my" in the question. Answers still respond in second person ("You can...").
 - Each answer must be fully self-contained. No "see above" or "refer to X".
 - Questions must match natural AI query language for the topic.
 - Answers must be concise with 1 to 3 sentences.
@@ -293,7 +295,7 @@ After the first use, the abbreviation alone is fine. Define the term once at its
 | Situation | Resolution |
 |-----------|------------|
 | Title must be ≤ 60 chars but "How to [Task] with Sumo Logic" runs longer | Shorten the task wording. Keep "How to" and "Sumo Logic" if they fit; drop "Sumo Logic" last only if the site title suffix already supplies it |
-| Question-style heading vs. keyword-first heading | Use the question or "How to" form and place the keyword inside it |
+| Statement-style heading vs. keyword-first heading | Use the AI-query phrasing or "How to" form (no question mark) and place the keyword inside it |
 | "One page, one question" vs. internal-link advice | Both apply: links go to *related* pages for further reading, never for required context |
 | FAQ duplicates content already in the body | Keep the FAQ answer short and self-contained; do not copy whole paragraphs |
 | FAQ question repeats the page title | Remove it. Title is the page question; FAQ entries are sub-questions |
