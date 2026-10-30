@@ -318,7 +318,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
 | `sourceType`     | String   | Yes | ActiveDirectory | not modifiable |
-| `nameSuffixes`   | String   | No | Semi-colon separated list of Distinguished Name suffixes. When set, the source won't ingest any records that contain the Distinguished Name suffixes specified. | modifiable     |
+| `nameSuffixes`   | String   | No | Semi-colon separated list of Distinguished Name suffixes. When set, the source will not ingest any records that contain the Distinguished Name suffixes specified. | modifiable     |
 | `filter` | String   | No | Specifies a filter to use when searching for Domain Objects in Active Directory. | modifiable     |
 | `additionalAttr` | String   | No | Semi-colon separated list of the LDAP Names of Active Directory attributes to report, in addition to the default list. | modifiable     |
 | `excludedAttr`   | String   | No | Semi-colon separated list of the LDAP Names of Active Directory attributes to be excluded from the report. | modifiable     |
