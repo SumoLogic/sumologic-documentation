@@ -51,7 +51,7 @@ Ensure any internal links pointing to the deleted doc are updated to the new URL
    :::
 1. If applicable:
    * Remove from its parent index.md hub page.
-   * Remove from [Content Matrix](/docs/integrations/content-matrix/).
+   * Remove from [Supported Vendors and Products](/docs/integrations/supported-vendors/).
 
 ## Step 4: Delete the doc file
 
