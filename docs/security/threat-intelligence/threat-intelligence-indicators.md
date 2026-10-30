@@ -145,11 +145,10 @@ To search your logs for activity related to an indicator, click **View in Log Se
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
 1. Select a source in the list of sources. Details of the source appear in a sidebar.
-   * **Delete all indicators**. In the Sources tab, remove all indicators from the source by clicking the **More Actions** dropdown and then selecting **Delete Indicators**.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-all-indicators.png')} alt="Delete all indicators" style={{border: '1px solid gray'}} width="800" />
-   * **Delete selected indicators**. In the Indicators tab, click the **Search All Indicators** button to view all the active indicators associated with that source. Select which indicators you'd like to delete and click **Delete** in the sidebar panel.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-selected-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
+1. Click the **More Actions** dropdown and then selecting **Delete Indicators** to delete all indicators for that source.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-all-indicators.png')} alt="Delete all indicators" style={{border: '1px solid gray'}} width="800" />
 1. Click **Delete** in the confirmation dialog to delete the indicators.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-indicators-dialog-box.png')} alt="Delete threat intelligence indicators dialog box" style={{border: '1px solid gray'}} width="400" />
 
-You can also delete indicators using the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+You can delete indicators from the Sources tab in the Threat Intelligence page, as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 :::note
 When you remove indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
