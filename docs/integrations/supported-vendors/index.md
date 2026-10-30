@@ -37,5 +37,6 @@ See the following articles for the vendors and products that Sumo Logic integrat
   </div>
 </div>
 </div>
+<br/>
 
 For answers to common questions, see the [Supported Vendors and Products FAQ](/docs/integrations/supported-vendors/faq/).
