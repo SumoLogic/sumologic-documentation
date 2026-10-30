@@ -1,7 +1,7 @@
 ---
 slug: /send-data/hosted-collectors
 title: Hosted Collectors
-description: Hosted Collectors allow you to upload data stored in the cloud to Sumo Logic. You can configure Sources for Collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
+description: Hosted collectors allow you to upload data stored in the cloud to Sumo Logic. You can configure sources for collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 keywords:
   - hosted collector
 ---
@@ -9,19 +9,19 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-A *Hosted Collector* is a Sumo Logic-managed Collector, hosted in AWS, that lets you send data to Sumo Logic without deploying an agent. We host the Collector and its Sources on our end — no need to install anything on a local system in your deployment.
+A *Sumo Logic hosted collector* is a Sumo Logic-managed collector, hosted in AWS, that lets you send data to Sumo Logic without deploying an agent. We host the collector and its sources on our end — no need to install anything on a local system in your deployment.
 
-With a single Hosted Collector, you can create and configure Sources to collect data from any number of Sources, for example:
+With a single hosted collector, you can create and configure sources to collect data from any number of sources, for example:
 
 * Cloud-to-Cloud collection from AWS, Azure, Google Cloud Platform, and more SaaS tools
 * Send data directly to a Sumo Logic endpoint using your custom collection method
 
 Data collection flow for S3 buckets and HTTP requests:<br/><img src={useBaseUrl('img/send-data/team-built-hosted-diagram.png')} alt="Data flow diagram showing S3 data flow to Sumo Logic through a hosted collector" style={{border: '1px solid gray'}} width="800" />
 
-Just as Installed Collectors, you can monitor the activity of Hosted Collectors using the Status tab.
+Just as installed collectors, you can monitor the activity of hosted collectors using the Status tab.
 
 :::note
-The maximum number of Collectors allowed per organization is 10,000.
+The maximum number of collectors allowed per organization is 10,000.
 :::
 
 :::training Micro Lesson
@@ -45,7 +45,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/configure-hosted-collector')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data Collection icon" width="30"/><h4>Configure a Hosted Collector and Source</h4></a>
-  <p>Set up Hosted Collectors so you can move data to Sumo Logic.</p>
+  <p>Set up hosted collectors so you can move data to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -87,7 +87,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/http-source')}><img src={useBaseUrl('img/send-data/http-logs-metrics.png')} alt="HTTP Logs Metrics icon" width="45"/><h4>Configure HTTP Source for Logs, Metrics, Traces, OTLP</h4></a>
-  <p>Upload logs, metrics, traces, and more to an HTTP Source.</p>
+  <p>Upload logs, metrics, traces, and more to an HTTP source.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -100,22 +100,22 @@ The maximum number of Collectors allowed per organization is 10,000.
 
 ## FAQ
 
-### What is a Hosted Collector?
+### What is a hosted collector?
 
-A Hosted Collector is a Collector that Sumo Logic hosts and manages in AWS, letting you send data to Sumo Logic without installing or maintaining an agent yourself.
+A hosted collector is a collector that Sumo Logic hosts and manages in AWS, letting you send data to Sumo Logic without installing or maintaining an agent yourself.
 
-### How is a Hosted Collector different from an Installed Collector?
+### How is a hosted collector different from an installed collector?
 
-A Hosted Collector requires no local installation since Sumo Logic runs it for you, while an [Installed Collector](/docs/send-data/installed-collectors/) is deployed and maintained in your own environment.
+A hosted collector requires no local installation since Sumo Logic runs it for you, while an [installed collector](/docs/send-data/installed-collectors/) is deployed and maintained in your own environment.
 
-### How many Sources can a Hosted Collector have?
+### How many sources can a hosted collector have?
 
-A single Hosted Collector can have any number of Sources, up to the organization-wide maximum of 10,000 Collectors.
+A single hosted collector can have any number of sources, up to the organization-wide maximum of 10,000 collectors.
 
-### Do I need to install anything to use a Hosted Collector?
+### Do I need to install anything to use a hosted collector?
 
-No. Sumo Logic hosts the Collector and its Sources in AWS, so you don't need to install or maintain anything locally.
+No. Sumo Logic hosts the collector and its sources in AWS, so you do not need to install or maintain anything locally.
 
-### Can a Hosted Collector collect from multiple cloud platforms?
+### Can a hosted collector collect from multiple cloud platforms?
 
-Yes. A single Hosted Collector can have Sources for AWS, Microsoft, Google Cloud Platform, and other SaaS and cloud-to-cloud integrations.
+Yes. A single hosted collector can have sources for AWS, Microsoft, Google Cloud Platform, and other SaaS and cloud-to-cloud integrations.
