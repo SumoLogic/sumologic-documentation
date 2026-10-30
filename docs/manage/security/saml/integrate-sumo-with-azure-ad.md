@@ -74,7 +74,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
    1. **On Demand Provisioning Roles**. Specify the Sumo Logic roles you want to assign when user accounts are provisioned. (These roles must already exist in Sumo Logic.)
 1. **Configure logout page**. (Optional) Configure a logout page if you would like to point all Sumo Logic users to a particular URL after logging out of Sumo Logic or after their session has timed out. You could choose your company's intranet, for example, or any other site that you'd prefer users in your organization access.
    1. Click the **Logout Page** checkbox.
-   1. Enter the URL of the page to which you want to direct users after logging of Sumo Logic.
+   1. Enter the URL of the page to which you want to direct users after logging out of Sumo Logic.
 1. Click **Add** to save the configuration
 1. Select the new configuration from the **Configuration List**.
 1. Copy the following field values and save them in a text file. You'll need them in the steps to follow. 
@@ -97,7 +97,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 
 ### Configure Azure AD to send group assignments to Sumo Logic (Optional)
 
-In this step, you configure Azure AD to send group membership information in the SAML assertions it sends, so that Sumo Logic can assign roles to a user at each logon. This allows you to manage Sumo Logic role assignments via Azure AD. If you don’t want to manage Sumo Logic roles via Azure AD, skip these steps and proceed to [Test SAML Authentication](#test-saml-authentication) below.
+In this step, you configure Azure AD to send group membership information in the SAML assertions it sends, so that Sumo Logic can assign roles to a user at each logon. This allows you to manage Sumo Logic role assignments via Azure AD. If you do not want to manage Sumo Logic roles via Azure AD, skip these steps and proceed to [Test SAML Authentication](#test-saml-authentication) below.
 
 These instructions assume that:
 
@@ -110,15 +110,15 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 1. Click **Edit** under **Attribute and Claims**.
 1. Select **Add a group claim**
 1. Select **Groups assigned to the application** from the Group Claims pane.
-1. Select **sAMAccountName** from the Source Attribute drop down.
-1. Check the box for **Emit group name for cloud-only groups**.
-1. Under the **Advanced options**, check the box for **Customize the name of the group claim**.
-1. Check the box for **Emit groups as role claims**.
+1. Select **sAMAccountName** from the Source Attribute dropdown.
+1. Check the checkbox for **Emit group name for cloud-only groups**.
+1. Under the **Advanced options**, check the checkbox for **Customize the name of the group claim**.
+1. Check the checkbox for **Emit groups as role claims**.
 1. Click **Save** to add the new group claim.  
 1. Select the **Roles Attribute** checkbox within your Sumo Logic SAML configuration and enter the group claim name: `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
 1. **Save** the Sumo Logic configuration.
 
-### Test SAML Authentication
+### Test SAML authentication
 
 1. On the Azure **Single Sign-on** page click **Test**. <br/><img src={useBaseUrl('img/security/test.png')} alt="Test button" style={{border: '1px solid gray'}} width="800" />
 1. Click the **Sign in as current user** radio button and then **Test sign in**. <br/><img src={useBaseUrl('img/security/test-sign-in.png')} alt="Test dialog" style={{border: '1px solid gray'}} width="800" />

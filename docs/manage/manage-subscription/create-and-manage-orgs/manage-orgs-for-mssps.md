@@ -31,7 +31,7 @@ To be able to see insights in child organizations, add child organizations that 
 
 As an MSSP administrator, you can manage feature availability for your child organizations directly from the Organizations UI. This allows you to opt in or opt out individual child organizations from specific Sumo Logic features without needing to contact Sumo Logic support.
 
-This includes the **AI features** toggle (Mobot and Parse Assist), the **SOC Analyst Agent** toggle, and the **MCP Server access** toggle. See [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning/#can-i-opt-out-of-ai-features) for details. It also includes the **App Catalog** toggle, which controls whether the child org can browse and install pre-built integrations and applications. Unlike standalone orgs, MSSP parent orgs don't see these toggles on their own **Feature Management** page; manage them per child org here instead.
+This includes the **AI features** toggle (Mobot and Parse Assist), the **SOC Analyst Agent** toggle, and the **MCP Server access** toggle. See [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning/#can-i-opt-out-of-ai-features) for details. It also includes the **App Catalog** toggle, which controls whether the child org can browse and install pre-built integrations and applications. Unlike standalone orgs, MSSP parent orgs do not see these toggles on their own **Feature Management** page; manage them per child org here instead.
 
 :::note
 Support account users cannot manage child-org features from an MSSP parent org, even with the Administrator role.
@@ -75,7 +75,7 @@ You can push the following:
 * [Cloud SIEM rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 * [Library](/docs/get-started/library)
 * [Monitors](/docs/alerts/monitors/)
-* [Source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
+* [source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Select the **Manage Content** tab.
@@ -99,8 +99,8 @@ You can push the following:
 * If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to push to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
 * When you push rule tuning expressions, select **Include Associated Cloud SIEM Rules** to push all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
 * Selected Library items are added to the [Admin Recommended](/docs/manage/content-sharing/admin-mode/#move-important-content-to-admin-recommended) folder. Additionally, you can only select the Library contents in Source Organization under the Admin Recommended folder.
-* **Scheduled Searches Connection**. Select **Include Connection** to create the scheduled searches in the target organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.
-* **Scheduled Reports**. Select **Include Scheduled Reports** to create the scheduled reports in the target organizations if they don't already exist there. Select **Ignore Scheduled Reports** only if you want to turn the added scheduled reports into saved reports. 
+* **Scheduled Searches Connection**. Select **Include Connection** to create the scheduled searches in the target organizations if they do not already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.
+* **Scheduled Reports**. Select **Include Scheduled Reports** to create the scheduled reports in the target organizations if they do not already exist there. Select **Ignore Scheduled Reports** only if you want to turn the added scheduled reports into saved reports. 
    :::note
    Both **Scheduled Searches Connection** and **Scheduled Reports** will be available only when you select a library *folder*.
    :::
@@ -177,7 +177,7 @@ _index=sumologic_audit_events
 ## FAQs
 
 * **What happens when an item with the same name already exists?**<br/>It will be replaced in the child organization.
-* **What happens if an item selected for push doesn't already exist in the target organization?**<br/>The item will be created in the target organization.
+* **What happens if an item selected for push does not already exist in the target organization?**<br/>The item will be created in the target organization.
 * **What if errors occur during pushing?**<br/>Affected items will be skipped. Once the rest of the content is pushed, you can review errors in [View History](#view-history) and retry.
 * **Can I roll back changes after a push operation?**<br/>No, rollback is not supported. After a push operation is initiated, changes cannot be reversed.
 * **How can I monitor push progress?**<br/>During a push, the system displays real-time status, including progress tracking, success or failure messages, and error logs.
