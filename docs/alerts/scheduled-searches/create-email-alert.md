@@ -24,7 +24,7 @@ Before creating an email alert, you'll first need to [create a scheduled search]
      * **Fewer than.** Choose if you want to be notified only if the search results include fewer than that number of messages or groups you set in the text box.
      * **Fewer than or equal to.** Choose if you want to be notified only if the search results include fewer than or equal to that number of messages or groups you set in the text box.
 1. Under **Alert Type**, select **Email**.
-1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the Scheduled Search fails to run. To troubleshoot a failed Scheduled Search, see [Why would a Scheduled Search fail?](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail) and [What Happens when a Scheduled Search is Suspended?](/docs/alerts/scheduled-searches/faq#what-happens-when-a-scheduled-search-is-suspended).
+1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the scheduled search fails to run. To troubleshoot a failed scheduled search, see [Why would a scheduled search fail?](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail) and [What Happens when a scheduled search is Suspended?](/docs/alerts/scheduled-searches/faq#what-happens-when-a-scheduled-search-is-suspended).
 1. **Recipients**. Enter the recipients of your scheduled search email. Separate multiple email addresses with commas.
 1. **Email Subject.** Provide a subject for the email. You can use alert variables to customize the subject of your email.
 1. **Include in email.** Select the features you want to include in your email results:
@@ -46,13 +46,13 @@ Before creating an email alert, you'll first need to [create a scheduled search]
 See [Alert Variables](/docs/alerts/monitors/alert-variables) for more information and examples of variables to use in your email alerts.
 
 
-## Scheduled Search email alert results
+## Scheduled search email alert results
 
 :::note
 A maximum of 100 emails are sent per day per scheduled search.
 :::
 
-There are three ways to receive the results of Scheduled Searches in email:
+There are three ways to receive the results of scheduled searches in email:
 
 ### Scheduled email
 
@@ -64,11 +64,11 @@ Email notifications are sent to the recipient email address(es) based on the not
 
 Set up Alert Conditions if you'd rather just receive an alert email when certain conditions are met. This means you'd get an automated alert when or if parameters you set are triggered, based on the results of the scheduled search. For example, you could set up an alert if a certain number of users visit the free trial URL of your website. You can [run a search from this email](#run-a-search-from-an-alert-email) when you receive it.
 
-You can be very specific with the alert condition — you can even set an exact number of results that triggers the email. Results can either be the number of log messages *OR* the number of aggregates returned by the saved search. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of aggregates (or groups).
+You can be specific with the alert condition — you can even set an exact number of results that triggers the email. Results can either be the number of log messages *OR* the number of aggregates returned by the saved search. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of aggregates (or groups).
 
 #### Run a search from an alert email
 
-You can run a search directly from an alert email. When you receive an email created by an email alert in a Scheduled Search, only the first 25 results are displayed. (We do not want to flood your email with hundreds of thousands of search results.)
+You can run a search directly from an alert email. When you receive an email created by an email alert in a scheduled search, only the first 25 results are displayed. (We do not want to flood your email with hundreds of thousands of search results.)
 
 Do either of the following:
 * To make changes to the search query before you run it again, click the saved search title link, next to **Saved Search**. This will open the query in the Sumo Logic search page. 
@@ -80,7 +80,7 @@ If you're a new user and someone has forwarded you an alert email, the links to 
 
 ## Customize your email alert subject and content
 
-You can use variables to customize the subject of your email. You can also select the features you want to include in your email. For details, see [Create a Scheduled Search Email Alert](create-email-alert.md).
+You can use variables to customize the subject of your email. You can also select the features you want to include in your email. For details, see [Create a scheduled search Email Alert](create-email-alert.md).
 
 :::note
 The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [`fields`](/docs/search/search-query-language/search-operators/fields) operator in your query. 
@@ -88,7 +88,7 @@ The columns in an alert email are alphabetically ordered. To set the column orde
 
 ## Email alert template
 
-The Scheduled Search Email Alert template includes the following details:
+The scheduled search Email Alert template includes the following details:
 
 * **Saved Search.** Title of the saved search. 
 * **Description.** Description of the saved search. 

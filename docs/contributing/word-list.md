@@ -37,7 +37,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Click**. You click a UI element. Do not use "click on".
 
-**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name. Always capitalize it.
+**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name. Always capitalize the C when "Collector" follows "OpenTelemetry", including in longer names such as "Sumo Logic Distribution for OpenTelemetry Collector".
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
@@ -63,7 +63,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Em dash**. Try not to use em dashes. Rewrite with a period, semicolon, colon, or parentheses instead. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
-**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
+**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.
 
 **En dash**. Use the en dash (–) only for numeric and date ranges. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
@@ -83,14 +83,14 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Hash rule**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
-**Hosted collector**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
+**Hosted collector**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS. On first reference in a doc, write "Sumo Logic hosted collector." Use "hosted collector" after that.
 
 
 ## I
 
 **Include rule**. Include rules are a type of processing rule used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
-**Installed collector**. Installed collectors are deployed in your environment, either on a local machine, a machine in your org, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
+**Installed collector**. Installed collectors are deployed in your environment, either on a local machine, a machine in your org, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic. On first reference in a doc, write "Sumo Logic installed collector." Use "installed collector" after that.
 
 ## J
 
@@ -128,8 +128,6 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 ## O
 
 **Operators**. "Operators" can refer to [log search operators](/docs/search/search-query-language/search-operators/) or [metrics operators](/docs/metrics/metrics-operators/). When the context is ambiguous, use the full phrase. When referring to an operator by name in prose, capitalize only if it begins a sentence; otherwise write the name lowercase in backticks: `` `where` ``, `` `if` ``.
-
-**Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
 ## P
 
@@ -181,6 +179,8 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 **Space bar**. Two words, not one.
 
 **Sumo Logic**. For all references, always use "Sumo Logic," never "Sumo" alone, including in the possessive. This helps our SEO, which is essential for a SaaS offering. To be more conversational, "we" is also fine.
+
+**Suspended hyphens**. Avoid these in body text. Spell out both compound modifiers in full: "dot-delimited or colon-delimited," not "dot- or colon-delimited."
 
 
 ## T

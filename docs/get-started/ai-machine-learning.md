@@ -159,7 +159,7 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 AI features are on by default. We offer two methods for opting out:
 
 * **Via your account team or support**. You can opt out of specific AI features or all AI features by contacting your Sumo Logic account team or opening a support ticket. If you choose to opt out of all AI features, your tenant is automatically exempted from future AI feature releases.
-* **In-product self opt-out**. Platform administrators can opt out of all AI features under **Administration** > **Feature Management**. Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot and Parse Assist share a single **AI features** toggle; the SOC Analyst Agent and the MCP server each have their own independent toggle (**SOC Analyst Agent** and **MCP Server access**) on the same page.
+* **In-product self opt-out**. Platform administrators can opt out of all AI features under **Administration** > **Feature Management**. Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot and Parse Assist share a single **AI features** toggle; the SOC Analyst Agent and the MCP server each have their own independent toggle (**SOC Analyst Agent** and **MCP Server access**) on the same page. You can also manage this toggle for your own organization (or, if you administer child organizations, for each of them individually) from **Administration > Organizations > Manage Account**; see [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features).
 
 <MSSPfeatureMgmt/>
 
@@ -267,6 +267,10 @@ The generative AI model is licensed and securely hosted via Amazon Bedrock, mean
 All new AI capabilities and features undergo comprehensive legal, compliance, and application security reviews before release to ensure data protection, privacy, and regulatory alignment.
 
 Recurring reviews are also conducted with every major update, particularly when a capability introduces new analytics or processes previously unused data types, to maintain ongoing trust and compliance.
+
+### How do I use AI in a SOC with Sumo Logic?
+
+Use the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) to get an AI verdict on each Cloud SIEM insight, continue investigations conversationally in [Mobot](/docs/search/mobot/), and connect external AI clients through the [Sumo Logic MCP server](/docs/api/mcp-server/). The agent doesn't take containment actions itself, so analysts stay in control of the response.
 
 ## Additional resources
 

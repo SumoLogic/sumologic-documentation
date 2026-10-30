@@ -6,7 +6,7 @@ description: Learn how to search and investigate your traces, trace views, and t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can visualize your Traces data through filtered trace lists and icicle charts. These visualizations will help you find and troubleshoot faulty transactions easily.
+You can visualize your Traces data through filtered trace lists and icicle charts. These visualizations will help you find and troubleshoot faulty transactions.
 
 ## Traces page
 
@@ -37,9 +37,9 @@ As well as any other metadata standard or custom we may find in spans. All metad
 * tags with values over 4096 chars are not indexed  
 * `spanid` and `parentspanid` are not indexed in Traces search, but searchable through span analytics
 
-#### Write a Trace query
+#### Write a trace query
 
-To write a Trace query, click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.<br/><img src={useBaseUrl('img/apm/traces/trace-filters.png')} alt="Filters" style={{border: '1px solid gray'}} width="800" />
+To write a Trace query, click the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.<br/><img src={useBaseUrl('img/apm/traces/trace-filters.png')} alt="Filters" style={{border: '1px solid gray'}} width="800" />
 
 You can add more queries by clicking the **+** icon on the right of the query row.<br/><img src={useBaseUrl('img/apm/traces/Add-trace-query.png')} alt="Add trace query" style={{border: '1px solid gray'}} width="200" />
 
@@ -49,7 +49,7 @@ Each query is labeled with a letter. In the following screenshot, the first quer
 
 Use the eye icon to toggle the visibility of results from a query. When hidden, the traces returned from the query in the row are not displayed in your results.<br/><img src={useBaseUrl('img/apm/traces/trace-hide-show.png')} alt="Trace hide show" style={{border: '1px solid gray'}} width="800" />
 
-#### Set Time Range
+#### Set time range
 
 Results are returned for the time range selected. The traces available (retention) in Trace query is 15 days. See [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) for details on defining a time range.
 
@@ -61,7 +61,7 @@ Queries above 7 days may be slower to load.
 
 The results are not automatically updated. If you want to refresh traces, click the refresh button on the top right corner of the page.<br/><img src={useBaseUrl('img/apm/traces/Refresh.png')} alt="Refresh" style={{border: '1px solid gray'}} width="600" />
 
-### Trace Query Visualizations
+### Trace query visualizations
 
 Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application, the complexity of your traces as well as errors. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and a higher Return on Investment (ROI). There are three types of metrics that Trace Query Visualizations offer:
 * **Trace duration**
@@ -85,36 +85,36 @@ For both charts, you can switch between linear and logarithmic scales to better 
   * **Histogram**. It helps you understand the distribution of trace durations. For example, you can notice groups of durations responsible for longer traces during slowdown periods.
  <img src={useBaseUrl('/img/apm/traces/trace-duration-histogram.png')} alt="Trace duration histogram" />
 
- Similarly, you can choose **timeseries** chart type from the dropdown and view the chart.
+ Similarly, you can choose **timeseries** chart type from the dropdown menu and view the chart.
 
 * **Error count**.
   * **Timeseries**. It helps you visualise the average number of errors per trace for selected time range.
   * **Histogram**. It provides insight into how many traces were found with a certain number of errors. For example, if a backend fails in a specific way, it can always generate a similar number of errors for traces from that period.
-  <img src={useBaseUrl('/img/apm/traces/error-count-timeseries.png')} alt="Error count timeseries" />
+  <img src={useBaseUrl('/img/apm/traces/error-count-timeseries.png')} alt="Error count time series" />
 
- Similarly, you can choose histogram chart type from the dropdown and view the chart.
+ Similarly, you can choose histogram chart type from the dropdown menu and view the chart.
 
 * **Span count**.
-  * **Timeseries**. It helps you visualize how many spans you have per trace for the selected timerange.
+  * **Timeseries**. It helps you visualize how many spans you have per trace for the selected time range.
   * **Histogram**. It gives you information about how many traces have a certain number of spans. If a certain type of transaction is expected to produce a similar number of spans every time it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces.
 
   <img src={useBaseUrl('img/apm/traces/span-count-histogram.png')} alt="Error count histogram" />
 
-  Similarly, you can choose timeseries chart type from the dropdown and view the chart.
+  Similarly, you can choose timeseries chart type from the dropdown menu and view the chart.
 
 These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes or distribution anomalies that may indicate an issue in the system.
 
-You can point and drag on a chart or click on any column to further narrow down your results. Clicking on a column in timeseries drills down to its timestamp and service (if present). Clicking on a column in a histogram chart narrows down the selection of traces matching the values of clicked column.
+You can point and drag on a chart or click any column to further narrow down your results. Clicking a column in a time series chart drills down to its timestamp and service (if present). Clicking a column in a histogram chart narrows down the selection of traces matching the values of clicked column.
 
 The results are displayed in the trace list. To go back to the previous selection, use the **Revert to the last query** link in the top right corner of the panel.
 
 To get the best results from this chart, it is recommended to filter data to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
 
 :::note
-Multiple query rows are not supported currently. Charts show data for first active (visible) row only.
+Multiple query rows are not supported. Charts show data for first active (visible) row only.
 :::
 
-#### Using the Trace Query Visualization Charts
+#### Using the trace query visualization charts
 
 To view the Trace Query Visualization charts:
 1. Navigate to the Traces (Query) screen and type in a query.
@@ -122,7 +122,7 @@ To view the Trace Query Visualization charts:
 3. From the dropdown menu, select the chart type you want to view: **Trace duration**, **Error count**, or **Span count**.
 4. You can view each chart type as a **timeseries** or **histogram** chart by selecting the corresponding option from the dropdown menu.
 
-#### Dashboard Panel support
+#### Dashboard panel support
 
 You can add Trace Duration Breakdown Chart as a dashboard panel to a new or existing dashboard. From a new dashboard:
 
@@ -142,7 +142,7 @@ In the **Traces matching queries** table, Traces are displayed in the following
 | Started At | `07/27/2020 09:01:04.533` | When the trace started. |
 | Duration | `12.582 ms` | The amount of time the trace spans.  |
 | Number of spans | `35` | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="300" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Duration breakdown legend" style={{border: '1px solid gray'}} width="300" /> |
+| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="300" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Duration breakdown legend" style={{border: '1px solid gray'}} width="300" /> |
 | Number of errors | `0` | The number of errors in the trace. |
 | Status | `200` | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/><img src={useBaseUrl('img/apm/traces/similar-traces-menu.png')} alt="Show similar traces" style={{border: '1px solid gray'}} width="200" /> |
 
@@ -150,7 +150,7 @@ In the **Traces matching queries** table, Traces are displayed in the following
 Changes to your View are preserved when switching between other tabs.
 :::
 
-Next, open Trace View by clicking on any row.<br/><img src={useBaseUrl('img/apm/traces/traces-table-row.png')} alt="Traces table row" style={{border: '1px solid gray'}} width="800" />
+Next, open Trace View by clicking any row.<br/><img src={useBaseUrl('img/apm/traces/traces-table-row.png')} alt="Traces table row" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Trace View
@@ -170,13 +170,13 @@ Navigation tips:
 * Use the **Filters** bar to filter by values of metadata tags in spans.
 * Use the **Error Spans Only** toggle to hide or show error spans and the **Hide all services** button to hide services.<br/> <img src={useBaseUrl('img/apm/traces/toggle-and-button-hide.png')} alt="Toggle and button hide" style={{border: '1px solid gray'}} width="300"/>
 * Hover over a span segment to view the parent span information and relationship, including the service, operation, relative start in milliseconds, and duration in milliseconds. <br/><img src={useBaseUrl('img/apm/traces/trace-view-details2.png')} alt="Trace view details" style={{border: '1px solid gray'}} style={{border: '1px solid gray'}} width="800" /> <br/><img src={useBaseUrl('img/apm/traces/trace-view-details.png')} alt="Trace view details" style={{border: '1px solid gray'}} width="600" />
-* Hide services that are of less interest by clicking on a segment underneath the **Critical path contribution by service** label. This section displays the sequence of service span segments that contribute to the total trace execution time. Each colored segment summarizes all span fragments from a single service, where there was no child span activity. <br/><img src={useBaseUrl('img/apm/traces/critical-path-on-trace-view.png')} alt="Critical path on trace view" style={{border: '1px solid gray'}} width="800" />
+* Hide services that are of less interest by clicking a segment underneath the **Critical path contribution by service** label. This section displays the sequence of service span segments that contribute to the total trace execution time. Each colored segment summarizes all span fragments from a single service, where there was no child span activity. <br/><img src={useBaseUrl('img/apm/traces/critical-path-on-trace-view.png')} alt="Critical path on trace view" style={{border: '1px solid gray'}} width="800" />
 
-Click on a span segment to open the details side panel, which contains the following tabs.
+Click a span segment to open the details side panel, which contains the following tabs.
 
 ### Summary
 
-The details of the span are provided. contains general information about the span and you can drilldown to logs by span or trace IDs (if present in logs).
+The details of the span are provided. contains general information about the span and you can drill down to logs by span or trace IDs (if present in logs).
 
 #### Logs
 
@@ -184,7 +184,7 @@ To drill down further into your data, the **Logs** section has links to run sear
 
 <img src={useBaseUrl('img/apm/traces/Logs-links.png')} alt="Logs links" width="400"/>
 
-If no logs are produced for this spanID, results may come back empty. [Learn how to add spanID to logs](/docs/apm/traces/advanced-configuration/correlate-logs).
+If no logs are produced for this span ID, results may come back empty. [Learn how to add span ID to logs](/docs/apm/traces/advanced-configuration/correlate-logs).
 
 #### Service color
 
@@ -194,7 +194,7 @@ You can change the color of a **Service** by clicking the colored box and selec
 
 ### Metadata
 
-Lists all of the related service entities involved in the span, including a complete set of span's tags. You can click on the clipboard icon to copy the value to your computer's clipboard.
+Lists all of the related service entities involved in the span, including a complete set of span's tags. You can click the clipboard icon to copy the value to your computer's clipboard.
 
 <img src={useBaseUrl('img/apm/traces/trace-details-metadata.png')} alt="Tace details metadata" style={{border: '1px solid gray'}} width="300"/>
 
@@ -259,9 +259,9 @@ If the **Datapoint** is the same as **Now**, the selector will not allow yo
 Alerts are only visible when the [Time Selector](../../dashboards/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
 :::
 
-Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/><img src={useBaseUrl('img/dashboards/drill-root-causes/monitor-types.png')} alt="Monitor status" style={{border: '1px solid gray'}} width="150" />
+Monitors track your metrics or logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/><img src={useBaseUrl('img/dashboards/drill-root-causes/monitor-types.png')} alt="Monitor status" style={{border: '1px solid gray'}} width="150" />
 
-Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered. Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
+Next to the Entity, you will see any of the following icons indicating the type of monitor alert that has triggered. Click the **Triggered monitors** row to view the related monitors. You can click them to view the monitor on the [Monitors](/docs/alerts/monitors) page.
 
 <img src={useBaseUrl('img/dashboards/drill-root-causes/triggered-monitors.png')} alt="Triggered monitors" style={{border: '1px solid gray'}} width="300"/>
 

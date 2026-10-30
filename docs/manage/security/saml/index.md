@@ -15,7 +15,7 @@ Learn how to provision SAML for single sign-on (SSO) access to Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Guide Contents
+## Guide contents
 
 In this section, we'll introduce the following concepts:
 
