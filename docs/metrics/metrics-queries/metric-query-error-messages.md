@@ -70,17 +70,17 @@ There will also be a tip like this:
 
 `Tip: Group your data by _sourceHost using avg to produce more readable result. Add operator to query.`
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example, by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators/topk), [bottomk](/docs/metrics/metrics-operators/bottomk), and [filter](/docs/metrics/metrics-operators/filter) operators. 
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example, by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [`topk`](/docs/metrics/metrics-operators/topk), [`bottomk`](/docs/metrics/metrics-operators/bottomk), and [`filter`](/docs/metrics/metrics-operators/filter) operators. 
 
 #### Join data limit
 
-When a cross-row calculation (e.g., #A+#B) produces more than 1000 time series, Sumo Logic will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
+When a cross-row calculation (for example, #A+#B) produces more than 1000 time series, Sumo Logic will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
 
 `The cross-row calculation resulted in too many time-series. Limiting results to 1000 series.`
 
 ### Quantization interval not supported
 
-When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo Logic’s quantization behavior, the following limitations will apply in sequence:
+When you use the [`quantize`](/docs/metrics/metrics-operators/quantize) operator to control Sumo Logic's quantization behavior, the following limitations will apply in sequence:
 
 - Each output time series will contain no more than 300 data points. If the quantization interval is too small, the following warning message will be displayed:
 
