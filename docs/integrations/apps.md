@@ -22,8 +22,8 @@ To check if an app is supported by your pricing plan, see [Apps and Sumo Logic A
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/content-matrix/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Product List</h4></a>
-  <p>A list of all the products that Sumo Logic integrates with.</p>
+  <a href={useBaseUrl('docs/integrations/content-matrix/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Content Matrix</h4></a>
+  <p>A matrix of all the products that Sumo Logic integrates with.</p>
   </div>
 </div>
 <div className="box smallbox card">
