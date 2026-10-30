@@ -35,7 +35,7 @@ Apps are organized by category in `/docs/integrations/`:
 10. `hosts-operating-systems/` — OS monitoring (Linux, Windows)
 11. `microsoft-azure/` — Azure services
 12. `pci-compliance/` — PCI compliance integrations
-13. `product-list/` — Product integrations
+13. `content-matrix/` — Content matrix of product integrations
 14. `saas-cloud/` — SaaS cloud applications
 15. `saml/` — SAML authentication providers
 16. `security-threat-detection/` — Security and threat tools
