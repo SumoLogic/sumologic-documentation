@@ -6,26 +6,26 @@ description: A Scheduled View is a query that runs on a schedule. This topic has
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A Scheduled View reduces aggregate data down to the bare minimum, so they contain only the results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. Scheduled Views process queries once per minute.
+A Scheduled View reduces aggregate data down to the bare minimum, so they contain only the results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data are pre-aggregated before the query is run. Scheduled Views process queries once per minute.
 
 These items are required in Scheduled View queries:
 
 * **Always use an [aggregate](/docs/search/search-query-language/group-aggregate-operators) operator**. This will allow you to avoid duplicating data.
-* **Always run an aggregation with a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator.** If you do not specify one, [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) will be used by default. Without `timeslice` or another timestamp-related field, backfilling still occurs, but historical and new data are both timestamped using the Scheduled View's receipt time, so you will not be able to differentiate between them in the resulting view.
+* **Always run an aggregation with a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator**. If you do not specify one, [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) will be used by default. Without `timeslice` or another timestamp-related field, backfilling still occurs, but historical and new data are both timestamped using the Scheduled View's receipt time, so you will not be able to differentiate between them in the resulting view.
 Also, keep the following things in mind when you're creating Scheduled View queries:
 
-* **Avoid using queries that are likely to change.** A key benefit of using Scheduled Views is that they can index historical data, allowing you to identify long-term trends. If a query changes, you may lose some of the historical perspective.
-* **Keep the query flexible.** Using a flexible query, like `_sourceCategory=*Apache*` so that metadata changes do not break the query.
-* **Consider using fields with more general values (fields with less specificity).** For example, you'd want to use "country" and "city" fields instead of "latitude" and "longitude".
-* **Use Partitions.** [Partitions](/docs/manage/partitions) allow you to reduce your query time even more. 
-* **Access historical data.** Your Scheduled View can go as far back as your retention period.
-* **Use more groups.** Plan for flexibility by including more groups. However, test your Scheduled View definition to understand how much additional data that extra groups will create.
+* **Avoid using queries that are likely to change**. A key benefit of using Scheduled Views is that they can index historical data, allowing you to identify long-term trends. If a query changes, you may lose some of the historical perspective.
+* **Keep the query flexible**. Using a flexible query, like `_sourceCategory=*Apache*` so that metadata changes do not break the query.
+* **Consider using fields with more general values (fields with less specificity)**. For example, you'd want to use "country" and "city" fields instead of "latitude" and "longitude".
+* **Use Partitions**. [Partitions](/docs/manage/partitions) allow you to reduce your query time even more. 
+* **Access historical data**. Your Scheduled View can go as far back as your retention period.
+* **Use more groups**. Plan for flexibility by including more groups. However, test your Scheduled View definition to understand how much additional data that extra groups will create.
 
 ## What types of operators are supported in Scheduled Views?
 
 Scheduled Views are defined by a query, with the search results being indexed.
 
-Due to the way data is indexed in Views, only the following operators are supported:
+Due to the way data are indexed in Views, only the following operators are supported:
 
 ### Non-aggregate operators 
 
@@ -223,7 +223,7 @@ _view=nice_view_man | timeslice 1d | sum(_count) by _timeslice, status_code
 
 ## FAQ
 
-### How to avoid negative count results
+### How do I avoid negative count results?
 
 Validate if you are using the scheduled views created before August 28, 2024. The scheduled views created before this date will use the `Int` data type for the `count` operator, inturn resulting in a negative count value after exceeding the maximum integer value of `2147483647`. 
 
