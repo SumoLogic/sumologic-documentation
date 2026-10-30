@@ -1,23 +1,23 @@
 ---
 id: installed-collectors
 title: Forward Data from an Installed Collector
-description: Learn how to set up data forwarding destinations for Installed Collectors.
+description: Learn how to set up data forwarding destinations for installed collectors.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can set up one or more data forwarding destinations and configure an Installed Collector to send raw log data from specified sources to those destinations. The collector will send the raw data to external destinations at the same time it sends data to Sumo Logic.
+You can set up one or more data forwarding destinations and configure an installed collector to send raw log data from specified sources to those destinations. The collector will send the raw data to external destinations at the same time it sends data to Sumo Logic.
 
 You can forward raw log data using the following protocols.
 
-* Syslog (TCP and UDP)—Send log data to a syslog server.
-* Generic REST API—Send log data to a web services endpoint.
-* Hitachi Data Systems HTTP REST API—Send log data to Hitachi Content Platform (HCP).
+* Syslog (TCP and UDP): Send log data to a syslog server.
+* Generic REST API: Send log data to a web services endpoint.
+* Hitachi Data Systems HTTP REST API: Send log data to Hitachi Content Platform (HCP).
 
 Follow the steps below to set up a collector to forward raw log data to an external destination.
 
-You can set up Installed Collector data forwarding when you first configure sources or at a later time. If you apply rules at a later time, keep in mind that they are not applied retroactively.
+You can set up installed collector data forwarding when you first configure sources or at a later time. If you apply rules at a later time, keep in mind that they are not applied retroactively.
 
 :::note
 Data forwarding processing rules are processed after all other [processing rules](/docs/send-data/collection/processing-rules).
@@ -60,7 +60,7 @@ Follow the instructions for the destination type you chose.
     * `{second}` Replace with second in hour.
     * `{uuid}` Replace with a unique, randomly generated identifier (UUID)
 
-  * **Username and Password**. Enter the credentials to access the destination. These are placed in a Basic Auth header in the HTTP request from the collector.  If you're sending to a Sumo Logic HTTP source this header is simply ignored and your data is ingested. You must have administrator privileges for the collector.
+  * **Username and Password**. Enter the credentials to access the destination. These are placed in a Basic Auth header in the HTTP request from the collector.  If you're sending to a Sumo Logic HTTP source this header is simply ignored and your data are ingested. You must have administrator privileges for the collector.
 
 
 </TabItem>
@@ -127,13 +127,13 @@ forwarding.syslog.maxMessageSize = 2048
 
 ## Configure data forwarding queue size
 
-In collector version 19.216-22 and later, in-memory storage of an Installed Collector’s data forwarding queue is backed by disk storage. When the in-memory queue reaches a given size, the collector extends the queue on disk.
+In collector version 19.216-22 and later, in-memory storage of an installed collector’s data forwarding queue is backed by disk storage. When the in-memory queue reaches a given size, the collector extends the queue on disk.
 
 Sumo Logic allocates memory and disk storage for data to be forwarded to REST and TCP syslog destinations. By default, Sumo Logic allocates:
 
 * 8MB of memory and 500MB of disk storage for each syslog destination.<br/>
     :::note
-    Data forwarding using UDP isn't queued.
+    Data forwarding using UDP is not queued.
     :::
 * 8MB of memory and 500MB of disk storage for each REST endpoint.  
 
