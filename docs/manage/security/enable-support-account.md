@@ -16,7 +16,7 @@ Remember to capture any content created by the Sumo Logic support account and as
 
 ## Who can access my support account?
 
-When a support agent requests access, he or she is asked for the explicit reason why access is required. Additionally, you can control
+When a support agent requests access, they are asked for the explicit reason why access is required. Additionally, you can control
 the amount of time the agent can access the support account to ensure it is limited to the shortest amount of time necessary to complete the investigation.
 
 ## Do I need to create a special user account? 
@@ -31,12 +31,12 @@ just disable, then re-enable the support account and the Sumo Logic support user
 To enable a support account:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
-1. Next to **Support Account Access**, select the **Enable** check box.
+1. Next to **Support Account Access**, select the **Enable** checkbox.
 1. Select a duration for the Support Account Access. This determines how long the account will be enabled. You can choose from the following options depending on your needs and comfort level with our access:
     * 1 day (default)
     * 1 week (recommended for most issues)
     * 1 month
     * 1 year
-    * Indefinite (please check with your own Security or Compliance team before selecting)
+    * Indefinite (check with your own Security or Compliance team before selecting)
 
-To disable the support account, deactivate the **Enable** check box.
+To disable the support account, deactivate the **Enable** checkbox.

@@ -49,7 +49,7 @@ After you make this change, you will not be able to edit the account owner.
      * Cloud Flex Credits: From the gear icon menu at the top, select **Change Account Owner**.
      * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
 1. In the prompt dialog, enter a new account owner in the text field.
-1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_account_owner_prompt.png')} alt="Change Account Owner prompt" style={{border: '1px solid gray'}} width="300"/>
+1. Click **Change Account Owner**. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_account_owner_prompt.png')} alt="Change Account Owner prompt" style={{border: '1px solid gray'}} width="300"/>
 
 :::note
 If the account owner leaves your organization and you cannot transfer the account ownership, [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
@@ -72,13 +72,13 @@ As an account owner or administrator, you can manage feature availability for yo
 
 Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
 
-- **Opt-in**. You can explicitly enable them for your organization.
-- **Opt-out**. You can disable them if you do not require them.
+- **Opt-in**. You can explicitly enable them for one or more child organizations.
+- **Opt-out**. You can disable them for child organizations that do not require them.
 
 ### Opt in to a feature
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
-1. Click your organization. A details pane opens on the right.
+1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll down the details pane to the **Features** section and select **Manage Features**.
 1. In the **Manage Features** panel, toggle next to the feature you want to enable.
 1. Click **Save Changes** to apply your changes.
@@ -86,7 +86,7 @@ Features available for self-service management are controlled by Sumo Logic. Onl
 ### Opt out of a feature
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
-1. Click your organization. A details pane opens on the right.
+1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll down the details pane to the **Features** section and select **Manage Features**.
 1. In the **Manage Features** panel, toggle next to the feature you want to disable.
 1. Click **Save Changes** to apply your changes.
@@ -157,7 +157,7 @@ Follow the steps below to manage access to the child org:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the child org for which you want to restrict the access.
-1. In the right hand pane, click on **More Actions** dropdown and select **Manage Access**.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-manage-access-button.png')} alt="Child Org Manage Access Button" style={{border: '1px solid gray'}} width="400"/>
+1. In the right hand pane, click **More Actions** dropdown and select **Manage Access**.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-manage-access-button.png')} alt="Child Org Manage Access Button" style={{border: '1px solid gray'}} width="400"/>
 1. When prompted, select the users and assign their respective roles for the selected child organization. This allows parent-organization administrators to manage default role assignments for users who access child organizations through SSO. Administrators can either assign a single role to all users or assign roles individually:
      - When access control is set to **All Users with View Organization Capability**, administrators can assign a custom role that applies to all users accessing the child organization.
      - When access control is set to **Only Selected Users**, administrators can assign specific roles to individual users for each child organization. <br/><img src={useBaseUrl('img/manage/subscriptions/select-users-prompt.png')} alt="Select Users Prompt" style={{border: '1px solid gray'}} width="400"/>
@@ -170,7 +170,7 @@ Follow the below steps to view the child orgs access details:
 1. Click the child org for which you want to view the access details.
 1. Scroll down in the right pane to the **Access Control** section. You can see one among the following:
      - **All users in the organization have Administrator access**. This will be displayed if the selected child org is configured with custom role for all users.
-     - **[X] users has specified role**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who have access to the selected child org with specified role. Click on this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
+     - **[X] users has specified role**. This will be displayed if the selected child org is configured only for selected number of users. **X** indicates the total number of users who have access to the selected child org with specified role. Click this number to get a full list of users with access.<br/><img src={useBaseUrl('img/manage/subscriptions/child-org-access-control.png')} alt="Child Org Access Control" style={{border: '1px solid gray'}} width="400"/>
 
 ## SSO for child organizations
 
