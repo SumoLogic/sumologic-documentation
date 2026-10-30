@@ -129,7 +129,7 @@ The AWS API Gateway app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Average Latency by API Name (Metric-based)"
+```metrics title="Average Latency by API Name (Metric-based)"
 Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
 ```
 

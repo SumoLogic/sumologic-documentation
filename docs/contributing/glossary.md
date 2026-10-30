@@ -29,7 +29,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Aggregate](/docs/search/search-query-language/group-aggregate-operators)**. A group of data returned by a search, displayed in a simple table in the Aggregates tab of the Search page.
 
-**[Alert](/docs/alerts)**. A notification triggered when a monitoring condition is met. In [monitors](/docs/alerts/monitors/overview), an alert is created when critical, warning, or missing data trigger conditions are satisfied. It includes contextual information to help investigate the issue. In [scheduled searches](/docs/alerts/scheduled-searches/schedule-search), alert types include Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
+**[Alert](/docs/alerts)**. A notification triggered when a monitoring condition is met. In [monitors](/docs/alerts/monitors/about), an alert is created when critical, warning, or missing data trigger conditions are satisfied. It includes contextual information to help investigate the issue. In [scheduled searches](/docs/alerts/scheduled-searches/schedule-search), alert types include Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
 
 **[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. A list of IP addresses or CIDR ranges that are explicitly granted access to logins, APIs, and dashboards. Configured on the **Service Allowlist Settings** tab in Account Security Settings.
 
@@ -228,7 +228,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. Ask questions in natural language to search logs, investigate security insights, get platform guidance, and more. Mobot automatically routes questions to specialized agents based on your intent.
 
-**[Monitor](/docs/alerts/monitors/overview)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
+**[Monitor](/docs/alerts/monitors/about)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
 
 **[Multiline](/docs/send-data/reference-information/collect-multiline-logs)**. Log messages that span multiple lines are called multiline messages.
 
@@ -345,7 +345,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
-**[Time series](/docs/dashboards/panels#time-series-panel)**. A set of timestamped values of a specific measurement.
+**[Time series](/docs/dashboards/panels/about#time-series-panel)**. A set of timestamped values of a specific measurement.
 
 **[`timeslice` operator](/docs/search/search-query-language/search-operators/timeslice)**. A search operator that groups log results into fixed time buckets, either by duration or by a bucket count. It is the log-search counterpart of the `quantize` metrics operator.
 
@@ -357,5 +357,3 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 ## U
 
 **[user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties)**. The user.properties file is used to pass collector parameters for some installation methods.
-
-

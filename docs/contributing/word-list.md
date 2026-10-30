@@ -37,7 +37,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Click**. You click a UI element. Do not use "click on".
 
-**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name. Always capitalize it.
+**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name. Always capitalize the C when "Collector" follows "OpenTelemetry", including in longer names such as "Sumo Logic Distribution for OpenTelemetry Collector".
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
@@ -63,7 +63,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Em dash**. Try not to use em dashes. Rewrite with a period, semicolon, colon, or parentheses instead. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
-**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
+**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.
 
 **En dash**. Use the en dash (–) only for numeric and date ranges. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
@@ -128,8 +128,6 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 ## O
 
 **Operators**. "Operators" can refer to [log search operators](/docs/search/search-query-language/search-operators/) or [metrics operators](/docs/metrics/metrics-operators/). When the context is ambiguous, use the full phrase. When referring to an operator by name in prose, capitalize only if it begins a sentence; otherwise write the name lowercase in backticks: `` `where` ``, `` `if` ``.
-
-**Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
 ## P
 

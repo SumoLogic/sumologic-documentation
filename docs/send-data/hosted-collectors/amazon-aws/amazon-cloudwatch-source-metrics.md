@@ -157,7 +157,7 @@ The scan interval defines how long Sumo Logic waits between calls to the CloudWa
 AWS reports CloudWatch metrics at different granularities (1-minute, 3-minute, and 5-minute intervals), so setting a scan interval that's too short could lead to excessive querying. Setting an interval that's too long can delay the update frequency of new metrics appearing in Sumo Logic.
 
 :::note
-Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by AWS. See Enable and Manage the Audit Index for details.
+Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by AWS. See [Enable and Manage the Audit Index](/docs/manage/security/audit-indexes/audit-index) for details.
 :::
 
 Querying the AWS CloudWatch Metrics API can incur data transfer charges that may appear on your AWS bill.

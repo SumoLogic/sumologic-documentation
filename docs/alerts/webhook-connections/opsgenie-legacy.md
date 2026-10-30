@@ -20,7 +20,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
 1. Specify the following parameters:
    * Provide the Name.
    * Add the team who will be notified of Sumo Logic Alerts.
-   * Copy the Integration URL, to be used in Sumo Logic while setting up the Webhook Connection.
+   * Copy the Integration URL, to be used in Sumo Logic while setting up the webhook connection.
    :::note
    For **Free** and **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
    :::
@@ -85,7 +85,7 @@ To create a webhook:
 1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
 
-### Configure a Scheduled Search
+### Configure a scheduled search
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 

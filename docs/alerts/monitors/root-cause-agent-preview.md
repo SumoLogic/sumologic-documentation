@@ -4,7 +4,7 @@ title: Root Cause Agent
 description: Root Cause Agent, agentic AI investigator, investigates Sumo Logic alerts on demand and returns evidence-backed root causes based on relevant telemetry across your logs and metrics.
 keywords:
   - mobot
-  - dojo ai
+  - dojoai
   - root cause agent
   - agentic ai
   - alerts
@@ -128,7 +128,7 @@ Some limits are not tied to the preview phase:
 
 ### What is the Sumo Logic Root Cause Agent?
 
-The Root Cause Agent is part of [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), Dojo AI's chat interface.
+The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface.
 
 ### How is this different from asking a chat assistant about my alerts?
 
@@ -136,7 +136,7 @@ A chat assistant is a surface you type into. The Root Cause Agent is an investig
 
 ### How is this different from the SOC Analyst Agent?
 
-Both are agentic investigators in Dojo AI, aimed at different workflows. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) triages Cloud SIEM insights for security teams and returns a malicious, suspicious, or benign verdict. The Root Cause Agent triages monitor alerts for DevOps and SRE teams, investigates across logs and metrics, and returns a root cause. Both let you continue the investigation in Mobot.
+Both are agentic investigators in DojoAI, aimed at different workflows. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) triages Cloud SIEM insights for security teams and returns a malicious, suspicious, or benign verdict. The Root Cause Agent triages monitor alerts for DevOps and SRE teams, investigates across logs and metrics, and returns a root cause. Both let you continue the investigation in Mobot.
 
 ### How is this different from Sumo Logic monitors?
 
@@ -187,7 +187,7 @@ Availability is rolling out per deployment. Check with your account team for you
 ## Additional resources
 
 * [Example Prompts for Mobot](/docs/search/mobot/example-prompts). Find more example prompts here to continue your root cause observability investigation.
-* [Sumo Logic | Dojo AI](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the Root Cause Agent.
+* [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the Root Cause Agent.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). How Sumo Logic's AI agents fit alongside Mobot, the SOC Analyst Agent, and the Sumo Logic MCP server.
 * [Alert Response](/docs/alerts/monitors/alert-response/). The alert page that hosts the AI Investigation tab.
 * [Mobot](/docs/search/mobot/). The conversational interface for Sumo Logic's AI agents.

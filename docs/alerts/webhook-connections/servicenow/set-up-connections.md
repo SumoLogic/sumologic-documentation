@@ -65,7 +65,7 @@ To set up a ServiceNow Webhook connection:
 
 After configuring the connection, click **Test Alert or Test Recovery**. If the connection is made, you will see a 201 OK response message.
 
-If the connection is successful, you'll see an event or incident created in ServiceNow. There won't contain any information from the scheduled search, it will just have the text in the payload.
+If the connection is successful, you'll see an event or incident created in ServiceNow. There will not contain any information from the scheduled search, it will just have the text in the payload.
 
 ## ServiceNow ITSM Incident Import Table Fields
 

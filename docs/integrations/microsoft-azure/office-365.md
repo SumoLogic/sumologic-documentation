@@ -13,7 +13,7 @@ The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure A
 
 ## Log types
 
-For information on Microsoft APIs and message types, see Microsoft Office 365 Audit Source.
+For information on Microsoft APIs and message types, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source).
 
 ### Sample log messages
 

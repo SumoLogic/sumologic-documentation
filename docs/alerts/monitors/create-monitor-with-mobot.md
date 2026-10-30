@@ -6,7 +6,7 @@ description: Use Mobot to create and update logs monitors from plain-language pr
 keywords:
   - mobot
   - monitor
-  - dojo ai
+  - dojoai
   - conversational monitors
 ---
 

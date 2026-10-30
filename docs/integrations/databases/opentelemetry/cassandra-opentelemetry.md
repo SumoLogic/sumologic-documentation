@@ -206,7 +206,7 @@ Following is a query from the Cassandra app's **Cassandra - Overview** dashboard
 
 Following is the query from Cassandra App's overview Dashboard's Number of Requests Panel:
 
-```sql
+```metrics
 sumo.datasource=cassandra deployment.environment=* db.cluster.name=* db.node.name=* metric=cassandra.client.request.count | sum 
 ```
 

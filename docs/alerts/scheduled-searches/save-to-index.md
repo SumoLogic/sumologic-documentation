@@ -7,9 +7,9 @@ description: When you save the results of a scheduled search to an Index you can
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you create a Scheduled Search, you can save the results to an Index. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.
+When you create a scheduled search, you can save the results to an Index. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.
 
-For example, you could use the following query to find successful logins on a Linux system, then save the results to an Index using the **Save to Index** alert type for your Scheduled Search.
+For example, you could use the following query to find successful logins on a Linux system, then save the results to an Index using the **Save to Index** alert type for your scheduled search.
 
 ```sumo
 _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("Accepted" and "pam") or "session" or ("to" and "on")) !"closed"
@@ -26,13 +26,13 @@ When naming your index, use a name that's descriptive and easy to remember. Name
 
 ## Should I create a Scheduled View or use Save to Index?
 
-In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views) for your use case, this may be a better option, as Scheduled Views include many built in safeguards, as well as management features. If your search query needs to use operators that are restricted for Scheduled Views, saving your Scheduled Search results to an Index allows you to do this.
+In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views) for your use case, this may be a better option, as Scheduled Views include many built in safeguards, as well as management features. If your search query needs to use operators that are restricted for Scheduled Views, saving your scheduled search results to an Index allows you to do this.
 
 ## Limitations
 
 * When you use Save to Index, metadata fields from the Collector (for example, _collector) will be dropped. 
-* Role filters may not work. If the filter depends on any field that doesn't exist in the Index (or has been altered like _collector), then it won't work.
-* For [aggregate queries](/docs/search/search-query-language/group-aggregate-operators) (for example, `... | timeslice 1m | count by batch, parsedfield`) saved via Save to Index, the Message (`_raw`) field will now be empty. No data is lost and all values remain fully available in their named fields (`_count`, `batch`, `parsedfield`, etc.). If your queries currently parse or search against the `_raw`/Message field for data saved through Save to Index, update them to reference the named fields instead.
+* Role filters may not work. If the filter depends on any field that does not exist in the Index (or has been altered like _collector), then it will not work.
+* For [aggregate queries](/docs/search/search-query-language/group-aggregate-operators) (for example, `... | timeslice 1m | count by batch, parsedfield`) saved via Save to Index, the Message (`_raw`) field will now be empty. No data is lost and all values remain fully available in their named fields (such as `_count`, `batch`, and `parsedfield`). If your queries currently parse or search against the `_raw`/Message field for data saved through Save to Index, update them to reference the named fields instead.
 
 ## Save the results of a scheduled search as an Index
 
@@ -43,4 +43,4 @@ In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views)�
 1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores (`_`) are the only special characters allowed. 
 1. Click **Save**.
 
-Once you have saved your Scheduled Search as an Index, you can cancel or edit the Scheduled Search, but you cannot delete an Index. 
+Once you have saved your scheduled search as an Index, you can cancel or edit the scheduled search, but you cannot delete an Index. 

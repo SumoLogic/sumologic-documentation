@@ -34,7 +34,7 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 
 ### Sample metric query
 
-```sql title="Number of Errors"
+```metrics title="Number of Errors"
 cloud.provider=gcp project_id=* region=* cloud.platform=gcp_cloudfunctions function_name=* metric=function/execution_count statistic=average !status=ok | sum
 ```
 
@@ -190,4 +190,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Google Cloud Functions Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/google-cloud-functions/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Google Cloud Functions Automation Service Integration](/docs/integrations/automation-integrations/google-cloud-functions/) to automate response actions directly from Cloud SOAR playbooks.

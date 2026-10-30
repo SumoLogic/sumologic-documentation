@@ -140,7 +140,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 | top 10 caller by Invocations
 ```
 
-```sql title="Error (Count)(CloudWatch metric Based)"
+```metrics title="Error (Count)(CloudWatch metric Based)"
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | sum
 ```
 
@@ -433,4 +433,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [AWS Lambda Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/aws-lambda/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [AWS Lambda Automation Service Integration](/docs/integrations/automation-integrations/aws-lambda/) to automate response actions directly from Cloud SOAR playbooks.

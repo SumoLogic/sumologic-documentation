@@ -228,7 +228,7 @@ This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 
 ## Sample metric query
 
-```sql title="Running Application pool"
+```metrics title="Running Application pool"
 sumo.datasource=iis  deployment.environment=* webengine.cluster.name=* webengine.node.name=* instance=*  metric=win.app.pool.was.Current.Application.Pool.State  | filter latest = 3 | count
 ```
 

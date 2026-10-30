@@ -265,7 +265,7 @@ sumo.datasource=activemq deployment.environment={{deployment.environment}} messa
 
 This sample metrics query from the **Average Enqueue Latency** panel of the **ActiveMQ - Destinations** dashboard.
 
-```sql
+```metrics
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}} destination={{destination}} !(destination=activemq.*)  metric=activemq.message.wait_time.avg | avg by destination,messaging.cluster.name
 ```
 

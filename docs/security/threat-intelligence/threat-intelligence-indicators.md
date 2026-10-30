@@ -39,8 +39,8 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
 
 ### New source
 
-1. Click **+ Add Source** and then select **New Source** from the dropdown.
-1. Select a collector from the **Collector** dropdown and a source (for example, CrowdStrike Threat Intel) from the available integrations grid.
+1. Click **+ Add Source** and then select **New Source** from the dropdown menu.
+1. Select a collector from the **Collector** dropdown list and a source (for example, CrowdStrike Threat Intel) from the available integrations grid.
 1. Click **Next**. <br/><img src={useBaseUrl('img/collector/select-threat-intel-source-and-collector.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. Enter the following details to configure the source:
     :::note
@@ -50,7 +50,7 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
     1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
     1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and a value.
         * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field does not exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but is not present or enabled in the schema, it’s ignored and marked as **Dropped**.
     1. **Region**. Select the region of your account from the dropdown.
     1. **Client ID**: Provide the client ID you want to use to authenticate collection requests.
     1. **Client Secret**. Provide the client secret key you want to use to authenticate collection requests.
@@ -58,14 +58,14 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
         :::note
         If no Application ID is provided, a random ID is generated. Any time this ID is changed, the Source will re-read the data stream starting at the beginning.
         :::
-    1. (Optional) **Malicious Confidence**. Select the confidence level of the threat type from the dropdown as High, Medium, Low, Unverified, or leave it empty for all types. 
+    1. (Optional) **Malicious Confidence**. Select the confidence level of the threat type from the dropdown list as High, Medium, Low, Unverified, or leave it empty for all types. 
 1. When you are finished configuring the Source, click **Next**.
 1. Once you have reviewed all the details, click **Done**. A confirmation message appears when the source is successfully configured.
 
 ### Upload
 
 To manually upload threat intelligence indicators from a file:
-1. Click **+ Add Source** and then select **Upload** from the dropdown. The upload dialog displays.
+1. Click **+ Add Source** and then select **Upload** from the dropdown menu. The upload dialog displays.
 1. Select the format of the file to upload (see [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use in the file):
     * **Normalized JSON**. A normalized JSON file. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
     * **CSV**. A comma-separated value (CSV) file. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators-csv.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />

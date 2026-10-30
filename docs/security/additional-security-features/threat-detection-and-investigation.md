@@ -7,12 +7,14 @@ description: Learn how to use Sumo Logic to monitor security data and investigat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+Sumo Logic helps you detect and investigate threats by collecting your security logs in one place, then using pre-built apps, monitors, and search to find and trace suspicious activity. The key use cases on this page are detecting brute force attempts, detecting impossible travel (land speed violations), and checking logged IP addresses against threat intelligence.
+
 To use Sumo Logic for threat detection and investigation, you can use [pre-built apps](#pre-built-apps-for-threat-detection-and-investigation), or [build your own dashboards](#build-a-dashboard-for-threat-detection-and-investigation).
 
 ## Pre-built apps for threat detection and investigation
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
-* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
+* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For example, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 * [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
 * [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
@@ -337,3 +339,45 @@ We need a way to see if any of the IP addresses we have logged are known threats
 :::tip
 Now that you've created a dashboard, you can [share it](/docs/dashboards/share-dashboard-new) or [export it](/docs/dashboards/export-dashboard-new). [Exporting and importing](/docs/get-started/library/#import-and-export-content-in-the-library) dashboards lets you use dashboards created in one org or account on another org or account. 
 :::
+
+## FAQ
+
+### What cloud logging strategy should I use?
+
+Centralize logs from your cloud, hybrid, and on-premises sources in one platform so you can search and correlate them together. A [data lake](/docs/security/additional-security-features/data-lake/) gives you one place to aggregate structured and unstructured security data, which is the first step in the [best practices guide](#best-practices-guide-for-implementing-threat-detection-and-investigation) on this page.
+
+### How do I secure my cloud infrastructure?
+
+Collect and aggregate your security data, use integrations to surface trends and threats, set alerting policies so your team is notified quickly, and use search for root cause analysis. For AWS, [Cloud Infrastructure Security for AWS](/docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/) adds pre-built security monitoring.
+
+### What should I monitor in my cloud environment?
+
+At minimum, monitor authentication events, network traffic, and infrastructure configuration changes. The example dashboard on this page monitors AWS CloudTrail for user activity, console login locations, and failed login attempts.
+
+### How do I detect security threats in my cloud environment?
+
+Collect your cloud audit logs, such as AWS CloudTrail, then build searches and dashboards for suspicious activity. This page shows how to [detect brute force attempts](#step-5-detect-brute-force-attacks) from failed logins, [detect landspeed violations](#step-6-detect-landspeed-violations), and look up IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/). Use [monitors](/docs/alerts/monitors/create-monitor/) to be alerted when these conditions occur.
+
+### How do I centralize security log data for threat detection?
+
+Send logs from your workloads, databases, and other sources to Sumo Logic using [collectors and sources](/docs/send-data/), then store and analyze them in one place. Aggregating security data in a [data lake](/docs/security/additional-security-features/data-lake/) lets you run detection and investigation across all of it.
+
+### What logs do I need to investigate a phishing incident?
+
+Start with the logs from your email security tools and your sign-in and authentication logs. Sumo Logic has [Cloud-to-Cloud sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) for tools such as [Proofpoint](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source/), [Mimecast](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/), and [Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/). Check any IP addresses you find against [threat intelligence](/docs/security/threat-intelligence/find-threats/).
+
+### What is a checklist for investigating a compromised account?
+
+1. Review failed logins and [brute force attempts](#step-5-detect-brute-force-attacks) for the account.
+1. Check [console login locations](#step-3-monitor-geolocation-of-console-logins) and [landspeed violations](#step-6-detect-landspeed-violations).
+1. Look up the source IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/).
+1. Search the account's activity in your AWS CloudTrail logs to see what it accessed or changed.
+1. Contain the account, then keep monitoring it with a [monitor](/docs/alerts/monitors/create-monitor/). See [What is incident response?](/docs/cloud-soar/introduction/#what-is-incident-response).
+
+### What information do I need to collect during a security incident?
+
+Try to answer who, what, where, when, why, and how the event occurred. In Cloud SIEM, open the insight to see its entities, signals, and timeline. You can also pivot to Sumo Logic search for deeper investigation. See [Investigating an insight](/docs/cse/get-started-with-cloud-siem/intro-for-analysts/#investigating-an-insight).
+
+### How do I build an incident response runbook?
+
+Base the runbook on the [incident response cycle](/docs/cloud-soar/introduction/#what-is-incident-response): preparation, identification, containment, eradication, recovery, and lessons learned. Then automate steps with [Cloud SOAR playbooks](/docs/cloud-soar/introduction/#how-can-playbooks-help-with-incident-response), which can help with incident containment, eradication, and recovery.

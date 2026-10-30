@@ -78,7 +78,7 @@ The Sumo Logic app for Amazon ElastiCache uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
+```metrics title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
 account=* region=* namespace=aws/elasticache metric=EngineCPUUtilization statistic=Average CacheClusterId=* CacheNodeId=* | avg by CacheClusterId, CacheNodeId, account, region, namespace
 ```
 
@@ -160,7 +160,7 @@ Follow the steps below to collect logs for Amazon ElastiCache:
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs

@@ -89,7 +89,7 @@ The first time the Scheduled Search executes, output files will begin to be gene
 
 1. Save a search. 
 1. Click **Schedule this search**. <br/><img src={useBaseUrl('img/send-data/sched-search.png')} alt="Click Schedule this search" style={{border: '1px solid gray'}} width="500" />
-1. For all configuration options, see Schedule a Search. 
+1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches/schedule-search). 
 1. **Alert Type**. Select **Script Action**.
 1. **Script Action**. Select the name of the Script Action (displayed with its Collector's name) from the menu.
 1. Click **Save**.
