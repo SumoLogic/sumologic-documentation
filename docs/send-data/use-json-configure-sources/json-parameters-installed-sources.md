@@ -1,10 +1,10 @@
 ---
 id: json-parameters-installed-sources
 title: JSON Parameters for Installed Sources
-description: This topic describes JSON Source parameters for installed Collectors.
+description: This topic describes JSON source parameters for installed collectors.
 ---
 
-This topic describes JSON Source parameters for installed Collectors. For more information about configuring sources in JSON files, and how to configure Sumo Logic to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+This topic describes JSON source parameters for installed collectors. For more information about configuring sources in JSON files, and how to configure Sumo Logic to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
 :::important
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
@@ -12,7 +12,7 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 ## Source types for installed collectors
 
-Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to configure sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
+Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to configure sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
 
 ## Log source parameters for installed collectors
@@ -124,8 +124,8 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 | `renderMessages` | Boolean      | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) (`false`). | modifiable |
 | `eventFormat`    | Integer      | No | 0 | Sets how you want your event logs formatted.<br/>Use 0 for the legacy format. Where events retain their default XML format from Windows.<br/>Use 1 for JSON format. Where events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data. | modifiable |
 | `eventMessage`   | Integer      | Yes if eventFormat is 0. |   | Use 0 for the complete message. It will ingest the entire event content along with metadata.<br/>Use 1 for the message title. It will ingest the first line of event messages along with all of the metadata.<br/>Use 2 for metadata only. It will ingest metadata fields from each event, including event ID and timestamp. | modifiable |
-| `allowlist`      | String array | No |   | Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. | modifiable |
-| `denylist`       | String array | No |   | Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. |  modifiable |
+| `allowlist`      | String array | No |   | Available in collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. | modifiable |
+| `denylist`       | String array | No |   | Available in collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. |  modifiable |
 
 Local Windows event log source JSON example:
 
@@ -161,8 +161,8 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 | `renderMessages` | Boolean | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) (`false`). | modifiable |
 | `eventFormat` | Integer | No | 0 | Sets how you want your event logs formatted.<br/>Use 0 for the legacy format. Where events retain their default XML format from Windows.<br/>Use 1 for JSON format. Where events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data. | modifiable |
 | `eventMessage` | Integer | Yes if eventFormat is 0. |   | Use 0 for the complete message. It will ingest the entire event content along with metadata.<br/>Use 1 for the message title. It will ingest the first line of event messages along with all of the metadata.<br/>Use 2 for metadata only. It will ingest metadata fields from each event, including event ID and timestamp. | modifiable |
-| `allowlist` | String array | No |   | Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. | modifiable |
-| `denylist` | String array | No |   | Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. |  modifiable |
+| `allowlist` | String array | No |   | Available in collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. | modifiable |
+| `denylist` | String array | No |   | Available in collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. |  modifiable |
 
 Remote Windows event log source JSON example:
 
@@ -354,7 +354,7 @@ Windows Active Directory Inventory Source JSON example:
 
 ### Syslog source
 
-Syslog Sources do not support Multiline Detection, which means the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types)` multilineProcessingEnabled`,` useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the Syslog Source configuration they are ignored.
+Syslog sources do not support Multiline Detection, which means the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types)` multilineProcessingEnabled`,` useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the Syslog Source configuration they are ignored.
 
 :::note
 Syslog sources break a syslog message on each newline character and send each line as individual messages to the service.
@@ -427,8 +427,8 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 | `sourceType` | String   | Yes |   | DockerLog |   |
 | `uri` | String   | Yes |   | URI of the Docker daemon. | modifiable |
 | `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](/docs/send-data/installed-collectors/sources/docker-sources.md). | modifiable |
-| `allContainers` | Boolean  | Yes |   | Flag indicating whether the Source includes all running containers (`true`) or only the containers listed in `specifiedContainers` (`false`). | modifiable |
-| `certPath` | String   | `*` |   | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
+| `allContainers` | Boolean  | Yes |   | Flag indicating whether the source includes all running containers (`true`) or only the containers listed in `specifiedContainers` (`false`). | modifiable |
+| `certPath` | String   | `*` |   | Enter the path to the cert files on the local machine where the collector is running. Required if the URI uses HTTPS. | modifiable |
 | `collectEvents` | Boolean  | Yes |   | Must be set to `true` to collect the Docker logs. |   |
 
 Example source JSON with all containers:
@@ -484,8 +484,8 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 | `metrics` | String | Array | No | All metrics	List of metrics to be collected. Each metric is an object with two fields, category and metric. For a full list of available metrics, see [Docker metrics definitions](/docs/send-data/installed-collectors/sources/docker-sources#docker-metrics-definitions). When omitted, all available host metrics will be collected. | modifiable |
 | `uri` | String | Yes |  | URI of the Docker daemon. | modifiable |
 | `specifiedContainers` | List |  |  | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](/docs/send-data/installed-collectors/sources/docker-sources). | modifiable |
-| `allContainers` | Boolean | Yes |  | Flag indicating whether the Source includes all running containers (true) or only the containers listed in specifiedContainers (false). | modifiable |
-| `certPath` | String | * |  | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
+| `allContainers` | Boolean | Yes |  | Flag indicating whether the source includes all running containers (true) or only the containers listed in specifiedContainers (false). | modifiable |
+| `certPath` | String | * |  | Enter the path to the cert files on the local machine where the collector is running. Required if the URI uses HTTPS. | modifiable |
 | `pollInterval` | Long | No | Continuous (By default, polling occurs continuously, rather than on a periodic basis.) | The frequency, in milliseconds, at which stats are polled. The minimum acceptable polling frequency is 1 second. | modifiable |
 
 Example source JSON with all containers:
@@ -546,8 +546,8 @@ The following parameters are for a host metrics source. 
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field _source. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `name` | String | Yes |  | Type a desired name of the source. The name must be unique per collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field _source. | modifiable |
+| `description` | String | No | null | Type a description of the source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `sourceType` | String | Yes |  | SystemStats | not modifiable |
 | `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/). When omitted, all available host metrics will be collected. | modifiable |
@@ -597,6 +597,6 @@ Graphite contentType JSON example: 
 ## Additional resources
 
 See the following topics for additional information:
-* [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
+* [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log source types. For sources, the common parameter `name` must be unique per collector.
 * [JSON Source parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources).
 * [View or download Collector or Source JSON configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
