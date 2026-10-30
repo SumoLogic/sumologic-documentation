@@ -84,7 +84,7 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
   "used_chat": false,
   "user_id": 4000000,
   "user_initiated_interaction_count": 0,
-  "user_login": "parth_langalia"
+  "user_login": "octocat"
 }
 ```
 
@@ -727,7 +727,7 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
   "slug": "example-team",
   "team_id": 3000000,
   "user_id": 5000000,
-  "user_login": "parth_langalia"
+  "user_login": "octocat"
 }
 ```
 
