@@ -35,13 +35,13 @@ _sourceCategory=myLogs
 
 ### Username
 
-Find a hashed username with the help of the [where](where.md) operator. This example compares the MD5 hash of each parsed username to the MD5 hash of `jsmith`.
+Find a hashed username with the help of the [where](where.md) operator. The query hashes each parsed username and keeps the messages that match the MD5 hash of the username you want to find.
 
 ```sumo
 _sourceCategory=myLogs
 | parse "username=*" as username
 | hash(username, "md5") as hashed_username
-| where hashed_username = "39ce7e2a8573b41ce73b5ba41617f8f7"
+| where hashed_username = "<md5_hash_of_username>"
 ```
 
 ### Source IP
