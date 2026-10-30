@@ -34,12 +34,12 @@ Partitions are not included in the **Views** page. They are managed separately t
 
 ## Key capabilities
 
-- Visibility of all indexes is based on admin-created roles and permissions.
-- You can delete or decommission user-created indexes.
-- You can view the schema of each view and see views in search autocomplete based on your access.
-- As an administrator, you can view existing system limits for each type and the amount of consumed quota.
-- Only administrators can define access control on indexes.
-- Only scheduled searches with the **Save to Index** alert type are visible in Views.
+* Visibility of all indexes is based on admin-created roles and permissions.
+* You can delete or decommission user-created indexes.
+* You can view the schema of each view and see views in search autocomplete based on your access.
+* As an administrator, you can view existing system limits for each type and the amount of consumed quota.
+* Only administrators can define access control on indexes.
+* Only scheduled searches with the **Save to Index** alert type are visible in Views.
 
 ## Data source types
 
@@ -146,12 +146,12 @@ Ensure you have **View Views** [role capability](/docs/manage/users-roles/roles/
 
 ## Limitations
 
-- **Ad hoc search tracking**. Tracking for ad hoc searches is approximate for data written before April 2026. The system may show **Could have contributed** or **Did not contribute** indicators when historical data cannot be confirmed.
-- **Partitions excluded**. Partitions do not appear on the **Views** page. Use the [Partitions](/docs/manage/partitions/) page to manage them.
-- **Partitions and scheduled views**. A partition and a scheduled view cannot share the same view name and cannot coexist under the same view.
-- **Views per organization**. Each organization can have a maximum of 1,000 views across all types.
-- **Scheduled Views per organization**. Each organization can have a maximum of 500 scheduled views.
-- **All other views per organization**. All other view types are limited to a maximum of 50 per organization.
+* **Ad hoc search tracking**. Tracking for ad hoc searches is approximate for data written before April 2026. The system may show **Could have contributed** or **Did not contribute** indicators when historical data cannot be confirmed.
+* **Partitions excluded**. Partitions do not appear on the **Views** page. Use the [Partitions](/docs/manage/partitions/) page to manage them.
+* **Partitions and scheduled views**. A partition and a scheduled view cannot share the same view name and cannot coexist under the same view.
+* **Views per organization**. Each organization can have a maximum of 1,000 views across all types.
+* **Scheduled Views per organization**. Each organization can have a maximum of 500 scheduled views.
+* **All other views per organization**. All other view types are limited to a maximum of 50 per organization.
 
 ## FAQ
 
@@ -171,9 +171,9 @@ Visibility of all indexes is based on roles and permissions defined by your admi
 
 Administrators can view existing system limits for each view type and the amount of consumed quota directly from the **Views** page. The default limits are 1,000 views per organization across all types, 500 scheduled views, and 50 for all other view types. To request a limit increase, contact your Sumo Logic account representative.
 
-### How do I identify why ad hoc search data is missing or approximate?
+### How do I identify why ad hoc search data are missing or approximate?
 
-Tracking for ad hoc searches is available from April 2026 onwards. For data written before this date, the system may display **Could have contributed** or **Did not contribute** indicators because historical tracking data is not fully available. This is expected behavior and does not indicate an error with the view or the query.
+Tracking for ad hoc searches is available from April 2026 onwards. For data written before this date, the system may display **Could have contributed** or **Did not contribute** indicators because historical tracking data are not fully available. This is expected behavior and does not indicate an error with the view or the query.
 
 ### What scheduled searches appear on the Views page?
 

@@ -20,8 +20,8 @@ Macros can also be nested to enable reuse of complex queries:
 * **Outer Macro**. The macro that references an inner macro.
 
 :::note
-- Only users with the **Manage Macros** [role capability](/docs/manage/users-roles/roles/role-capabilities/) can create, edit, and delete macros.
-- All users can view macro definitions, but data access is governed by existing [RBAC](/docs/manage/users-roles/roles/role-capabilities/) policies. If you do not have access to specific data source, you will not be able to access that data when using a macro, even if the macro definition references it.
+* Only users with the **Manage Macros** [role capability](/docs/manage/users-roles/roles/role-capabilities/) can create, edit, and delete macros.
+* All users can view macro definitions, but data access is governed by existing [RBAC](/docs/manage/users-roles/roles/role-capabilities/) policies. If you do not have access to specific data source, you will not be able to access that data when using a macro, even if the macro definition references it.
 :::
 
 ## Add a macro
@@ -30,10 +30,10 @@ To create a macro, follow the steps below:
 
 1.  [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
 1. Click **+ Add Macro**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-logs-page.png')} alt="Macro logs page" style={{border: '1px solid gray'}} width="800" />
-1. Or, in the log search page, select the part of search query language that needs to be reused and click on **Create Macro**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-search-page.png')} alt="Macro search page" style={{border: '1px solid gray'}} width="800" />
+1. Or, in the log search page, select the part of search query language that needs to be reused and click **Create Macro**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-search-page.png')} alt="Macro search page" style={{border: '1px solid gray'}} width="800" />
 1. In the **Create Macro** page, enter the following details: <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/create-macro.png')} alt="Create macro" style={{border: '1px solid gray'}} width="800" />
     1. **Macro Details**. Enter the name for the macro. Description is optional.
-    1. **Macro Definition**. Enter the definition for the macro. To add arguments use the `{{Arg}}` syntax or select a part of the definition and click on **Add Argument**.
+    1. **Macro Definition**. Enter the definition for the macro. To add arguments use the `{{Arg}}` syntax or select a part of the definition and click **Add Argument**.
     1. (Optional) **Arguments**. Enter the name and select the data type for the argument selected.
     1. (Optional) **Argument Validation**. Define the validation condition and enter the error message that needs to be shown when the validation expression returns false.
     1. **Usage**. Preview of how you use the macro in the log search.
@@ -41,27 +41,27 @@ To create a macro, follow the steps below:
 
 ### Limitations
 
-- You can create a maximum of 600 macros.
-- You can add a maximum of 5 arguments.
-- You are only allowed to use single expression.
-- You can only use the below listed argument validations:
-  - `isValidIpV4`
-  - `contains`
-  - `isNumeric`
-  - `isPrivateIP`
-  - `isPublicIP`
-  - `isValidIP`
-  - `isReservedIP`
-  - `isValidIPv4`
-  - `isValidIPv6`
-  - `matches`
-- You can only use the below listed rules language functions:
-  - `<=`
-  - `>=`
-  - `==`
-  - `!=`
-  - `<`
-  - `>`
+* You can create a maximum of 600 macros.
+* You can add a maximum of 5 arguments.
+* You are only allowed to use single expression.
+* You can only use the below listed argument validations:
+  * `isValidIpV4`
+  * `contains`
+  * `isNumeric`
+  * `isPrivateIP`
+  * `isPublicIP`
+  * `isValidIP`
+  * `isReservedIP`
+  * `isValidIPv4`
+  * `isValidIPv6`
+  * `matches`
+* You can only use the below listed rules language functions:
+  * `<=`
+  * `>=`
+  * `==`
+  * `!=`
+  * `<`
+  * `>`
 
 ### Example without arguments
 
@@ -100,7 +100,7 @@ _sourceCategory=error | `timeslice_macro(<arg1_value>)`
 To view any existing macro, follow the steps below:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
-1. On the **Macros** page, click on any of the macros that you want to view the macro details.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="Macro logs page" style={{border: '1px solid gray'}} width="800" />
+1. On the **Macros** page, click any of the macros that you want to view the macro details.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="Macro logs page" style={{border: '1px solid gray'}} width="800" />
 1. To use the selected macro in your log search query, copy the suggested **Usage** of the macro. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-details.png')} alt="View macro logs details" style={{border: '1px solid gray'}} width="400" />
 1. On the Log Search page, enter your query and add the copied macro directly into the query syntax. Alternatively, you can type **`** to open the macro suggestions dropdown and select the desired macro to insert into your query. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-in-line-suggestions.png')} alt="Macro in line suggestions" style={{border: '1px solid gray'}} width="800" />
     :::info
@@ -118,21 +118,21 @@ To accept (**+ Add Macro**) or reject a recommendation, you must have the **Mana
 Follow the below steps to view the macro recommendations:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
-1. Click on the <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-recommendations-button.png')} alt="Macro recommendations button"  width="30" /> button to open the **Macro Recommendation** page. This page displays recommendations based on most frequently run queries in your org. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-recommendations.png')} alt="Macro recommendations" style={{border: '1px solid gray'}} width="600" />
+1. Click the <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-recommendations-button.png')} alt="Macro recommendations button"  width="30" /> button to open the **Macro Recommendation** page. This page displays recommendations based on most frequently run queries in your org. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-recommendations.png')} alt="Macro recommendations" style={{border: '1px solid gray'}} width="600" />
     1. Click **Reject** to remove a macro recommendation from the list.
     1. Click **+ Add Macro** to accept the macro recommendation. You will be redirected to **Create Macro** page, where you can follow the instruction in the [Add a macro](/docs/manage/macro#add-a-macro) section to complete the macro creation process.
 
 ## Edit a macro
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
-1. On the **Macros** page, click on any of the macros that you want to edit.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="Macro logs page" style={{border: '1px solid gray'}} width="800" />
+1. On the **Macros** page, click any of the macros that you want to edit.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="Macro logs page" style={{border: '1px solid gray'}} width="800" />
 1. Click **Edit** button to open the pane for editing. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-edit-button.png')} alt="Macro delete pop up" style={{border: '1px solid gray'}} width="400" />
-1. In the **Edit [macroname] macro** pop-up, click on **Continue**. You can also check where your macros have been used to avoid broken queries by clicking on **check queries that reference this macro**. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-edit-pop-up.png')} alt="Macro delete pop up" style={{border: '1px solid gray'}} width="400" />
+1. In the **Edit [macroname] macro** pop-up, click **Continue**. You can also check where your macros have been used to avoid broken queries by clicking **check queries that reference this macro**. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-edit-pop-up.png')} alt="Macro delete pop up" style={{border: '1px solid gray'}} width="400" />
 1. In the macro editing pane, perform the required editing and click **Submit**.
 
 ## Delete a macro
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then under **Logs**, select **Macros**. You can also click the **Go To...** menu at the top of the screen and select **Macros**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Logs** > **Macros**. 
-1. On the **Macros** page, click on any of the macros that you want to delete.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="Macro logs page" style={{border: '1px solid gray'}} width="800" />
+1. On the **Macros** page, click any of the macros that you want to delete.<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/view-macro-logs-page.png')} alt="Macro logs page" style={{border: '1px solid gray'}} width="800" />
 1. Click **Delete** button to delete the macro. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-delete-button.png')} alt="Macro delete button" style={{border: '1px solid gray'}} width="400" />
-1. In the **Delete [macroname] macro** pop-up, click on **Delete**. You can also check where your macros have been used to avoid broken queries by clicking on **check queries that reference this macro**. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-delete-pop-up.png')} alt="Macro delete pop up" style={{border: '1px solid gray'}} width="400" />
+1. In the **Delete [macroname] macro** pop-up, click **Delete**. You can also check where your macros have been used to avoid broken queries by clicking **check queries that reference this macro**. <br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/macro-delete-pop-up.png')} alt="Macro delete pop up" style={{border: '1px solid gray'}} width="400" />

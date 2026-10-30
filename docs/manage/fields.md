@@ -2,14 +2,14 @@
 id: fields
 title: Fields
 sidebar_label: Fields
-description: Manage fields in Sumo Logic to control how log data is parsed and organized, improving search efficiency and enabling advanced data filtering.
+description: Manage fields in Sumo Logic to control how log data are parsed and organized, improving search efficiency and enabling advanced data filtering.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as *log metadata fields*.
 
-In addition to defining fields through [Field Extraction Rules](/docs/manage/field-extractions), you can define fields on data sent to Sumo Logic by manually defining them on sources and collectors, as well as dynamically through HTTP headers and tags from Amazon EC2.
+In addition to defining fields through [field extraction rules](/docs/manage/field-extractions), you can define fields on data sent to Sumo Logic by manually defining them on sources and collectors, as well as dynamically through HTTP headers and tags from Amazon EC2.
 
 The order of precedence for field assignment from highest to lowest is:
 
@@ -22,7 +22,7 @@ The order of precedence for field assignment from highest to lowest is:
 
 So, if you have a field defined at the collector or source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
 
-Any fields you want assigned to log data need to exist in a fields schema. Each account has its own fields schema that is available to manage in the Sumo Logic web interface. When a field is defined and enabled in the fields schema it is assigned to the appropriate log data as configured. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+Any fields you want assigned to log data need to exist in a fields schema. Each account has its own fields schema that is available to manage in the Sumo Logic web interface. When a field is defined and enabled in the fields schema it is assigned to the appropriate log data as configured. If a field is sent to Sumo Logic but is not present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 Fields specified in field extraction rules are automatically added and enabled in your fields schema.
 
@@ -38,15 +38,15 @@ You can use Terraform to provide a field with the [`sumologic_field`](https://re
 
 ## About metrics sources, fields, and metadata
 
-Sumo Logic metrics sources also support tagging with fields defined in your fields schema or other metadata that hasn’t been added to your schema.
+Sumo Logic metrics sources also support tagging with fields defined in your fields schema or other metadata that has not been added to your schema.
 
-When creating or updating the configuration of an HTTP source or a collector that has an HTTP source, you assign it a field on the configuration page. If the field doesn’t exist in the schema, you are prompted whether or not you want to **Automatically activate all fields on save**. If you select that option, the field will be added to the  schema and be applied to the logs collected by the collector, and to metrics and logs collected by the HTTP source. If you do not select **Automatically activate all fields on save**, the field will not be saved to your fields schema, and the field will be applied only to the metrics collected by the HTTP source.
+When creating or updating the configuration of an HTTP source or a collector that has an HTTP source, you assign it a field on the configuration page. If the field does not exist in the schema, you are prompted whether or not you want to **Automatically activate all fields on save**. If you select that option, the field will be added to the  schema and be applied to the logs collected by the collector, and to metrics and logs collected by the HTTP source. If you do not select **Automatically activate all fields on save**, the field will not be saved to your fields schema, and the field will be applied only to the metrics collected by the HTTP source.
 
 When creating or updating the configuration of a Streaming Metrics source, a Host Metrics source, or a Docker source, you can assign it metadata on the source configuration page. Metadata fields you assign in this fashion to these metrics sources do not need to exist in your fields schema and will not be added to the schema.
 
 ## Limitations
 
-* Fields created as log metadata and from Field Extraction Rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
+* Fields created as log metadata and from field extraction rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
     :::note
     Enterprise and Enterprise Suite users can create a maximum of 400 fields.
     :::
@@ -68,7 +68,7 @@ Fields can be assigned to a collector and source using the **Fields** input ta
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field does not exist in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. **Automatically activate all fields on save**. 
 
@@ -81,7 +81,7 @@ Fields can be assigned to a collector and source using the **Fields** input ta
     If you do not click **Automatically activate all fields on save**:
 
     * The field will be *not* be saved to your fields schema
-    * The field will be applied to logs collected by the collector or source, but because the field won’t be added to your fields schema, it will be dropped by Sumo Logic when logs with that field are ingested.
+    * The field will be applied to logs collected by the collector or source, but because the field will not be added to your fields schema, it will be dropped by Sumo Logic when logs with that field are ingested.
     * If you are adding the field to an HTTP source, or to a collector that has an HTTP source, the field will be applied to the metrics collected by the source.
 
 1. Click **Save**.
@@ -90,7 +90,7 @@ Fields can be assigned to a collector and source using the **Fields** input ta
 
 In the above example, we have created a new field called `cluster` and set the value to `k8s.dev`. With this configuration, any logs sent to this collector will now have this key-value pair associated with it.
 
-With this association, you can search for `cluster=k8s.dev` to return your logs. <br/><img src={useBaseUrl('img/fields/collector-field-search-results.png')} alt="Collector field search results" style={{border: '1px solid gray'}} width="800" />
+With this association, you can search for `cluster=k8s.dev` to return your logs. <br/><img src={useBaseUrl('img/fields/collector-field-search-results.png')} alt="collector field search results" style={{border: '1px solid gray'}} width="800" />
 
 ### Using collector API
 
@@ -205,7 +205,7 @@ Fields can be used in the following ways:
 
 * [Log Search ](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
 * [Role Based Access Control](/docs/manage/users-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
-* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of partitions, Scheduled Views, and Field Extraction Rules.
+* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [field extraction rules](/docs/manage/field-extractions). Fields can be used in the scope of partitions, Scheduled Views, and field extraction rules.
 
 :::note
 Fields cannot be used with [Live Tail](/docs/search/live-tail).
@@ -299,7 +299,7 @@ You will see the following prompt and you must remove the field reference before
 Built-in fields cannot be deleted.
 :::
 
-For example, if the field is used by a Field Extraction Rule, you must first delete the Field Extraction Rule before you can delete the field.
+For example, if the field is used by a field extraction rule, you must first delete the field extraction rule before you can delete the field.
 
 <img src={useBaseUrl('img/fields/field-cannot-delete.png')} alt="Field cannot delete" style={{border: '1px solid gray'}} width="400" />
 
@@ -311,7 +311,7 @@ If the field is not used by those features you will see the following prompt.
 
 Dropped fields are fields being sent to Sumo Logic, but are being ignored since they are not defined in your fields schema. Use the fields dropdown to view the dropped fields.<br/><img src={useBaseUrl('/img/fields/dropped-fields-table.png')} alt="Dropped fields table" style={{border:'1px solid gray'}} width="800"/>
 
-Click on any dropped field of your choice from the table to open a details pane. There is a convenient button provided to create the field if needed.
+Click any dropped field of your choice from the table to open a details pane. There is a convenient button provided to create the field if needed.
 
 :::note
 It can take a few minutes for a created field to be removed from the **Dropped Fields** table.
