@@ -9,14 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 A service account allows you to create [access keys](/docs/manage/security/access-keys/) for processes that run Sumo Logic APIs. You can use a service account to create multiple access keys. Because access keys in a service account are not tied to an individual user, they can continue to be used even if the creator’s user account is deactivated or deleted. Service accounts are an ideal way to ensure continuity of operation for critical services. 
 
 You can use service accounts to provide authentication for operations that use Sumo Logic APIs, such as:
-* API scripts
-* Third party integrations
-* Infrastructure as code (for example, Terraform)
+* API scripts.
+* Third-party integrations.
+* Infrastructure as code (for example, Terraform).
 
 Benefits of using service accounts include:
 * The **Service Accounts** tab, a dedicated page to manage service keys and to reduce their being confused with [personal access keys](/docs/manage/security/access-keys/#from-the-personal-access-keys-tab).
 * Access keys on service accounts can be [scoped](#add-an-access-key-to-a-service-account) with reduced capabilities to reduce impact.
-* There is [audit trail](#audit-logging-for-service-account-activity) for changes to service keys.
+* There is an [audit trail](#audit-logging-for-service-account-activity) for changes to service keys.
 
 :::tip
 You can use the API to create and manage service accounts. See [Service Accounts API](/docs/api/service-accounts/).
@@ -75,7 +75,7 @@ To modify only the access keys on a service account (rather than the service acc
 
 ## Audit logging for service account activity
 
-Service account events are recorded in the Audit Event Index as user events. To search for for service account events, run this query:
+Service account events are recorded in the Audit Event Index as user events. To search for service account events, run this query:
 
 ```sumo
 _index=sumologic_audit_events _sourceCategory=users

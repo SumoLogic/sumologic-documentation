@@ -29,7 +29,6 @@ module.exports = {
         'get-started/training-certification-faq',
         'get-started/account-settings-preferences',
         'get-started/sumo-logic-ui',
-        'get-started/sumo-logic-ui-classic',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/system-requirements',
@@ -991,6 +990,7 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
+        'manage/partitions/flex-to-tier-migration-report',
         'manage/partitions/faq',
       ]
     },

@@ -26,7 +26,7 @@ where:
 * At least one of the `to INTERVAL` or `using ROLLUP` clauses needs to be present.
 
 :::note
-To apply the quantization directly to the selector, `quantize` has to follow the selector immediately. Otherwise, it will just work on top of whatever has been returned by the previous step.
+To apply the quantization directly to the selector, `quantize` has to follow the selector immediately. Otherwise, it will work on top of whatever has been returned by the previous step.
 :::
 
 :::note

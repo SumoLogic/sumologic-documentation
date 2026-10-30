@@ -2,7 +2,7 @@
 id: metric-throttling
 title: Metric Throttling
 sidebar_label: Metric Throttling
-description: Information about how Sumo Logic throttles metric when your metrics ingestion exceeds your data points per minute (DPM)  burst limit.
+description: Information about how Sumo Logic throttles metric when your metrics ingestion exceeds your data points per minute (DPM) burst limit.
 ---
 
 Metric data volume is measured in Data Points per Minute (DPM). The **Account Overview** page shows the DPM limit for your account and your average daily DPM for the current billing period.
