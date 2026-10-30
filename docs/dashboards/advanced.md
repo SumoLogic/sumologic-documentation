@@ -2,7 +2,7 @@
 id: advanced
 title: Best Practices for Dashboards
 sidebar_label: Best Practices
-description: Learn about some of the Best Practices feature in Dashboard usage.
+description: Learn about some of the Best Practices feature in Dashboards usage.
 ---
 
 This page describes the recommended best practices for high performance dashboards.
@@ -11,7 +11,7 @@ This page describes the recommended best practices for high performance dashboar
 - [Optimize your queries](/docs/search/optimize-search-performance/) to scan the least amount of data by using [partitions](/docs/search/optimize-search-partitions/) and/or the most narrow source categories. When possible, also consider using [Scheduled View(s)](/docs/manage/scheduled-views/) to ensure optimal performance.
 - For most viewed dashboards, enable [Auto-Refresh](/docs/dashboards/about/#auto-refresh) at a five-minute interval. This places compatible panel queries into our continuous query pipeline, allowing for nearly instant execution.
 
-## Dashboard throttling
+## Dashboards throttling
 
 Sumo Logic implements multiple layers of throttling to ensure a balanced system load, which protects you and Sumo Logic from performance degradation. The throttling mechanism is applied on a per-user basis and is as detailed below:
 

@@ -5,7 +5,7 @@ description: Scatter charts show correlations between two fields against specifi
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Scatter charts are available in the [Dashboard](../about.md) platform.
+Scatter charts are available in the [Dashboards](../about.md) platform.
 
 Scatter charts display two independent numeric fields allowing you to see any correlation between them. You can visually determine how your fields relate to and affect one another.
 

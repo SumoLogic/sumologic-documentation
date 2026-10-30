@@ -1,7 +1,7 @@
 ---
 id: dashboard-child-orgs
 title: Create a Dashboard for Child Orgs (MSSPs)
-description: Learn how to create your own custom Dashboard with a panel and query to child org level, then customize a chart and the chart to the dashboard.
+description: Learn how to create your own custom dashboard with a panel and query to child org level, then customize a chart and the chart to the dashboard.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

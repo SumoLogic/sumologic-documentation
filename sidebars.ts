@@ -1377,7 +1377,7 @@ module.exports = {
         'dashboards/filter-template-variables',
         {
           type: 'category',
-          label: 'Migrate to Dashboard',
+          label: 'Migrate to Dashboards',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'dashboards/dashboards-migration/index'},

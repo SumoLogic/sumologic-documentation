@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Dashboard FAQ
+title: Dashboards FAQ
 sidebar_label: FAQ
 description: Find answers to frequently asked questions about our Dashboards.
 ---

@@ -1,7 +1,7 @@
 ---
 id: create-dashboard-new
 title: Create a Dashboard
-description: Learn how to create your own custom Dashboard with a panel and query, then customize a chart and the chart to the dashboard.
+description: Learn how to create your own custom dashboard with a panel and query, then customize a chart and the chart to the dashboard.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 This page demonstrates how to create a dashboard, add a query, and then add the chart to the dashboard. You create your dashboard by selecting template options from menus and dropdowns.
 
-Dashboard allows you to view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboard template capabilities provide for easier data scoping and intuitive chart creation.
+Dashboards let you view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboards template capabilities provide for easier data scoping and intuitive chart creation.
 
 :::training Micro Lesson
 
@@ -33,7 +33,7 @@ Rather watch a short micro lesson video?
 You can also create dashboard panels by typing a description of the panel you want directly into Mobot, instead of configuring panels manually. For details, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 :::
 
-## Dashboard autosave
+## Dashboards autosave
 
 When you rename or add a panel to a dashboard it is automatically saved in your Sumo Logic Personal folder. Likewise, ongoing changes and additions to the dashboard are saved. This ensures the integrity of your work and prevents any loss due to unforeseen interruptions or outages.
 

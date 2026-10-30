@@ -7,7 +7,7 @@ description: Learn more about the restrictions when you use operators with dashb
 
 This page has information about restrictions and rules about using [Sumo Logic log search operators](/docs/search/search-query-language) with dashboards.
 
-## Dashboard restrictions
+## Dashboards restrictions
 
 The following operators cannot be used with dashboards:
 
