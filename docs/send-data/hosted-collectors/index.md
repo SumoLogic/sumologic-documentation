@@ -18,7 +18,7 @@ With a single hosted collector, you can create and configure sources to collect 
 
 Data collection flow for S3 buckets and HTTP requests:<br/><img src={useBaseUrl('img/send-data/team-built-hosted-diagram.png')} alt="Data flow diagram showing S3 data flow to Sumo Logic through a hosted collector" style={{border: '1px solid gray'}} width="800" />
 
-Just as installed collectors, you can monitor the activity of hosted collectors using the Status tab.
+As with installed collectors, you can monitor the activity of hosted collectors using the Status tab.
 
 :::note
 The maximum number of collectors allowed per organization is 10,000.
