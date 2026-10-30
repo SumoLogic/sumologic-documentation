@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic is FedRAMP® Moderate Authorized (package ID FR1918740338), and the FedRAMP offering includes log collection, Logs for Security, and Cloud SIEM for log aggregation and SOC SIEM use cases. Cloud SOAR and the Automation Service aren't included. The offering gives federal agencies and commercial entities the same core observability and security platform as the standard product, with a small set of capability differences. For more information, see the [FedRAMP Authorization](https://www.sumologic.com/fedramp/) page on our Sumo Logic site, or [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338).
+Sumo Logic is FedRAMP® Moderate Authorized (package ID FR1918740338), and the FedRAMP offering includes log collection, Logs for Security, and Cloud SIEM for log aggregation and SOC SIEM use cases. Cloud SOAR and the Automation Service are not included. The offering gives federal agencies and commercial entities the same core observability and security platform as the standard product, with a small set of capability differences. For more information, see the [FedRAMP Authorization](https://www.sumologic.com/fedramp/) page on our Sumo Logic site, or [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338).
 
 ## What capabilities does Sumo Logic's FedRAMP offering include?
 
@@ -119,7 +119,7 @@ Sumo Logic is FedRAMP Moderate Authorized under package ID FR1918740338. You can
 
 ### What's different between the FedRAMP and standard Sumo Logic product?
 
-Most core capabilities, including Logs for Security, Cloud SIEM, data collection, and administration features, are available in both offerings. A few solutions and sources aren't available in the FedRAMP environment, including Application Observability, AWS Observability, Software Development Optimization, Cloud SOAR/Automation Service, AWS Inventory, and CSE AWS EC2 Inventory. Several cloud API sources are available in FedRAMP only upon request, typically within five business days.
+Most core capabilities, including Logs for Security, Cloud SIEM, data collection, and administration features, are available in both offerings. A few solutions and sources are not available in the FedRAMP environment, including Application Observability, AWS Observability, Software Development Optimization, Cloud SOAR/Automation Service, AWS Inventory, and CSE AWS EC2 Inventory. Several cloud API sources are available in FedRAMP only upon request, typically within five business days.
 
 ### Who should use Sumo Logic's FedRAMP offering?
 
@@ -127,8 +127,8 @@ Federal agencies and commercial entities that must meet FedRAMP Moderate complia
 
 ### Is Cloud SIEM available in Sumo Logic's FedRAMP environment?
 
-Yes. Cloud SIEM is available in the FedRAMP Moderate environment, along with Logs for Security. Cloud SOAR and the Automation Service, however, aren't included in FedRAMP.
+Yes. Cloud SIEM is available in the FedRAMP Moderate environment, along with Logs for Security. Cloud SOAR and the Automation Service, however, are not included in FedRAMP.
 
 ### Are all AWS collection sources available in Sumo Logic's FedRAMP environment?
 
-Most are, but a few, including AWS Inventory and CSE AWS EC2 Inventory, aren't available in the FedRAMP environment. Several cloud API sources are available only upon request, typically within five business days.
+Most are, but a few, including AWS Inventory and CSE AWS EC2 Inventory, are not available in the FedRAMP environment. Several cloud API sources are available only upon request, typically within five business days.

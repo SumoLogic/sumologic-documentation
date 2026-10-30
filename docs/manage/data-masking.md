@@ -20,7 +20,7 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Data masking dynamically redacts sensitive values from your log data at query time. Logs are stored unmasked, and what each user sees depends on their role. The **Data Masking** page gives you one place to create, review, and manage masking rules across your organization, so sensitive information stays hidden from users who shouldn't see it.
+Data masking dynamically redacts sensitive values from your log data at query time. Logs are stored unmasked, and what each user sees depends on their role. The **Data Masking** page gives you one place to create, review, and manage masking rules across your organization, so sensitive information stays hidden from users who should not see it.
 
 ## How does data masking work?
 

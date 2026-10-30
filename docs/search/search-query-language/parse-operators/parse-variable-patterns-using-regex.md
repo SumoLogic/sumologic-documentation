@@ -100,16 +100,12 @@ Oct 11 18:20:49 host123.example.com 16234564: Oct 11 18:20:49: %SEC-6-IPACCESSLO
 you can write the following query to extract the `protocol`:
 
 ```sumo
-| parse regex "list 101 (accepted|denied) (?<protocol>.*?) "
-```
-
-So, you'd actually write:
-
-```sumo
 | parse regex "list 101 (?:accepted|denied) (?<protocol>.*?) "
 ```
 
-But if you mean to also capture whether it is an `accepted` or a `denied` into an alias, then you'd include:
+Writing the group as `(accepted|denied)` without `?:` returns an error, because the group is not captured to an alias and is not marked as non-capturing.
+
+If you mean to also capture whether it is an `accepted` or a `denied` into an alias, then you'd include:
 
 ```sumo
 | parse regex "list 101 (?<status>accepted|denied) (?<protocol>.*?) "
