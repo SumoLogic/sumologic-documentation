@@ -200,7 +200,7 @@ Both require the **Sumo Logic Administrator role** to create the OAuth client an
    * For **Client Type**, select **Authorization Code**.
    * For **Redirect URI**, enter:
       ```
-      http://localhost:8888/callback
+      http://localhost/callback
       ```
    * Select your **Service Account** from the dropdown.
    * Optionally, add a **Description**.
@@ -215,14 +215,14 @@ Both require the **Sumo Logic Administrator role** to create the OAuth client an
      ```bash
      claude mcp add --transport http \
        --scope user \
-       --client-id "<client-id>" --client-secret --callback-port 8888 \
+       --client-id "<client-id>" --client-secret \
        sumo-logic "<mcp-server-url>"
      ```
    * **Project scope** (available only in the current directory, writes to `.mcp.json`).
      ```bash
      claude mcp add --transport http \
        --scope project \
-       --client-id "<client-id>" --client-secret --callback-port 8888 \
+       --client-id "<client-id>" --client-secret \
        sumo-logic "<mcp-server-url>"
      ```
 1. Run one of the above commands. Claude Code then prompts you to enter the client secret securely.

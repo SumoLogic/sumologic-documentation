@@ -51,11 +51,12 @@ _sourceCategory=stream error
 ### Latency distribution
 
 A query parsing the latency of a function call and using the bin
-operator to see latency distribution over time:
+operator to see latency distribution over time. The `parse` operator returns a string, so use the `num` operator to convert `time` to a number. Otherwise, the `bin` operator returns the error "Bin operator cannot be used for non-numeric field."
 
 ```sumo
 _sourceCategory=analytics
 | parse "ms: *" as time
+| num(time)
 | bin time width=10.0, min = 0.0, max = 500.0
 ```
 
@@ -64,6 +65,7 @@ You can aggregate bins further:
 ```sumo
 _sourceCategory=analytics
 | parse "ms: *" as time
+| num(time)
 | bin time width=10, min = 0, max = 500
 | count by _bin_label, _bin_upper
 | sort by _bin_upper

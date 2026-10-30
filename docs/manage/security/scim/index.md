@@ -26,13 +26,13 @@ This section contains the following articles:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/security/scim/provision-with-okta')}><img src={useBaseUrl('img/icons/general/session.png')} alt="Session icon" width="40"/><h4>Provision with Okta</h4></a>
-  <p>Learn how to provision users in Sumo Logic with Okta</p>
+  <p>Learn how to provision users in Sumo Logic with Okta.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/security/scim/provision-with-onelogin')}><img src={useBaseUrl('img/icons/general/session.png')} alt="Session icon" width="40"/><h4>Provision with OneLogin</h4></a>
-  <p>Learn how to provision users in Sumo Logic with OneLogin</p>
+  <p>Learn how to provision users in Sumo Logic with OneLogin.</p>
   </div>
 </div>
 </div>
