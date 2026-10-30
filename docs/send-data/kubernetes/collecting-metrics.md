@@ -40,7 +40,7 @@ If you add more than one annotation with the same name, only the last one will b
 ### Application metrics are exposed (multiple endpoints scenario)
 
 :::note  
-Use `sumologic.metrics.additionalServiceMonitors` instead of `kube-prometheus-stack.prometheus.additionalServiceMonitors`. They have identical behavior and can even be used in tandem, but the latter only works if Prometheus is enabled, which has been deprecated in v4 and removed in v5, and won't work with the OpenTelemetry metrics collector, which is the default starting from v4 of the Chart.
+Use `sumologic.metrics.additionalServiceMonitors` instead of `kube-prometheus-stack.prometheus.additionalServiceMonitors`. They have identical behavior and can even be used in tandem, but the latter only works if Prometheus is enabled, which has been deprecated in v4 and removed in v5, and will not work with the OpenTelemetry metrics collector, which is the default starting from v4 of the Chart.
 :::
 
 If you want to scrape metrics from multiple endpoints in a single Pod, you need a Service that points to the Pod and also to configure `sumologic.metrics.additionalServiceMonitors` in your `user-values.yaml`:
@@ -168,7 +168,7 @@ annotations:
 `sumologic-prometheus` defines how the `telegraf` operator exposes metrics. They are going to be exposed in Prometheus format on port `9273` and `/metrics` path.
 
 :::note
-If you apply annotations to a Pod that's owned by another object, such as a DaemonSet, they won't take effect. In such a case, the annotation should be added to the Pod specification in the DaemonSet template.
+If you apply annotations to a Pod that's owned by another object, such as a DaemonSet, they will not take effect. In such a case, the annotation should be added to the Pod specification in the DaemonSet template.
 :::
 
 After a restart, the Pod should have an additional `telegraf` container.
@@ -200,7 +200,7 @@ By default, the following attributes should be available:
 | \_origin                  | Sumo Logic origin metadata ("kubernetes")                  |
 | \_sourceCategory          | Sumo Logic source category                                 |
 | \_sourceHost              | Sumo Logic source host                                     |
-| \_sourceName              | Sumo Logic source Name                                     |
+| \_sourceName              | Sumo Logic source name                                     |
 | cluster                   | Cluster Name                                               |
 | endpoint                  | Metrics endpoint                                           |
 | instance                  | Pod instance                                               |

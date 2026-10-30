@@ -101,7 +101,7 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 
 ### Use OTLP sources by default
 
-This Helm Chart automatically creates the necessary Collector and Sources in Sumo Logic. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo Logic now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo Logic queries.
+This Helm Chart automatically creates the necessary collector and sources in Sumo Logic. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo Logic now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo Logic queries.
 
 ### Use Routing connector from release 4.19 onwards (breaking change)
 

@@ -26,7 +26,7 @@ helm repo update
 
 ### Sumo Logic account
 
-If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up/).
+If you do not already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up/).
 
 The following are required to set up and deploy the Sumo Logic Kubernetes collection.
 
@@ -86,7 +86,7 @@ helm upgrade \
 ```
 
 :::note
-If the release exists, it will be upgraded, otherwise it will be installed. If the namespace doesn't exists, it will be created.
+If the release exists, it will be upgraded, otherwise it will be installed. If the namespace does not exists, it will be created.
 :::
 
 You should see output similar to the following:
@@ -103,7 +103,7 @@ Thank you for installing sumologic.
 (...)
 ```
 
-More configuration examples (i.e. OpenShift) can found seen in [this document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/configuration-examples.md).
+More configuration examples (such as OpenShift) can found seen in [this document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/configuration-examples.md).
 
 ## Viewing Data In Sumo Logic
 
@@ -238,7 +238,7 @@ See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-colle
 ## Installing in OpenShift platform
 
 The daemonset/statefulset fails to create the pods in Openshift environment due to the request of elevated privileges, like HostPath mounts,
-privileged: true, etc.
+privileged: true, and so on.
 
 If you wish to install the chart in the Openshift Platform, it requires a SCC resource which is only created in Openshift (detected via API capabilities in the chart), you can add the following configuration to `user-values.yaml`:
 

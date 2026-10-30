@@ -12,9 +12,9 @@ description: Review the complete list of changes in Kubernetes Collection v6, in
 - The `_source` metadata field is no longer populated, so you cannot use `_source` in search queries. `_collector` is preserved.
 - All Sumo Logic exporters without an explicit `endpoint` upload data using the installation token through the sourceless path.
 - Custom exporters with an explicit `endpoint` in `config.merge` continue to use their configured source URL, enabling incremental migration.
-- Hosted Collector and its default sources are **not** deleted automatically on upgrade; use `sumologic.cleanupHostedCollector: true` to clean up (permanent and irreversible; verify no custom sources exist first).
+- Hosted collector and its default sources are **not** deleted automatically on upgrade; use `sumologic.cleanupHostedCollector: true` to clean up (permanent and irreversible; verify no custom sources exist first).
 - `sourceType: http` is incompatible with `sourcelessMode: true`. Switch to `sourceType: otlp` or use an explicit endpoint via `config.merge`.
-- Collection pods register as OpenTelemetry collectors and appear in **Manage Data > Collection > OpenTelemetry Collection**; filter by `cluster=<your-cluster-name>` to view pods for a specific cluster.
+- Collection pods register as OpenTelemetry Collectors and appear in **Manage Data > Collection > OpenTelemetry Collection**; filter by `cluster=<your-cluster-name>` to view pods for a specific cluster.
 - GitOps / ArgoCD users with `setupEnabled: false` must supply `sumologic.installationToken` manually (token is not created automatically when Terraform/setup job is disabled).
 
 ## Metrics pipeline unification (enabled by default)

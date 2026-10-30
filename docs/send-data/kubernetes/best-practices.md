@@ -127,7 +127,7 @@ metrics-server:
 
 ### Cleaning unused PVCs
 
-When autoscaling is enabled, new Persistent Volume Claims (PVCs) will be created for new pods. However, Kubernetes doesn't support removing unused PVCs after downscaling a StatefulSet yet, which means that they will be reused when the StatefulSet gets upscaled again. This creates problems in EKS when new instance of the pod is created in a different availability zone than the initial one, as PVCs cannot be mounted across different AZs.
+When autoscaling is enabled, new Persistent Volume Claims (PVCs) will be created for new pods. However, Kubernetes does not support removing unused PVCs after downscaling a StatefulSet yet, which means that they will be reused when the StatefulSet gets upscaled again. This creates problems in EKS when new instance of the pod is created in a different availability zone than the initial one, as PVCs cannot be mounted across different AZs.
 
 To solve this problem, `pvcCleaner` can be used to remove unused PVCs:
 
@@ -441,8 +441,8 @@ The following Kubernetes metadata is available for string templating:
 | String template  | Description                                             |
 | :--------------- | :------------------------------------------------------ |
 | `%{namespace}`   | Namespace name                                          |
-| `%{pod}`         | Full pod name (e.g., `travel-products-4136654265-zpovl`) |
-| `%{pod_name}`    | Friendly pod name (e.g., `travel-products`)              |
+| `%{pod}`         | Full pod name (for example, `travel-products-4136654265-zpovl`) |
+| `%{pod_name}`    | Friendly pod name (for example, `travel-products`)              |
 | `%{pod_id}`      | The pod's uid (a UUID)                                  |
 | `%{container}`   | Container name                                          |
 | `%{source_host}` | Host                                                    |
@@ -551,7 +551,7 @@ For [sumologic exporter][sumologic_exporter]:
 :::note
 As the effective value of `sending_queue.queue_size` depends on current traffic, there is no way to figure out optimal PVC size in relation to `sending_queue.queue_size`. Due to this, we recommend setting `sending_queue.queue_size` to high value in order to use maximum resources of PVC.
 
-The above, in connection with PVC monitoring, can lead to constant alerts (e.g., [KubePersistentVolumeFillingUp][filling_up_alert]), because once filled in PVC never reduces its fill.
+The above, in connection with PVC monitoring, can lead to constant alerts (for example, [KubePersistentVolumeFillingUp][filling_up_alert]), because once filled in PVC never reduces its fill.
 :::
 
 [sumologic_exporter]: https://github.com/SumoLogic/sumologic-otel-collector/tree/v0.50.0-sumo-0/pkg/exporter/sumologicexporter#sumo-logic-exporter
@@ -640,13 +640,13 @@ sumologic:
 
 ### Compaction
 
-The OpenTelemetry Collector doesn't have a compaction mechanism. Local storage can only grow - it can reuse disk space that has already been allocated, but not free it. This leads to a situation where the database file can grow a lot (due to a spike in data traffic) but after some time only small piece of the file will be used for data storage (until next spike).
+The OpenTelemetry Collector does not have a compaction mechanism. Local storage can only grow - it can reuse disk space that has already been allocated, but not free it. This leads to a situation where the database file can grow a lot (due to a spike in data traffic) but after some time only small piece of the file will be used for data storage (until next spike).
 
 ### Examples
 
 Here are some useful examples and calculations for queue and batch parameters.
 
-For the calculations below we made an assumption that a single metric data point is around 1 kilobyte in size, including metadata. This assumption is based on the average data we ingest. Persistent storage doesn't compress data so we assume that single metric data point takes 1 kilobyte on disk as well.
+For the calculations below we made an assumption that a single metric data point is around 1 kilobyte in size, including metadata. This assumption is based on the average data we ingest. Persistent storage does not compress data so we assume that single metric data point takes 1 kilobyte on disk as well.
 
 `number_of_instances` represents number of `sumologic-otelcol-metrics` instances.
 
@@ -858,8 +858,8 @@ metadata:
 Due to breaking changes, we do not support the latest [Kube Prometheus Stack][kube-prometheus-stack]. We are aware that it can be a major issue, so this section describes how to install newer Kube Prometheus Stack to work with our collection.
 
 1. Prepare `values.yaml` for Kube Prometheus Stack.
-   - copy content of `kube-prometheus-stack` from [values.yaml][values.yaml], e.g., for Sumologic Kubernetes Collection v3.9 you need to copy [these][kube-prometheus-stack-3.9] lines
-   - remove configuration for images for Kube Prometheus Stack to use newer versions, e.g., for Sumologic Kubernetes Collection v3.9 you need to remove [tag][kube-state-metrics-tag] for kube-state-metrics
+   - copy content of `kube-prometheus-stack` from [values.yaml][values.yaml], for example, for Sumologic Kubernetes Collection v3.9 you need to copy [these][kube-prometheus-stack-3.9] lines
+   - remove configuration for images for Kube Prometheus Stack to use newer versions, for example, for Sumologic Kubernetes Collection v3.9 you need to remove [tag][kube-state-metrics-tag] for kube-state-metrics
    - add your custom configuration
 1. Upgrade sumologic chart without Kube Prometheus Stack by adding the following configuration to your `values.yaml`:
    ```yaml
@@ -867,7 +867,7 @@ Due to breaking changes, we do not support the latest [Kube Prometheus Stack][ku
      enabled: false
    ```
 1. Verify changes in newer Kube Prometheus Stack which you want to install, you can find information about changes [here][kube-prometheus-stack-upgrade].
-1. Install CRD for Kube Prometheus Stack to do this please see [upgrade instruction][kube-prometheus-stack-upgrade] for Kube Prometheus Stack, for example to upgrade from 40.x to 41.x:
+1. Install CRD for Kube Prometheus Stack to do this, see [upgrade instruction][kube-prometheus-stack-upgrade] for Kube Prometheus Stack, for example to upgrade from 40.x to 41.x:
    ```bash
    kubectl apply --server-side -f
    https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.60.1/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
@@ -906,7 +906,7 @@ Due to breaking changes, we do not support the latest [Kube Prometheus Stack][ku
 
 By default, the Helm Chart collects some data necessary for Sumo Logic dashboards to work. If these dashboards are not used, we suggest to disable collection of this data in order to lower the ingest.
 
-In order to learn more about filtering out data please see [the doc about filtering data](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/filtering.md).
+In order to learn more about filtering out data, see [the doc about filtering data](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/filtering.md).
 
 ## Global customizations
 
