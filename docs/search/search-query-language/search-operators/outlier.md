@@ -2,17 +2,19 @@
 id: outlier
 title: outlier Search Operator
 sidebar_label: outlier
-description: Use the outlier search operator in Sumo Logic to detect anomalies in log data by tracking moving average and standard deviation over time.
+description: Use the outlier search operator in Sumo Logic to detect anomalies in log data by flagging values outside a moving average and standard deviation band.
 keywords:
+    - Sumo Logic
     - outlier
     - anomaly detection
     - log anomaly detection
+    - log search
     - standard deviation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## What does the outlier operator do?
+## What the outlier operator does in Sumo Logic
 
 The `outlier` search operator finds unexpected values in Sumo Logic log search results. Given a series of time-stamped numerical values in a query, it can identify values in a sequence that seem unexpected, and trigger an alert or violation, for example, for a scheduled search. For metrics data, see the [outlier metrics operator](/docs/metrics/metrics-operators/outlier) instead.
 
@@ -48,7 +50,7 @@ You can configure options by setting parameters through keyword arguments, such 
 
 | Keyword Argument | Description |
 | :-- | :-- |
-| window | Sets the trailing number of data points to calculate mean and sigma. The default is 10. |
+| window | Sets the trailing number of data points to calculate mean and sigma (standard deviation). The default is 10. |
 | threshold | Sets the number of standard deviations for calculating violations. The default is 3.0. |
 | consecutive | Sets the required number of consecutive indicator data points (outliers) to trigger a violation. The default is 1. |
 | direction | Use `+-`, `+`, or `-`, to specify which direction should trigger violations:<ul><li>Use `+-` for positive or negative deviations. This is the default.</li><li>Use `+` for only positive deviations (more than expected).</li><li>Use `-` for only negative deviations (less than expected).</li></ul> |
@@ -230,3 +232,33 @@ When you select a [line chart](/docs/dashboards/panels/line-charts), this exampl
 In the line chart, you can see which series is producing the most “deviating” outliers.
 
 This approach effectively displays the severity of the outlier, because the spikes represent the magnitude (how many standard deviations the value is from the mean) in one time-series compared to another time-series.  
+
+## FAQ
+
+### How do I detect outliers in my log data?
+
+Aggregate a numeric field by `_timeslice`, then add `outlier <field>` after the aggregation. The query must include `timeslice` and an aggregating operator such as `count`, `min`, `max`, or `sum`.
+
+### What are the default values for the outlier parameters?
+
+The defaults are `window=10`, `threshold=3.0`, `consecutive=1`, and `direction=+-`.
+
+### What is the difference between an indicator and a violation?
+
+An indicator (`<field>_indicator=1`) marks one data point outside the lower and upper boundaries. A violation (`<field>_violation=1`) is set when the number of consecutive indicators reaches the `consecutive` value.
+
+### Why does my outlier alert trigger one timeslice late?
+
+The outlier operator ignores the most recent time bucket because it may contain incomplete data. An alert on `<field>_violation` changing to 1 therefore triggers one timeslice later.
+
+### How do I find outliers separately for each host or user?
+
+Add `by <field>` to the outlier operator, for example `outlier _count by _sourceHost`. The operator then runs a separate outlier analysis for each value of that field.
+
+### How do I alert on an outlier?
+
+Create a monitor and select the outlier detection method in the **Trigger Type** section, or save the query as a scheduled search that alerts on `<field>_violation`. See [Trigger Type - Outlier detection method](/docs/alerts/monitors/create-monitor/#outlier-detection-method).
+
+### How do I detect outliers in metrics data?
+
+Use the [outlier metrics operator](/docs/metrics/metrics-operators/outlier) in a metrics query. The outlier search operator on this page works on log search results.
