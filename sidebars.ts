@@ -1240,7 +1240,7 @@ module.exports = {
   },
 ],
 // **ALERTS:
-  alerts: [
+  alertsdashboards: [
     {
       type: 'category',
       label: 'Alerts',
@@ -1327,9 +1327,6 @@ module.exports = {
         },
       ],
     },
-  ],
-  // ** DASHBOARDS:
-  dashboards: [
     {
       type: 'category',
       label: 'Dashboards',
