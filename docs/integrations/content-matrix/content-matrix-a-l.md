@@ -131,7 +131,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/axonius.png')} alt="Axonius icon" width="100"/> | [Axonius](https://www.axonius.com/) | Security | Automation integration: [Axonius](/docs/integrations/automation-integrations/axonius/) | - | - | - | - | - | Yes | - | - | - | - |
 | <img src={useBaseUrl('img/integrations/misc/azure-logo.png')} alt="Azure icon" width="50"/> | [Azure](https://azure.microsoft.com/en-us) | Microsoft Azure,<br/>Storage,<br/>AI/ML,<br/>Security | Apps: <br/>- [Azure Analysis Services](/docs/integrations/microsoft-azure/azure-analysis-services/) <br/>- [Azure API Management](/docs/integrations/microsoft-azure/azure-api-management/) <br/>- [Azure App Configuration](/docs/integrations/microsoft-azure/azure-app-configuration/) <br/>-  [Azure Application Gateway](/docs/integrations/microsoft-azure/azure-application-gateway/) <br/>- [Azure App Service Environment](/docs/integrations/microsoft-azure/azure-app-service-environment/) <br/>- [Azure App Service Plan](/docs/integrations/microsoft-azure/azure-app-service-plan/) <br/>- [Azure Audit](/docs/integrations/microsoft-azure/audit/) <br/>-  [Azure Automation](/docs/integrations/microsoft-azure/azure-automation/) <br/>- [Azure Backup](/docs/integrations/microsoft-azure/azure-backup/) <br/>- [Azure Batch](/docs/integrations/microsoft-azure/azure-batch/) <br/>- [Azure Cache for Redis](/docs/integrations/microsoft-azure/azure-cache-for-redis/) <br/>- [Azure Cognitive Search](/docs/integrations/microsoft-azure/azure-cognitive-search/) <br/>- [Azure Container Instances](/docs/integrations/microsoft-azure/azure-container-instances/) <br/>- [Azure Cosmos DB](/docs/integrations/microsoft-azure/azure-cosmos-db/)	<br/>- [Azure Cosmos DB for PostgreSQL](/docs/integrations/microsoft-azure/azure-cosmos-db-for-postgresql/) <br/>- [Azure Data Explorer](/docs/integrations/microsoft-azure/azure-data-explorer/) <br/>- [Azure Data Factory](/docs/integrations/microsoft-azure/azure-data-factory/) <br/>- [Azure Database for MariaDB](/docs/integrations/microsoft-azure/azure-database-for-mariadb/) <br/>- [Azure Database for MySQL](/docs/integrations/microsoft-azure/azure-database-for-mysql/) <br/>- [Azure Database for PostgreSQL](/docs/integrations/microsoft-azure/azure-database-for-postgresql/) <br/>- [Azure Event Grid](/docs/integrations/microsoft-azure/azure-event-grid/) <br/>- [Azure Event Hubs](/docs/integrations/microsoft-azure/azure-event-hubs/) <br/>- [Azure Firewall](/docs/integrations/microsoft-azure/azure-firewall/) <br/>- [Azure Front Door](/docs/integrations/microsoft-azure/azure-front-door/) <br/>- [Azure Functions](/docs/integrations/microsoft-azure/azure-functions/) <br/>- [Azure HDInsight](/docs/integrations/microsoft-azure/azure-hdinsight/) <br/>- [Azure IoT Hub](/docs/integrations/microsoft-azure/azure-iot-hub/) <br/>- [Azure Key Vault](/docs/integrations/microsoft-azure/azure-key-vault/) <br/>- [Azure Kubernetes Service (AKS) - Control Plane](/docs/integrations/microsoft-azure/kubernetes/) <br/>- [Azure Load Balancer](/docs/integrations/microsoft-azure/azure-load-balancer/) <br/>- [Azure Logic App](/docs/integrations/microsoft-azure/azure-logic-app/) <br/>- [Azure Machine Learning](/docs/integrations/microsoft-azure/azure-machine-learning/) <br/>- [Azure Monitor Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source)	<br/>- [Azure Monitor Metrics](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/)	<br/>- [Azure Monitoring](/docs/send-data/collect-from-other-data-sources/azure-monitoring/) <br/>- [Azure Network Interface](/docs/integrations/microsoft-azure/azure-network-interface/) <br/>- [Azure Network Watcher](/docs/integrations/microsoft-azure/network-watcher/) <br/>- [Azure Notification Hubs](/docs/integrations/microsoft-azure/azure-notification-hubs/) <br/>- [Azure Public IP Addresses](/docs/integrations/microsoft-azure/azure-public-ipAddress/) <br/>- [Azure Relay](/docs/integrations/microsoft-azure/azure-relay/) <br/>- [Azure Security -Advisor](/docs/integrations/microsoft-azure/azure-security-advisor/) <br/>- [Azure Security - Defender for Cloud](/docs/integrations/microsoft-azure/azure-security-defender-for-cloud/) <br/>- [Azure Security - Microsoft Defender for Cloud Apps](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-cloud-apps/) <br/>- [Azure Security - Microsoft Defender for Endpoint](/docs/integrations/microsoft-azure/microsoft-defender-for-endpoint/) <br/>- [Azure Security - Microsoft Defender for Identity](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-identity) <br/>- [Azure Security - Microsoft Defender for Office 365](/docs/integrations/microsoft-azure/azure-security-microsoft-defender-for-office-365) <br/>- [Azure Security - Microsoft Entra ID Protection](/docs/integrations/microsoft-azure/azure-security-microsoft-entra-id-protection/) <br/>- [Azure Service Bus](/docs/integrations/microsoft-azure/azure-service-bus/) <br/>- [Azure SQL](/docs/integrations/microsoft-azure/sql/) <br/>- [Azure SQL Elastic Pool](/docs/integrations/microsoft-azure/azure-sql-elastic-pool/) <br/>- [Azure SQL Managed Instance](/docs/integrations/microsoft-azure/azure-sql-managed-instance/) <br/>- [Azure Storage](/docs/integrations/microsoft-azure/azure-storage/) <br/>- [Azure Stream Analytics](/docs/integrations/microsoft-azure/azure-stream-analytics/) <br/>- [Azure Subscription](/docs/integrations/microsoft-azure/azure-subscription/) <br/>- [Azure Synapse Analytics](/docs/integrations/microsoft-azure/azure-synapse-analytics/) <br/>- [Azure Virtual Network](/docs/integrations/microsoft-azure/azure-virtual-network/) <br/>- [Azure Virtual Machine](/docs/integrations/microsoft-azure/azure-virtual-machine/)  <br/>- [Azure Web Apps](/docs/integrations/microsoft-azure/web-apps/) <br/>Automation integration: [Azure AD](/docs/integrations/automation-integrations/azure-ad/) <br/>Collectors:  <br/>- [Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs) <br/>- [Migrating to Azure Event Hubs Cloud-to-Cloud Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/azure-event-hubs-source-migration) <br/>Webhook: [Webhook Connection for Microsoft Azure Functions](/docs/alerts/webhook-connections/microsoft-azure-functions/) | Hosted | Yes | - | Yes | Yes | Yes | Yes | Yes | - | - |
 
+</div>
+
 ## B
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -148,7 +152,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/webhooks/bugsnag-logo.png')} alt="Bugsnag icon" width="50"/>   | [Buddy](https://buddy.works/)  | DevOps | 	Webhook: [Buddy](/docs/integrations/webhooks/buddy/)	 | - | - | - | - | - | - | - | - | - | - |
 |  <img src={useBaseUrl('img/integrations/webhooks/buddy-logo.png')} alt="Buddy icon" width="50"/>   | [Bugsnag](https://www.bugsnag.com/)  | DevOps | 	Webhook: [Bugsnag](/docs/integrations/webhooks/bugsnag/)	 | - | - | - | - | - | - | - | - | - | - |
 
+</div>
+
 ## C
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -191,7 +199,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/cybertriage.png')} alt="Cybertriage icon" width="100"/> | [Cyber Triage](https://www.cybertriage.com/) | Security | Automation integration: [Cyber Triage](/docs/integrations/automation-integrations/cybertriage/) | - | - | - | - | - | Yes | - | - | - | - |
 |  <img src={useBaseUrl('img/integrations/misc/cyral-logo.png')} alt="Cyral icon" width="50"/>   | [Cyral](https://cyral.com/)  | Sumo Logic Certified | 	Partner integration: [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)	 | - | - | - | - | - | - | - | - | - | - |
 
+</div>
+
 ## D
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -218,7 +230,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="Duo icon" width="50"/>   | [Duo](https://duo.com/)  | Security | App: [Duo Security](/docs/integrations/security-threat-detection/duo-security/)	<br/>Automation integration: [Duo](/docs/integrations/automation-integrations/duo/) <br/>Cloud SIEM integration: [Duo Security](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/2a10e3c0-7835-4b29-81a4-9a7573b2f345.md) <br/>Collector: [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source/) | Installed,<br/>Hosted | Yes | - | Yes | - | Yes | - | Yes | Yes | Yes |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/dynatrace.png')} alt="Dynatrace icon" width="100"/> | [Dynatrace](https://www.dynatrace.com/) | Security | Automation integration: [Dynatrace](/docs/integrations/automation-integrations/dynatrace/) | - | - | - | - | - | Yes | - | - | - | - |
 
+</div>
+
 ## E
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -235,8 +251,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/exploit-database.png')} alt="Exploit Database icon" width="75"/> | [Exploit Database](https://www.exploit-db.com/) | Security | Automation integration: [Exploit Database](/docs/integrations/automation-integrations/exploit-database/) | - | - | - | - | - | Yes | - | - | - | - |
 | <img src={useBaseUrl('img/integrations/misc/extrahop-logo.png')} alt="Extrahop icon" width="100"/>  | [ExtraHop](https://www.extrahop.com/)  | DevOps,<br/>Security | App: [ExtraHop RevealX 360](/docs/integrations/webhooks/extrahop-revealx-360) <br/>Cloud SIEM integration: [ExtraHop](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/a8b03e2e-7497-4104-874d-cafd03aeb4c1.md) <br/>Community app: [Sumo Logic for ExtraHop Reveal(x) 360](https://github.com/SumoLogic/sumologic-content/tree/master/ExtraHop%20Reveal(x)%20360) <br/>Webhook: [ExtraHop RevealX 360](/docs/integrations/webhooks/extrahop-revealx-360/) | Hosted | Yes | - | Yes | Yes | - | - | Yes | Yes | Yes |
 
+</div>
 
 ## F
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -256,7 +275,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/phishlabs-drp.png')} alt="Phishlabs Drp icon" width="75"/> | [Fortra](https://www.phishlabs.com/) | Security | App: <br/>- [Digital Guardian ARC](/docs/integrations/saas-cloud/digital-guardian-arc/) <br/> Automation integrations: <br/>- [PhishLabs DRP](/docs/integrations/automation-integrations/phishlabs-drp/) <br/>- [PhishLabs EIR - Incident Data](/docs/integrations/automation-integrations/phishlabs-eir-incident-data/) <br/>- [PhishLabs EIR - IOC Feed](/docs/integrations/automation-integrations/phishlabs-eir-ioc-feed/) <br/>Cloud SIEM integration: [Digital Guardian ARC](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/c10788a1-0da8-483c-b87a-e6351984fab5.md) <br/>Collector: [Digital Guardian ARC Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-arc-source/) | Hosted | Yes | - | Yes | - | Yes | - | Yes | Yes | Yes |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/freshdesk.png')} alt="Freshdesk icon" width="100"/>  | [Freshworks](https://www.freshworks.com/) | IT Infrastructure | Automation integrations: <br/>- [FreshDesk](/docs/integrations/automation-integrations/freshdesk/) <br/>- [Freshservice](/docs/integrations/automation-integrations/freshservice/) | - | - | - | - | - | Yes | - | - | - | - |
 
+</div>
+
 ## G
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -272,7 +295,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/webhooks/gremlin-logo.png')} alt="Gremlin icon" width="50"/>   |  [Gremlin](https://www.gremlin.com/) | DevOps | Webhook: [Gremlin](/docs/integrations/webhooks/gremlin/) | - | - | - | - | - | - | - | - | - | - |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/greynoise.png')} alt="Greynoise icon" width="100"/> | [GreyNoise](https://www.greynoise.io/) | Security | Automation integration: [GreyNoise](/docs/integrations/automation-integrations/greynoise/) | - | - | - | - | - | Yes | - | - | - | - |
 
+</div>
+
 ## H
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -290,7 +317,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/hudsonrock-cavalier.png')} alt="Hudsonrock Cavalier icon" width="75"/> | [HudsonRock](https://www.hudsonrock.com/) | Security | Automation integration: [HudsonRock Cavalier](/docs/integrations/automation-integrations/hudsonrock-cavalier/) | - | - | - | - | - | Yes | - | - | - | - |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/hybrid-analysis.png')} alt="Hybrid Analysis icon" width="75"/> | [Hybrid Analysis](https://www.hybrid-analysis.com/) | Security | Automation integration: [Hybrid Analysis](/docs/integrations/automation-integrations/hybrid-analysis/) | - | - | - | - | - | Yes | - | - | - | - |
 
+</div>
+
 ## I
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -313,7 +344,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/ipstack.png')} alt="Ipstack icon" width="75"/> | [IPstack](https://ipstack.com/) | Security | Automation integration: [IPstack](/docs/integrations/automation-integrations/ipstack/) | - | - | - | - | - | Yes | - | - | - | - |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/neurons-itsm.png')} alt="Neurons Itsm icon" width="50"/> | [Ivanti](https://www.ivanti.com/) | Security | Automation integrations: <br/>- [Neurons ITSM](/docs/integrations/automation-integrations/neurons-itsm/) <br/>- [Pulse Secure](/docs/integrations/automation-integrations/pulse-secure/) <br/>Cloud SIEM integration: [Pulse](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/e5d4eae7-8ba6-46ed-9876-58d5763398ea.md) | - | - | - | - | - | Yes | - | - | Yes | Yes |
 
+</div>
+
 ## J
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -325,7 +360,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="Jumpcloud Directory Insights icon" width="100"/>   | [JumpCloud](https://jumpcloud.com/)  | Security,<br/>IDP | App: [JumpCloud Directory Insights](/docs/integrations/saas-cloud/jumpcloud-directory-insights)<br/> Cloud SIEM integration: [JumpCloud](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/138e3b9f-8b41-43d8-ba4c-823bef814d38.md) <br/>Collector: [JumpCloud Directory Insights Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source/) <br/>Community app: [Sumo Logic Dashboard for JumpCloud](https://github.com/SumoLogic/sumologic-content/tree/master/JumpCloud) | Hosted | Yes | - | Yes | - | - | - | Yes | Yes | Yes |
 | <img src={useBaseUrl('img/integrations/misc/juniper-networks-logo.png')} alt="Juniper Networks icon" width="100"/>  | [Juniper Networks](https://www.juniper.net/us/en.html)  | Security | Cloud SIEM integration: [Juniper](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/AFDA386E-E25E-421D-85F7-ACEC262D73C2.md) <br/>Community app: [Sumo Logic for Juniper Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Juniper)  | - | - | - | - | - | - | - | - | Yes | Yes |
 
+</div>
+
 ## K
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -340,7 +379,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/send-data/krutrim-icon.png')} alt="Krutrim Object Storage icon" width="40"/> | [Krutrim](https://www.olakrutrim.com/) | Security,<br/>AI/ML,<br/>Storage | Collector: [Krutrim Object Storage](/docs/send-data/hosted-collectors/krutrim-object-storage) | Hosted | Yes | - | - | - | - | Yes | - | - | - |
 |  <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Kubernetes icon" width="50"/>   | [Kubernetes](https://kubernetes.io/)  | Kubernetes,<br/>Security,<br/>IT Infrastructure | Apps:<br/>-	[Kubernetes](/docs/integrations/containers-orchestration/kubernetes)	<br/>- [Kubernetes Control Plane](/docs/integrations/containers-orchestration/kubernetes-control-plane) <br/>Cloud SIEM integration: [Kubernetes](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/b19b9592-1616-4013-9ad4-f6d2a93da669.md) <br/>Collectors: <br/>- [Kubernetes](/docs/send-data/kubernetes)  | Installed,<br/>Hosted | Yes | - | Yes | Yes | - | - | Yes | Yes | Yes |
 
+</div>
+
 ## L
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|

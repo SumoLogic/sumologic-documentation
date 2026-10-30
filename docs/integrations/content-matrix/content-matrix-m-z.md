@@ -40,7 +40,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/mxtoolbox.png')} alt="Mxtoolbox icon" width="50"/> | [MxToolbox](https://mxtoolbox.com/) | Security | Automation integration: [MxToolbox](/docs/integrations/automation-integrations/mxtoolbox/) | - | - | - | - | - | Yes | - | - | - | - |
 |  <img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="MySQL icon" width="75"/>   | [MySQL](https://www.mysql.com/)  | Database | 	Apps: <br/>- [MySQL](/docs/integrations/databases/mysql/)	<br/>- [MySQL - OpenTelemetry](/docs/integrations/databases/opentelemetry/mysql-opentelemetry/)	 | Installed,<br/>OpenTelemetry | Yes | - | Yes | Yes | - | - | Yes | - | - |
 
+</div>
+
 ## N
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -56,7 +60,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/misc/nucleon-logo.png')} alt="Nucleon icon" width="50"/>   | [Nucleon](https://nucleoncyber.com/)  | Security,<br/>Sumo Logic Certified | Automation integration: [Nucleon Cyber](/docs/integrations/automation-integrations/nucleon-cyber/) <br/>Partner integration: [Nucleon](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Nucleon)	| - | - | - | - | - | Yes | - | - | - | - |
 |  <img src={useBaseUrl('img/integrations/misc/nxlog-logo.png')} alt="Nxlog icon" width="50"/>   | [NXLog](https://nxlog.co/)  | Sumo Logic Certified | Partner integration: [NXLog](https://nxlog.co/technology-ecosystem)	| - | - | - | - | - | - | - | - | - | - |
 
+</div>
+
 ## O
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -79,7 +87,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/misc/osquery-logo.png')} alt="Osquery icon" width="50"/>   | [osquery](https://osquery.io/)  | Security | Cloud SIEM integration: [Osquery](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/eca511e4-0daa-41f7-919e-ec4d0ac1558f.md) | - | - | - | - | - | - | - | - | Yes | Yes |
 | <img src={useBaseUrl('img/integrations/misc/ossec-logo.png')} alt="Ossec icon" width="75"/> | [Ossec](https://www.ossec.net/) | Security | Cloud SIEM integration: [Ossec](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/1eceb40f-85d7-45ea-b341-864a38ea0775.md) | - | - | - | - | - | - | - | - | Yes | Yes |
 
+</div>
+
 ## P
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -101,14 +113,22 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Puppet icon" width="50"/>   | [Puppet](https://www.puppet.com/)  | DevOps | 	Apps: <br/>- [Puppet](/docs/integrations/app-development/puppet/)	<br/>- [Puppet - OpenTelemetry](/docs/integrations/app-development/opentelemetry/puppet-opentelemetry/) <br/>Collector: [Install OpenTelemetry Collector Using Puppet](/docs/send-data/opentelemetry-collector/install-collector/puppet/) | Installed,<br/>OpenTelemetry | Yes | - | Yes | Yes | - | - | Yes | - | - |
 |  <img src={useBaseUrl('img/integrations/webhooks/pusher-logo.png')} alt="Pusher icon" width="50"/>   | [Pusher](https://pusher.com/)  | DevOps | 	Webhook: [Pusher](/docs/integrations/webhooks/pusher/) | - | - | - | - | - | - | - | - | - | - |
 
+</div>
+
 ## Q
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
 |  <img src={useBaseUrl('/img/integrations/saas-cloud/qualys-icon.png')} alt="Qualys icon" width="100"/>  | [Qualys](https://www.qualys.com/) | Security | App: [Qualys VMDR](/docs/integrations/saas-cloud/qualys-vmdr/)	<br/>Automation integrations: <br/>- [Qualys](/docs/integrations/automation-integrations/qualys/) <br/>- [Qualys EDR](/docs/integrations/automation-integrations/qualys-edr/) <br/>- [Qualys WAS](/docs/integrations/automation-integrations/qualys-was/) <br/>Cloud SIEM integration: [Qualys](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/fb83d074-c6cf-4fc7-9020-5d3e364acd17.md) <br/>Collector: [Qualys VMDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/) <br/>Community app: [Sumo Logic for Qualys VMDR and Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys) | Hosted | Yes | - | Yes | - | Yes | - | Yes | Yes | Yes |
 | <img src={useBaseUrl('/img/integrations/misc/qumulo-logo.png')} alt="Qumulo icon" width="100"/> | [Qumulo](https://qumulo.com/) | Security | Cloud SIEM integration: [Qumulo](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/24406280-8b09-4c4e-b327-e25a4186756e.md) | - | - | - | - | - | - | - | - | Yes | Yes |
 
+</div>
+
 ## R
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -125,8 +145,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/misc/rsyslog-logo.png')} alt="Rsyslog icon" width="75"/>   | [rsyslog](https://www.rsyslog.com/)  | IT Infrastructure | 	Collector: [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog/)	 | Hosted | Yes | - | - | - | - | - | - | - | - |
 |  <img src={useBaseUrl('img/integrations/misc/ruby-on-rails-logo.png')} alt="Ruby On Rails icon" width="75"/>   | [Ruby on Rails](https://rubyonrails.org/)  | DevOps | Collector: [Collect Ruby on Rails Logs](/docs/send-data/collect-from-other-data-sources/collect-ruby-on-rails-logs/)	 | Hosted | Yes | - | - | - | - | - | - | - | - |
 
+</div>
 
 ## S
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -215,7 +238,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="Sysdig icon" width="75"/> | [Sysdig](https://sysdig.com/) | Security | App: [Sysdig Secure](/docs/integrations/saas-cloud/sysdig-secure/) <br/>Cloud SIEM integration: [Sysdig](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/c4de0854-e718-45e1-a4c8-63623755aa43.md) <br/> Collector: [Sysdig Secure](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-secure-source.md)  | Hosted | Yes | - | Yes | - | - | - | Yes | Yes | Yes |
 |  <img src={useBaseUrl('img/integrations/misc/syslog-ng-logo.png')} alt="syslog-ng icon" width="75"/>   | [syslog-ng](https://www.syslog-ng.com/)  | Security,<br/>IT Infrastructure | Automation integration:  [Syslog-NG](/docs/integrations/automation-integrations/syslog-ng/) <br/>Collector: [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/)	 | Hosted | Yes | - | - | - | Yes | - | - | - | - |
 
+</div>
+
 ## T
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -239,7 +266,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="Trust Login icon" width="50"/> | [Trust Login](https://trustlogin.com/en/) | Security,<br/>IDP | App: [Trust Login](/docs/integrations/saas-cloud/trust-login) <br/> Cloud SIEM integration: [Trust Login](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/78eae2f3-199e-48ca-aaf6-53f6a19e854a.md) <br/>Collector: [Trust Login Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trust-login-source) | Hosted | Yes | - | Yes | - | - | - | Yes | Yes | Yes |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/tufin-securechange.png')} alt="Tufin Securechange icon" width="75"/> | [Tufin](https://www.tufin.com/) | Security | Automation integrations: <br/>- [Tufin SecureChange](/docs/integrations/automation-integrations/tufin-securechange/) <br/>- [Tufin SecureTrack V2](/docs/integrations/automation-integrations/tufin-securetrack-v2/) | - | - | - | - | - | Yes | - | - | - | - |
 
+</div>
+
 ## U
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -247,7 +278,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
   <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/upwind.png')} alt="Upwind icon" width="50"/>   | [Upwind](https://https://www.upwind.io/)  | App: [Upwind](/docs/integrations/webhooks/upwind/) <br/> Automation integration: [Upwind](/docs/integrations/automation-integrations/upwind/)	 |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/urlscan.io.png')} alt="Urlscan.io icon" width="75"/> | [URLScan.io](https://urlscan.io/) | Security | Automation integration: [URLScan.io](/docs/integrations/automation-integrations/urlscan.io/) | - | - | - | - | - | Yes | - | - | - | - |
 
+</div>
+
 ## V
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -259,7 +294,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware icon" width="50"/>   | [VMware](https://www.vmware.com/)  | Security,<br/>IT Infrastructure,<br/>Sumo Logic Certified | 	Apps: <br/>- [Carbon Black Cloud](/docs/integrations/security-threat-detection/carbon-black-cloud/) <br/>- [Carbon Black Inventory](/docs/integrations/saas-cloud/carbon-black-inventory/) <br/>- [VMware](/docs/integrations/containers-orchestration/vmware/) <br/>- [VMware Legacy](/docs/integrations/containers-orchestration/vmware-legacy/)	<br/>- [VMware Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black/) <br/>- [VMWare - OpenTelemetry Collector](/docs/integrations/containers-orchestration/opentelemetry/vmware-opentelemetry/) <br/>- [VMware Workspace ONE](/docs/integrations/saas-cloud/vmware-workspace-one/) <br/>Automation integrations: <br/>- [Lastline Analyst](/docs/integrations/automation-integrations/lastline-analyst/) <br/>- [VMware Carbon Black Cloud Endpoint Standard](/docs/integrations/automation-integrations/vmware-carbon-black-cloud-endpoint-standard/) <br/>- [VMware Carbon Black Cloud Endpoint Standard V2](/docs/integrations/automation-integrations/vmware-carbon-black-cloud-endpoint-standard-v2/) <br/>- [VMware Carbon Black Cloud Enterprise EDR](/docs/integrations/automation-integrations/vmware-carbon-black-cloud-enterprise-edr/) <br/>- [VMware Carbon Black Cloud Platform](/docs/integrations/automation-integrations/vmware-carbon-black-cloud-platform/) <br/>- [VMware vSphere](/docs/integrations/automation-integrations/vmware-vsphere/) <br/>- [VMware Workspace ONE](/docs/integrations/automation-integrations/vmware-workspace-one/) <br/>Cloud SIEM integrations: <br/>- [Carbon Black](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/c2ea2e5e-92f2-49e8-9812-64e60dba63a2.md) <br/>- [VMware](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/fbf25b91-89f1-45c4-903d-664b328bc6e0.md) <br/>Collectors: <br/>- [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source/) <br/>- [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source/) <br/>- [Collect Metrics from VMware vRealize Operations Manager 8 Enterprise](/docs/send-data/collect-from-other-data-sources/collect-metrics-vrealize-operations-manager/) <br/>- [VMware AirWatch Integration for Sumo Logic](/docs/send-data/collect-from-other-data-sources/vmware-airwatch-integration/)	<br/>- [VMware vRealize Log Insight](/docs/send-data/collect-from-other-data-sources/vmware-vrealize-log-insight/)<br/>- [VMware Workspace One Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source/) <br/>Partner integration: [VMware Tanzu](https://docs.vmware.com/en/Sumo-Logic-Nozzle-for-VMware-Tanzu/services/sumologic-nozzle-vmware-tanzu/index.html) | Installed,<br/>Hosted,<br/>OpenTelemetry | Yes | Yes | Yes | Yes | Yes | - | Yes | Yes | Yes |
 |  <img src={useBaseUrl('img/integrations/misc/votiro-logo.png')} alt="Votiro icon" width="50"/>   |  [Votiro](https://votiro.com/) | Sumo Logic Certified | Partner integration: [Votiro](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Votiro#votiro)	 | - | - | - | - | - | - | - | - | - | - |
 
+</div>
+
 ## W
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
@@ -271,7 +310,11 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/integrations/misc/wiz-logo.png')} alt="Wiz icon" width="50"/> | [Wiz](https://www.wiz.io/) | Security | Cloud SIEM integration: [Wiz](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/2cde0cac-102b-4756-9a56-81437fea1400.md) | - | - | - | - | - | - | - | - | Yes | Yes |
 |  <img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Workday icon" width="50"/>   | [Workday](https://www.workday.com/)  | IT Infrastructure,<br/>Security | 	App: [Workday](/docs/integrations/saas-cloud/workday/)	<br/>Cloud SIEM integration: [Workday](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/6e7ce4b2-569e-476d-b732-7b3a71b1e12a.md) <br/>Collector: [Workday Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/) | Hosted | Yes | - | Yes | - | - | - | Yes | Yes | Yes |
 
+</div>
+
 ## Z
+
+<div className="sticky-cols-table">
 
 | Logo | Vendor Site | Category | <span style={{display: 'inline-block', minWidth: '400px'}}>Integrations</span> | Collection<br/>Type | Collection<br/>(Logs) | Collection<br/>(Inventory) | Dashboards | Monitors | OIF | Agentic<br/>Integrations | Saved<br/>Searches | Parser/<br/>Mapper | SIEM<br/>Rules |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|

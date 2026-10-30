@@ -1314,6 +1314,93 @@ html[data-theme='dark'] .node polygon {
   min-width: 65px; /* Can adjust based on layout needs */
 }
 
+// Sticky first two columns for wide content-matrix tables
+.sticky-cols-table {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-bottom: var(--ifm-spacing-vertical);
+
+  table {
+    display: table;
+    width: max-content;
+    min-width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    
+  }
+
+  // Column 1
+  th:nth-child(1),
+  td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    background-color: var(--ifm-background-color);
+  }
+
+  // Column 2 (left offset = width of column 1)
+  th:nth-child(2),
+  td:nth-child(2) {
+    position: sticky;
+    left: 200px;
+    z-index: 2;
+    width: 200px;
+    min-width: 200px;
+    background-color: var(--ifm-background-color);
+  }
+
+  // Divider line only on body cells, no blur
+  td:nth-child(2) {
+    box-shadow: 1px 0 0 var(--ifm-table-border-color);
+  }
+
+  th:nth-child(2) {
+    box-shadow: none;
+  }
+
+  // Keep zebra striping on the frozen columns, opaque so scrolled content doesn't show through
+  tr:nth-child(even) td:nth-child(-n+2) {
+    background-color: var(--ifm-background-color);
+    background-image: linear-gradient(var(--ifm-table-stripe-background), var(--ifm-table-stripe-background));
+  }
+
+    // Header cells stay above body cells
+  th:nth-child(-n+2) {
+    z-index: 3;
+    background-image: none;
+  }
+}
+
+// Frozen header cells: opaque equivalents of the theme header color
+html[data-theme='light'] .sticky-cols-table th:nth-child(-n+2) {
+  background-color: rgb(164, 204, 221);  // rgba(0,139,178,.397) over #fff
+}
+
+html[data-theme='dark'] .sticky-cols-table th:nth-child(-n+2) {
+  background-color: rgb(10, 73, 102);    // rgba(0,164,219,.35) over #101827
+}
+
+// Narrow screens: freeze only the first column
+@media (max-width: 768px) {
+  .sticky-cols-table {
+    th:nth-child(1),
+    td:nth-child(1) {
+      width: 140px;
+      min-width: 140px;
+      max-width: 140px;
+    }
+    th:nth-child(2),
+    td:nth-child(2) {
+      position: static;
+      box-shadow: none;
+    }
+  }
+}
+
 // Hub/Index pages
 
 /* Index page 'smallbox' cards/tiles */
