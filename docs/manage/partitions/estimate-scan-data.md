@@ -16,7 +16,7 @@ The example below shows the estimate of how much Flex data will be scanned for a
 
 The **Indexes Scanned** dropdown in the Scan Estimates pop-up displays all indexes that were scanned for the entered log query, along with their corresponding estimate details.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/indexes-scanned.png')} alt="Indexes scanned" style={{border:'1px solid gray'}} width="300" />
 
-When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-details.png')} alt="Scan details" style={{border:'1px solid gray'}} width="500" />
+When you click the session ID under the histogram, a popup with more detailed information appears. Here you can see the data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-details.png')} alt="Scan details" style={{border:'1px solid gray'}} width="500" />
 
 If there is no data in the selected tier or Flex, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/no-scan-data.png')} alt="Scan details" style={{border:'1px solid gray'}} width="300" />
 
