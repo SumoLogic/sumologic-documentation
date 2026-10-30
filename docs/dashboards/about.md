@@ -8,13 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/dashboards/about-dashboard/dashboards.png')} alt="Dashboards icon" width="50"/>
 
-Dashboard allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
+Dashboards let you analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
 ## What’s great about dashboard
 
-Dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view. This gives you control over the visual display of metric data as well as log data. Dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
+Dashboards provide the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view. This gives you control over the visual display of metric data as well as log data. Dashboards streamline dashboard configuration and on-the-fly analytic visualizations with its new templating features.
 
 [Template variables](filter-template-variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
 
@@ -25,12 +25,12 @@ See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 :::
 
 * Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
-* Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard utilizes the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
+* Dashboards provide a dashboard-first view to build, maintain, and interact with dashboards. With Dashboards you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
+* Dashboards use the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 The following table shows the availability of features for dashboard.
 
-| Feature |Dashboard|
+| Feature | Dashboards |
 | :-- | :-- |
 | Filtering a dashboard | [Template Variable Based Filters](/docs/dashboards/filter-template-variables/) with greater control on filter values, data type, and acceptable input. |
 | Adding Queries to dashboards | Add a panel from Search or Metrics<br/>Ability to [add panels inline](/docs/dashboards/filter-template-variables/) through the **Add Panel** button |
@@ -96,7 +96,7 @@ You can also select a Light or Dark theme when you [export a dashboard](/docs/da
 
 If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
 
-## Dashboard information
+## Dashboards information
 
 The dashboard information popup provides insights into the scan costs associated with log-based queries that run within dashboards.
 
