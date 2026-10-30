@@ -13,9 +13,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Bitium is a cloud-based identity management provider that can be integrated with Sumo Logic’s SAML 2.0 API to allow users to sign in to Sumo Logic using their Single Sign-On (SSO) credentials. SAML 2.0 API to allow users to Sign in to Sumo Logic using their Single Sign-On (SSO) credentials.
+Bitium is a cloud-based identity management provider that can be integrated with Sumo Logic’s SAML 2.0 API to allow users to sign in to Sumo Logic using their Single Sign-On (SSO) credentials.
 
-You can sign up for a free Bitium Trial account on the [Bitum site](https://www.bitium.com). 
+You can sign up for a free Bitium Trial account on the [Bitium site](https://www.bitium.com). 
 
 ## Create a Bitium SSO app to connect to Sumo Logic
 
@@ -53,8 +53,8 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
     * **Authn Request URL.** Enter the URL that the IdP has assigned for Sumo Logic to submit SAML authentication requests to the IdP.  This field is required if you checked the **SP Initiated Login Configuration** checkbox.
     * **Disable Requested Authn Context**. (Optional.) If you check this option, Sumo Logic will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element.
     * **Sign Authn Request**. (Optional.) If you select this option, Sumo Logic will send signed Authn requests to your IdP. When you click this option, a Sumo Logic-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to use to verify the signature of the Authn requests sent by Sumo Logic. 
-1. **Roles Attribute:** When you click this option, **Roles** Attribute field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set SAML for Single Sign-On](/docs/manage/security/saml/set-up-saml/).
-1. **On Demand Provisioning.** Select this option to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-on.](/docs/manage/security/saml/set-up-saml/).
+1. **Roles Attribute:** When you click this option, the **Roles Attribute** field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set SAML for Single Sign-On](/docs/manage/security/saml/set-up-saml/).
+1. **On Demand Provisioning.** Select this option to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-On](/docs/manage/security/saml/set-up-saml/).
    * **First Name**
    * **Last Name**
    * **On Demand Provisioning Roles.** Add a role for all Bitium users, such as Administrator.
@@ -62,7 +62,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 1. Click **Add**.
 1. View the summary of the SAML configuration parameters. Leave this dialog open so that you can use these settings in Bitium. <br/><img src={useBaseUrl('img/security/saml-config-details2.png')} alt="Summary of the SAML configuration parameters" style={{border: '1px solid gray'}} width="700" />
 
-## Add Sumo Logic SAML Settings to SAML Settings to Bitium
+## Add Sumo Logic SAML settings to Bitium
 
 1. Go back to the Bitium **SAML Configuration** page.
 1. Within the **SAML URL** text box, enter the Authentication Request URL displayed in the previous section. <br/><img src={useBaseUrl('img/security/bitium_saml_url.png')} alt="SAML URL field" style={{border: '1px solid gray'}} width="700" />
