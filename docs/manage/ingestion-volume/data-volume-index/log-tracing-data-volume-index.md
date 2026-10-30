@@ -86,7 +86,7 @@ For example, a single message for the "Collector" volume data may look similar t
 
 ### Volume for each category
 
-This example query will return the volume for each Source Category by
+This example query will return the volume for each source category by
 data tier.
 
 ```sumo
@@ -190,7 +190,7 @@ For example, a single message for collector volume data may look similar to the 
 }
 ```
 
-### Querying the Tracing Data Volume index
+### Querying the Tracing Data Volume Index
 
 When you query the index, the query scope must include the following:
 
