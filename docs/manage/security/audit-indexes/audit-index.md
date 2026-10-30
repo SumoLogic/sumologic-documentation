@@ -27,7 +27,7 @@ All users can access the data contained within the audit index, but only adminis
 ## Enable the audit index
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
-1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
+1. Next to **Sumo Logic Auditing**, select the **Enable** checkbox.
 
 :::important
 Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. In your Sumo Logic account, this data will count against your data volume quota. For more information, see [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion).
@@ -64,7 +64,7 @@ The audit index must be enabled for a search to produce results.
 
 ## Audit event message fields
 
-The table below lists defines the fields returned for an audit event. Note that by default, only the event time and the raw message are displayed. You can display selected fields by clicking the box next to a field in the **Hidden Fields** section of the page.
+The table below lists the fields returned for an audit event. Note that by default, only the event time and the raw message are displayed. You can display selected fields by clicking the box next to a field in the **Hidden Fields** section of the page.
 
 | Field | Description |
 |:--|:--|
@@ -83,7 +83,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 
 ## Audit event classes and actions
 
-The sections list the classes of objects — for example: collectors, users, and sessions—for which Sumo Logic writes audit logs, and the actions, such as create or delete, that result in a message to the audit log.  
+The sections list the classes of objects, such as collectors, users, and sessions, for which Sumo Logic writes audit logs, and the actions, such as create or delete, that result in a message to the audit log.  
 
 When you query the audit index, the search results will include the class and action for each audit log. The `class` and `action` are hidden by default. To display a hidden field, click the checkbox next to it in the **Hidden Fields** section of the **Messages** tab. You can also perform targeted searches of the audit index using the `class` and `action` fields in your query.
 
@@ -100,14 +100,14 @@ The table below shows the value of the `class` and `action` fields for account m
 | ACCESS_KEY | CREATE<br/>ENABLE<br/>DISABLE<br/>DELETE | Access Keys |
 | COLLECTOR | CREATE<br/>UPDATE<br/>UPGRADE<br/>DELETE<br/>THROTTLE | Collection |
 | DATA_FORWARDING | ENABLE<br/>DISABLE | Data Forwarding |
-| PASSWORD_POLICY | MODIFY | 	Password Policy |
+| PASSWORD_POLICY | MODIFY | Password Policy |
 | ROLE | CREATE<br/>MODIFY<br/>DELETE | Roles |
 | USER | CREATE<br/>MODIFY<br/>DISABLE | Users |
 | VOLUME_QUOTA | EXCEEDED<br/>RESET | Throttling and Ingest Budgets, see Audit Ingest Budgets for example queries. |
 
-### Microsoft Office 365 Audit Source events
+### Microsoft Office 365 Audit source events
 
-Sumo Logic logs audit messages for Microsoft Office 365 Audit Source when the following events occur:
+Sumo Logic logs audit messages for Microsoft Office 365 Audit source when the following events occur:
 
 * Source registration success with Microsoft
 * Failure to read back content from Microsoft
@@ -143,9 +143,9 @@ A scheduled search can be set up to send an alert when throttling occurs. See�
 
 Throttling events reported include:
 
-* **Log Ingest**. Log data sent to Sumo Logic has been temporarily throttled.
-* **Metric Ingest**. Metric data sent to Sumo Logic has been temporarily throttled.
-* **Traces Ingest**. Traces data sent to Sumo Logic has been temporarily throttled.
+* **Log Ingest**. Log data sent to Sumo Logic have been temporarily throttled.
+* **Metric Ingest**. Metric data sent to Sumo Logic have been temporarily throttled.
+* **Traces Ingest**. Traces data sent to Sumo Logic have been temporarily throttled.
 
 Throttling events are reported in the Audit Index if the following criteria are met:
 
@@ -167,7 +167,7 @@ yields the following throttling notification.
 
 AWS automatically throttles CloudWatch data if the limits that Amazon sets for the associated APIs are exceeded.  If you have a high volume of metrics data points in your account, it is likely that Amazon will throttle your CloudWatch data.
 
-If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for instructions on setting the CloudWatch scan interval. 
+If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval is not reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for instructions on setting the CloudWatch scan interval. 
 
 When the scan interval is increased, a message is added to the audit log. No action is required by the Sumo Logic user. 
 
@@ -183,7 +183,7 @@ The query yields the following throttling notification.
 CloudWatch source ui-cw-oldPrimary received throttling exception from AWS while querying for metrics. Increasing scan interval to 20 minutes.
 ```
 
-### Audit Source OAuth Token and Watchpoints Refresh
+### Audit source OAuth token and watchpoints refresh
 
 For audit sources, Sumo Logic refreshes OAuth tokens and subscription watchpoints periodically to prevent data loss. If the refresh fails for any reason, a message is added to the audit log.
 
@@ -279,7 +279,7 @@ The table below shows the value of the `class` and `action` fields for schedule
 | Delete | Scheduled search was deleted. |
 | Modify | The alert condition for the scheduled search was met and the alert action was fired. |
 | Timeout | Scheduled search did not complete within the timeout period, which is 20 minutes to an hour, depending on the time range set for the query.<br/>For more information, see [How do I prevent my Scheduled Search from timing out?](/docs/alerts/scheduled-searches/faq/#how-do-i-prevent-my-scheduled-search-from-timing-out) |
-| Suspend | Indicates that Sumo Logic has suspended the search because it has timed out repeatedly.<br/><br/>When a Scheduled Search query fails, Sumo Logic attempts to run the query again two more times, for a total of three tries. If all attempts fail, then an alert email is sent with a notification of the failure. The Scheduled Search is not run again until the next time it is scheduled to do so.<br/><br/>The next time the Scheduled Search runs, if it fails again after the three tries, then it is suspended. Another alert email is sent to notify you that the query has been suspended.<br/><br/>The Scheduled Search will remain suspended for four hours for non-daily searches (for example, searches recurring every 15 minutes, every 1 hour, etc.) and for up to an extra day for a daily search (two failed executions on two days and skips the third day). |
+| Suspend | Indicates that Sumo Logic has suspended the search because it has timed out repeatedly.<br/><br/>When a Scheduled Search query fails, Sumo Logic attempts to run the query again two more times, for a total of three tries. If all attempts fail, then an alert email is sent with a notification of the failure. The Scheduled Search is not run again until the next time it is scheduled to do so.<br/><br/>The next time the Scheduled Search runs, if it fails again after the three tries, then it is suspended. Another alert email is sent to notify you that the query has been suspended.<br/><br/>The Scheduled Search will remain suspended for four hours for non-daily searches (for example, searches recurring every 15 minutes, every 1 hour, and so on) and for up to an extra day for a daily search (two failed executions on two days and skips the third day). |
 | Skip | Scheduled search was skipped, because it was in a suspended state at a time when it was scheduled to run. For more information, see [What happens when a Scheduled Search is suspended?](/docs/alerts/scheduled-searches/faq/#what-happens-when-a-scheduled-search-is-suspended) |
 | Unsuspend | Indicates that Sumo Logic has unsuspended a suspended scheduled search. |
 

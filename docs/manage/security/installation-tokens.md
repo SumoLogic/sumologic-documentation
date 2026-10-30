@@ -1,14 +1,14 @@
 ---
 id: installation-tokens
 title: Installation Tokens
-description: Use Sumo Logic Installation Tokens to register Installed Collectors securely in scripts and automation without risking API access if a token is compromised.
+description: Use Sumo Logic Installation Tokens to register installed collectors securely in scripts and automation without risking API access if a token is compromised.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Installation Tokens register [Installed Collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
+Installation Tokens register [installed collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register installed collectors. You can deactivate, reactivate, or delete tokens at any time.
 
 Opposed to [access keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they cannot be used to make [API](/docs/api) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-roles/users) without worrying about updating access keys in installation scripts since Installation Tokens are associated with your account instead of users.
 
@@ -75,7 +75,7 @@ Select **Deactivate** from the menu on the right of the row on the table or in
 
 ### Delete token
 
-Deleted tokens are removed from your account and cannot be used anymore. Since tokens are only used to register a collector it won't affect registered collectors.
+Deleted tokens are removed from your account and cannot be used anymore. Since tokens are only used to register a collector it will not affect registered collectors.
 
 Select **Delete Token** from the menu on the right of the row on the table or in the details pane of the token under the **More Actions** dropdown.
 
@@ -83,11 +83,11 @@ Select **Delete Token** from the menu on the right of the row on the table or i
 
 ## Using Installation Tokens
 
-This section provides information on using Installation Tokens to register [Installed Collectors](/docs/send-data/installed-collectors). For details on collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on macOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
+This section provides information on using Installation Tokens to register [installed collectors](/docs/send-data/installed-collectors). For details on collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on macOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
 
 ### Command line installer
 
-To register an Installed Collector with the [command line installer](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter: `-Vsumo.token_and_url`.
+To register an installed collector with the [command line installer](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter: `-Vsumo.token_and_url`.
 
 For example:
 
@@ -137,7 +137,7 @@ You can use the Audit Event Index to review the management of installation token
 
 ### Token management events
 
-When an installation token is created, deleted, or updated and event log is created. These include the before (from) and after (to) configurations as well as the ID and name of the token and who made the request. To search for management operations like, creating, deleting, and updating tokens, use the following query:
+When an installation token is created, deleted, or updated, an event log is created. These include the before (from) and after (to) configurations as well as the ID and name of the token and who made the request. To search for management operations like, creating, deleting, and updating tokens, use the following query:
 
 ```sumo
 _index=sumologic_audit_events _sourceCategory=tokens

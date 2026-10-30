@@ -8,7 +8,7 @@ import Iframe from 'react-iframe';
 
 In Sumo Logic, you'll need an access key to:
 
-* **Register new Collectors**. When you install a collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each collector, or use the same access key for multiple collectors. The only time a collector uses the access key is at installation, so if a key is deleted after a collector has been set up, the collector isn't affected.
+* **Register new Collectors**. When you install a collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each collector, or use the same access key for multiple collectors. The only time a collector uses the access key is at installation, so if a key is deleted after a collector has been set up, the collector is not affected.
 * **Use Sumo Logic APIs**. You must supply an access key to use the Sumo Logic APIs. See [Authentication](/docs/api/about-apis/getting-started#authentication) for details.
 * **Run scripts or automation**. Create access keys to provide authentication for scripts or automation.
 
@@ -97,7 +97,7 @@ This tab is visible only to Administrators, or users with the [Manage Access Key
 1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Sumo Logic interface showing a list of access keys with options to add a new access key, search access keys, and statuses of existing keys." style={{border: '1px solid gray'}} width="700"/>
 1. Follow the steps in [From the Personal Access Keys tab](#from-the-personal-access-keys-tab) section above, starting with step 3.
 
-### From a Service Account
+### From a service account
 
 Administrators can create access keys on a service account for use in scripts or automation. For more information, see [Service Accounts](/docs/manage/security/service-accounts).
 
@@ -153,7 +153,7 @@ Administrators, or users with the **Manage Organization Settings** role capabili
 
 ### Access keys deactivation policy
 
-By default, Sumo Logic automatically deactivates access keys that haven’t been used for 30 days or more. However, you can adjust the number of days before deactivation. This extra security measure ensures forgotten keys can't be used later to access your account.
+By default, Sumo Logic automatically deactivates access keys that have not been used for 30 days or more. However, you can adjust the number of days before deactivation. This extra security measure ensures forgotten keys cannot be used later to access your account.
 
 :::note
 This section is visible only to Administrators, or users with the **Manage Organization Settings** role capability.

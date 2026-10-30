@@ -65,7 +65,7 @@ The following table provides details on the fields returned by the index:
 | `query` | The query text string run by the user. |
 | `query_end_time` | The end time in the time range specified as part of the query time parameter, in milliseconds since epoch. |
 | `query_start_time` | The start time in the time range specified as part of the query time parameter, in milliseconds since epoch. |
-| `query_type` | Identifies the type of query run within the account such as API, UI, Scheduled Views, etc. The values and their detailed description are provided in [Query type field values](#query-type-field-values). |
+| `query_type` | Identifies the type of query run within the account such as API, UI, Scheduled Views, and so on. The values and their detailed description are provided in [Query type field values](#query-type-field-values). |
 | `remote_ip` | The remote IP of the source from where the query originated. |
 | `retrieved_message_count` | The number of messages returned by the search result. This represents the approximate count of messages that match the source expression of the query and are retrieved from scanning. |
 | `scanned_bytes_breakdown` | Amount of data scanned by the search query broken down by type. |
@@ -86,9 +86,9 @@ The table below shows the possible values for the `query_type` field.
 | Search API | Search queries run by users using the [Search Job APIs](/docs/api/search-job) only. |
 | Interactive Search | Search queries run from the Search tab in the UI only. |
 | Interactive Dashboard | Search queries run from dashboards in the UI only. |
-| Scheduled Search | [Scheduled sSearch](/docs/alerts/scheduled-searches) queries run as per the frequency specified by users in the org. |
+| Scheduled Search | [Scheduled Search](/docs/alerts/scheduled-searches) queries run as per the frequency specified by users in the org. |
 | View Maintenance | [Scheduled View](/docs/manage/scheduled-views) queries run on behalf of the users in the org. |
-| Sumo Logic Internal | The internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, etc.).                                    |
+| Sumo Logic Internal | The internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, and so on).                                    |
 | Auto Refresh Dashboard | Search queries used to power auto refresh dashboard panels. |
 | Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
 | Span Analytics | Queries run for filtering and aggregating trace data based on [span attributes](/docs/apm/spans) to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |
