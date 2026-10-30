@@ -24,8 +24,8 @@ You can use Terraform to manage content sharing permissions with the [`sumologic
 
 You can share content from the following locations:
 
-* **Left navigation bar.** Recommended when you are familiar with the content and need to quickly share with another user.
-* **Library.** Recommended when you need a detailed view of the content, who created it, and when it was last modified.
+* **Left navigation bar**. Recommended when you are familiar with the content and need to quickly share with another user.
+* **Library**. Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
 In either location, you click the kabob icon to locate the **Share** option and the dialog appears.
 
@@ -72,7 +72,7 @@ import UiElements from '../../reuse/ui-elements.md';
 
 ## Available permission levels
 
-You can share your content with specific users or roles. As a best practice we recommend sharing at the search or dashboard level, or if you want to share a folder, share a subfolder. If all contents of the folder are shared, you can’t exclude a particular content item in a folder as private content.
+You can share your content with specific users or roles. As a best practice we recommend sharing at the search or dashboard level, or if you want to share a folder, share a subfolder. If all contents of the folder are shared, you cannot exclude a particular content item in a folder as private content.
 
 By default each permission level allows the user to grant that level of permission to another user. By default we assume that if a user has view access, for example, that they would be capable of deciding who should also have view access. If you have content where this is not the case, you can restrict their rights to allow others to have view, edit, or manage access.
 
@@ -87,7 +87,7 @@ your content:
 | :-- | :-- | :-- |
 | View | Users can see the content and grant access to others to view. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/><br/>**Grant View Access.** User can grant view access to others. |
 | Edit | Users can make changes to the content and grant view or edit access to others. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/><br/>**Grant View Access.** User can grant view access to others.<br/><br/>**Grant Edit and View Access.** User can grant edit and view access to users. |
-| Manage<br/>(Recommended for individual users only) | Designated users are considered co-managers of the content and can modify the content as well grant the right to other users to view, edit, manage, or Move the content. | **Cannot Grant Access.** Prevents the user from sharing view access.<br/><br/>**Grant View Access.** User can grant view access to others.<br/><br/>**Grant Edit and View Access.** User can grant view and edit access to users.<br/><br/>**Grant Manage, Edit, and View Access.** User can grant manage, edit, and view access to users. |
+| Manage<br/>(Recommended for individual users only) | Designated users are considered co-managers of the content and can modify the content as well grant the right to other users to view, edit, manage, or move the content. | **Cannot Grant Access.** Prevents the user from sharing view access.<br/><br/>**Grant View Access.** User can grant view access to others.<br/><br/>**Grant Edit and View Access.** User can grant view and edit access to users.<br/><br/>**Grant Manage, Edit, and View Access.** User can grant manage, edit, and view access to users. |
 
 
 In this section, we'll introduce the following concepts:
