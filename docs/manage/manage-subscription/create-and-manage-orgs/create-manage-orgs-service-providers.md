@@ -27,7 +27,7 @@ As a service provider, you can create two types of child orgs:
 
 In either case, the child orgs you create will be the same plan type as the parent org. For example, if you have an Enterprise Suite plan, the child orgs you create will also be Enterprise Suite accounts. 
 
-When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a credits calculator to estimate and allocate required credits for each product variable.
+When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest (Continuous Log Ingest, Frequent Log Ingest, and so on) as *product variables*. When you provision a child org you use a credits calculator to estimate and allocate required credits for each product variable.
 
 We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. (For example, if you estimate 1GB usage for logs and specify that as the "baseline" when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.)
 
@@ -45,7 +45,7 @@ POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will b
 * 5 GB Cloud SIEM ingest
 
 :::note
-The credits associated with the trial org allocations don’t impact the parent org’s credits allocation.
+The credits associated with the trial org allocations do not impact the parent org’s credits allocation.
 :::
 
 You can upgrade a trial org by editing the org and changing the Plan Type. When you upgrade a POV Trial org, if the org is in a different Sumo Logic deployment from the parent org, the credits calculator may add a deployment factor, which is a percentage upcharge that varies by deployment.
@@ -66,7 +66,7 @@ For more information, see [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) be
 This section has instructions for creating a POV Trial org. 
 
 :::note
-After you create a child org, you can’t delete it.
+After you create a child org, you cannot delete it.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
@@ -105,7 +105,7 @@ After you create a child org, you can’t delete it.
 1. Click the row for the trial org you want to upgrade.<br/> <img src={useBaseUrl('/img/manage/subscriptions/org-to-update.png')} alt="modify" style={{border:'1px solid gray'}} width="800"/>
 1. The right pane appears with information about the org. Click **Edit**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/edit-option.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. In the edit pane, choose the **Enterprise plan** that appears as an option in the **Plan Type** dropdown.<br/> <img src={useBaseUrl('/img/manage/subscriptions/upgrade-plan.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
-1. A warning message is shown that says you won’t be able to downgrade the org once you upgrade it.<br/> <img src={useBaseUrl('/img/manage/subscriptions/plan-selected.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
+1. A warning message is shown that says you will not be able to downgrade the org once you upgrade it.<br/> <img src={useBaseUrl('/img/manage/subscriptions/plan-selected.png')} alt="modify" style={{border:'1px solid gray'}} width="400"/>
 1. Click **Set Baseline**.
 1. The credits calculator appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
    * **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous Tier.

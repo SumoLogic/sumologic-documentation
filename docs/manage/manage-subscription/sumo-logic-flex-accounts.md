@@ -21,7 +21,7 @@ For Flex accounts, credits will be consumed on the basis of log data volume scan
 
 This page provides information on our available Flex Credits account types and how to monitor and manage your account.
 
-## Flex Account types​
+## Flex account types​
 
 You can select from Free, Trial, or Enterprise Suite Flex accounts.
 
@@ -67,7 +67,7 @@ The following table provides a summary list of key features by Flex package acco
 |:------- | :--- | :---- | :------------- | :------------- |
 | Advanced Span Analytics |  | &#10003; | | &#10003; |
 | Anomaly Alerting |  | &#10003; | | &#10003; |
-| Alerting Integrations (Slack, PagerDuty, ServiceNow, etc.) | &#10003; | &#10003; | &#10003; | &#10003; |
+| Alerting Integrations (Slack, PagerDuty, ServiceNow, and so on) | &#10003; | &#10003; | &#10003; | &#10003; |
 | Alert Response | &#10003; | &#10003; | &#10003; | &#10003; |
 | Anomaly Detection |  | &#10003; | | &#10003; |
 | Anomaly Rules |  | | | &#10003; |
@@ -148,11 +148,11 @@ The following table provides a summary list of key features by Flex package acco
 
 \*\* The **Threat Intelligence** tab is available only to Cloud SIEM users. Without Cloud SIEM, you will not see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches. See [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/).
 
-## Account Overview
+## Account overview
 
 :::note
-- To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
-- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
+* To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
+* To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
 :::
 
 The **Account Overview** tab provides a detailed view of your Sumo Logic account, including organization details, subscription type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.
@@ -176,14 +176,14 @@ To access the **Account Overview** tab:
 ### Organization information panel  
 
 * **Organization**. Displays your organization’s name and hexadecimal ID.  
-* **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite Flex).  
+* **Plan**. Shows your subscription type (for example, Trial, Enterprise Suite Flex).  
 * **Contract period**. Lists the start and end dates of your contract.  
 * **Credit blocks in Contract**. If your account has more than one active credit block, shows the number of blocks. See [What are credit blocks?](#what-are-credit-blocks) for details. Accounts with a single credit block do not show this field.
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays the count of live dashboards and real-time alerts.
 * **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
 
 
-### Total Credit Usage panel  
+### Total credit usage panel  
 
 * **Credits Used**. Shows total and percentage used since the start of the contract.  
 * **Credits Remaining**. Displays remaining credits and percentage consumed.  
@@ -191,7 +191,7 @@ To access the **Account Overview** tab:
 
 If your account has a single credit block, this panel shows the total and percentage of credits consumed for that block. If your account has more than one credit block, such as Promotional Credit Block - 1, Paid Credit Block - 1, and Paid Credit Block - 2, this panel shows the combined total and percentage across all blocks. Hover over the bar to see the amount of credits consumed by each individual credit block.
 
-### Usage Forecast panel
+### Usage forecast panel
 
 The usage forecast gives you an opportunity to see the potential end of the current credits and an estimate on when those credits will end.
 
@@ -200,7 +200,7 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 * **Credits exhaustion**. Displays the expected depletion date based on usage trends.  
 * **Dynamic forecast**. Allows you to view usage predictions based on 7, 30, or 90-day trends.
 
-### Details of Credit Usage panel  
+### Details of credit usage panel  
 
 This panel provides analytics to monitor and compare usage against contract capacity - graphs and tables showing credit usage by data tiers, storage, and services. It includes:  
 * **Usage Categories**.
@@ -232,7 +232,7 @@ For example: If you have 10,000 promotional credits for "Metrics" in a 100,000-c
 
 To filter and focus on promotional credits:  
 * Deselect all other usage categories.  
-* Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
+* Refine further by deselecting specific credit types (for example, Continuous Ingest, Storage).  
 
 #### What are credit blocks?
 
@@ -268,6 +268,6 @@ Use the **Account Overview** tab (**Administration > Account > Account Overview*
 
 Yes. Essentials accounts can upgrade to Enterprise Suite Flex at any time, and you can request an upgrade from any account type through [Upgrade a Sumo Logic Flex Account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account).
 
-### Do promotional credits carry over if you don't use them?
+### Do promotional credits carry over if you do not use them?
 
-No. Promotional credits are non-transferable and auto-expire at the end of the promotion period. If you don't use them within that period, they don't carry over to the next one.
+No. Promotional credits are non-transferable and auto-expire at the end of the promotion period. If you do not use them within that period, they do not carry over to the next one.

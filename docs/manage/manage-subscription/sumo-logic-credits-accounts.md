@@ -27,23 +27,23 @@ Sumo Logic offers the following account types: Free, Trial, Essentials, Enterpri
 When your trial period ends, your account is automatically converted to a Free account.
 
 Free accounts offer access to most Sumo Logic features with the following limitations:
-- **Ingestion**. Not supported.
-- **Retention**. 7-day log retention.
-- **Users**. Limited to three users.
+* **Ingestion**. Not supported.
+* **Retention**. 7-day log retention.
+* **Users**. Limited to three users.
 
 Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
 
 :::note
-- Free accounts are deleted automatically after 90 days if not upgraded.
-- Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
+* Free accounts are deleted automatically after 90 days if not upgraded.
+* Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
 :::
 
 ### Trial
 
 Trial accounts allow full access to all Sumo Logic features to test how Sumo Logic will fit within your organization before you buy. It includes:
-- **Daily Credit Allocation**: Supports a daily data volume limit of 1 GB per day.
-- **Retention**: 30 days for all data.
-- **Users**: Up to 20 users.
+* **Daily Credit Allocation**: Supports a daily data volume limit of 1 GB per day.
+* **Retention**: 30 days for all data.
+* **Users**: Up to 20 users.
 
 Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest. When your trial period ends, your account is automatically converted to a [Free](#free) account. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](https://support.sumologic.com/support/s/).
 
@@ -109,11 +109,11 @@ The following table provides a summary list of key features by credits package a
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 
-## Account Overview  
+## Account overview  
 
 :::note
-- To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
-- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
+* To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
+* To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
 :::
 
 The **Account Overview** tab provides detailed information about your Sumo Logic organization, including account type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.  
@@ -141,12 +141,12 @@ To access the **Account Overview** tab:
 ### Organization information panel  
 
 * **Organization**. Displays your organization’s name and hexadecimal ID.  
-* **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite).  
+* **Plan**. Shows your subscription type (for example, Trial, Enterprise Suite).  
 * **Contract period**. Lists the start and end dates of your contract period.  
 * **Credit blocks in Contract**. If your account has more than one active credit block, shows the number of blocks. See [Credit blocks](#credit-blocks) for details. Accounts with a single credit block do not show this field.
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays a count of live dashboards and real-time alerts.  
 
-### Total Credit Usage panel  
+### Total credit usage panel  
 
 * **Credits Used**. Total and percentage used since the start of the current contract.  
 * **Credits Remaining**. Remaining credits and percentage consumed.  
@@ -155,14 +155,14 @@ To access the **Account Overview** tab:
 
 If your account has a single credit block, this panel shows the total and percentage of credits consumed for that block. If your account has more than one credit block, such as Promotional Credit Block - 1, Paid Credit Block - 1, and Paid Credit Block - 2, this panel shows the combined total and percentage across all blocks. Hover over the bar to see the amount of credits consumed by each individual credit block.
 
-### Usage Forecast panel  
+### Usage forecast panel  
 
 * **Upgrade Plan**. Link to request an account upgrade.  
 * **Forecasted Use**. Predicts credit usage by the end of the contract period.  
 * **Credits Exhaustion**. Estimated number of days and date when credits will run out.  
 * **Dynamic Forecast**. Usage predictions based on trends for 7, 30, or 90 days.  
 
-### Details of Credit Usage panel  
+### Details of credit usage panel  
 
 This panel provides detailed analytics and comparisons for credit usage:  
 * **Usage Categories**. Displays credits used, percentage used, and units by type:
@@ -201,7 +201,7 @@ If your contract includes 100,000 credits and 10,000 promotional credits for "Me
 
 To monitor promotional credits:  
 * Deselect all other usage categories in **Usage Categories** to isolate promotional credits.  
-* Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
+* Refine further by deselecting specific credit types (for example, Continuous Ingest, Storage).  
 
 Promotional credits graphs display the rate of consumption for allocated promotional credits.  
 

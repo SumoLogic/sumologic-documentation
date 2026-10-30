@@ -26,7 +26,7 @@ This topic has information about Sumo Logic’s organizations feature, which yo
 
 Sumo Logic organizations allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
 
-When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
+When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest (Continuous Log Ingest, Frequent Log Ingest, and so on) as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
 
 We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 
@@ -54,14 +54,14 @@ Learn how to create a new child organization.
 :::
 
 :::note
-After you create a new org, you can’t delete it.
+After you create a new org, you cannot delete it.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Click **+ Add Organization**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/add-org.png')} alt="Add org" style={{border:'1px solid gray'}} width="800" />
 1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/manage/subscriptions/create-new-org.png')} alt="Create New Organization pane" style={{border:'1px solid gray'}} width="400" />
 
-### Allocate Credits
+### Allocate credits
 
 1. **Plan Type**. Select your organization's plan type. 
 1. **Deployment**. Select a Sumo Logic deployment from the list.
@@ -91,7 +91,7 @@ After you create a new org, you can’t delete it.
 1. **Credits to be allocated**. The recommended credits for this child org will be displayed once you set the baseline. You can add or reduce the credit based on your requirement.
 1. **Remaining Credits (Parent)**. Total balance credits available in the parent org after using the credits for child org.
 
-### Basic Details
+### Basic details
 
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.

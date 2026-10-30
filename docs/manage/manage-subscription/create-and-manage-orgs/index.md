@@ -89,7 +89,7 @@ Your estimates of ingest capacity required for each product variable are called 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the row for the org you want to change the org name.
-1. In the right-hand pane, click on **More Actions** dropdown and select **Change Organization Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Orgs_Name.png')} alt="Side pane Change Organization Name" style={{border: '1px solid gray'}} width="300"/>
+1. In the right-hand pane, click **More Actions** dropdown and select **Change Organization Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Orgs_Name.png')} alt="Side pane Change Organization Name" style={{border: '1px solid gray'}} width="300"/>
 1. At the prompt, enter a new organization name in the text field.
 1. Click **Change.** <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Child_Organization_Name_prompt.png')} alt="Change child organization name prompt" style={{border: '1px solid gray'}} width="300"/>
 
@@ -97,7 +97,7 @@ Your estimates of ingest capacity required for each product variable are called 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the row for the org you want to change the org name.
-1. In the right-hand pane, click on **More Actions** dropdown and select **Change Account Owner**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Account_Owner.png')} alt="Side pane Change Account Owner" style={{border: '1px solid gray'}} width="300"/>
+1. In the right-hand pane, click **More Actions** dropdown and select **Change Account Owner**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Account_Owner.png')} alt="Side pane Change Account Owner" style={{border: '1px solid gray'}} width="300"/>
 1. At the prompt, enter a new account owner ID in the text field or select the new account owner ID from the dropdown.
 1. Click **Change.** <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Child_Org_Account_Owner_prompt.png')} alt="Change child org account owner" style={{border: '1px solid gray'}} width="300"/>
 
@@ -105,7 +105,7 @@ Your estimates of ingest capacity required for each product variable are called 
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**. 
 1. Click the row for the org you want to change the org name.
-1. In the right-hand pane, click on **More Actions** dropdown and select **Change Subdomain Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Org_Subdomain.png')} alt="Side pane Change Subdomain Name" style={{border: '1px solid gray'}} width="300"/>
+1. In the right-hand pane, click **More Actions** dropdown and select **Change Subdomain Name**.<br/><img src={useBaseUrl('img/manage/subscriptions/Side_pane_Change_Org_Subdomain.png')} alt="Side pane Change Subdomain Name" style={{border: '1px solid gray'}} width="300"/>
 1. At the prompt, enter a new subdomain name. The name must be between 4 and 63 characters in length, and can contain lowercase letters, numbers, and dashes only.
 1. Click **Change Subdomain Name** to update the name. <br/><img src={useBaseUrl('img/manage/subscriptions/Change_Org_Subdomain_prompt.png')} alt="Change Subdomain Name" style={{border: '1px solid gray'}} width="500"/>
 
@@ -113,9 +113,9 @@ Your estimates of ingest capacity required for each product variable are called 
 
 You can deactivate the child org when it is no longer needed. Before deactivating the child org, make sure you:
 
-- Exported the saved searches, dashboards, and/or lookup tables.
-- Verified the credit balances. If there are any unused credits, these credits will automatically return to the parent once the org is marked **Inactive**.
-- Notify the child org users.
+* Exported the saved searches, dashboards, and/or lookup tables.
+* Verified the credit balances. If there are any unused credits, these credits will automatically return to the parent once the org is marked **Inactive**.
+* Notify the child org users.
 
 Follow the below steps to deactivate a child org:
 
@@ -125,11 +125,11 @@ Follow the below steps to deactivate a child org:
 
 When you deactivate a child org:
 
-- All the UI logins and active sessions will be terminated.
-- API keys, collector tokens, and ingest pipelines will be revoked.
-- The child’s **Zuora** subscription will be cancelled and the respective bill-account is disabled.
-- Any Flex credits still assigned to the child org are automatically returned to the parent org and will be visible in the parent’s allocation widget.
-- The org’s status changes to **Deactivated** in **Manage Accounts**. You can still run usage reports against it.
+* All the UI logins and active sessions will be terminated.
+* API keys, collector tokens, and ingest pipelines will be revoked.
+* The child’s **Zuora** subscription will be cancelled and the respective bill-account is disabled.
+* Any Flex credits still assigned to the child org are automatically returned to the parent org and will be visible in the parent’s allocation widget.
+* The org’s status changes to **Deactivated** in **Manage Accounts**. You can still run usage reports against it.
 
 ## Delink a child org (Optional)
 
@@ -148,6 +148,6 @@ Follow the below steps to delink the deactivated child org:
 
 ### Limitations
 
-- Only **parent-org** users with Manage Child Orgs capability can initiate a deletion workflow.
-- Compatible with Enterprise, Trial/PoV, and Free-Forever child orgs.
+* Only **parent-org** users with Manage Child Orgs capability can initiate a deletion workflow.
+* Compatible with Enterprise, Trial/PoV, and Free-Forever child orgs.
 

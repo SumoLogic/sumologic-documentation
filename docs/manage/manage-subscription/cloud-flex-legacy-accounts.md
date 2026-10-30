@@ -12,7 +12,7 @@ We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscr
 
 Sumo Logic provides flexible account types within its Cloud Flex Legacy packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
 
-## Cloud Flex Legacy - Account Types
+## Cloud Flex Legacy - Account types
 
 * **Free** accounts give you access to core Sumo Logic features, with a daily 500 MB data volume limit. Free accounts allow three users, with 4 GB of retention. For information about Free account features, see the "Free Accounts" column in the following table and the Important notes section on [Sumo Logic Free accounts](#important-notes-on-sumo-logic-free-accounts).
    :::tip
@@ -63,27 +63,27 @@ The following table provides a summary list of key features by package accounts.
 It's important to keep track of your daily usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion.](/docs/manage/ingestion-volume/log-ingestion/)
 :::
 
-## Account Limitations and Guidelines
+## Account limitations and guidelines
 
 To efficiently manage ingestion into your Sumo Logic account, familiarize yourself with the following limitations and guidelines.
 
-### Account Capacity Limitations
+### Account capacity limitations
 
 An account that is within its limits is defined as using **Reserved Capacity.**
 
-### Collection Limitations
+### Collection limitations
 
 * The maximum number of collectors allowed per organization is 10,000.
-* The maximum number of Sources allowed on a collector is 1,000.
-* The maximum number of Processing Rules allowed on a Source is 100.
+* The maximum number of sources allowed on a collector is 1,000.
+* The maximum number of Processing Rules allowed on a source is 100.
 
-### Continuous Query Limitations
+### Continuous query limitations
 
 For all Sumo Logic account types (except for Sumo Logic Free) there is an overall limit of 200 continuous queries per Sumo Logic organization that can be run at one time. This includes dashboard panels, alerts, and all other types of queries. 
 
-### Data Limits for Metrics
+### Data limits for metrics
 
-For billing and reporting purposes, data volume for metrics is measured in data points per minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/). 
+For billing and reporting purposes, data volume for metrics is measured in data points per minute (DPM). When the DPM limit is exceeded, data are cached on the host and the source is throttled. The calculation of DPM varies according to the type of metric source. For details, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/). 
 
 ## Important notes on Sumo Logic Free accounts
 
@@ -91,7 +91,7 @@ Using a Free account is a great way to get to know Sumo Logic. While you're try
 
 * Free accounts run on seven-day intervals. This means that over the course of seven days, you cannot ingest more than a total of 3.5 GB of log data.
 * If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](/docs/manage/partitions/manage-indexes-variable-retention/) you're uploading in order to stay below the limit.
-* If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data is still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
+* If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data are still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
 * Free accounts are limited to 20 continuous queries, including [dashboard panels](/docs/dashboards/about).
 * Because Free accounts run on seven-day intervals, [dashboard panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
@@ -106,7 +106,7 @@ Using a Trial account is a great way to learn about the advanced features of Su
 * Trial accounts are allowed to burst up to 5 GB a day for short periods.
 * For information on throttling and account caps, see [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 
-## Account Page
+## Account page
 
 The **Account** page displays information about your Sumo Logic organization, account type, billing period, and the number of users. It also allows the account owner to reassign the role of the Account Owner.
 
@@ -173,7 +173,7 @@ To switch between views and time interval displays, do the following:
 1. Sign in to Sumo Logic. 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/>The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/><img src={useBaseUrl('img/manage/subscriptions/pqs.png')} alt="Cloud Flex account page" style={{border: '1px solid gray'}} width="800" />
 1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the dropdown list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
-1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.<br/><img src={useBaseUrl('img/manage/subscriptions/uage-billing-period.png')} alt="Cloud Flex usage billing period menu" style={{border: '1px solid gray'}} width="800" />
+1. To view data from a different billing period, click the arrow next to the **Billing period** and choose another period from the dropdown list.<br/><img src={useBaseUrl('img/manage/subscriptions/uage-billing-period.png')} alt="Cloud Flex usage billing period menu" style={{border: '1px solid gray'}} width="800" />
 <br/>The data display changes accordingly. 
 
 ### Drilling into usage data 
