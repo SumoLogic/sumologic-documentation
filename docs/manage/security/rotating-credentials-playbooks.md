@@ -22,11 +22,11 @@ Use the playbooks below to assist you in rotating your Sumo Logic [access keys](
 ### Rotate Sumo Logic access keys
 To properly rotate an access key:
 1. Identify the [access keys](/docs/manage/security/access-keys/) that need to be retired/rotated. 
-1. Identify where the access keys are used in any scripts/apps.
-1. Create a new access key in Sumo Logic and ensure that it is activated.
-1. Replace old key in any scripts/apps with new access key.
-1. Verify that any scripts/apps continue to work with new access key.
-1. In the Sumo Logic UI, deactivate or delete old access key.
+2. Identify where the access keys are used in any scripts/apps.
+3. Create a new access key in Sumo Logic and ensure that it is activated.
+4. Replace old key in any scripts/apps with new access key.
+5. Verify that any scripts/apps continue to work with new access key.
+6. In the Sumo Logic UI, deactivate or delete old access key.
 
 ### Request support to disable access keys for you
 Sumo Logic Customer Support Engineers can disable your access keys internally.

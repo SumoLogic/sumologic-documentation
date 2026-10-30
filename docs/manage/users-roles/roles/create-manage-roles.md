@@ -55,9 +55,9 @@ To create a role:
 Follow this process to restrict access using the **Search Filter** and **Index Access** sections on the **Create New Role** pane:
 
 1. Identify the dataset you would like to control access to. Test it out using a [search query](/docs/search/get-started-with-search/).
-1. Create the role using the **Search Filter** and/or **Index Access** sections.   
-1. Verify the dataset access is correct using [emulation](#test-a-roles-log-access-rights).
-1. [Assign the role](#add-a-user-to-a-role) to the relevant users.
+2. Create the role using the **Search Filter** and/or **Index Access** sections.   
+3. Verify the dataset access is correct using [emulation](#test-a-roles-log-access-rights).
+4. [Assign the role](#add-a-user-to-a-role) to the relevant users.
 
 <!-- Hiding the following for work on DOCS-680
 ### Search Filter and Index Access examples

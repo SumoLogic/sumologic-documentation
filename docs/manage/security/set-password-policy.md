@@ -25,7 +25,7 @@ Admins with [Manage Password Policy](/docs/manage/users-roles/roles/role-capabil
 To change the password policy:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Password Policy**. 
-1. Change any of the following: <br/><img src={useBaseUrl('img/security/Set_Passwod_Policy.png')} alt="Password Policy tab" style={{border: '1px solid gray'}} width="600" />
+2. Change any of the following: <br/><img src={useBaseUrl('img/security/Set_Passwod_Policy.png')} alt="Password Policy tab" style={{border: '1px solid gray'}} width="600" />
 
     * **Passwords expire in.** This setting allows an admin to set the number of days after a user’s password was last changed to when the user is forced to change their password. The minimum is **30 days**.
     * **Password reuse after.** This setting is the number of times a password must be changed before a previously used password can be reused. From the menu, select the number of changes. For example, if you choose **5 Changes**, a password can be reused after five new passwords have been used in a user's account.
@@ -47,4 +47,4 @@ To change the password policy:
     * **2-Step Verification for My Org.** Select if 2-Step Verification (MFA) is optional or required. If set to **required** users will be required to configure MFA. If set to **optional** users can enable/disable MFA via their user preferences.
     * **Remember Browser.** Provides users an option to select to remember the MFA on the browser for 30 days. If set to **disabled**, users will be required to enter their MFA code upon every login.
 
-1. Click **Save**.
+3. Click **Save**.
