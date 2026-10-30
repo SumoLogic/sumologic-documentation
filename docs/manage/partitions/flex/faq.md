@@ -26,7 +26,7 @@ No, Flex Pricing is not currently available for existing Cloud Flex customers. H
 
 ## How is Flex Pricing different from the other data tiers?
 
-With Flex Pricing, there is no cost to ingest and index log data, and no requirement to manage storage on your own or rehydrate at a premium for log indexing. This removes the complexity of predetermining the type of analytics required before the data is in the system. You simply pay for analytics and insights, not data management.
+With Flex Pricing, there is no cost to ingest and index log data, and no requirement to manage storage on your own or rehydrate at a premium for log indexing. This removes the complexity of predetermining the type of analytics required before the data are in the system. You simply pay for analytics and insights, not data management.
 
 ## Can I restrict access to Flex data to select users?
 
@@ -90,7 +90,7 @@ Given all partition definitions and the user's query, Sumo Logic automatically o
 We recommend you configure partitions to have less than 5 TB per day flowing into them. This practice:
 
 * Reduces the cost of each query.
-* Accelerates queries, as less data has to be scanned.
+* Accelerates queries, as less data have to be scanned.
 
 ## How can I optimize my query using default scope?
 
@@ -100,10 +100,10 @@ If you do not specify a partition name using `_index` or `_view`, or if you do n
 
 When partitions are marked as included and `_index` or `_view` is not referenced in the query, all partitions part of default scope will be considered by default. Default scope is also useful when `AND` or `OR` conditions are used in the query with `_index`. For example, consider you have three partitions: Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
 
-- When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope. 
-- When you run a query referring to an index term, for example `_index="Partition A"`, only Partition A will be considered for the query. 
-- Similarly, when you refer to multiple index terms, for example `_index="Partition A" OR _index="Partition B"`, only Partition A and Partition B will be considered for the query. 
-- However, when you run a query like `_index="Partition A" OR error`, all partitions (Partition A, Partition B, and Partition C) will be considered. This is because the `error` keyword might be present in Partition B or C as well, requiring a scan of all three partitions.
+* When you run the query without referring to `_index`, for example `error | count`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope. 
+* When you run a query referring to an index term, for example `_index="Partition A"`, only Partition A will be considered for the query. 
+* Similarly, when you refer to multiple index terms, for example `_index="Partition A" OR _index="Partition B"`, only Partition A and Partition B will be considered for the query. 
+* However, when you run a query like `_index="Partition A" OR error`, all partitions (Partition A, Partition B, and Partition C) will be considered. This is because the `error` keyword might be present in Partition B or C as well, requiring a scan of all three partitions.
 
 ## How are preview queries charged?
 
@@ -128,4 +128,4 @@ Queries to the following [audit indexes](/docs/manage/security/audit-indexes/) a
 
 ## Are Cloud SIEM scans charged as Flex scans?
 
-No. [Cloud SIEM](/docs/cse/) records and signals are stored in a dedicated security data tier that's separate from your Flex partitions. Queries that scan the security indexes, for example `_index=sec_record_*`, run against the [security data tier](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#security-index-search-limitations), not Flex, so they don't count toward your Flex scan usage and aren't billed as Flex scans.
+No. [Cloud SIEM](/docs/cse/) records and signals are stored in a dedicated security data tier that's separate from your Flex partitions. Queries that scan the security indexes, for example `_index=sec_record_*`, run against the [security data tier](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#security-index-search-limitations), not Flex, so they do not count toward your Flex scan usage and are not billed as Flex scans.

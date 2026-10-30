@@ -62,13 +62,13 @@ Overlapping data between two or more partitions will count as additional ingest 
 
 This section has instructions for editing a partition.  
 
-When you create a partition, you specify the data tier where the partition will reside, a routing expression that determines what data is stored in the partition, and a retention period. Optionally, you can enable data forwarding of the partition’s data to an S3 bucket.  
+When you create a partition, you specify the data tier where the partition will reside, a routing expression that determines what data are stored in the partition, and a retention period. Optionally, you can enable data forwarding of the partition’s data to an S3 bucket.  
 
 ### About partition editability
 
 You can make some changes to an existing partition:  
 
-* You can change the routing expression, as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The routing expression takes effect going forward—it doesn’t affect data previously added to the partition. 
+* You can change the routing expression, as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The routing expression takes effect going forward. It does not affect data previously added to the partition. 
 * You can change the retention period of the partition.
   :::note
   By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period as the Default Continuous Index. You can change the retention period for any of these internal partitions as desired.
@@ -79,9 +79,9 @@ You can make some changes to an existing partition:  
 
 ### Changing a partition's routing expression
 
-If you want to change what data is routed to a partition, you can edit its routing expression. This is useful if you’ve decided that you prefer to re-route some or all of the data that is currently configured to go to the partition to a different data tier than that configured for the partition. For example, assume that Partition A is configured to reside in the Infrequent Tier, but you realize that some of the data routed to the partition should actually be in the Frequent Tier, you can solve the problem by changing the routing expression for Partition A, and creating a new partition for the data you want to go to the Frequent Tier. 
+If you want to change what data are routed to a partition, you can edit its routing expression. This is useful if you’ve decided that you prefer to re-route some or all of the data that is currently configured to go to the partition to a different data tier than that configured for the partition. For example, assume that Partition A is configured to reside in the Infrequent Tier, but you realize that some of the data routed to the partition should actually be in the Frequent Tier, you can solve the problem by changing the routing expression for Partition A, and creating a new partition for the data you want to go to the Frequent Tier. 
 
-Before changing the routing expression for a partition, consider the impact of the change. For instance, changing the partition’s routing expression might affect the results returned by existing queries that refer to the partition. Note also, that if a partition is configured to forward data to an S3 destination, changing the partitions routing expression will affect what data is forwarded to S3.
+Before changing the routing expression for a partition, consider the impact of the change. For instance, changing the partition’s routing expression might affect the results returned by existing queries that refer to the partition. Note also, that if a partition is configured to forward data to an S3 destination, changing the partitions routing expression will affect what data are forwarded to S3.
 
 ### How to edit a partition
 

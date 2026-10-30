@@ -16,7 +16,7 @@ The example below shows the estimate of how much Flex data will be scanned for a
 
 The **Indexes Scanned** dropdown in the Scan Estimates pop-up displays all indexes that were scanned for the entered log query, along with their corresponding estimate details.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/indexes-scanned.png')} alt="Indexes scanned" style={{border:'1px solid gray'}} width="300" />
 
-When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-details.png')} alt="Scan details" style={{border:'1px solid gray'}} width="500" />
+When you click the session ID under the histogram, a popup with more detailed information appears. Here you can see the data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-details.png')} alt="Scan details" style={{border:'1px solid gray'}} width="500" />
 
 If there is no data in the selected tier or Flex, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/no-scan-data.png')} alt="Scan details" style={{border:'1px solid gray'}} width="300" />
 
@@ -26,8 +26,8 @@ If there is no data in the selected tier or Flex, a warning message will be disp
 
 When you enter a query to [create a dashboard](/docs/dashboards/create-dashboard-new/) panel, Sumo Logic will estimate and display the amount of data scanned. You can view the scan detail by clicking the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" />. A popup appears that displays the estimated scan data:
 
-- For Data Tier mode:<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-estimates-datatier-dashboard-creation.png')} alt="Scan estimates dashboard creation" style={{border:'1px solid gray'}} width="800" />
-- For Flex model:<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-estimates-flex-dashboard-creation.png')} alt="Scan estimates dashboard creation" style={{border:'1px solid gray'}} width="800" />
+* For Data Tier mode:<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-estimates-datatier-dashboard-creation.png')} alt="Scan estimates dashboard creation" style={{border:'1px solid gray'}} width="800" />
+* For Flex model:<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/scan-estimates-flex-dashboard-creation.png')} alt="Scan estimates dashboard creation" style={{border:'1px solid gray'}} width="800" />
 
 The **Indexes Scanned** dropdown in the Scan Estimates pop-up displays all indexes that were scanned for the entered dashboard query, along with their corresponding estimate details.<br/><img src={useBaseUrl('/img/manage/partitions-data-tiers/indexes-scanned.png')} alt="Indexes scanned" style={{border:'1px solid gray'}} width="300" />
 
@@ -35,8 +35,8 @@ The **Indexes Scanned** dropdown in the Scan Estimates pop-up displays all index
 
 When you run a dashboard that includes [sections (collapsible panels)](/docs/dashboards/panels/section/#how-to-add-a-section), you can view the projected scan size for the entire dashboard broken down by section state. Click the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" /> in the dashboard toolbar. A **Scan Estimates** popup appears showing:
 
-- **Active Panels**. The estimated scan for all panels in currently active sections.
-- **Collapsed Panels**. The estimated scan for all panels in currently collapsed sections.
+* **Active Panels**. The estimated scan for all panels in currently active sections.
+* **Collapsed Panels**. The estimated scan for all panels in currently collapsed sections.
 
 <img src={useBaseUrl('/img/dashboards/dashboard-scan-estimate.png')} alt="Dashboard scan estimate" style={{border:'1px solid gray'}} width="800" />
 
@@ -72,11 +72,11 @@ To view the Daily scan and Yearly scan data information based on a log-based SLO
 1. Hover over your SLO, click the three-dot kebab menu, and then click **Edit**. 
 1. Click the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" /> in the upper right corner.
 
-- For **Request-based SLOs**, data is scanned once per minute and stored in SLO storage. Any late-arriving data is accounted for in a corrective fashion and appended to the SLO storage.
-- For **Window-based SLOs**, data is scanned multiple times per minute. Due to technical reasons, late-arriving data cannot be accounted for, unlike request-based SLOs. Because of this, the SLO results are stored in SLO storage with some delay (typically 1 hour). To display up-to-date SLI values across our various SLO dashboards, we need to scan the last 1 hour of data multiple times.
+* For **Request-based SLOs**, data are scanned once per minute and stored in SLO storage. Any late-arriving data are accounted for in a corrective fashion and appended to the SLO storage.
+* For **Window-based SLOs**, data are scanned multiple times per minute. Due to technical reasons, late-arriving data cannot be accounted for, unlike request-based SLOs. Because of this, the SLO results are stored in SLO storage with some delay (typically 1 hour). To display up-to-date SLI values across our various SLO dashboards, we need to scan the last 1 hour of data multiple times.
 
 <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/scan-estimates-slo.png')} alt="Scan estimates SLO" style={{border:'1px solid gray'}} width="600" />
 
 ## Best practices
 
-- Use the `_index` field to reduce the scope of the query.
+* Use the `_index` field to reduce the scope of the query.

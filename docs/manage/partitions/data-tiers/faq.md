@@ -130,7 +130,7 @@ There are two ways you can control the cost of running queries data in the Infre
 We recommend you configure partitions to have less than 5 TB per day flowing into them. This practice:
 
 * Reduces the cost of each query.
-* Results in faster queries, since less data has to be scanned.  
+* Results in faster queries, since less data have to be scanned.  
 
 ## How will searching my data be affected by storing data in different tiers?
 

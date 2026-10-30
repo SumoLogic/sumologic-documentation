@@ -62,13 +62,13 @@ The best practice for cost optimization is to ensure that data from a source cat
 
 This section has instructions for editing a partition.  
 
-When you create a partition, you specify the routing expression that determines what data is stored in the partition, and a retention period. Optionally, you can enable data forwarding of the partition’s data to an S3 bucket.  
+When you create a partition, you specify the routing expression that determines what data are stored in the partition, and a retention period. Optionally, you can enable data forwarding of the partition’s data to an S3 bucket.  
 
 ### About partition editability
 
 You can make some changes to an existing partition:  
 
-* You can change the routing expression as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The new routing expression applies only to future data—it does not affect data previously added to the partition.
+* You can change the routing expression as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The new routing expression applies only to future data. It does not affect data previously added to the partition.
 * You can change the retention period of the partition.
   :::note
   By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period of `sumologic_default`. You can change the retention period for any of these internal partitions as desired.
