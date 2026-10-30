@@ -44,7 +44,7 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
 The Threat Intelligence page has two sections:
 
 * **Sources**. Lists the sources that supply threat intelligence indicators, including Sumo Logic-managed sources and custom sources you configure.
-* **Indicators**. Lists the individual indicators from your sources so you can search, filter, sort, and inspect them.
+* **Indicators**. Lists the individual indicators from your custom threat intelligence sources so you can search, filter, sort, and inspect them. Indicators from Sumo Logic global feeds are not available on this tab.
 
 ## Threat intelligence sources
 

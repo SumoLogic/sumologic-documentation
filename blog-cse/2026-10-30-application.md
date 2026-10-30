@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## New Indicators tab for Threat Intelligence
 
-The Threat Intelligence page now has an **Indicators** tab, so you can view and search the individual threat intelligence indicators in your data store. Use it to confirm that an indicator was ingested, check which source supplied it, or verify that a source is delivering data.
+The Threat Intelligence page now has an **Indicators** tab, so you can view and search the individual threat intelligence indicators from your custom sources. Use it to confirm that an indicator was ingested, check which source supplied it, or verify that a source is delivering data. Indicators from Sumo Logic global feeds are not available on this tab.
 
 From the tab, you can:
 - Search indicators by value.

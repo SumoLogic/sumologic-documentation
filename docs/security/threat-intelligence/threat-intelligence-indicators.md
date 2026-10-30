@@ -149,7 +149,7 @@ To search your logs for activity related to an indicator, click **View in Log Se
    * **Delete selected indicators**. In the Indicators tab, click the **Search All Indicators** button to view all the active indicators associated with that source. Select which indicators you'd like to delete and click **Delete** in the sidebar panel.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-selected-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
 1. Click **Delete** in the confirmation dialog to delete the indicators.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-indicators-dialog-box.png')} alt="Delete threat intelligence indicators dialog box" style={{border: '1px solid gray'}} width="400" />
 
-You do not have to wait until indicators reach the end of their retention period to delete them. You can [delete indicators](#delete-threat-intelligence-indicators) from the **Sources** tab in the **Threat Intelligence** page, as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+You can also delete indicators using the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 :::note
 When you remove indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
