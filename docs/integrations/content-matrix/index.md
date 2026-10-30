@@ -32,3 +32,5 @@ See the following articles for the vendors and products that Sumo Logic integrat
   </div>
 </div>
 </div>
+
+For answers to common questions, see the [Content Matrix FAQ](/docs/integrations/content-matrix/faq/).
