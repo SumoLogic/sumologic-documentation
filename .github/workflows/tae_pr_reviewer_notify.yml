@@ -1,0 +1,145 @@
+name: TAE PR Reviewer Assign and Notify
+
+# Fires when a label is added to a PR. The job-level `if` then restricts it
+# to ONE specific trigger label (see below).
+on:
+  pull_request:
+    types: [labeled]
+
+# Serializes runs so concurrent label events don't interleave.
+concurrency:
+  group: tae-pr-reviewer-notify
+  cancel-in-progress: false
+
+jobs:
+  assign-and-notify:
+    runs-on: ubuntu-latest
+    # >>> Trigger ONLY for this exact label `needs-tae-review` <<<
+    if: github.event.label.name == 'needs-tae-review'
+    permissions:
+      contents: read
+      pull-requests: write   # required to request a reviewer on the PR
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pick assignee, request review, notify Slack
+        env:
+          GITHUB_TOKEN:    ${{ secrets.GITHUB_TOKEN }}                   # built-in
+          SLACK_BOT_TOKEN: ${{ secrets.CS_REVIEWER_SLACK_BOT_TOKEN }}    # repo secret
+          SLACK_CHANNEL:   ${{ vars.CS_REVIEWER_SLACK_CHANNEL }}         # repo variable
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE:  ${{ github.event.pull_request.title }}
+          PR_URL:    ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}         # opened the PR
+          LABEL:     ${{ github.event.label.name }}
+          LABELER:   ${{ github.event.sender.login }}                    # added the label (the trigger)
+          REPO:      ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          REVIEWERS_FILE=".github/reviewers.json"
+          LABELER_FILE=".github/labeler.json"
+
+          # Resolve a Slack user ID from an email (prints empty string if not found).
+          slack_id_for_email() {
+            curl -sS -G "https://slack.com/api/users.lookupByEmail" \
+              -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+              --data-urlencode "email=$1" \
+              | jq -r 'if .ok then .user.id else "" end'
+          }
+
+          COUNT=$(jq '.reviewers | length' "$REVIEWERS_FILE")
+          if [ "$COUNT" -eq 0 ]; then
+            echo "::error::no reviewers configured in $REVIEWERS_FILE"; exit 1
+          fi
+
+          # --- round-robin pick (stateless, by PR number) ---
+          IDX=$(( PR_NUMBER % COUNT ))
+          ASSIGNEE_GH=$(jq -r ".reviewers[$IDX].github" "$REVIEWERS_FILE")
+          ASSIGNEE_EMAIL=$(jq -r ".reviewers[$IDX].email" "$REVIEWERS_FILE")
+
+          # GitHub rejects requesting the PR author as a reviewer of their own PR.
+          if [ "$ASSIGNEE_GH" = "$PR_AUTHOR" ]; then
+            IDX=$(( (IDX + 1) % COUNT ))
+            ASSIGNEE_GH=$(jq -r ".reviewers[$IDX].github" "$REVIEWERS_FILE")
+            ASSIGNEE_EMAIL=$(jq -r ".reviewers[$IDX].email" "$REVIEWERS_FILE")
+          fi
+          echo "Assignee: $ASSIGNEE_GH <$ASSIGNEE_EMAIL> (index $IDX)"
+
+          # --- 1) request the assignee as a reviewer on the PR ---
+          REQ=$(jq -n --arg u "$ASSIGNEE_GH" '{reviewers: [$u]}')
+          HTTP=$(curl -sS -o /tmp/rr.json -w "%{http_code}" -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/pulls/$PR_NUMBER/requested_reviewers" \
+            -d "$REQ")
+          if [ "$HTTP" -ge 300 ]; then
+            echo "::warning::could not request reviewer $ASSIGNEE_GH (HTTP $HTTP): $(cat /tmp/rr.json)"
+          else
+            echo "Requested $ASSIGNEE_GH as reviewer on PR #$PR_NUMBER"
+          fi
+
+          # --- 2) resolve the ASSIGNEE's Slack ID (the person who must review) ---
+          ASSIGNEE_SLACK_ID=$(slack_id_for_email "$ASSIGNEE_EMAIL")
+          if [ -n "$ASSIGNEE_SLACK_ID" ]; then
+            ASSIGNEE_TAG="<@${ASSIGNEE_SLACK_ID}>"
+          else
+            echo "::warning::no Slack user found for assignee $ASSIGNEE_EMAIL"
+            ASSIGNEE_TAG="\`${ASSIGNEE_EMAIL}\` (Slack user not found)"
+          fi
+
+          # --- 3) resolve the LABELER's Slack ID via .github/labeler.json ---
+          # Falls back to the GitHub username if the labeler is unmapped/unresolved.
+          LABELER_TAG="\`${LABELER}\`"
+          if [ -f "$LABELER_FILE" ]; then
+            LABELER_EMAIL=$(jq -r --arg u "$LABELER" '.labelers[$u] // empty' "$LABELER_FILE")
+            if [ -n "$LABELER_EMAIL" ]; then
+              LABELER_SLACK_ID=$(slack_id_for_email "$LABELER_EMAIL")
+              if [ -n "$LABELER_SLACK_ID" ]; then
+                LABELER_TAG="<@${LABELER_SLACK_ID}>"
+              else
+                echo "::warning::no Slack user found for labeler email $LABELER_EMAIL"
+              fi
+            else
+              echo "::warning::labeler '$LABELER' not present in $LABELER_FILE; using GitHub username"
+            fi
+          else
+            echo "::warning::$LABELER_FILE not found; using GitHub username for the labeler"
+          fi
+
+          # --- 4) post to Slack: tag the ASSIGNEE (to review) and the LABELER (who triggered) ---
+          # Built entirely via jq args so no line escapes the run block; \n -> real newlines.
+          PAYLOAD=$(jq -n \
+            --arg channel "$SLACK_CHANNEL" \
+            --arg assignee "$ASSIGNEE_TAG" \
+            --arg labeler "$LABELER_TAG" \
+            --arg label "$LABEL" \
+            --arg url "$PR_URL" \
+            --arg num "$PR_NUMBER" \
+            --arg title "$PR_TITLE" \
+            --arg repo "$REPO" \
+            --arg author "$PR_AUTHOR" \
+            '{
+              channel: $channel,
+              text: ($assignee + " you have been assigned to review PR #" + $num + " in " + $repo),
+              blocks: [
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: ($assignee + " you have been assigned to review this PR (label `" + $label
+                           + "` added by " + $labeler + "):\n*<" + $url + "|#" + $num + " " + $title
+                           + ">*\nRepo: `" + $repo + "`  ·  PR author: `" + $author + "`")
+                  }
+                }
+              ]
+            }')
+
+          RESP=$(curl -sS -X POST "https://slack.com/api/chat.postMessage" \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$PAYLOAD")
+          if [ "$(echo "$RESP" | jq -r .ok)" != "true" ]; then
+            echo "::error::Slack post failed: $(echo "$RESP" | jq -r .error)"; exit 1
+          fi
+          echo "Notified in $SLACK_CHANNEL (assignee: $ASSIGNEE_EMAIL, labeler: $LABELER)"
