@@ -12,7 +12,7 @@ Sumo Logic supports Role-Based Access Control (RBAC) to control access to Sumo 
 To manage users and roles, you must have the Administrator role or your role must have been assigned the [Manage Users and Roles capability](/docs/manage/users-roles/roles/role-capabilities/#user-management).
 :::
 
-With RBAC, you don’t assign permissions directly to users. Instead, you assign permissions to roles, and then assign roles to users. Specifically, when you create a role, you assign it a set of capabilities and a role search filter. 
+With RBAC, you do not assign permissions directly to users. Instead, you assign permissions to roles, and then assign roles to users. Specifically, when you create a role, you assign it a set of capabilities and a role search filter. 
 
 A [capability](/docs/manage/users-roles/roles/role-capabilities/) is the right to perform a particular function in Sumo Logic, for instance “Manage connections”, “View collectors” and “Manage password policy”. 
 

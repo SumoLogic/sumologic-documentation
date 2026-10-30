@@ -42,7 +42,7 @@ If you choose **Save to Index** as the Alert Type for a Scheduled Search, and an
 :::
 
 
-## Infrequent Scheduled Search Dashboard
+## Infrequent scheduled search dashboard
 
 Sumo Logic provides a dashboard you can use to monitor the Infrequent Tier space consumed by saved Scheduled Searches.
 
