@@ -153,7 +153,7 @@ metadata:
 This configuration ensures that all metrics are printed to stdout and they are not collected by logs collector to keep your ingest low.
 
 :::note
-This configuration is prepared for OTLP source, as it doesn't use routing processor and multiple exporters in the pipeline.
+This configuration is prepared for OTLP source, as it does not use routing processor and multiple exporters in the pipeline.
 :::
 
 ## Check Prometheus Remote Storage

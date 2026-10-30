@@ -2,20 +2,20 @@
 id: best-practices
 title: Best Practices for Data Collection
 sidebar_label: Best Practices
-description: Best practices for creating a naming convention for good Source Category values and choosing the right installed data collector for your environment.
+description: Best practices for creating a naming convention for good source category values and choosing the right installed data collector for your environment.
 ---
 
 import Iframe from 'react-iframe';
 
 ## Good and Bad Source Categories
 
-Setting Source Category values (`_sourceCategory`), especially for a small set of Sources, may seem trivial at first. However, using the [proper naming convention](/docs/send-data/reference-information/metadata-naming-conventions) to create good Source Category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good Source Category values.
+Setting source category values (`_sourceCategory`), especially for a small set of sources, may seem trivial at first. However, using the [proper naming convention](/docs/send-data/reference-information/metadata-naming-conventions) to create good source category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good source category values.
 
-Source Categories help you:
+Source categories help you:
 
 * Define the scope of searches.
 * Index and partition your data.
-* Control who sees what data through RBAC.
+* Control who sees what data through role-based access control (RBAC).
 
 The recommended `_sourceCategory` naming convention is:
 
@@ -25,14 +25,14 @@ Begin with the least descriptive, highest-level grouping, and get more descripti
 
 For example, assume you have several different Firewall appliances: ASA and FWSM from Cisco, and 7050 from Palo Alto Networks. In addition, you also have a Cisco router, 800 series.
 
-Following the naming convention described previously, you could set the following _sourceCategory values (instead of simply using “FWSM”, “ASA”, etc.):
+Following the naming convention described previously, you could set the following _sourceCategory values, instead of simply using “FWSM”, “ASA”, and so on:
 
 * Networking/Firewall/Cisco/FWSM  
 * Networking/Firewall/Cisco/ASA  
 * Networking/Firewall/PAN/7050  
 * Networking/Router/Cisco/800
 
-While the components at the beginning of the value do not add any obvious value, they do provide a high-level grouping of this data. This allows us to fulfill the three purposes of Source Categories.
+While the components at the beginning of the value do not add any obvious value, they do provide a high-level grouping of this data. This allows us to fulfill the three purposes of source categories.
 
 :::training Micro Lesson
 
@@ -99,11 +99,11 @@ This simple change completely changes your high-level grouping. Both schemes all
 
 ## Local and Centralized Data Collection
 
-When you are setting up your environment with Installed Collectors, you must decide how to collect the data you want to send to Sumo Logic.
+When you are setting up your environment with installed collectors, you need to decide how to collect the data you want to send to Sumo Logic.
 
-Sumo Logic is a highly flexible and scalable solution, and its Installed Collectors can work for any size organization. However, with so much flexibility at your fingertips, what is the best way to design your environment?
+Sumo Logic is a highly flexible and scalable solution, and its installed collectors can work for any size organization. However, with so much flexibility at your fingertips, what is the best way to design your environment?
 
-The first thing to consider when setting up your environment with Installed Collectors is how you want to send data to Sumo Logic. We recommend two basic methods: local data collection, and centralized data collection.
+The first thing to consider when setting up your environment with installed collectors is how you want to send data to Sumo Logic. We recommend two basic methods: local data collection, and centralized data collection.
 
 In reality, these methods are not absolute. You do not need to choose one over the other, though after review you may see how your organization would easily fit into one method over the other. Most of the time, organizations end up with a mix of local and centralized data collection.
 
@@ -113,9 +113,9 @@ The most important thing is for you to design a deployment that works for your o
 
 The local data collection method collects all data locally from each individual system and sends it to Sumo Logic.
 
-Using an [Installed Collector](/docs/send-data/installed-collectors/sources) with a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) is the overall simplest method of collecting data.
+Using an [installed collector](/docs/send-data/installed-collectors/sources) with a [Local File source](/docs/send-data/installed-collectors/sources/local-file-source) is the overall simplest method of collecting data.
 
-For Windows, using an [Installed Collector](/docs/send-data/installed-collectors/sources) and a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source.md).
+For Windows, using an [installed collector](/docs/send-data/installed-collectors/sources) and a [Local Windows Event Log source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source.md).
 
 **Customers using the local data collection method usually have the following characteristics:**
 
@@ -139,7 +139,7 @@ For Windows, using an [Installed Collector](/docs/send-data/installed-collectors
 
 ### Centralized Data Collection
 
-The centralized data collection method uses [Installed Collectors](best-practices.md)  with [Remote File Sources](/docs/send-data/installed-collectors/sources/remote-file-source) or [Syslog Sources](/docs/send-data/installed-collectors/sources/syslog-source) to collect all data in a centralized location before sending that data to Sumo Logic. This method is widely used for logs and is familiar to IT systems administrators.
+The centralized data collection method uses [installed collectors](best-practices.md)  with [Remote File sources](/docs/send-data/installed-collectors/sources/remote-file-source) or [Syslog sources](/docs/send-data/installed-collectors/sources/syslog-source) to collect all data in a centralized location before sending that data to Sumo Logic. This method is widely used for logs and is familiar to IT systems administrators.
 
 :::important
 If you use centralized data collection, be sure to increase collector memory, as the default setting of 128 MB will not suffice. In addition, configure additional disk capacity if you are collecting a large volume of logs.
@@ -153,10 +153,10 @@ If you use centralized data collection, be sure to increase collector memory, a
 
 **The centralized method provides the following benefits:**
 
-* For File Sources, there are no changes on target hosts.
-* For Syslog Sources, centralized log collection is a familiar and tested method.
+* For File sources, there are no changes on target hosts.
+* For Syslog sources, centralized log collection is a familiar and tested method.
 * Provides no outbound internet access, so fewer security concerns.
-* Requires fewer Collectors overall.
+* Requires fewer collectors overall.
 * No software installation required on your production machines.
 
 **But it does present the following possible drawbacks:**
@@ -165,4 +165,4 @@ If you use centralized data collection, be sure to increase collector memory, a
 * Hardware is required.
 * More difficult to troubleshoot.
 * Network bandwidth requirements may be increased.
-* For Syslog, if you don’t load balance, there is the possibility of losing data.
+* For Syslog, if you do not load balance, there is the possibility of losing data.

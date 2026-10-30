@@ -179,7 +179,7 @@ opentelemetry-operator:
 
 If you've already switched to OTel, skip straight to the [next major section](#switch-to-otlp-sources).
 
-The following configuration options aren't used anymore, and should be removed from your `user-values.yaml`:
+The following configuration options are not used anymore, and should be removed from your `user-values.yaml`:
 
 - `fluent-bit.*`
 - `sumologic.logs.collector.allowSideBySide`

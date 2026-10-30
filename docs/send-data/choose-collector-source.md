@@ -2,7 +2,7 @@
 id: choose-collector-source
 title: Choosing a Sumo Logic Collector and Source
 sidebar_label: Choose a Collector and Source
-description: Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.
+description: Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, installed collectors, and hosted collectors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,7 +26,7 @@ The Sumo Logic Distribution for [OpenTelemetry Collector](https://github.com/op
 
 Refer to [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) documentation for more information.
 
-It's supported on Linux, macOS, Windows, and Kubernetes environments and can use any of the following Sources:
+It's supported on Linux, macOS, Windows, and Kubernetes environments and can use any of the following sources:
 
 * Local File
 * Host/Process Metrics
@@ -40,42 +40,42 @@ For full details on limitations, what's supported, and what's different see our 
 
 ### Installed Collectors (Installed Agent)
 
-Installed Collectors are a good fit for very small log messages at low CPU utilization, source types only available on Installed Collectors, or security data that requires them.
+Installed collectors are a good fit for small log messages at low CPU utilization, source types only available on installed collectors, or security data that requires them.
 
-[Installed Collectors](/docs/send-data/installed-collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Sumo Logic releases Collector software upgrades regularly.
+[Installed collectors](/docs/send-data/installed-collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Sumo Logic releases collector software upgrades regularly.
 
-Consider having an Installed Collector on a dedicated machine when:
+Consider having an installed collector on a dedicated machine when:
 
-* You need to collect data with a [Source only available on Installed Collectors](/docs/send-data/installed-collectors/sources).
+* You need to collect data with a [source only available on installed collectors](/docs/send-data/installed-collectors/sources).
 * You are running a high-bandwidth network with high logging levels.
-* You want a central collection point for many Sources.
+* You want a central collection point for many sources.
 
-Consider having more than one Installed Collector if:
+Consider having more than one installed collector if:
 
-* You expect the Collector to ingest from at least 500 separate files.
+* You expect the collector to ingest from at least 500 separate files.
 * Your hardware has memory or CPU limitations.
-* You expect combined logging traffic for one Collector to be higher than 15,000 events per second.
+* You expect combined logging traffic for one collector to be higher than 15,000 events per second.
 * Your network clusters or regions are geographically separated.
-* You prefer to install many Collectors, for example, one per machine, to collect local files.
+* You prefer to install many collectors, for example, one per machine, to collect local files.
 
-To help design your deployment, see [how Installed Collectors work](/docs/send-data/installed-collectors) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
+To help design your deployment, see [how installed collectors work](/docs/send-data/installed-collectors) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
 
-For details on system requirements, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
+For details on system requirements, see [installed collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 
 ### Compare Installed Collectors and OpenTelemetry Collectors​
 
 :::tip
-For most log ingestion workloads, we recommend the OpenTelemetry Collector. It has stronger CPU efficiency and scales across more sources than the Installed Collector, especially as throughput grows. See [Installed Collector vs OpenTelemetry Collector Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/) for the data behind this recommendation.
+For most log ingestion workloads, we recommend the OpenTelemetry Collector. It has stronger CPU efficiency and scales across more sources than the installed collector, especially as throughput grows. See [Installed Collector vs OpenTelemetry Collector Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/) for the data behind this recommendation.
 :::
 
-The Installed Collector and OpenTelemetry Collector are two popular collectors used for collecting metrics, traces, and logs from various sources. While both collectors have their own unique features and advantages, there are some key differences between them.
+The installed collector and OpenTelemetry Collector are two popular collectors used for collecting metrics, traces, and logs from various sources. While both collectors have their own unique features and advantages, there are some key differences between them.
 
-**Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
+**Installed collector**. The installed collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
 
 **OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. It provides support for Ingest Budgets, Collector Management API, and remote management. However, it does not provide support for remote upgrades or CPU targets. Instead, upgrades are managed through package managers (yum, apt-get).
 
 :::training Micro Lesson
-Watch this micro lesson to learn why OpenTelemetry collector should be your first choice.
+Watch this micro lesson to learn why OpenTelemetry Collector should be your first choice.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/g078z3y6ux?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -93,7 +93,7 @@ Watch this micro lesson to learn why OpenTelemetry collector should be your firs
 
 #### When to Choose Installed Collector vs. OpenTelemetry Collector
 
-The following table shows the comparison between the Installed Collector and OpenTelemetry Collector based on their supported platforms and sources, and their ideal use cases.
+The following table shows the comparison between the installed collector and OpenTelemetry Collector based on their supported platforms and sources, and their ideal use cases.
 
 <table>
   <thead>
@@ -166,24 +166,24 @@ The following table shows the comparison between the Installed Collector and Ope
 
 ### Hosted Collectors
 
-**Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
+**Hosted collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
 
-Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) do not require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
+Unlike installed collectors, [hosted collectors](/docs/send-data/hosted-collectors/) do not require installation or activation, nor do hosted collectors have physical requirements since they're hosted by Sumo Logic in AWS.
 
-Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
+Because there are no performance issues to consider, you can configure as many sources as you'd like, up to 1,000, for a single hosted collector. Consider setting up more than one hosted collector if you'd like to tag different data types with different metadata.
 
-See how to [configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/hosted-collectors/).
+See how to [configure a hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector) and all of the available [sources supported on hosted collectors](/docs/send-data/hosted-collectors/).
 
 #### Logging levels
 
-The more sensitive the logging level settings are for your applications and devices, the more logs will be sent to the Sumo Logic Cloud. In order to maximize the value of your log collection and analysis, set the logging level as high as you can without negatively impacting the CPU utilization of the machine where the Collector is running. The more searchable data you collect, the more information you have for forensic analysis and troubleshooting.
+The more sensitive the logging level settings are for your applications and devices, the more logs will be sent to the Sumo Logic Cloud. In order to maximize the value of your log collection and analysis, set the logging level as high as you can without negatively impacting the CPU utilization of the machine where the collector is running. The more searchable data you collect, the more information you have for forensic analysis and troubleshooting.
 
 If you have additional questions, a [Sumo Logic sales representative](https://www.sumologic.com/contact-us) can help determine specific recommendations for your installation.
 
 
 ### Compare Installed and Hosted Collectors
 
-Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
+Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
 
 :::training Micro Lesson
 
@@ -205,22 +205,22 @@ The following table shows the major differences between them.
 
 | Installed Collector | Hosted Collector |
 |:--|:--|
-| <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Easy to troubleshoot based on Collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure Sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts Sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
+| <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Troubleshooting is based on collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
 
 
 ## Sumo Logic Sources
 
 <img src={useBaseUrl('img/icons/operations/collect.png')} alt="Collect icon" width="75"/>
 
-Sources are the environments that Sumo Logic Collectors connect to collect data from your site. Each Source is configured to collect files in a specific way, depending on the type of Collector you're using.
+Sources are the environments that Sumo Logic collectors connect to collect data from your site. Each source is configured to collect files in a specific way, depending on the type of collector you're using.
 
- * [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources) are configured on Installed Collectors.
- * [Sources for Hosted Collectors](/docs/send-data/hosted-collectors/) are hosted along with the Collector in Amazon Web Services (AWS), Microsoft, or other hosting services.
+ * [Sources for installed collectors](/docs/send-data/installed-collectors/sources) are configured on installed collectors.
+ * [Sources for hosted collectors](/docs/send-data/hosted-collectors/) are hosted along with the collector in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
-When registering a Collector, you also have the option of [configuring the Collector using a Source JSON](/docs/send-data/use-json-configure-sources) file.
+When registering a collector, you also have the option of [configuring the collector using a source JSON](/docs/send-data/use-json-configure-sources) file.
 
 :::note
-The maximum number of Sources allowed on a Collector is 1,000.
+The maximum number of sources allowed on a collector is 1,000.
 :::
 
 :::training Micro Lesson
@@ -241,7 +241,7 @@ The maximum number of Sources allowed on a Collector is 1,000.
 
 ### Allowlisting Sources that collect from AWS 
 
-If you're configuring a Source that collects from Amazon Web Services (AWS), you may need to allowlist AWS IP addresses. AWS makes current IP address ranges available in JSON format. Amazon advises that this file changes several times a week.
+If you're configuring a source that collects from Amazon Web Services (AWS), you may need to allowlist AWS IP addresses. AWS makes current IP address ranges available in JSON format. Amazon advises that this file changes several times a week.
 
 In particular, you'll need to allowlist the IP address associated with your Sumo Logic endpoint.  For example, if your deployment is in the U.S., you'll need to allowlist the us-east region IP addresses.  See Sumo Logic Endpoints and Firewall Security for information on determining your endpoint.
 

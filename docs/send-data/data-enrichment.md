@@ -20,9 +20,9 @@ Log metadata is configured in Sumo Logic as [fields](/docs/manage/fields) consis
 
 Best practices:
 * Define fields with [Field Extraction Rules](/docs/manage/field-extractions) by parsing fields when log messages are ingested.
-* Define fields on data sent to Sumo Logic by manually defining them on Sources and Collectors.
+* Define fields on data sent to Sumo Logic by manually defining them on sources and collectors.
 * Provide custom fields through [HTTP headers](/docs/send-data/hosted-collectors/http-source).
-* Use our AWS Metadata Source to collect tags from EC2 instances running on AWS.
+* Use our AWS Metadata source to collect tags from EC2 instances running on AWS.
 
 ### Metrics metadata
 
@@ -33,7 +33,7 @@ Metrics metadata is referenced in Sumo Logic with [selectors](/docs/metrics/intr
 Best practices:
 * Use the [metrics rules editor](/docs/metrics/metric-rules-editor) to tag metrics with data derived from the metrics identifier, and then use those tags in metrics queries.
 * Attach custom metadata through [HTTP headers](/docs/send-data/hosted-collectors/http-source).
-* Use the [AWS Metadata (Tag) Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) to apply tags from your EC2 instances to host metrics, Graphite metrics, and Carbon 2.0 metrics you collect.
+* Use the [AWS Metadata (Tag) source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) to apply tags from your EC2 instances to host metrics, Graphite metrics, and Carbon 2.0 metrics you collect.
 
 ## Using Lookup Tables
 

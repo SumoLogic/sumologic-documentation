@@ -157,7 +157,7 @@ If you're using `kube-prometheus-stack.prometheus.prometheusSpec.remoteWrite` yo
 `kube-prometheus-stack.prometheus.prometheusSpec.additionalRemoteWrite` and leave
 `kube-prometheus-stack.prometheus.prometheusSpec.remoteWrite` unchanged.
 
-In addition please ensure that `url` for all `remoteWrite` configurations starts with
+In addition, ensure that `url` for all `remoteWrite` configurations starts with
 `http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local.:9888` instead of
 `http://$(FLUENTD_METRICS_SVC).$(NAMESPACE).svc.cluster.local.:9888`
 
@@ -337,7 +337,7 @@ Once you've taken care of any manual steps necessary for your configuration, run
 helm upgrade --namespace "${NAMESPACE}" "${HELM_RELEASE_NAME}" sumologic/sumologic --version=3.0.0 -f new-values.yaml
 ```
 
-After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they do not require additional action.
+After you're done, review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they do not require additional action.
 
 ## Known issues
 
@@ -349,7 +349,7 @@ If you are using Tailing Sidecar Operator and see the following error:
 Error from server: admission webhook "tailing-sidecar.sumologic.com" denied the request: there is no content to decode
 ```
 
-Please try to remove the pod later.
+Try to remove the pod later.
 
 [kube-prometheus-stack-image-migration]: https://github.com/prometheus-community/helm-charts/tree/kube-prometheus-stack-42.1.0/charts/kube-prometheus-stack#from-41x-to-42x
 
@@ -357,7 +357,7 @@ Please try to remove the pod later.
 
 This is done by design. We are not going to read logs from before the collection has been installed.
 
-In order to keep old behavior (can result in logs duplication for some cases), please use the following configuration:
+In order to keep old behavior (can result in logs duplication for some cases), use the following configuration:
 
 ```yaml
 metadata:

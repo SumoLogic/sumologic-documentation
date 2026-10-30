@@ -266,7 +266,7 @@ metadata:
 
 ## Using a custom root CA for TLS interception
 
-Unfortunately, there isn't a uniform way of adding root certificates to application containers. Generally speaking, this can be done in two ways:
+Unfortunately, there is not a uniform way of adding root certificates to application containers. Generally speaking, this can be done in two ways:
 
 - At container image build time, making use of the underlying OS certificate management facilities
 - At Pod start time, using `initContainers` and `extraVolumes`, also making use of the underlying OS certificate management facilities
