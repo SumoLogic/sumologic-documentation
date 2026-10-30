@@ -8,7 +8,7 @@ When you invoke `/remove-doc`, Claude will guide you through:
 
 1. **Create 301 redirect**. Add redirect mapping to `cid-redirects.json`.
 2. **Update internal links**. Find and replace all references to the old URL.
-3. **Remove from hub pages**. Delete card from parent `index.md` and Content Matrix.
+3. **Remove from hub pages**. Delete card from parent `index.md` and Supported Vendors and Products.
 4. **Delete the doc file**. Remove the actual markdown file.
 5. **Remove from navigation**. Delete entry from `sidebars.ts`.
 6. **Optional steps**. Add deprecation notes, hide from search engines.
@@ -53,7 +53,7 @@ Ask the user for:
 4. Check for references in:
    - Other markdown docs.
    - Parent hub/index pages.
-   - Content Matrix (`docs/integrations/content-matrix/`).
+   - Supported Vendors and Products (`docs/integrations/supported-vendors/`).
 
 **Warning**: Never do a Find All > Replace All blindly, as this can break image paths or other unrelated URLs.
 
@@ -135,7 +135,7 @@ Claude:
 ```
 Old: docs/integrations/vendor/product-legacy.md
 New: docs/integrations/vendor/product.md
-Also check: docs/integrations/content-matrix/ (remove old entry)
+Also check: docs/integrations/supported-vendors/ (remove old entry)
 ```
 
 **Moving to a new category**:
