@@ -15,7 +15,11 @@ Dashboards break usage down by feature, IDE, language, and model, and compare te
 
 ## Log types
 
-This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source/) to collect the [organization metrics](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-an-organization) and [team metrics](https://docs.github.com/en/rest/copilot/copilot-metrics?apiVersion=2022-11-28#get-copilot-metrics-for-a-team) from the GitHub Copilot platform.
+This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/github-copilot-source/) to collect data from the GitHub Copilot platform. The source collects:
+
+- **Organization Metrics**. Aggregated usage and engagement metrics for the whole organization, including active users, code acceptance, and pull request activity.
+- **User Metrics**. Per-user usage and engagement metrics, including code acceptance, lines of code, and feature usage.
+- **User Team Report**. A mapping of users to team membership, used for the team-level dashboard breakdowns.
 
 ## Sample log messages
 
@@ -39,12 +43,12 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
   "distinct_plugin_use_count": 0,
   "distinct_skill_use_count": 0,
   "distinct_slash_cmd_use_count": 0,
-  "enterprise_id": "131",
+  "enterprise_id": "1000",
   "loc_added_sum": 0,
   "loc_deleted_sum": 0,
   "loc_suggested_to_add_sum": 0,
   "loc_suggested_to_delete_sum": 0,
-  "organization_id": "15002684",
+  "organization_id": "2000000",
   "totals_by_client": [],
   "totals_by_custom_agent": [],
   "totals_by_feature": [],
@@ -78,9 +82,9 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
   "totals_by_slash_cmd": [],
   "used_agent": false,
   "used_chat": false,
-  "user_id": 236424530,
+  "user_id": 4000000,
   "user_initiated_interaction_count": 0,
-  "user_login": "shubham-sumo"
+  "user_login": "parth_langalia"
 }
 ```
 
@@ -106,7 +110,7 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
   "distinct_plugin_use_count": 0,
   "distinct_skill_use_count": 1,
   "distinct_slash_cmd_use_count": 0,
-  "enterprise_id": "131",
+  "enterprise_id": "1000",
   "loc_added_sum": 29,
   "loc_deleted_sum": 0,
   "loc_suggested_to_add_sum": 135,
@@ -120,7 +124,7 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
   "monthly_active_users": 124,
   "monthly_active_vscode_agent_users": 2,
   "monthly_passive_copilot_code_review_users": 11,
-  "organization_id": "15002684",
+  "organization_id": "2000000",
   "pull_requests": {
     "copilot_suggestions_by_comment_type": [
       {
@@ -719,11 +723,11 @@ This app uses Sumo Logic’s [GitHub Copilot source](/docs/send-data/hosted-coll
 {
   "_type": "userTeam",
   "day": "2026-10-27",
-  "organization_id": "15002684",
-  "slug": "application-security-team",
-  "team_id": 20213666,
-  "user_id": 175587151,
-  "user_login": "rakeshparuchuri"
+  "organization_id": "2000000",
+  "slug": "example-team",
+  "team_id": 3000000,
+  "user_id": 5000000,
+  "user_login": "parth_langalia"
 }
 ```
 
