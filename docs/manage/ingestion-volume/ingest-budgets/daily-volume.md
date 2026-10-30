@@ -40,7 +40,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * Ingest budgets require the Manage Ingest Budgets [role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management).
 * Fields assigned with field extraction rules are not supported in the scope of an Ingest Budget.
 * `_budget` is a reserved keyword used by legacy ingest budgets. Do not use this reserved field when creating a new V2 ingest budget.
-* Data are not automatically recovered or ingested later once the capacity tracking is reset.
+* Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
 ## Budget assignment
@@ -56,7 +56,7 @@ The value supports a single wildcard, such as `_sourceCategory=prod*payment`. F
 
 ## Source type behavior
 
-A few sources on hosted collectors behave differently when instructed to stop collecting data.
+A few sources on Sumo Logic hosted collectors behave differently when instructed to stop collecting data.
 
 * HTTP sources will drop data requests, yet still return a `200 OK` response.
 * AWS S3 based sources will skip objects. 

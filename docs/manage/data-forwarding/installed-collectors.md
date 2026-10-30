@@ -7,13 +7,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can set up one or more data forwarding destinations and configure an installed collector to send raw log data from specified sources to those destinations. The collector will send the raw data to external destinations at the same time it sends data to Sumo Logic.
+You can set up one or more data forwarding destinations and configure a Sumo Logic installed collector to send raw log data from specified sources to those destinations. The collector will send the raw data to external destinations at the same time it sends data to Sumo Logic.
 
 You can forward raw log data using the following protocols.
 
-* Syslog (TCP and UDP): Send log data to a syslog server.
-* Generic REST API: Send log data to a web services endpoint.
-* Hitachi Data Systems HTTP REST API: Send log data to Hitachi Content Platform (HCP).
+* Syslog (TCP and UDP)—Send log data to a syslog server.
+* Generic REST API—Send log data to a web services endpoint.
+* Hitachi Data Systems HTTP REST API—Send log data to Hitachi Content Platform (HCP).
 
 Follow the steps below to set up a collector to forward raw log data to an external destination.
 
@@ -60,7 +60,7 @@ Follow the instructions for the destination type you chose.
     * `{second}` Replace with second in hour.
     * `{uuid}` Replace with a unique, randomly generated identifier (UUID)
 
-  * **Username and Password**. Enter the credentials to access the destination. These are placed in a Basic Auth header in the HTTP request from the collector.  If you're sending to a Sumo Logic HTTP source this header is simply ignored and your data are ingested. You must have administrator privileges for the collector.
+  * **Username and Password**. Enter the credentials to access the destination. These are placed in a Basic Auth header in the HTTP request from the collector.  If you're sending to a Sumo Logic HTTP source this header is simply ignored and your data is ingested. You must have administrator privileges for the collector.
 
 
 </TabItem>

@@ -14,10 +14,10 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 ## Rules
 
-* Metrics and Traces data are not supported.
+* Metrics and Traces data is not supported.
 * Fields assigned with field extraction rules are not supported in the scope of an ingest budget. 
 * `_budget` is a reserved keyword used by legacy ingest budgets. Do not use this reserved field when creating a new ingest budget.
-* Data are not automatically recovered or ingested later once the capacity tracking is reset.
+* Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * Avoid creating multiple ingest budgets with the same scope. In such a scenario, ingest budgets whose capacity is reached first is executed.
 * In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
@@ -34,12 +34,12 @@ For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` im
 
 ## Source-type behavior​
 
-A few sources on hosted collectors will behave differently when instructed to stop collecting data.
+A few sources on Sumo Logic hosted collectors will behave differently when instructed to stop collecting data.
 
 * HTTP sources will drop data requests, yet still return a `200 OK` response.
 * AWS S3-based sources will skip objects.
 * Cloud syslog sources will keep the connection open yet drop incoming syslog messages.
-* Installed collector will stop collecting data.
+* Sumo Logic installed collector will stop collecting data.
 
 ## Create ingest budgets
 

@@ -9,14 +9,14 @@ description: Answers to frequently asked questions about Sumo Logic Partitions.
 
 For the tier-based pricing model:
 
-* All partitions in the continuous tier are considered a part of the default scope. 
-* Decommissioned partitions are also included.
-* Partitions in the Infrequent and Frequent tier are not part of the default scope.
+- All partitions in the continuous tier are considered a part of the default scope. 
+- Decommissioned partitions are also included.
+- Partitions in the Infrequent and Frequent tier are not part of the default scope.
 
 For Flex customers:
 
-* The customer can configure at the partition level to include or exclude it in the default scope.
-* All partitions which are not excluded explicitly will then be included in the default scope.
+- The customer can configure at the partition level to include or exclude it in the default scope.
+- All partitions which are not excluded explicitly will then be included in the default scope.
 
 ## How does Sumo Logic decide on which partitions to scan?
 
@@ -31,12 +31,12 @@ Sumo Logic applies the partition selection process purely based on the routing e
 
 The system tries to match the source expression of the query with the routing expressions of all the partitions in the scope of the query. 
 
-* If the partition matches the source expression, then all other partitions are filtered out and only the matching partition is considered for scan (for example, source expression: `_collector=service1_all_logs AND _sourceCategory=another_category` and routing expression of a partition:  `_collector=service1_all_logs`).
-* If the routing expression of a partition and the source expression of the query are not overlapping, that partition will be excluded from the scan (for example, source expression: `_sourceCategory=prod_logs` and routing expression of a partition: `_sourceCategory=staging_logs`).
-* The matching logic is filtered with the complex boolean expressions in either the routing expressions or the source expression of the query.
-* The system will err on the side of caution in case there is ambiguity to guarantee functional correctness of the query results.
-* The system does not have any information about the data other than routing expressions for this selection process.
-* The number of partitions scanned is directly related to how well a query source expression matches the routing expressions. Therefore, it is recommended to use simpler expressions, and preferably, use the same dimensions for partition routing as you would generally use in your queries.
+- If the partition matches the source expression, then all other partitions are filtered out and only the matching partition is considered for scan (for example, source expression: `_collector=service1_all_logs AND _sourceCategory=another_category` and routing expression of a partition:  `_collector=service1_all_logs`).
+- If the routing expression of a partition and the source expression of the query are not overlapping, that partition will be excluded from the scan (for example, source expression: `_sourceCategory=prod_logs` and routing expression of a partition: `_sourceCategory=staging_logs`).
+- The matching logic is filtered with the complex boolean expressions in either the routing expressions or the source expression of the query.
+- The system will err on the side of caution in case there is ambiguity to guarantee functional correctness of the query results.
+- The system does not have any information about the data other than routing expressions for this selection process.
+- The number of partitions scanned is directly related to how well a query source expression matches the routing expressions. Therefore, it is recommended to use simpler expressions, and preferably, use the same dimensions for partition routing as you would generally use in your queries.
 
 ### What happens when you change the routing expression of a partition?
 

@@ -39,8 +39,8 @@ Support account users cannot manage child-org features from an MSSP parent org, 
 
 Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
 
-* **Opt-in**. You can explicitly enable them for one or more child organizations.
-* **Opt-out**. You can disable them for child organizations that do not require them.
+- **Opt-in**. You can explicitly enable them for one or more child organizations.
+- **Opt-out**. You can disable them for child organizations that do not require them.
 
 Some features include sub-features. You can expand a top-level feature to manage its sub-features individually.
 
@@ -54,7 +54,7 @@ You can apply changes to multiple child organizations in a single action.
 1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="More Actions dropdown with Manage Features option highlighted" style={{border: '1px solid gray'}} width="400"/><br/>Alternatively, you can scroll down the details pane to the **Features** section and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button-bottom.png')} alt="Features section with Manage Features link highlighted" style={{border: '1px solid gray'}} width="400"/> 
 1. In the **Manage Features** panel, toggle next to the feature you want to enable.<br/><img src={useBaseUrl('img/manage/subscriptions/select-features.png')} alt="Select Features" style={{border: '1px solid gray'}} width="800"/>
-   * To manage sub-features, click the feature name to expand it and select the desired sub-features.
+   - To manage sub-features, click the feature name to expand it and select the desired sub-features.
 1. Click **Save Changes** button to apply your changes.
 
 ### Opt out a child organization from a feature
@@ -114,25 +114,25 @@ You can push the following:
 
 ### Limitations
 
-* If an item with the same name exists in the target organization, it will be replaced.
-* Once a push is initiated, it cannot be reversed. Administrators should carefully review their selections before updating.
-* If errors occur during the push, administrators must manually re-attempt the failed push. To see failed pushes, use [View History](#view-history).
-* Push operations may take longer based on the volume of content being pushed.
-* Rule tuning expressions must be pushed separately from rules.
-* *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
-* For library content, breaching 15,000 cap (Items selected in one job X Child orgs targeted in one job) would fail the sync job.
-* The maximum runtime for jobs below 1200 requests (Items selected in one job X Child orgs targeted in one job) is less than or equal to 2 mins. Linear increase beyond 1200 request would take more runtime, for example, 15,201 would nearly take 30 mins.
-* For CSIEM rules and tuning expression (Rule or Tuning Exp × child-orgs):
-   * Expected runtime for less than or equal to 300 async calls is under 2 mins. 
-   * Expected runtime for nearly 1500 async calls is 5-7 mins.
-   * Expected runtime for nearly 3000 async calls is 15 mins.
-   * Make sure you keep the Child orgs per job less than or equal to 3 when you push more than 250 rules for a faster runtime.
-   * Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime.
-* When pushing monitors, certain configurations will not be included. These include muting schedules, Sumo Logic Cloud SOAR connection, SLO linkages, Automation Service playbooks, HipChat settings, and tags.
-* Before pushing a source template, ensure that:
-   * A collector is configured on each machine to forward data to Amazon S3.
-   * The required credentials are configured locally in the collector environment.
-   * The required tags are configured so that the pushed source template maps to the correct collectors in the destination organization(s).
+- If an item with the same name exists in the target organization, it will be replaced.
+- Once a push is initiated, it cannot be reversed. Administrators should carefully review their selections before updating.
+- If errors occur during the push, administrators must manually re-attempt the failed push. To see failed pushes, use [View History](#view-history).
+- Push operations may take longer based on the volume of content being pushed.
+- Rule tuning expressions must be pushed separately from rules.
+- *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
+- For library content, breaching 15,000 cap (Items selected in one job X Child orgs targeted in one job) would fail the sync job.
+- The maximum runtime for jobs below 1200 requests (Items selected in one job X Child orgs targeted in one job) is less than or equal to 2 mins. Linear increase beyond 1200 request would take more runtime, for example, 15,201 would nearly take 30 mins.
+- For CSIEM rules and tuning expression (Rule or Tuning Exp × child-orgs):
+   - Expected runtime for less than or equal to 300 async calls is under 2 mins. 
+   - Expected runtime for nearly 1500 async calls is 5-7 mins.
+   - Expected runtime for nearly 3000 async calls is 15 mins.
+   - Make sure you keep the Child orgs per job less than or equal to 3 when you push more than 250 rules for a faster runtime.
+   - Make sure you keep the rule or tuning expressions per job less than or equal to 500 for a faster runtime.
+- When pushing monitors, certain configurations will not be included. These include muting schedules, Sumo Logic Cloud SOAR connection, SLO linkages, Automation Service playbooks, HipChat settings, and tags.
+- Before pushing a source template, ensure that:
+   - A collector is configured on each machine to forward data to Amazon S3.
+   - The required credentials are configured locally in the collector environment.
+   - The required tags are configured so that the pushed source template maps to the correct collectors in the destination organization(s).
 
 ## View results
 

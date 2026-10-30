@@ -2,7 +2,7 @@
 id: fields
 title: Fields
 sidebar_label: Fields
-description: Manage fields in Sumo Logic to control how log data are parsed and organized, improving search efficiency and enabling advanced data filtering.
+description: Manage fields in Sumo Logic to control how log data is parsed and organized, improving search efficiency and enabling advanced data filtering.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -100,7 +100,7 @@ Use the `fields` parameter with the [Collector API](/docs/api/collector-manage
 |:--|:--|:--|:--|:--|
 | fields | JSON Object | No | JSON map of key-value fields (metadata) to apply to the collector or source. | Modifiable |
 
-The following JSON is an example configuration of a Hosted collector with the fields parameter:
+The following JSON is an example configuration of a Sumo Logic hosted collector with the fields parameter:
 
 ```json
 {
@@ -118,7 +118,7 @@ The following JSON is an example configuration of a Hosted collector with the fi
 
 ### Using local configuration
 
-Installed collectors can use JSON files to configure their sources when using [local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). Use the `fields` parameter in your JSON configuration to define fields on a source.
+Sumo Logic installed collectors can use JSON files to configure their sources when using [local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). Use the `fields` parameter in your JSON configuration to define fields on a source.
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|

@@ -17,10 +17,10 @@ You can independently and swiftly remove sensitive data, mitigating compliance i
 
 Key features:
 
-* **User-friendly deletion**. Easily delete data.
-* **Multiple datasets and time ranges**. Flexible data management.
-* **Customizable filters**. Tailor deletion to your needs.
-* **Robust auditing mechanisms**. Ensure thorough tracking.
+- **User-friendly deletion**. Easily delete data.
+- **Multiple datasets and time ranges**. Flexible data management.
+- **Customizable filters**. Tailor deletion to your needs.
+- **Robust auditing mechanisms**. Ensure thorough tracking.
 
 :::info
 This feature does not provide a certificate of destruction. If you require a certificate confirming complete destruction of all account data at the end of your subscription, create a Sumo Logic support ticket instead.
@@ -112,8 +112,8 @@ Once the deletion request is created, an email notification will be sent to the 
 1. Filter for the status with **Pending review**.<br/><img src={useBaseUrl('img/search/get-started-search/pending-requests.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
 1. Click a deletion request to review it.<br/><img src={useBaseUrl('img/search/get-started-search/pending-requests-select.png')} alt="filter for pending deletion requests" style={{border: '1px solid gray'}} width="800"/>
 1. **Approve** or **Reject** the request based on your requirement.<br/><img src={useBaseUrl('img/search/get-started-search/approve-reject-deletion-request.png')} alt="Approve/Reject deletion requests side panel" style={{border: '1px solid gray'}} width="400"/>
-    * **Approve**. In the **Approve Deletion Request** pop-up, enter **Delete**, and then click **Delete Data**. This will permanently delete the data.<br/><img src={useBaseUrl('img/search/get-started-search/approve-deletion-request.png')} alt="Approve deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
-    * **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
+    - **Approve**. In the **Approve Deletion Request** pop-up, enter **Delete**, and then click **Delete Data**. This will permanently delete the data.<br/><img src={useBaseUrl('img/search/get-started-search/approve-deletion-request.png')} alt="Approve deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
+    - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
 
 :::note
 By default, data deletion requests require approval from two of your org admins with the **Review Deletion Requests** capability. To change the number of required approvals, contact our [Support team](https://support.sumologic.com/support/s/).
@@ -121,13 +121,13 @@ By default, data deletion requests require approval from two of your org admins 
 
 ## Limitations
 
-* Deletion requests are processed sequentially (one at a time).
-* Maximum 100 deletion requests at a time.
-* Each request can include up to 1 petabyte (PB) of scanned data.
-* Maximum 1,000,000 messages per request.
-* Maximum time range of one year per request.
-* Up to 10 active concurrent deletion tasks across different customers.
-* Requests cannot delete data prior to February 1, 2024. Requests before this timestamp will fail.
+- Deletion requests are processed sequentially (one at a time).
+- Maximum 100 deletion requests at a time.
+- Each request can include up to 1 petabyte (PB) of scanned data.
+- Maximum 1,000,000 messages per request.
+- Maximum time range of one year per request.
+- Up to 10 active concurrent deletion tasks across different customers.
+- Requests cannot delete data prior to February 1, 2024. Requests before this timestamp will fail.
 
 ### Handling future ingestion of sensitive data
 

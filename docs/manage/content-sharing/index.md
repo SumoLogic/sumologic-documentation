@@ -24,8 +24,8 @@ You can use Terraform to manage content sharing permissions with the [`sumologic
 
 You can share content from the following locations:
 
-* **Left navigation bar**. Recommended when you are familiar with the content and need to quickly share with another user.
-* **Library**. Recommended when you need a detailed view of the content, who created it, and when it was last modified.
+* **Left navigation bar.** Recommended when you are familiar with the content and need to quickly share with another user.
+* **Library.** Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
 In either location, you click the kabob icon to locate the **Share** option and the dialog appears.
 

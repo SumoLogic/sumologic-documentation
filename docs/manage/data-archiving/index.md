@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Send Data icon" width="50"/>
 
-Archive allows you to forward log data from installed collectors to AWS S3 buckets to collect later. If you have logs that you do not need to search immediately, you can archive them for later use. You can also ingest them from your archive on-demand with five-minute granularity.  
+Archive allows you to forward log data from Sumo Logic installed collectors to AWS S3 buckets to collect later. If you have logs that you do not need to search immediately, you can archive them for later use. You can also ingest them from your archive on-demand with five-minute granularity.  
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

@@ -12,7 +12,7 @@ With Variable Retention, you can create index partitions and Scheduled Views to 
 
 You set the retention period when you first [create the partition](/docs/manage/partitions/data-tiers/create-edit-partition/#create-a-partition) or [Scheduled View](/docs/manage/scheduled-views), and you can also edit the retention period at any time in the future. 
 
-Retention is measured from the time that data were received, rather than the message time. 
+Retention is measured from the time that data was received, rather than the message time. 
 
 The minimum retention period is 1 day, and the maximum retention period is 5,000 days.
 
@@ -24,7 +24,7 @@ Here you can see the total volume ingested in each partition, including:
 
 * Index Name
 * Routing Expression
-* Storage Consumed: The total volume of uncompressed data ingested across the duration of the retention period.
+* Storage Consumed—The total volume of uncompressed data ingested across the duration of the retention period.
 * Retention period
 * [Data Forwarding](/docs/manage/data-forwarding) 
 

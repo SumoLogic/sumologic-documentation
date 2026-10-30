@@ -268,7 +268,7 @@ Copy the `clientId` and `clientSecret` from the response. These are your OAuth c
 
 ### Step 3: Generate an access token
 
-Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint. See [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
+Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint. — see [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
 
 **Option A: Request all available permissions**
 
@@ -339,7 +339,7 @@ curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 
 ## Security best practices
 
-* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files. Never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
+* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files. — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
 * **Use least privilege**. Request only the OAuth scopes your application needs. For Client Credentials flow, assign service accounts the minimum roles required.
 * **Rotate credentials regularly**. Create new OAuth clients periodically and deactivate old ones. Update service account credentials on a regular schedule.
 * **Monitor OAuth usage**. Review audit logs for OAuth client activity. Watch for unexpected patterns like unusual request volumes or access to sensitive resources.
@@ -366,7 +366,7 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 
 ### How long do access tokens last?
 
-* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client. This is transparent to users.
+* **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client — this is transparent to users.
 * **Client Credentials flow**. Access tokens expire after 30 minutes. Generate a new token when the current one expires.
 
 ### Can I revoke OAuth access?

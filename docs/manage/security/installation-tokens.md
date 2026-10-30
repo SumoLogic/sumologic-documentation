@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Installation Tokens register [installed collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register installed collectors. You can deactivate, reactivate, or delete tokens at any time.
+Installation Tokens register Sumo Logic [installed collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register installed collectors. You can deactivate, reactivate, or delete tokens at any time.
 
 Opposed to [access keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they cannot be used to make [API](/docs/api) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-roles/users) without worrying about updating access keys in installation scripts since Installation Tokens are associated with your account instead of users.
 

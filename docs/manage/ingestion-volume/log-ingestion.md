@@ -20,7 +20,7 @@ When designing your deployment, it’s important to consider how logs will be in
 Sumo Logic imposes account caps on uploads to better protect your account from exceeding data limits.
 
 * Storage usage is calculated by taking the average of your total storage usage in the current billing cycle. For example, if your storage limit is 500TB, you will be charged for extra on-demand storage only if the average of your total storage for the month exceeds 500TB at the end of your billing cycle, or if there is an excessive spike in usage (see the next bullet item).
-* Storage usage can exceed between 4 times to 10 times the daily maximum (depending on account size). Even if the cap is exceeded, log data are kept safely at the collector level until quota is made available, at which time the data are ingested. 
+* Storage usage can exceed between 4 times to 10 times the daily maximum (depending on account size). Even if the cap is exceeded, log data is kept safely at the collector level until quota is made available, at which time the data is ingested. 
 
 Log data may not be kept when sent via HTTP sources or Cloud Syslog sources, as they may not have the caching and retry mechanisms that are built into Sumo Logic collectors.
 
@@ -79,13 +79,13 @@ To provide an example with a 10GB per day account, the average per minute rate
 
 ## How does throttling affect ingestion?
 
-In the case of installed collectors with a Local File source and S3 hosted collectors, Sumo Logic instructs the collector (installed or hosted) on the quota limit, and tells it to delay ingestion until the quota is available. As a result, users will be unable to search for current data when throttling is happening, since the rate of uploads may be slowed from local or S3 hosted collectors but there is no dropping of ingested data. Unfortunately, we do not have the same ability with the sending of data for HTTP sources and endpoints. Any HTTP sources will get a response to any post requests with a "429 - Too Many Requests" message. When this occurs, the sending client would then be responsible for retrying to send that data as quota becomes available.
+In the case of Sumo Logic installed collectors with a Local File source and Sumo Logic hosted collectors with S3 sources, Sumo Logic instructs the collector (installed or hosted) on the quota limit, and tells it to delay ingestion until the quota is available. As a result, users will be unable to search for current data when throttling is happening, since the rate of uploads may be slowed from local or S3 hosted collectors but there is no dropping of ingested data. Unfortunately, we do not have the same ability with the sending of data for HTTP sources and endpoints. Any HTTP sources will get a response to any post requests with a "429 - Too Many Requests" message. When this occurs, the sending client would then be responsible for retrying to send that data as quota becomes available.
 
 In the case of [Cloud Syslog sources](/docs/send-data/hosted-collectors/cloud-syslog-source), similar to HTTP sources, incoming data will be dropped since the Cloud Syslog functions as a listener and cannot even return the 429 error.
 
-Throttling also prevents one collector from uploading more data than others to the point where all data are being ingested from one collector.
+Throttling also prevents one collector from uploading more data than others to the point where all data is being ingested from one collector.
 
-When a collector is experiencing throttling, the throttling slows the rate at which the collector uploads data. If the upload rate is slower than the rate at which data are generated, then the collector will automatically queue the excess data on disk. When the quota becomes available, the queued data will be uploaded.
+When a collector is experiencing throttling, the throttling slows the rate at which the collector uploads data. If the upload rate is slower than the rate at which data is generated, then the collector will automatically queue the excess data on disk. When the quota becomes available, the queued data will be uploaded.
 
 ## How do I know which collector is contributing to excess ingestion?
 

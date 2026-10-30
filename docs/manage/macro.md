@@ -20,8 +20,8 @@ Macros can also be nested to enable reuse of complex queries:
 * **Outer Macro**. The macro that references an inner macro.
 
 :::note
-* Only users with the **Manage Macros** [role capability](/docs/manage/users-roles/roles/role-capabilities/) can create, edit, and delete macros.
-* All users can view macro definitions, but data access is governed by existing [RBAC](/docs/manage/users-roles/roles/role-capabilities/) policies. If you do not have access to specific data source, you will not be able to access that data when using a macro, even if the macro definition references it.
+- Only users with the **Manage Macros** [role capability](/docs/manage/users-roles/roles/role-capabilities/) can create, edit, and delete macros.
+- All users can view macro definitions, but data access is governed by existing [RBAC](/docs/manage/users-roles/roles/role-capabilities/) policies. If you do not have access to specific data source, you will not be able to access that data when using a macro, even if the macro definition references it.
 :::
 
 ## Add a macro
@@ -41,27 +41,27 @@ To create a macro, follow the steps below:
 
 ### Limitations
 
-* You can create a maximum of 600 macros.
-* You can add a maximum of 5 arguments.
-* You are only allowed to use single expression.
-* You can only use the below listed argument validations:
-  * `isValidIpV4`
-  * `contains`
-  * `isNumeric`
-  * `isPrivateIP`
-  * `isPublicIP`
-  * `isValidIP`
-  * `isReservedIP`
-  * `isValidIPv4`
-  * `isValidIPv6`
-  * `matches`
-* You can only use the below listed rules language functions:
-  * `<=`
-  * `>=`
-  * `==`
-  * `!=`
-  * `<`
-  * `>`
+- You can create a maximum of 600 macros.
+- You can add a maximum of 5 arguments.
+- You are only allowed to use single expression.
+- You can only use the below listed argument validations:
+  - `isValidIpV4`
+  - `contains`
+  - `isNumeric`
+  - `isPrivateIP`
+  - `isPublicIP`
+  - `isValidIP`
+  - `isReservedIP`
+  - `isValidIPv4`
+  - `isValidIPv6`
+  - `matches`
+- You can only use the below listed rules language functions:
+  - `<=`
+  - `>=`
+  - `==`
+  - `!=`
+  - `<`
+  - `>`
 
 ### Example without arguments
 

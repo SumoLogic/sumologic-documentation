@@ -20,8 +20,8 @@ With our self-service checkout, you can upgrade to an Essentials plan in just mi
 <img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.jpg')} alt="Sumo Logic Essentials upgrade plans" style={{border: '1px solid gray'}} width="700" />
 
 Essentials plans are ideal for:  
-* Small to medium-sized businesses seeking quick and independent onboarding.  
-* IT professionals, developers, and analysts who need rapid access to advanced features for security, monitoring, and analytics.
+- Small to medium-sized businesses seeking quick and independent onboarding.  
+- IT professionals, developers, and analysts who need rapid access to advanced features for security, monitoring, and analytics.
 
 <details>
 <summary>What's a Sumo Logic Credit?</summary>
@@ -37,11 +37,11 @@ Steps to upgrade:
    * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration > Account > Manage Plan**.
    
 1. Select your Essentials plan.
-   * Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).
-   * Choose **monthly** or **annual** billing.
+   - Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).
+   - Choose **monthly** or **annual** billing.
 
 1. Enter your payment details.
-   * Fill out the secure payment form. Once your payment is processed, your account will be upgraded, granting you immediate access to premium features. The payment is calculated for the full day on which you confirm and pay. Your subscription begins at midnight PST on that day.
+   - Fill out the secure payment form. Once your payment is processed, your account will be upgraded, granting you immediate access to premium features. The payment is calculated for the full day on which you confirm and pay. Your subscription begins at midnight PST on that day.
 
 ## Adjusting Essentials plans
 
@@ -57,10 +57,10 @@ The table below explains our Essentials plan billing plan change policies.
 | **Annual-to-month**      | No                                 | Immediate plan renewal                     | N/A                                        | At credit depletion or at the next billing cycle |
 
 :::note  
-* There is no carry forward of unused credits in any plan type.  
-* Customers using order forms for billing cannot switch to self-service payments.  
-* Downgrades to the Free account are not supported through the checkout interface.  
-* Downgrades between paid plans take effect at the start of the next billing cycle.  
+- There is no carry forward of unused credits in any plan type.  
+- Customers using order forms for billing cannot switch to self-service payments.  
+- Downgrades to the Free account are not supported through the checkout interface.  
+- Downgrades between paid plans take effect at the start of the next billing cycle.  
 :::
 
 To modify your payment details, see [Manage Billing Information](/docs/manage/manage-subscription/manage-billing-information). If you encounter issues during your upgrade, contact [Support](https://support.sumologic.com/support/s/).

@@ -83,7 +83,7 @@ The table below lists the fields returned for an audit event. Note that by defau
 
 ## Audit event classes and actions
 
-The sections list the classes of objects, such as collectors, users, and sessions, for which Sumo Logic writes audit logs, and the actions, such as create or delete, that result in a message to the audit log.  
+The sections list the classes of objects — for example: collectors, users, and sessions—for which Sumo Logic writes audit logs, and the actions, such as create or delete, that result in a message to the audit log.  
 
 When you query the audit index, the search results will include the class and action for each audit log. The `class` and `action` are hidden by default. To display a hidden field, click the checkbox next to it in the **Hidden Fields** section of the **Messages** tab. You can also perform targeted searches of the audit index using the `class` and `action` fields in your query.
 

@@ -49,10 +49,10 @@ Admins can use it to identify noisy sources and explain month-over-month fluctua
 
 Example questions:
 
-* `Show me the daily ingest for the last week.`
-* `What are my top 10 source categories by daily ingest volume?`
-* `How much data went to the Infrequent tier last month?`
-* `Which collector is ingesting the most?`
+- `Show me the daily ingest for the last week.`
+- `What are my top 10 source categories by daily ingest volume?`
+- `How much data went to the Infrequent tier last month?`
+- `Which collector is ingesting the most?`
 
 Mobot parses your question to identify the time window, units, and breakdown you're asking for, queries this index, and returns a structured answer in any unit (GB, TB, MB, bytes, or event counts). If this index is not yet enabled, Mobot detects that and guides you through turning it on.
 

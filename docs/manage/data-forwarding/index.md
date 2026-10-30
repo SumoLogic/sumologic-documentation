@@ -21,7 +21,7 @@ In this section, we'll introduce the following concepts:
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Document with a forward symbol  icon" width="45" />
         <h4>Forward Data from an Installed Collector</h4>
       </a>
-      <p>Learn how to set up Data Forwarding destinations for installed collectors.</p>
+      <p>Learn how to set up Data Forwarding destinations for Sumo Logic installed collectors.</p>
     </div>
   </div>
   <div className="box smallbox card">

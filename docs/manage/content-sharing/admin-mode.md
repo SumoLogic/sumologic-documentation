@@ -18,7 +18,7 @@ As a content administrator,  you can switch to admin mode at any time in order 
 To switch to admin mode:
 
 1. Go to the Library.
-1. Select **View as:** > **Content Administrator**. <br/>  <img src={useBaseUrl('img/content-sharing/content-admin.png')} alt="Admin Mode" style={{border: '1px solid gray'}} width="200" />
+1. Select **View as:** > **Content Administrator.** <br/>  <img src={useBaseUrl('img/content-sharing/content-admin.png')} alt="Admin Mode" style={{border: '1px solid gray'}} width="200" />
 
 You will now see the whole file tree for your organization, as well as the Admin Recommended folder.
 
@@ -36,7 +36,7 @@ To add a dashboard or search to Admin Recommended:
 1. Toggle to **Content Administrator** mode. 
 1. A note loads on the left navigation bar that says **Viewing as Content Administrator**. This is to help you remember why your Personal folder does not appear.
 1. Make sure you've [shared](/docs/manage/content-sharing) the search, dashboard, or folder with the role or users that you want to be able to access it.
-1. Select the options menu for the item you want to move, and choose **Move**.
+1. Select the options menu for the item you want to move, and choose **Move.**
 1. From the **Move** dialog, choose the **Admin Recommended** folder and click **Move**.
 
 :::note

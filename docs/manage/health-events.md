@@ -13,7 +13,7 @@ These events provide visibility into the operational health of collectors, sourc
 Additionally, a health event is triggered when any limit associated with Lookup Tables, Partitions, Fields, or FERs reaches or exceeds 90% of the allocated capacity, allowing timely action to prevent service disruption. This health event will auto-resolve when the usage falls back below the 90% threshold limit.
 
 :::note
-Health events are sent from installed collectors of version `19.308-2` and later.
+Health events are sent from Sumo Logic installed collectors of version `19.308-2` and later.
 :::
 
 ## Availability
@@ -111,7 +111,7 @@ It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partition
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="Health events table" style={{border: '1px solid gray'}} width="800"/>
 1. Click the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="Health events detail" style={{border: '1px solid gray'}} width="400"/>
-    * **Create Scheduled Search**. Click this button to get alerts for specific health events. The unique identifier of the resource type is used in the query. See [Create a Scheduled Search](../alerts/scheduled-searches/schedule-search.md) for details.
+    - **Create Scheduled Search**. Click this button to get alerts for specific health events. The unique identifier of the resource type is used in the query. See [Create a Scheduled Search](../alerts/scheduled-searches/schedule-search.md) for details.
     - Under the **More Actions** menu you can select:
         * **Event History** to run a search against the **sumologic_system_events** partition to view all of the related event logs.
         * **View Object** to view the resource in detail related to the event.

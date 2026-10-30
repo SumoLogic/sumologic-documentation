@@ -19,7 +19,7 @@ When you share something directly with a user (or with their role) they will rec
 
 Yes, if you have edit permissions on that shared search. You need edit permissions at a minimum on the shared search to make any changes to the associated alert. For details, see [Changing Other Alerts](changing-alerts.md).
 
-## I shared something with my coworker, but why cannot they see it in their Library view?
+## Why is my coworker unable to see a shared item in their Library view?
 
 It is possible that you shared an item that is nested within a folder. The Library view is designed to roll up to the highest level parent folder. Have them check their **Recently Shared with Me** dialog. Or, send your co-worker the name of the item and they can also search for it in the Library.
 

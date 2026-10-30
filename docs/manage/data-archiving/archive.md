@@ -6,7 +6,7 @@ description: Send data to an archive that you can ingest from later.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Archive allows you to forward log data from installed collectors to AWS S3 buckets to collect at a later time. If you have logs that you do not need to search immediately you can archive them for later use. You can ingest from your archive on-demand with five-minute granularity.
+Archive allows you to forward log data from Sumo Logic installed collectors to AWS S3 buckets to collect at a later time. If you have logs that you do not need to search immediately you can archive them for later use. You can ingest from your archive on-demand with five-minute granularity.
 
 :::important
 Do not change the name and location of the archived files in your S3 bucket. Otherwise, ingesting them later will not work properly.
@@ -21,8 +21,8 @@ Every archived log message is tagged with the metadata fields specified by the
 ## Create an AWS archive destination
 
 :::note
-* You can also create and manage AWS archive destinations using the [Data Archiving Management API](/docs/api/data-archiving/), enabling automated destination setup at scale.
-* Creating an AWS archive destination, whether through the UI or the [Data Archiving Management API](/docs/api/data-archiving/), requires the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability.
+- You can also create and manage AWS archive destinations using the [Data Archiving Management API](/docs/api/data-archiving/), enabling automated destination setup at scale.
+- Creating an AWS archive destination, whether through the UI or the [Data Archiving Management API](/docs/api/data-archiving/), requires the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability.
 :::
 
 To create an AWS archive destination using the UI, follow the steps below:
@@ -51,7 +51,7 @@ If Sumo Logic is able to verify the S3 credentials, the destination will be adde
 A new processing rule type named **Archive messages that match** allows you to archive log data at the source level on Installed Collectors.
 
 :::note
-An archive processing rule acts like an exclude filter, functioning as a denylist filter where the matching data are not sent to Sumo Logic, and instead sends the excluded data to your AWS archive bucket.
+An archive processing rule acts like an exclude filter, functioning as a denylist filter where the matching data is not sent to Sumo Logic, and instead sends the excluded data to your AWS archive bucket.
 :::
 
 Archive and forwarding rules are processed after all other processing rule types. When there are archive and forwarding rules they are processed in the order that they are specified in the UI, top to bottom.
@@ -154,7 +154,7 @@ To use JSON to create an AWS S3 archive source, reference our AWS Log source�
     searchable field called `_sourceCategory`.
 1. **Fields**. Click the **+Add Field** link to add custom metadata fields. Define the fields you want to associate, each field needs a name (key) and value.
     :::note
-    Fields specified on an AWS S3 archive source take precedence if the archived data have the same fields.
+    Fields specified on an AWS S3 archive source take precedence if the archived data has the same fields.
     :::
     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field does not exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
@@ -212,11 +212,11 @@ An ingestion job will have one of the following statuses:
 * **Scanning**. The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
 * **Ingesting**. The job has completed scanning for objects and is still ingesting your objects.
 * **Failed**. The job has failed to complete. Partial data may have been ingested and is searchable.
-* **Succeeded**. The job completed ingesting and your data are searchable.
+* **Succeeded**. The job completed ingesting and your data is searchable.
 
 ## Search ingested archive data
 
-Once your archive data are ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the archive page find and select the archive S3 source that ran the ingestion job to ingest your archive data. In the [details pane](#details-pane), you can click the **Open in Search** link to view the data in a search that was ingested by the job.
+Once your archive data is ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the archive page find and select the archive S3 source that ran the ingestion job to ingest your archive data. In the [details pane](#details-pane), you can click the **Open in Search** link to view the data in a search that was ingested by the job.
 
 :::note
 When you search for data in the Frequent or Infrequent Tier, you must explicitly reference the partition.

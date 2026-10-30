@@ -30,8 +30,8 @@ To mask data at ingest time before it is stored, use [Mask Rules](/docs/send-dat
 
 Data masking rules are applied at query processing time. Logs are stored in their original form, and masking is applied dynamically when you run a query. What you see depends on your assigned role:
 
-* If you do **not** have the `View Unmasked Data` [role capability](/docs/manage/users-roles/roles/role-capabilities/), you see log data with all matching values replaced by the configured **Mask String**.
-* If you have the `View Unmasked Data` capability, you can view log data in its original, unmasked form.
+- If you do **not** have the `View Unmasked Data` [role capability](/docs/manage/users-roles/roles/role-capabilities/), you see log data with all matching values replaced by the configured **Mask String**.
+- If you have the `View Unmasked Data` capability, you can view log data in its original, unmasked form.
 
 Once a rule is active, any portion of a log message that matches the rule's **Regex Locator** pattern is substituted with the configured or default **Mask String** if you do not have the `View Unmasked Data` capability.
 
@@ -50,8 +50,8 @@ A data masking rule is applied as the **last step** of query processing. Any str
 To create a data masking rule:
 
 :::note
-* You need the `Manage Data Masking Rules` [role capability](/docs/manage/users-roles/roles/role-capabilities/) to create, edit, or disable a rule. The `View Unmasked Data` [role capability](/docs/manage/users-roles/roles/role-capabilities/) only lets you view unmasked data; it does not allow rule changes.
-* An organization can have a maximum of **50 data masking rules**.
+- You need the `Manage Data Masking Rules` [role capability](/docs/manage/users-roles/roles/role-capabilities/) to create, edit, or disable a rule. The `View Unmasked Data` [role capability](/docs/manage/users-roles/roles/role-capabilities/) only lets you view unmasked data; it does not allow rule changes.
+- An organization can have a maximum of **50 data masking rules**.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Data Masking page, in the main Sumo Logic menu, select **Data Management**, and then under **Logs** select **Data Masking**. You can also click the **Go To...** menu at the top of the screen and select **Data Masking**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Data Masking**.
@@ -99,8 +99,8 @@ To delete a data masking rule:
 
 The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) records detailed JSON logs for all data masking activity. Sumo Logic captures two categories of audit events:
 
-* **Rule management events**. Recorded whenever a data masking rule is created, updated, or deleted. Use these to track who changed masking rules and when.
-* **Search results masking events**. Recorded each time a search query returns results where data were masked. Use these to audit when and how often sensitive data were hidden from query results.
+- **Rule management events**. Recorded whenever a data masking rule is created, updated, or deleted. Use these to track who changed masking rules and when.
+- **Search results masking events**. Recorded each time a search query returns results where data was masked. Use these to audit when and how often sensitive data was hidden from query results.
 
 Because these events are stored under different metadata in the audit index, you need separate queries to retrieve each category.
 
@@ -141,7 +141,7 @@ You need the `Manage Data Masking Rules` role capability to create, edit, or dis
 
 ### What should be entered as the Mask String?
 
-The **Mask String** is the text that replaces any content matched by your Regex Locator. It can be any string, such as `[MASKED]`, `****`, or `[REDACTED]`. If you leave it blank, Sumo Logic applies a default mask. Choose a value that clearly signals to viewers that data have been intentionally hidden.
+The **Mask String** is the text that replaces any content matched by your Regex Locator. It can be any string, such as `[MASKED]`, `****`, or `[REDACTED]`. If you leave it blank, Sumo Logic applies a default mask. Choose a value that clearly signals to viewers that data has been intentionally hidden.
 
 ### Can the rule name be edited after it's been created?
 

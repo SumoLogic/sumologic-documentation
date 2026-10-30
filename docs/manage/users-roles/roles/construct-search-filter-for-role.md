@@ -204,7 +204,7 @@ When a user with Roles A and B runs a query, Sumo Logic combines the two filters
 (_sourceCategory=analytics-lab OR _sourceCategory=analytics*) AND <your-query>
 ```
 
-**The least restrictive of the role filters takes precedence**. Role A alone grants access to a log data from a single  source category, “analytics-lab”.  Role B grants access to log data to any source category that starts with “analytics”. Since the least restrictive filter takes precedence, data tagged `_sourceCategory=analyticsLong` could be returned in addition to data tagged `_sourceCategory=analytics-lab`.
+**The least restrictive of the role filters takes precedence.** Role A alone grants access to a log data from a single  source category, “analytics-lab”.  Role B grants access to log data to any source category that starts with “analytics”. Since the least restrictive filter takes precedence, data tagged `_sourceCategory=analyticsLong` could be returned in addition to data tagged `_sourceCategory=analytics-lab`.
 
 <!-- Hiding the following for work on DOCS-680
 ### Example 4

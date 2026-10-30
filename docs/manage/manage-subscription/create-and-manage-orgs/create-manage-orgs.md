@@ -26,7 +26,7 @@ This topic has information about Sumo Logic’s organizations feature, which yo
 
 Sumo Logic organizations allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
 
-When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest (Continuous Log Ingest, Frequent Log Ingest, and so on) as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
+When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
 
 We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 

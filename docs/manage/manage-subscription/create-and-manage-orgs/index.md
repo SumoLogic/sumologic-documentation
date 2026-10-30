@@ -113,9 +113,9 @@ Your estimates of ingest capacity required for each product variable are called 
 
 You can deactivate the child org when it is no longer needed. Before deactivating the child org, make sure you:
 
-* Exported the saved searches, dashboards, and/or lookup tables.
-* Verified the credit balances. If there are any unused credits, these credits will automatically return to the parent once the org is marked **Inactive**.
-* Notify the child org users.
+- Exported the saved searches, dashboards, and/or lookup tables.
+- Verified the credit balances. If there are any unused credits, these credits will automatically return to the parent once the org is marked **Inactive**.
+- Notify the child org users.
 
 Follow the below steps to deactivate a child org:
 
@@ -125,11 +125,11 @@ Follow the below steps to deactivate a child org:
 
 When you deactivate a child org:
 
-* All the UI logins and active sessions will be terminated.
-* API keys, collector tokens, and ingest pipelines will be revoked.
-* The child’s **Zuora** subscription will be cancelled and the respective bill-account is disabled.
-* Any Flex credits still assigned to the child org are automatically returned to the parent org and will be visible in the parent’s allocation widget.
-* The org’s status changes to **Deactivated** in **Manage Accounts**. You can still run usage reports against it.
+- All the UI logins and active sessions will be terminated.
+- API keys, collector tokens, and ingest pipelines will be revoked.
+- The child’s **Zuora** subscription will be cancelled and the respective bill-account is disabled.
+- Any Flex credits still assigned to the child org are automatically returned to the parent org and will be visible in the parent’s allocation widget.
+- The org’s status changes to **Deactivated** in **Manage Accounts**. You can still run usage reports against it.
 
 ## Delink a child org (Optional)
 
@@ -148,6 +148,6 @@ Follow the below steps to delink the deactivated child org:
 
 ### Limitations
 
-* Only **parent-org** users with Manage Child Orgs capability can initiate a deletion workflow.
-* Compatible with Enterprise, Trial/PoV, and Free-Forever child orgs.
+- Only **parent-org** users with Manage Child Orgs capability can initiate a deletion workflow.
+- Compatible with Enterprise, Trial/PoV, and Free-Forever child orgs.
 

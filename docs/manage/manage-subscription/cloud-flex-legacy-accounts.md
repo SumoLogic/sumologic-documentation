@@ -83,7 +83,7 @@ For all Sumo Logic account types (except for Sumo Logic Free) there is an overal
 
 ### Data limits for metrics
 
-For billing and reporting purposes, data volume for metrics is measured in data points per minute (DPM). When the DPM limit is exceeded, data are cached on the host and the source is throttled. The calculation of DPM varies according to the type of metric source. For details, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/). 
+For billing and reporting purposes, data volume for metrics is measured in data points per minute (DPM). When the DPM limit is exceeded, data is cached on the host and the source is throttled. The calculation of DPM varies according to the type of metric source. For details, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/). 
 
 ## Important notes on Sumo Logic Free accounts
 
@@ -91,7 +91,7 @@ Using a Free account is a great way to get to know Sumo Logic. While you're try
 
 * Free accounts run on seven-day intervals. This means that over the course of seven days, you cannot ingest more than a total of 3.5 GB of log data.
 * If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](/docs/manage/partitions/manage-indexes-variable-retention/) you're uploading in order to stay below the limit.
-* If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data are still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
+* If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data is still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
 * Free accounts are limited to 20 continuous queries, including [dashboard panels](/docs/dashboards/about).
 * Because Free accounts run on seven-day intervals, [dashboard panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
