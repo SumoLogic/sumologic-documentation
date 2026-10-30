@@ -45,7 +45,7 @@ To create a role:
    * **Allow few indexes**. Allow access to only the selected indexes. 
    * **Deny few indexes**. Deny access to the selected indexes.
       :::warning
-      Use **Deny few indexes** with caution. We do not recommend filtering to deny access, as conflicting roles can create access inconsistencies—one role may deny access while another grants it. Whenever possible, apply filtering to allow access rather than deny it. This ensures roles work additively for more predictable access management.  For more information, see [Index Access behavior when a user has multiple roles](#index-access-behavior-when-a-user-has-multiple-roles) below.
+      Use **Deny few indexes** with caution. We do not recommend filtering to deny access, as conflicting roles can create access inconsistencies; one role may deny access while another grants it. Whenever possible, apply filtering to allow access rather than deny it. This ensures roles work additively for more predictable access management.  For more information, see [Index Access behavior when a user has multiple roles](#index-access-behavior-when-a-user-has-multiple-roles) below.
       :::
 1. **Capabilities**. In this section, click the checkbox beside each capability you want to grant to users with this role. For information about what each capability enables, see [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities/).
 1. Click **Save**. 
@@ -55,9 +55,9 @@ To create a role:
 Follow this process to restrict access using the **Search Filter** and **Index Access** sections on the **Create New Role** pane:
 
 1. Identify the dataset you would like to control access to. Test it out using a [search query](/docs/search/get-started-with-search/).
-2. Create the role using the **Search Filter** and/or **Index Access** sections.   
-3. Verify the dataset access is correct using [emulation](#test-a-roles-log-access-rights).
-4. [Assign the role](#add-a-user-to-a-role) to the relevant users.
+1. Create the role using the **Search Filter** and/or **Index Access** sections.   
+1. Verify the dataset access is correct using [emulation](#test-a-roles-log-access-rights).
+1. [Assign the role](#add-a-user-to-a-role) to the relevant users.
 
 <!-- Hiding the following for work on DOCS-680
 ### Search Filter and Index Access examples
@@ -106,7 +106,7 @@ To test a role to see if it displays the expected log access behavior, select a 
 1. Click **Save** when you are done adding users to the role.
 
 :::important
-When you add or remove a role from a user, it can take about an hour for the RBAC changes to take effect on an existing real-time alert. For example, when a user creates a real-time alert, the user’s search filter governs what log data is returned by the scheduled search. If an admin subsequently makes that user’s search filter more restrictive or removes that role from the user, for about an hour, alerts triggered by data that the user’s updated search filter now prohibits will still fire. (Changes take effect immediately for manually run searches.) 
+When you add or remove a role from a user, it can take about an hour for the RBAC changes to take effect on an existing real-time alert. For example, when a user creates a real-time alert, the user’s search filter governs what log data are returned by the scheduled search. If an admin subsequently makes that user’s search filter more restrictive or removes that role from the user, for about an hour, alerts triggered by data that the user’s updated search filter now prohibits will still fire. (Changes take effect immediately for manually run searches.) 
 :::
 
 ## Remove a user from a role
@@ -118,7 +118,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 1. Click **Save** when you are done removing users from the role. 
 
 :::important
-When you add or remove a role from a user, it can take about an hour for the RBAC changes to take effect on an existing real-time alert. For example, when a user creates a real-time alert, the user’s search filter governs what log data is returned by the scheduled search. If an admin subsequently makes that user’s search filter more restrictive or removes that role from the user, for about an hour, alerts triggered by data that the user’s updated search filter now prohibits will still fire. (Changes take effect immediately for manually run searches.) 
+When you add or remove a role from a user, it can take about an hour for the RBAC changes to take effect on an existing real-time alert. For example, when a user creates a real-time alert, the user’s search filter governs what log data are returned by the scheduled search. If an admin subsequently makes that user’s search filter more restrictive or removes that role from the user, for about an hour, alerts triggered by data that the user’s updated search filter now prohibits will still fire. (Changes take effect immediately for manually run searches.) 
 :::
 
 ## See which users are assigned to a role
