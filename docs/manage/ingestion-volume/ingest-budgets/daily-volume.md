@@ -38,16 +38,16 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * Ingest Budgets do not affect [throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling). 
 * [Traces](/docs/apm/traces) are not calculated and are not supported.
 * Ingest budgets require the Manage Ingest Budgets [role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management).
-* Fields assigned with Field Extraction Rules are not supported in the scope of an Ingest Budget.
+* Fields assigned with field extraction rules are not supported in the scope of an Ingest Budget.
 * `_budget` is a reserved keyword used by legacy ingest budgets. Do not use this reserved field when creating a new V2 ingest budget.
-* Data is not automatically recovered or ingested later once the capacity tracking is reset.
+* Data are not automatically recovered or ingested later once the capacity tracking is reset.
 * In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
 ## Budget assignment
 
 The scope feature allows you to assign ingest budgets to your log data using one of the following options:
 
-* A field that is enabled in the [Fields](/docs/manage/fields/) table. Note that fields created by [Field Extraction Rules](/docs/manage/field-extractions/create-field-extraction-rule) are not included in this option.
+* A field that is enabled in the [Fields](/docs/manage/fields/) table. Note that fields created by [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule) are not included in this option.
 * One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
 
 The value supports a single wildcard, such as `_sourceCategory=prod*payment`. For example, a scope expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching `_sourceCategory` will fall under the scope of the given budget. See more [budget assignment examples](#budget-assignment-examples) below and review the [rules](#rules) above.
@@ -56,7 +56,7 @@ The value supports a single wildcard, such as `_sourceCategory=prod*payment`. F
 
 ## Source type behavior
 
-A few sources on Hosted Collectors behave differently when instructed to stop collecting data.
+A few sources on hosted collectors behave differently when instructed to stop collecting data.
 
 * HTTP sources will drop data requests, yet still return a `200 OK` response.
 * AWS S3 based sources will skip objects. 
@@ -116,14 +116,14 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
      * **Time**. Set the time of day to reset the capacity tracking.
      * **Time zone**. Set the time zone of the reset time.
      * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are [audited](#audit-index-queries).
-       * **Stop** Collecting - Collection stops immediately. There are important differences depending on the [source type](#source-type-behavior).
-       * **Keep** Collecting - Collection remains the same.
+       * **Stop** Collecting. Collection stops immediately. There are important differences depending on the [source type](#source-type-behavior).
+       * **Keep** Collecting. Collection remains the same.
    * **Audit Threshold**. The threshold, as a percentage, of when an ingest budget's capacity usage is logged in the Audit Index.
 1. When you're finished configuring the ingest budget click **Add**.
 
 #### Reset ingest budget
 
-You can manually reset a budget at any time to set its capacity utilization tracking to zero. This won't affect the next scheduled reset time and can be done as many times as needed.
+You can manually reset a budget at any time to set its capacity utilization tracking to zero. This will not affect the next scheduled reset time and can be done as many times as needed.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
 1. In the table find the ingest budget you want to reset and click the row to open its details pane.

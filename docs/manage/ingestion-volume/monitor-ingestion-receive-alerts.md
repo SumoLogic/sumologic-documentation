@@ -82,7 +82,7 @@ After completing the setup, schedule the search to run: 
 1. Schedule Query you created in [Setup](#setup). For details, see [Create a scheduled search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Daily**.
 1. Enter **-32d** for the time range.<br/><img src={useBaseUrl('img/manage/ingestion-volume/daily-32d.png')} alt="Time range monthly plan" style={{border: '1px solid gray'}} width="500" />
-1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 
 
 ## Daily plan limit alert
@@ -127,7 +127,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 1. Schedule the query you created in the [previous step](#query-1). For details, see [Create a scheduled search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Daily**.
 1. Set time range value to **Last 24 Hours**.<br/><img src={useBaseUrl('img/manage/ingestion-volume/daily-last-24.png')} alt="Time range daily plan limit" style={{border: '1px solid gray'}} width="500" />
-1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 
 ## Usage spike alert
 
@@ -176,7 +176,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 1. Schedule the query you just created in [Setup](#setup-2). For details, see [Create a scheduled search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Hourly**.
 1. Enter **-65m -5m** for the time range.<br/><img src={useBaseUrl('img/manage/ingestion-volume/hourly-65.png')} alt="Time range usage spike" style={{border: '1px solid gray'}} width="500" />
-1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 
 
 

@@ -14,12 +14,12 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 ## Rules
 
-* Metrics and Traces data is not supported.
-* Fields assigned with Field Extraction Rules are not supported in the scope of an ingest budget. 
+* Metrics and Traces data are not supported.
+* Fields assigned with field extraction rules are not supported in the scope of an ingest budget. 
 * `_budget` is a reserved keyword used by legacy ingest budgets. Do not use this reserved field when creating a new ingest budget.
-* Data is not automatically recovered or ingested later once the capacity tracking is reset.
+* Data are not automatically recovered or ingested later once the capacity tracking is reset.
 * Avoid creating multiple ingest budgets with the same scope. In such a scenario, ingest budgets whose capacity is reached first is executed.
-* In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the Collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
+* In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
 ## Budget assignment​
 
@@ -34,7 +34,7 @@ For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` im
 
 ## Source-type behavior​
 
-A few sources on Hosted Collectors will behave differently when instructed to stop collecting data.
+A few sources on hosted collectors will behave differently when instructed to stop collecting data.
 
 * HTTP sources will drop data requests, yet still return a `200 OK` response.
 * AWS S3-based sources will skip objects.
@@ -49,7 +49,7 @@ A few sources on Hosted Collectors will behave differently when instructed to st
 1. Under **Create Ingest Budget**, provide the following information.
    * **Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Description** is optional.
-   * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click on the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all data tiers to find the right Ingestion trend.
+   * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all data tiers to find the right Ingestion trend.
    * **Capacity**. This sets your budget capacity.
       1. Select **Minute Volume**.
       1. **Amount.** Enter a value up to 1023.999.
