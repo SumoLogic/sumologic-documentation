@@ -244,7 +244,7 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
 
 ### Does the agent learn from past investigations?
 
-No. The SOC Analyst Agent does not have persistent learning.
+Not automatically. The SOC Analyst Agent does not retrain its model or change its reasoning based on past investigations on its own. Org administrators can give the agent persistent [Agent Knowledge](/docs/search/mobot/agent-knowledge-socaa/) about your environment, operational workflows, and past incidents, and the agent applies that knowledge to every investigation until someone updates or removes it.
 
 ### How does investigation rate limiting work?
 
@@ -326,6 +326,7 @@ Cloud SIEM groups related signals for the same entity into insights, so analysts
 
 ## Additional resources
 
+* [Agent Knowledge for SOC Analyst Agent](/docs/search/mobot/agent-knowledge-socaa/). Teach the agent your environment, operational workflows, and past incidents so its investigations reflect how your team works.
 * [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). See how the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
 * [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
