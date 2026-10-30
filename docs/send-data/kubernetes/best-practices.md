@@ -858,8 +858,8 @@ metadata:
 Due to breaking changes, we do not support the latest [Kube Prometheus Stack][kube-prometheus-stack]. We are aware that it can be a major issue, so this section describes how to install newer Kube Prometheus Stack to work with our collection.
 
 1. Prepare `values.yaml` for Kube Prometheus Stack.
-   - copy content of `kube-prometheus-stack` from [values.yaml][values.yaml], for example, for Sumologic Kubernetes Collection v3.9 you need to copy [these][kube-prometheus-stack-3.9] lines
-   - remove configuration for images for Kube Prometheus Stack to use newer versions, for example, for Sumologic Kubernetes Collection v3.9 you need to remove [tag][kube-state-metrics-tag] for kube-state-metrics
+   - copy content of `kube-prometheus-stack` from [values.yaml][values.yaml], for example, for Sumo Logic Kubernetes Collection v3.9 you need to copy [these][kube-prometheus-stack-3.9] lines
+   - remove configuration for images for Kube Prometheus Stack to use newer versions, for example, for Sumo Logic Kubernetes Collection v3.9 you need to remove [tag][kube-state-metrics-tag] for kube-state-metrics
    - add your custom configuration
 1. Upgrade sumologic chart without Kube Prometheus Stack by adding the following configuration to your `values.yaml`:
    ```yaml
