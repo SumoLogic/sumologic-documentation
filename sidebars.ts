@@ -2245,7 +2245,6 @@ integrations: [
         items: [
           'integrations/content-matrix/content-matrix-a-l',
           'integrations/content-matrix/content-matrix-m-z',
-          'integrations/content-matrix/faq',
         ],
       },
       {
