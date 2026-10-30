@@ -58,16 +58,16 @@ This section has instructions for configuring SAML in Sumo Logic.
 1. **SP-initiated Login**. (Optional) This configuration enables a Sumo Logic user to initiate login from Sumo Logic. To configure this option, see [Configure SP-initiated login](#configuresp-initiated-login).
 1. **Roles Attribute**. (Optional). To configure this option, see [Configure on-demand role provisioning](#configure-on-demand-role-provisioning).
 1. **On Demand Provisioning**. (Optional). See [Configure on-demand account provisioning](#configure-on-demand-account-provisioning) below.
-v**Logout Page**. When a Sumo Logic user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
+1. **Logout Page**. When a Sumo Logic user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
 1. Click **Add**. 
-1. To view the details of your configuration, select it the **Configuration List**.
+1. To view the details of your configuration, select it from the **Configuration List**.
 1. Copy the **Assertion Consumer** and **Entity ID** from the details pane. You'll paste these into the OneLogin **Configuration** page, as described in the following section. <br/><img src={useBaseUrl('img/security/configuration-list.png')} alt="OneLogin details" style={{border: '1px solid gray'}} width="800" /> 
 
 ### Complete SAML configuration in OneLogin
 
 1. Return to OneLogin.
 1. Select the Sumo Logic SAML app.
-1. On the **Configuration** page, paste the **Assertion Consumer** and **Entity ID** values copied OneLogin above. <br/><img src={useBaseUrl('img/security/application-details.png')} alt="OneLogin configuration page" style={{border: '1px solid gray'}} width="800" />      
+1. On the **Configuration** page, paste the **Assertion Consumer** and **Entity ID** values copied from OneLogin above. <br/><img src={useBaseUrl('img/security/application-details.png')} alt="OneLogin configuration page" style={{border: '1px solid gray'}} width="800" />      
 1. Click **Save**.
 
 ## Optional configurations 

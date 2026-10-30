@@ -52,7 +52,7 @@ Get the source IP addresses by user hashes.
 _sourceCategory=myLogs
 | parse "username=*" as username
 | parse "src_ip=*" as src_ip
-| hash(username, "sha_256") as user_hash
+| hash(username, "sha2_256") as user_hash
 | count by src_ip, user_hash
 ```
 

@@ -53,14 +53,14 @@ For key information about SAML in Sumo Logic, see [Limitations](/docs/manage/s
    1. **Authn Request URL.** Enter the **SSO URL** from the **Google IdP Information** dialog.
    1. **Disable Requested Authn Context**. (Optional) If you check this option, Sumo Logic will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element.
    1. **Sign Authn Request.** (Optional) If you select this option, Sumo Logic will send signed Authn requests to your IdP. When you click this option, a Sumo Logic-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to verify the signature of the Authn requests sent by Sumo Logic. 
-1. **Roles Attribute.** When you click this option, the **Roles** **Attribute** field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set Up SAML for Single Sign-On](/docs/manage/security/saml/set-up-saml/).
+1. **Roles Attribute.** When you click this option, the **Roles Attribute** field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set Up SAML for Single Sign-On](/docs/manage/security/saml/set-up-saml/).
 1. **On-Demand provisioning.** Select this option and specify the following attributes to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-On](/docs/manage/security/saml/set-up-saml/).
    1. **First Name Attribute.** FirstName
    1. **Last Name Attribute.** LastName
    1. **On Demand Provisioning Roles**. Specify the Sumo Logic RBAC roles you want to assign when user accounts are provisioned. (The roles must already exist.)
-1. **Logout Page**. Select this option and enter a URL if you'd like to point all users to the URL after logging out of Sumo Logic. For more information, see [Set Up SAML for Single Sign-On.](/docs/manage/security/saml/set-up-saml/)
+1. **Logout Page**. Select this option and enter a URL if you'd like to point all users to the URL after logging out of Sumo Logic. For more information, see [Set Up SAML for Single Sign-On](/docs/manage/security/saml/set-up-saml/).
 1. Click **Add** to save the configuration.
-1. To view the details of your configuration, select it the **Configuration List**. The right side of the page displays the **Assertion Consumer**. You'll need to provide it when you complete the Google SAML configuration. <br/><img src={useBaseUrl('img/security/config.png')} alt="Assertion Consumer for a configuration" style={{border: '1px solid gray'}} width="800" />
+1. To view the details of your configuration, select it from the **Configuration List**. The right side of the page displays the **Assertion Consumer**. You'll need to provide it when you complete the Google SAML configuration. <br/><img src={useBaseUrl('img/security/config.png')} alt="Assertion Consumer for a configuration" style={{border: '1px solid gray'}} width="800" />
 
 ### Complete the Google SAML App Configuration
 
