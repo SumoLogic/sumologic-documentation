@@ -597,7 +597,7 @@ Compares string values of two fields and returns a boolean result based on wheth
 `contains(<field1>, <field2>)`
 
 :::note
-Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here. 
+Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here. 
 :::
 
 ### cos
@@ -709,12 +709,16 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 
 Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
-* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`. <br/>You can filter on the following indicator attributes:
+* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`; and any other [Cloud SIEM rules syntax](#rules-language-functions) function, such as `contains()` and `toString()`.
+
+You can filter on the following indicator attributes:
+   * `actors`. Names of threat actors associated with the indicator, stored as a comma-separated string.
    * `confidence`. Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
    * `indicator`. Value of the indicator, such as an IP address, file name, email address, and so on. 
+   * `kill_chain`. Kill chain associated with the indicator, stored as a comma-separated string.
    * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
    * `threat_type`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
-   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, and so on)
+   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, and so on).
 * **`<indicators>`**. An optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
@@ -738,6 +742,74 @@ Following are the standard indicator types you can filter on:
 
 For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/security/threat-intelligence/upload-formats).
 
+#### Filter on custom fields
+
+Threat intelligence feeds can include custom fields beyond the standard indicator attributes. To filter on one of these fields in the `<filters>` expression, use the `_threatlookup_fields` syntax:
+
+```
+_threatlookup_fields['<key1>']['<key2>']['<key3>']...
+```
+
+Suppose a custom feed delivers this indicator:
+
+```json
+{
+  "indicator": "198.51.100.7",
+  "confidence": 80,
+  "fields": {
+    "domain": "malware.example.com",
+    "score": "82",
+    "valid_from": "1740000000",
+    "valid_until": "1760000000",
+    "data.threat.data.family": "Redline",
+    "reputation": "{\"vendor\": {\"name\": \"AcmeIntel\", \"rating\": \"high\"}}"
+  }
+}
+```
+
+**Access a feed-specific key**
+
+Put the key in brackets for an exact string match:
+
+`_threatlookup_fields['domain'] = 'malware.example.com'`
+
+**Keys with dots are literal**
+
+`data.threat.data.family` is one key name that happens to contain dots. It is not a path to a data object, then threat, and so on:
+
+`_threatlookup_fields['data.threat.data.family'] = 'Redline'`
+
+**Going deeper with chained brackets**
+
+The reputation value is a string that contains JSON. Sumo Logic parses it internally, so you can chain brackets to reach inside it. The first bracket picks the top-level key, and each further bracket goes one level down:
+
+`_threatlookup_fields['reputation']['vendor']['rating'] = 'high'`
+
+**Integer comparison**
+
+`score` is stored as the text “82”, but you can compare it as a number:
+
+`_threatlookup_fields['score'] >= 70`
+
+**Date/time comparison**
+
+Dates are Unix epoch seconds. `1735689600` is January 1, 2025 and `1767225600` is January 1, 2026:
+
+```
+_threatlookup_fields['valid_from'] > 1735689600
+_threatlookup_fields['valid_until'] < 1767225600
+```
+
+**Using it in a rule**
+
+`hasThreatMatch([srcDevice_ip], _threatlookup_fields['score'] >= 70 AND _threatlookup_fields['data.threat.data.family'] = 'Redline')`
+
+This matches records whose srcDevice_ip equals an indicator that has a score of at least 70 and malware family Redline.
+
+**If a key doesn’t exist**
+
+If an indicator has no `score` key, the expression doesn’t error. The indicator simply doesn’t match and is skipped.
+
 **Examples**
 
 :::tip
@@ -754,11 +826,22 @@ For standard rules that use the `hasThreatMatch` function, refer to the [Rules p
 * `hasThreatMatch([file_hash_ssdeep], confidence > 1 AND type='file:hashes.ssdeep')`
 * `hasThreatMatch([http_url_rootDomain], confidence > 1 AND (type='domain-name' OR type='url'))`
 * `hasThreatMatch([user_email,targetUser_email], confidence > 1 AND source = "s_global_feed_1")`
+* `hasThreatMatch([srcDevice_ip], _threatlookup_fields['score'] >= 70 AND _threatlookup_fields['data.threat.data.family'] = 'Redline')`
+* `hasThreatMatch([srcDevice_ip], contains(actors, 'HELIXKITTEN') AND type='ipv4-addr')`
+* `hasThreatMatch([dstDevice_ip], contains(kill_chain, 'command-and-control') AND confidence > 50)`
+* `hasThreatMatch([http_url_rootDomain], _threatlookup_fields['domain'] = 'malware.example.com' AND type='domain-name')`
+* `hasThreatMatch([srcDevice_ip], _threatlookup_fields['reputation']['vendor']['rating'] = 'high' AND type='ipv4-addr')`
+* `hasThreatMatch([srcDevice_ip], _threatlookup_fields['valid_until'] > 1767225600 AND _threatlookup_fields['score'] >= 70)`
+* `hasThreatMatch([file_hash_sha256], contains(toString(_threatlookup_fields['data.threat.data.family']), 'Redline') AND type="file:hashes.'SHA-256'")`
 
 You can exclude matches from allowlists such as [standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists). For example:
 ```text
 hasThreatMatch([dstDevice_ip], confidence > 74 AND (type='ipv4-addr' OR type='ipv6-addr')) AND NOT (array_contains(listMatches, 'business_asns') OR array_contains(listMatches, 'business_domains') OR array_contains(listMatches, 'business_hostnames') OR array_contains(listMatches, 'business_ips') OR array_contains(listMatches, 'sandbox_ips') OR array_contains(listMatches, 'verified_domains') OR array_contains(listMatches, 'verified_hostnames') OR array_contains(listMatches, 'verified_ips'))
 ```
+
+:::tip
+When writing a rule that uses `hasThreatMatch`, include each entity that you reference in the rule expression in the **On Entity** field. This makes it easier for analysts to see which entity matched the threat indicator.
+:::
 
 ### haversine
 
@@ -867,7 +950,7 @@ The following expression returns "2130706433":
 
 ### isBlank
 
-Checks to see if a string contains text. Specifically, it checks to see if a character sequence is whitespace, empty (""), or null. It takes a single parameter and returns a boolean value: “true” if the variable is blank, or “false” if the variable contains a value other than whitespace, empty, or null.
+Checks to see if a string contains text. Specifically, it checks to see if a character sequence is whitespace, empty (""), or null. It takes a single parameter and returns a Boolean value: “true” if the variable is blank, or “false” if the variable contains a value other than whitespace, empty, or null.
 
 **Syntax**
 
@@ -875,7 +958,7 @@ Checks to see if a string contains text. Specifically, it checks to see if a cha
 
 ### isEmpty
 
-Checks to see if a string contains no characters or whitespace, and returns a boolean value: “true” if the string contains no characters or whitespace, or “false” otherwise.
+Checks to see if a string contains no characters or whitespace, and returns a Boolean value: “true” if the string contains no characters or whitespace, or “false” otherwise.
 
 **Syntax**
 
@@ -883,7 +966,7 @@ Checks to see if a string contains no characters or whitespace, and returns a bo
 
 ### isNull
 
-Checks to see if a string is null, and returns a boolean value: “true” if the string is null, or “false” if the string is not null.
+Checks to see if a string is null, and returns a Boolean value: “true” if the string is null, or “false” if the string is not null.
 
 **Syntax**
 
@@ -905,7 +988,7 @@ qualifier, like 123L.
 
 ### isPrivateIP
 
-Checks if an IPv4 address is private and returns a boolean.
+Checks if an IPv4 address is private and returns a Boolean.
 
 **Syntax**
 
@@ -919,7 +1002,7 @@ The following expression returns "true":
 
 ### isPublicIP
 
-Checks if an IPv4 address is public and returns a boolean.
+Checks if an IPv4 address is public and returns a Boolean.
 
 **Syntax**
 
@@ -1178,7 +1261,7 @@ Uses Luhn’s algorithm to check message logs for strings of numbers that may be
 
 ### maskFromCIDR
 
-A utility function that returns a subnet mask for boolean operations with IPv4 addresses.
+A utility function that returns a subnet mask for Boolean operations with IPv4 addresses.
 
 **Syntax**
 
@@ -1192,7 +1275,7 @@ The following expression returns "255.255.255.252":
 
 ### matches
 
-Can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with `where` or `if` operators.
+Can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a Boolean value; the operator can be used with `where` or `if` operators.
 
 **Syntax**
 
@@ -1510,11 +1593,11 @@ The following expression returns `http%3A%2F%2Fyourmainserver-city55555.org%2Ffu
 
 ### where
 
-Filters results based on the value of a boolean expression.  
+Filters results based on the value of a Boolean expression.  
 
 **Syntax**
 
-`... | where <boolean expression>`
+`... | where <Boolean expression>`
 
 **Examples**
 
