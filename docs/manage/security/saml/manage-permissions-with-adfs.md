@@ -50,7 +50,7 @@ This role will:
 
 * Pipe all the groups that the authenticated user is part of to the variable `http://temp/variable`.
 * Search the contents of `http://temp/variable` for Active Directory groups that have a `SUMO_ prefix`. The `SUMO_ prefix` is used to allow the ADFS Rule to identify Sumo Logic groups within the list of roles assigned to every user. Once the groups are identified, the `SUMO_ prefix` is removed.
-* The results are passed to an attribute called `https://sumologic.com/SAML/Attributes/Role`. This attribute contains a list of values that contain your of Sumo Logic Active Directory groups.
+* The results are passed to an attribute called `https://sumologic.com/SAML/Attributes/Role`. This attribute contains a list of values that contain your Sumo Logic Active Directory groups.
 
 Here is a sample role attribute contained within the XML assertion:
 
@@ -81,6 +81,6 @@ To update the roles attribute:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. 
 1. Click **Configure**. <br/><img src={useBaseUrl('img/security/roles-attribute2.png')} alt="Roles attribute" style={{border: '1px solid gray'}} width="300" />
-1. Activate the **Roles Attribute (Optional)** check box.
+1. Activate the **Roles Attribute (Optional)** checkbox.
 1. Enter the URL, for example, `https://sumologic.com/SAML/Attributes/Role`.
 1. Click **Save**.

@@ -44,8 +44,8 @@ CIMD uses the [Authorization Code flow](#authorization-code-flow) behind the sce
 An administrator needs to enable CIMD for your organization before clients can use it.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
-1. Select the **Enable CIMD Clients** check box.
-1. (Optional) Select **Restrict to pre-registered clients only** to prevent Sumo Logic from automatically creating new CIMD clients. See [Restrict CIMD to pre-registered clients](#restrict-cimd-to-pre-registered-clients).<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients and Restrict to pre-registered clients only check boxes selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
+1. Select the **Enable CIMD Clients** checkbox.
+1. (Optional) Select **Restrict to pre-registered clients only** to prevent Sumo Logic from automatically creating new CIMD clients. See [Restrict CIMD to pre-registered clients](#restrict-cimd-to-pre-registered-clients).<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients and Restrict to pre-registered clients only checkboxes selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
 1. Click **Save**.
 
 By default, Sumo Logic creates a CIMD client the first time a user connects with a new client metadata URL.
@@ -81,16 +81,16 @@ Administrators can edit the scopes of an existing CIMD client on the **OAuth Cli
 
 1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
 1. Click the client's row, and then click **Edit**.
-1. Under **Scopes**, expand a category and select or clear the **View** and **Manage** check boxes for each resource.<br/><img src={useBaseUrl('img/api/mcp/edit-cimd-oauth-client-scopes.png')} alt="Edit OAuth Client dialog for a CIMD client showing the Alerting scope category expanded with View and Manage check boxes" style={{border: '1px solid gray'}} width="800" />
+1. Under **Scopes**, expand a category and select or clear the **View** and **Manage** checkboxes for each resource.<br/><img src={useBaseUrl('img/api/mcp/edit-cimd-oauth-client-scopes.png')} alt="Edit OAuth Client dialog for a CIMD client showing the Alerting scope category expanded with View and Manage checkboxes" style={{border: '1px solid gray'}} width="800" />
 1. Click **Save**.
 
-The **Client Type** and **Client ID URL** of a CIMD client can't be changed after it's created.
+The **Client Type** and **Client ID URL** of a CIMD client cannot be changed after it's created.
 
 <!-- placeholder: once this merges, add a link back from docs/api/mcp-server.md (DOCS-1909's API-only-scopes note) to this section, pointing out that admins can remove manageLibrary/runLogSearch/viewLibrary/runMetricsQuery/viewUsersAndRoles here to restrict those MCP tools -->
 
 ### Clear scopes on the consent page
 
-When a user authorizes a CIMD client, Sumo Logic shows a consent page listing the scopes the client requested, grouped by category. The user can expand a category and clear individual **View** or **Manage** check boxes before clicking **Allow**, to grant the client less access than it requested.<br/><img src={useBaseUrl('img/api/mcp/consent-page-scopes.png')} alt="Consent page for a CIMD client with the Alerting scope category expanded, showing individual View and Manage check boxes" style={{border: '1px solid gray'}} width="800" />
+When a user authorizes a CIMD client, Sumo Logic shows a consent page listing the scopes the client requested, grouped by category. The user can expand a category and clear individual **View** or **Manage** checkboxes before clicking **Allow**, to grant the client less access than it requested.<br/><img src={useBaseUrl('img/api/mcp/consent-page-scopes.png')} alt="Consent page for a CIMD client with the Alerting scope category expanded, showing individual View and Manage checkboxes" style={{border: '1px solid gray'}} width="800" />
 
 Effective permissions remain the intersection of the user's roles and the granted scopes, as described in [How permissions work](#how-permissions-work).
 
@@ -138,7 +138,6 @@ Create a Sumo Logic service account to represent your application or service. Yo
      <details>
      <summary>Example API request for listing service accounts</summary>
      <Tabs
-       className="unique-tabs"
        defaultValue="request"
        values={[
          {label: 'Example request', value: 'request'},
@@ -200,7 +199,6 @@ Alternatively, you can [create an OAuth client using the API](https://api.sumolo
 [Effective permissions are the intersection of the service account's roles and the OAuth client's scopes](#how-permissions-work). If a requested scope is not included in the service account's roles, it will be silently excluded from the OAuth client's effective permissions.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="request"
   values={[
     {label: 'Example request', value: 'request'},
@@ -270,7 +268,7 @@ Copy the `clientId` and `clientSecret` from the response. These are your OAuth c
 
 ### Step 3: Generate an access token
 
-Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint — see [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
+Request an OAuth access token from the token endpoint using your client credentials. Replace `<token-endpoint-URL>` with your deployment's token endpoint. — see [How do I find the authorization or token endpoint?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment).
 
 **Option A: Request all available permissions**
 
@@ -341,7 +339,7 @@ curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 
 ## Security best practices
 
-* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
+* **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files. — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
 * **Use least privilege**. Request only the OAuth scopes your application needs. For Client Credentials flow, assign service accounts the minimum roles required.
 * **Rotate credentials regularly**. Create new OAuth clients periodically and deactivate old ones. Update service account credentials on a regular schedule.
 * **Monitor OAuth usage**. Review audit logs for OAuth client activity. Watch for unexpected patterns like unusual request volumes or access to sensitive resources.

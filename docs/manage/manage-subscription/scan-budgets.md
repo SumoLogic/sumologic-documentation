@@ -90,7 +90,7 @@ To view the selected scan budget:
 
 ## Limitations
 
-- **Scan budgets per organization**. Each organization can have a maximum of 1,500 scan budgets. The UI doesn't show your current count against this limit.
+- **Scan budgets per organization**. Each organization can have a maximum of 1,500 scan budgets. The UI does not show your current count against this limit.
 
 ## FAQs
 

@@ -13,7 +13,7 @@ The Data Volume Index provides data for logs and metrics:
 * **Logs and Tracing.** Ingest volume in bytes and the number of log messages. Tracing ingest volume in billed bytes and spans count. See [Log and Tracing Data Volume Index](log-tracing-data-volume-index.md) for details.
 * **Metrics.** Ingest volume measured in data points. See [Metrics Data Volume Index](metrics-data-volume-index.md) for details.
 
-If you are a user of Credits package accounts, the Data Volume Index should be manually enabled by an administrator by toggling the **Enable Granular Data Tracking** button. The index then begins populating. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
+If you are a user of Credits package accounts, the Data Volume Index should be manually enabled by an administrator by toggling the **Enable Granular Data Tracking** button. The index then begins populating. A set of messages within the index is created every five minutes. The data do not backfill and are provided to the index only when the option is enabled.
 
 :::note
 Data Volume Index will be enabled by default for Flex package accounts.
@@ -33,7 +33,7 @@ Creating an index typically adds a nominal amount of data to your overall volume
 
 ## Granular data tracking
 
-Granular data tracking is a part of usage management that allows you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription. This should be manually enabled by an administrator if you are a user of Credits package accounts and this will be enabled by default for Flex package accounts. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
+Granular data tracking is a part of usage management that allows you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription. This should be manually enabled by an administrator if you are a user of Credits package accounts and this will be enabled by default for Flex package accounts. A set of messages within the index is created every five minutes. The data do not backfill and are provided to the index only when the option is enabled.
 
 ### Disable granular data tracking
 

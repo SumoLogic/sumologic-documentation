@@ -20,7 +20,7 @@ When ServiceNow opens, you can begin your investigation.
 
 ## Start a Sumo Logic investigation from ServiceNow
 
-In ServiceNow, you can click on a link to jump right to the search that triggered the Alert, Incident, or Change Request.
+In ServiceNow, you can click a link to jump right to the search that triggered the Alert, Incident, or Change Request.
 
 To launch a Sumo Logic investigation from ServiceNow:
 

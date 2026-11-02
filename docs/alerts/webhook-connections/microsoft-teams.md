@@ -17,10 +17,10 @@ See how to [create an incoming webhook](https://docs.microsoft.com/en-us/microso
 
 ## Configuration in Sumo Logic
 
-In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Microsoft Teams:
+In Sumo Logic, scheduled searches and monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Microsoft Teams:
 
 1. [Create a Microsoft Teams Connection](#create-a-microsoft-teams-connection).
-1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
+1. Use the webhook connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
 ## Create a Microsoft Teams Connection
 

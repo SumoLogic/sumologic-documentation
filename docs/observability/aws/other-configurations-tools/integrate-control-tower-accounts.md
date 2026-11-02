@@ -1,7 +1,7 @@
 ---
 id: integrate-control-tower-accounts
 title: Integrate Control Tower with AWS Observability
-description: Learn how to use the AWS Observability solution  with AWS Control Tower-managed accounts
+description: Learn how to use the AWS Observability solution with AWS Control Tower-managed accounts
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,15 +10,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Control Tower provides the easiest way to set up and govern a new, secure, multi-account AWS environment. With AWS Control Tower, you can provision new AWS accounts that are automatically set up so they conform to company policies and best practices in a few clicks.
 
-For more information on AWS Control Tower, see [AWS Control Tower](https://aws.amazon.com/controltower/) on the AWS site. 
+For more information on AWS Control Tower, see [AWS Control Tower](https://aws.amazon.com/controltower/) on the AWS site.
 
 ## Benefits of using the AWS Observability solution with Control Tower
 
-The AWS Observability solution can be used with Control Tower-managed accounts to: 
+The AWS Observability solution can be used with Control Tower-managed accounts to:
 
 * **Quickly identify and resolve issues in and across multiple accounts and services**. Enable teams to seamlessly navigate and search logs and metrics data across their AWS accounts, regions, and services. Unified service and account visibility greatly speeds up troubleshooting and minimizes downtime, improving overall system availability.
-* **Eliminate data silos**. Unify logs and metrics across AWS accounts and services to eliminate data silos and help teams quickly identify root causes. 
-* **Accelerate time-to-value**. Streamline setup and pre-built dashboards for instant insights into AWS accounts and services, enabling visibility into the most important data out-of-the-box.  
+* **Eliminate data silos**. Unify logs and metrics across AWS accounts and services to eliminate data silos and help teams quickly identify root causes.
+* **Accelerate time-to-value**. Streamline setup and pre-built dashboards for instant insights into AWS accounts and services, enabling visibility into the most important data out-of-the-box.
 
 For more information on the AWS Observability solution, see [About Sumo Logic AWS Observability](/docs/observability/aws/about/).
 
@@ -42,7 +42,7 @@ We recommend you familiarize yourself with the AWS Observability Solution. For m
 
 ## Integrate AWS Control Tower-managed accounts with the AWS Observability solution
 
-Integrating with AWS Control Tower takes several steps: 
+Integrating with AWS Control Tower takes several steps:
 * [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts):
   * [Set up collection manually](#set-up-collection-manually-for-aws-accounts): Create a CloudFormation stack in each AWS account managed by Control Tower.
   * [Set up collection automatically for new AWS accounts](#set-up-collection-automatically-for-new-aws-accounts): Deploy a single CloudFormation template to your management account so accounts created via Control Tower Account Factory are set up automatically going forward.
@@ -52,7 +52,7 @@ Integrating with AWS Control Tower takes several steps: 
 
 <img src={useBaseUrl('img/observability/Control-Architecture.png')} alt="<Control Architecture" style={{border: '1px solid gray'}} width="800" />
 
-## Step 1: Set up collection of logs and metrics data from your AWS accounts 
+## Step 1: Set up collection of logs and metrics data from your AWS accounts
 
 In this step, you configure the collection of logs and metrics for all AWS accounts managed by Control Tower and install the apps in the solution. Follow these steps for each AWS account managed by AWS Control Tower, either manually for existing accounts or automatically for accounts created going forward.
 
@@ -82,9 +82,9 @@ To deploy the lifecycle events template:
 
 1. Log in to the AWS Management Console as the **AWS Control Tower Master Account**.
 1. Download and launch the Sumo Logic Control Tower CloudFormation template in the region where your Control Tower is deployed. Use the link that matches your AWS Observability version:
-   - **AWSO v3.0.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/templates/extensions/controltower/controltower.template.yaml)  
+   - **AWSO v3.0.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/templates/extensions/controltower/controltower.template.yaml)
    - **AWSO v2.15.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master/aws-observability/apps/controltower/controltower.template.yaml)
-   
+
 1. In the **Sumo Logic Access Configuration** section, fill in the following required fields:
 
    | Parameter | Description |
@@ -166,20 +166,19 @@ Use this option if no CloudTrail trail exists in the Log Archive AWS account / C
 
 ## Step 3: Create Field Extraction Rule
 
-In this step, you create a Field Extraction Rule (FER) that will tag logs with the account aliases you set up for each child account in the previous step.  
+In this step, you create a Field Extraction Rule (FER) that will tag logs with the account aliases you set up for each child account in the previous step.
 
 :::note
 You must have a role that grants you the Manage Field Extractions capability to create an FER.
 :::
 
-1. Log in to the Sumo Logic web UI and follow the instructions in Create a Field Extraction Rule using the following values: 
+1. Log in to the Sumo Logic web UI and follow the instructions in Create a Field Extraction Rule using the following values:
     * **Rule Name**. AWS Accounts
     * **Applied At**. Ingest Time
     * **Scope**. Specific Data
-    * **Metadata**. _sourceCategory 
-    * **Value**.  aws/observability/cloudtrail/logs
-    * **Parse Expression**. Enter a parse expression to create an “account” field that maps to the alias you set for each child account in the previous step. For example, if you used the “dev” alias for an AWS account with ID  "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:   
-
+    * **Metadata**. `_sourceCategory`
+    * **Value**. aws/observability/cloudtrail/logs
+    * **Parse Expression**. Enter a parse expression to create an “account” field that maps to the alias you set for each child account in the previous step. For example, if you used the “dev” alias for an AWS account with ID  "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
         ```sumo
         | json "recipientAccountId"
         // Manually map your AWS account ID with the AWS account alias you set up earlier for the individual child account
@@ -188,10 +187,7 @@ You must have a role that grants you the Manage Field Extractions capability to 
         | if (recipientAccountId = "567680881046", "prod", account) as account
         | fields account
         ```
-
-    The screenshot below shows what this would look like in Sumo Logic:
-
-    <img src={useBaseUrl('img/observability/Field-Extraction-rule.png')} alt="Field Extraction rule" style={{border: '1px solid gray'}} width="400" />
+    The screenshot below shows what this would look like in Sumo Logic:<br/><img src={useBaseUrl('img/observability/Field-Extraction-rule.png')} alt="Field Extraction rule" style={{border: '1px solid gray'}} width="400" />
 
 :::note
 To backfill your collection source `account` tags with an AWS account alias, see [Backfill AWS Account Alias](/docs/observability/aws/other-configurations-tools/backfill-aws-account-alias/).
