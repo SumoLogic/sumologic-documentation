@@ -20,7 +20,7 @@ Metrics data is stored in Sumo Logic as raw data points and one-hour resolution 
 | Raw                    | 30 days               |
 | 1-hour resolution      | 13 months            |
 
-For historical 1-hour rollups Sumo Logic calculates the max, min, avg, sum, and count values for a metric per hour.
+For historical 1-hour rollups Sumo Logic calculates the `max`, `min`, `avg`, `sum`, and `count` values for a metric per hour.
 
 ## Understanding raw and rolled up metrics data
 
@@ -48,4 +48,4 @@ Sumo Logic creates hourly rollups from the raw data point. The rollups look like
 13:00:00: {count=60, min=60, max=119, sum=5370, avg=89.5}
 ```
 
-30 days after collection of raw metric data, you can only access the hourly rollups. This means you’ll be able to see the value of a statistic (count, min, max, sum, or avg) in particular hours but not in particular minutes (because the more granular data won’t be available anymore).
+30 days after collection of raw metric data, you can only access the hourly rollups. This means you'll be able to see the value of a statistic (`count`, `min`, `max`, `sum`, or `avg`) in particular hours but not in particular minutes, because the more granular data will not be available anymore.

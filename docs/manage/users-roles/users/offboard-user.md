@@ -26,7 +26,7 @@ Verify if the user has an IP address that should be removed on the Service Allow
 
 ## Check for access to any shared Access IDs and Keys
 
-If a deleted user's access IDs and keys are used in automation tools like Chef or Puppet to register new Collectors, registrations will fail. Delete and recreate any [access IDs and keys](/docs/manage/security/access-keys/) as necessary.
+If a deleted user's access IDs and keys are used in automation tools like Chef or Puppet to register new collectors, registrations will fail. Delete and recreate any [access IDs and keys](/docs/manage/security/access-keys/) as necessary.
 
 ## Deactivate or delete the user
 

@@ -15,12 +15,12 @@ For example, you'd use the following query to create a simple column chart:
 
 which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/categorical.png')} style={{border: '1px solid gray'}} alt="categorical" width="600"/>
 
-## Create a column chart
+## Create a Column chart
 
 To add a panel with a column chart:
 
-1. Create or open a Dashboard and click on **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/time-series-or-categorical.png')} style={{border: '1px solid gray'}} alt="time series or categorical" width="700"/>
-1. Provide a Metric or Log query and press **Enter** for it to run.
+1. Create or open a dashboard and click **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/time-series-or-categorical.png')} style={{border: '1px solid gray'}} alt="time series or categorical" width="700"/>
+1. Provide a metric or log query and press **Enter** for it to run.
 1. Once the query runs you will need to flip the chart type to **Column**.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/new-column-chart.png')} style={{border: '1px solid gray'}} alt="new column chart" width="800"/>
 1. [Modify the chart](./modify-chart.md) as desired.
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} style={{border: '1px solid gray'}} alt="Add to Dashboard button" width="300"/>

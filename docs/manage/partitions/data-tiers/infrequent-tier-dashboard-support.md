@@ -37,7 +37,7 @@ To use data from the Infrequent Tier in your dashboard panels, you can use the f
   _index=some_infrequent_index OR _index=some_continuous_index
   ```
 
-## Infrequent Dashboard Usage
+## Infrequent dashboard usage
 
 Sumo Logic provides a dashboard you can use to monitor the Infrequent Tier consumption by saved Dashboards.
 

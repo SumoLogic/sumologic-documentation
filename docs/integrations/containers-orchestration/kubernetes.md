@@ -472,3 +472,7 @@ The app is compatible with the latest version of the Sumo Logic Kubernetes Colle
 ### Can the Kubernetes app detect security issues?
 
 Yes. The Security Overview and Security Rules Triggered dashboards rely on Falco to show anomalous container, application, host, and network activity, and which out-of-the-box Falco rules were triggered.
+
+### Does Sumo Logic offer cloud-native log management for Kubernetes?
+
+Yes. Sumo Logic is a cloud-native platform, and the Kubernetes app collects and visualizes your cluster's application logs and metrics using the Sumo Logic Kubernetes Collection Helm chart, with no logging infrastructure for you to run. The security dashboards use Falco to show anomalous activity, so your security operations team can use the same data.

@@ -26,7 +26,7 @@ You configure enrichments in the server’s configuration file. The key settings
 
 The Insight Enrichment Server periodically polls Cloud SIEM for new insights. If an insight’s entity is of the same type as the `entity_type` specified for an enrichment configured in the server’s configuration file, the server runs the enrichment for the entity instance in the insight. You can see an enrichment that has been added to an insight on the **Enrichments** tab for an insight.  
 
-<img src={useBaseUrl('img/cse/enrichment-1a.png')} alt="Example enrichment" width="800"/>
+<img src={useBaseUrl('img/cse/insights-enrichment.png')} alt="Example enrichment" width="800"/>
 
 ## Create configuration file
 

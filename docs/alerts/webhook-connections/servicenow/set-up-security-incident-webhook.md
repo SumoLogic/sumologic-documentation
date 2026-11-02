@@ -68,7 +68,7 @@ To set up a ServiceNow Security Incident Webhook connection:
 
 After configuring the connection, click **Test Connection**. If the connection is made, you will see a 201 OK response message.
 
-If the connection is successful, you'll see a security incident being created in ServiceNow. There won't contain any information from the scheduled search, it will just have the text in the payload.
+If the connection is successful, you'll see a security incident being created in ServiceNow. There will not contain any information from the scheduled search, it will just have the text in the payload.
 
 ## ServiceNow Security Table
 

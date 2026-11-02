@@ -16,9 +16,9 @@ To optimize scan costs for monitors under [Flex Pricing](/docs/manage/partitions
 
 By carefully configuring these elements, you can balance scan costs with monitoring requirements.
 
-## Can I convert my existing Scheduled Search to a monitor?
+## Can I convert my existing scheduled search to a monitor?
 
-Yes, however, it's a manual process. You have to create a new monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between monitors and Scheduled Searches](/docs/alerts/difference-from-scheduled-searches) before you consider converting.
+Yes, however, it's a manual process. You have to create a new monitor with the appropriate query and alerting condition based on your existing scheduled search. See the [differences between monitors and scheduled searches](/docs/alerts/difference-from-scheduled-searches) before you consider converting.
 
 ## I am getting an error message about cardinality when creating a metrics monitor - what does it mean?
 
@@ -90,7 +90,7 @@ One reason could be that the user who created the monitor was deleted. You can c
 
 You can quickly **Duplicate** the monitor by hovering over it on the monitors page and clicking the three-dot kebab icon:<br/><img src={useBaseUrl('img/alerts/monitors/more-actions-menu-for-monitors.png')} alt="More actions menu for monitors" style={{border: '1px solid gray'}} width="300" />
 
-then selecting **Duplicate**. If your monitor still doesn't work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
+then selecting **Duplicate**. If your monitor still does not work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
 
 ## Can I disable a monitor during scheduled maintenance or upgrade window?
 

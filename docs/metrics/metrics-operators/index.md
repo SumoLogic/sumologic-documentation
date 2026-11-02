@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide describes Sumo Logic metrics operators and provides usage examples.
 
-<a href={useBaseUrl('files/metrics-operators-cheat-sheet.pdf')} target="_blank">Download a Metrics cheat sheet</a>
+Want every operator in one place? <a href={useBaseUrl('files/metrics-operators-cheat-sheet.pdf')} target="_blank">Download the metrics operators cheat sheet</a> and keep it handy while you build queries.
 
 
 ## Guide contents
