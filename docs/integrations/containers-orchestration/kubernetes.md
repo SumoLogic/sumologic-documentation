@@ -370,7 +370,7 @@ The app includes the following monitors. New monitors include Node Disk Pressure
 | `Kubernetes - Pod Crash Looping` | This alert is fired when a pod is crash-looping. | Warning | >0 | \<=0 |
 | `Kubernetes - Multiple Terminated Pods (Errored Out)` | This alert is fired when pods have been terminated due to errors. | Critical | >5 | \<=5 |
 | `Kubernetes - Multiple Terminated Pods (OOM Killed)` | This alert is fired when pods have been OOM Killed. | Critical | >5 | \<=5 |
-| `Kubernetes - Container Waiting` | This alert is fired when a pod container has been waiting longer than 1 hour. | Warning | >0 | \<=0 |
+| `Kubernetes - Container Waiting` | This alert is fired when a pod container has been in a waiting state (for example ImagePullBackOff or CrashLoopBackOff) for more than 5 minutes. | Warning | >0 | \<=0 |
 | `Kubernetes - Kubelet Down` | This alert is fired when Kubelet disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | >0 |
 | `Kubernetes - Kube API Down` | This alert is fired when KubeAPI disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | >0 |
 | `Kubernetes - Node CPU Utilization High` | This alert is fired when Node CPU utilization is high. | Critical/Warning | Critical: >0.9, Warning: >0.75 | Critical: \<=0.9, Warning: \<=0.75 |
