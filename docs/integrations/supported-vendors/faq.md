@@ -26,7 +26,7 @@ Search [Supported Vendors A-L](/docs/integrations/supported-vendors/supported-ve
 
 ## Can a single vendor have multiple types of Sumo Logic integrations?
 
-Yes. Many vendors, such as AWS and Atlassian, have several integration types at once, including apps, automation integrations, Cloud SIEM integrations, and collectors. Each one is linked separately in the matrix.
+Yes. Many vendors, such as AWS and Atlassian, have several integration types at once, including apps, automation integrations, Cloud SIEM integrations, and collectors. Each one is linked separately in the list.
 
 ## Are community-built integrations included in the Supported Vendors and Products list?
 
