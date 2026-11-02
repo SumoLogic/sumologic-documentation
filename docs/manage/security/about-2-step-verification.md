@@ -15,7 +15,7 @@ The following 2-Step Verification options are available:
 * Require all users to authenticate with 2-Step Verification.
 * Allow each user to decide whether to require 2-Step Verification when signing in.
 
-With multi-account access, user sign-in is governed by the strictest setting across all organizations. If a user has accounts in two organizations, one of which requires 2-Step Verification and one which doesn’t, the user will always be required to perform 2-Step Verification when signing in.
+With multi-account access, user sign-in is governed by the strictest setting across all organizations. If a user has accounts in two organizations, one of which requires 2-Step Verification and one which does not, the user will always be required to perform 2-Step Verification when signing in.
 
 To implement 2-Step Verification: 
 

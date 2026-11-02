@@ -6,7 +6,7 @@ description: Send data to an archive that you can ingest from later.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you do not need to search immediately you can archive them for later use. You can ingest from your archive on-demand with five-minute granularity.
+Archive allows you to forward log data from Sumo Logic installed collectors to AWS S3 buckets to collect at a later time. If you have logs that you do not need to search immediately you can archive them for later use. You can ingest from your archive on-demand with five-minute granularity.
 
 :::important
 Do not change the name and location of the archived files in your S3 bucket. Otherwise, ingesting them later will not work properly.
@@ -71,7 +71,7 @@ To use JSON to configure a processing rule, use the `Forward` filter ype. See 
 1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [AWS archive bucket destination](#create-an-aws-archive-destination), as described in the previous section. 
 1. Select the destination from the dropdown menu.  <br/><img src={useBaseUrl('img/archive/archive-rule.png')} alt="Archive rule" width="450"/>
 1. (Optional) Enter a **Prefix** that matches the location to store data in the S3 bucket. The prefix has the following requirements:
-   * It can not start with a forward slash `/`.
+   * It cannot start with a forward slash `/`.
    * It needs to end with a forward slash `/`.
    * Supports up to a maximum of 64 characters.
    * The following are supported characters:
@@ -119,7 +119,7 @@ You can ingest a specific time range of data from your archive at any time wit
 * A maximum of 2 concurrent ingestion jobs is supported. If more jobs are needed contact your Sumo Logic account representative.
 * An ingestion job has a maximum time range of 12 hours. If a longer time range is needed contact your Sumo Logic account representative.
 * Filenames or object key names must be in either of the following formats:
-    * Sumo Logic [archive format](#archive-format)
+    * Sumo Logic [archive format](#archive-format).
     * `prefix/dt=YYYYMMDD/hour=HH/fileName.json.gz`
 * If the logs from archive do not have timestamps they are only searchable by receipt time.
 * If a field is tagged to an archived log message and the ingesting collector or source has a different value for the field, the field values already tagged to the archived log take precedence.
@@ -147,8 +147,8 @@ To use JSON to create an AWS S3 archive source, reference our AWS Log source�
 1. For **Path Expression**, enter the wildcard pattern that matches the archive files you'd like to collect. The pattern:
     * can use one wildcard (\*).
     * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
-    * can **NOT** use a leading forward slash.
-    * can **NOT** have the S3 bucket name.
+    * cannot use a leading forward slash.
+    * cannot have the S3 bucket name.
 1. For **Source Category**, enter any string to tag to the
     data collected from this source. Category metadata is stored in a
     searchable field called `_sourceCategory`.
@@ -157,10 +157,10 @@ To use JSON to create an AWS S3 archive source, reference our AWS Log source�
     Fields specified on an AWS S3 archive source take precedence if the archived data has the same fields.
     :::
     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field does not exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
-    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
+    * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
 1. Create any processing rules you'd like for the AWS source.
 1. When you are finished configuring the source, click **Save**.
 
@@ -210,9 +210,9 @@ An ingestion job will have one of the following statuses:
 
 * **Pending**. The job is queued before scanning has started.
 * **Scanning**. The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
-* **Ingesting** The job has completed scanning for objects and is still ingesting your objects.
+* **Ingesting**. The job has completed scanning for objects and is still ingesting your objects.
 * **Failed**. The job has failed to complete. Partial data may have been ingested and is searchable.
-* **Succeeded** The job completed ingesting and your data is searchable.
+* **Succeeded**. The job completed ingesting and your data is searchable.
 
 ## Search ingested archive data
 

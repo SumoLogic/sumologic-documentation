@@ -6,14 +6,14 @@ description: Monitor Sumo Logic system health events for collectors, sources, an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-System Health Events are generated automatically when the system detects an issue within a Collector or Source, or when a credit usage threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules (FERs). 
+System Health Events are generated automatically when the system detects an issue within a collector or source, or when a credit usage threshold is exceeded for Lookup Tables, Partitions, Fields, or field extraction rules (FERs). 
 
-These events provide visibility into the operational health of Collectors, Sources, and Ingest Budgets, enabling administrators to monitor performance and identify potential issues proactively. Health events also help in investigating common errors and warnings known to affect data collection and processing. 
+These events provide visibility into the operational health of collectors, sources, and Ingest Budgets, enabling administrators to monitor performance and identify potential issues proactively. Health events also help in investigating common errors and warnings known to affect data collection and processing. 
 
 Additionally, a health event is triggered when any limit associated with Lookup Tables, Partitions, Fields, or FERs reaches or exceeds 90% of the allocated capacity, allowing timely action to prevent service disruption. This health event will auto-resolve when the usage falls back below the 90% threshold limit.
 
 :::note
-Health events are sent from Installed Collectors of version `19.308-2` and later.
+Health events are sent from Sumo Logic installed collectors of version `19.308-2` and later.
 :::
 
 ## Availability
@@ -79,13 +79,13 @@ Each health event log has common keys that categorize it to a product area and p
 Configuring the scheduled search for the selected health event will help you with timely alerts to all the recipients when the health event is triggered every time. To configure, follow the below steps:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="Health events table" style={{border: '1px solid gray'}} width="800"/>
-1. Click on the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="Health events detail" style={{border: '1px solid gray'}} width="400"/>
+1. Click the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="Health events detail" style={{border: '1px solid gray'}} width="400"/>
 1. Click the **Create Scheduled Search** button and configure it based on your requirement. For more details, refer to [Create a Scheduled Search](/docs/alerts/scheduled-searches/schedule-search/).
     :::info
     Query will be auto-generated for the selected health event.
     :::
 
-Use the below scheduled search query to get an alert when 90% threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules (FERs).
+Use the below scheduled search query to get an alert when 90% threshold is exceeded for Lookup Tables, Partitions, Fields, or field extraction rules (FERs).
 
 ```sumo
 _index=sumologic_system_events "0000000007063B25"
@@ -106,19 +106,19 @@ _index=sumologic_system_events "0000000007063B25"
 The health events table allows you to easily view and investigate problems which occur while injecting the data to Sumo Logic. On the health events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
 
 :::info
-It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partitions, Fields, or Field Extraction Rules (FERs) to reflect on the Health Events page after detection.
+It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partitions, Fields, or field extraction rules (FERs) to reflect on the Health Events page after detection.
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Monitoring > Health Events**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Health Events**. <br/><img src={useBaseUrl('/img/health-events/health-events-table.png')} alt="Health events table" style={{border: '1px solid gray'}} width="800"/>
-1. Click on the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="Health events detail" style={{border: '1px solid gray'}} width="400"/>
+1. Click the required row to view the details of a health event. <br/><img src={useBaseUrl('/img/health-events/health-event-detail.png')} alt="Health events detail" style={{border: '1px solid gray'}} width="400"/>
     - **Create Scheduled Search**. Click this button to get alerts for specific health events. The unique identifier of the resource type is used in the query. See [Create a Scheduled Search](../alerts/scheduled-searches/schedule-search.md) for details.
     - Under the **More Actions** menu you can select:
         * **Event History** to run a search against the **sumologic_system_events** partition to view all of the related event logs.
         * **View Object** to view the resource in detail related to the event.
     - **Description**. Provides the information about the health events error or warning.
     - **Severity**. Events are categorized by two severity levels, warning, and error. The severity column has color-coded error and warning events so you can quickly determine the severity of a given issue.
-        * ![warning label.png](/img/health-events/warning-label.png) A warning indicates the Collector or Source has a configuration issue or is operating in a degraded state.
-        * ![Error label.png](/img/health-events/Error-label.png) An error indicates the Collector or Source is unable to collect data as expected.
+        * ![warning label.png](/img/health-events/warning-label.png) A warning indicates the collector or source has a configuration issue or is operating in a degraded state.
+        * ![Error label.png](/img/health-events/Error-label.png) An error indicates the collector or source is unable to collect data as expected.
     - **Event Name**. The name or type of the health event that occurred. This identifies what kind of issue or status change was detected.
     - **Resource Type**. The category or class of resource affected by the event. For example, Collectors, Sources, or Organizations.
     - **Resource ID**. A unique identifier for the affected resource.
@@ -135,10 +135,10 @@ It may take up to 15 minutes for a 90% usage breach for Lookup Tables, Partition
 
 A **Health** column on the Collection page shows color-coded healthy, error, and warning states for Collectors and Sources to quickly determine the health of your Collectors and Sources.<br/><img src={useBaseUrl('/img/health-events/Collection-health-column.png')} alt="Collection health column" style={{border: '1px solid gray'}} width="800"/>
 
-To view the number of health events associated with the Collector or Source, perform the following steps:
+To view the number of health events associated with the collector or source, perform the following steps:
 
-1. Hover over a **Health** status to view a tooltip that provides the number of health events detected on the selected Collector or Source. <br/><img src={useBaseUrl('/img/health-events/health_tooltip.png')} alt="health_tooltip" style={{border: '1px solid gray'}} width="200"/>
-1. Click on the **Health** status of a Collector or Source to view a pop-up displaying a list of related events. <br/><img src={useBaseUrl('/img/health-events/object_event_details.png')} alt="object_event_details" style={{border: '1px solid gray'}} width="500"/>
+1. Hover over a **Health** status to view a tooltip that provides the number of health events detected on the selected collector or source. <br/><img src={useBaseUrl('/img/health-events/health_tooltip.png')} alt="health_tooltip" style={{border: '1px solid gray'}} width="200"/>
+1. Click the **Health** status of a collector or source to view a pop-up displaying a list of related events. <br/><img src={useBaseUrl('/img/health-events/object_event_details.png')} alt="object_event_details" style={{border: '1px solid gray'}} width="500"/>
 
 ## Search health events
 

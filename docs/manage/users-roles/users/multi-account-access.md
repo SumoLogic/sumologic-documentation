@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Sumo Logic recommends subdomains as the best approach to providing access to multiple accounts. You can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain).
 :::
 
-Multi-account access allows you to log into multiple Sumo Logic accounts (also called [organizations](/docs/manage/manage-subscription/create-and-manage-orgs/)) using one username (email address) and password. If the same username already exists in more than one Sumo Logic organization, the accounts are linked automatically. You don't need to link them yourself, though initially, you will be asked to change your password. When you do, this will become your multi-account password.
+Multi-account access allows you to log into multiple Sumo Logic accounts (also called [organizations](/docs/manage/manage-subscription/create-and-manage-orgs/)) using one username (email address) and password. If the same username already exists in more than one Sumo Logic organization, the accounts are linked automatically. You do not need to link them yourself, though initially, you will be asked to change your password. When you do, this will become your multi-account password.
 
 :::important
-You must verify your account in each organization you want to access. Accounts you haven't verified don't appear in the multi-account list.
+You must verify your account in each organization you want to access. Accounts you have not verified do not appear in the multi-account list.
 :::
 
 After you log into Sumo Logic, in the menu next to your name, you will see the list of organizations that you can access. To change organizations, select a new organization from the list.
@@ -24,7 +24,7 @@ After you log into Sumo Logic, in the menu next to your name, you will see the l
 ## Log in using multi-account access
 
 1. An administrator will add to an organization. When you receive the email welcoming you to the new Sumo Logic organization, log in with your email and password. You will be asked to change your password. This new password will be your multi-account password.
-1. Verify your account in each organization you want to access. Multi-account access doesn't work for an organization until you verify your account there.
+1. Verify your account in each organization you want to access. Multi-account access does not work for an organization until you verify your account there.
 1. In the UI, select a different organization from the list next to your username.
 1. You are logged into the second organization.
 1. After you log out, when you return, you will be redirected into the organization you were most recently logged into. You can now change between organizations at any time using the same username and password.
@@ -34,8 +34,8 @@ After you log into Sumo Logic, in the menu next to your name, you will see the l
 * When you log out of Sumo Logic, then log back in again, you will be redirected to the last organization you were logged into. 
 * Ensure you save your work before switching to another organization. When you switch to a new organization, you are logged out of your current organization, and any unsaved work is lost. 
 * If you belong to two different Sumo Logic organizations, you will count as one allocated user for each organization.
-* For multi-account to work, your username (email address) must be the same in the different organizations. If multi-account isn’t working for you, make sure your usernames match in the organizations and that you have verified your account in each one.
-* If you would still like to have an account that is separate from your Sumo Logic multi-account, simply use a different email address. This way, you can keep this account separate from your multi-account username and password.
+* For multi-account to work, your username (email address) must be the same in the different organizations. If multi-account is not working for you, make sure your usernames match in the organizations and that you have verified your account in each one.
+* If you would still like to have an account that is separate from your Sumo Logic multi-account, use a different email address. This way, you can keep this account separate from your multi-account username and password.
 * Single account users are unaffected by multi-account access, and will not see this option in the UI.
 
 :::note
@@ -56,11 +56,11 @@ Multi-account access depends on a username and password to verify your access to
 
 To view multiple orgs with the same email address, you can log out of your SAML session and use your Identity Provider (IdP) to log into the other org.
 
-As an administrator using SAML, if you have users that need to view and switch their account access from one account to another from the Sumo Logic interface, you will need to set them up as whitelisted users on the SAML page and let them log in using a username and password.
+As an administrator using SAML, if you have users that need to view and switch their account access from one account to another from the Sumo Logic interface, you will need to set them up as allowlisted users on the SAML page and let them log in using a username and password.
 
 ## Multi-account, password policies, and web session timeouts
 
-Sumo Logic multi-account users may have access to organizations that use different [Password Policies](/docs/manage/security/set-password-policy/). With multi-account, the password policy data from different organizations is centralized.
+Sumo Logic multi-account users may have access to organizations that use different [Password Policies](/docs/manage/security/set-password-policy/). With multi-account, the password policy data from different organizations are centralized.
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Password Policy page, in the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**.
  

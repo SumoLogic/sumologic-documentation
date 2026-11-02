@@ -443,3 +443,7 @@ impact the user's storage/ingest budget. Because the new fields are static, they
 :::note 
 These fields are required to support the new Kubernetes Collection page. If users remove these fields, they will not be able to view content on the new Kubernetes Collection page (upcoming feature).
 :::
+
+### Does Sumo Logic offer cloud-native log management for Kubernetes?
+
+Yes. Sumo Logic is a cloud-native platform, and the Kubernetes app collects and visualizes your cluster's application logs and metrics using the Sumo Logic Kubernetes Collection Helm chart, with no logging infrastructure for you to run. The security dashboards use Falco to show anomalous activity, so your security operations team can use the same data.

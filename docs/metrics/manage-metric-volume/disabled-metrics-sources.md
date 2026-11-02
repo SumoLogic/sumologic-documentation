@@ -19,8 +19,8 @@ Sumo Logic also disables a logs-to-metrics rule that generates too many time ser
 
 Sumo Logic imposes a global limit across all of the  metric sources in your account:
 
-* 50M unique timeseries per week, for metrics with long term retention
-* 100M unique timeseries per week, for metrics with short term retention
+* 50M unique time series per week, for metrics with long term retention
+* 100M unique time series per week, for metrics with short term retention
 
 The storage is based on the metrics retention period, which you can control using [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
 
@@ -30,8 +30,8 @@ When you approach one of these limits, Sumo Logic generates a health event and w
 
 The health event and audit message are generated when your metric ingestion reaches these levels:
 
-* 35M unique timeseries per week, for metrics with long term retention
-* 70M unique timeseries per week, for metrics with short term retention
+* 35M unique time series per week, for metrics with long term retention
+* 70M unique time series per week, for metrics with short term retention
 
 The health event is named [`HighCardinalityMetricsDetected`](https://service.sumologic.com/audit/docs/#operation/getHighCardinalityMetricsDetected). 
 
@@ -103,7 +103,7 @@ For other dimensions that exceed the cardinality limit, Sumo Logic generates a m
  
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
 
-You can delete the metric transformation rule, but you can’t disable or modify it. 
+You can delete the metric transformation rule, but you cannot disable or modify it. 
 <img src={useBaseUrl('img/metrics/transformation-rules.png')} alt="Transformation rules" style={{border: '1px solid gray'}} width="800" />
 
 :::note

@@ -32,7 +32,7 @@ Log data may not be kept when sent via HTTP sources or Cloud Syslog sources, as 
 [Compressed files](/docs/send-data/hosted-collectors/http-source/logs-metrics/#compressed-data) are decompressed before they are ingested, so they are ingested at the decompressed file size rate.
 :::
 
-## Log Throttling
+## Log throttling
 
 Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. (This section pertains to logs. For metrics, see [Metric Throttling](../../metrics/manage-metric-volume/metric-throttling.md)).
 
@@ -79,7 +79,7 @@ To provide an example with a 10GB per day account, the average per minute rate
 
 ## How does throttling affect ingestion?
 
-In the case of Installed collectors with a Local File source and S3 Hosted Collectors, Sumo Logic instructs the collector (Installed or Hosted) on the quota limit, and tells it to delay ingestion until the quota is available. As a result, users will be unable to search for current data when throttling is happening, since the rate of uploads may be slowed from local or S3 hosted collectors but there is no dropping of ingested data. Unfortunately, we do not have the same ability with the sending of data for HTTP sources and endpoints. Any HTTP sources will get a response to any post requests with a "429 - Too Many Requests" message. When this occurs, the sending client would then be responsible for retrying to send that data as quota becomes available.
+In the case of Sumo Logic installed collectors with a Local File source and Sumo Logic hosted collectors with S3 sources, Sumo Logic instructs the collector (installed or hosted) on the quota limit, and tells it to delay ingestion until the quota is available. As a result, users will be unable to search for current data when throttling is happening, since the rate of uploads may be slowed from local or S3 hosted collectors but there is no dropping of ingested data. Unfortunately, we do not have the same ability with the sending of data for HTTP sources and endpoints. Any HTTP sources will get a response to any post requests with a "429 - Too Many Requests" message. When this occurs, the sending client would then be responsible for retrying to send that data as quota becomes available.
 
 In the case of [Cloud Syslog sources](/docs/send-data/hosted-collectors/cloud-syslog-source), similar to HTTP sources, incoming data will be dropped since the Cloud Syslog functions as a listener and cannot even return the 429 error.
 
@@ -99,6 +99,6 @@ If the audit index is enabled you can set up a scheduled search to send an alert
 
 When a file is updated, the way it is ingested depends on the type of collector:
 
-* For Installed Collectors, Sumo Logic can ingest only the new data. For example, if Sumo Logic ingests a log file with 25 lines, and then additional messages are added to the file, the next ingestion will start at line 26.
-* For Hosted Collectors with S3 sources, an ingested file is treated as a single object and is not expected to be updated or appended with new data. If an existing file is updated in any way, it is considered to be a new object and is ingested again in full. Updating existing objects in S3 sources can result in duplicate messages, depending on the nature of the update.
-* Treatment of Hosted Collectors with other source types is based on customer configuration.
+* For installed collectors, Sumo Logic can ingest only the new data. For example, if Sumo Logic ingests a log file with 25 lines, and then additional messages are added to the file, the next ingestion will start at line 26.
+* For hosted collectors with S3 sources, an ingested file is treated as a single object and is not expected to be updated or appended with new data. If an existing file is updated in any way, it is considered to be a new object and is ingested again in full. Updating existing objects in S3 sources can result in duplicate messages, depending on the nature of the update.
+* Treatment of hosted collectors with other source types is based on customer configuration.

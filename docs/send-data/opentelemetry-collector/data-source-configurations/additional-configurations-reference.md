@@ -7,12 +7,12 @@ description: Reference guide for Sumo Logic OpenTelemetry Collector configuratio
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic Distribution for OpenTelemetry stores the configuration for the collector in the configuration directory. It can be found here.
+Sumo Logic Distribution for OpenTelemetry stores the collector configuration in the following directory, based on your platform:
 
 | | |
 | :-- | :-- |
 | Linux | `/etc/otelcol-sumo/conf.d` |
-| Mac | `/etc/otelcol-sumo/conf.d` |
+| macOS | `/etc/otelcol-sumo/conf.d` |
 | Windows | `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` |
 
 
@@ -28,28 +28,28 @@ If you manually installed the collector, your configuration may be in a differen
 
 ### Sumo Logic-defined configuration
 
-This is required by the collector to properly communicate with Sumo Logic SaaS service, and transmit data. All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually. Depending upon your platform.
+This is required by the collector to communicate with the Sumo Logic service and transmit data. All Sumo Logic preconfigured components are stored in the `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually.
 
-### Data Source configuration
+### Data source configuration
 
 Here, you can define all the configuration that tells the collector what data to collect, how to process it (including adding metadata), and send it to Sumo Logic. All the user-defined configuration resides under the `conf.d` directory.
 
-Any configuration for a Source (e.g., MySQL, Nginx, Application Logs) should be stored in a separate file with descriptive name under the `conf.d` directory. For example, a file named `conf.d/mysql.yaml` can contain configuration to collect MySQL data (logs and metrics), and will contain the necessary receiver, processors and the pipeline that together inform the collector on how to collect and send the MySQL data.
+Any configuration for a source (for example, MySQL, Nginx, or application logs) should be stored in a separate file with a descriptive name under the `conf.d` directory. For example, a file named `conf.d/mysql.yaml` can contain the configuration to collect MySQL data (logs and metrics), including the receivers, processors, and pipeline that together tell the collector how to collect and send the MySQL data.
 
 :::tip
 It is recommended to maintain the configuration of all reusable components in `conf.d/common.yaml`. For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
 :::
 
-Our [**App Catalog**](/docs/get-started/apps-integrations) provides a mechanism to create these configuration files using a simple UI form input. Learn More.
+Our [**App Catalog**](/docs/get-started/apps-integrations) provides a simple UI form to create these configuration files for you.
 
 
-## Default Collector Name
+## Default collector name
 
-Each collector name must be unique. Collector by default uses hostname of the machine where collector is installed as the Collector's name. By default,if you are installing a collector that would have the same hostname as an existing collector, the system automatically appends a 13-digit unix timestamp to the collector name.
+Each collector name must be unique. By default, the collector uses the hostname of the machine where it's installed as its name. If you install a collector with the same hostname as an existing collector, the system automatically appends a 13-digit Unix timestamp to the new collector's name.
 
-## Forcing a Collector's Name with Clobber
+## Forcing a collector's name with clobber
 
-Set the clobber flag to `true` if you want to delete the existing collector where a new collector is installed on a machine with same hostname. This is useful for scenarios where a VM is deleted and initiated again with the same hostname. To enable this property, create a file `sumo-ot-clobber.yaml` in `otelcol-sumo/conf.d`, add below configuration and restart your collector.
+Set the `clobber` flag to `true` if you want to delete the existing collector when a new collector is installed on a machine with the same hostname. This is useful when a VM is deleted and recreated with the same hostname. To enable this property, create a file named `sumo-ot-clobber.yaml` in `otelcol-sumo/conf.d`, add the following configuration, and restart your collector.
 
 ```yaml
 extensions:
@@ -58,12 +58,37 @@ extensions:
 ```
 
 :::important
-Setting the clobber flag to `true` deletes (clobbers) any existing collector with the same collector name/hostname, so make sure that is what you want to do. Clobber is effective only before the new collector has been registered (activated) with Sumo Logic.
+Setting the `clobber` flag to `true` deletes ("clobbers") any existing collector with the same collector name or hostname, so make sure that's what you want to do. This only works before the new collector has been registered (activated) with Sumo Logic.
 :::
 
-## Custom Configuration
+### Clobber rate limiting
 
-Use Custom configuration to customize the collection of your logs, metrics and traces in Sumo Logic. Learn more about configuration [here](https://opentelemetry.io/docs/collector/configuration).
+Use `clobber: true` only when the original collector with that name is no longer running, for example after you delete and recreate a VM. If two running collectors share a name and both set `clobber: true`, each one deletes the other when it registers. The two collectors then keep deregistering and reinstalling each other in a loop.
+
+To prevent this loop, Sumo Logic rate limits OpenTelemetry (OT) Collector registrations that use `clobber: true`. The limit applies to each collector name in your organization. After about 50 registration attempts with the same collector name within an hour, Sumo Logic rejects further attempts with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`). Registrations that do not set `clobber: true` are not affected.
+
+:::note
+This rate limit applies to OT Collector only. It does not apply to Installed Collector registrations.
+:::
+
+The registration fails with the following message:
+
+```
+Too many collector registrations with clobber=true for collector name '<name>'. This usually indicates multiple machines are attempting to register with the same collector name simultaneously. Use unique collector names per machine or disable clobber.
+```
+
+To avoid or resolve a rejected registration:
+
+1. Use a unique `collector_name` for each machine. Set the `collector_name` property under `extensions.sumologic`.
+1. Use `clobber: true` only to replace a collector that is no longer running. If the same name is in use by a running collector, remove `clobber: true`.
+1. If the rate limit was reached, stop all registration attempts with that name and wait about an hour before you try again. Each attempt, including a rejected one, resets the one-hour timer.
+1. Restart the collector.
+
+For more information, see [Registration is rejected with an HTTP 429 error when the clobber flag is enabled](/docs/send-data/opentelemetry-collector/troubleshooting/#registration-is-rejected-with-an-http-429-error-when-the-clobber-flag-is-enabled).
+
+## Custom configuration
+
+Use custom configuration to collect your logs, metrics, and traces in Sumo Logic. Learn more about [configuration](https://opentelemetry.io/docs/collector/configuration).
 
 There are some processors provided in `sumologic.yaml` that are intended to be used in every pipeline.
 
@@ -86,15 +111,15 @@ service:
         - sumologic
 ```
 
-## Using Exporter Batching to batch data
+## Batch exported data
 
-The [Exporter Batching][exporterbatching] can be utilized to convert the processed data into batches that are larger than a specified size or time interval. This can aid in compressing the data more effectively and minimizing the number of requests sent by the exporters.
+[Exporter batching][exporterbatching] converts processed data into batches larger than a specified size or time interval. This compresses the data more effectively and reduces the number of requests the exporters send.
 
-It is highly recommended to use this configuration in every pipeline. It should be defined under individual exporters.
+We recommend using this configuration in every pipeline. Define it under individual exporters.
 
-In addition to setting a lower batch size, it is also possible to set a maximal batch size.
+In addition to setting a lower batch size, you can also set a maximum batch size.
 
-We highly recommend setting that limit to avoid sudden increases in request sizes in case more data is temporarily received. The value we recommend to set is `2 * min_size`.
+We recommend setting that limit to avoid sudden increases in request sizes if more data is temporarily received. Set it to `2 * min_size`.
 
 Overall, we recommend the following default configuration for this processor.
 
@@ -126,7 +151,7 @@ Learn more about these exporters
 * [exporterbatching]
 * [sumologicexporter]
 
-## Data Tagging Recommendations
+## Data tagging recommendations
 
 We recommend reading the [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions/) document before continuing to become more familiar with the terms used below. The following terms are important for data tagging:
 
@@ -163,7 +188,7 @@ processors:
 If you are adding custom attributes to your log metadata, then you need to ensure that these fields are also added in Sumo Logic under the **Logs > Fields** section.
 :::
 
-For more advanced processing capabilities in your data pipeline, you can make use of the **Transform** processor. This processor enables you to perform more complex transformations on your data. For example, you can concatenate multiple **Resource attributes** into  `_sourceCategory` field with a `/` character separating each attribute.
+For more advanced processing capabilities in your data pipeline, you can use the **Transform** processor. This processor enables you to perform more complex transformations on your data. For example, you can concatenate multiple **Resource attributes** into the `_sourceCategory` field, with a `/` character separating each attribute.
 
 ```yaml
 processors:
@@ -174,7 +199,7 @@ processors:
       - set(attributes["_sourceCategory"], Concat([attributes["service.name"], attributes["http.method"]], "/"))
 ```
 
-You now have the ability to create custom tags when processing data, beyond using special tags. All resource attributes are treated as tags, offering flexibility when categorizing and processing data.
+You can create custom tags when processing data, not just the special tags listed above. All resource attributes are treated as tags, giving you flexibility when categorizing and processing data.
 
 You can set default tags in collector configuration using the `collector_fields` option:
 
@@ -185,7 +210,7 @@ extensions:
       cluster: staging
 ```
 
-Tags are useful for building the queries and helps to correlate the different signals (metrics, logs and traces) with each other.
+Tags are useful for building queries and help you correlate different signals (metrics, logs, and traces) with each other.
 
 :::note
 Refer to the [Fields](/docs/manage/fields/) documentation for more information on fields and how to use them.

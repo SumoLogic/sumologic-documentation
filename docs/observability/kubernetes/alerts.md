@@ -2,7 +2,6 @@
 id: alerts
 title: Kubernetes Alerts
 description: To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out of box alerts.
-hide_table_of_contents: true
 ---
 
 Sumo Logic monitors provide you with out-of-box alerts that help determine if your Kubernetes cluster is available and performing well. The alerts, listed on this page, are packaged as monitor templates with the Sumo Logic Kubernetes app. To create them, see [Create monitors for the Kubernetes app](/docs/integrations/containers-orchestration/kubernetes/#create-monitors-for-the-kubernetes-app). They are built based on metrics datasets and have preset thresholds.

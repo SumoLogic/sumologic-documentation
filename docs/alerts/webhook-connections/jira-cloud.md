@@ -26,12 +26,12 @@ To send webhook alerts to Jira Cloud you need to include a Basic Authentication 
 
 ## Configuration in Sumo Logic
 
-In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Jira Cloud:
+In Sumo Logic, scheduled searches and monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Jira Cloud:
 
 1. [Create a Webhook Connection](#create-a-webhook-connection).
-1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) or the Connection Type in a [Monitor](/docs/alerts/monitors).
+1. Use the webhook connection as the Alert Type in a [Scheduled Search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
-## Create a Webhook Connection
+## Create a webhook connection
 
 :::note
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
@@ -85,7 +85,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 The Jira Cloud issue description field has a hard limit of 32,767 characters. If a payload variable such as `{{ResultsJson}}` pushes the **Issue Description** past this limit, Jira Cloud truncates the description with "…" and creates the issue with the truncated content. To retain the full data, reference individual result fields (for example, `{{ResultsJson.fieldname}}`) instead of the full `{{ResultsJson}}` object, or otherwise keep the payload within the limit.
 
-## Create a Scheduled Search
+## Create a scheduled search
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 
