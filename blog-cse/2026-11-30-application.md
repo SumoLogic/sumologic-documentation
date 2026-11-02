@@ -12,4 +12,4 @@ hide_table_of_contents: true
 
 ### Agent Knowledge for SOC Analyst Agent
 
-Org administrators can now give the SOC Analyst Agent persistent knowledge about their environment, operational workflows, and team judgment. Teach the agent once, and it applies that knowledge to every auto-investigation and Mobot follow-up, with full transparency into which knowledge shaped each verdict. [Learn more](/docs/search/mobot/agent-knowledge-socaa/).
+Agent Knowledge for the SOC Analyst Agent is now generally available. Org administrators can give the agent persistent knowledge about their environment, operational workflows, and team judgment. Teach the agent once, and it applies that knowledge to every auto-investigation and Mobot follow-up, with full transparency into which knowledge shaped each verdict. [Learn more](/docs/search/mobot/agent-knowledge-socaa/).
