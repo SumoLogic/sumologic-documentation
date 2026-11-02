@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/connection-and-integration/aws-lambda.svg')} alt="AWS Lambda icon" width="50"/>
 
-You can trigger an AWS Lambda function directly from a Monitor or Scheduled Search by configuring a webhook connection. You can use the Webhook Connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
+You can trigger an AWS Lambda function directly from a monitor or scheduled search by configuring a webhook connection. You can use the webhook connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
 
-For example, you can create a Monitor that triggers a Lambda function when too many requests are received from a suspicious IP address. The Lambda function can shut down additional requests from that IP address, while simultaneously sending a notification to the security team for review.
+For example, you can create a monitor that triggers a Lambda function when too many requests are received from a suspicious IP address. The Lambda function can shut down additional requests from that IP address, while simultaneously sending a notification to the security team for review.
 
 ## How to expose a Lambda function
 
@@ -27,7 +27,7 @@ Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** f
 Have your webhook URL handy by copying and pasting it to a notepad. You'll need it to configure your webhook connection in the next section.
 :::
 
-To authenticate the Sumo Logic backend and allow webhook calls, you'll need to create in your AWS Account an IAM User account with very restricted privileges. Creating Lambda Function URL you need to create your own policy while building an API Gateway you can use AWS managed policy. In the following sections, you'll find detailed steps for both cases.
+To authenticate the Sumo Logic backend and allow webhook calls, you'll need to create in your AWS Account an IAM User account with restricted privileges. Creating Lambda Function URL you need to create your own policy while building an API Gateway you can use AWS managed policy. In the following sections, you'll find detailed steps for both cases.
 
 ### Lambda Function URL
 

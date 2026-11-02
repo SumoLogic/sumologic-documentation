@@ -1,7 +1,7 @@
 ---
 id: kubernetes-metrics
 title: Kubernetes Metrics
-description: This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in sumologic-kubernetes-collection deployment guide.
+description: Reference list of the Kubernetes metrics collected when you deploy the Sumo Logic Kubernetes collection solution.
 ---
 
 This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in [Sumo Logic Kubernetes Helm Chart Installation](/docs/send-data/kubernetes/install-helm-chart).
@@ -74,7 +74,7 @@ Controller manager metrics provide important insight into the performance and he
 
 Collection of controller manager metrics requires a service to be deployed to talk to controller manager. The [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) creates this service.
 
-You can collect kube-scheduler metrics in a Kubernetes deployment you manage yourself. You can’t collect kube-scheduler metrics in managed Kubernetes environments, such as GKE, EKS, or AKS.  
+You can collect kube-scheduler metrics in a Kubernetes deployment you manage yourself. You cannot collect kube-scheduler metrics in managed Kubernetes environments, such as GKE, EKS, or AKS.  
 
 ### kube-controller-manager metrics to collect
 
@@ -94,7 +94,7 @@ curl -k --cert /tmp/server.crt --key /tmp/server.key https://localhost:10257/met
 
 Collection of scheduler metrics requires a service to be deployed to talk to scheduler. The [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) creates this service.
 
-You can collect kube-scheduler metrics in a Kubernetes deployment you manage yourself. You can’t collect kube-scheduler metrics in managed Kubernetes environments, such as GKE, EKS, or AKS.  
+You can collect kube-scheduler metrics in a Kubernetes deployment you manage yourself. You cannot collect kube-scheduler metrics in managed Kubernetes environments, such as GKE, EKS, or AKS.  
 
 ### kube-scheduler metrics to collect
 
@@ -246,3 +246,8 @@ To view metrics, open your browser to:
 
 Where `SUMOLOGIC_HELM_CHART_NAMESPACE` is the namespace where the Sumo Logic Kubernetes Collection Helm Chart is installed and
 `SUMOLOGIC_HELM_CHART_RELEASE_NAME` is the the release name of the Sumo Logic Kubernetes Collection Helm Chart in your cluster.
+
+## Additional information
+
+* [Kubernetes Helm Chart](/docs/send-data/kubernetes)
+* [Kubernetes Observability](/docs/observability/kubernetes)

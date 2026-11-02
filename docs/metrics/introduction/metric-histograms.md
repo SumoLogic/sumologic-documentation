@@ -2,12 +2,12 @@
 id: metric-histograms
 title: Metrics Histograms
 sidebar_label: Metrics Histograms
-description: This document provides information on how to use histograms to calculate percentiles.
+description: Use histograms to calculate percentiles for metrics with a specified accuracy level.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Histograms are data structures that aggregate potentially unlimited numbers of measurements. They allow for the calculation of percentiles with a certain accuracy (>=95% in this case), as well as other aggregations such as avg, sum, count, min, and max. This means you can quickly and easily analyze large amounts of data and get insights into its distribution.
+Histograms are data structures that aggregate potentially unlimited numbers of measurements. They allow for the calculation of percentiles with a certain accuracy (>=95% in this case), as well as other aggregations such as `avg`, `sum`, `count`, `min`, and `max`. This means you can quickly analyze large amounts of data and get insights into its distribution.
 
 :::note
 This feature is only available for [APM](/docs/apm/traces/tracing-dashboards/) and [RUM](/docs/apm/real-user-monitoring/dashboards/) metrics.
@@ -169,13 +169,13 @@ Histograms support a variety of quantizations such as `avg`, `min`, `max`, `sum`
 * `count`
 * `pct`
 
-**Example**. To calculate the average of all raw measurements used to create the histogram for each histogram and bucket using the avg quantization and a 10-minute long [quantization bucket](/docs/metrics/introduction/metric-quantization/#buckets), you can use the following query.
+**Example**. To calculate the average of all raw measurements used to create the histogram for each histogram and bucket using the `avg` quantization and a 10-minute long [quantization bucket](/docs/metrics/introduction/metric-quantization/#buckets), you can use the following query.
 
 `metric.type=exponential_histogram metric=browser_cls_histogram | quantize to 10m using avg`
 
-This query creates quantization buckets that are 10 minutes long and returns the average of all raw measurements used to create the histogram for each histogram and bucket. This can be useful when you want to get an idea of the average value of the data over a certain time period. The 10-minute long quantization buckets allow you to easily see the average value of the data over that time period.
+This query creates quantization buckets that are 10 minutes long and returns the average of all raw measurements used to create the histogram for each histogram and bucket. This can be useful when you want to get an idea of the average value of the data over a certain time period. The 10-minute long quantization buckets allow you to see the average value of the data over that time period.
 
-Similarly, using the max aggregation, you can return the maximum value across all the raw measurements.
+Similarly, using the `max` aggregation, you can return the maximum value across all the raw measurements.
 
 For example, to find the maximum value for a `browser_cls_histogram` with `exponential histogram` type, you can use a query like:
 

@@ -620,7 +620,7 @@ Create callouts using the shape tool in SnagIt. Callouts should be red, 100% opa
 
 You can mix ordered (or numbered) and unordered (or bulleted) lists together. Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of indenting too much; three tab indents will automatically render as code.
 
-In a list item made up of an introductory word or phrase and an explanatory sentence or paragraph, separate the introductory text and the explanation with a period (`.`) rather than a dash (`-`). For example:
+In a list item made up of an introductory word or phrase and an explanatory sentence or paragraph, separate the introductory text and the explanation with a period (`.`) rather than a dash (`-`). It's preferred to place the period outside the bold. For example:
 
 <Tabs
   defaultValue="Markdown"
@@ -633,14 +633,14 @@ In a list item made up of an introductory word or phrase and an explanatory sent
 
 ```md
 1. **Entity**. Select the Entity field in the Record that the resulting Signal should be associated with.
-1. **Description (Optional)**. Define the description for the Signal.
+1. **Description (optional)**. Define the description for the Signal.
 ```
 
 </TabItem>
 <TabItem value="Result">
 
 1. **Entity**. Select the Entity field in the Record that the resulting Signal should be associated with.
-1. **Description (Optional)**. Define the description for the Signal.
+1. **Description (optional)**. Define the description for the Signal.
 
 </TabItem>
 </Tabs>
@@ -688,7 +688,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 
 ### Bulleted lists
 
-Use bulleted lists when the items do not need to be presented in sequential order. End each bullet in a terminal period. Use asterisks `*` for unordered, bulleted lists.
+Use bulleted lists when the items do not need to be presented in sequential order.  Use asterisks `*` or hyphens `-`, and end each bullet in a terminal period.
 
 <Tabs
   defaultValue="Markdown"
@@ -704,7 +704,7 @@ Use bulleted lists when the items do not need to be presented in sequential orde
 * Line 2.
    <br/>Content to show under 2.
 * Another set of bullets.
-* Here we go, another!
+* Here we go, another.
 ```
 
 </TabItem>
@@ -714,7 +714,7 @@ Use bulleted lists when the items do not need to be presented in sequential orde
 * Line 2.
    <br/>Content to show under 2.
 * Another set of bullets.
-* Here we go, another!
+* Here we go, another.
 
 </TabItem>
 </Tabs>

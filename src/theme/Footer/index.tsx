@@ -246,10 +246,6 @@ export const Footer = () => {
         >
           {[
             {
-              label: 'Status',
-              href: 'https://status.sumologic.com',
-            },
-            {
               label: 'Legal',
               href: 'https://www.sumologic.com/legal',
             },

@@ -1,6 +1,7 @@
 ---
 id: modify-chart
-title: Modify a Chart
+title: Modify a Dashboard Panel Chart
+sidebar_label: Modify a Panel Chart
 description: Learn how to customize a chart's type and visual display characteristics.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,15 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You can customize a chart on a dashboard panel in a variety of ways by modifying the available settings. You can even change the chart type to analyze the data in another format. This page shows you how to edit a panel and customize General, Display, Display Overrides, Axes, Legend, and JSON chart settings.
 
 :::info
-Settings can change vary according to the chart type. 
+Settings can change vary according to the chart type.
 :::
 
 Begin the customization process by selecting the dashboard panel with the chart you wish to modify.
 
+## Edit a panel
+
 To edit a panel, do the following:
 
-1. On the chart panel, click the kebab icon. 
-1. Select **Edit** from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-new-panel.png')} style={{border: '1px solid gray'}} alt="edit new panel" width="400"/>
+1. On the chart panel, click the kebab icon.
+1. Select **Edit** from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-new-panel.png')} style={{border: '1px solid gray'}} alt="edit new panel" width="300"/>
     <br/>The **Chart** page appears with the panel settings menu bar on the far right. The **Display** options are shown by default.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-panel-options.png')} style={{border: '1px solid gray'}} alt="edit panel options" width="700"/>
 
 ## Modify the panel query
@@ -34,7 +37,7 @@ Any changes made to the variable values within the panel will only affect the cu
 To modify general settings click the **General** icon in the menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/mar-21-general-settings.png')} style={{border: '1px solid gray'}} alt="mar 21 general settings" width="400"/>
 
 * To change the name of the chart, click in the **Chart Title** field and enter a new name.
-* To change the font size click the **Title Font Size** arrows up or down. 
+* To change the font size click the **Title Font Size** arrows up or down.
 * To add a helpful description, click in the **Description** field and enter a brief explanation of the chart's purpose.
 
 To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC Update dashboard" width="300"/>
@@ -49,7 +52,7 @@ You can select parsing mode between manual and [Auto Parse Mode](../../search/ge
 
 ### Link dashboards
 
-You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill-down-to-discover-root-causes.md) you will have an option to click on linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
+You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill-down-to-discover-root-causes.md) you will have an option to click linked dashboards. This allows you to quickly reference other related dashboards to investigate.
 
 1. Click the **Add Dashboard Link** from the bottom of the general settings menu.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/mar-21-add-dashboard-link.png')} style={{border: '1px solid gray'}} alt="mar 21 add dashboard link" width="400"/>
 1. Click in the **Dashboard Name** input area and select or enter the name of the dashboard you want the panel to link to.
@@ -65,7 +68,7 @@ To customize the visual display of a chart, do the following:
 1. Click the **Display** icon in the menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/display-settings-dashboard-new.png')} style={{border: '1px solid gray'}} alt="display settings dashboard new" width="400"/>
 1. You can change the **Panel Type** by selecting another type icon.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/panel-type-change.png')} style={{border: '1px solid gray'}} alt="panel type change" width="400"/>
 1. To change the format of the chart click **Chart Type** and make a selection from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Display_ChartType.png')} style={{border: '1px solid gray'}} alt="MC_Display_ChartType" width="400"/>
-1. To change the colors of the chart display click **Color Palette** and make a selection from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Display_Format_ColorPalette.png')} style={{border: '1px solid gray'}} alt="MC_Display_Format_ColorPalette" width="400"/>
+1. To change the colors of the chart display click **Color Palette** and make a selection from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Display_Format_ColorPalette.png')} style={{border: '1px solid gray'}} alt="MC_Display_Format_ColorPalette" width="300"/>
 1. Make selections for the other format options available for the chart type.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Display_modify-results.png')} style={{border: '1px solid gray'}} alt="MC_Display_modify" width="700"/>
 1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard" width="300"/>
 
@@ -81,7 +84,7 @@ For example, you may want to set a specific time-series to red to signify that 
 
 To override select dashboard displays, do the following:
 
-1. Click the Display Overrides icon in the far right menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Display_Overrides_icon.png')} style={{border: '1px solid gray'}} alt="MC_Display_Overrides_icon" width="400"/>
+1. Click the **Display Overrides** icon in the far right menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Display_Overrides_icon.png')} style={{border: '1px solid gray'}} alt="MC_Display_Overrides_icon" width="400"/>
 1. Enter a **Query or series name** you want to override. This is the letter of the row the query is assigned to, for example **#A** and **#B**. The following image shows a metrics and logs query charted together. In the **Display Overrides** menu the Logs query is referenced as **#B** to assign an alias and red color.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Logs-and-Metrics.png')} style={{border: '1px solid gray'}} alt="Logs and Metrics" width="700"/>
 1. Enter an **Alias**, as necessary. **Metrics** monitors allow you to specify output metadata as a variable wrapped in double curly brackets, `{{ }}`. For example, if my output metrics has `environment`, I can specify it in my alias as `{{ metric }} on {{ deployment }}`.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Monitor-with-metrics-using-metadata-in-alias.png')} style={{border: '1px solid gray'}} alt="Monitor with metrics using metadata in alias" width="700"/>
 1. Select a **Property** from the dropdown list. You can add as many properties and needed.
@@ -94,9 +97,9 @@ To override select dashboard displays, do the following:
 This feature is only applicable for [table charts](/docs/dashboards/panels/table-charts).
 :::
 
-The ability to modify the threshold allows you to define warning and critical thresholds. 
+The ability to modify the threshold allows you to define warning and critical thresholds.
 
-1. Click the Thresholds icon in the far right menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Threshold_icon.png')} style={{border: '1px solid gray'}} alt="Threshold_icon" width="400"/>
+1. Click the **Thresholds** icon in the far right menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Threshold_icon.png')} style={{border: '1px solid gray'}} alt="Threshold_icon" width="400"/>
 1. Click the toggle in the **Thresholds** pane.<br/><img src={useBaseUrl('/img/metrics/thresholds-toggle.png')} style={{border: '1px solid gray'}} alt="Thresholds_icon" width="400"/>
 1. You can set the thresholds in two ways, **Classic** or **Conditional**:
     - **Classic:**
@@ -124,7 +127,7 @@ The ability to modify the threshold allows you to define warning and critical th
             - **less than**. Any value less than the value you specify will violate this threshold.
             - **less than or equal**. Any value less than or equal to the value you specify will violate the threshold.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Threshold_Conditional_icon.png')} style={{border: '1px solid gray'}} alt="Threshold_Conditional_icon" width="400"/>
             :::note
-            You can add upto 10 threshold conditions.
+            You can add up to 10 threshold conditions.
             :::
 
 :::info
@@ -150,7 +153,7 @@ To change chart axes displays, do the following:
    * **Scale**. Options vary according to chart type
    * **Range**. Range of data for the axis
    * **Label**. The name applied to the data.
-   * **Unit**. How the data measurement is expressed. You have variousunits of measurements to select from. 
+   * **Unit**. How the data measurement is expressed. You have variousunits of measurements to select from.
    * **Decimals**. Sets the precision of units displayed. Select the number of decimals to show with a unit, up to 9.
 
     The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](#overridedashboard-displays) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/display-override-right-y-axis.png')} style={{border: '1px solid gray'}} alt="display override right y-axis" width="400"/>
@@ -166,13 +169,13 @@ To change chart axes displays, do the following:
 
 ## Modify chart legend
 
-You can toggle the chart Legend display on and off, where it appears, as well as modifying the legend display properties.
+You can toggle the chart legend display on and off, where it appears, as well as modifying the legend display properties.
 
 To modify the chart legend, do the following:
 
 1. Click the **Legend** icon in the far right menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Legend_icon.png')} style={{border: '1px solid gray'}} alt="MC_Legend_icon" width="400"/>
 1. To turn **OFF** the legend display, toggle **Show Legend** to the **Left**. To turn the legend display back **ON**, toggle **Show Legend** to the **Right**.
-1. Specify the **Position** of the Legend by clicking **Right** or **Bottom**.
+1. Specify the **Position** of the legend by clicking **Right** or **Bottom**.
 1. Modify the following **Display Properties**, as needed:
     * **Font Size**. Size of the legend font.
     * **Max Height**. Maximum height of the legend.
@@ -180,7 +183,7 @@ To modify the chart legend, do the following:
     * **Wrap Text**. Text display, toggle On or Off.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Legend_DisplayProperties.png')} style={{border: '1px solid gray'}} alt="MC_Legend_DisplayProperties" width="300"/>
 1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard" width="300"/>
 
-## Modify chart JSON 
+## Modify chart JSON
 
 The JSON for each chart is available for you to customize the visual settings beyond the options Sumo Logic provides in the user interface. You can add settings from [canvasJS](https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/) to the `visualSettings` section of the JSON.
 
@@ -277,8 +280,8 @@ use the following JSON:
             }
     }
 ]
-```  
- 
+```
+
 ### Resize data label font size
 
 To resize the font size of data labels in a pie chart: <br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/data-label-font-size.png')} style={{border: '1px solid gray'}} alt="Data label font size" width="600"/>

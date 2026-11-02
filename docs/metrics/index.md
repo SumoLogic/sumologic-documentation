@@ -35,7 +35,7 @@ To interact with other Sumo Logic users, post feedback, or ask a question about 
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/metrics/introduction')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Intro to Metrics</h4></a>
-  <p>Use Metrics for monitoring, troubleshooting, and identifying root causes.</p>
+  <p>Use metrics for monitoring, troubleshooting, and identifying root causes.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -59,7 +59,7 @@ To interact with other Sumo Logic users, post feedback, or ask a question about 
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/metrics/metric-rules-editor')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Metrics Rules Editor</h4></a>
-  <p>The Metrics rules editor allows you to tag metrics with data derived from the metric identifier.</p>
+  <p>The metrics rules editor allows you to tag metrics with data derived from the metric identifier.</p>
   </div>
 </div>
 <div className="box smallbox card">

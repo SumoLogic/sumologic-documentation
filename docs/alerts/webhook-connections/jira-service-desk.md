@@ -26,12 +26,12 @@ To send webhook alerts to Jira Service Desk you need to include a Basic Authenti
 
 ## Configuration in Sumo Logic
 
-In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Jira Service Desk:
+In Sumo Logic, scheduled searches and monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Jira Service Desk:
 
 1. [Create a Webhook Connection](#create-a-webhook-connection).
-1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) or the Connection Type in a [Monitor](/docs/alerts/monitors).
+1. Use the webhook connection as the Alert Type in a [Scheduled Search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
-## Create a Webhook Connection
+## Create a webhook connection
 
 :::note
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
@@ -81,7 +81,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 1. To test the connection, click **Test Alert**. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
 
-## Create a Scheduled Search
+## Create a scheduled search
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 

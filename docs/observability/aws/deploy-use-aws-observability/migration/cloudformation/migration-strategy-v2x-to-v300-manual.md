@@ -14,7 +14,7 @@ This documentation walks you through manually migrating an existing [AWS Observa
 
 - Ensure that the account aliases used in your v2.x.x deployment are carried over during migration. The same aliases will be reused in v3.0.0.
 
-- During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Please refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
+- During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
 :::
 
 :::warning
@@ -168,7 +168,7 @@ After v3.0.0 deploys successfully, update each existing Sumo Logic source with t
 ### Find the new IAM role ARN
 
 1. Go to **AWS Console > CloudFormation > Stacks** and select your new v3.0.0 stack.
-2. In the **Resources** tab, find the nested stack named `CreateCommonResources` and click on it.
+2. In the **Resources** tab, find the nested stack named `CreateCommonResources` and click it.
 
 <img src={useBaseUrl('img/observability/migration-arn-cfn-stack-resources.png')} alt="CloudFormation main stack Resources tab with CreateCommonResources highlighted" />
 
@@ -185,7 +185,7 @@ After v3.0.0 deploys successfully, update each existing Sumo Logic source with t
 For each S3-based source on your collector (`alb-logs`, `classic-lb-logs`, `cloudtrail-logs`):
 
 1. Go to **Manage Data > Collection > Collection**.
-2. Find your AWSO collector and click on the source.
+2. Find your AWSO collector and click the source.
 3. Update the **AWS Role ARN** field with the new ARN from the step above.
 4. Save the source.
 

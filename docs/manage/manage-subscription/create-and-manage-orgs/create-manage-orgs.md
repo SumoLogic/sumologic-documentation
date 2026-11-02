@@ -54,14 +54,14 @@ Learn how to create a new child organization.
 :::
 
 :::note
-After you create a new org, you can’t delete it.
+After you create a new org, you cannot delete it.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**.
 1. Click **+ Add Organization**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/add-org.png')} alt="Add org" style={{border:'1px solid gray'}} width="800" />
 1. The **Create New Organization** pane appears. <br/> <img src={useBaseUrl('/img/manage/subscriptions/create-new-org.png')} alt="Create New Organization pane" style={{border:'1px solid gray'}} width="400" />
 
-### Allocate Credits
+### Allocate credits
 
 1. **Plan Type**. Select your organization's plan type. 
 1. **Deployment**. Select a Sumo Logic deployment from the list.
@@ -91,7 +91,7 @@ After you create a new org, you can’t delete it.
 1. **Credits to be allocated**. The recommended credits for this child org will be displayed once you set the baseline. You can add or reduce the credit based on your requirement.
 1. **Remaining Credits (Parent)**. Total balance credits available in the parent org after using the credits for child org.
 
-### Basic Details
+### Basic details
 
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.

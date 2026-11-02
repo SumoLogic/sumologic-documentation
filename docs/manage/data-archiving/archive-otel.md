@@ -24,7 +24,7 @@ For S3 archiving, we use:
 
 ### Why use OpenTelemetry collector for archiving logs to S3
 
-Compared to legacy Installed Collector-based archiving, the OpenTelemetry approach provides:
+Compared to legacy Sumo Logic installed collector-based archiving, the OpenTelemetry approach provides:
 - Full control over metadata enrichment
 - Flexible and transparent configuration through YAML
 - Better alignment with modern observability pipelines
@@ -110,7 +110,7 @@ service:
 
 ## Ingestion filtering using path patterns
 
-When configuring an AWS S3 archive source on a Hosted Collector, specify a file path pattern to control what gets ingested.
+When configuring an AWS S3 archive source on a Sumo Logic hosted collector, specify a file path pattern to control what gets ingested.
 
 For example, to ingest only Docker logs:
 
@@ -124,7 +124,7 @@ If differentiation is not required, you can use dummy 16-digit hexadecimal value
 
 The size and time window of archived files is controlled using the OpenTelemetry Exporter Batching. For example, a batching timeout of 15 minutes produces one S3 file approximately every 15 minutes.
 
-If the ingestion job window does not exactly align with the batching boundaries, the Hosted Collector behaves conservatively and may ingest slightly more data rather than risk data loss. This ensures no data loss around interval boundaries.
+If the ingestion job window does not exactly align with the batching boundaries, the hosted collector behaves conservatively and may ingest slightly more data rather than risk data loss. This ensures no data loss around interval boundaries.
 
 Example:
 
@@ -144,7 +144,7 @@ You can ingest a specific time range of data from your archive at any time wit
 * A maximum of 2 concurrent ingestion jobs is supported. If more jobs are needed contact your Sumo Logic account representative.
 * An ingestion job has a maximum time range of 12 hours. If a longer time range is needed, contact your Sumo Logic account representative.
 * Filenames or object key names must be in either of the following formats:
-    * Sumo Logic [archive format](#archive-format)
+    * Sumo Logic [archive format](#archive-format).
     * `prefix/dt=YYYYMMDD/hour=HH/fileName.json.gz`
 * If the logs from archive do not have timestamps, they are only searchable by receipt time.
 * If a field is tagged to an archived log message and the ingesting collector or source has a different value for the field, the field values already tagged to the archived log take precedence.
@@ -180,10 +180,10 @@ To use JSON to create an AWS S3 archive source, reference our AWS Log source�
     Fields specified on an AWS S3 archive source take precedence if the archived data has the same fields.
     :::
     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field does not exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
-    * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
+    * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
 1. Create any processing rules you'd like for the AWS source.
 1. When you are finished configuring the source, click **Save**.
 
@@ -235,7 +235,7 @@ An ingestion job will have one of the following statuses:
 * **Scanning**. The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
 * **Ingesting**. The job has completed scanning for objects and is still ingesting your objects.
 * **Failed**. The job has failed to complete. Partial data may have been ingested and is searchable.
-* **Succeeded** The job completed ingesting and your data is searchable.
+* **Succeeded**. The job completed ingesting and your data is searchable.
 
 ## Search ingested archive data
 

@@ -61,7 +61,7 @@ Log Fluctuation and Dimensional Explanation cards work on log data only. They ar
 
 ## Where are the Log Fluctuation cards for Logs-based alerts?
 
-Sometimes, because of internal system errors, Log Fluctuation cards might not appear. If the problem persists, please [contact Sumo Logic support](/docs/get-started/help).
+Sometimes, because of internal system errors, Log Fluctuation cards might not appear. If the problem persists, [contact Sumo Logic support](/docs/get-started/help).
 
 ## I only see "Others" as a signature in Log Fluctuation card. Is that expected?
 
@@ -75,8 +75,8 @@ You can also force run the signature cataloging process manually, by calling the
 
 There could be two reasons for the card not loading:
 
-* Sometimes because of internal system errors Log Fluctuation cards might not appear. If the problem persists please contact the Sumo Logic support team. 
-* The Dimensional Explanation card has some limitations on where it might not work. Currently, the card doesn't work for the following cases:
+* Sometimes because of internal system errors Log Fluctuation cards might not appear. If the problem persists, contact the Sumo Logic support team. 
+* The Dimensional Explanation card has some limitations on where it might not work. Currently, the card does not work for the following cases:
     * Parse based filtering query
         ```sumo
         _sourceCategory = security/okta

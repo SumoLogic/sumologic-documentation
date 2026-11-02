@@ -81,7 +81,7 @@ Not all Sumo Logic parsing operators are supported. For more information, see [C
 
 ### Scheduled views and indexes are not supported
 
-You cannot use a scheduled view or an index in the scope of a Logs-to-Metrics rule. In other words, you shouldn't use a log search scope that includes `_view` or `_index`. 
+You cannot use a scheduled view or an index in the scope of a Logs-to-Metrics rule. In other words, you should not use a log search scope that includes `_view` or `_index`. 
 
 ### Using Logs-to-Metrics for partitions not included in default scope
 
@@ -113,7 +113,7 @@ You must be a Sumo Logic admin to create a Logs-to-Metrics rule, or have a role 
     1. **Name**. Specify a rule name.
     1. **Scope**. Enter a query that returns the log messages from which you want to extract or calculate metrics. For best performance, enter a scope that returns only the log messages from which you want to create metrics. For example: `_sourceCategory=alert !info !warn ``error`. Once you enter a valid scope, 10 recent matching log lines appear in the **Preview Parse Expression** section of the page.
         :::note
-        The preview pane of parsed messages will respect the role search query of the user creating the rule. However, the Logs-to-Metrics rule will run globally—the rule author’s role search query will not be applied.
+        The preview pane of parsed messages will respect the role search query of the user creating the rule. However, the Logs-to-Metrics rule will run globally—the rule author's role search query will not be applied.
         :::
     1. **Parse Expression**. Enter a parse expression to extract desired fields from the logs that match the scope query. The parse operators supported in logs to metrics rules are listed below. Other parse operators are not supported.
          * `parse multi`
@@ -140,7 +140,7 @@ You must be a Sumo Logic admin to create a Logs-to-Metrics rule, or have a role 
 
     <br/><img src={useBaseUrl('img/metrics/mets-dims.png')} alt="Select metrics and dimensions" style={{border: '1px solid gray'}} width="600" />
 
-    1. Click the **Metrics** checkbox for a field that is a numerical value that you want to plot and analyze, such as latency. You can designate more than one field as a metric, as long as they are both numerical values. On the other hand, if your logs don’t contain embedded metrics, and you are creating a metric based on log count, you will not mark any of the fields as metrics. A field you select as a metric must contain a numerical value, otherwise it will not be extracted.
+    1. Click the **Metrics** checkbox for a field that is a numerical value that you want to plot and analyze, such as latency. You can designate more than one field as a metric, as long as they are both numerical values. On the other hand, if your logs do not contain embedded metrics, and you are creating a metric based on log count, you will not mark any of the fields as metrics. A field you select as a metric must contain a numerical value, otherwise it will not be extracted.
     1. Click the **Dimensions** checkbox for fields by which you’d like to query and aggregate metrics, for example, `hostId`. Configuring fields as dimensions is optional. Avoid selecting too many dimensions, as that will increase the number of unique metrics produced from the rule.
     1. Toggle the **Count the number of log messages** switch on if you want to create a metric that is the total number of log messages that match your scope and parse expression. You can create a calculated metric like this in addition to designating one or more fields as metrics. If you toggle this switch, the page prompts you to enter a name for the metric.  When you query a metric that is a count of messages, when you query that metric, you must include a `quantize using sum` clause in the query. 
 
