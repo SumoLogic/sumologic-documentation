@@ -23,7 +23,7 @@ The sections below list search filter limitations, and describe how you can use 
 * Role filters cannot include vertical pipes (`|`).
 * Role filters apply to log searches, not metric searches.
 * The [_dataTier](/docs/manage/partitions/data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
-* If one or more of your Field Extraction Rules (FERs) override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
+* If one or more of your field extraction rules (FERs) override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
 * Use a field or an FER in the role search filter to control access to data.
 * If the search filter of a role is modified, the data can still be accessed in the pinned queries for up to 24 hours from the original run prior to the search filter modification.
 
@@ -31,7 +31,7 @@ For limitations related to the use of Scheduled Views or partitions in a search 
 
 ### Using metadata in a search filter
 
-You can use metadata fields in a role search filter. The following search filter grants access to log data from a Collector named “HR_Tools”, and no other data:
+You can use metadata fields in a role search filter. The following search filter grants access to log data from a collector named “HR_Tools”, and no other data:
 
 ```sumo
 _collector=HR_Tools
@@ -139,7 +139,7 @@ When a user is assigned to multiple Sumo Logic roles ("role stacking"), Sumo Log
 
 <RoleStacking/>
 
-When multiple roles filters are applied to a query, the least restrictive filter takes precedence. That this rule doesn’t apply if any of the role filters applied to a query is simply blank, which effectively grants access to all data, and would be the least restrictive filter. If the combined search filters applied to a query includes filters that are blank, the blank search filter is ignored and the next least restrictive filter takes precedence. So, if you actually want to grant a role access to all data, set the search filter to an asterisk (`*`). A search filter that is configured in that fashion will take precedence when combined with more restrictive search filters.
+When multiple roles filters are applied to a query, the least restrictive filter takes precedence. That this rule does not apply if any of the role filters applied to a query is simply blank, which effectively grants access to all data, and would be the least restrictive filter. If the combined search filters applied to a query includes filters that are blank, the blank search filter is ignored and the next least restrictive filter takes precedence. So, if you actually want to grant a role access to all data, set the search filter to an asterisk (`*`). A search filter that is configured in that fashion will take precedence when combined with more restrictive search filters.
 
 ### Example 1
 
@@ -152,7 +152,7 @@ Assume the following role filters.
 
 Role A allows access to log data whose `_source` tag is “GCP Audit” and `_collector` tag is “GCP”. 
 
-Role B Allows access to log data whose `_sourceCategory` tag begins with “Vx”.  
+Role B allows access to log data whose `_sourceCategory` tag begins with “Vx”.  
 
 When a user with Roles A and B runs a query, Sumo Logic applies the filters with an `OR`, and prepends them with an `AND` to your query, like this:
 
@@ -174,7 +174,7 @@ Assume the following role filters.
 
 Role A allows access only to log data whose `_collector` tag matches “fee\*”, and not to data whose `_collector` tag is any other value.
 
-Role B Allows access to any log data whose `_collector` tag matches “f\*”, and not to data whose `_collector` tag is any other value.  
+Role B allows access to any log data whose `_collector` tag matches “f\*”, and not to data whose `_collector` tag is any other value.  
 
 When a user with Roles A and B runs a query, Sumo Logic combines the two filters with an `OR`, and prepends them with an `AND` to your query, like this:
 
@@ -196,7 +196,7 @@ Assume the following role filters.
 
 Role A allows access only to log data whose `_sourceCategory` is “analytics-lab”.
 
-Role B Allows access to log data whose `_sourceCategory` begins with “analytics”.
+Role B allows access to log data whose `_sourceCategory` begins with “analytics”.
 
 When a user with Roles A and B runs a query, Sumo Logic combines the two filters with an `OR`, like this:
 

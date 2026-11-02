@@ -1,18 +1,23 @@
 {
-	"api.version": "v1",
-	"source": {
-	  "config": {
-		"name": "Github Copilot",
-		"organization": "sanlabs",
-		"patToken": " github_pat_11AYxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
-		"collectTeamMetrics": true,
-		"metricPeriodInDays": 1,
-		"teamNames": ["dev-team", "cse-team"]
-	  },
-	  "schemaRef": {
-		"type": "Github Copilot"
-	  },
-	  "sourceType": "Universal"
-	}
+  "api.version": "v1",
+  "source": {
+    "schemaRef": {
+      "type": "Github Copilot"
+    },
+    "sourceType": "Universal",
+    "config": {
+      "name": "GitHub Copilot",
+      "description": "GitHub Copilot usage metrics",
+      "category": "github/copilot",
+      "fields": {
+        "_siemForward": false
+      },
+      "baseURL": "https://api.github.com",
+      "organization": "sanlabs",
+      "patToken": "github_pat_xxxz7ARP6EABxxxxxxx",
+      "collectUserTeamReport": true,
+      "collectUserMetrics": true,
+      "metricPeriodInDays": 1
+    }
   }
-  
+}

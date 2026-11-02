@@ -242,7 +242,7 @@ Filename, title format, and structure are specific to each folder. Match the sla
 
 These are Sumo Logic- and repo-specific facts that override general assumptions.
 
-- **No em dashes, ever.** Do not use "--" as a substitution for an em dash either. Rewrite the sentence instead.
+- **Avoid using em dashes.** Split into two sentences, or use semicolons, colons, or commas instead.
 - **Site URL is `sumologic.com/help`**, not `help.sumologic.com`. Always use the former in docs and links.
 - **`:::training` is a custom Sumo Logic admonition** (purple, graduation cap icon). It is not a standard Docusaurus admonition -- do not treat it like one or omit it.
 - **`:::sumo` is also custom.** Standard Docusaurus will not recognize it outside this repo.
@@ -251,6 +251,6 @@ These are Sumo Logic- and repo-specific facts that override general assumptions.
 - **Negative contractions must always be spelled out.** "cannot", "will not", "do not" -- even in casual or conversational tone.
 - **After editing, self-review for mid-sentence capitalization.** When removing a word (e.g., "please") before a verb mid-sentence, ensure the following word is not accidentally capitalized. For example, "please file" → "file" (lowercase), not "File".
 - **Numbered list items always use `1.`** (not `1.`, `2.`, `3.`). Docusaurus handles rendering.
-- **Capitalized product terms.** Collector, Source, Hosted Collector, Library. User-created objects (dashboards, folders) are lowercase.
+- **Collector and Source stay lowercase.** `collector`, `hosted collector`, `installed collector`, and `source` are generic descriptive terms, not product names -- capitalize only in a literal UI label (**Add Collector**) or the specific type name in front of "source" (Syslog source). Exception: **OpenTelemetry Collector** is a proper product name and always capitalized. **Library** is a proper product name and stays capitalized. User-created objects (dashboards, folders) are lowercase.
 - **C2C sources and apps have distinct openers.** Do not use the app opener for a source doc or vice versa.
 - **Release notes have their own rules.** Apply the [Release notes](#release-notes) section above when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`. The live style guide at [Release notes](/docs/contributing/style-guide/#release-notes) takes precedence if fetched.

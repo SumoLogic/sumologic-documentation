@@ -41,15 +41,15 @@ For such a query, by default we calculate results for all combinations of result
 
 Summing the `CPU_User` and `CPU_System` metric when the referenced rows return metrics for multiple environments (like lab, prod, stage) will result in many matchings which are not useful. For example, you’d end up summing the `CPU_User` and `CPU_System` values for your lab and prod environments, the `CPU_User` and `CPU_System` values for your lab and stage environments, and so on.
 
-It’s a good idea to use `along` in your queries to exclude excessive results when comparing and using data from multiple queries, unless you are sure that the cross-join is what you really need—most likely, it is not.
+It’s a good idea to use `along` in your queries to exclude excessive results when comparing and using data from multiple queries, unless you are sure that the cross-join is what you need—most likely, it is not.
 
 ## Understanding along
 
-As described above, if you simply use query IDs to reference results from multiple rows, you'll end up with _all_ combinations of the results.
+As described above, if you use query IDs to reference results from multiple rows, you'll end up with _all_ combinations of the results.
 
 Using the `along` statement restricts operations on result rows such that computations are performed only for datasets having matching fields. This is similar to performing an SQL `inner join ON`.
 
-As an example, consider the sum of the rows returning metrics for dev, stage and prod accounts. The results of simply summing the query results (#A + #B) will include sums of metrics for different accounts, when our goal is to get the sums for metrics from each account separately.
+As an example, consider the sum of the rows returning metrics for dev, stage and prod accounts. The results of summing the query results (#A + #B) will include sums of metrics for different accounts, when our goal is to get the sums for metrics from each account separately.
 
 Given these example queries:
 

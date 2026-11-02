@@ -27,8 +27,8 @@ The relying party trust configuration is required for the connection between Sum
 1. In the **Configure URL** window, select **Enable Support for the SAML 2.0 WebSSO protocol**. In the **Relying Party SAML 2.0 SSO service URL** field, enter the value of the **Assertion Consumer** URL from the Sumo Logic SAML configuration, and click **Next**. <br/><img src={useBaseUrl('img/security/adfs06.png')} alt="Configure URL window" style={{border: '1px solid gray'}} width="700" />
 1. In the **Configure Identifiers** window, add the **Entity ID** URL from the Sumo Logic SAML configuration as a relying party trust identifier. <br/><img src={useBaseUrl('img/security/secu_trust_config_identifiers_vault.jpeg')} alt="Configure Identifiers window" style={{border: '1px solid gray'}} width="700" />
 1. (Optional) If you want to configure multi-factor authentication, refer to ADFS documentation for instructions. If not, keep the default selection **I do not want to configure**. Click **Next**. <br/><img src={useBaseUrl('img/security/adfs08.png')} alt="I do not want to configure selected" style={{border: '1px solid gray'}} width="700" />
-1. In the **Choose Issuance Authorization Rules** window, select **Permit all users to access this relying party**. If you prefer to limit access to a subset of all ADFS authenticated users, select **Deny all users access to this relying part**, then create an issuance authorization rule that allows only that subset of users based on group membership. Click **Next**. <br/><img src={useBaseUrl('img/security/adfs09.png')} alt="Choose Issuance Authorization Rules window" style={{border: '1px solid gray'}} width="700" />
-1. Review your settings, keep the check box selected, and then click **Close** to exit and move to the next task, where you will specify claim rules. <br/><img src={useBaseUrl('img/security/adfs10.png')} alt="Closed button" style={{border: '1px solid gray'}} width="700" />
+1. In the **Choose Issuance Authorization Rules** window, select **Permit all users to access this relying party**. If you prefer to limit access to a subset of all ADFS authenticated users, select **Deny all users access to this relying party**, then create an issuance authorization rule that allows only that subset of users based on group membership. Click **Next**. <br/><img src={useBaseUrl('img/security/adfs09.png')} alt="Choose Issuance Authorization Rules window" style={{border: '1px solid gray'}} width="700" />
+1. Review your settings, keep the checkbox selected, and then click **Close** to exit and move to the next task, where you will specify claim rules. <br/><img src={useBaseUrl('img/security/adfs10.png')} alt="Closed button" style={{border: '1px solid gray'}} width="700" />
 
 ## Create claim rules
 
@@ -46,8 +46,8 @@ To create claim rules:
     1. Enter a name for the claim rule.
     1. Select **Active Directory** as the attribute store.
     1. Select **E-Mail Addresses** for both the LDAP attribute and outgoing claim type.
-    1. If you set up on-demand provisioning when configuring Sumo Logic SAML, you should also map the LDAP attributes **Given Name** and **Surname.  Select** "Given Name" and "Surname" from the dropdown and then ADFS will correctly send claim types.
-    1. Select Click **OK** to save the rule. <br/><img src={useBaseUrl('img/security/ldap4a.png')} alt="Configure Claim Rule window" style={{border: '1px solid gray'}} width="700" />
+    1. If you set up on-demand provisioning when configuring Sumo Logic SAML, you should also map the LDAP attributes **Given Name** and **Surname**. Select "Given Name" and "Surname" from the dropdown and then ADFS will correctly send claim types.
+    1. Click **OK** to save the rule. <br/><img src={useBaseUrl('img/security/ldap4a.png')} alt="Configure Claim Rule window" style={{border: '1px solid gray'}} width="700" />
 1. Click **Add Rule** to create another rule. Select **Transform an Incoming Claim** as the template and click **Next**. <br/><img src={useBaseUrl('img/security/claim04.png')} alt="Transform an Incoming Claim selection" style={{border: '1px solid gray'}} width="700" />
 1. Enter a name for the claim rule, and specify the following settings:
    * **Incoming Claim Type.** Select Email Address.
@@ -58,7 +58,7 @@ To create claim rules:
 
 ## Adjusting the trust settings
 
-There are a few relying party trust settings that aren’t accessible through the wizard.
+There are a few relying party trust settings that are not accessible through the wizard.
 
 1. To specify these settings, select the relying party trust entry in the ADFS Management application and select **Actions > Properties**.
 
@@ -83,5 +83,5 @@ from the login URL. If you have any trouble, return to Sumo Logic and
 perform the following steps:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. 
-1. Select the **Debug Mode** check box and click **Save**.
+1. Select the **Debug Mode** checkbox and click **Save**.
 1. Test again.

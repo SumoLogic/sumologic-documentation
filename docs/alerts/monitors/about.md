@@ -34,7 +34,7 @@ See [Trigger Type (Logs)](/docs/alerts/monitors/create-monitor/#trigger-type-log
 ### Log monitors
 
 * Log monitors use the [role search filter](/docs/manage/users-roles/roles/construct-search-filter-for-role) of their creator.
-* Log monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago. This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
+* Log monitors delay execution by two minutes. This means it will not evaluate data from the current time, but evaluate data from two minutes ago. This ensures that any delays in ingestion are factored in and will not generate false positive or false negative alerts.
 * Enterprise and Trial plan customers can have up to 1,000 log monitors.
 * Essentials and Professional plan customers can have up to 300 log monitors.
 * Free Trial customers can have up to 50 log monitors.
@@ -51,7 +51,7 @@ Log monitors in a triggered state can auto-resolve.
 
 * Metrics monitors delay execution by one minute.
 * Enterprise and Trial plan customers can have up to 1,500 Metrics monitors.
-* Essentials and Professional plan customers can have up to 500 Metrics monitors.
+* Essentials and Professional plan customers can have up to 500 metrics monitors.
 * Free Trial customers can have up to 50 Metrics monitors.
 
 ## Notifications
@@ -60,19 +60,19 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 ### Alerts
 
-* Monitor evaluation for each trigger type (Critical, Warning or Missing Data) happens independently. Each trigger type's lifecycle is managed separately and doesn't have any impact on other trigger types. So it is possible for a monitor to be in Critical and Warning state at the same time. Monitor goes back to normal when it is not in either of Critical, Warning and Missing Data states.
+* Monitor evaluation for each trigger type (Critical, Warning or Missing Data) happens independently. Each trigger type's lifecycle is managed separately and does not have any impact on other trigger types. So it is possible for a monitor to be in Critical and Warning state at the same time. Monitor goes back to normal when it is not in either of Critical, Warning and Missing Data states.
 * When both Critical and Warning conditions are met, two separate alerts and notifications are generated - one for the Critical condition and one for the Warning condition. Auto-resolution, if set up, will work according to the resolution condition for each case. 
-* Metric monitors have the option to group notifications. When configured, the Monitor will not trigger new notifications until the first one is resolved. The Monitor will only update if the notification type supports auto-resolution. Grouped notifications will resolve when all the time series return to normal.
+* Metric monitors have the option to group notifications. When configured, the monitor will not trigger new notifications until the first one is resolved. The monitor will only update if the notification type supports auto-resolution. Grouped notifications will resolve when all the time series return to normal.
 * Log monitors always group notifications.
 
 ### Recovery
 
 * Recovery is based on the detection window, which is either the time range or the number of data points of the trigger condition. An alert is recovered (resolved) when the recovery condition is met for the entire duration of the detection window.
-   * For example, if an alert is triggered at 1:00 PM and the detection window is 15 minutes, the earliest the alert would recover is after 1:15 PM since the entire detection window must pass. This is to ensure there isn't an alert between the triggered and resolved state, especially for metrics that are volatile.
+   * For example, if an alert is triggered at 1:00pm and the detection window is 15 minutes, the earliest the alert would recover is after 1:15pm since the entire detection window must pass. This is to ensure there is not an alert between the triggered and resolved state, especially for metrics that are volatile.
 * Auto-resolution is supported with email, Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, and generic webhook connections.
 * **Recovery Payload** customization is supported for Slack, Microsoft Teams, AWS Lambda, Azure Functions, generic webhooks, PagerDuty, OpsGenie, and ServiceNow.
 * For the rest of our Connections, you can customize the **Alert Payload**, but not the **Recovery Payload**. What you enter for the **Alert Payload** will be used for both alerts and recovery.
-* The recovery notification is sent to the same channel where the corresponding Alert notifications were sent. In other words, you cannot have different channels where you receive alert and recovery notifications for a given trigger condition.
+* The recovery notification is sent to the same channel where the corresponding alert notifications were sent. In other words, you cannot have different channels where you receive alert and recovery notifications for a given trigger condition.
 * After one day without new data to an incident, the system automatically expires it. The incident is marked as resolved with the resolution set to **Expired**.
 
 ## Tools
@@ -137,11 +137,11 @@ Custom variables used inside the Action Payload.
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
 * [LogReduce](/docs/search/behavior-insights/logreduce/logreduce-operator) / [LogCompare](/docs/search/behavior-insights/logcompare) operators are not supported in monitors. If your query contains these operators, you will not be able to create the monitor.  
 * Monitors only support the [Continuous data tier](/docs/manage/partitions/data-tiers).
-* An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
+* An aggregate metric monitor can evaluate up to 15,000 time series. A non-aggregate metric monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
-* A Log Monitor can have one query up to 15,000 characters long. Metric monitors can specify up to six queries.
+* A log monitor can have one query up to 15,000 characters long. Metric monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
-* The [`timeshift metrics` operator](/docs/metrics/metrics-operators/timeshift) is not supported in a Metric Monitor.
+* The [`timeshift metrics` operator](/docs/metrics/metrics-operators/timeshift) is not supported in a metric monitor.
 * [Hidden Metrics queries](../../metrics/metrics-queries/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.

@@ -75,7 +75,7 @@ The URL and supported payload are different based on the version of the PagerDut
    ```
     * In the **Payload**, where it says `SERVICE KEY`, enter the **integration key** you previously copied from PagerDuty.
     * In the **Payload** for the `description`, specify the description you want sent to PagerDuty. The above payload has specified to use the name of the alert.
-    * In the **Payload** for `severity`, the allowed values (`critical`, `warning`, `error`, and `info`) are case sensitive; PagerDuty expects them to be lowercase. Do not use the `{{TriggerType}}` variable here because that will display values that are capitalized (i.e., `Critical`) and some of the `{{TriggerType}}` values are not allowed by PagerDuty (e.g., `MissingData`).
+    * In the **Payload** for `severity`, the allowed values (`critical`, `warning`, `error`, and `info`) are case sensitive; PagerDuty expects them to be lowercase. Do not use the `{{TriggerType}}` variable here because that will display values that are capitalized (that is, `Critical`) and some of the `{{TriggerType}}` values are not allowed by PagerDuty (for example, `MissingData`).
     * You can also update the `details` section, if you want to customize the PagerDuty alert notification.
 1. The default **Recovery Payload** will not work with Event API V2. Change it to the following:
     ```json

@@ -24,4 +24,4 @@ When you first install a collector it is common to configure sources to collect 
 
 For each collector, you can change the message volume scale so that variations in volume are easier to see. You can also change the time range for each collector to investigate the stream volume for a single collector. When a collector x or y axis is not aligned with all others, the background color changes to blue.
 
-To return to an aligned scale across all collectors, in the total message volume area, click the link to **Align all views below**. To return an individual view to the same scale as other collectors, select the **Same scale across view** check box.
+To return to an aligned scale across all collectors, in the total message volume area, click the link to **Align all views below**. To return an individual view to the same scale as other collectors, select the **Same scale across view** checkbox.
