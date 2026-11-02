@@ -779,6 +779,10 @@ Put the key in brackets for an exact string match:
 
 `_threatlookup_fields['data.threat.data.family'] = 'Redline'`
 
+**Access an array element by index**
+
+`_threatlookup_fields['labels'][0]['name'] = 'KillChain'`
+
 **Going deeper with chained brackets**
 
 The reputation value is a string that contains JSON. Sumo Logic parses it internally, so you can chain brackets to reach inside it. The first bracket picks the top-level key, and each further bracket goes one level down:
