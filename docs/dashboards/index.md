@@ -25,7 +25,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
    * [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security#section-2)
 :::
 
-In this section, we'll introduce the following concepts:
+This section covers the following topics:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -55,7 +55,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/drill-down-to-discover-root-causes')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Drill Down to Discover Root Causes</h4></a>
-  <p>Use dashboards to investigate root causes of a spike of interest.</p>
+  <p>Use dashboards to investigate the root causes of a spike.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -103,7 +103,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/set-data-access-level/')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Set the Data Access Level for a Dashboard</h4></a>
-  <p>Learn how to set the data access level for a dashboard to control the data that the user can see.</p>
+  <p>Learn how to set the data access level for a dashboard to control the data users can see.</p>
   </div>
 </div>
 <div className="box smallbox card">

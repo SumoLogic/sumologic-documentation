@@ -35,11 +35,11 @@ You can also create dashboard panels by typing a description of the panel you wa
 
 ## Dashboard autosave
 
-When you rename or add a panel to a dashboard it is automatically saved in your Sumo Logic Personal folder. Likewise, ongoing changes and additions to the dashboard are saved. This ensures the integrity of your work and prevents any loss due to unforeseen interruptions or outages.
+When you rename a dashboard or add a panel to it, Sumo Logic automatically saves the dashboard in your Personal folder. Ongoing changes and additions are saved as well. This prevents you from losing work because of interruptions or outages.
 
 ## Create a dashboard
 
-There are two ways to create a **Dashboard**, either by using the following method, or by creating it directly from the [Log Search page](#log-search-page) or [Metrics page](#metrics-page). Panels and customized charts will be added in later steps.
+You can create a dashboard with the following steps or directly from the [Log Search page](#log-search-page) or [Metrics page](#metrics-page). You add panels and customized charts in later steps.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
 1. Select the dashboard text box at the top of the window and enter a unique name for your new dashboard.
@@ -47,7 +47,7 @@ There are two ways to create a **Dashboard**, either by using the following meth
 import TerraformLink from '../reuse/terraform-link.md';
 
 :::tip
-You can use Terraform to provide a dashboard with the [`sumologic_dashboard`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/dashboard) resource.
+You can use Terraform to create a dashboard with the [`sumologic_dashboard`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/dashboard) resource.
 
 <TerraformLink/>
 :::
@@ -69,7 +69,7 @@ You can create Log and Metric queries on the same panel.
 
 ### Log query
 
-Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the text box and press enter. A few important things to note are:
+Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the text box and press enter. Note the following:
 
 * Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list.
 * By default, the query builder is set to **Logs**.
@@ -83,17 +83,17 @@ To create a metrics query, use the [Metrics Search](../metrics/metrics-queries/m
 
 ### Multiple query
 
-To add another query to a panel click the plus **+** icon on the last query row. Each query is assigned a letter for reference.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/add-query.png')} alt="add query" style={{border: '1px solid gray'}} width="800" />
+To add another query to a panel, click the plus **+** icon on the last query row. Each query is assigned a letter for reference.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/add-query.png')} alt="add query" style={{border: '1px solid gray'}} width="800" />
 
 ## Modify chart
 
-You can customize a chart on a dashboard panel in a variety of ways. To include changing the chart type to analyze the data in another format. See [Modify a Chart](./panels/modify-chart.md) for details on all the available options.
+You can customize a chart on a dashboard panel in a variety of ways, including changing the chart type to analyze the data in another format. See [Modify a Chart](./panels/modify-chart.md) for details on all the available options.
 
 ## Add to dashboard
 
 Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard. <br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
-That's it, start using your dashboard.
+That's it. Start using your dashboard.
 
 ## Copy a panel to another dashboard
 
@@ -121,16 +121,16 @@ You can delete a panel that you no longer need.
 
 To create a dashboard from the [Log Search page](/docs/search):
 
-1. From the Log Search page click the **Add to Dashboard** button on the Aggregates tab after running your aggregate query you want to add to a dashboard panel.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-dashboard-new-logs.png')} alt="Add to dashboard new logs" style={{border: '1px solid gray'}} width="700" />
-1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
-1. In the updated window toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
-1. Click **Add** and your new dashboard is created.
+1. From the Log Search page, run the aggregate query you want to add to a dashboard panel, and then click the **Add to Dashboard** button on the Aggregates tab.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-dashboard-new-logs.png')} alt="Add to dashboard new logs" style={{border: '1px solid gray'}} width="700" />
+1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. After you enter the name, select the **Create New Dashboard** option that appears with that name.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
+1. In the updated window, toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
+1. Click **Add**. Sumo Logic creates your new dashboard.
 
 ## Metrics page
 
 To create a dashboard from the [Metrics page](/docs/metrics/metrics-queries):
 
-1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Search](../metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/metrics-explorer-add-to-dashboard.png')} alt="metrics explorer add to dashboard" style={{border: '1px solid gray'}} width="800" />
-1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
-1. In the updated window toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
-1. Click **Add** and your new dashboard is created.
+1. From the Metrics page click the **Add to Dashboard** button in [Metrics Search](../metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/metrics-explorer-add-to-dashboard.png')} alt="metrics explorer add to dashboard" style={{border: '1px solid gray'}} width="800" />
+1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. After you enter the name, select the **Create New Dashboard** option that appears with that name.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
+1. In the updated window, toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
+1. Click **Add**. Sumo Logic creates your new dashboard.

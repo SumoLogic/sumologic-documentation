@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page has information about changing the time range for a Sumo Logic dashboard and its panels.
 
-A dashboard has a preset default time range. Often, the dashboard time range applies to all of the panels in the dashboards. Sometimes, individual panels may have a different time range than the dashboard time range. You can change the time range for a dashboard and for individual panels—the options for doing so are described in [Set time range](#set-time-range), below.
+A dashboard has a preset default time range. Often, the dashboard time range applies to all of the panels in the dashboard. Sometimes, individual panels may have a different time range than the dashboard time range. You can change the time range for a dashboard and for individual panels—the options are described in [Set time range](#set-time-range).
 
 After changing the time range for a dashboard or panel, you can set the new range as the default time range. If you do, the default time range you’ve set will persist, even after you close and reopen the dashboard. For more information, see [Set default time range](#set-default-time-ranges).
 
@@ -54,31 +54,31 @@ To drill down into a log panel:
    :::
 1. The panel begins re-fetching data at a finer granularity.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-zoomed.png')} alt="Log panel re-fetching data at a finer granularity with pan and reset icons visible" style={{border: '1px solid gray'}} width="800"/>
 1. The panel re-fetches data at the new granularity. A row of icons appears above the panel for panning and resetting the zoomed view.
-1. Once the data has been fetched, the finer granularity data will be displayed.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-zoomed-result.png')} alt="Zoomed-in log panel showing finer granularity data" style={{border: '1px solid gray'}} width="800"/>
+1. When the fetch completes, the panel displays the finer-granularity data.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-zoomed-result.png')} alt="Zoomed-in log panel showing finer granularity data" style={{border: '1px solid gray'}} width="800"/>
 1. To drill down further, click and drag again on the zoomed-in view.
-1. To pan across the zoomed-in time range, use the pan icon above the panel. Sumo Logic pre-fetches adjacent time windows in the background, so panning feels seamless. If you pan past the edge of the original time range, a message lets you know you've reached the edge.
+1. To pan across the zoomed-in time range, use the pan icon above the panel. Sumo Logic pre-fetches adjacent time windows in the background, so panning is smooth. If you pan past the edge of the original time range, a message lets you know you've reached the edge.
 1. To return to the panel's original view and granularity, click the reset icon <img src={useBaseUrl('img/dashboards/set-custom-time-ranges/reset-icon.png')} alt="reset icon" width="20"/> above the panel.
 
 If your query already includes an explicit `timeslice` operator, Sumo Logic rewrites its interval value in place rather than adding a new `timeslice` operator to the query.
 
 ## Set default time ranges
 
-A dashboard has a default time range defined by its creator. The default time range is shown in the upper right of a dashboard. The default time range is displayed in gray font.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" style={{border: '1px solid gray'}} width="800"/>
+A dashboard has a default time range defined by its creator. The default time range appears in gray in the upper right of a dashboard.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" style={{border: '1px solid gray'}} width="800"/>
 
 ### Modify time ranges
 
-You can modify the time range in panel to zoom in for granular details, especially for charts with larger compliance periods. To do so, select and drag across date/time and click **Update dashboard time range** button to zoom in further. Now, this time range is considered as a temporary time range and all the time series panels in the dashboard will be zoomed in for the selected time range. This is different from [drilling down on a log panel by zooming](#drill-down-on-a-log-panel-by-zooming), which is local to a single panel and does not affect other panels. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/update-dashboard-time-range.png')} alt="Update dashboard time range" style={{border: '1px solid gray'}} width="500"/>
+You can modify the time range in a panel to zoom in for granular details, especially for charts that cover long time periods. To do so, select and drag across the date and time range you want, and then click the **Update dashboard time range** button to zoom in further. This time range is temporary, and all the time series panels in the dashboard zoom in to the selected range. This is different from [drilling down on a log panel by zooming](#drill-down-on-a-log-panel-by-zooming), which is local to a single panel and does not affect other panels. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/update-dashboard-time-range.png')} alt="Update dashboard time range" style={{border: '1px solid gray'}} width="500"/>
 
-After you do, the new time range is shown in blue, and a more options menu is available that allows you to revert back to the default, or make it the default time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-modified.png')} alt="dash modified" style={{border: '1px solid gray'}} width="800"/>
+The new time range appears in blue, and a more options menu lets you revert to the default or make the new range the default time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-modified.png')} alt="dash modified" style={{border: '1px solid gray'}} width="800"/>
 
 ### Set default time ranges
 
-As noted above, you can set a new default time range for a dashboard and individual panels. To do so, you open the options menu next to a modified time range (shown in blue), and click **Set as Default**.
+As noted above, you can set a new default time range for a dashboard and individual panels. To do so, open the options menu next to a modified time range (shown in blue), and click **Set as Default**.
 
-When you make a modified time range the default, the time range appears in grey, and the more options menu is no longer available.
+When you make a modified time range the default, the time range appears in gray, and the more options menu is no longer available.
 
-When you change the default time range for the dashboard, the new time range will automatically be applied to all panels on the dashboard, unless you have set a new default time range default for one or more of the dashboard panels. In that case, you’ll be offered the option to **Override custom panel time ranges** with the dashboard default. If you do not select that, the existing default time ranges for individual panels will be preserved.
+When you change the default time range for the dashboard, the new time range will automatically be applied to all panels on the dashboard, unless you have set a default time range for one or more of the dashboard panels. In that case, you’ll be offered the option to **Override custom panel time ranges** with the dashboard default. If you do not select this option, Sumo Logic keeps the existing default time ranges for individual panels.
 
 <img src={useBaseUrl('img/dashboards/set-custom-time-ranges/set-as-dashboard-default.png')} alt="dashboard default" style={{border: '1px solid gray'}} width="400" />
 
-When a default time range is set for a panel, the panel will not inherit the dashboard’s time range setting. You can change the panel back to inheriting the dashboard's time range by selecting **Inherit dashboard's time range** for the panel, or using the **Override custom panel time ranges** option, which causes every dashboard panel to inherit the dashboard's time range selection.
+When a default time range is set for a panel, the panel will not inherit the dashboard’s time range setting. You can change the panel back to inheriting the dashboard's time range by selecting **Inherit dashboard's time range** for the panel, or by using the **Override custom panel time ranges** option, which causes every dashboard panel to inherit the dashboard's time range selection.

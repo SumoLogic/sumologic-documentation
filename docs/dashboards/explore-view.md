@@ -7,7 +7,7 @@ description: View and navigate the hierarchy of your environment.
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of your environment to facilitate successful monitoring, managing, and troubleshooting.
+Sumo Logic monitoring dashboards give you an intuitive visual hierarchy of your environment to help you monitor, manage, and troubleshoot it.
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the monitoring dashboards, go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select from the dropdown menu under **Explore By**.
 
@@ -22,11 +22,11 @@ Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of y
 To navigate, do the following:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**.
-3. Drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards.
+3. Drill down further until you find the component you want to explore. Metrics appear as dashboards.
 
 ### Stack linking
 
-Stack linking connects dashboards so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards/explore/stack-linking.png')} alt="Stack linking" style={{border: '1px solid gray'}} width="500"/>
+Stack linking connects your dashboards to monitoring dashboards so you can view them when you explore infrastructure components. [Learn more](/docs/dashboards/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards/explore/stack-linking.png')} alt="Stack linking" style={{border: '1px solid gray'}} width="500"/>
 
 ## Monitoring dashboard categories
 
@@ -34,19 +34,19 @@ Monitoring dashboards are available for the following apps and solutions.
 
 ### AWS Observability
 
-AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From this tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
+AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
 
 ### Kubernetes Views
 
-Kubernetes views provide a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. These views, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allow you to intuitively monitor and troubleshoot issues as they arise. You can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. [Learn more](/docs/observability/kubernetes/monitoring.md).<br/><img src={useBaseUrl('img/dashboards/explore/k8s-view.png')} alt="Kubernetes views" style={{border: '1px solid gray'}} width="300"/>
+Kubernetes views provide a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. These views, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allow you to intuitively monitor and troubleshoot issues as they arise. You can filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. [Learn more](/docs/observability/kubernetes/monitoring.md).<br/><img src={useBaseUrl('img/dashboards/explore/k8s-view.png')} alt="Kubernetes views" style={{border: '1px solid gray'}} width="300"/>
 
 ### Application service views
 
-Application Monitoring provides three Service and Application dashboard views. This allows you to review tracing data by application (all or grouped), environment, and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/services-list-map) and [Sumo Logic Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards/explore/apm-service-view.png')} alt="Application monitoring" style={{border: '1px solid gray'}} width="300"/>
+Application Monitoring provides three Service and Application dashboard views. These views let you review tracing data by application (all or grouped), by environment, and by service, and break down service health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/services-list-map) and [Sumo Logic Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards/explore/apm-service-view.png')} alt="Application monitoring" style={{border: '1px solid gray'}} width="300"/>
 
 ### Real User Monitoring
 
-[Real User Monitoring](/docs/apm/real-user-monitoring) (RUM) allows you to visualize RUM metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards/explore/real-user-monitoring.png')} alt="RUM" style={{border: '1px solid gray'}} width="500" />
+[Real User Monitoring](/docs/apm/real-user-monitoring) (RUM) allows you to visualize RUM metrics gathered from tracing instrumentation in the browser. This provides visibility into the actual end-user experience by geographic location, browser, and operating system. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards/explore/real-user-monitoring.png')} alt="RUM" style={{border: '1px solid gray'}} width="500" />
 
 ### Database View
 
@@ -58,12 +58,12 @@ This feature is supported only for Database apps. To learn more, go to the [Data
 
 1. Select the **Database View** category.
 1. Select an environment (for example, `dev` or `prod`).
-   * **Application Components - Environments Overview** will appear on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
+   * **Application Components - Environments Overview** will appear on the right. This dashboard provides insights into CRUD activity and errors for each component in that environment.
 1. Select from the list of that environment's components (for example, `Elastisearch Clusters`).
    * The respective dashboard will appear in the right nav.
-1. Then choose a specific database .
-1. Drill down into hierarchy to find specific component entities to view dashboards at more granular levels.
-1. Toggle between various dashboards to get your desired info.<br/><img src={useBaseUrl('img/dashboards/explore/db-drilldown.png')} alt="Database drilldown" width="800" style={{border: '1px solid gray'}} />
+1. Choose a specific database.
+1. Drill down into the hierarchy to find specific component entities and view dashboards at more granular levels.
+1. Switch between dashboards to view the information you need.<br/><img src={useBaseUrl('img/dashboards/explore/db-drilldown.png')} alt="Database drilldown" width="800" style={{border: '1px solid gray'}} />
 
 ## Filtering
 
@@ -71,33 +71,33 @@ You can filter your view so you can focus on specific entities and sections of y
 
 ### Create filters
 
-1. To filter click the filter icon in the left-hand navigation menu. You can click the icon to toggle the visibility of the menu.<br/><img src={useBaseUrl('img/dashboards/explore/brand-themefilter.png')} alt="Filters" style={{border: '1px solid gray'}} />
+1. To filter, click the filter icon in the left-hand navigation menu. You can click the icon to toggle the visibility of the menu.<br/><img src={useBaseUrl('img/dashboards/explore/brand-themefilter.png')} alt="Filters" style={{border: '1px solid gray'}} />
 
-2. Once clicked the filter menu appears:<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_filter_options.png')} alt="Filter options" style={{border: '1px solid gray'}} />
+2. The **Filter** menu appears:<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_filter_options.png')} alt="Filter options" style={{border: '1px solid gray'}} />
 
-    The **Filter** menu allows you to select a saved filter or write a new one. If you have any saved filters they are available in the dropdown menu **Filter**. The default value is **None Selected**. The **Clear All** button is available to clear any filters that are already applied.
+    The **Filter** menu allows you to select a saved filter or write a new one. If you have saved filters, they are available in the **Filter** dropdown menu. The default value is **None Selected**. The **Clear All** button is available to clear any filters that are already applied.
 
-3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown list will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400" style={{border: '1px solid gray'}} />
+3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown list appears with the keys you can filter by. You can also enter only a **value**, without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400" style={{border: '1px solid gray'}} />
 
 4. Enter or select the keys you want to filter by then click **Apply**. Filters of the same key behave as an **OR** condition and different keys behave as an **AND** condition.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_apply_filters.png')} alt="Apply filters" width="500" style={{border: '1px solid gray'}} />
 
 The menu will refresh with your filters applied.
 
 :::tip Negation
-You can apply the filter as an exclusion or negation so the filter acts as a `not` or bang `!`. This way the filter will return results that do not have those values. Simply click the prohibition or _no_ sign to set. The filter will get a red border when set to exclude. You may manually add an exclamation or bang `!` to the input area before selecting your filter. For example, `!_key=value`.
+You can apply the filter as an exclusion or negation so the filter acts as a `not` or bang `!`. This way the filter will return results that do not have those values. Click the prohibition (no) sign to set the exclusion. The filter will get a red border when set to exclude. You may manually add an exclamation or bang `!` to the input area before selecting your filter. For example, `!_key=value`.
 :::
 
 ### Saving filters
 
 You can save filters so they are applied every time you explore the same dashboards. To save, click the three-vertical dots icon and then click **Save**.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_save_filters.png')} alt="Save filters" width="500" style={{border: '1px solid gray'}} />
 
-A pop up window is shown where you need to provide the filter a name. This name is what you'll see in the **Filter** dropdown menu.<br/><img src={useBaseUrl('img/dashboards/explore/savefilter.png')} alt="Save filter" width="350" style={{border: '1px solid gray'}} />
+A pop-up window appears where you enter a name for the filter. This name is what you'll see in the **Filter** dropdown menu.<br/><img src={useBaseUrl('img/dashboards/explore/savefilter.png')} alt="Save filter" width="350" style={{border: '1px solid gray'}} />
 
-We have named the filter "primary" in the previous image. Once done click **Save**. When opening the view, you'll now see the **primary** filter as an option in the **Filter** menu.<br/><img src={useBaseUrl('img/dashboards/explore/select-saved-filters.png')} alt="Saved filters" width="500" style={{border: '1px solid gray'}} />
+We have named the filter "primary" in the previous image. When you finish, click **Save**. The next time you open the view, you see the **primary** filter as an option in the **Filter** menu.<br/><img src={useBaseUrl('img/dashboards/explore/select-saved-filters.png')} alt="Saved filters" width="500" style={{border: '1px solid gray'}} />
 
 ### Updating, deleting, saving filters as default
 
-Saved filters can be applied as a default filter, edited, or deleted.
+You can set a saved filter as the default, edit it, or delete it.
 * A default filter is applied every time you open the view.
 * The update option is available if you edit a saved filter.
 * A deleted filter is not recoverable.
@@ -106,13 +106,13 @@ Saved filters can be applied as a default filter, edited, or deleted.
 
 ### Remove default filter
 
-The default filter is displayed in the **Filter** dropdown menu with a **Default** label. Select the **Remove default** text link to clear your set default filter.<br/><img src={useBaseUrl('img/dashboards/explore/remove-default-filter.png')} alt="Remove default filter" width="400" style={{border: '1px solid gray'}} />
+The default filter is displayed in the **Filter** dropdown menu with a **Default** label. Select the **Remove default** text link to clear your default filter.<br/><img src={useBaseUrl('img/dashboards/explore/remove-default-filter.png')} alt="Remove default filter" width="400" style={{border: '1px solid gray'}} />
 
 ## Linking to entities
 
 ### Obtaining links
 
-Use the link button to the right of the dashboard title to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/link-explore-dashboard.png')} alt="Link dashboards" style={{border: '1px solid gray'}} />
+Use the link button to the right of the dashboard title to copy the link to your specific entity view in the dashboard. For related information, see [Stack Linking](/docs/dashboards/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/link-explore-dashboard.png')} alt="Link dashboards" style={{border: '1px solid gray'}} />
 
 ### Manually creating links
 
@@ -136,7 +136,7 @@ Optional arguments:
 Filters:
 * `<filterValue>` is the value of a key you want to filter.
 * `<filter>` (optional) is the metadata key you want to apply as a filter to explore. You do not need to provide a filter. You can provide only a `filterValue`.
-* `<negation>` set as `0` to apply your filters or `1` to treat the filters as an exclusion. Think of using `1` as using a `not` or `!` bang, so the filter will return results that do not have those values. This is an example:
+* Set `<negation>` to `0` to apply your filters or `1` to treat the filters as an exclusion. Using `1` works like `not` or `!` (bang), so the filter returns results that do not have those values. This is an example:
 ```xml
 https://<endpoint>/ui/#//explore/@1628023955694,1628024855694@topology=0000000000000041@cluster=kubernetes@filters@1:cl-tracing-training:_collector,0:kubernetes:_origin
 ```
@@ -145,14 +145,14 @@ Dashboard:
 
 #### Example
 
-Let’s create a URL to open on the `primary-eks `cluster, `kube-system` namespace, and `metrics-server` service.
+Let’s create a URL to open the `primary-eks `cluster, `kube-system` namespace, and `metrics-server` service.
 
-The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+The custom URL that opens this view would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
 https://service.us2.sumologic.com/ui/#/explore/@cluster=primary-eks@namespace=kube-system@service=metrics-server
 ```
 
-Using milliseconds as this time range: 09/26/2020 to 09/29/2020 10:33:10.282 AM GMT-04:00 DST
+This example uses milliseconds for the time range 09/26/2020 to 09/29/2020 10:33:10.282 AM GMT-04:00 DST
 ```bash
 https://service.us2.sumologic.com/ui/#/explore/@1601092800000,1601389990282@cluster=primary-eks@namespace=kube-system@service=metrics-server
 ```

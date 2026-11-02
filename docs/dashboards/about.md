@@ -48,7 +48,7 @@ Log and metric panels support [area](/docs/dashboards/panels/area-charts/), [bar
 
 ### Drill down into related data
 
-Click data points or slices and sections of pie, bar, column, area, and line charts to see recommended dashboards and log drilldowns. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes). Cluster map and heat map panels support *Shift+click* on a data point to drill down to the search. Missile map panels support *Shift+click* on the line to drill down to the search. [Learn more](/docs/dashboards/panels/map-charts/#drill-down-from-a-map-chart).
+Click a data point, or a slice or section of a pie, bar, column, area, or line chart, to see recommended dashboards and log drilldowns. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes). Cluster map and heat map panels support *Shift+click* on a data point to drill down to the search. Missile map panels support *Shift+click* on the line to drill down to the search. [Learn more](/docs/dashboards/panels/map-charts/#drill-down-from-a-map-chart).
 
 ### Link dashboards together
 
@@ -68,24 +68,24 @@ To enable or disable this feature, you need to be an **Administrator** or a role
 
 #### Enable the Sumo Logic policy
 
-In this section, you will enable the ability to disable your dashboard auto refresh. By default, auto refresh will be enabled with **30 seconds** minimum time interval. Follow these steps to change this configuration:
+This section shows how to turn off auto refresh or change its minimum interval for your dashboards. By default, auto refresh is enabled with a minimum interval of **30 seconds**. Follow these steps to change this configuration:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
-1. Uncheck the **Allow Auto-Refresh Configuration for all dashboards** checkbox to disable the auto-refresh.
-1. If checked, select the minimum auto-refresh interval from the dropdown list based on your requirement. You can select from 30 seconds to 1 day.
+1. Uncheck the **Allow Auto-Refresh Configuration for all dashboards** checkbox to disable auto refresh.
+1. If the checkbox is selected, choose the minimum auto-refresh interval from the dropdown list. You can choose from 30 seconds to 1 day.
 
 <img src={useBaseUrl('img/get-started/auto-refresh.png')} alt="Auto-Refresh" style={{border: '1px solid gray'}} width="500" />
 
 #### Using auto refresh
 
-Once you have enabled the **Auto-Refresh**, you can now see the panels getting refreshed as per the selected auto-refresh interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
+After you enable **Auto-Refresh**, panels refresh at the selected interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
 
 :::info
 There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).
 :::
 
 :::note
-The dropdown only displays the time-interval which is greater than or equal to the set minimum auto-refresh interval in the **Policies** page.
+The dropdown shows only intervals that are greater than or equal to the minimum auto-refresh interval set on the **Policies** page.
 :::
 
 <img src={useBaseUrl('/img/dashboards/about-dashboard/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="400" />
@@ -127,7 +127,7 @@ To enable or disable this feature, you need to be an **Administrator** or a role
 
 #### Enable the Sumo Logic policy
 
-In this section, you will enable the ability to auto run your dashboard panels. By default, auto run will be enabled, to disable it follow these steps:
+This section shows how to turn off auto run for your dashboard panels. Auto run is enabled by default. To disable it, follow these steps:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
 1. Uncheck the **Enable Auto-Run for all dashboards** checkbox.
@@ -136,9 +136,9 @@ In this section, you will enable the ability to auto run your dashboard panels. 
 
 #### Using auto run
 
-When **Auto Run** is disabled you cannot see any data in the panels until you click the **Run** button. Clicking the **Run** button will run all the panels in the dashboard. If you want to run only the selected panel, click <img src={useBaseUrl('/img/dashboards/about-dashboard/rerun.png')} alt="rerun-button" style={{border: '1px solid gray'}} width="30" /> button on top-right of each panel.
+When **Auto Run** is disabled, panels show no data until you click the **Run** button. The **Run** button runs all panels in the dashboard. If you want to run only the selected panel, click <img src={useBaseUrl('/img/dashboards/about-dashboard/rerun.png')} alt="rerun-button" style={{border: '1px solid gray'}} width="30" /> button in the top-right corner of each panel.
 
-Panels do not rerun after actions such as adding, editing, deleting, changing the time range, or changing the template variable until you click the **Run** button after your changes. You will always see the following warning message near to your search box once any of the above updates are made to the dashboard:
+Panels do not rerun after changes such as adding, editing, or deleting a panel, or changing the time range or a template variable, until you click the **Run** button. After you make any of these changes, the following warning appears near the search box:
 
 `Auto-Run is disabled. Hit Run to apply the changes.`
 
@@ -197,7 +197,7 @@ To view the dashboard information, follow the steps below:
     - **End**. The current end time based on the selected time range.
     - **Time Zone**. The time zone for the set time range.
     - **Scanned Bytes**. The total amount of data scanned in bytes.
-    - **Dashboard ID**. A unique identification ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
+    - **Dashboard ID**. A unique ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
 
 ### Dark theme
 
@@ -207,11 +207,11 @@ You can also select a Light or Dark theme when you [export a dashboard](/docs/da
 
 ### Clickable legend
 
-If you want to focus on one item in your chart you can click the item in the legend. To toggle one legend item, hold the **shift** key and click the item.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
+To focus on one item in your chart, click the item in the legend. To toggle one legend item, hold the **shift** key and click the item.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
 
 ## Rules
 
-* Auto Refresh applies to the whole dashboard, you cannot configure it by panel.
+* Auto Refresh applies to the whole dashboard. You cannot configure it for individual panels.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
 * If the requested refresh interval is not possible, you'll get an error message indicating the actual refresh rate is slower than requested. This can be due to one of the following reasons:
    * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.
@@ -235,7 +235,7 @@ Live mode restrictions do not apply to dashboards.
 ## Limitations
 
 * A panel can have up to 6 logs and 6 metrics queries.
-* Joining log queries in a separate query is not supported. See how to [join metric queries](/docs/metrics/metrics-queries/metrics-explorer) for details on how this works.
+* Joining log queries in a separate query is not supported. See [join metric queries](/docs/metrics/metrics-queries/metrics-explorer) for details.
 * A dashboard can have up to 100 queries.
 * Dashboard chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a dashboard from the Search page.
