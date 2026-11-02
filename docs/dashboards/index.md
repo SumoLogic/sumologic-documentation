@@ -49,7 +49,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/explore-view/')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Explore Monitoring Dashboards</h4></a>
-  <p>Monitoring dashboards give you an easy way to view and navigate the hierarchy of your environment.</p>
+  <p>Monitoring dashboards let you view and navigate the hierarchy of your environment.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -2,6 +2,7 @@
 id: share-dashboard-outside-org
 title: Share a Dashboard Outside Your Organization
 sidebar_label: Share a Dashboard Outside Your Organization
+description: Learn how to share a Sumo Logic dashboard with people outside your organization by enabling a security policy, role capabilities, and the service allowlist.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,11 +17,11 @@ Sharing outside an organization is always view-only.
 
 You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist.
 
-Before you share a dashboard with users external to your organization, you must enable a security policy, ensure that you have the right role capabilities, and enable the service allowlist depending on your option selection.
+Before you share a dashboard with users external to your organization, you need to enable a security policy, ensure that you have the right role capabilities, and enable the service allowlist depending on your option selection.
 
 ## Enable the Sumo Logic policy
 
-In this step, you'll enable the ability to share dashboards outside your organization. You must have admin privileges to enable the policy.
+In this step, you'll enable the ability to share dashboards outside your organization. You need admin privileges to enable the policy.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
 1. Select the **Enable** checkbox for **Share Dashboards Outside of the Organization**.
@@ -28,7 +29,7 @@ In this step, you'll enable the ability to share dashboards outside your organiz
 
 ## Verify your role allows external sharing
 
-You must have specific role capabilities to share a dashboard with external users.
+You need specific role capabilities to share a dashboard with external users.
 
 * **Share Dashboards with the Allowlist.** Share dashboards with users only on the allowlist.
 * **Share Dashboards with the World.** Share dashboards with external users.
@@ -37,7 +38,7 @@ If you do not already have a role that grants you the required capability, an ad
 
 ## Add external users to service allowlist
 
-If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).
+If you want to share dashboards with specific external users, rather than the world, the service allowlist needs to be enabled and you need to provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).
 
 :::note
 Administrator privileges are required to enable the service allowlist.
@@ -49,7 +50,7 @@ Administrator privileges are required to enable the service allowlist.
 1. Right-click the dashboard name in the resulting list.
 1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="Share option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click the share icon next to the dashboard title. <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="Share option 2" style={{border: '1px solid gray'}} width="400"/>
 1. The **Share Dashboard** dialog appears.
-1. Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="Share outside" width="800"/>
+1. Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="Share outside" width="800" style={{border: '1px solid gray'}} />
 1. If you want viewers to see the current time range in the URL, toggle the **Include current time range in the URL** option.
 1. If you want viewers to see the current variable values in the URL, toggle the **Include current variable values in the URL** option.
 1. Toggle the **Public Dashboard** on.
@@ -61,7 +62,7 @@ The URL that external users can use to access the dashboard appears under the **
 
 * Sharing outside an organization is always view-only.
 * Panels that are incompatible with auto-refresh will only show data for viewers who have a login.
-* Panels must use relative time ranges (such as Last 15 Minutes, Last 24 Hours). Absolute time ranges are not currently supported.
+* Panels need to use relative time ranges (such as Last 15 Minutes, Last 24 Hours). Absolute time ranges are not supported.
 * Unauthenticated viewers will see dashboards with default time range and default template variable values applied. To share a dashboard with a different set of template variable values, create a copy of the dashboard and set the time range and variable value as desired.
 * If **User's data access level** is enabled for a dashboard, you cannot share it outside your organization.
 * Spans, Traces, and Service maps panels are not supported in public dashboards.

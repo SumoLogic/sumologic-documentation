@@ -20,7 +20,7 @@ To graph a log query and determine outliers, do the following:
 1. In Sumo Logic, go to and open a dashboard.
 1. In the upper right corner click **Add Panel** and select **Time Series** as the panel type.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/example-time-series.png')} alt="example time series" style={{border: '1px solid gray'}} width="800" />
 1. By default, the query builder is set for a **Logs** query.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/Add_Panel_Logs_Query_option.png')} alt="Add_Panel_Logs_Query_option" style={{border: '1px solid gray'}} width="200" />
-1. Enter your log query in the text field on the right and press **Return** to run the query. We used the following query for our example.
+1. Enter your log query in the text box on the right and press **Return** to run the query. We used the following query for our example.
     ```sumo
     (_sourceCategory=airflow-service)
     | parse "in time *" as response_time
@@ -34,7 +34,7 @@ The outlier graph appears in the window below, with the outlier series shown in
 
 ## Customizing the graph
 
-You can easily modify the look of the chart by changing the color palette, line type, and thickness, to name a few of the customizing options. For outlier graphs, there is a separate set of options you can choose from to modify the look of your chart.
+You can modify the look of the chart by changing the color palette, line type, and thickness, to name a few of the customizing options. For outlier graphs, there is a separate set of options you can choose from to modify the look of your chart.
 
 To customize the visual appearance of the graph, do the following:
 

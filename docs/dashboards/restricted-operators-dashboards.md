@@ -7,7 +7,7 @@ description: Learn more about the restrictions when you use operators with dashb
 
 This page has information about restrictions and rules about using [Sumo Logic log search operators](/docs/search/search-query-language) with dashboards.
 
-## Dashboards restrictions
+## Dashboard restrictions
 
 The following operators cannot be used with dashboards:
 
@@ -71,4 +71,4 @@ You can use the following operators in dashboard panels:
 
 ## Notes
 
-You can use the [`count_frequent`](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
+You can use the [`count_frequent`](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the panel.

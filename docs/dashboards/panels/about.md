@@ -1,7 +1,7 @@
 ---
 id: about
 title: About Dashboard Panels
-description: Learn about the various Dashboard panels and the types of data best suited for each.
+description: Learn about the various dashboard panels and the types of data best suited for each.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -99,7 +99,7 @@ The following image shows an example of Scatter and Bubble charts.<br/><img src=
 
 <img src={useBaseUrl('/img/dashboards/panels/single-value-panel.png')} style={{border: '1px solid gray'}} alt="single value panel" width="75"/>
 
-Single Value Panels are great at providing high level overviews. They look great on executive dashboards and can provide at-a-glance information to help decide where to inspect and troubleshoot further.
+Single value panels are great at providing high level overviews. They look great on executive dashboards and can provide at-a-glance information to help decide where to inspect and troubleshoot further.
 
 Only [single value charts](single-value-charts.md) are supported.<br/><img src={useBaseUrl('/img/dashboards/panels/single-value-charts.png')} style={{border: '1px solid gray'}} alt="single value charts" width="800"/>
 
@@ -123,9 +123,9 @@ Text can clarify what you are showing on dashboards or act as a note to your v
 
 Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](markdown-syntax.md).
 
-There is no limit to the number of Text Panels you can add to dashboards. These types of Panels do not count against the quota in Sumo Logic Free accounts.
+There is no limit to the number of text panels you can add to dashboards. These types of Panels do not count against the quota in Sumo Logic Free accounts.
 
-To add a Text Panel:
+To add a text panel:
 
 1. With the dashboard open, click the **Add Panel** button.<br/><img src={useBaseUrl('/img/dashboards/panels/add-panel.png')} style={{border: '1px solid gray'}} alt="add panel" width="800"/>
 1. Choose **Text **as the Panel Type**.**
@@ -142,7 +142,7 @@ To add a Text Panel:
 
 Text panels can provide links to URLs or other dashboards with markdown syntax. To create a link to a URL, surround your linked text with square brackets `[]`, then add your URL in parenthesis `()`, as shown.
 
-To add a link to a Panel in order to drill down to another dashboard, see [Add Dashboard Link](/docs/dashboards/panels/about#add-links-to-text-panels).
+To add a link to a panel to drill down to another dashboard, see [Add Dashboard Link](/docs/dashboards/panels/about#add-links-to-text-panels).
 
 ### Syntax
 

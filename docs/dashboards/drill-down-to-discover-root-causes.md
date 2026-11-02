@@ -5,7 +5,7 @@ description: Learn how to drill into related content to discover the root cause 
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you see a spike of interest on a dashboard that requires further investigation, you can easily drill into the related content to discover the root cause. This page shows you how you can easily discover related dashboards and corresponding log searches that pertain to an issue in your environment.
+When you see a spike of interest on a Sumo Logic dashboard that requires further investigation, you can drill into the related content to discover the root cause. This page shows you how to discover related dashboards and corresponding log searches that pertain to an issue in your environment.
 
 ## Drilling into related content
 

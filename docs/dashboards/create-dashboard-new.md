@@ -1,15 +1,15 @@
 ---
 id: create-dashboard-new
 title: Create a Dashboard
-description: Learn how to create your own custom dashboard with a panel and query, then customize a chart and the chart to the dashboard.
+description: Learn how to create a custom Sumo Logic dashboard by adding a panel and query, customizing the chart, and saving it to the dashboard.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This page demonstrates how to create a dashboard, add a query, and then add the chart to the dashboard. You create your dashboard by selecting template options from menus and dropdowns.
+This page shows how to create a Sumo Logic dashboard, add a query, and add the resulting chart to the dashboard. You build the dashboard by selecting options from menus and dropdowns.
 
-Dashboards let you view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboards template capabilities provide for easier data scoping and intuitive chart creation.
+Sumo Logic dashboards let you view logs and metrics data together in one integrated view, giving you control over how both are visualized. Template variables make data scoping and chart creation easier.
 
 :::training Micro Lesson
 
@@ -33,7 +33,7 @@ Rather watch a short micro lesson video?
 You can also create dashboard panels by typing a description of the panel you want directly into Mobot, instead of configuring panels manually. For details, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 :::
 
-## Dashboards autosave
+## Dashboard autosave
 
 When you rename or add a panel to a dashboard it is automatically saved in your Sumo Logic Personal folder. Likewise, ongoing changes and additions to the dashboard are saved. This ensures the integrity of your work and prevents any loss due to unforeseen interruptions or outages.
 
@@ -42,7 +42,7 @@ When you rename or add a panel to a dashboard it is automatically saved in your
 There are two ways to create a **Dashboard**, either by using the following method, or by creating it directly from the [Log Search page](#log-search-page) or [Metrics page](#metrics-page). Panels and customized charts will be added in later steps.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
-1. Select the dashboard text field at the top of the window and enter a unique name for your new dashboard.
+1. Select the dashboard text box at the top of the window and enter a unique name for your new dashboard.
 
 import TerraformLink from '../reuse/terraform-link.md';
 
@@ -69,7 +69,7 @@ You can create Log and Metric queries on the same panel.
 
 ### Log query
 
-Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. A few important things to note are:
+Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the text box and press enter. A few important things to note are:
 
 * Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list.
 * By default, the query builder is set to **Logs**.
@@ -79,7 +79,7 @@ Enter your aggregate [search query](/docs/search/search-query-language/group-agg
 
 Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.
 
-To create a metrics query utilize the [Metrics Search](../metrics/metrics-queries/metrics-explorer.md).
+To create a metrics query, use the [Metrics Search](../metrics/metrics-queries/metrics-explorer.md).
 
 ### Multiple query
 

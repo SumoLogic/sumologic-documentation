@@ -1,15 +1,15 @@
 ---
 id: export-dashboard-new
 title: Exporting Dashboards
-description: Learn how to export Dashboards as a PDF or PNG file.
+description: Learn how to export Sumo Logic dashboards as a PDF or PNG file.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Dashboards provide insights for monitoring key performance indicators (KPIs) across your organization. There may be times when key stakeholders require access to a static snapshot of dashboard KPIs without having to log in to Sumo Logic. In these instances, you can export a snapshot of a dashboard to share. This capability allows you to extend monitoring analytics to a broader base both within and outside your organization.
+Sumo Logic dashboards provide insights for monitoring key performance indicators (KPIs) across your organization. Stakeholders sometimes need a static snapshot of dashboard KPIs without logging in to Sumo Logic. In these cases, you can export a snapshot of a dashboard to share. This extends monitoring analytics to a broader audience both inside and outside your organization.
 
 You can generate and download your dashboards in PDF, PNG, and JSON format.
 
-To export a dashboard follow these steps:
+To export a dashboard, follow these steps:
 
 1. Open the dashboard you need to export.
 1. Click the three-dot kebab menu icon on the top right of the dashboard.

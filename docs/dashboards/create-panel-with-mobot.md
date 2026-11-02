@@ -10,7 +10,7 @@ keywords:
   - dojoai
 ---
 
-[Mobot](/docs/search/mobot) enables you to create dashboard panels using natural language. Instead of manually building a query and configuring a visualization, describe the panel you want, and Mobot generates the query, selects an appropriate visualization, and adds the panel to a new or existing dashboard after your confirmation.
+[Mobot](/docs/search/mobot) enables you to create Sumo Logic dashboard panels using natural language. Instead of manually building a query and configuring a visualization, describe the panel you want, and Mobot generates the query, selects an appropriate visualization, and adds the panel to a new or existing dashboard after your confirmation.
 
 Mobot supports logs panels only, not metrics panels, and can create multiple panels from a single prompt. It creates new panels only; it cannot update an existing panel.
 

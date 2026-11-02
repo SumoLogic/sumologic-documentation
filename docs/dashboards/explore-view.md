@@ -46,14 +46,14 @@ Application Monitoring provides three Service and Application dashboard views. T
 
 ### Real User Monitoring
 
-[Real User Monitoring](/docs/apm/real-user-monitoring) allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards/explore/real-user-monitoring.png')} alt="RUM" style={{border: '1px solid gray'}} width="500" />
+[Real User Monitoring](/docs/apm/real-user-monitoring) (RUM) allows you to visualize RUM metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards/explore/real-user-monitoring.png')} alt="RUM" style={{border: '1px solid gray'}} width="500" />
 
 ### Database View
 
 Sumo Logic provides a set of dashboards for various components of your application that allow you to review the state of individual parts of your system. You can track errors, performance, and usage of application components, grouped by their type and logical clusters.
 
 :::note
-This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases) and [Application Component Solution](/docs/observability/application-components).
+This feature is supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases) and [Application Component Solution](/docs/observability/application-components).
 :::
 
 1. Select the **Database View** category.
@@ -63,7 +63,7 @@ This feature is currently supported only for Database apps. To learn more, go to
    * The respective dashboard will appear in the right nav.
 1. Then choose a specific database .
 1. Drill down into hierarchy to find specific component entities to view dashboards at more granular levels.
-1. Toggle between various dashboards to get your desired info.<br/><img src={useBaseUrl('img/dashboards/explore/db-drilldown.png')} alt="Database drilldown" width="800"/>
+1. Toggle between various dashboards to get your desired info.<br/><img src={useBaseUrl('img/dashboards/explore/db-drilldown.png')} alt="Database drilldown" width="800" style={{border: '1px solid gray'}} />
 
 ## Filtering
 
@@ -71,15 +71,15 @@ You can filter your view so you can focus on specific entities and sections of y
 
 ### Create filters
 
-1. To filter click the filter icon in the left-hand navigation menu. You can click the icon to toggle the visibility of the menu.<br/><img src={useBaseUrl('img/dashboards/explore/brand-themefilter.png')} alt="Filters" />
+1. To filter click the filter icon in the left-hand navigation menu. You can click the icon to toggle the visibility of the menu.<br/><img src={useBaseUrl('img/dashboards/explore/brand-themefilter.png')} alt="Filters" style={{border: '1px solid gray'}} />
 
-2. Once clicked the filter menu appears below:<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_filter_options.png')} alt="Filter options" />
+2. Once clicked the filter menu appears:<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_filter_options.png')} alt="Filter options" style={{border: '1px solid gray'}} />
 
     The **Filter** menu allows you to select a saved filter or write a new one. If you have any saved filters they are available in the dropdown menu **Filter**. The default value is **None Selected**. The **Clear All** button is available to clear any filters that are already applied.
 
-3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown list will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400"/>
+3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown list will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400" style={{border: '1px solid gray'}} />
 
-4. Enter or select the keys you want to filter by then click **Apply**. Filters of the same key behave as an **OR** condition and different keys behave as an **AND** condition.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_apply_filters.png')} alt="Apply filters" width="500"/>
+4. Enter or select the keys you want to filter by then click **Apply**. Filters of the same key behave as an **OR** condition and different keys behave as an **AND** condition.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_apply_filters.png')} alt="Apply filters" width="500" style={{border: '1px solid gray'}} />
 
 The menu will refresh with your filters applied.
 
@@ -89,11 +89,11 @@ You can apply the filter as an exclusion or negation so the filter acts as a `no
 
 ### Saving filters
 
-You can save filters so they are applied every time you explore the same dashboards. To save, click the three-vertical dots icon and then click **Save**.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_save_filters.png')} alt="Save filters" width="500"/>
+You can save filters so they are applied every time you explore the same dashboards. To save, click the three-vertical dots icon and then click **Save**.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_save_filters.png')} alt="Save filters" width="500" style={{border: '1px solid gray'}} />
 
-A pop up window is shown where you need to provide the filter a name. This name is what you'll see in the **Filter** dropdown menu.<br/><img src={useBaseUrl('img/dashboards/explore/savefilter.png')} alt="Save filter" width="350"/>
+A pop up window is shown where you need to provide the filter a name. This name is what you'll see in the **Filter** dropdown menu.<br/><img src={useBaseUrl('img/dashboards/explore/savefilter.png')} alt="Save filter" width="350" style={{border: '1px solid gray'}} />
 
-We have named the filter "primary" in the above image. Once done click **Save**. When opening the view, you'll now see the **primary** filter as an option in the **Filter** menu.<br/><img src={useBaseUrl('img/dashboards/explore/select-saved-filters.png')} alt="Saved filters" width="500"/>
+We have named the filter "primary" in the previous image. Once done click **Save**. When opening the view, you'll now see the **primary** filter as an option in the **Filter** menu.<br/><img src={useBaseUrl('img/dashboards/explore/select-saved-filters.png')} alt="Saved filters" width="500" style={{border: '1px solid gray'}} />
 
 ### Updating, deleting, saving filters as default
 
@@ -102,17 +102,17 @@ Saved filters can be applied as a default filter, edited, or deleted.
 * The update option is available if you edit a saved filter.
 * A deleted filter is not recoverable.
 
-<img src={useBaseUrl('img/dashboards/explore/set-default.png')} alt="Set default filter" width="500"/>
+<img src={useBaseUrl('img/dashboards/explore/set-default.png')} alt="Set default filter" width="500" style={{border: '1px solid gray'}} />
 
 ### Remove default filter
 
-The default filter is displayed in the **Filter** dropdown menu with a **Default** label. Select the **Remove default** text link to clear your set default filter.<br/><img src={useBaseUrl('img/dashboards/explore/remove-default-filter.png')} alt="Remove default filter" width="400"/>
+The default filter is displayed in the **Filter** dropdown menu with a **Default** label. Select the **Remove default** text link to clear your set default filter.<br/><img src={useBaseUrl('img/dashboards/explore/remove-default-filter.png')} alt="Remove default filter" width="400" style={{border: '1px solid gray'}} />
 
 ## Linking to entities
 
 ### Obtaining links
 
-Use the link button to the right of the dashboard title to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/link-explore-dashboard.png')} alt="Link dashboards" />
+Use the link button to the right of the dashboard title to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/link-explore-dashboard.png')} alt="Link dashboards" style={{border: '1px solid gray'}} />
 
 ### Manually creating links
 
@@ -135,7 +135,7 @@ Optional arguments:
 
 Filters:
 * `<filterValue>` is the value of a key you want to filter.
-* `<filter>` (optional) is the metadata key you want to apply as a filter to explore. You do not have to provide a filter, you may only provide a `filterValue`.
+* `<filter>` (optional) is the metadata key you want to apply as a filter to explore. You do not need to provide a filter. You can provide only a `filterValue`.
 * `<negation>` set as `0` to apply your filters or `1` to treat the filters as an exclusion. Think of using `1` as using a `not` or `!` bang, so the filter will return results that do not have those values. This is an example:
 ```xml
 https://<endpoint>/ui/#//explore/@1628023955694,1628024855694@topology=0000000000000041@cluster=kubernetes@filters@1:cl-tracing-training:_collector,0:kubernetes:_origin
@@ -179,12 +179,12 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
 
 ### Step 1: Analyzing the cluster
 
-We suspect there's a problem with a Kubernetes cluster but are not sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Cluster_Overview.png')} alt="Cluster overview" />
+We suspect there's a problem with a Kubernetes cluster but are not sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The **Terminated and Waiting by Namespace** panel lets us comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Cluster_Overview.png')} alt="Cluster overview" style={{border: '1px solid gray'}} />
 
 ### Step 2: Exploring a namespace
 
-To further pinpoint the problem with our cluster, we investigated the namespace by selecting kube-system in the navigation panel and switching to the Namespace Overview dashboard. This dashboard provides information on pods running in the deployment, failed pods, errors, CPU and memory usage, file system usage, terminated and waiting pods and containers. In this example, we're focusing on the CPU and memory usage panels of the dashboard in our attempt to find out where our application is running into problems.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Namespace_Overview.png')} alt="Namespace overview" />
+To further pinpoint the problem with our cluster, we investigated the namespace by selecting kube-system in the navigation panel and switching to the **Namespace Overview** dashboard. This dashboard provides information on pods running in the deployment, failed pods, errors, CPU and memory usage, file system usage, terminated and waiting pods and containers. In this example, we're focusing on the CPU and memory usage panels of the dashboard in our attempt to find out where our application is running into problems.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Namespace_Overview.png')} alt="Namespace overview" style={{border: '1px solid gray'}} />
 
 ### Step 3: Drilling down into a pod
 
-Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example, you can select the **Details** icon for a panel to view that data in a search. Or, you can review the actual logs in the Log Stream panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" />
+Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example, you can select the **Details** icon for a panel to view that data in a search. Or, you can review the actual logs in the **Log Stream** panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" style={{border: '1px solid gray'}} />

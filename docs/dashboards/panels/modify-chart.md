@@ -6,7 +6,7 @@ description: Learn how to customize a chart's type and visual display characteri
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can customize a chart on a dashboard panel in a variety of ways by modifying the available settings. You can even change the chart type to analyze the data in another format. This page shows you how to edit a panel and customize General, Display, Display Overrides, Axes, Legend, and JSON chart settings.
+You can customize a chart on a Sumo Logic dashboard panel in a variety of ways by modifying the available settings. You can even change the chart type to analyze the data in another format. This page shows you how to edit a panel and customize General, Display, Display Overrides, Axes, Legend, and JSON chart settings.
 
 :::info
 Settings can change vary according to the chart type.
@@ -36,9 +36,9 @@ Any changes made to the variable values within the panel will only affect the cu
 
 To modify general settings click the **General** icon in the menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/mar-21-general-settings.png')} style={{border: '1px solid gray'}} alt="mar 21 general settings" width="400"/>
 
-* To change the name of the chart, click in the **Chart Title** field and enter a new name.
+* To change the name of the chart, click in the **Chart Title** text box and enter a new name.
 * To change the font size click the **Title Font Size** arrows up or down.
-* To add a helpful description, click in the **Description** field and enter a brief explanation of the chart's purpose.
+* To add a helpful description, click in the **Description** text box and enter a brief explanation of the chart's purpose.
 
 To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC Update dashboard" width="300"/>
 
@@ -80,7 +80,7 @@ Honeycomb charts and categorical column and bar charts from metrics queries ha
 
 The ability to override dashboard displays allows you to create panel visualizations that make charts easier to assess and form conclusions. You can override selected dashboard displays to create a visual story that highlights what is most important to monitor.
 
-For example, you may want to set a specific time-series to red to signify that it represents errors, or overlay two different metrics with different axis ranges so it is easy to correlate across them. You may also want to rename the legend and tooltip values of a chart for readability and ease of use.
+For example, you may want to set a specific time-series to red to signify that it represents errors, or overlay two different metrics with different axis ranges so you can correlate across them. You may also want to rename the legend and tooltip values of a chart for readability and ease of use.
 
 To override select dashboard displays, do the following:
 
@@ -136,7 +136,7 @@ If both thresholds and display overrides are applied to a table chart, the displ
 
 ## Modify chart axes
 
-You can easily change the displays of the X and Y axes.
+You can change the displays of the X and Y axes.
 
 To change chart axes displays, do the following:
 
@@ -189,7 +189,7 @@ The JSON for each chart is available for you to customize the visual settings be
 
 Changes made to chart JSON are not supported by Sumo Logic and are done at your own risk.
 
-To leverage custom canvasJS properties on a specific series add a `unsafeCanvasJSProperties` block to any display override block.
+To use custom canvasJS properties on a specific series, add a `unsafeCanvasJSProperties` block to any display override block.
 
 To modify the JSON of a chart, do the following:<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/apply-changes.png')} style={{border: '1px solid gray'}} alt="apply changes" width="800"/>
 
@@ -201,7 +201,7 @@ To modify the JSON of a chart, do the following:<br/><img src={useBaseUrl('/img/
 
 ### Values in chart
 
-To view values inside the chart so you do not have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/data-in-chart.png')} style={{border: '1px solid gray'}} alt="data in chart" width="700"/>
+To view values inside the chart so you do not need to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/data-in-chart.png')} style={{border: '1px solid gray'}} alt="data in chart" width="700"/>
 
 use the following JSON:
 
@@ -257,7 +257,7 @@ use the following JSON:
 
 ### Outside values
 
-To place values outside the chart so you do not have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/outside-chart-values.png')} style={{border: '1px solid gray'}} alt="outside chart values" width="700"/>
+To place values outside the chart so you do not need to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/outside-chart-values.png')} style={{border: '1px solid gray'}} alt="outside chart values" width="700"/>
 
 use the following JSON:
 

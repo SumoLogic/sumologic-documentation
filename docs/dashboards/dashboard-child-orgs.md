@@ -1,19 +1,19 @@
 ---
 id: dashboard-child-orgs
 title: Create a Dashboard for Child Orgs (MSSPs)
-description: Learn how to create your own custom dashboard with a panel and query to child org level, then customize a chart and the chart to the dashboard.
+description: Learn how to create a custom Sumo Logic dashboard at the child org level by adding a panel and query, customizing the chart, and saving it.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Dashboard** page allows you to view log data on the same dashboard in an integrated and seamless view. This article demonstrates on how to create a dashboard, a panel query, and then add a panel to the dashboard at the child orgs level.
+The **Dashboard** page lets you view log data in one integrated view of your Sumo Logic dashboards. This page shows how to create a dashboard, add a panel query, and then add a panel to the dashboard at the child org level.
 
 ## Create a dashboard
 
 There are two ways to create a dashboard at child-org level, either by using the following method or by creating it directly from the [Log Search page](#log-search-page). Follow the steps below to create a dashboard under a selected child org:
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
-1. Select the **Dashboard** text field at the top of the window and enter a unique name for your new dashboard.
+1. Select the **Dashboard** text box at the top of the window and enter a unique name for your new dashboard.
 1. From the **Select Org** dropdown, select the child org under which you need to create the dashboard. You can either select one child org or multiple child orgs.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/select-org-for-dashboard.png')} alt="Select org for dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Add a panel
@@ -39,7 +39,7 @@ You can customize a chart on a dashboard panel in a variety of ways. To include�
 
 ## Add a log query
 
-Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter.
+Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the text box and press enter.
 
 There can be two possible errors while running the multi-child org queries:
 
@@ -53,7 +53,7 @@ A few important things to note are:
 
 ## Set a default org
 
-Follow the below steps to change the default child org:
+Follow these steps to change the default child org:
 
 1. In the **Select Org** dropdown, select the org of your choice.
 1. Click the kebab icon on the **Select Org** option, and select **Set as Default**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/set-as-default.png')} alt="Set as default" style={{border: '1px solid gray'}} width="400" />

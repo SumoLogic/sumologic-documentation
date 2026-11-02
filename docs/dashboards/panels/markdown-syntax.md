@@ -2,11 +2,11 @@
 id: markdown-syntax
 title: Markdown Syntax for Dashboards
 sidebar_label: Markdown Syntax
-description: Markdown Syntax options are supported in Dashboards.
+description: Learn which Markdown syntax options you can use in Sumo Logic dashboard text panels.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The following Markdown syntax options are supported in dashboards. When your syntax is supported, you will see `Markdown Supported` near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
+The following Markdown syntax options are supported in Sumo Logic dashboards. When your syntax is supported, you will see `Markdown Supported` near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
 
 :::important
 Images, blockquotes, code blocks, URLs, and email addresses are not supported in the text panels.
@@ -78,7 +78,7 @@ will produce a bullet. Indent by adding a space.
 
 ## Combined Lists
 
-To created a combined, nested list of numbered and bulleted items, just precede each line with either a number and a period or an asterisk `*`.
+To create a combined, nested list of numbered and bulleted items, precede each line with either a number and a period or an asterisk `*`.
 
 ```markdown
 1. Item One

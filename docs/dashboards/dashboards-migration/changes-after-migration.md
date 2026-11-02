@@ -8,13 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## List of features
 
-This table shows the complete list of features that are changed after the implementation of the **Migrate to Dashboards** feature.
+This table shows the complete list of features that change when you migrate to Sumo Logic dashboards with the **Migrate to Dashboards** feature.
 
 | Features | Supported | Not Supported |
 | :-------- | :------------- | :------------ |
 | Theme | No effect; migrated as-is | N/A |
 | Dashboard Layout | Panel position in the grid stays the same<br/><br/>Panel heights might slightly differ | N/A |
-| Chart colors | Exact colors won’t be preserved, however, color families will be preserved. [Learn more](#color-mapping). | N/A |
+| Chart colors | Exact colors will not be preserved, however, color families will be preserved. [Learn more](#color-mapping). | N/A |
 | Table Panels | <ul><li>Font size conversion:</li> <ul> <li>Small **>8**</li> <li>Normal **>12**</li> <li>Large **>16**</li> </ul> </ul> | Text Truncation |
 | Bar/Column panel | <ul><li>Stacking settings:</li> <ul> <li>None - default</li> <li>Normal - stacked</li> <li>Percent - stacked percent</li> </ul> <li>Legend Position</li> <li>Axis settings</li> <li>Multi-series support (Enabled in dashboards as overrides)</li></ul> | <ul> <li>Label truncation </li> </ul> |
 | Line/Area panel | <ul><li>Stacking settings:</li> <ul> <li>None - default</li> <li>Normal - stacked</li> <li>Percent - stacked percent</li> </ul> <li>Line settings </li> <ul> <li>Marker type</li> <li>Line Thickness</li> <li>Marker size</li> <li>Smooth lines</li></ul> <li>Legend Position</li> <li>Axis settings</li> <li>Multi-series support (Enabled in dashboards as overrides)</li> </ul> | <ul> <li>Label truncation</li> <li>Grideline settings</li> </ul> |
@@ -37,4 +37,4 @@ Classic Dashboards had 6 color schemes, while current dashboards have 11 color s
 
 With Dashboards (Classic), you could choose chart colors while setting it up. With dashboards, you cannot choose your colors upfront, but you can [modify your color palette afterwards](/docs/dashboards/panels/modify-chart/#modifydisplay-settings).
 
-<img src={useBaseUrl('img/dashboards/color-mapping.png')} alt="Color mapping palette" width="800"/>
+<img src={useBaseUrl('img/dashboards/color-mapping.png')} alt="Color mapping palette" width="800" style={{border: '1px solid gray'}} />

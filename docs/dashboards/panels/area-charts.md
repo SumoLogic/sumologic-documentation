@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An area chart is used to visually represent quantity over a period of time. The quantity is laid out on the vertical axis, and the horizontal axis shows the time period being charted. What distinguishes an area chart from a line chart is the use of shaded regions below the line which better indicates the increase or decrease of volume.
 
-To create an area chart, you must use a query that provides more than one data point in the **Aggregates** tab. Then the line is drawn between the data points to show the change.
+To create an area chart, you need to use a query that provides more than one data point in the **Aggregates** tab. Then the line is drawn between the data points to show the change.
 
 For example, you'd use the following query to create an area chart:
 

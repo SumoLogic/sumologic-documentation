@@ -7,7 +7,7 @@ description: Group related dashboard panels into collapsible sections to improve
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Grouping panels into sections helps you to better organize complex dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections can help improve dashboard performance by loading and refreshing only the panels in expanded sections. By reducing the number of active panel queries, sections can also help reduce unnecessary query scans and associated costs.
+Grouping panels into sections helps you to better organize complex Sumo Logic dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections can help improve dashboard performance by loading and refreshing only the panels in expanded sections. By reducing the number of active panel queries, sections can also help reduce unnecessary query scans and associated costs.
 
 ## Section limits
 
@@ -18,7 +18,7 @@ The following limits apply to sections:
 
 ## How to add a section
 
-To add a section to your dashboard, follow the below steps:
+To add a section to your dashboard, follow these steps:
 
 1. Create or open a **Dashboard**, then click **Add Panel** > **Section**.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section.png')} alt="dashboard_section" style={{border: '1px solid gray'}} width="600"/>
 1. Drag and drop panels into the newly added section as needed.
@@ -33,7 +33,7 @@ To add a section to your dashboard, follow the below steps:
 
 ## How to set a section as default
 
-To save the current state of a section as its default, click the three-dot kebab menu icon in the upper-right corner of the section and select **Set as Default**. This sets the section's default state to match how it is currently displayed.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_set_as_default.png')} alt="Set as Default option in the section kebab menu" style={{border: '1px solid gray'}} width="800"/>
+To save the current state of a section as its default, click the three-dot kebab menu icon in the upper-right corner of the section and select **Set as Default**. This sets the section's default state to match how it is displayed.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_set_as_default.png')} alt="Set as Default option in the section kebab menu" style={{border: '1px solid gray'}} width="800"/>
 
 :::note
 The **Set as Default** option is greyed out when the section is in a collapsed state and its default state is already set to **Collapsed** in the edit window. Expand the section first to make the option clickable.
@@ -41,7 +41,7 @@ The **Set as Default** option is greyed out when the section is in a collapsed s
 
 ## How to delete a section
 
-To delete a section in your dashboard, follow the below steps:
+To delete a section in your dashboard, follow these steps:
 
 1. Open the dashboard where you want to delete the section.
 1. Click the three-dot kebab menu icon in the upper-right corner and select **Delete**.<br/><img src={useBaseUrl('img/dashboards/section/dashboard_section_delete.png')} alt="dashboard_section_delete" style={{border: '1px solid gray'}} width="800"/>
@@ -65,26 +65,26 @@ When exporting a dashboard as a report, any collapsed panels remain collapsed in
 
 ## FAQs
 
-#### What happens to panels when a section is deleted?
+### What happens to panels when a section is deleted?
 
 When deleting a section, you can choose to either remove the section only (your panels remain on the dashboard) or remove the section along with all its panels. See [How to delete a section](#how-to-delete-a-section).
 
-#### Do collapsed sections affect dashboard performance?
+### Do collapsed sections affect dashboard performance?
 
 No. Queries run only for panels in expanded sections. Panels in collapsed sections do not execute queries or incur scan costs until you expand them.
 
-#### How many sections and panels can a dashboard have?
+### How many sections and panels can a dashboard have?
 
 A dashboard can have a maximum of 10 sections, and each section can contain a maximum of 20 panels. See [Section limits](#section-limits).
 
-#### Can sections be nested within other sections?
+### Can sections be nested within other sections?
 
 No. Sections cannot be nested. Each section sits at the top level of your dashboard layout.
 
-#### What happens to collapsed sections when exporting or sharing a dashboard?
+### What happens to collapsed sections when exporting or sharing a dashboard?
 
 Collapsed sections remain collapsed in exported reports and shared dashboards, reflecting the exact state of the dashboard at the time of export or sharing.
 
-#### When do panels inside a section refresh?
+### When do panels inside a section refresh?
 
 Panels refresh only when their section is expanded. If **Autorefresh** is enabled, only panels in expanded sections are automatically refreshed. Panels in collapsed sections refresh when you expand them.

@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Linking multiple dashboards
 
-You can link dashboards together to quickly view related data. Each panel can have links to other dashboards. Links have options to include metadata and time range. When you select a data point on
+You can link Sumo Logic dashboards together to quickly view related data. Each panel can have links to other dashboards. Links have options to include metadata and time range. When you select a data point on
 the panel you will have an option to click linked dashboards. This allows you to quickly reference other related dashboards to investigate.
 
 1. Click the **Add Dashboard Link** from the general settings menu when [modifying a chart in a panel](/docs/dashboards/panels/modify-chart).<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/add-link.png')} alt="add link" style={{border: '1px solid gray'}} width="300" />
@@ -32,7 +32,7 @@ You link a dashboard by specifying metadata key-value pairs:
 * **Entity Type**. Predefined entity object representing a given part of your system and its related set of data (such as EC2 Instance, Application, MySQL Cluster).
 * **Entity Name**. Name of a given entity, as displayed in the monitoring dashboards tab. An asterisk (`*`) can be used to match all entities of a given type.
 
-The metadata keys assigned to your Dashboard Stack Linking must be the same as the explored component for the dashboard to show as an option. For example, if your component is named `tablename`, and has `account`, `region`, and `namespace` metadata assigned to it, as seen in the following monitoring dashboards screenshot:<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/stack-linking-keys.png')} alt="stack linking keys" style={{border: '1px solid gray'}} width="800" />
+The metadata keys assigned to your Dashboard Stack Linking need to be the same as the explored component for the dashboard to show as an option. For example, if your component is named `tablename`, and has `account`, `region`, and `namespace` metadata assigned to it, as seen in the following monitoring dashboards screenshot:<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/stack-linking-keys.png')} alt="stack linking keys" style={{border: '1px solid gray'}} width="800" />
 
 The keys assigned to the Dashboard Stack Linking would need to include those, for example:<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/dashboard-new-stack-link-keys.png')} alt="dashboard new stack link keys" style={{border: '1px solid gray'}} width="400" />
 
@@ -45,7 +45,7 @@ To link a custom dashboard to your stack in monitoring dashboards, do the follo
     <br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/Create-Stack-Linking-option-from-Dashboard-New.png')} alt="Create Stack Linking option from Dashboard New" style={{border: '1px solid gray'}} width="300" />
 1. In the **Dashboard Stack Linking** dialog, set the **Domain** you want the key available in.
 1. Select an **Entity Type** for which you would like to display the dashboard.
-1. If you would like to further specify for which entities of a given type the dashboard is displayed, you can input the relevant **Entity Name** (as displayed in the monitoring dashboards tab). If you would like to see the dashboards for all entities of a given type, you can use (`*`) as the **Entity Name**. <br/><img src={useBaseUrl('img/dashboards/link-dashboard-explore/dashboard-stack-linking.png')} alt="Time series or categorical" width="600"/>
+1. If you would like to further specify for which entities of a given type the dashboard is displayed, you can input the relevant **Entity Name** (as displayed in the monitoring dashboards tab). If you would like to see the dashboards for all entities of a given type, you can use (`*`) as the **Entity Name**. <br/><img src={useBaseUrl('img/dashboards/link-dashboard-explore/dashboard-stack-linking.png')} alt="Time series or categorical" width="600" style={{border: '1px solid gray'}} />
 1. You can add more entity associations by clicking **Add another entity type/name pair**.
 1. Click **Apply** to apply the stack link.
 1. Now when you navigate in a monitoring dashboard to an entity with matching entity type and entity name, you will have the option to view your **Dashboard** in the monitoring dashboards view.

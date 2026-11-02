@@ -36,7 +36,7 @@ To add a panel with a Cluster or Heatmap:
 
 Missile map is used to geographically depict any data that has an origin and destination. This map helps you to visualize the relationships between the source and destination by providing insights into the pathways that may follow.
 
-To create a Missile map, your query must include:
+To create a Missile map, your query needs to include:
 
 - `sourcelat` - Source latitude
 - `sourcelon` - Source longitude

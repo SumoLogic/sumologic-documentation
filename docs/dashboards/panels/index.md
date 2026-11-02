@@ -2,12 +2,12 @@
 slug: /dashboards/panels
 title: Dashboard Panels
 sidebar_label: Panels
-description: Learn about the various Dashboard panels and the types of data best suited for each.
+description: Learn about the various dashboard panels and the types of data best suited for each.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Panels are the building blocks used to create a dashboard. Each panel displays analytics for a specific query. The type of panel you choose to display your data depends on the type of query you want to run.
+Panels are the building blocks used to create a Sumo Logic dashboard. Each panel displays analytics for a specific query. The type of panel you choose to display your data depends on the type of query you want to run.
 
 In this section, we'll introduce the following concepts:
 

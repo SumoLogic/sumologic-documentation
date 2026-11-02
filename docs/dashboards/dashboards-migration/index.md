@@ -1,14 +1,14 @@
 ---
 slug: /dashboards/dashboards-migration
 title: Migrate Legacy Dashboards
-description: Learn how to migrate Dashboards (Classic) to Dashboards functionality.
+description: Learn how to migrate Dashboards (Classic) to the current dashboards format.
 ---
 
-The **Migrate to Dashboards** functionality allows you to transform **Dashboards (Classic)** to the **Dashboards** format, with minimal intervention from post-migration activity.
+The **Migrate to Dashboards** feature transforms **Dashboards (Classic)** into the current Sumo Logic dashboard format with minimal post-migration work.
 
 ## Advantages
 
-- Lets you visualize queries with new [dashboard panels](/docs/dashboards/panels/), including honeycombs, bubble charts, heat maps, and funnel charts.
+- Lets you visualize queries with [dashboard panels](/docs/dashboards/panels/), including honeycombs, bubble charts, heat maps, and funnel charts.
 - Provides the unique ability to analyze metrics metadata and log data on the same dashboard in an integrated seamless view.
 - Allows you to visualize multiple queries in a single panel.
 - Provides streamlined dashboard configuration with inline editing.

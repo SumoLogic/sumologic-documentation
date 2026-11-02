@@ -6,9 +6,9 @@ description: Box Plot charts graphically depict groups of data using quartiles, 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A box plot chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In box plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/Box-plot.png')} alt="Box plot" width="800"/>
+A box plot chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In box plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/Box-plot.png')} alt="Box plot" width="800" style={{border: '1px solid gray'}} />
 
-To create box plot chart panels, your query must include:
+To create box plot chart panels, your query needs to include:
 
 * **Smallest value** (sample minimum) using the [`min`](/docs/search/search-query-language/group-aggregate-operators/min-max) or `_min` field name.
 * **Lowest quartile** (25%) using the `_pct_25` field name. You can use both **lower** or **ends** with in this part of the query.
@@ -29,7 +29,7 @@ rendered as a box plot chart:
 error | 5 as a | 7 as b | 7 as c | 7 as d | avg(a,b), max(c,d), min(c)
 ```
 
-The above query is missing the lower, median, and upper quartile values.
+This query is missing the lower, median, and upper quartile values.
 
 If you query contains more than one of a min, lower quartile, median quartile, upper quartile, or max value, the box plot will be rendered using the first value encountered. For example, the box plot rendered for this query would be based on the first `min` value in the query, `min(a)`.
 
@@ -50,7 +50,7 @@ _sourceCategory=vpc
 ## Create a Box Plot chart
 
 To add a panel with a box plot chart:
-1. Create or open a dashboard and click **Add Panel > Time Series or Add Panel > Categorical**.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/time-series-or-categorical.png')} alt="Time series or categorical" width="600"/>
+1. Create or open a dashboard and click **Add Panel > Time Series or Add Panel > Categorical**.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/time-series-or-categorical.png')} alt="Time series or categorical" width="600" style={{border: '1px solid gray'}} />
 1. Type a supported query in the Search box, including all of the required field names and press **Enter** for it to run.
-1. Once the search results appear, select **Box Plot** from the **Chart Type** dropdown.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/charts_box_plot.png')} alt="charts_box_plot" width="800"/>
+1. Once the search results appear, select **Box Plot** from the **Chart Type** dropdown.<br/><img src={useBaseUrl('img/dashboards/panels/box-plot-charts/charts_box_plot.png')} alt="charts_box_plot" width="800" style={{border: '1px solid gray'}} />
 1. [Modify the chart](/docs/dashboards/panels/modify-chart) as desired.

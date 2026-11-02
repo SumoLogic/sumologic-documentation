@@ -6,7 +6,7 @@ description: Learn how to set dashboard and panel time ranges.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has information about changing the time range for a dashboard and its panels.
+This page has information about changing the time range for a Sumo Logic dashboard and its panels.
 
 A dashboard has a preset default time range. Often, the dashboard time range applies to all of the panels in the dashboards. Sometimes, individual panels may have a different time range than the dashboard time range. You can change the time range for a dashboard and for individual panels—the options for doing so are described in [Set time range](#set-time-range), below.
 
@@ -77,8 +77,8 @@ As noted above, you can set a new default time range for a dashboard and individ
 
 When you make a modified time range the default, the time range appears in grey, and the more options menu is no longer available.
 
-When you change the default time range for the dashboard, the new time range will automatically be applied to all panels on the dashboard, unless you have set a new default time range default for one or more of the dashboard panels. In that case, you’ll be offered the option to **Override custom panel time ranges** with the dashboard default. If you don’t select that, the existing default time ranges for individual panels will be preserved.
+When you change the default time range for the dashboard, the new time range will automatically be applied to all panels on the dashboard, unless you have set a new default time range default for one or more of the dashboard panels. In that case, you’ll be offered the option to **Override custom panel time ranges** with the dashboard default. If you do not select that, the existing default time ranges for individual panels will be preserved.
 
 <img src={useBaseUrl('img/dashboards/set-custom-time-ranges/set-as-dashboard-default.png')} alt="dashboard default" style={{border: '1px solid gray'}} width="400" />
 
-When a default time range is set for a panel, the panel won’t inherit the dashboard’s time range setting. You can change the panel back to inheriting the dashboard's time range by selecting **Inherit dashboard's time range** for the panel, or using the **Override custom panel time ranges** option, which causes every dashboard panel to inherit the dashboard's time range selection.
+When a default time range is set for a panel, the panel will not inherit the dashboard’s time range setting. You can change the panel back to inheriting the dashboard's time range by selecting **Inherit dashboard's time range** for the panel, or using the **Override custom panel time ranges** option, which causes every dashboard panel to inherit the dashboard's time range selection.
