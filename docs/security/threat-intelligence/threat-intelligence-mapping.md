@@ -67,7 +67,7 @@ Following are the normalized values for Intel 471:
 | `data.mitre_tactics` | `killChain` | |
 | `data.threat.uid` | `id` | |
 | *Not applicable* | `threatType` | All indicators have `threatType` set to `unknown`. |
-| `last_updated` | `imported_at` | The `last_updated` indicates the time the IOC was ingested into the Sumo Logic platform. |
+| `last_updated` | `imported` | The `last_updated` indicates the time the IOC was ingested into the Sumo Logic platform. |
 
 ## Mandiant
 
