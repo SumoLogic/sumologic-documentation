@@ -6,7 +6,7 @@ description: Use JSON files to automate source configuration for Sumo Logic coll
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Installed Collector and Hosted Collector sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
+Installed collector and hosted collector sources can be configured by using UTF-8 encoded JSON files. Installed collectors can use JSON files to configure its sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). You can also configure sources for hosted and installed collectors with the Collector Management API.
 
 :::warning Limitations
 This feature is **not supported** for our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector).
@@ -18,13 +18,13 @@ This feature is **not supported** for our [OpenTelemetry Collector](/docs/send-d
 JSON files must be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
 :::
 
-When registering a Collector, you can define a source JSON file using the `sources` or `syncSources` parameter in your
+When registering a collector, you can define a source JSON file using the `sources` or `syncSources` parameter in your
 [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) or [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors) configuration file. These parameters are used the first time a collector is set up.
 
 | Parameter |  Type |  Description |
 |:--|:--|:--|
-| sources | String   | Sets the JSON file describing sources to configure on registration. To make changes to collector sources after the Collector has been configured, you can use the Collector Management API or the Sumo Logic web application. |
-| syncSources   | String   | Sets the JSON file describing sources to configure on registration, which will be continuously monitored and synchronized with the Collector's configuration. |
+| sources | String   | Sets the JSON file describing sources to configure on registration. To make changes to collector sources after the collector has been configured, you can use the Collector Management API or the Sumo Logic web application. |
+| syncSources   | String   | Sets the JSON file describing sources to configure on registration, which will be continuously monitored and synchronized with the collector's configuration. |
 
 For more information on setting the `syncSources` parameter, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). 
 
@@ -36,10 +36,10 @@ You can use JSON to configure multiple sources in either of the following ways:
 * Create individual JSON files, one for each source, and then combine them in a single folder. You then configure the source folder instead of the individual sources.
 
 :::note
-The maximum number of Sources allowed on a Collector is 1,000.
+The maximum number of sources allowed on a collector is 1,000.
 :::
 
-See [Options for specifying sources in local configuration file(s)](/docs/send-data/use-json-configure-sources/local-configuration-file-management) for more information.
+See [Options for specifying Sources in local configuration file(s)](/docs/send-data/use-json-configure-sources/local-configuration-file-management) for more information.
 
 ## Types of Sources
 
@@ -123,15 +123,15 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 ## Common parameters for log source types
 
-The following parameters are used for log Sources except for Syslog. Syslog Sources do not support Multiline Detection, which means the common parameters `multilineProcessingEnabled`, `useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the configuration they will be ignored.
+The following parameters are used for log sources except for Syslog. Syslog sources do not support Multiline Detection, which means the common parameters `multilineProcessingEnabled`, `useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the configuration they will be ignored.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `sourceType` | String | Yes |  | Type the correct type of Source. | not modifiable |
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source` and can be a maximum of 128 characters. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
-| `fields` | JSON Object | No | null | JSON map of key-value fields (metadata) to apply to the Collector or Source. | modifiable |
-| `hostName` | String | No | null | Type a host name of the Source. This value is assigned to the built-in metadata field `_sourceHost`. The hostname can be a maximum of 128 characters.<br/>Not supported with Windows Local Event Source and Windows Local Performance Source. | modifiable |
+| `sourceType` | String | Yes |  | Type the correct type of source. | not modifiable |
+| `name` | String | Yes |  | Type a desired name of the source. The name must be unique per collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source` and can be a maximum of 128 characters. | modifiable |
+| `description` | String | No | null | Type a description of the source. | modifiable |
+| `fields` | JSON Object | No | null | JSON map of key-value fields (metadata) to apply to the collector or source. | modifiable |
+| `hostName` | String | No | null | Type a host name of the source. This value is assigned to the built-in metadata field `_sourceHost`. The hostname can be a maximum of 128 characters.<br/>Not supported with Windows Local Event source and Windows Local Performance source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the built-in metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 
 **Timestamp Processing**
@@ -140,7 +140,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 |:--|:--|:--|:--|:--|:--|
 | `automaticDateParsing` | Boolean | No | true | Determines if timestamp information is parsed or not. Type `true` to enable automatic parsing of dates (the default setting); type `false` to disable. If disabled, no timestamp information is parsed at all. | modifiable |
 | `timeZone` | String | No | null | Type the time zone you'd like the source to use in TZ database format. Example:`"America/Los_Angeles"`. See [time zone format](#time-zone-format) for details. | modifiable |
-| `forceTimeZone` | Boolean | No | false | Type `true` to force the Source to use a specific time zone, otherwise type false to use the time zone found in the logs. The default setting is false. | modifiable |
+| `forceTimeZone` | Boolean | No | false | Type `true` to force the source to use a specific time zone, otherwise type false to use the time zone found in the logs. The default setting is false. | modifiable |
 | `defaultDateFormat` | String | No | null | (Deprecated) The default format for dates used in your logs. For more information about timestamp options, see Timestamps, Time Zones, Time Ranges, and Date Formats.  See the replacement object, `defaultDateFormats`, below. | modifiable |
 | `defaultDateFormats` | Object array | No | null | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines. <br/>The defaultDateFormats object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. For example, `\[time=(.*)\]`<br/>For an example, see Timestamp example, below. For more information about timestamp options, see Timestamps, Time Zones, Time Ranges, and Date Formats | modifiable |
 
@@ -156,7 +156,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward). Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward). Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
 | `hashAlgorithm` | string | No | md5 | Refer to [Hash Rules](/docs/send-data/collection/processing-rules/hash-rules/). You can also add available values ["MD5", "SHA-256"]. | modifiable |
 
 **When collection should begin**
@@ -168,7 +168,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 ## Non-configurable parameters
 
-The following parameters are automatically configured by the Sumo Logic Service. Don't include them in the sources JSON file, except for when making API requests. When making an API request you will need to provide the `id`  parameter in the JSON file.
+The following parameters are automatically configured by the Sumo Logic Service. Do not include them in the sources JSON file, except for when making API requests. When making an API request you will need to provide the `id`  parameter in the JSON file.
 
  * id
  * alive - This parameter is updated based on if Sumo Logic receives a heartbeat message every 15 seconds. A heartbeat checks for successful connectivity. If no successful heartbeat message is received after 30 minutes this becomes false.
@@ -347,7 +347,7 @@ These instruction assume you have already created a data forwarding destination.
 1. To view the JSON configuration for the source you updated in the previous step:
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
    1. Click the icon to the right of the source. The API usage information panel appears. Make a note of the sinkId in the filter section of the JSON.<br/><img src={useBaseUrl('img/send-data/sinkId.png')} alt="sinkId" style={{border: '1px solid gray'}} width="600" />
-1. Click the icon to the right of the Source. Make a note of the sinkId in the filter section of the JSON.
+1. Click the icon to the right of the source. Make a note of the sinkId in the filter section of the JSON.
 1. Click Done to close the API usage information panel.
 1. Now that you have determined the sinkId for the data forwarding destination, delete the test rule.
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 

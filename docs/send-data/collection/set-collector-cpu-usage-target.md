@@ -1,12 +1,12 @@
 ---
 id: set-collector-cpu-usage-target
 title: Set a Collector CPU Usage Target
-description: Set a CPU Target to limit the amount of CPU processing a Collector uses, if required.
+description: Set a CPU Target to limit the amount of CPU processing a collector uses, if required.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-An installed collector uses all CPU processing resources available on a machine. Most of the time CPU processing issues don’t arise, but if a lot of log data is being generated, or if you need to protect other processes running on the machine where the collector is installed, you can choose to set a CPU target to limit the amount of CPU processing a collector uses. This option is applied only to local or remote file sources.
+A Sumo Logic installed collector uses all CPU processing resources available on a machine. Most of the time CPU processing issues do not arise, but if a lot of log data is being generated, or if you need to protect other processes running on the machine where the collector is installed, you can choose to set a CPU target to limit the amount of CPU processing a collector uses. This option is applied only to local or remote file sources.
 
 Once you have set a CPU target, if a collector hits the target, collection is slowed. Logs are still collected, but there may be delays in ingesting new data. You may notice a delay in search results.
 
@@ -51,10 +51,10 @@ The CPU Target value can be set in three ways:
 
 Within the collector logs (**collector.log**) you can look for the following types of log lines containing info on CPU targeting and the current usage. Where `$current%` and `$target%` will be some number.
 
-* **"Initializing CPU Resource Monitor with a target of $target%"**- This message notes the CPU target that is set for the collector.
-* **"Resource consumption $current% is higher than $target%"**- This message notes the start of a CPU targeting event and throttling of the processes.
-* **"Resource consumption $current% is lower than $target%"**- This message notes the end of a CPU targeting event and throttling of the processes.
-* **"Resource consumption $current% is close to $target%"**- This message notes the collector is not currently doing any targeting on the CPU or throttling the processes.
+* **"Initializing CPU Resource Monitor with a target of $target%"**. This message notes the CPU target that is set for the collector.
+* **"Resource consumption $current% is higher than $target%"**. This message notes the start of a CPU targeting event and throttling of the processes.
+* **"Resource consumption $current% is lower than $target%"**. This message notes the end of a CPU targeting event and throttling of the processes.
+* **"Resource consumption $current% is close to $target%"**. This message notes the collector is not currently doing any targeting on the CPU or throttling the processes.
 
 ## How to reduce CPU usage on the collector if targeting is not enough
 
@@ -65,4 +65,4 @@ If you have a CPU target set but you continue to see the CPU usage at a higher l
 * Check for any unnecessary denylists within the source configurations and remove them.
 * Review any include/exclude/hash/mask rules on the sources and make sure they are required and optimized for that source.
 * Remove unnecessary sources.
-* Increase the [Collector’s max heap size](/docs/send-data/collector-faq#increase-collector-memory).
+* Increase the [collector’s max heap size](/docs/send-data/collector-faq#increase-collector-memory).

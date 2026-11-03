@@ -11,7 +11,7 @@ This document describes the major changes and the necessary migration steps.
 
 ## OpenTelemetry Collector
 
-The new version replaces both Fluentd and Fluent Bit with the OpenTelemetry Collector. In the majority of cases, this doesn't require any manual intervention. However, custom processing in Fluentd or Fluent Bit will need to be ported to the OpenTelemetry Collector configuration format. Please check [Solution Overview][solution-overview] and see below for details.
+The new version replaces both Fluentd and Fluent Bit with the OpenTelemetry Collector. In the majority of cases, this does not require any manual intervention. However, custom processing in Fluentd or Fluent Bit will need to be ported to the OpenTelemetry Collector configuration format. Check [Solution Overview][solution-overview] and see below for details.
 
 [solution-overview]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#solution-overview
 

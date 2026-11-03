@@ -1,13 +1,13 @@
 ---
 id: json-parameters-hosted-sources
 title: JSON Parameters for Hosted Sources
-description: This topic describes JSON Source parameters for hosted Collectors.
+description: This topic describes JSON source parameters for hosted collectors.
 ---
 
-This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
+This topic describes JSON source parameters for hosted collectors. See the following topics for additional information:
 
- * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
- * Source API Methods and Examples for information on creating Sources.
+ * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log source types. For sources, the common parameter `name` must be unique per collector.
+ * Source API Methods and Examples for information on creating sources.
  * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources).
  * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration) from Sumo Logic.
 
@@ -21,9 +21,9 @@ See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) 
 
 ## Source types for Hosted Collectors
 
-Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
+Each source can have its own unique fields in addition to the generic fields listed in [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo Logic web interface.
+The Google Workspace Apps Audit Source cannot be created with JSON. This source requires manual 0Auth confirmation which is only supported in the Sumo Logic web interface.
 
 ## Log Sources for Installed Collectors
 
@@ -106,7 +106,7 @@ In addition to the common parameters, the following parameters are for an HTTP 
 | `fields` | JSON Object | No |  | Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`. | modifiable |
 | `sourceType` | String | Yes |  | HTTP | not modifiable |
 | `messagePerRequest` | Boolean | Yes |  | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. <br/>You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | modifiable |
-| `url` | String | No | URL assigned by Sumo Logic for Source | The Source's unique HTTP endpoint web address. | not modifiable |
+| `url` | String | No | URL assigned by Sumo Logic for source | The source's unique HTTP endpoint web address. | not modifiable |
 
 ```json title="HTTP Source JSON example"
 {
@@ -173,15 +173,15 @@ Google Cloud Platform Source JSON example: 
 
 ### AWS Log Sources
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for all AWS log Sources except Kinesis.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for all AWS log sources except Kinesis.
 
 | Parameter | Type |  Required? | Default | Description | Access |
 |:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | `sourceType` | String | Yes |  | Polling | not modifiable |
-| `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#awscloudfrontsource): AwsCloudFrontBucket<br/>[CloudTrail](#awscloudtrailsource): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
+| `contentType` | String | No |  | Define based on the AWS source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#awscloudfrontsource): AwsCloudFrontBucket<br/>[CloudTrail](#awscloudtrailsource): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
 | `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
 | `paused` | Boolean | Yes | false | When set to true, the scanner for S3 bucket items is paused. To disable, set to false. | modifiable |
-| `url` | String | No | URL | assigned by Sumo Logic for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo Logic when the Source is created. | not modifiable |
+| `url` | String | No | URL | assigned by Sumo Logic for source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo Logic when the Source is created. | not modifiable |
 | `thirdPartyRef` | Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
 | `snsTopicOrSubscriptionArn`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
 | `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |
@@ -230,7 +230,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 
 #### AWS S3 Archive Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Archive Source JSON example:
+The parameters for this source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Archive Source JSON example:
 
 ```json
 {
@@ -271,7 +271,7 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### Amazon S3 Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources)  section. This is an Amazon S3 Source JSON example: 
+The parameters for this source can be referenced in the [AWS Log Sources](#aws-log-sources)  section. This is an Amazon S3 Source JSON example: 
 
 ```json
 {
@@ -304,7 +304,7 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS Elastic Load Balancing Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS Elastic Load Balancing Source JSON example: 
+The parameters for this source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS Elastic Load Balancing Source JSON example: 
 
 ```json
 {
@@ -335,7 +335,7 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS CloudFront Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS CloudFront Source JSON example: 
+The parameters for this source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS CloudFront Source JSON example: 
 
 ```json
 {
@@ -366,7 +366,7 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS CloudTrail Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS CloudTrail Source JSON example: 
+The parameters for this source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS CloudTrail Source JSON example: 
 
 ```json
 {
@@ -397,7 +397,7 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### Amazon S3 Audit Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Audit Source JSON example: 
+The parameters for this source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Audit Source JSON example: 
 
 ```json
 {
@@ -428,7 +428,7 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS Metadata (Tag) Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS Metadata Source JSON example: 
+The parameters for this source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS Metadata Source JSON example: 
 
 ```json
 {
@@ -637,8 +637,8 @@ The following parameters are for an AWS CloudWatch Source.
 
 | Parameter | Type |  Required? | Default | Description | Access |
 |:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `name` | String | Yes |  | Type a desired name of the source. The name must be unique per collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices#good-and-bad-source-categories) for details. | modifiable |
 | `sourceType` | String | Yes |  | Polling | not modifiable |
 | `contentType` | String | No |  | AwsCloudWatch | not modifiable |
@@ -725,10 +725,10 @@ The following parameters are for an Azure Metrics Source.
 
 | Parameter | Type | Required | Default | Description | Example |
 |:---|:---|:---|:---|:---|:---|
-| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the collector or source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | environment | String | Yes | `null` | Type of environment from which you would like to collect metrics. | |
 | limitToRegions | Array | No | `null` | Specify the regions from which you want to collect metrics. To collect from all regions, leave `null`. | |
 | limitToNamespaces | Array | No | `null` | Specify the namespaces from which you want to collect metrics. To collect from all namespaces, leave `null`. | |
