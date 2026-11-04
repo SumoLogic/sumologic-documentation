@@ -2182,6 +2182,16 @@ module.exports = {
             'observability/kubernetes/troubleshoot-with-explore',
           ],
         },
+        {
+          type: 'category',
+          label: 'AI Observability',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'observability/ai-observability/index'},
+          items: [
+            'observability/ai-observability/ai-observability-app',
+          ],
+        },
         'observability/application-components',
         'observability/diagnose-issues',
         'observability/troubleshoot',
