@@ -246,8 +246,8 @@ The `endpoint`, `runtime`, `cloud`, `identity`, `network`, and `data_protection`
 | `identity` | Completed August 4, 2026 |
 | `network` | Completed August 17, 2026 |
 | `data_protection` | Completed August 17, 2026 |
-| `cloud` | Target: January 11, 2027 |
-| `endpoint` | Target: January 11, 2027 |
+| `cloud` | Target: February 2, 2027 |
+| `endpoint` | Target: February 2, 2027 |
 
 :::note
 All six rules are available now, but out-of-the-box log mappings are migrating in phases. The remaining dates in the table are targets and may shift. For the actual dates that out-of-the-box mappings migrate, monitor the [Cloud SIEM content release notes](/release-notes-cse/). Until a source's out-of-the-box mappings are migrated, its records keep a `threat_ruleType` of `direct` and continue to fire [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md).
