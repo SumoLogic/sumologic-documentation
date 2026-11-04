@@ -129,7 +129,7 @@ Your application emits OTel trace spans with `gen_ai.*` attributes, the spans ar
 
 ## Prerequisites
 
-Before setting up the AI Observability app, ensure you have an application instrumented with OpenTelemetry that can export traces over OTLP/HTTP. See [Instrumentation methods](#instrumentation-methods).
+Before setting up the AI Observability app, ensure you have an application instrumented with OpenTelemetry that can export traces over OTLP/HTTP. See [Instrumentation methods](https://docs.google.com/document/d/13MlpDt63cThSLvAeOSKX9qsif1LF60TJj_jeGIj-4pE/edit?usp=sharing).
 
 ## Collection setup
 
