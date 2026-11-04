@@ -990,7 +990,6 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
-        'manage/partitions/flex-to-tier-migration-report',
         'manage/partitions/faq',
       ]
     },
