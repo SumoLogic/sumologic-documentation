@@ -16,10 +16,11 @@ The SOC Analyst Agent automatically investigates Cloud SIEM insights and deliver
 
 By cutting manual triage and reducing mean time to resolution, the agent lets SOC teams focus on real threats instead of repetitive work. It shows the data it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith.
 
-The SOC Analyst Agent performs three distinct jobs that mirror an analyst's daily responsibilities:
+The SOC Analyst Agent performs four distinct jobs that mirror an analyst's daily responsibilities:
 * **Auto-investigation**. Automatically delivers a verdict on each insight as it arrives, without requiring analyst action. The agent determines whether the insight is malicious, suspicious, or benign, summarizes the threat incident based on triggered signals, and presents key findings from the signals that fired. Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals). It does not yet integrate with external MCP connectors or automation services.
 * **Investigation (user-led)**. Supports analysts in Mobot with a hypothesis-driven approach to assess the scope, context, and likely impact of an event. Mobot isn't limited to normalized security data: you can ask it about other data in your account that is relevant to the insight, such as raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health.
 * **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken to ensure consistent documentation across analysts and teams.
+* **Recommended actions and response**. After triage, recommends response actions that you can review and execute from Cloud SIEM or Mobot. Every action requires analyst approval. See [Recommended actions and response](#recommended-actions-and-response).
 
 You work with the agent in two places:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
@@ -110,6 +111,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
           :::
           -->
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
+   1. **Recommended Actions**. Response actions you can review and execute. See [Recommended actions and response](#recommended-actions-and-response).
 1. Click **Ask Mobot** to continue the investigation conversationally in [Mobot](#investigate-the-insight-in-mobot), with the full context of the AI analysis already loaded.
 
 ## Investigate the insight in Mobot
@@ -174,6 +176,61 @@ To start a new investigation, navigate back to Cloud SIEM, select another insigh
 ### Share the conversation
 
 To share the current investigation with other users, see [Share conversation](/docs/search/mobot/#share-conversation).
+
+## Recommended actions and response
+
+After the SOC Analyst Agent triages an insight, it generates contextually appropriate **AI Recommended Actions** that you can review and execute without leaving Cloud SIEM. You can also request recommendations directly in a [Mobot](/docs/search/mobot/) investigation by asking the agent to recommend actions.
+
+* Recommendations appear as cards with a title and a rationale. Each card is one of two types:
+  * **Executable**. The required integration is installed. The card shows a blue **Execute** button.
+  * **Suggested** (text-only). The integration is not installed. The card has no **Execute** button and serves as a manual follow-up prompt.
+* **Audit trail**. Every action, analyst decision, and execution result is logged immutably.
+
+### Prerequisites
+
+* Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [Availability](#availability).
+* SOC analysts have a role with the **Manage Integrations** [role capability](/docs/manage/users-roles/roles/role-capabilities/#automation-service), which is required to execute response actions.
+* The Response Agent feature has been enabled for your org by your Sumo Logic representative.
+* For executable actions, the corresponding integration must be installed and configured in Sumo Logic's integrations platform. Contact your Sumo Logic representative for the list of supported integrations and the permissions required for each.
+
+:::note
+Every action requires explicit analyst approval before execution. The agent never takes autonomous action.
+:::
+
+### Review recommendations after triage
+
+After the SOC Analyst Agent completes an investigation, recommendations appear in four places:
+
+* The **Insights** list side panel when you click an insight row.<br/><img src={useBaseUrl('img/cse/soc-rr-side-panel.png')} alt="Insights list side panel showing Recommended Actions with text-only and executable cards" style={{border: '1px solid gray'}} width="700" />
+* The insight's **Overview** tab > **AI Recommended Actions** section (right panel).<br/><img src={useBaseUrl('img/cse/soc-rr-overview-tab.png')} alt="AI Recommended Actions panel on the Overview tab of an insight, showing one text-only card and two cards with Execute buttons" style={{border: '1px solid gray'}} width="700" />
+* The insight's **AI Investigation** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-ai-inv-tab.png')} alt="AI Investigation tab of an insight showing the AI Verdict, the What Happened summary, and Recommended Actions with Execute buttons" style={{border: '1px solid gray'}} width="700" />
+* In Mobot, when you open the investigation, they appear inline under the **Assessment** heading.<br/><img src={useBaseUrl('img/cse/soc-rr-mobot-assessment.png')} alt="Mobot Assessment section showing the agent verdict and two recommendation cards below it" style={{border: '1px solid gray'}} width="700" />
+
+### Execute a recommended action
+
+1. Click **Execute** on a card to open the confirmation dialog.<br/><img src={useBaseUrl('img/cse/soc-rr-execute-blue.png')} alt="Recommendation card with a blue Execute button" style={{border: '1px solid gray'}} width="500" />
+1. Review the **Reasoning** and edit the **Payload** (JSON) if needed.
+1. Click **Confirm**.
+
+The system records your approval with your analyst identity and a timestamp, then runs the action in the background. The card updates when execution completes. To analyze the result further, you can continue the conversation in Mobot.
+
+When execution completes, the card shows a green **Executed** badge. If an action fails, it shows a red **Failed** badge with an inline error message, and you can execute it again.
+
+<img src={useBaseUrl('img/cse/soc-rr-mobot-execute-green.png')} alt="Mobot recommendation card showing a green Executed badge and the execution result message below the card title" style={{border: '1px solid gray'}} width="800" />
+
+### Use investigation context with recommendations
+
+If you investigate an insight in Mobot before acting, recommendations update as Mobot uncovers additional context. The UI indicates when recommendations are informed by investigation findings.
+
+### Known limitations
+
+The following capabilities are not currently available:
+
+* **Recommending uninstalled integrations**. Uninstalled integrations appear as text-only suggestions; the agent will not guide you through installation.
+* **Multi-action plans**. Execute actions individually; coordinated multi-action plans are not yet supported.
+* **Playbook recommendations**. Customer-created playbooks are not suggested alongside recommended actions.
+* **Autonomous execution**. All actions require explicit analyst approval. Fully autonomous execution is planned for a future phase.
+* **Automated rollback**. Reversal of executed actions requires manual steps.
 
 ## Configure SOC Analyst Agent settings
 
@@ -286,7 +343,7 @@ Yes. An insight's **AI Verdict**, **Key Findings**, and **What Happened** summar
 
 ### Can the agent take containment actions on its own?
 
-No. The agent renders verdicts and findings to guide your investigation; it does not take remediation or containment actions itself.
+No. The agent never takes action autonomously. With [recommended actions and response](#recommended-actions-and-response), it recommends response actions after triage and can execute them, but only after an analyst reviews and approves each one.
 
 ### Is an AI SOC deterministic?
 
@@ -298,7 +355,7 @@ Verdicts draw on your normalized security data, correlated entities, threat inte
 
 ### What guardrails apply to autonomous action for an AI SOC?
 
-The agent can't take remediation or containment actions itself. It renders verdicts and findings to guide your investigation, investigates insights only up to your organization's committed daily volume, and lets you exclude insights from auto-investigation. See [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
+The agent cannot take remediation or containment actions without analyst approval. Each recommended action requires explicit approval before it runs, and every action, decision, and result is logged. The agent also investigates insights only up to your organization's committed daily volume and lets you exclude insights from auto-investigation. See [Recommended actions and response](#recommended-actions-and-response) and [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
 
 ### How much manual work is required with an AI SOC?
 
@@ -306,7 +363,7 @@ The agent automatically investigates insights in priority order and delivers a v
 
 ### Will AI replace SOC analysts?
 
-The SOC Analyst Agent is designed to assist analysts, not replace them. It speeds up triage and investigation, while analysts review verdicts, override them, direct the investigation conversationally, and take any containment actions.
+The SOC Analyst Agent is designed to assist analysts, not replace them. It speeds up triage and investigation, while analysts review verdicts, override them, direct the investigation conversationally, and approve any containment or response actions.
 
 ### How does the agent help reduce false positives?
 
