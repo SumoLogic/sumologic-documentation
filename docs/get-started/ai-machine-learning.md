@@ -67,7 +67,7 @@ See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
 The [Root Cause Agent](/docs/alerts/monitors/root-cause-agent) investigates observability alerts. It gathers telemetry, follows signals across logs and metrics, and returns a verdict, findings, supporting evidence, and recommended actions. Each finding links to the log search or metrics query that produced it, so you can verify the result yourself. You can continue the investigation in Mobot.
 
-<!-- SME REVIEW (DOCS-1928): confirm whether GA supports starting an investigation only on demand (from the Alerts list or an alert's details page), or also automatically via a trigger you configure. The root-cause-agent.md GA draft currently documents on-demand only, per the DOCS-1928 Jira meeting notes. Also confirm whether external (non-Sumo Logic) alerts are investigable at GA - root-cause-agent.md currently says not yet. -->
+<!-- Reviewer note (DOCS-1928): GA ships on-demand/manual triggering only, confirmed by backend in PR #7333 review; background/auto-triggered investigation is a planned follow-up, not GA scope. Still need to confirm whether external (non-Sumo Logic) alerts are investigable at GA - root-cause-agent.md currently says not yet. -->
 You start an investigation on demand from the **Alerts** list or an alert's details page.
 
 ### DojoAI Credits
@@ -76,7 +76,7 @@ DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usa
 
 You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
 
-<!-- SME REVIEW (DOCS-1928): confirm Root Cause Agent's specific credit cost per investigation (not given in the source meeting), the 60-day GA promo terms and daily caps, and overage/cap behavior once the capping capability ships (expected end of November). -->
+<!-- Reviewer note (DOCS-1928): confirm Root Cause Agent's specific credit cost per investigation (not given in the source meeting), the 60-day GA promo terms and daily caps, and overage/cap behavior once the capping capability ships (expected end of November). -->
 
 ### SOC Analyst Agent
 
