@@ -77,7 +77,7 @@ The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Conta
 
 <a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a>
 
-[DojoAI Recommendations](/docs/search/mobot/dojoai-recommendations-preview) is the proactive side of the Platform Optimization Agent. Instead of waiting for you to ask Mobot a question, it continuously monitors your environment and automatically catches ingestion inefficiencies and performance bottlenecks, such as duplicate logs, debug-log overload, slow queries, and dashboard sprawl, with plain-language insights and previewable fixes. All proactive insights are consolidated on the **DojoAI** > **Recommendations** page.
+[DojoAI Recommendations](/docs/search/mobot/dojoai-recommendations-preview) is the proactive side of the Platform Optimization Agent. Instead of waiting for you to ask Mobot a question, it continuously monitors your environment and automatically catches inefficiencies and performance bottlenecks, such as slow queries and dashboard sprawl, with plain-language insights and previewable fixes. All proactive insights are consolidated on the **DojoAI** > **Recommendations** page.
 
 ### DojoAI Credits
 
