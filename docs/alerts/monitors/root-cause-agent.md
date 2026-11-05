@@ -17,9 +17,9 @@ keywords:
 ---
 
 <!--
-- Automatic or on-demand investigation?
 - RCA's specific DojoAI Credits cost and overage/cap behavior
 - Are Limitations the same for ga?
+- GA ships on-demand/manual triggering only, confirmed by Saksham Sharma (backend) in PR #7333 review. Background/auto-triggered investigations (rate-limited auto-investigation, manual after the limit) are planned as a follow-up, not GA scope. Revisit this doc when that ships.
 -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
