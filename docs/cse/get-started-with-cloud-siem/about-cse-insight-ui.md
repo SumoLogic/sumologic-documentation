@@ -16,7 +16,7 @@ This topic describes the Cloud SIEM UI for working with insights. 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the insights page, click **Insights** at the top of the screen. 
  
-By default, the **Insights** page presents all insights whose status is not “Closed”, in descending order by event time in a list view. If you’d like to see insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
+By default, the **Insights** page presents all insights whose status is not “Closed”, in descending order by event time in a list view. You can sort the list by one or more columns (see [Sort insights](#sort-insights)). If you’d like to see insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
 
 :::note
 Cloud SIEM displays insights and the signals attached to them in the Cloud SIEM UI through the end of the data retention period defined in your account agreement. 
@@ -38,6 +38,15 @@ Following are the columns in the list view. The order of columns in your UI may 
 * **Signals**. The total count of signals on the insight entity during the detection window.
 * **Created**. When the insight was created.
 * **Age**. The elapsed time since the insight was created.
+
+#### Sort insights
+
+You can sort the insights list by one or more columns.
+
+* **Sort by multiple columns**. Hold **Shift** and click an additional column header to add it as a secondary (or tertiary) sort.
+* **Sort by a single column**. Click a column header without holding **Shift**. This resets the table and sorts only by that column.
+
+Bulk updates support only a single-column sort. If you select all insights, for example with the select-all check box, the list is sorted only by the primary sort column. Any secondary sort rules are ignored.
 
 ### Board view
 
@@ -102,6 +111,9 @@ Watch this micro lesson to learn about bulk updating insights.
 1. [Filter insights](#filtering-insights) to locate only the insights you want to act on.
 1. Use the check boxes on the insights list view to select multiple insights, or you can click the check box at the top of the list to select all listed insights:<br/><img src={useBaseUrl('img/cse/select-all-insights.png')} alt="Select all insights" style={{border: '1px solid gray'}} width="200"/>
    <br/>If you click the check box to select all insights, you can then select up to 5000 of the listed insights:<br/><img src={useBaseUrl('img/cse/select-up-to-5000-insights.png')} alt="Select up to 5000 insights" style={{border: '1px solid gray'}} width="800"/>
+   :::note
+   Bulk actions use only the primary sort column. Secondary sort columns are ignored. See [Sort insights](#sort-insights).
+   :::
 1. Choose the action you want to take on the selected insights:
    * **Close Insights**. Give the insights a [closed resolution](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution).
    * **Assign To**. Assign the insights to a Cloud SIEM user.
