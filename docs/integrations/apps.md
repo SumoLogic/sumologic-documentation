@@ -22,7 +22,7 @@ To check if an app is supported by your pricing plan, see [Apps and Sumo Logic A
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/supported-vendors/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Supported Vendors and Products</h4></a>
+  <a href={useBaseUrl('docs/integrations/vendors-content-matrix/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Vendors and Products</h4></a>
   <p>Find out if a vendor or product is supported, and which Sumo Logic apps, integrations, and collectors cover it.</p>
   </div>
 </div>

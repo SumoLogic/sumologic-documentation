@@ -1314,7 +1314,7 @@ html[data-theme='dark'] .node polygon {
   min-width: 65px; /* Can adjust based on layout needs */
 }
 
-// Sticky first two columns for wide supported-vendors tables
+// Sticky first two columns for wide vendors-content-matrix tables
 .sticky-cols-table {
   overflow-x: auto;
   max-width: 100%;
@@ -1399,6 +1399,33 @@ html[data-theme='dark'] .sticky-cols-table th:nth-child(-n+2) {
       box-shadow: none;
     }
   }
+}
+
+// "Jump to: A | B | C ..." line stays pinned under the navbar while scrolling
+:root {
+  --jump-bar-height: 3rem;
+}
+
+.jump-to-bar,
+.markdown p:has(> a[href="#a"]):has(> a[href="#z"]) {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  z-index: 20;                      // above content, below the navbar
+  display: flex;
+  align-items: center;
+  height: var(--jump-bar-height);
+  margin: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: var(--ifm-background-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+
+  p { margin: 0; }
+}
+
+// Anchor jumps (A, B, C...) shouldn't land under the sticky bar
+.markdown h2[id] {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--jump-bar-height) + 0.5rem);
 }
 
 // Hub/Index pages

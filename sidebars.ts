@@ -2238,14 +2238,13 @@ integrations: [
     items: [
       {
         type: 'category',
-        label: 'Supported Vendors',
+        label: 'Vendors and Products',
         collapsible: true,
         collapsed: true,
-        link: {type: 'doc', id: 'integrations/supported-vendors/index'},
+        link: {type: 'doc', id: 'integrations/vendors-content-matrix/index'},
         items: [
-          'integrations/supported-vendors/supported-vendors-a-l',
-          'integrations/supported-vendors/supported-vendors-m-z',
-          'integrations/supported-vendors/faq',
+          'integrations/vendors-content-matrix/vendors-content-matrix-a-z',
+          'integrations/vendors-content-matrix/faq',
         ],
       },
       {

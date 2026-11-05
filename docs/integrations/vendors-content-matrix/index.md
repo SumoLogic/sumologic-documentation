@@ -1,17 +1,16 @@
 ---
-title: Supported Vendors and Products
+title: Vendors and Products
 description: Find out if a vendor or product is supported, and which Sumo Logic apps, integrations, and collectors cover it.
 keywords:
   - sumo logic integrations
   - integrations
-  - supported vendors
   - vendors
   - apps
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Use this section to find out whether a vendor or product is supported and which Sumo Logic content covers it. Sumo Logic offers the following types of content:
+Use this section to learn about the vendors or products in Sumo Logic. Sumo Logic offers the following types of content:
 
 * **Apps**. Pre-built dashboards and analytics for a product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps and Integrations](/docs/integrations/).
 * **Automation**. Integrations for the Automation Service and Cloud SOAR. See [Integrations in App Catalog](/docs/integrations/automation-integrations/).
@@ -26,17 +25,11 @@ See the following articles for the vendors and products that Sumo Logic integrat
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/supported-vendors/supported-vendors-a-l')}><img src={useBaseUrl('img/icons/general/blog.png')} alt="List icon" width="40"/><h4>Supported Vendors A-L</h4></a>
-  <p>List of vendors and products A-L that Sumo Logic integrates with.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/integrations/supported-vendors/supported-vendors-m-z')}><img src={useBaseUrl('img/icons/general/blog.png')} alt="List icon" width="40"/><h4>Supported Vendors M-Z</h4></a>
-  <p>List of vendors and products M-Z that Sumo Logic integrates with.</p>
+  <a href={useBaseUrl('docs/integrations/vendors-content-matrix/vendors-content-matrix-a-z')}><img src={useBaseUrl('img/icons/general/blog.png')} alt="List icon" width="40"/><h4>Vendors Content Matrix</h4></a>
+  <p>List of vendors and products A-Z that Sumo Logic integrates with.</p>
   </div>
 </div>
 </div>
 <br/>
 
-For answers to common questions, see the [Supported Vendors and Products FAQ](/docs/integrations/supported-vendors/faq/).
+For answers to common questions, see the [Vendors and Products FAQ](/docs/integrations/vendors-content-matrix/faq/).
