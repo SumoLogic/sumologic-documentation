@@ -75,6 +75,15 @@ If you have edit access, you see **Apply** and **Change at Source** buttons:
 * **Apply** button. Executes the change right away.
 * **Change at Source** button. Opens the underlying resource's own edit page, such as a monitor's **Trigger Conditions** step, with the query field pre-filled with the recommended query and flagged by an info banner ("This query is filled with Recommended query"). Press **Enter** in the query editor to execute the query, then click **Save** to apply it from there.
 
+  **Change at Source** takes you to a different page depending on the recommendation and the resource it affects:
+
+  | Recommendation | Resource | Where **Change at Source** takes you |
+  |:--|:--|:--|
+  | **Reduce Dashboard Load Time** | Dashboard layout | The dashboard in edit mode, where you can adjust the layout. |
+  | **Reduce Query Latency** | Dashboard query | The dashboard panel's query editor, with the recommended query filled in. |
+  | **Reduce Query Latency** | Monitor | The monitor's **Trigger Conditions** step, with the recommended query filled in. |
+  | **Reduce Query Latency** | Scheduled search | The scheduled search's edit page, with the recommended query filled in. |
+
 :::note
 Clicking **Apply** executes the change right away. Click **Change at Source** instead if you want to review or modify it manually before applying it.
 :::
