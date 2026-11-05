@@ -7,7 +7,6 @@ keywords:
   - recommendations
   - platform optimization agent
   - proactive monitoring
-  - ingestion cost
   - query performance
   - dashboard sprawl
 ---
