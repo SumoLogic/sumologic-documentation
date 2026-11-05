@@ -13,16 +13,6 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 Data Pipelines give you a single place to define how your logs are processed and routed in Sumo Logic. You build a pipeline on a visual graph, test it with sample data, and publish it when you are confident it works.
 
 ## About Data Pipelines
@@ -82,6 +72,12 @@ You can also mask sensitive data, such as email addresses, SSNs, and credit card
 
 You can disable a processing group without deleting it.
 
+## How pipelines and FERs work together
+
+Pipelines run after your data has passed through existing [Field Extraction Rules (FERs)](/docs/manage/field-extractions). Your existing processing continues to work, and pipelines add processing on top of it.
+
+Because pipelines do not replace FERs, you can move from FERs to pipelines gradually, without interrupting your current data flows.
+
 ## Pipeline states
 
 Data Pipelines do not use versions. Each pipeline has a published version that processes live data, and can also have a draft version.
@@ -95,7 +91,6 @@ Data Pipelines do not use versions. Each pipeline has a published version that p
 ## Prerequisites
 
 - \{TODO: roles and capabilities required to view, create, edit, and publish pipelines.\}
-- \{TODO: enablement requirements for the Private Preview.\}
 
 ## Create a pipeline
 
@@ -157,7 +152,6 @@ From the Data Pipelines page, you can:
 - **Disable** a pipeline, or turn it back on, with the toggle in its row.
 - **Duplicate** a pipeline.
 - **Export as JSON** to export a pipeline configuration.
-- **Import** a pipeline from a JSON file. \{TODO: confirm where the import option is and its label.\}
 - **Delete** a pipeline.
 
 To open the **Duplicate**, **Disable**, **Export as JSON**, and **Delete** options, select a pipeline in the list and click **More Actions**.
