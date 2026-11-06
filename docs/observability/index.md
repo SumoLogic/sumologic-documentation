@@ -55,6 +55,12 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox card">
       <div className="container">
+      <a href={useBaseUrl('docs/observability/ai-observability')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="35"/><h4>AI Observability</h4></a>
+      <p>Monitor the health, performance, cost, and behavior of your AI and LLM applications.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
       <a href={useBaseUrl('docs/observability/application-components')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="35"/><h4>Application Components Solution</h4></a>
       <p>Easily monitor and troubleshoot potential issues with applications.</p>
       </div>
