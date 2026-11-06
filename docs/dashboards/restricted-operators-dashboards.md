@@ -18,13 +18,16 @@ The following operators cannot be used with dashboards:
 * `Sample` (internal-use operator)
 * [`Save`](/docs/search/search-query-language/search-operators/save)
 
-## Auto refresh restrictions
+## Auto refresh and public dashboard restrictions
 
-The following operators cannot be used in Auto refresh:
+These restrictions apply to dashboards using auto refresh. Public dashboards also use auto refresh, so the same restrictions apply when you [share a dashboard outside your organization](/docs/dashboards/share-dashboard-outside-org#restrictions-and-limitations-for-external-sharing).
 
-* `Compare With` can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice)
+The following operators cannot be used in auto refresh or on public dashboards:
+
+* [`Cat`](/docs/search/search-query-language/search-operators/cat/)
+* `Compare With` is restricted unless your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice).
 * `Details`
-* [`First`, `Last`](/docs/search/search-query-language/group-aggregate-operators/first-last/) - instead use the **withtime** option, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
+* [`First`, `Last`](/docs/search/search-query-language/group-aggregate-operators/first-last/). Instead use the `withtime` option. See [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
 * [`Join`](/docs/search/search-query-language/search-operators/join/)
 * [`LogReduce`](/docs/search/behavior-insights/logreduce/logreduce-operator/)
 * [`LogCompare`](/docs/search/behavior-insights/logcompare/)
@@ -38,12 +41,15 @@ The following operators cannot be used in Auto refresh:
 * [`Subquery`](/docs/search/subqueries)
 * `Threat Intel`
 * [`Trace`](/docs/search/search-query-language/search-operators/trace)
-* [`Timeslice`](/docs/search/search-query-language/search-operators/timeslice) greater than 1 day
+* [`Timeslice`](/docs/search/search-query-language/search-operators/timeslice) greater than 1 day.
 * [`Transactionize`](/docs/search/search-query-language/transaction-analytics/transactionize-operator/)
 
-The following search modifier cannot be used in Auto refresh.
+The `_dataTier` search modifier is not supported.
 
-* `_dataTier`
+The following time-related options are restricted:
+
+* [Receipt time searches](/docs/search/get-started-with-search/build-search/use-receipt-time) are not supported.
+* Only [relative time ranges](/docs/search/get-started-with-search/search-basics/time-range-expressions/#relative-time-range-expressions) are supported. [Absolute time ranges](/docs/search/get-started-with-search/search-basics/time-range-expressions/#absolute-time-range-expressions) with custom end times are not supported.
 
 ## Include only after the first group-by phrase
 
