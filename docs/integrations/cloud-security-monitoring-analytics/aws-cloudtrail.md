@@ -1,7 +1,7 @@
 ---
 id: aws-cloudtrail
 title: Amazon CloudTrail - Cloud Security Monitoring and Analytics
-sidebar_label: Amazon CloudTrail
+sidebar_label: Amazon CloudTrail - Cloud Security Monitoring and Analytics
 description: Introduction to Amazon CloudTrail - Cloud Security Monitoring and Analytics.
 ---
 
