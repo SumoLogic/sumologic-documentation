@@ -2237,13 +2237,13 @@ integrations: [
     items: [
       {
         type: 'category',
-        label: 'Product List',
+        label: 'Vendors and Products',
         collapsible: true,
         collapsed: true,
-        link: {type: 'doc', id: 'integrations/product-list/index'},
+        link: {type: 'doc', id: 'integrations/vendors-content-matrix/index'},
         items: [
-          'integrations/product-list/product-list-a-l',
-          'integrations/product-list/product-list-m-z',
+          'integrations/vendors-content-matrix/vendors-content-matrix-a-z',
+          'integrations/vendors-content-matrix/faq',
         ],
       },
       {
