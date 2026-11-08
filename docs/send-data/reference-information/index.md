@@ -1,10 +1,10 @@
 ---
 slug: /send-data/reference-information
 title: Reference Information for Sources
-description: These topics contain reference information for Sources for installed and hosted Collectors.
+description: These topics contain reference information for sources for installed and hosted collectors.
 ---
 
-These topics contain reference information for Sources for Installed and Hosted Collectors.
+These topics contain reference information for sources for installed and hosted collectors.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -26,7 +26,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/reference-information/source-log-encoding')}><img src={useBaseUrl('img/icons/data-collection.png')} alt="Data Collection icon" width="40"/><h4>Source Log Encoding</h4></a>
-  <p>The log encoding supported by Sumo Logic depends on the Source that you use.</p>
+  <p>The log encoding supported by Sumo Logic depends on the source that you use.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -38,7 +38,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/reference-information/use-wildcards-paths')}><img src={useBaseUrl('img/icons/data-collection.png')} alt="Data Collection icon" width="40"/><h4>Using Wildcards in Paths</h4></a>
-  <p>Use wildcards in the Source path to collect all files of a certain type.</p>
+  <p>Use wildcards in the source path to collect all files of a certain type.</p>
   </div>
 </div>
 </div>

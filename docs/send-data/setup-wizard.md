@@ -31,7 +31,7 @@ Keyboard shortcuts are not available when the Setup Wizard is open.
 A great way to try out Sumo Logic for the first time is to upload a local log file. To do this, click **Upload Log Files**. You can upload up to 20 files and 100MB total per upload.
 <img src={useBaseUrl('img/send-data/setup-wizard/upload-files.png')} alt="Setup Wizard" style={{border: '1px solid gray'}} />
 
-Uploading a local file allows you to try Sumo Logic without configuring a Collector to ingest live, streaming data. To continuously monitor a file in your environment, [configure a Collector and Source](/docs/send-data/choose-collector-source) within Sumo Logic.
+Uploading a local file allows you to try Sumo Logic without configuring a collector to ingest live, streaming data. To continuously monitor a file in your environment, [configure a collector and source](/docs/send-data/choose-collector-source) within Sumo Logic.
 
 The following file types are **not** supported:
 
@@ -67,7 +67,7 @@ The Learn page will typically help you find the getting-started guides for onboa
 
 ## Troubleshoot Setup Wizard issues
 
-If you are having trouble configuring a Source using the Setup Wizard, check the following issues.
+If you are having trouble configuring a source using the Setup Wizard, check the following issues.
 
 ### "It looks like you haven't activated your account..."
 
@@ -81,8 +81,8 @@ Otherwise, make sure to activate your account using the Sumo Logic activation em
 
 ### "We are unable to ingest the data from the source you specified."
 
-When using the **Upload Files** option from the Setup Wizard, it creates a Hosted Collector with the name "File Uploads". If a Hosted Collector with the same name already exists the Setup Wizard will use the existing Collector.
+When using the **Upload Files** option from the Setup Wizard, it creates a hosted collector with the name "File Uploads". If a hosted collector with the same name already exists the Setup Wizard will use the existing collector.
 
-**Upload Files** only works if no other Sources are running on the "File Uploads" Collector. The "File Uploads" Collector can only process one Source at a time.
+**Upload Files** only works if no other sources are running on the "File Uploads" collector. The "File Uploads" collector can only process one source at a time.
 
-Do not add Sources to the "File Uploads" Collector; reserve it for the Setup Wizard.
+Do not add sources to the "File Uploads" collector; reserve it for the Setup Wizard.

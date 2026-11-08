@@ -25,7 +25,7 @@ This page covers timestamp parsing at ingestion time. For how the Search page's 
 
 The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
 
-When configuring a Source, you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
+When configuring a source, you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
 
 :::note Using OpenTelemetry Remote Management (OTRM)?
 This page covers timestamp parsing for standard Sumo Logic sources. If you're using OTRM source templates, refer to [Timestamps, time zones, time ranges, and date formats for OTRM](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) instead.
@@ -35,17 +35,17 @@ This page covers timestamp parsing for standard Sumo Logic sources. If you're us
 
 By default, we can automatically detect timestamps in your log messages. Automatic detection identifies timestamps in common formats and prefers timestamps that appear early in the message.
 
-If your log messages from a Source contain multiple timestamps, timestamps in unusual formats, or a mix of distinct timestamp formats, you have two options:
-* Configure a Source for each log format
-* Configure a custom timestamp format for your Source
+If your log messages from a source contain multiple timestamps, timestamps in unusual formats, or a mix of distinct timestamp formats, you have two options:
+* Configure a source for each log format
+* Configure a custom timestamp format for your source
 
-The Collector assumes that all log messages coming from a particular Source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that Source it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source.
+The collector assumes that all log messages coming from a particular source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that source it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source.
 
-The Collector also assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log messages with a timestamp older than 30 days is automatically set to the current time. You must contact [Sumo Logic Support](https://support.sumologic.com/) to adjust this auto-correction behavior. See [How to ingest old or historical data](/docs/send-data/collector-faq#how-to-ingest-old-or-historical-data) for further details.
+The collector also assumes that all log messages coming from a particular source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log messages with a timestamp older than 30 days is automatically set to the current time. You must contact [Sumo Logic Support](https://support.sumologic.com/) to adjust this auto-correction behavior. See [How to ingest old or historical data](/docs/send-data/collector-faq#how-to-ingest-old-or-historical-data) for further details.
 
 ### Automated timestamp parsing
 
-Collectors can automatically parse any of the following timestamp formats. If more than one valid timestamp is detected in a log message, the Collector will select the timestamp that appears "furthest left" in the message. 
+Collectors can automatically parse any of the following timestamp formats. If more than one valid timestamp is detected in a log message, the collector will select the timestamp that appears "furthest left" in the message. 
 
 :::note
 The Java SimpleDateFormat library is used for timestamp parsing. [Learn more](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html).
@@ -132,32 +132,32 @@ Unix epoch timestamps are supported in the following formats:
 
 ## Specifying a custom timestamp format
 
-Our Collectors can automatically parse most timestamps without any issues. However, if you see timestamp parsing issues, you can manually specify the timestamp format in the Sumo Logic UI when configuring a new Source or editing the timestamp information for an existing Source.
+Our collectors can automatically parse most timestamps without any issues. However, if you see timestamp parsing issues, you can manually specify the timestamp format in the Sumo Logic UI when configuring a new source or editing the timestamp information for an existing Source.
 
 1. Do one of the following:
-   * If you're configuring a new Source, proceed to step 2.
-   * To edit the timestamp settings for an existing Source, navigate to the [**Collection**](/docs/send-data/collection/) page. Then click **Edit** to the right of the Source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-edit.png')} alt="Screenshot showing the editing interface for a source in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="600"/>
+   * If you're configuring a new source, proceed to step 2.
+   * To edit the timestamp settings for an existing source, navigate to the [**Collection**](/docs/send-data/collection/) page. Then click **Edit** to the right of the source name and go to step 2.<br/><img src={useBaseUrl('img/send-data/source-edit.png')} alt="Screenshot showing the editing interface for a source in Sumo Logic, highlighting the section for editing advanced options including timestamp settings" style={{border: '1px solid gray'}} width="600"/>
 1. Navigate to the **Advanced Options for Logs (Optional)** section.<br/><img src={useBaseUrl('img/send-data/advanced-options-logs.png')} alt="Screenshot of the advanced options for logs in Sumo Logic, focusing on the timestamp format settings" style={{border: '1px solid gray'}} />
 1. Under **Timestamp Format**, select **Specify a format** > **+ Add Timestamp Format**.<br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="Screenshot illustrating the process of specifying a custom timestamp format in the Sumo Logic UI" style={{border: '1px solid gray'}} width="300"/>
-1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="Screenshot showing the field where a user can input a custom timestamp format" style={{border: '1px solid gray'}} width="600"/><br/>
+1. In the **Format** field, enter the timestamp format the collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="Screenshot showing the field where a user can input a custom timestamp format" style={{border: '1px solid gray'}} width="600"/><br/>
    :::note
    If the timestamp format is in epoch time, enter **epoch** in the **Format** field.
    :::
    :::warning requirements
    * Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).
    * When you specify a custom format, provide us with the timestamp format (and optionally a regex) to help locate the desired timestamp in your log line format. If you do not provide a locator, we’ll scan the entire log message for a timestamp matching the given format by default. You can also test some sample log lines and see if we can parse the new format.
-   * When providing multiple custom formats, specify the most common format first. The Collector will process each custom format in the order provided. Once a timestamp is located, no further timestamp checking is done.
-   * If no timestamps are located that match your custom formats, the Collector will still attempt to automatically locate the log's timestamp.
+   * When providing multiple custom formats, specify the most common format first. The collector will process each custom format in the order provided. Once a timestamp is located, no further timestamp checking is done.
+   * If no timestamps are located that match your custom formats, the collector will still attempt to automatically locate the log's timestamp.
    :::
 1. The **Timestamp locator** is a regular expression with a capture group matching the timestamp in your log messages.<br/><img src={useBaseUrl('/img/send-data/timestamp-locator-highlighted.png')} alt="Screenshot highlighting the timestamp locator field, where users can specify a regular expression to locate timestamps in logs" width="500"/><br/>The timestamp locator must:
     * be provided for 16-digit epoch or 19-digit epoch timestamps. Otherwise, this field is not necessary.
     * be a valid Java regular expression. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex is invalid. The timestamp locator regex your-regex  uses matching features which are not supported.`
     * be an [RE2-compliant](https://github.com/google/re2/wiki/Syntax) regular expression, for example: `\[time=(.*?)\]`. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex uses matching features which are not supported.`
-    * contain one unnamed capture group. When we extract timestamps, we only scan the portion of each log message that is captured by this group. If a log message does not match the locator expression, then your timestamp format cannot be applied to that message. If the regex doesn't contain one unnamed capture group, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex does not contain a single unnamed capture group. The timestamp locator regex your-regex uses matching features which are not supported`
+    * contain one unnamed capture group. When we extract timestamps, we only scan the portion of each log message that is captured by this group. If a log message does not match the locator expression, then your timestamp format cannot be applied to that message. If the regex does not contain one unnamed capture group, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex does not contain a single unnamed capture group. The timestamp locator regex your-regex uses matching features which are not supported`
       :::tip
       If you use quotes in the timestamp locator regular expression, you may see issues in the display after you save. The regular expression is not actually changed and can still be used to locate your timestamp.
       :::
-1. If you have more than one custom timestamp format that you want to add, click **+ Add**. The ordering of formats is significant. Each provided timestamp format is tested, in the order specified, until a matching format is found. The first matching format determines the final message timestamp. If none of the provided formats match a particular message, the Collector will attempt to automatically determine the message's timestamp.
+1. If you have more than one custom timestamp format that you want to add, click **+ Add**. The ordering of formats is significant. Each provided timestamp format is tested, in the order specified, until a matching format is found. The first matching format determines the final message timestamp. If none of the provided formats match a particular message, the collector will attempt to automatically determine the message's timestamp.
 1. Next, we recommend testing a few log lines from your data against your specified formats and locators. Enter sample log messages to test the timestamp formats you want to extract.<br/> <img src={useBaseUrl('img/send-data/timestamp-format-test-examples.png')} alt="Screenshot displaying example log lines used to test custom timestamp formats" width="600"/>
 1. Click **Test** once your log lines are entered. The results display with the timestamp parsed and format matches (if any).<br/><img src={useBaseUrl('img/send-data/timestamp-format-test-results.png')} alt="Screenshot of the results from testing custom timestamp formats, showing matched and unmatched formats" width="500"/><br/>
     You should see one of the following messages:  
@@ -186,10 +186,10 @@ where `<parse type>` can take the values:
 * `def`. Success, default (user-specified) format.
 * `full`. Success, from "full" parsing against library of patterns.
 * `none`. Local/receipt time because timestamp parsing is not enabled for this source.
-* `ac1`. Auto-corrected by the "window-based" heuristic (what we call "auto-correction" today). Sumo Logic assumes that all log messages coming from a particular Source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that source, it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source.
-    For example, assume the Collector parses the timestamp "Dec **2**, 2021 2:39:58 AM". If the previously received message from that Source has a timestamp prior to "Dec **1**, 2021 2:39:58 AM" or after "Dec **3**, 2021 2:39:58 AM", the Collector will auto-correct the timestamp to the current time.
-* `ac2`. Auto-corrected by the -1y, +2d heuristic. Sumo Logic assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time.
-    For example, assume the Collector parses the timestamp "Dec 2, **2021** 2:39:58 AM". If the previously received message from that Source is prior to "Dec 1, **2020** 2:39:58 AM" or after "Dec 4, **2021** 2:39:58 AM", the Collector will auto-correct the timestamp to the current time.
+* `ac1`. Auto-corrected by the "window-based" heuristic (what we call "auto-correction" today). Sumo Logic assumes that all log messages coming from a particular source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that source, it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your source.
+    For example, assume the collector parses the timestamp "Dec **2**, 2021 2:39:58 AM". If the previously received message from that source has a timestamp prior to "Dec **1**, 2021 2:39:58 AM" or after "Dec **3**, 2021 2:39:58 AM", the collector will auto-correct the timestamp to the current time.
+* `ac2`. Auto-corrected by the -1y, +2d heuristic. Sumo Logic assumes that all log messages coming from a particular source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time.
+    For example, assume the collector parses the timestamp "Dec 2, **2021** 2:39:58 AM". If the previously received message from that source is prior to "Dec 1, **2020** 2:39:58 AM" or after "Dec 4, **2021** 2:39:58 AM", the collector will auto-correct the timestamp to the current time.
 
 #### Example
 
@@ -239,7 +239,7 @@ Do not use epoch with any other tokens.
 
 ### Time zones
 
-When configuring a Source, you can choose either of the following options:
+When configuring a source, you can choose either of the following options:
 
 * Use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message.
 * Have us completely disregard any time zone information present in logs by forcing a time zone.
@@ -250,8 +250,8 @@ It's important to have the proper time zone set, no matter which option you cho
 
 The following considerations apply to time zones:
 
-* We highly recommend that the time zone be set explicitly on all Sources. Sumo Logic always attempts to determine the time zone for the Source. However, if that isn’t possible, the time zone will revert to UTC. In these cases, the time zone will be incorrect, and that could significantly affect forensic analysis and reporting.
-* Sumo Logic does not support all available ISO8601 time zones. For example -00 is not supported. So any timezones written in this format are undetectable by the system. For cases of these formats you will need to supply the proper default timezone to use when one is not detected by the service.
+* We highly recommend that the time zone be set explicitly on all sources. Sumo Logic always attempts to determine the time zone for the source. However, if that is not possible, the time zone will revert to UTC. In these cases, the time zone will be incorrect, and that could significantly affect forensic analysis and reporting.
+* Sumo Logic does not support all available ISO8601 time zones. For example -00 is not supported. So any time zones written in this format are undetectable by the system. For cases of these formats you will need to supply the proper default time zone to use when one is not detected by the service.
 
 For more information, see [List of UTC offsets (Wikipedia)](https://en.wikipedia.org/wiki/List_of_UTC_time_offsets) and [List of time zone codes (Wikipedia)](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 

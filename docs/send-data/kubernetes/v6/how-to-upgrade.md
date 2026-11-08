@@ -7,7 +7,7 @@ description: Learn how to upgrade Kubernetes Collection to v6, including setting
 
 This guide walks you through upgrading to Sumo Logic Kubernetes Collection v6.0.0. Here's what's new:
 
-* Sourceless mode is now enabled by default: the Hosted Collector and HTTP sources are replaced by direct installation-token authentication via the OpenTelemetry extension.
+* Sourceless mode is now enabled by default: the hosted collector and HTTP sources are replaced by direct installation-token authentication via the OpenTelemetry extension.
 * Metrics Pipeline Unification is now enabled by default: the separate metadata StatefulSet is merged into a single OTel collector pipeline.
 
 Both changes are breaking and require you to review the [Important Changes](./important-changes.md) page and set acknowledgment flags before the upgrade proceeds.
@@ -25,7 +25,7 @@ Both changes are breaking and require you to review the [Important Changes](./im
 ## Step 1: Review important changes
 
 Before upgrading, read [Important Changes in v6](./important-changes.md) in full. Pay particular attention to:
-- [Sourceless mode](./important-changes.md#1-sourceless-mode-for-data-upload). Review the impact on `_source` metadata, Hosted Collector cleanup, and `sourceType` restrictions.
+- [Sourceless mode](./important-changes.md#1-sourceless-mode-for-data-upload). Review the impact on `_source` metadata, hosted collector cleanup, and `sourceType` restrictions.
 - [Metrics pipeline unification](./important-changes.md#2-metrics-pipeline-unification). Review the removed StatefulSet, configuration key changes, and Prometheus remote write URL changes.
 
 ## Step 2: Set acknowledgment flags
@@ -46,7 +46,7 @@ sumologic:
 
 #### Option 1a: Migrate and clean up the Hosted Collector
 
-Choose this only if you have confirmed there are **no custom sources** on your Hosted Collector beyond those created by default by the Helm chart.
+Choose this only if you have confirmed there are **no custom sources** on your hosted collector beyond those created by default by the Helm chart.
 
 ```yaml
 sumologic:
@@ -56,7 +56,7 @@ sumologic:
 ```
 
 :::warning
-`cleanupHostedCollector: true` permanently deletes the Hosted Collector and **all sources** attached to it. This cannot be undone.
+`cleanupHostedCollector: true` permanently deletes the hosted collector and **all sources** attached to it. This cannot be undone.
 :::
 
 #### Option 2: Disable sourceless mode and keep using the Hosted Collector
@@ -131,7 +131,7 @@ Apply a **1.5x safety multiplier** on memory to account for `k8sattributes` cach
 **Key principles:**
 
 - **Prefer higher limits over tighter limits.** An OOMKilled collector drops all in-flight metrics. Over-provisioning wastes some reserved memory but prevents production data loss.
-- **CPU can be burstable.** CPU throttling slows processing but doesn't kill the pod. Setting CPU request lower than limit (for example, request=2, limit=6) is acceptable.
+- **CPU can be burstable.** CPU throttling slows processing but does not kill the pod. Setting CPU request lower than limit (for example, request=2, limit=6) is acceptable.
 - **Use HPA with memory target at 60–70%.** This gives headroom for spikes.
 - **Monitor `container_memory_working_set_bytes`** after enabling single-layer. If any pod sustains >80% of its memory limit, increase the limit.
 

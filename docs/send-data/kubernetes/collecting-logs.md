@@ -357,7 +357,7 @@ in addition to the following:
 
 ### Filtering
 
-Please see [the doc about filtering data](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs/filtering.md).
+See [the doc about filtering data](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs/filtering.md).
 
 ### Modifying log records
 
@@ -438,7 +438,7 @@ sumologic:
                   value: hardcoded-value
 ```
 
-To add a custom field named `k8s_app` with a value that comes from e.g. the pod label `app.kubernetes.io/name`, use the following configuration:
+To add a custom field named `k8s_app` with a value that comes from, for example, the pod label `app.kubernetes.io/name`, use the following configuration:
 
 ```yaml
 sumologic:
@@ -489,7 +489,7 @@ be required.
 
 There are two ways of directly configuring OpenTelemetry Collector for both log collection and metadata enrichment. These are both advanced features requiring a good understanding of this chart's architecture and OpenTelemetry Collector configuration.
 
-The `metadata.logs.config.merge` and `otellogs.config.merge` keys can be used to provide configuration that will be merged with the Helm Chart's default configuration. It should be noted that this field is not subject to normal backwards compatibility guarantees, the default configuration can change even in minor versions while preserving the same end-to-end behavior. Use of this field is discouraged - ideally the necessary customizations should be able to be achieved without touching the otel configuration directly. Please open an issue if your use case requires the use of this field.
+The `metadata.logs.config.merge` and `otellogs.config.merge` keys can be used to provide configuration that will be merged with the Helm Chart's default configuration. It should be noted that this field is not subject to normal backwards compatibility guarantees, the default configuration can change even in minor versions while preserving the same end-to-end behavior. Use of this field is discouraged - ideally the necessary customizations should be able to be achieved without touching the otel configuration directly. Open an issue if your use case requires the use of this field.
 
 The `metadata.logs.config.override` and `otellogs.config.override` keys can be used to provide configuration that will be completely replace the default configuration. As above, care must be taken not to depend on implementation details that may change between minor releases of this Chart.
 
@@ -508,7 +508,7 @@ sumologic:
 
 ### Multiline unstructured logs with HTTP sources
 
-By default, the Helm Chart sends data to Sumo Logic using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain HTTP Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
+By default, the Helm Chart sends data to Sumo Logic using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP source][otlp_source]. However, if you've chosen to use a [plain HTTP source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
 
 ```yaml
 sumologic:

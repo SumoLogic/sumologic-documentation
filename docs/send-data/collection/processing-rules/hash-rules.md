@@ -6,7 +6,7 @@ description: With a hash rule, an expression you choose will be replaced by a ha
 
 ### Hash Rules
 
-A hash rule is a processing rule that allows you to replace an expression with a hash code generated for that value. Hashed data is completely hidden (obfuscated) before being sent to Sumo Logic. This can be very useful in situations where some type of data must not leave your premises, such as credit cards and social security numbers. Each unique value will have a unique hash code.
+A hash rule is a processing rule that allows you to replace an expression with a hash code generated for that value. Hashed data is completely hidden (obfuscated) before being sent to Sumo Logic. This can be useful in situations where some type of data must not leave your premises, such as credit cards and social security numbers. Each unique value will have a unique hash code.
 
 For example, to hash member IDs, you could use the following filter expression:
 
@@ -27,7 +27,7 @@ Note the following:
 
 * Values that you want hashed must be expressed as a match group enclosed in "( )".
 * You can use an anchor to detect specific values. In addition, you can specify multiple match groups. If multiple match groups are specified, each of the values will be hashed uniquely.
-* The hash algorithm is MD5 (default) or SHA-256. OpenTelemetry collectors only support SHA-256.
-* If a match group isn't specified no data will be hashed.
+* The hash algorithm is MD5 (default) or SHA-256. OpenTelemetry Collectors only support SHA-256.
+* If a match group is not specified no data will be hashed.
 * Make sure you do not specify a regular expression that matches a full log line. Doing so will result in the entire log line being hashed.
 * If you need to hash values on multiple lines use single line modifiers (?s). For example: `memberid=(.*(?s).*session=.*?)\]`

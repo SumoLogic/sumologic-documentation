@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Learn how to send data to Sumo Logic and get started with our observability and security solutions. In this section, we'll introduce the following concepts:
 
 :::tip Designing your Deployment
-* [How to choose a Collector and Source](/docs/send-data/choose-collector-source)
+* [How to choose a collector and source](/docs/send-data/choose-collector-source)
 * [Installed Collector vs OpenTelemetry Collector Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks)
 * [How to use the Collection UI](/docs/send-data/collection)
 :::
@@ -37,13 +37,13 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/choose-collector-source')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Choosing a Sumo Logic Collector and Source</h4></a>
-  <p>Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.</p>
+  <p>Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, installed collectors, and hosted collectors.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/ic-vs-ot-collector-performance-benchmarks')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>IC vs OTel Performance Benchmarks</h4></a>
-  <p>Compare Installed Collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.</p>
+  <p>Compare installed collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -67,7 +67,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Hosted Collectors</h4></a>
-  <p>Set up a Hosted Collector to collect data directly from cloud sources like AWS, GCP, and more without installing an agent.</p>
+  <p>Set up a hosted collector to collect data directly from cloud sources like AWS, GCP, and more without installing an agent.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -79,7 +79,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/use-json-configure-sources')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Use JSON to Configure Sources</h4></a>
-  <p>Learn how to configure Installed and Hosted Collectors sources using JSON files.</p>
+  <p>Learn how to configure installed and hosted collectors sources using JSON files.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -103,7 +103,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
     <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/send-data/best-practices')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Best Practices for Data Collection</h4></a>
-    <p>Best practices for creating a naming convention for good Source Category values and choosing the right installed data collector for your environment.</p>
+    <p>Best practices for creating a naming convention for good source category values and choosing the right installed data collector for your environment.</p>
     </div>
   </div>
   <div className="box smallbox card">

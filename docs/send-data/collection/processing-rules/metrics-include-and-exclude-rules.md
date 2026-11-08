@@ -15,8 +15,8 @@ You can use metrics include and exclude rules with any metrics source, except th
 
 As a best practice, specify these rules to match the lesser volume of data.
 
-* If you want to collect the majority of data from the Source's path provide exclude rules to match (filter out) the lesser volume of data.
-* If you want to collect a small set of data from the Source's path provide include rules to match (filter in) the lesser volume of data.
+* If you want to collect the majority of data from the source's path provide exclude rules to match (filter out) the lesser volume of data.
+* If you want to collect a small set of data from the source's path provide include rules to match (filter in) the lesser volume of data.
 
 You configure metrics processing rules on the **Collection > Collectors and Sources > Edit Source** page for a metrics source. There are two rule types for metrics: **Exclude metrics that match** and **Include metrics that match.**
 

@@ -80,7 +80,7 @@ With a mask string of `AAA` would provide the following result:
 
 * A **mask string** exceeding five times the size of the original string will be trimmed. For example, if a mask rule increases the size from 7 bytes to 38 bytes, it will be trimmed to 35 bytes (which is 5 times 7 bytes), where the last 3 bytes of the message are dropped. 
 
-* Single-line log messages are split into 1MB slices and multiline messages are split after 2,000 lines or 512KB, whichever comes first. A rule will process these slices, not the full log message. Any text that falls on either side of the message slices after being split won't be masked if they do not match the rule's regular expression.
+* Single-line log messages are split into 1MB slices and multiline messages are split after 2,000 lines or 512KB, whichever comes first. A rule will process these slices, not the full log message. Any text that falls on either side of the message slices after being split will not be masked if they do not match the rule's regular expression.
 
 ## Examples
 
