@@ -2190,7 +2190,9 @@ module.exports = {
           link: {type: 'doc', id: 'observability/ai-observability/index'},
           items: [
             'observability/ai-observability/ai-observability-app',
-            'observability/ai-observability/instrument-your-llm-application',
+            'observability/ai-observability/instrument-your-llm-application-with-openllmetry',
+            'observability/ai-observability/instrument-your-llm-application-with-opentelemetry',
+            'observability/ai-observability/troubleshoot-ai-observability',
           ],
         },
         'observability/application-components',

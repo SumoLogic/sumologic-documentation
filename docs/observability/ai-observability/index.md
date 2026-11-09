@@ -25,4 +25,10 @@ In this section, we'll walk you through the Sumo Logic AI Observability solution
   <p>Send OpenTelemetry GenAI traces from your LLM application to Sumo Logic using OpenTelemetry or OpenLLMetry.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/observability/ai-observability/troubleshoot-ai-observability')}><img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="Troubleshoot AI Observability icon" width="40"/><h4>Troubleshoot AI Observability</h4></a>
+  <p>Resolve common problems with data collection, missing traces, and empty dashboards in AI Observability.</p>
+  </div>
+</div>
 </div>
