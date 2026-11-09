@@ -136,7 +136,7 @@ Before setting up the AI Observability app, ensure you have an application instr
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. Select an existing hosted collector, or click **Add Collector** and then **Hosted Collector** to create one.
-1. Click **Add Source** next to the Hosted Collector.
+1. Click **Add Source** next to the hosted collector.
 1. Select **OTLP/HTTP**.
 1. Enter a **Name** for the Source. **Description** is optional.
 1. Click **Save**.
