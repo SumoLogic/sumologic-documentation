@@ -10,7 +10,7 @@ keywords:
   - opentelemetry
   - openllmetry
   - instrumentation
-description: Learn how to instrument your LLM application with OpenTelemetry or OpenLLMetry to send GenAI trace spans to Sumo Logic for AI Observability.
+description: Troubleshoot common AI Observability problems, such as missing spans, empty dashboards, and data that does not reach Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

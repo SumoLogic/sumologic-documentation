@@ -21,8 +21,14 @@ In this section, we'll walk you through the Sumo Logic AI Observability solution
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/ai-observability/instrument-your-llm-application')}><img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="Instrument your LLM application icon" width="40"/><h4>LLM Application Instrumentation</h4></a>
-  <p>Send OpenTelemetry GenAI traces from your LLM application to Sumo Logic using OpenTelemetry or OpenLLMetry.</p>
+  <a href={useBaseUrl('docs/observability/ai-observability/instrument-your-llm-application-with-opentelemetry')}><img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="OpenTelemetry instrumentation icon" width="40"/><h4>Send GenAI Traces with OpenTelemetry</h4></a>
+  <p>Instrument your LLM application with the official OpenTelemetry GenAI packages and send traces to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/observability/ai-observability/instrument-your-llm-application-with-openllmetry')}><img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="OpenLLMetry instrumentation icon" width="40"/><h4>Send GenAI Traces with OpenLLMetry</h4></a>
+  <p>Instrument your LLM application with the open-source Traceloop SDK and send traces to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
