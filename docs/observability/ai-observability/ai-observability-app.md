@@ -37,7 +37,7 @@ The AI Observability app uses OpenTelemetry **trace spans** exported to Sumo Log
 
 The following is a sample LangGraph agent task span, as stored in Sumo Logic when exported with OpenLLMetry.
 
-Agent task span (`branch:to:agent`)
+The following is a sample agent task span (`branch:to:agent`).
 
 ```json
 {
