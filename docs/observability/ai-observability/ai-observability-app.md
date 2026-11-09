@@ -200,7 +200,7 @@ The service name comes from the `service.name` resource attribute (or the `OTEL_
 * Helicone / OpenRouter
 * LangChain
 * LangGraph
-* BrainTrust
+* Braintrust
 * LlamaIndex - OpenLLMetry only
 * Haystack - OpenLLMetry only
 
