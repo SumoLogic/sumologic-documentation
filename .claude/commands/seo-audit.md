@@ -60,7 +60,7 @@ Use the Read tool to read the complete file content including frontmatter.
 
 AEO focuses on getting content surfaced as direct answers in search results.
 
-* [ ] At least one H2 heading is phrased as a question (e.g., "What is X?", "How do I configure Y?") or implies a clear question — **Suggestion** if none for docs over 600 words
+* [ ] H2/H3 body headings are statement-style or "How to" task statements (e.g., "How to configure Y", "Limitations of X") and none end in a question mark — **Warning** if a body heading is a literal question or uses first person ("How do I"); **Suggestion** if no heading signals the question the section answers on docs over 600 words. Question marks belong only in FAQ entries
 * [ ] The first 1–2 sentences directly state what the subject is or what the doc accomplishes — **Warning** if the intro buries the answer
 * [ ] At least one structured list (bulleted or numbered) on pages over 400 words — **Suggestion** if none (search engines extract lists for "People also ask" answers)
 * [ ] At least one definition or "X is..." or "X means..." statement for concept-heavy docs — **Suggestion** if absent
@@ -68,7 +68,7 @@ AEO focuses on getting content surfaced as direct answers in search results.
 
 ### Step 5: Run GEO checks
 
-GEO focuses on getting content cited accurately by AI tools. Check the doc against the **Five GEO Principles** defined in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md) — question-style headings and `keywords` are already covered by Step 4 (AEO checks) and Step 3 (Frontmatter). Step 4 also checks whether the page's opening states the answer directly, but BLUF applies at every section level, so check the remaining ground here:
+GEO focuses on getting content cited accurately by AI tools. Check the doc against the **Five GEO Principles** defined in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md) — statement-style headings and `keywords` are already covered by Step 4 (AEO checks) and Step 3 (Frontmatter). Step 4 also checks whether the page's opening states the answer directly, but BLUF applies at every section level, so check the remaining ground here:
 
 * [ ] Each major H2 and H3 section leads with a direct answer to what it covers, not just the page's opening (answer-first / BLUF) — **Warning** if sections bury the answer in setup or context first
 * [ ] Page answers one clearly scoped question — **Suggestion** if it covers multiple distinct questions that should be split into separate pages
@@ -165,7 +165,7 @@ Do not modify files without explicit user approval.
 |-------|---------------|
 | `description` is 100–139 chars | Functional but below the 140–160 target; AI crawlers get less to cite |
 | No `keywords` field | Missed opportunity to guide indexing |
-| No question-format headings | Featured snippets and "People also ask" prefer question/answer structure |
+| Headings do not signal the question answered | Statement-style headings and "How to" task statements match how people phrase AI queries; reserve question marks for FAQ entries |
 | No "At a glance" section | LLMs prefer pages with scannable summaries they can cite verbatim |
 | No FAQ section | FAQ blocks are the highest-value content for AI citation; see `geo-guide/SKILL.md` |
 | Heavy cross-reference dependency | AI tools cannot follow links; a page that isn't self-contained won't be cited accurately |
