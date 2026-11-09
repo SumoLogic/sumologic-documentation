@@ -192,7 +192,7 @@ The service name comes from the `service.name` resource attribute (or the `OTEL_
 
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-Collection-Architecture.png')} alt="AI Observability collection architecture" style={{border: '1px solid gray'}} width="600" />
 
-## Vendors Supported by App
+## Vendors supported by the app
 
 * OpenAI
 * Google Gemini
