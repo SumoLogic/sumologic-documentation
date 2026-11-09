@@ -114,6 +114,18 @@ See the following table for commands:
 | Windows | Upgrade or downgrade command: `SumoCollector.exe -console -q` |
 | MacOS | Use the same steps to [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md) without the authentication credentials. |
 
+## Lifecycle and support policy
+
+Keeping your installed collectors up to date is the only supported way to receive new functionality, bug fixes, and security patches. This policy explains how long collector versions stay available and when Sumo Logic stops supporting them on an operating system.
+
+- **Download availability**. Each collector version stays available for download for at least one year after its release.
+- **Updates and patches**. Upgrade to the latest collector version and keep it current to receive new functionality, bug fixes, and security patches. Earlier versions do not receive them.
+- **Operating system end of life**. Sumo Logic stops supporting new collector versions on an operating system or runtime when that operating system or runtime reaches its own end of life. You can continue to use earlier collector versions on those platforms, but they do not receive further bug fixes or security patches.
+
+:::important
+If you manage many collectors, plan regular upgrades so your collectors stay on a supported version. Follow the [upgrade best practices](#collector-upgrade-best-practices) and review the [Collector release notes](/release-notes-collector) to see what changed in each version.
+:::
+
 ## Collector Upgrade Best Practices
 
 We recommend you follow these best practices when upgrading Installed Collectors.
@@ -124,7 +136,7 @@ There is a community supported script available on GitHub that uses the Collecto
 
 ### Stay Current
 
-While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments. You can read the [Release Notes](/release-notes-collector) for each Collector version here, so you know exactly what changes are made.
+While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments. You can read the [Release Notes](/release-notes-collector) for each Collector version here, so you know exactly what changes are made. Learn more about the [lifecycle and support policy](#lifecycle-and-support-policy).
 
 ### Use the Sumo Logic User Interface to Upgrade
 
