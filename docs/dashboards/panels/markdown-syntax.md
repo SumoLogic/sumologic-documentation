@@ -2,31 +2,31 @@
 id: markdown-syntax
 title: Markdown Syntax for Dashboards
 sidebar_label: Markdown Syntax
-description: Markdown Syntax options are supported in Dashboards.
+description: Learn which Markdown syntax options you can use in Sumo Logic dashboard text panels.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The following Markdown syntax options are supported in dashboards. When your syntax is supported, you will see `Markdown Supported` near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
+The following Markdown syntax options are supported in Sumo Logic dashboards. When your syntax is supported, `Markdown Supported` appears near the bottom-left corner of the text box. If the syntax is not supported, you cannot click the **Submit** button.
 
 :::important
-Images, blockquotes, code blocks, URLs, and email addresses are not supported in the text panels.
+Images, blockquotes, code blocks, URLs, and email addresses are not supported in text panels.
 :::
 
 ## Basic text
 
-You do not need to apply any syntax to display basic text. Just type the phrase in the Text box.
+You do not need to apply any syntax to display basic text. Type your text in the **Text** box.
 
 ## Bold/italic text
 
-To make text italic, surround the phrase in `* *`. For example, `*This text will be italic*`.
+To make text italic, surround the text with `* *`. For example, `*This text will be italic*`.
 
-To make text bold, surround the phrase in `** **`. For example, `**This text will be bold**`.
+To make text bold, surround the text with `** **`. For example, `**This text will be bold**`.
 
-You can combine bold and italic syntax if you'd like.
+You can combine bold and italic syntax.
 
 ## Headings
 
-Text can be set to one of six levels, by preceding the text with `#`:
+You can set text to one of six heading levels by starting the line with one to six `#` characters:
 
 ```markdown
 # Heading one
@@ -59,7 +59,7 @@ period. Indent by adding a space.
     1. Indented Item Two
 ```
 
-This will be displayed in the Text panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_ordered_list.png')} alt="Ordered list" style={{border: '1px solid gray'}} width="400" />
+The Text panel displays this as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_ordered_list.png')} alt="Ordered list" style={{border: '1px solid gray'}} width="400" />
 
 ### Unordered Lists
 
@@ -74,11 +74,11 @@ will produce a bullet. Indent by adding a space.
     * Bullet Indent Two
 ```
 
- This will be displayed in the Text panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_unordered_list.png')} alt="Markdown unordered list" style={{border: '1px solid gray'}} width="400" />
+ The Text panel displays this as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_unordered_list.png')} alt="Markdown unordered list" style={{border: '1px solid gray'}} width="400" />
 
 ## Combined Lists
 
-To created a combined, nested list of numbered and bulleted items, just precede each line with either a number and a period or an asterisk `*`.
+To create a combined, nested list of numbered and bulleted items, start each line with either a number and a period or an asterisk `*`.
 
 ```markdown
 1. Item One
@@ -90,8 +90,8 @@ To created a combined, nested list of numbered and bulleted items, just precede 
     * Bullet Indent Two
 ```
 
-This will be displayed in the Text panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_combined_list.png')} alt="Combined list" style={{border: '1px solid gray'}} width="400" />
+The Text panel displays this as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_combined_list.png')} alt="Combined list" style={{border: '1px solid gray'}} width="400" />
 
 :::info
-To learn more about the supported markdown elements, refer to the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
+For more information about Markdown elements, see the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
 :::
