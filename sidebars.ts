@@ -990,7 +990,6 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
-        'manage/partitions/flex-to-tier-migration-report',
         'manage/partitions/faq',
       ]
     },
@@ -3096,6 +3095,7 @@ integrations: [
             'cse/records-signals-entities-insights/create-custom-entity-type',
             'cse/records-signals-entities-insights/create-an-entity-group',
             'cse/records-signals-entities-insights/configure-entity-lookup-table',
+            'cse/records-signals-entities-insights/signals-ui',
             'cse/records-signals-entities-insights/view-records-signal',
             'cse/records-signals-entities-insights/about-signal-suppression',
             'cse/records-signals-entities-insights/search-cse-records-in-sumo',
