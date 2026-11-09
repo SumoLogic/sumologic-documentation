@@ -1,7 +1,6 @@
 ---
 id: ai-observability-app
 title: AI Observability App
-sidebar_label: AI Observability App
 keywords:
   - apps
   - ai-observability
