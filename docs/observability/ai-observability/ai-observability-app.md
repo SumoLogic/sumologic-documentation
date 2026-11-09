@@ -188,7 +188,7 @@ _index=_trace_spans service=<your-service-name>
 
 The service name comes from the `service.name` resource attribute (or the `OTEL_SERVICE_NAME` environment variable). OpenTelemetry does not restrict its format, and names with spaces are supported. We recommend a stable, lowercase name without spaces (for example, `support-chatbot`) and keeping the environment in `deployment.environment` instead of the service name.
 
-## Illustrative Collection Architecture
+## Illustrative collection architecture
 
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-Collection-Architecture.png')} alt="AI Observability collection architecture" style={{border: '1px solid gray'}} width="600" />
 
