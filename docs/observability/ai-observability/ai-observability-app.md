@@ -138,7 +138,7 @@ Before setting up the AI Observability app, ensure you have an application instr
 1. Select an existing hosted collector, or click **Add Collector** and then **Hosted Collector** to create one.
 1. Click **Add Source** next to the hosted collector.
 1. Select **OTLP/HTTP**.
-1. Enter a **Name** for the Source. **Description** is optional.
+1. Enter a **Name** for the source. **Description** is optional.
 1. Click **Save**.
 1. Copy the generated **Source URL**.
 
