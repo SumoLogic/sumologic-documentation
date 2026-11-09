@@ -819,6 +819,56 @@ html[data-theme='light'] .table-of-contents__left-border {
   }
 }
 
+/* Nested tabs: outer (OpenTelemetry / OpenLLMetry) and inner (vendors) */
+
+/* ---- Outer tabs ---- */
+.markdown .tabs.outer-tabs {
+  background: rgba(53, 120, 229, 0.08);
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 0;
+
+  .tabs__item {
+    font-weight: 700;
+    border-radius: 6px 6px 0 0;
+
+    &:hover {
+      background: rgba(53, 120, 229, 0.15);
+    }
+  }
+
+  .tabs__item--active {
+    background: var(--ifm-color-primary);
+  }
+}
+
+/* ---- Inner tabs ---- */
+.markdown .tabs.inner-tabs {
+  background: rgba(0, 139, 178, 0.06);
+  border-bottom: 2px solid #008bb2;
+  border-radius: 6px 6px 0 0;
+  margin-top: 0;
+
+  .tabs__item {
+    font-weight: 300;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      background: rgba(0, 139, 178, 0.12);
+    }
+  }
+
+  .tabs__item--active {
+    border-bottom-color: #9fe1f4;
+    background: #9ae0f3;
+  }
+}
+
+/* Text colors for active tabs (beat the global dark/light .tabs__item--active rules) */
+html[data-theme='light'] .markdown .tabs.outer-tabs .tabs__item--active { color: #fff; }
+html[data-theme='dark']  .markdown .tabs.outer-tabs .tabs__item--active { color: #fff; }
+html[data-theme='light'] .markdown .tabs.inner-tabs .tabs__item--active { color: #006f8f; }
+html[data-theme='dark']  .markdown .tabs.inner-tabs .tabs__item--active { color: #4dd0ee; }
+
 // NAVBAR
 .navbar__logo {
   align-items: center;

@@ -19,4 +19,10 @@ In this section, we'll walk you through the Sumo Logic AI Observability solution
   <p>Set up collection, install the app, and use prebuilt dashboards and monitors for your AI and LLM applications.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/observability/ai-observability/instrument-your-llm-application')}><img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="Instrument your LLM application icon" width="40"/><h4>LLM Application Instrumentation</h4></a>
+  <p>Send OpenTelemetry GenAI traces from your LLM application to Sumo Logic using OpenTelemetry or OpenLLMetry.</p>
+  </div>
+</div>
 </div>
