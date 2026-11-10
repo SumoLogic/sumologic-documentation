@@ -76,10 +76,14 @@ To add knowledge for the SOC Analyst Agent:
 1. Click the **DojoAI** tab in the left navigation.
 1. Click **SOC Analyst Agent**. This opens the agent's settings page.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
 1. Click **Sources**. On this page, you can view, edit, and delete existing knowledge sources.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
-1. Click **+ Add Source** to add a new knowledge source.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
+1. Click **+ Add Source** to add a new knowledge source. Choose **Add text** to type or paste content directly, or **Upload file** to add a TXT, MD, PDF, or CSV file.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source dropdown showing Add text and Upload file options" style={{border: '1px solid gray'}} width="700" />
 1. Give the source a name and type the fact, pattern, or practice in the content field, then click **Save** when you're done. Here's an example:<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" /><br/>
    :::important
-   Only plain text is supported. Up to 10,000 characters per entry. Each knowledge source item works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
+   **Plain text** – up to 10,000 characters per entry. Each entry works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
+
+   **TXT, MD, PDF, or CSV file**
+   * File size: up to 5 MB per file
+   * File count: up to 50 files per team, across file formats
    :::
 
 See [What you can teach your DojoAI agents](#what-you-can-teach-your-dojoai-agents) for more sample knowledge source entries.
@@ -89,7 +93,7 @@ Whenever your knowledge shapes an investigation, the agent surfaces which entrie
 ## Limitations
 
 * **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other DojoAI agents is planned for upcoming phases.
-* **Text only**. Knowledge sources accept plain text only. Enhanced knowledge addition mechanisms are planned for upcoming phases.
+* **Text and files**. Knowledge sources accept plain text or file uploads via TXT, MD, PDF, and CSV.
 * **Security guardrails**. Security guardrails on knowledge content are planned for upcoming phases.
 * **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
 * **One knowledge base per agent**. Everyone on your team draws on the same shared knowledge for a given agent. No per-team partitioning.
