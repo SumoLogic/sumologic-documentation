@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="AI Observability icon" width="60"/>
 
+:::info
+This app is in limited availability. To request access, contact your Sumo Logic account representative.
+:::
+
 The Sumo Logic app for AI Observability provides preconfigured dashboards and monitors to track the health, performance, cost, and behavior of your AI and LLM applications. Use the app to monitor request volume, error rate, latency, and token consumption; estimate LLM spend; troubleshoot authentication errors, rate limits, and truncated responses; understand agent workflows and tool usage; analyze multi-turn conversations; and review prompts and responses.
 
 The app analyzes OpenTelemetry trace spans that carry [GenAI Semantic Convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) (`gen_ai.*`) attributes. It works across LLM providers such as OpenAI, Anthropic, Google Gemini, Groq, and AWS Bedrock, and across frameworks such as LangChain, LangGraph, and LlamaIndex.
@@ -77,11 +81,11 @@ The following is a sample agent task span (`branch:to:agent`).
 }
 ```
 
-### How it works
+## How it works
 
 Your application emits OTel trace spans with `gen_ai.*` attributes, the spans are exported via OTLP/HTTP to Sumo Logic, and the app dashboards and monitors query those spans from `_index=_trace_spans`.
 
-### Key terms
+## Key terms
 
 | Term | Description |
 |:--|:--|
@@ -96,7 +100,7 @@ Your application emits OTel trace spans with `gen_ai.*` attributes, the spans ar
 | Model | The specific model used, such as `gpt-4o`, `claude-sonnet-4`, or `gemini-3.6-flash`. Captured in `gen_ai.request.model`. |
 | Finish reason | Why the LLM stopped generating: `stop` (natural end), `length` (hit max tokens), or `tool_call` (wants to call a tool). Captured in `gen_ai.response.finish_reasons`. |
 
-### Core attributes
+## Core attributes
 
 | Attribute | Description |
 |:--|:--|
@@ -206,13 +210,13 @@ The service name comes from the `service.name` resource attribute (or the `OTEL_
 
 ## Installing the AI Observability app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
 ## Viewing AI Observability dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
@@ -299,7 +303,7 @@ Only spans that carry `gen_ai.conversation.id` appear in this dashboard. Use the
 
 ## Create monitors for AI Observability app
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
@@ -315,12 +319,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ## Upgrading the AI Observability app
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+import AppUpdate from '../../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
 ## Uninstalling the AI Observability app
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+import AppUninstall from '../../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>

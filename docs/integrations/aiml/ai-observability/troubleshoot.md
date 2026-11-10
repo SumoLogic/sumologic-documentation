@@ -43,11 +43,11 @@ OpenTelemetry and OpenLLMetry can name a provider differently, for example `gemi
 
 ### Conversation Analytics is empty
 
-`gen_ai.conversation.id` isn't set. See Track conversations for [OpenLLMetry](/docs/observability/ai-observability/instrument-your-llm-application-with-openllmetry/#track-conversations) and [OpenTelemetry](/docs/observability/ai-observability/instrument-your-llm-application-with-opentelemetry/#track-conversations).
+`gen_ai.conversation.id` isn't set. See Track conversations for [OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry/#track-conversations) and [OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry/#track-conversations).
 
 ### Prompts and responses are blank
 
-Content capture is off. See Capture prompts and responses for [OpenLLMetry](/docs/observability/ai-observability/instrument-your-llm-application-with-openllmetry/#capture-prompts-and-responses) and [OpenTelemetry](/docs/observability/ai-observability/instrument-your-llm-application-with-opentelemetry/#capture-prompts-and-responses).
+Content capture is off. See Capture prompts and responses for [OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry/#capture-prompts-and-responses) and [OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry/#capture-prompts-and-responses).
 
 ### Long prompts are cut off
 

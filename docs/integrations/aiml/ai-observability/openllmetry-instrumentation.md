@@ -27,7 +27,7 @@ The Sumo Logic AI Observability app reads OpenLLMetry traces that follow the Ope
 ## Get started with OpenLLMetry instrumentation
 
 :::tip
-Use either OpenLLMetry or [OpenTelemetry](/docs/observability/ai-observability/opentelemetry-instrumentation) instrumentation method per process. Running both can generate duplicate spans.
+Use either OpenLLMetry or [OpenTelemetry](/docs/integrations/aiml/ai-observability/opentelemetry-instrumentation) instrumentation method per process. Running both can generate duplicate spans.
 :::
 
 | Category | OpenLLMetry |

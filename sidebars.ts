@@ -2182,19 +2182,6 @@ module.exports = {
             'observability/kubernetes/troubleshoot-with-explore',
           ],
         },
-        {
-          type: 'category',
-          label: 'AI Observability',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'observability/ai-observability/index'},
-          items: [
-            'observability/ai-observability/ai-observability-app',
-            'observability/ai-observability/instrument-your-llm-application-with-openllmetry',
-            'observability/ai-observability/instrument-your-llm-application-with-opentelemetry',
-            'observability/ai-observability/troubleshoot-ai-observability',
-          ],
-        },
         'observability/application-components',
         'observability/diagnose-issues',
         'observability/troubleshoot',
@@ -2550,6 +2537,19 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/aiml/index'},
         items: [
+          {
+            type: 'category',
+            label: 'AI Observability',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'integrations/aiml/ai-observability/index'},
+            items: [
+              'integrations/aiml/ai-observability/ai-observability-app',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry',
+              'integrations/aiml/ai-observability/troubleshoot-ai-observability',
+            ],
+          },
           {
             type: 'category',
             label: 'OpenTelemetry',

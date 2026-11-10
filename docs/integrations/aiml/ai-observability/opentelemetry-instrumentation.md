@@ -27,7 +27,7 @@ The Sumo Logic AI Observability app reads OpenTelemetry (OTel) traces that follo
 ## Get started with OpenTelemetry instrumentation
 
 :::tip
-Use either [OpenLLMetry](/docs/observability/ai-observability/openllmetry-instrumentation) or OpenTelemetry instrumentation method per process. Running both can generate duplicate spans.
+Use either [OpenLLMetry](/docs/integrations/aiml/ai-observability/openllmetry-instrumentation) or OpenTelemetry instrumentation method per process. Running both can generate duplicate spans.
 :::
 
 | Category | OpenTelemetry |
