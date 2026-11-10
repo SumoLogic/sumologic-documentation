@@ -1,82 +1,41 @@
 ---
 id: platform-optimization-agent
 title: Platform Optimization Agent
-description: The Platform Optimization Agent in Mobot answers how-to questions from Sumo Logic Help and reports on data volume and ingest, with no queries or support tickets.
+description: The Platform Optimization Agent is Sumo Logic's DojoAI agent for getting more out of your Sumo Logic environment. POA helps you troubleshoot issues, optimize queries, understand data usage, and tune your platform without digging through documentation or guessing at what's wrong.
 keywords:
   - platform optimization agent
-  - mobot
   - dojoai
   - how-to questions
   - data volume
-  - ingest volume
 ---
 
-The Platform Optimization Agent is the [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) agent that helps you get more from Sumo Logic. Ask [Mobot](/docs/search/mobot) a question in plain language, and the agent answers without you leaving the platform, writing a query, or filing a support ticket.
-
-You do not select this agent. Mobot routes your prompt to the right agent automatically.
+The Platform Optimization Agent is the [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) agent that helps you get more from Sumo Logic. It monitors your environment and surfaces optimization recommendations.
 
 The agent has the following skills:
 
-- [Help answers](#help-answers). Get how-to answers sourced from Sumo Logic Help.
-- [Data volume](#data-volume). Get answers about your ingest volume.
-
-## Help answers
-
-Ask any how-to question about using Sumo Logic, such as setup, configuration, or feature questions. The agent retrieves information from [Sumo Logic Help](https://www.sumologic.com/help/), so answers align with official product guidance. Answers include steps, navigation paths, and links to the relevant documentation.
-
-For example, `How do I configure OpenTelemetry for my service?`
-
-The agent does not always return identical wording for similar questions, but the guidance stays grounded in the documentation. If an answer seems incorrect or unclear, use the feedback controls in Mobot to tell us.
-
-### Tips for better how-to answers
-
-- **Provide troubleshooting details**. Include error messages and the integration or feature involved. For example, `I'm getting a 403 error when setting up an AWS integration. What could be wrong?`
-- **Reference specific features**. Use product names when you know them. `How do I use Field Extraction Rules?` gives better results than `How do I extract fields?`
-- **Follow up naturally**. If the first answer is close, refine it with a question such as `What about Azure instead of AWS?`
-
-For more prompts to try, see [Sumo Logic how-to questions](/docs/search/mobot/example-prompts#sumo-logic-how-to-questions).
-
-## Data volume
-
-Ask Mobot about your data ingest, and the agent answers from the Data Volume index. You do not need to write a query. This helps admins track ingestion and find noisy sources, and helps finance teams answer billing and usage questions.
-
-You can include any of the following in your prompt:
-
-- **Time window**. For example, the last week or the past two weeks.
-- **Unit**. GB, TB, MB, bytes, or event counts. If you do not specify a unit, the agent uses GB.
-- **Breakdown**. Collector, source, source category, tier, or log level.
-- **Top N**. For example, your top 10 source categories by daily ingest.
-
-The agent restates the time window and unit it used so you can confirm the answer matches your question. Breakdown and top N requests return structured results instead of a single total.
-
-Example prompts:
-
-- `Show me the daily ingest for the last week.`
-- `Ingest volume per day in GB.`
-- `Show me how much was ingested for collector "<collector_name>" for the past two weeks.`
-- `Give me my top 10 source categories by daily ingest volume.`
-
-You can only see data volume information for the organizations and data you already have permission to access.
+- **Performance tuning**
+  - **Query optimization**. Identifies inefficient, resource-heavy searches and suggests rewritten queries for faster results and lower compute load.
+  - **Dashboard layout optimization**. Highlights slow-loading or bloated dashboards and provides structural fixes to speed up page load times during critical investigations.
+- **Platform manageability and health**
+  - **Data source gaps**. Scans your telemetry environment to pinpoint missing sources, ensuring complete observability across critical infrastructure and services.
 
 ## Availability and limits
 
-- The Platform Optimization Agent is available to everyone with Mobot enabled. If your organization opted out of DojoAI or Mobot, it is not available.
-- Questions to the agent count toward your Mobot prompt allowance. Learn more in the [Mobot FAQ](/docs/search/mobot/#is-there-a-limit-to-how-many-prompts-i-can-send).
-- The agent answers questions only. It does not create queries, monitors, or dashboards, and it does not connect to external knowledge sources or internal systems such as Salesforce or Jira. To create content, see [Create and manage content](/docs/search/mobot/#create-and-manage-content) in Mobot.
+- The Platform Optimization Agent is available to everyone with DojoAI enabled. If your organization opted out of DojoAI, it is not available.
 
 ## FAQ
 
 ### What happened to the Knowledge Agent?
 
-The Platform Optimization Agent replaces the Knowledge Agent. The Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent keeps that skill and adds others, such as data volume answers.
+The Platform Optimization Agent replaces the Knowledge Agent. The Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent keeps that skill and adds others with query optimization guidance, data usage insight, and now proactive recommendations.
 
 ### Will I see the Platform Optimization Agent in the UI?
 
-No. You always interact with it through Mobot's single chat interface.
+No. You always interact with it through the **Recommendations** page or DojoAI Studio.
 
-### Can I return to a previous conversation?
+### Will the Platform Optimization Agent make changes to my environment without asking?
 
-Yes. Mobot saves conversation history for 60 days. Learn more in [Managing conversations](/docs/search/mobot/#managing-conversations).
+No. In its proactive mode, every recommendation requires your explicit review and action before anything changes. See [DojoAI Recommendations](/docs/search/mobot/dojoai-recommendations-preview) for details on the review-and-apply workflow.
 
 ## Additional resources
 
