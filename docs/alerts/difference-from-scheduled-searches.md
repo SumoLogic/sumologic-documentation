@@ -16,7 +16,7 @@ Scheduled searches address two primary use cases:
 
 ## Monitors
 
-Monitors are specifically designed for the first use case: alerting. They offer additional capabilities such as auto-resolution and support for multiple notification channels. Any scheduled searches created for alerting purposes can be moved to monitors.
+Monitors are specifically designed for the first use case: alerting. They offer additional capabilities such as auto-resolution. Any scheduled searches created for alerting purposes can be moved to monitors.
 
 ## Feature differences
 
@@ -27,7 +27,7 @@ Beyond the differences in use cases, there are distinct feature differences betw
 | Support for Slack, PagerDuty, OpsGenie, and other integrations | Yes | Yes |
 | Customizable notifications | Yes | Yes |
 | Incident auto-resolution | No | Yes |
-| Send notification to multiple channels | No | Yes |
+| Send notification to multiple channels | Yes | Yes |
 | Alert disablement | No | Yes*<br/>(Disable is a manual operation. We do not support scheduled disabling of alerts.) |
 | API support | Partial*<br/>(Supported via content sync API) | Yes |
 | Terraform support | Yes<br/>(see [content API resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content)) | Yes |
