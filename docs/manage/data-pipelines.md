@@ -72,9 +72,7 @@ To mask sensitive data, such as email addresses, SSNs, and credit card numbers, 
 
 You can disable a processing group without deleting it.
 
-### Processor reference
-
-Each processor takes the parameters listed here. Fields marked with a default are prefilled. In most processors, the field to read from defaults to `_raw`, which is the raw log message.
+Each processor takes the parameters listed in the following sections. Fields marked with a default are prefilled. In most processors, the field to read from defaults to `_raw`, which is the raw log message.
 
 #### JSON Parse
 
@@ -262,9 +260,7 @@ You can also see where an error occurred in the pipeline graph. To find it, open
 - The [limitations that apply to Ingest Time FERs](/docs/manage/field-extractions/#limitations) also apply to Data Pipelines.
 - A pipeline needs exactly one source and at most one destination. Pipeline and node names need to be unique.
 
-## Limits
-
-The following limits apply to Data Pipelines.
+The following limits also apply to Data Pipelines.
 
 | Item | Limit |
 |:--|:--|
