@@ -41,6 +41,7 @@ Watch this micro lesson to learn more about rules.
 <img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
 
 1. **Filter**. Filter the list of rules by different parameters, such as name, type, severity, and so on.
+1. **Ask Mobot**. Opens the Mobot chat box for you to create and edit Cloud SIEM rules using natural language. [Learn more](/docs/cse/rules/create-rules-with-mobot/).
 1. **Browse Available Community/Sigma Rules**. Opens the [Available Community/Sigma Rules](#browse-community-and-sigma-rules) page, where you can browse and import ready-made rules.
 1. **+ Add Rule**. Select the [rule type](#rule-types) to add.
 1. **Import**. [Import a rule](#import-a-rule).
