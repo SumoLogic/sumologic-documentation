@@ -89,6 +89,9 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
 ## Review SAML configuration
 
 1. To view the details of your configuration, select it from the **Configuration List**. The right side of the page displays the configuration details. For any SAML configuration, you'll see an **Assertion Consumer** URL. If you configure SP-initiated login, you'll also see an **Entity ID**. <br/><img src={useBaseUrl('img/security/config-list.png')} alt="Configuration list" style={{border: '1px solid gray'}} width="800" />
+   :::important
+   The `Destination` value in the SAML response from your IdP needs to match the **Assertion Consumer** URL. Starting January 29, 2027, Sumo Logic blocks logins that do not match. Learn more in [Fix SAML Destination URL Mismatch](/docs/manage/security/saml/saml-destination-url-mismatch/).
+   :::
 1. Click **View Metadata XML** to see the metadata XML file for the configuration. You can also use this button to [download the metadata XML](#download-metadata-xml).
 1. Click the pencil icon to modify the configuration settings. Otherwise, click **X** to close the dialog box. 
 
