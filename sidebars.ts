@@ -1191,6 +1191,7 @@ module.exports = {
             'manage/security/saml/manage-permissions-with-adfs',
             'manage/security/saml/set-up-adfs-authenticate-users',
             'manage/security/saml/view-saml-debug-information',
+            'manage/security/saml/saml-destination-url-mismatch',
           ]
         },
         {
