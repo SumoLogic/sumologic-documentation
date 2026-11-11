@@ -41,6 +41,7 @@ Watch this micro lesson to learn more about rules.
 <img src={useBaseUrl('img/cse/rules-list-page.png')} alt="Rules list page" style={{border: '1px solid gray'}} width="800" />
 
 1. **Filter**. Filter the list of rules by different parameters, such as name, type, severity, and so on.
+1. **Browse Available Community/Sigma Rules**. Opens the [Available Community/Sigma Rules](#browse-community-and-sigma-rules) page, where you can browse and import ready-made rules.
 1. **+ Add Rule**. Select the [rule type](#rule-types) to add.
 1. **Import**. [Import a rule](#import-a-rule).
 1. **Status**. Whether the rule is enabled.
@@ -50,6 +51,8 @@ Watch this micro lesson to learn more about rules.
 1. **Severity**. The rule's severity, an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
 1. **Signals Fired (24 h)**. The number of signals that the rule fired in the last 24 hours.
 1. **Signals Fired (7 d)**. The number of signals that the rule fired in the last 7 days.
+
+To list only rules that came from the community library, filter by Source. For example, the filter **Source is Sigma** shows only rules you imported from the Sigma library. See [Find imported community rules](#find-imported-community-rules).
 
 ## Rules details view
 
@@ -164,7 +167,96 @@ If you maintain a multi-org implementation of Sumo Logic and you need to push Cl
 
 ### Import rules from Sigma
 
-If you have existing [Sigma](https://sigmahq.io/) detection rules, you can convert them to Cloud SIEM rule JSON using the Sumo Logic pySigma backend and then import them. See [Convert Sigma Rules](/docs/cse/rules/convert-sigma-rules/).
+[Sigma](https://sigmahq.io/) is an open format for detection rules. You can bring Sigma rules into Cloud SIEM in two ways:
+- **Browse and import from the Cloud SIEM UI**. Cloud SIEM includes a library of community rules, including Sigma rules, that have already been converted to Cloud SIEM rules. You can browse the library, review each rule, and import the ones you want with a few clicks. No conversion step is needed. See [Browse community and Sigma rules](#browse-community-and-sigma-rules).
+- **Convert your own Sigma rules**. If you have your own Sigma rules, convert them to Cloud SIEM rule JSON using the Sumo Logic pySigma backend, and then import the JSON file as described in [Import a rule](#import-a-rule). See [Convert Sigma Rules](/docs/cse/rules/convert-sigma-rules/).
+
+## Browse community and Sigma rules
+
+Cloud SIEM provides a library of community rules that you can browse and add to your environment. The library includes rules from the [Sigma](https://sigmahq.io/) project, and the **Source** column shows where each rule came from. Cloud SIEM has already translated these rules into Cloud SIEM rule format, so you can import them as-is.
+
+Use this feature when you want to expand your detection coverage quickly without writing rules from scratch or running the Sigma conversion tools yourself.
+
+### Browse available rules
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To view rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view rules, in the top menu select **Content > Rules**.
+2. Click **Browse Available Community/Sigma Rules** at the top right of the page. The **Available Community/Sigma Rules** page opens.<br/><img src={useBaseUrl('img/cse/available-sigma-rules.png')} alt="Available Community/Sigma Rules page" style={{border: '1px solid gray'}} width="800"/>
+
+The page lists every rule in the library, 20 rules per page, sorted by name. Select one or more rules to import using the checkboxes, or select the checkbox in the header row to select all rules on the current page.
+
+The table has the following attributes:
+
+| Attributes | Description |
+|:--|:--|
+| Name | The name of the rule. Click a name to open the [rule details](#view-a-community-rule). |
+| Source | Where the rule came from. For example, `Sigma`. |
+| Rule Type | The Cloud SIEM [rule type](#rule-types). Imported community rules are match rules. |
+| Severity | The rule's severity, from 1 (lowest) to 10 (highest). |
+| Last Updated | The date the rule was last updated in the library. |
+
+To find rules:
+- Filter. Click **Start typing here to create a filter...** and filter the list by the table's fields, such as name, source, rule type, and severity.
+- Sort. Click a column heading to sort the table by that column. The default sort is by **Name**.
+- Page. Use the page controls at the bottom of the table to move between pages. The total number of rules in the library appears at the bottom right.
+
+### View a community rule
+
+Click a rule name on the **Available Community/Sigma Rules** page to open its details page. Each rule has its own page, and the page URL includes the rule ID, so you can bookmark or share a link to a specific rule.
+
+<img src={useBaseUrl('img/cse/sigma-rule-details.png')} alt="Community rule details page" style={{border: '1px solid gray'}} width="800"/>
+
+The details page contains:
+
+- **Import**. Imports this rule. See [Import a single rule](#import-a-single-rule).
+- **Details**. The rule's **Source**, **Rule Type**, **Severity**, and **Last Updated** date.
+- **MITRE ATT&CK® Tactics & Techniques**. The MITRE ATT&CK tactics and techniques that the rule maps to. For example, a rule might map to tactic TA0008 (Lateral Movement) and techniques T1021.007 and T1550.001.
+- **Original & Translated Rule**. Two read-only panes that let you compare the source rule with what Cloud SIEM will create. Click **Copy** in either pane to copy its contents to your clipboard.
+  - **Original Sigma Rule (YAML)**. The rule as published by the Sigma project, including its title, ID, status, level, author, description, references, known false positives, and tags.
+  - **Translated Rule (JSON)**. The Cloud SIEM rule that is created if you import the rule, including its name, expression, entity selectors, and `rule_source`. For details, see [About imported community rules](#about-imported-community-rules).
+
+:::note
+Review both panes before you import, especially the rule expression and the known false positives listed in the original rule, so you can decide whether the rule fits your environment.
+:::
+
+### Import a single rule
+
+1. On the **Available Community/Sigma Rules** page, click a rule name to open its details page.
+2. Review the rule.
+3. Click **Import**.
+
+Cloud SIEM adds the rule to your **Rules** list. 
+
+### Import multiple rules
+
+To import several rules at once:
+
+1. On the **Available Community/Sigma Rules** page, select the check box next to each rule you want to import. To select every rule on the current page, select the check box in the header row. 
+2. Click **Import N Selected Rules** at the top right of the table, where *N* is the number of rules you selected.
+3. The **Import in Progress** dialog appears and shows the percentage completed and the number of rules processed. The import can take some time. You can close the dialog and continue working, and track progress in the banner at the top of the page.
+4. When the import finishes, the **Import Complete** dialog lists each rule and whether it **Succeeded** or failed. Click a rule name to open its details page.
+5. Click **View All Imported Rules** to go to the **Rules** list, filtered to show only rules imported from Sigma.
+
+If you closed the dialog, a banner at the top of the page shows the result. For example, **Import complete: 4 succeeded, 0 failed**. Click **View Status** in the banner to reopen the results.
+
+### Find imported community rules
+
+After an import, imported rules appear in the **Rules** list alongside your other rules.
+
+To show only imported community rules:
+
+1. Go to the **Rules** list.
+2. In the filter bar, filter by **Source**. For example, select **Source is Sigma** to show only rules imported from the Sigma library. Click the **X** on the filter to clear it.
+
+You can also click **View All Imported Rules** in the **Import Complete** dialog, which opens the **Rules** list with this filter already applied.
+
+### About imported community rules
+
+Rules you import from the community library arrive as *templated match rules*. Keep the following in mind:
+- **They are match rules**. Each rule fires a signal when a single incoming record matches the rule expression. See [Match rule](#rule-types).
+- **They are templated**. The rule is generated from a template based on the original Sigma rule and is identified in the translated JSON by `pattern_type`: `templated_match`. The rule includes a name, description, severity, MITRE ATT&CK tags, and entity selectors (the [On Entity](#on-entity-configuration) attributes that signals are created on) already filled in.
+- **They record where they came from**. The `rule_source` field shows the origin of a rule. Rules from the community library carry `rule_source`: `community`. In the UI, the **Source** column and filter show the specific library, such as Sigma. 
+- **They behave like any other rule after import**. Once imported, you can open the rule from the **Rules** list and manage it like other rules, for example by disabling it. 
+- **Check coverage before relying on a rule**. Community rules are written to be broadly applicable. Review the rule expression, and the false positives noted in the original rule, and tune the rule for your environment.
 
 ## Rules and other content
 
