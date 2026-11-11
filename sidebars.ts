@@ -1140,6 +1140,7 @@ module.exports = {
             'manage/ingestion-volume/ingest-budgets/minute-volume',
         ]
         },
+        'manage/ingestion-volume/usage-attribution',
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
     },
