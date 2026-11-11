@@ -2,7 +2,7 @@
 id: saml-destination-url-mismatch
 title: Fix SAML Destination URL Mismatch
 sidebar_label: Fix SAML Destination URL Mismatch
-description: Fix a SAML Destination URL mismatch by setting your IdP's ACS URL and Destination URL to the Sumo Logic Assertion Consumer URL before logins are blocked on January 29, 2027.
+description: Fix a SAML Destination URL mismatch by setting your IdP's ACS and Destination URLs to the Sumo Logic Assertion Consumer URL before January 29, 2027.
 keywords:
   - Sumo Logic
   - saml
@@ -37,7 +37,7 @@ Sumo Logic validates the Destination URL to close a potential security misconfig
 
 ## Who is affected by a Destination URL mismatch
 
-You are affected if your IdP sends a `Destination` URL that differs from the **Assertion Consumer** URL in your Sumo Logic SAML configuration. This is common in these situations:
+You are affected if your IdP sends a `Destination` URL that differs from the **Assertion Consumer** URL in your Sumo Logic SAML configuration. This can happen when:
 
 * Your organization migrated between Sumo Logic deployments and did not update the IdP.
 * Your organization uses a custom or vanity URL that does not exactly match the ACS endpoint.
@@ -99,7 +99,7 @@ No. Your IdP stores the Destination URL, and Sumo Logic has no administrative ac
 
 ### How urgent is this change?
 
-You are not at risk of a lockout before January 29, 2027. A mismatch indicates a security misconfiguration, so fix it as soon as you can.
+Sumo Logic does not block logins before January 29, 2027. A mismatch indicates a security misconfiguration, so fix it as soon as you can.
 
 ## Related topics
 
