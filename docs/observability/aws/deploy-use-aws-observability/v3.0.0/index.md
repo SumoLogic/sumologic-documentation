@@ -15,25 +15,6 @@ These topics have information about Sumo Logic's AWS Observability Solution, ho
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-:::training Micro Lesson
-
-Watch a micro lesson on deploying the AWS Observability Solution. 
-
-<Iframe url="https://fast.wistia.net/embed/iframe/drmpe9zh5d?web_component=true&seo=true&videoFoam=false"
-  width="854px"
-  height="480px"
-  title="Tutorial: Setting Up AWS Observability Solution V2.4.0 Using CloudFormation Template Video"
-  id="wistiaVideo"
-  className="video-container"
-  display="initial"
-  position="relative"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-/>
-
-:::
-
-
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper">
