@@ -68,9 +68,87 @@ Within a processing group, you can add processors from the following categories:
 - **Transform**. Add Fields, Drop Fields, Replace Pattern, and Normalize. For example, Normalize can convert a value to lowercase or uppercase or trim whitespace.
 - **Advanced**. SIEM Forwarding and SUMOQL Parse.
 
-You can also mask sensitive data, such as email addresses, SSNs, and credit card numbers. \{TODO: confirm which category contains the built-in masking processors.\}
+To mask sensitive data, such as email addresses, SSNs, and credit card numbers, use the Replace Pattern processor to replace or hash the matched text.
 
 You can disable a processing group without deleting it.
+
+### Processor reference
+
+Each processor takes the parameters listed here. Fields marked with a default are prefilled. In most processors, the field to read from defaults to `_raw`, which is the raw log message.
+
+#### JSON Parse
+
+Pulls values out of JSON in a field into new fields.
+
+- **Field containing JSON**. The field that holds the JSON. Default is `_raw`.
+- **JSON Path** and **Output Field Name**. One row for each value to extract. Add a row for each new field.
+
+#### Regex Parse
+
+Extracts fields from a field using named capture groups.
+
+- **Field to parse from**. Default is `_raw`.
+- **Pattern**. The regular expression. You can start from a preset pattern or use the full-screen editor. The pattern can be up to 16,384 characters.
+
+#### Anchor Parse
+
+Extracts the text matched by `*` wildcards between literal anchors.
+
+- **Field to parse from**. Default is `_raw`.
+- **Anchor pattern**. The literal text to match, with `*` wildcards for the values to extract. The pattern can be up to 16,384 characters.
+- **Field names**. A name for each wildcard, in order.
+
+#### SumoQL Parse
+
+Runs a SumoQL parse expression and adds the fields it produces.
+
+- **Parse Expression**. The parse expression to run.
+- **Extracted Fields**. A read-only preview of the fields the expression produces.
+
+#### Add Fields
+
+Adds fields with static values. A value can reference another field as `${field}`.
+
+- **Field Name** and **Value**. One row for each field to add.
+
+#### Drop Fields
+
+Removes fields from the message.
+
+- **Fields to Drop**. Select from the suggested fields or type a field name.
+
+#### Replace Pattern
+
+Replaces or hashes matched text in one field. Rules apply in the order listed.
+
+- **Field Containing Value**. The field to change. Default is `_raw`.
+- **Rules**. Each rule has these settings:
+  - **Pattern**. The text to match, up to 1,024 characters. Use the **Regex** or **String** toggle to set how the pattern is read.
+  - **Action**. **Replace Text** or **Hash**.
+  - **Replace With**. The replacement text. Applies to **Replace Text**.
+  - **Hash Type**. **SHA-256** or **MD5**. Applies to **Hash**.
+
+#### Normalize Values
+
+Changes the case of values or trims whitespace.
+
+- **Normalization type**. **Lowercase** (default), **Uppercase**, or **Trim whitespace**.
+- **Fields to normalize**. The fields to change. The raw message is not available in the picker.
+
+#### Drop Messages by Condition
+
+Keeps or drops messages based on conditions.
+
+- **Action**. **Include** or **Exclude**. Default is **Exclude**.
+- **Match**. **All** or **Any**. Default is **All**.
+- **Conditions**. The list of conditions to check. Each condition can be up to 255 characters.
+
+#### SIEM Forwarding
+
+Tags matching messages with a parser and forwards them to Cloud SIEM.
+
+- **Parser**. Use **Select Parser** to browse for a parser. The parser path needs to start with `/Parsers/`.
+- **Forwarding Condition**. Optional. Forward only the messages that meet this condition.
 
 ## How pipelines and FERs work together
 
@@ -90,7 +168,10 @@ Data Pipelines do not use versions. Each pipeline has a published version that p
 
 ## Prerequisites
 
-- \{TODO: roles and capabilities required to view, create, edit, and publish pipelines.\}
+You need the following permissions. If you do not have the permission for an action, Sumo Logic returns a 403 error.
+
+- **View**. List pipelines, open a pipeline, and read pipeline metrics.
+- **Manage**. Create, update, delete, and reorder pipelines. Enable and disable pipelines. Validate and test a pipeline with sample data. Publish a pipeline, discard a draft, and update pipeline details.
 
 ## Create a pipeline
 
@@ -119,7 +200,7 @@ Use **Test Mode** to run sample messages through your draft before you publish i
 1. In the graph, click the node you want to test. For example, click a processing group.
 1. In the right pane that shows the node details, turn on **Test Mode** at the top right.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-node-test-mode.png')} alt="Node details pane with the Test Mode toggle highlighted" style={{border: '1px solid gray'}} width="450"/>
 1. On the **Input Sample** tab, enter a sample log message. You can also set metadata fields for the message, such as `_sourceCategory`.
-   * Instead of pasting a sample, you can click **Upload** and select a file. Supported file types are `.log`, `.txt`, and `.json`, up to 5 MB.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-input-sample-upload.png')} alt="Input Sample tab with the Upload button highlighted" style={{border: '1px solid gray'}} width="800"/>
+   * Instead of pasting a sample, you can click **Upload** and select a file. Supported file types are `.log`, `.txt`, and `.json`, up to 1 MB and 100 messages.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-input-sample-upload.png')} alt="Input Sample tab with the Upload button highlighted" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Run Test**.
 1. Open the **Processed Output** tab to compare the raw input with the processed output.
 1. When you are satisfied with the results, click **Publish**.
@@ -179,7 +260,30 @@ You can also see where an error occurred in the pipeline graph. To find it, open
 - Pipelines process logs only.
 - A pipeline can have only one destination, Sumo Logic.
 - The [limitations that apply to Ingest Time FERs](/docs/manage/field-extractions/#limitations) also apply to Data Pipelines.
-- \{TODO: maximum number of pipelines per organization.\}
+- A pipeline needs exactly one source and at most one destination. Pipeline and node names need to be unique.
+
+## Limits
+
+The following limits apply to Data Pipelines.
+
+| Item | Limit |
+|:--|:--|
+| Pipelines per organization | 50 |
+| Nodes per pipeline | 100 |
+| Processors per processing group | 30 |
+| Routers per pipeline | 50 |
+| Routes per router | 50 |
+| Routing expression length | 2,048 characters |
+| Regex or anchor expression length | 16,384 characters |
+| Replace Pattern: pattern length per rule | 1,024 characters |
+| Drop Messages by Condition: length per condition | 255 characters |
+| Extracted field value length | 16,384 characters. Longer values are truncated. |
+| Message size | 64 KB |
+| Pipeline name length | 256 characters |
+| Pipeline description length | 1,024 characters |
+| Import file size | 500 KB |
+| Test sample file size | 1 MB |
+| Test sample messages | 100 |
 
 ## Additional information
 
