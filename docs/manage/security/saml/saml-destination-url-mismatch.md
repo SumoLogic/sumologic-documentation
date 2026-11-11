@@ -2,7 +2,7 @@
 id: saml-destination-url-mismatch
 title: Fix SAML Destination URL Mismatch
 sidebar_label: Fix SAML Destination URL Mismatch
-description: Fix a SAML Destination URL mismatch by setting your IdP's ACS URL to the Sumo Logic Assertion Consumer URL before logins are blocked on January 29, 2027.
+description: Fix a SAML Destination URL mismatch by setting your IdP's ACS URL and Destination URL to the Sumo Logic Assertion Consumer URL before logins are blocked on January 29, 2027.
 keywords:
   - Sumo Logic
   - saml
@@ -13,7 +13,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A Destination URL mismatch occurs when the `Destination` value in a Security Assertion Markup Language (SAML) response from your identity provider (IdP) differs from the Assertion Consumer Service (ACS) URL configured in Sumo Logic for single sign-on (SSO). To fix it, set the ACS URL in your IdP to the **Assertion Consumer** URL on the **SAML** page in Sumo Logic.
+A Destination URL mismatch occurs when the `Destination` value in a Security Assertion Markup Language (SAML) response from your identity provider (IdP) differs from the Assertion Consumer Service (ACS) URL configured in Sumo Logic for single sign-on (SSO). To fix it, set both the ACS URL and the Destination URL in your IdP to the **Assertion Consumer** URL on the **SAML** page in Sumo Logic.
 
 Sumo Logic validates the `Destination` value against the ACS URL as described in [Section 3.5.5.2 of the SAML 2.0 Bindings specification](https://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf#page=24). This page explains who is affected and how SSO administrators can fix a mismatch in their IdP.
 
@@ -47,7 +47,7 @@ If you see the warning when you log in and you are not an SSO administrator, for
 
 ## How to fix a Destination URL mismatch
 
-Copy the **Assertion Consumer** URL from Sumo Logic, and then set it as the ACS URL in your IdP. You need access to your IdP administration console and to the **SAML** page in Sumo Logic. Sumo Logic cannot change your IdP settings because Sumo Logic has no administrative access to your IdP.
+Copy the **Assertion Consumer** URL from Sumo Logic, and then set it as both the ACS URL and the Destination URL in your IdP. You need access to your IdP administration console and to the **SAML** page in Sumo Logic. Sumo Logic cannot change your IdP settings because Sumo Logic has no administrative access to your IdP.
 
 ### Step 1: Copy the Assertion Consumer URL from Sumo Logic
 
@@ -57,22 +57,13 @@ Copy the **Assertion Consumer** URL from Sumo Logic, and then set it as the ACS 
 
 If your organization has more than one SAML configuration, repeat these steps for each one.
 
-### Step 2: Update the URL in your IdP
+### Step 2: Update the URLs in your IdP
 
-In your IdP, set the ACS URL to the exact **Assertion Consumer** value you copied. The ACS URL is the endpoint where your IdP delivers SAML responses, and most IdPs use it as the `Destination` value.
+In your IdP, set the ACS URL and the Destination URL to the **Assertion Consumer** URL you copied in Step 1. Both values need to be an exact copy of the **Assertion Consumer** URL and of each other.
 
 :::note
 Do not add or remove trailing slashes, change letter case, or substitute a custom domain.
 :::
-
-Find the field for your IdP in the following table. For complete setup steps, see the IdP page.
-
-| IdP | Where to update the URL |
-|:--|:--|
-| Okta | In the Sumo Logic SAML app, open the sign-on settings and update the ACS URL. See [Integrate Sumo Logic with Okta](/docs/manage/security/saml/integrate-sumo-logic-with-okta/). |
-| Azure AD (Microsoft Entra ID) | In the enterprise application, edit **Basic SAML Configuration** and update **Reply URL (Assertion Consumer URL)**. See [Integrate Sumo Logic with Azure AD](/docs/manage/security/saml/integrate-sumo-with-azure-ad/#complete-azure-configuration). |
-| OneLogin | In the Sumo Logic SAML app, open the **Configuration** page and update the ACS (Consumer) URL. See [Integrate Sumo Logic with OneLogin](/docs/manage/security/saml/integrate-onelogin/#complete-saml-configuration-in-onelogin). |
-| Other IdPs | Update the field your IdP uses for the ACS, single sign-on, or reply URL. See the IdP documentation. |
 
 ### Step 3: Confirm the fix
 
@@ -82,7 +73,7 @@ Log in again through your IdP and confirm that the warning no longer appears.
 1. Log in through your IdP.
 1. Confirm that the warning does not appear.
 
-If the warning still appears, turn on **Debug Mode** in the SAML configuration and log in again. The debug page shows the parsed response data, including the values the IdP sent. For details, see [View SAML Debug Information](/docs/manage/security/saml/view-saml-debug-information/).
+If the warning still appears, confirm that the ACS URL and Destination URL in your IdP both match the **Assertion Consumer** URL. You can also turn on **Debug Mode** in the SAML configuration and log in again. The debug page shows the parsed response data, including the values the IdP sent. For details, see [View SAML Debug Information](/docs/manage/security/saml/view-saml-debug-information/).
 
 ## FAQ
 
