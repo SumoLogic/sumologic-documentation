@@ -26,6 +26,10 @@ The Sumo Logic app for AI Observability provides preconfigured dashboards and mo
 
 The app analyzes OpenTelemetry trace spans that carry [GenAI Semantic Convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) (`gen_ai.*`) attributes. It works across LLM providers such as OpenAI, Google Gemini, and Groq, across AI gateways such as Helicone, OpenRouter, and Braintrust, and across frameworks such as LangChain, LangGraph, LlamaIndex, and Haystack.
 
+:::note
+Any vendor, SDK, or framework that emits spans following the GenAI Semantic Conventions (gen_ai.* attributes) is supported.
+:::
+
 Use this app to:
 * Track request volume, error rate, latency, and token consumption across models and providers.
 * Estimate LLM spend and identify the top cost consumers.
