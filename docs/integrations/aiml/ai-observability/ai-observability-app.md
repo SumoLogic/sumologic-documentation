@@ -1,7 +1,6 @@
 ---
 id: ai-observability-app
 title: AI Observability App
-sidebar_label: AI Observability App
 keywords:
   - apps
   - ai-observability
@@ -18,6 +17,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 </head>
 
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="AI Observability icon" width="60"/>
+
+:::info
+This app is in limited availability.
+:::
 
 The Sumo Logic app for AI Observability provides preconfigured dashboards and monitors to track the health, performance, cost, and behavior of your AI and LLM applications. Use the app to monitor request volume, error rate, latency, and token consumption; estimate LLM spend; troubleshoot authentication errors, rate limits, and truncated responses; understand agent workflows and tool usage; analyze multi-turn conversations; and review prompts and responses.
 
@@ -38,7 +41,7 @@ The AI Observability app uses OpenTelemetry **trace spans** exported to Sumo Log
 
 The following is a sample LangGraph agent task span, as stored in Sumo Logic when exported with OpenLLMetry.
 
-Agent task span (`branch:to:agent`)
+The following is a sample agent task span (`branch:to:agent`).
 
 ```json
 {
@@ -78,11 +81,11 @@ Agent task span (`branch:to:agent`)
 }
 ```
 
-### How it works
+## How it works
 
 Your application emits OTel trace spans with `gen_ai.*` attributes, the spans are exported via OTLP/HTTP to Sumo Logic, and the app dashboards and monitors query those spans from `_index=_trace_spans`.
 
-### Key terms
+## Key terms
 
 | Term | Description |
 |:--|:--|
@@ -97,7 +100,7 @@ Your application emits OTel trace spans with `gen_ai.*` attributes, the spans ar
 | Model | The specific model used, such as `gpt-4o`, `claude-sonnet-4`, or `gemini-3.6-flash`. Captured in `gen_ai.request.model`. |
 | Finish reason | Why the LLM stopped generating: `stop` (natural end), `length` (hit max tokens), or `tool_call` (wants to call a tool). Captured in `gen_ai.response.finish_reasons`. |
 
-### Core attributes
+## Core attributes
 
 | Attribute | Description |
 |:--|:--|
@@ -136,10 +139,10 @@ Before setting up the AI Observability app, ensure you have an application instr
 ### Step 1: Create an OTLP/HTTP Source
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
-1. Select an existing Hosted Collector, or click **Add Collector** and then **Hosted Collector** to create one.
-1. Click **Add Source** next to the Hosted Collector.
+1. Select an existing hosted collector, or click **Add Collector** and then **Hosted Collector** to create one.
+1. Click **Add Source** next to the hosted collector.
 1. Select **OTLP/HTTP**.
-1. Enter a **Name** for the Source. **Description** is optional.
+1. Enter a **Name** for the source. **Description** is optional.
 1. Click **Save**.
 1. Copy the generated **Source URL**.
 
@@ -189,11 +192,11 @@ _index=_trace_spans service=<your-service-name>
 
 The service name comes from the `service.name` resource attribute (or the `OTEL_SERVICE_NAME` environment variable). OpenTelemetry does not restrict its format, and names with spaces are supported. We recommend a stable, lowercase name without spaces (for example, `support-chatbot`) and keeping the environment in `deployment.environment` instead of the service name.
 
-## Illustrative Collection Architecture
+## Illustrative collection architecture
 
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-Collection-Architecture.png')} alt="AI Observability collection architecture" style={{border: '1px solid gray'}} width="600" />
 
-## Vendors Supported by App
+## Vendors supported by the app
 
 * OpenAI
 * Google Gemini
@@ -201,19 +204,19 @@ The service name comes from the `service.name` resource attribute (or the `OTEL_
 * Helicone / OpenRouter
 * LangChain
 * LangGraph
-* BrainTrust
+* Braintrust
 * LlamaIndex - OpenLLMetry only
 * Haystack - OpenLLMetry only
 
 ## Installing the AI Observability app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
 ## Viewing AI Observability dashboards
 
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
@@ -300,7 +303,7 @@ Only spans that carry `gen_ai.conversation.id` appear in this dashboard. Use the
 
 ## Create monitors for AI Observability app
 
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
@@ -316,12 +319,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ## Upgrading the AI Observability app
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+import AppUpdate from '../../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
 ## Uninstalling the AI Observability app
 
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+import AppUninstall from '../../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
