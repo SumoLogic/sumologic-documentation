@@ -177,7 +177,7 @@ The **Overview** tab provides panels that give an overview of the insight:
 
 The AI Investigation tab displays an AI-generated analysis of the Insight.
 
-<img src={useBaseUrl('img/cse/insights-ai-investigation-tab.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/insights-ai-investigation-tab.png')} alt="AI Investigation tab with the AI Verdict, What Happened, Key Findings, and Recommended Actions sections" style={{border: '1px solid gray'}} width="800"/>
 
 The AI Investigation tab includes the following sections:
 
@@ -194,7 +194,7 @@ You can use the thumbs up and thumbs down icons under **What Happened** and **Ke
 
 At the top of the insight details page, you’ll see a signal timeline that visualizes the insight’s attached signals, which are the signals that caused the insight to be created, and any signals that have been manually added to the insight.
 
-<img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/cse/top-bit.png')} alt="AI Investigation tab with the AI Verdict, What Happened, Key Findings, and Recommended Actions sections" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Signals**. The Signals tab displays information about when the signals fired.
 1. **Signal timeline**. The timeline shows how spread apart each signal in the insight is. You can use the timeline to visualize how long these events are spread over and how often the signals fire. 
