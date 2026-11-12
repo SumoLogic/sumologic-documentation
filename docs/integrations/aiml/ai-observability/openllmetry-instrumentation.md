@@ -39,7 +39,7 @@ Use either OpenLLMetry or [OpenTelemetry](/docs/integrations/aiml/ai-observabili
 
 ## Tested providers and frameworks
 
-The following providers and frameworks have been tested with OpenLLMetry. any provider or framework that OpenLLMetry instruments and that emits `gen_ai.*` span attributes works with the app.
+The following providers and frameworks have been tested with OpenLLMetry. Any provider or framework that OpenLLMetry instruments and that emits `gen_ai.*` span attributes works with the app.
 
 | Vendor | OpenLLMetry |
 |:--|:--|
@@ -71,7 +71,7 @@ Set up the exporter only once in your application, using OpenLLMetry. Every exam
     export TRACELOOP_METRICS_ENABLED=false  # Sumo Logic drops OTLP histogram metrics, so send traces only
     ```
 
-    `OTEL_SERVICE_NAME` becomes the service filter in the dashboards and `deployment.environment` becomes the environment filter.
+    `OTEL_SERVICE_NAME` becomes the service filter in the dashboards, and `deployment.environment` becomes the environment filter.
 
 2. Install the SDK:
   
@@ -406,14 +406,11 @@ You can use Python to instrument your LLM application directly with OpenLLMetry.
 
 The Conversation Analytics dashboard and the `conversation_id` filter require `gen_ai.conversation.id` on each LLM span. Use one ID for every call in the same chat or session. Don't include personal data.
 
-
-| Method | How to set the conversation ID |
-|:--|:--|
-| OpenLLMetry | Import `set_conversation_id` from `traceloop.sdk.tracing`, then call `set_conversation_id("<ID>")` before your LLM calls. |
+Import `set_conversation_id` from `traceloop.sdk.tracing`, then call `set_conversation_id("<ID>")` before your LLM calls.
 
 ### Name workflows
 
-With OpenLLMetry, decorate a workflow's entry point with [@workflow](https://www.traceloop.com/docs/openllmetry/tracing/annotations) so it appears by name in the **Agent and Workflow Intelligence** dashboard:
+With OpenLLMetry, decorate a workflow's entry point with [@workflow](https://www.traceloop.com/docs/openllmetry/tracing/annotations), so it appears by name in the **Agent and Workflow Intelligence** dashboard:
 
 ```
 from traceloop.sdk.decorators import workflow
