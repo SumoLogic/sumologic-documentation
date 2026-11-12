@@ -22,12 +22,12 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="AI Observability icon" width="60"/>
 
-The Sumo Logic AI Observability app reads OpenLLMetry traces that follow the OpenLLMetry GenAI semantic conventions. Any library that emits `gen_ai.*` span attributes works, and you don't need a Sumo Logic agent or SDK.
+The Sumo Logic AI Observability app reads OpenLLMetry traces, which follow the OpenTelemetry GenAI semantic conventions (`gen_ai.*`) and add `traceloop.*` attributes. Any library that emits `gen_ai.*` span attributes works, and you don't need a Sumo Logic agent or SDK.
 
 ## Get started with OpenLLMetry instrumentation
 
 :::tip
-Use either OpenLLMetry or [OpenTelemetry](/docs/integrations/aiml/ai-observability/opentelemetry-instrumentation) instrumentation method per process. Running both can generate duplicate spans.
+Use either OpenLLMetry or [OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry) instrumentation method per process. Running both can generate duplicate spans.
 :::
 
 | Category | OpenLLMetry |
@@ -66,7 +66,7 @@ Set up the exporter only once in your application, using OpenLLMetry. Every exam
 
     export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
     export OTEL_RESOURCE_ATTRIBUTES="deployment.environment=<YOUR_ENVIRONMENT>"
-    export OTEL_METRICS_EXPORTER=none  # Sumo Logic drops OTLP histogram metrics, so send traces only
+    export TRACELOOP_METRICS_ENABLED=false  # Sumo Logic drops OTLP histogram metrics, so send traces only
     ```
 
     `OTEL_SERVICE_NAME` becomes the service filter in the dashboards and `deployment.environment` becomes the environment filter.
@@ -125,7 +125,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     `pip install "traceloop-sdk>=0.62.0" google-genai`
 
-    **Run the following code after the [OpenLLMetry setup](#openllmetry-setup)**:
+    **Run the following code after the [OpenLLMetry setup](#step-1-set-up-the-exporter)**:
 
     ```
     import os
@@ -142,7 +142,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     The provider is reported as `gcp.gen_ai`.
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenLLMetry Google Generative AI](https://github.com/traceloop/openllmetry/tree/main/packages/opentelemetry-instrumentation-google-generativeai)
     - [OpenLLMetry Python](https://www.traceloop.com/docs/openllmetry/getting-started-python)
 
@@ -157,7 +157,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     `pip install "traceloop-sdk>=0.62.0" groq`
 
-    **Run the following code after the [OpenLLMetry setup](#openllmetry-setup)**:
+    **Run the following code after the [OpenLLMetry setup](#step-1-set-up-the-exporter)**:
 
     ```
     import os
@@ -175,7 +175,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     Uses the native [Groq SDK](https://github.com/groq/groq-python), so the provider is reported correctly as `groq`.
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenLLMetry Groq](https://github.com/traceloop/openllmetry/tree/main/packages/opentelemetry-instrumentation-groq)
     - [OpenLLMetry Python](https://www.traceloop.com/docs/openllmetry/getting-started-python)
 
@@ -184,13 +184,13 @@ You can use Python or Node.js to instrument your LLM application directly with O
   <details>
     <summary>LangChain and LangGraph</summary>
 
-    Traces agents, chains, chat models, and tool calls. One package covers both LangChain and LangGraph. The example is a tool-calling agent: each run appears as an `invoke_agent` span with the LLM and tool calls as child spans.
+    Traces agents, chains, chat models, and tool calls. One package covers both LangChain and LangGraph. The example is a tool-calling agent: each run appears as a `LangGraph.workflow` span with `invoke_agent`, `execute_task`, `ChatOpenAI.chat`, and `execute_tool` child spans.
 
     **Install**:
 
     `pip install "traceloop-sdk>=0.62.0" "langchain<2" langchain-openai`
 
-    **Run the following code after the [OpenLLMetry setup](#openllmetry-setup)**:
+    **Run the following code after the [OpenLLMetry setup](#step-1-set-up-the-exporter)**:
 
     ```
     import os
@@ -205,17 +205,17 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     agent = create_agent(ChatOpenAI(model="gpt-4o-mini"), tools=[multiply])  # reads OPENAI_API_KEY
 
-    result = agent.invoke(
-        {"messages": [("user", "What is 15 multiplied by 7?")]},
-        {"configurable": {"thread_id": "session-123"}},  # sets gen_ai.conversation.id (OpenTelemetry)
-    )
+    from traceloop.sdk.tracing import set_conversation_id
+
+    set_conversation_id("session-123")  # sets gen_ai.conversation.id on the spans that follow
+    result = agent.invoke({"messages": [("user", "What is 15 multiplied by 7?")]})
     print(result["messages"][-1].content)
     ```
-    OpenLLMetry also emits an `execute_task` span for each LangGraph node.
+    OpenLLMetry emits an `execute_task` span for each LangGraph node. A plain LangChain chain appears as a `RunnableSequence.workflow` span with `execute_task` and `ChatOpenAI.chat` child spans.
+
+    LangGraph's `thread_id` doesn't set the conversation ID with OpenLLMetry. Call `set_conversation_id()` instead. For more information, see [Track conversations](#track-conversations).
     
-    To set the conversation ID, call `set_conversation_id()`. For more information, see [Track conversations](#track-conversations).
-    
-    **Additional reources**:
+    **Additional resources**:
     - [OpenLLMetry LangChain](https://github.com/traceloop/openllmetry/tree/main/packages/opentelemetry-instrumentation-langchain)
     - [OpenLLMetry Python](https://www.traceloop.com/docs/openllmetry/getting-started-python)
 
@@ -224,13 +224,13 @@ You can use Python or Node.js to instrument your LLM application directly with O
   <details>
     <summary>LlamaIndex</summary>
 
-    Traces retrieval, query engines, agents, and the LLM and embedding calls they make with [LlamaIndex](https://docs.llamaindex.ai/).
+    Traces the LLM calls made by [LlamaIndex](https://docs.llamaindex.ai/) query engines and agents. Each query appears as an `openai.chat` span. OpenLLMetry doesn't emit separate retrieval spans; to trace retrieval, use the [OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry) method.
 
     **Install**:
 
     `pip install "traceloop-sdk>=0.62.0" llama-index-core llama-index-llms-openai llama-index-embeddings-openai`
 
-    **Run the following code after the [OpenLLMetry setup](#openllmetry-setup)**:
+    **Run the following code after the [OpenLLMetry setup](#step-1-set-up-the-exporter)**:
 
     ```
     import os
@@ -248,7 +248,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
     print(index.as_query_engine().query("How do I send LLM traces to Sumo Logic?"))
     ```
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenLLMetry LlamaIndex](https://github.com/traceloop/openllmetry/tree/main/packages/opentelemetry-instrumentation-llamaindex)
     - [OpenLLMetry Python](https://www.traceloop.com/docs/openllmetry/getting-started-python)    
 
@@ -261,9 +261,11 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     **Install**:
 
-    `pip install "traceloop-sdk>=0.62.0" haystack-ai`
+    `pip install "traceloop-sdk>=0.62.0" "haystack-ai>=2.11,<3"`
 
-    **Run the following code after the [OpenLLMetry setup](#openllmetry-setup)**:
+    `haystack-ai` 3.x isn't supported by the OpenLLMetry Haystack instrumentor.
+
+    **Run the following code after the [OpenLLMetry setup](#step-1-set-up-the-exporter)**:
 
     ```
     import os
@@ -284,7 +286,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
     print(result["llm"]["replies"][0].text)
     ```
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenLLMetry Haystack](https://github.com/traceloop/openllmetry/tree/main/packages/opentelemetry-instrumentation-haystack)
     - [OpenLLMetry Python](https://www.traceloop.com/docs/openllmetry/getting-started-python)
 
@@ -306,7 +308,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     `pip install "traceloop-sdk>=0.62.0" openai`
 
-    **Run the following code after the [OpenLLMetry setup](#openllmetry-setup)**:
+    **Run the following code after the [OpenLLMetry setup](#step-1-set-up-the-exporter)**:
 
     ```
     import os
@@ -326,7 +328,20 @@ You can use Python or Node.js to instrument your LLM application directly with O
     print(response.choices[0].message.content)
     ```
 
-    **Additional reources**:
+    For Helicone, also pass the Helicone key and the provider to forward to:
+
+    ```
+    client = OpenAI(
+        api_key=os.environ["OPENROUTER_API_KEY"],
+        base_url="https://gateway.helicone.ai/api/v1",
+        default_headers={
+            "Helicone-Auth": f"Bearer {os.environ['HELICONE_API_KEY']}",
+            "Helicone-Target-Url": "https://openrouter.ai",
+        },
+    )
+    ```
+
+    **Additional resources**:
     - [OpenLLMetry Python](https://www.traceloop.com/docs/openllmetry/getting-started-python)
 
   </details>
@@ -413,13 +428,15 @@ Content is needed only for the **Prompt and Response Analytics** dashboard and t
 
 | Method | Default | Setting |
 |:--|:--|:--|
-| OpenTelemetry | On | Set `TRACELOOP_TRACE_CONTENT=false` to turn it off. See [OpenLLMetry privacy](https://www.traceloop.com/docs/openllmetry/privacy/traces).|
+| OpenLLMetry | On | Set `TRACELOOP_TRACE_CONTENT=false` to turn it off. See [OpenLLMetry privacy](https://www.traceloop.com/docs/openllmetry/privacy/traces).|
 
 ### Other providers
 
-If no package covers your provider, use the OpenTelemetry setup from any example above and set the `gen_ai.*` attributes on your own span:
+If OpenLLMetry doesn't cover your provider, call `Traceloop.init()` as in [Step 1](#step-1-set-up-the-exporter), and then set the `gen_ai.*` attributes on your own span:
 
 ```
+from opentelemetry import trace
+
 tracer = trace.get_tracer(__name__)
 
 with tracer.start_as_current_span("chat my-model", kind=trace.SpanKind.CLIENT) as span:

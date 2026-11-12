@@ -9,7 +9,7 @@ keywords:
   - genai
   - opentelemetry
   - instrumentation
-description: Learn how to instrument your LLM application with OpenTelemetry or OpenLLMetry to send GenAI trace spans to Sumo Logic for AI Observability.
+description: Learn how to instrument your LLM application with OpenTelemetry to send GenAI trace spans to Sumo Logic for AI Observability.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -27,7 +27,7 @@ The Sumo Logic AI Observability app reads OpenTelemetry (OTel) traces that follo
 ## Get started with OpenTelemetry instrumentation
 
 :::tip
-Use either [OpenLLMetry](/docs/integrations/aiml/ai-observability/openllmetry-instrumentation) or OpenTelemetry instrumentation method per process. Running both can generate duplicate spans.
+Use either [OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry) or OpenTelemetry instrumentation method per process. Running both can generate duplicate spans.
 :::
 
 | Category | OpenTelemetry |
@@ -68,6 +68,7 @@ Set up the exporter only once in your application, using OpenTelemetry. Every ex
         export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
         export OTEL_RESOURCE_ATTRIBUTES="deployment.environment=<YOUR_ENVIRONMENT>"
         export OTEL_METRICS_EXPORTER=none  # Sumo Logic drops OTLP histogram metrics, so send traces only
+        export OTEL_LOGS_EXPORTER=none
         ```
 
         `OTEL_SERVICE_NAME` becomes the service filter in the dashboards and `deployment.environment` becomes the environment filter.
@@ -123,7 +124,9 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     **Install**:
 
-    `pip install "opentelemetry-instrumentation-google-genai==1.3b0" google-genai`
+    `pip install "opentelemetry-instrumentation-google-genai==1.3b0" "google-genai<3"`
+
+    The instrumentor supports `google-genai` versions earlier than 3.0. With 3.x installed, it logs a warning and emits no spans.
 
     **Run the following code after the [OpenTelemetry setup](#step-1-set-up-the-exporter)**:
 
@@ -145,7 +148,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     The provider is reported as `gcp.gemini`.
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenTelemetry Google GenAI package](https://github.com/open-telemetry/opentelemetry-python-genai/tree/main/instrumentation/opentelemetry-instrumentation-google-genai)
     - [OpenTelemetry Python](https://opentelemetry.io/docs/languages/python/)
 
@@ -169,7 +172,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     from openai import OpenAI
 
-    //Groq's OpenAI-compatible endpoint
+    # Groq's OpenAI-compatible endpoint
     client = OpenAI(api_key=os.environ["GROQ_API_KEY"], base_url="https://api.groq.com/openai/v1")
 
     response = client.chat.completions.create(
@@ -182,7 +185,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     There is no OpenTelemetry Groq package, so this uses the OpenAI SDK with Groq's [OpenAI-compatible endpoint](https://console.groq.com/docs/openai). The provider is reported as `openai`.
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenTelemetry Python](https://opentelemetry.io/docs/languages/python/)
 
 </details>
@@ -190,7 +193,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 <details>
     <summary>LangChain and LangGraph</summary>
 
-    Traces agents, chains, chat models, and tool calls. One package covers both LangChain and LangGraph. The example is a tool-calling agent: each run appears as an `invoke_agent` span with the LLM and tool calls as child spans.
+    Traces agents, chains, chat models, and tool calls. One package covers both LangChain and LangGraph. The example is a tool-calling agent: each run appears as an `invoke_workflow` span with `chat <model>` and `execute_tool <tool>` child spans.
 
     **Install**:
 
@@ -222,7 +225,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
     ```
     Install the `langchain` package itself, not only `langchain-core`. Without it, the instrumentor logs a warning and emits no spans.
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenTelemetry LangChain package](https://github.com/open-telemetry/opentelemetry-python-genai/tree/main/instrumentation/opentelemetry-instrumentation-genai-langchain)
     - [OpenTelemetry Python](https://opentelemetry.io/docs/languages/python/)
 
@@ -263,7 +266,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
     The `LlamaIndexInstrumentor` traces retrieval, agents, and tools. The model call is traced by the OpenAI instrumentor, so install both.
 
-    **Additional reources**:
+    **Additional resources**:
     - [OpenTelemetry LlamaIndex package](https://github.com/open-telemetry/opentelemetry-python-genai/tree/main/instrumentation/opentelemetry-instrumentation-genai-llama-index)
     - [OpenTelemetry Python](https://opentelemetry.io/docs/languages/python/)
 
@@ -305,10 +308,23 @@ You can use Python or Node.js to instrument your LLM application directly with O
         messages=[{"role": "user", "content": "What is 15 multiplied by 7?"}],
         max_tokens=100,
     )
-    print(response.choices[0].message.content)`
+    print(response.choices[0].message.content)
     ```
 
-    **Additional reources**:
+    For Helicone, also pass the Helicone key and the provider to forward to:
+
+    ```
+    client = OpenAI(
+        api_key=os.environ["OPENROUTER_API_KEY"],
+        base_url="https://gateway.helicone.ai/api/v1",
+        default_headers={
+            "Helicone-Auth": f"Bearer {os.environ['HELICONE_API_KEY']}",
+            "Helicone-Target-Url": "https://openrouter.ai",
+        },
+    )
+    ```
+
+    **Additional resources**:
     - [OpenTelemetry Python](https://opentelemetry.io/docs/languages/python/)
 
 </details>
@@ -381,7 +397,7 @@ from opentelemetry.util.genai.handler import TelemetryHandler
 handler = TelemetryHandler(tracer_provider=provider)
 
 with handler.workflow("chat_session", conversation_id="<ID>"):
-response = client.chat.completions.create(...)  # nested LLM spans inherit the ID
+    response = client.chat.completions.create(...)  # nested LLM spans inherit the ID
 ```
 
 ### Capture prompts and responses

@@ -39,9 +39,7 @@ Use this app to:
 
 The AI Observability app uses OpenTelemetry **trace spans** exported to Sumo Logic over OTLP/HTTP. The dashboards and monitors query these spans from the `_index=_trace_spans` index.
 
-The following is a sample LangGraph agent task span, as stored in Sumo Logic when exported with OpenLLMetry.
-
-The following is a sample agent task span (`branch:to:agent`).
+The following is a sample LangGraph agent task span (`branch:to:agent`), as stored in Sumo Logic when exported with OpenLLMetry.
 
 ```json
 {
@@ -97,7 +95,7 @@ Your application emits OTel trace spans with `gen_ai.*` attributes, the spans ar
 | Conversation | A multi-turn session made up of several LLM calls, possibly across multiple traces, linked by a shared `gen_ai.conversation.id`. Your application must set this attribute; it is not populated by default. |
 | Turn | One LLM call (span with `gen_ai.request.model`) within a conversation. In agent flows, a single user message can produce several turns. |
 | Provider | The LLM backend serving the request, such as OpenAI, Gemini, or Groq. Captured in `gen_ai.provider.name`. |
-| Model | The specific model used, such as `gpt-4o`, `claude-sonnet-4`, or `gemini-3.6-flash`. Captured in `gen_ai.request.model`. |
+| Model | The specific model used, such as `gpt-4o-mini`, `openai/gpt-oss-20b`, or `gemini-2.5-flash`. Captured in `gen_ai.request.model`. |
 | Finish reason | Why the LLM stopped generating: `stop` (natural end), `length` (hit max tokens), or `tool_call` (wants to call a tool). Captured in `gen_ai.response.finish_reasons`. |
 
 ## Core attributes
@@ -132,7 +130,7 @@ Your application emits OTel trace spans with `gen_ai.*` attributes, the spans ar
 
 ## Prerequisites
 
-Before setting up the AI Observability app, ensure you have an application instrumented with OpenTelemetry that can export traces over OTLP/HTTP. See [Instrumentation methods](https://docs.google.com/document/d/13MlpDt63cThSLvAeOSKX9qsif1LF60TJj_jeGIj-4pE/edit?usp=sharing).
+Before setting up the AI Observability app, ensure you have an application instrumented with OpenTelemetry that can export traces over OTLP/HTTP. See [Instrument with OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry) or [Instrument with OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry).
 
 ## Collection setup
 
@@ -150,15 +148,18 @@ For more information, see [OTLP/HTTP Source](/docs/send-data/hosted-collectors/h
 
 ### Step 2: Set the endpoint in your application
 
-Set the endpoint in your application's environment:
+Set the source URL in your application's environment. The variable depends on the instrumentation method:
 
 ```bash
-export SUMO_OTLP_ENDPOINT="<your source URL>"
+# OpenTelemetry
+export OTEL_EXPORTER_OTLP_ENDPOINT="<your source URL>"
+# OpenLLMetry
+export TRACELOOP_BASE_URL="<your source URL>"
 ```
 
 ### Step 3: Instrument your application
 
-Instrument your application using either [plain OpenTelemetry](https://opentelemetry.io/docs/specs/semconv/gen-ai/) or [OpenLLMetry](/docs/integrations/aiml/opentelemetry/openllmetry). Both produce the same `gen_ai.*` attributes.
+Instrument your application using either [plain OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry) or [OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry). Both produce `gen_ai.*` attributes.
 
 To populate the Conversation Analytics dashboard, set `gen_ai.conversation.id` on each LLM span with an identifier shared by all calls in the same conversation or session. Do not put personal data or secrets in this ID.
 
@@ -189,7 +190,7 @@ AI gateways report the provider as `openai`. Use the **Gateway / API Base Distri
 Run your application, and then run the following search to verify that spans are arriving:
 
 ```sql
-_index=_trace_spans service=<your-service-name>
+_index=_trace_spans service="<your-service-name>"
 ```
 
 The service name comes from the `service.name` resource attribute (or the `OTEL_SERVICE_NAME` environment variable). OpenTelemetry does not restrict its format, and names with spaces are supported. We recommend a stable, lowercase name without spaces (for example, `support-chatbot`) and keeping the environment in `deployment.environment` instead of the service name.
