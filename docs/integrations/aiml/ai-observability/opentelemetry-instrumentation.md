@@ -37,7 +37,9 @@ Use either [OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-you
 | Prompt and response capture | Disabled by default. Must be enabled. |
 | Best suited for | A simple, vendor-neutral setup. |
 
-## Supported providers and frameworks
+## Tested providers and frameworks
+
+The following providers and frameworks have been tested with OpenTelemetry. any provider or framework that OpenTelemetry instruments and that emits `gen_ai.*` span attributes works with the app.
 
 | Vendor | OpenTelemetry |
 |:--|:--|
@@ -408,11 +410,14 @@ with handler.workflow("chat_session", conversation_id="<ID>"):
 Prompts and responses can contain personal data, credentials, or regulated data. Review your data-handling policies before you capture them in production.
 :::
 
-Content is needed only for the **Prompt and Response Analytics** dashboard and the tool input and output panels. All other panels work without it.
+Content is the text your application exchanges with the model:
+* Prompts and system instructions.
+* Model responses.
+* Tool call arguments and results.
 
-| Method | Default | Setting |
-|:--|:--|:--|
-| OpenTelemetry | Off | Set `OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT=SPAN_ONLY` to turn it on. See [GenAI configuration](https://github.com/open-telemetry/opentelemetry-python-contrib/blob/main/util/opentelemetry-util-genai/README.rst). |
+Only the **Prompt and Response Analytics** dashboard and the tool input and output panels use content. All other panels work without it.
+
+OpenTelemetry doesn't capture content by default. To turn it on, set `OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT=SPAN_ONLY`. See [GenAI configuration](https://github.com/open-telemetry/opentelemetry-python-contrib/blob/main/util/opentelemetry-util-genai/README.rst).
 
 ### Other providers
 
@@ -435,11 +440,11 @@ For every attribute, see [GenAI client spans](https://github.com/open-telemetry/
 
 ## Verify data collection
 
-Run your application, send a few requests, and then run this search in Sumo Logic:
+Run your application, send a few requests, and then run this log search in Sumo Logic:
 
 `_index=_trace_spans service="<YOUR_SERVICE_NAME>"`
 
-Within a few minutes, you should see one row per provider, model, and operation. Then open the **AI Observability - Overview** dashboard and select your service.
+Within a few minutes, you should see one row per provider, model, and operation. Then open any AI Observability dashboard and select your service in the `service` filter.
 
 ## Additional resources
 

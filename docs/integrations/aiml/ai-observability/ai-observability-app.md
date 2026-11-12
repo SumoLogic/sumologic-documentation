@@ -132,10 +132,6 @@ Your application emits OTel trace spans with `gen_ai.*` attributes, the spans ar
 | `deployment.environment` | Deployment environment (for example, `production`, `staging`). |
 | `_sourcecategory` | Source category of the OTLP/HTTP source that received the span. Used by the `_sourceCategory` filter and comparison panels. |
 
-## Prerequisites
-
-Before setting up the AI Observability app, ensure you have an application instrumented with OpenTelemetry that can export traces over OTLP/HTTP. See [Instrument with OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry) or [Instrument with OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry).
-
 ## Collection setup
 
 ### Step 1: Create an OTLP/HTTP Source
@@ -184,6 +180,25 @@ Instrument your application using either [plain OpenTelemetry](/docs/integration
 
 To populate the Conversation Analytics dashboard, set `gen_ai.conversation.id` on each LLM span with an identifier shared by all calls in the same conversation or session. Do not put personal data or secrets in this ID.
 
+For example, to tag every call in a chat session with the same ID:
+
+```python
+# OpenTelemetry: wrap each turn in a workflow; nested LLM spans inherit the ID
+from opentelemetry.util.genai.handler import TelemetryHandler
+
+handler = TelemetryHandler(tracer_provider=provider)
+with handler.workflow("chat_session", conversation_id="session-123"):
+    response = client.chat.completions.create(...)
+
+# OpenLLMetry: set the ID once before your LLM calls
+from traceloop.sdk.tracing import set_conversation_id
+
+set_conversation_id("session-123")
+response = client.chat.completions.create(...)
+```
+
+LangChain and LangGraph take the ID from the run config instead. See Track conversations for [OpenTelemetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry#track-conversations) and [OpenLLMetry](/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry#track-conversations).
+
 #### Instrumentation methods
 
 | Method | How | Best for |
@@ -208,7 +223,7 @@ AI gateways report the provider as `openai`. Use the **Gateway / API Base Distri
 
 ### Step 4: Verify data collection
 
-Run your application, and then run the following search to verify that spans are arriving:
+Run your application, and then run the following log search to verify that spans are arriving:
 
 ```sql
 _index=_trace_spans service="<your-service-name>"

@@ -37,7 +37,9 @@ Use either OpenLLMetry or [OpenTelemetry](/docs/integrations/aiml/ai-observabili
 | Prompt and response capture | Enabled by default. |
 | Best suited for | Broad provider and framework coverage with minimal code. |
 
-## Supported providers and frameworks
+## Tested providers and frameworks
+
+The following providers and frameworks have been tested with OpenLLMetry. any provider or framework that OpenLLMetry instruments and that emits `gen_ai.*` span attributes works with the app.
 
 | Vendor | OpenLLMetry |
 |:--|:--|
@@ -426,11 +428,14 @@ def answer_question(question: str): ...
 Prompts and responses can contain personal data, credentials, or regulated data. Review your data-handling policies before you capture them in production.
 :::
 
-Content is needed only for the **Prompt and Response Analytics** dashboard and the tool input and output panels. All other panels work without it.
+Content is the text your application exchanges with the model:
+* Prompts and system instructions.
+* Model responses.
+* Tool call arguments and results.
 
-| Method | Default | Setting |
-|:--|:--|:--|
-| OpenLLMetry | On | Set `TRACELOOP_TRACE_CONTENT=false` to turn it off. See [OpenLLMetry privacy](https://www.traceloop.com/docs/openllmetry/privacy/traces).|
+Only the **Prompt and Response Analytics** dashboard and the tool input and output panels use content. All other panels work without it.
+
+OpenLLMetry captures content by default. To turn it off, set `TRACELOOP_TRACE_CONTENT=false`. See [OpenLLMetry privacy](https://www.traceloop.com/docs/openllmetry/privacy/traces).
 
 ### Other providers
 
@@ -455,11 +460,11 @@ For every attribute, see [GenAI client spans](https://github.com/open-telemetry/
 
 ## Verify data collection
 
-Run your application, send a few requests, and then run this search in Sumo Logic:
+Run your application, send a few requests, and then run this log search in Sumo Logic:
 
 `_index=_trace_spans service="<YOUR_SERVICE_NAME>"`
 
-Within a few minutes, you should see one row per provider, model, and operation. Then open the **AI Observability - Overview** dashboard and select your service.
+Within a few minutes, you should see one row per provider, model, and operation. Then open any AI Observability dashboard and select your service in the `service` filter.
 
 ## Additional resources
 
