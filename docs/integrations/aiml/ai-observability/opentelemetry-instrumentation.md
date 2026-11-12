@@ -373,7 +373,7 @@ The Conversation Analytics dashboard and the `conversation_id` filter require `g
 |:--|:--|
 | OpenTelemetry LangChain | `chain.invoke(inputs, {"metadata": {"session_id": "<ID>"}})` |
 | OpenTelemetry LangGraph and LangChain agents | `agent.invoke(inputs, {"configurable": {"thread_id": "<ID>"}})` |
-| Other OpenTelemetry packages (OpenAI, Gemini, Anthropic, LlamaIndex, gateways) | Wrap the call in a workflow with `TelemetryHandler`, as shown below.|
+| Other OpenTelemetry packages (OpenAI, Gemini, LlamaIndex, gateways) | Wrap the call in a workflow with `TelemetryHandler`, as shown below.|
 
 ```
 from opentelemetry.util.genai.handler import TelemetryHandler

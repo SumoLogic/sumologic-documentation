@@ -24,7 +24,7 @@ This app is in limited availability.
 
 The Sumo Logic app for AI Observability provides preconfigured dashboards and monitors to track the health, performance, cost, and behavior of your AI and LLM applications. Use the app to monitor request volume, error rate, latency, and token consumption; estimate LLM spend; troubleshoot authentication errors, rate limits, and truncated responses; understand agent workflows and tool usage; analyze multi-turn conversations; and review prompts and responses.
 
-The app analyzes OpenTelemetry trace spans that carry [GenAI Semantic Convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) (`gen_ai.*`) attributes. It works across LLM providers such as OpenAI, Anthropic, Google Gemini, Groq, and AWS Bedrock, and across frameworks such as LangChain, LangGraph, and LlamaIndex.
+The app analyzes OpenTelemetry trace spans that carry [GenAI Semantic Convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) (`gen_ai.*`) attributes. It works across LLM providers such as OpenAI, Google Gemini, and Groq, across AI gateways such as Helicone, OpenRouter, and Braintrust, and across frameworks such as LangChain, LangGraph, LlamaIndex, and Haystack.
 
 Use this app to:
 * Track request volume, error rate, latency, and token consumption across models and providers.
@@ -96,7 +96,7 @@ Your application emits OTel trace spans with `gen_ai.*` attributes, the spans ar
 | Workflow span | A span representing an agent or chain orchestration that groups multiple LLM and tool spans. |
 | Conversation | A multi-turn session made up of several LLM calls, possibly across multiple traces, linked by a shared `gen_ai.conversation.id`. Your application must set this attribute; it is not populated by default. |
 | Turn | One LLM call (span with `gen_ai.request.model`) within a conversation. In agent flows, a single user message can produce several turns. |
-| Provider | The LLM backend serving the request, such as OpenAI, Anthropic, Gemini, or Groq. Captured in `gen_ai.provider.name`. |
+| Provider | The LLM backend serving the request, such as OpenAI, Gemini, or Groq. Captured in `gen_ai.provider.name`. |
 | Model | The specific model used, such as `gpt-4o`, `claude-sonnet-4`, or `gemini-3.6-flash`. Captured in `gen_ai.request.model`. |
 | Finish reason | Why the LLM stopped generating: `stop` (natural end), `length` (hit max tokens), or `tool_call` (wants to call a tool). Captured in `gen_ai.response.finish_reasons`. |
 
@@ -176,11 +176,13 @@ To populate the Conversation Analytics dashboard, set `gen_ai.conversation.id` o
 | OpenAI | Yes | Yes |
 | Google Gemini | Yes | Yes |
 | Groq | Yes (via OpenAI SDK) | Yes (native SDK) |
-| Anthropic | No | Yes |
-| AWS Bedrock | No | Yes |
+| AI gateways (Helicone, OpenRouter, Braintrust) | Yes (via OpenAI SDK) | Yes (via OpenAI SDK) |
 | LangChain | Yes | Yes |
 | LangGraph | Yes | Yes |
-| LlamaIndex | No | Yes |
+| LlamaIndex | Yes | Yes |
+| Haystack | No | Yes |
+
+AI gateways report the provider as `openai`. Use the **Gateway / API Base Distribution** panel (`server.address`) to split traffic by gateway.
 
 ### Step 4: Verify data collection
 
@@ -195,18 +197,6 @@ The service name comes from the `service.name` resource attribute (or the `OTEL_
 ## Illustrative collection architecture
 
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-Collection-Architecture.png')} alt="AI Observability collection architecture" style={{border: '1px solid gray'}} width="600" />
-
-## Vendors supported by the app
-
-* OpenAI
-* Google Gemini
-* Groq
-* Helicone / OpenRouter
-* LangChain
-* LangGraph
-* Braintrust
-* LlamaIndex - OpenLLMetry only
-* Haystack - OpenLLMetry only
 
 ## Installing the AI Observability app
 
