@@ -449,7 +449,7 @@ with tracer.start_as_current_span("chat my-model", kind=trace.SpanKind.CLIENT) a
     span.set_attribute("gen_ai.response.finish_reasons", [response.finish_reason])
 ```
 
-For every attribute, see [GenAI client spans](https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-spans/) and [GenAI agent spans](https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/).
+For every attribute, see [GenAI client spans](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-spans.md) and [GenAI agent spans](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md).
 
 ## Verify data collection
 

@@ -24,7 +24,7 @@ This app is in limited availability.
 
 The Sumo Logic app for AI Observability provides preconfigured dashboards and monitors to track the health, performance, cost, and behavior of your AI and LLM applications. Use the app to monitor request volume, error rate, latency, and token consumption; estimate LLM spend; troubleshoot authentication errors, rate limits, and truncated responses; understand agent workflows and tool usage; analyze multi-turn conversations; and review prompts and responses.
 
-The app analyzes OpenTelemetry trace spans that carry [GenAI Semantic Convention](https://opentelemetry.io/docs/specs/semconv/gen-ai/) (`gen_ai.*`) attributes. It works across LLM providers such as OpenAI, Google Gemini, and Groq, across AI gateways such as Helicone, OpenRouter, and Braintrust, and across frameworks such as LangChain, LangGraph, LlamaIndex, and Haystack.
+The app analyzes OpenTelemetry trace spans that carry [GenAI Semantic Convention](https://github.com/open-telemetry/semantic-conventions-genai) (`gen_ai.*`) attributes. It works across LLM providers such as OpenAI, Google Gemini, and Groq, across AI gateways such as Helicone, OpenRouter, and Braintrust, and across frameworks such as LangChain, LangGraph, LlamaIndex, and Haystack.
 
 :::note
 Any vendor, SDK, or framework that emits spans following the GenAI Semantic Conventions (gen_ai.* attributes) is supported.
@@ -145,8 +145,25 @@ Before setting up the AI Observability app, ensure you have an application instr
 1. Click **Add Source** next to the hosted collector.
 1. Select **OTLP/HTTP**.
 1. Enter a **Name** for the source. **Description** is optional.
+1. (Optional) For **Source Category**, enter a value that identifies the LLM vendor and instrumentation method sending the spans (for example, `ai/openai/opentelemetry`).
 1. Click **Save**.
 1. Copy the generated **Source URL**.
+
+:::tip Separate LLM vendors and instrumentation methods with _sourceCategory
+Create one OTLP/HTTP source for each LLM vendor or instrumentation method, and give each source its own source category. For example:
+
+| Workload | Instrumentation method | Source category |
+|:--|:--|:--|
+| OpenAI SDK | OpenTelemetry | `ai/openai/opentelemetry` |
+| Google Gemini | OpenTelemetry | `ai/gemini/opentelemetry` |
+| Groq (native SDK) | OpenLLMetry | `ai/groq/openllmetry` |
+| LangGraph agent | OpenLLMetry | `ai/langgraph/openllmetry` |
+| OpenRouter gateway | OpenTelemetry | `ai/openrouter/opentelemetry` |
+
+You can then use the `_sourceCategory` filter on any AI Observability dashboard to view one vendor or method, or use a wildcard such as `ai/*/openllmetry` to view every OpenLLMetry workload. The `_sourceCategory` comparison panels show requests, errors, latency, tokens, and cost for each category side by side.
+
+This is useful when `gen_ai.provider.name` alone cannot tell workloads apart. For example, Groq and AI gateways called through the OpenAI SDK report the provider as `openai`. Spans from a source without a category appear as `unknown` in the comparison panels.
+:::
 
 For more information, see [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp).
 
