@@ -105,12 +105,12 @@ Set up the exporter only once in your application, using OpenTelemetry. Every ex
 
 ### Step 2. Instrument your application
 
-You can use Python or Node.js to instrument your LLM application directly with OpenTelemetry.
+You can use Python to instrument your LLM application directly with OpenTelemetry.
 
 <Tabs
   values={[
     {label: 'Python', value: 'Python'},
-    {label: 'Node.js', value: 'Node.js'},
+    // {label: 'Node.js', value: 'Node.js'},
   ]}>
 
 <TabItem value="Python">
@@ -331,6 +331,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
 
 </TabItem>
 
+{/*
 <TabItem value="Node.js">
 
   <details>
@@ -376,6 +377,7 @@ You can use Python or Node.js to instrument your LLM application directly with O
   </details>
 
 </TabItem>
+*/}
 </Tabs>
 
 ## Optional settings

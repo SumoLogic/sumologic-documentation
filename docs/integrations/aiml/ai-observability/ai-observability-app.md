@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="AI Observability icon" width="60"/>
 
 :::info
-This app is in limited availability.
+This app is in limited availability and will transition to an in-product experience in the future.
 :::
 
 The Sumo Logic app for AI Observability provides preconfigured dashboards and monitors to track the health, performance, cost, and behavior of your AI and LLM applications. Use the app to monitor request volume, error rate, latency, and token consumption; estimate LLM spend; troubleshoot authentication errors, rate limits, and truncated responses; understand agent workflows and tool usage; analyze multi-turn conversations; and review prompts and responses.
@@ -27,7 +27,7 @@ The Sumo Logic app for AI Observability provides preconfigured dashboards and mo
 The app analyzes OpenTelemetry trace spans that carry [GenAI Semantic Convention](https://github.com/open-telemetry/semantic-conventions-genai) (`gen_ai.*`) attributes. It works across LLM providers such as OpenAI, Google Gemini, and Groq, across AI gateways such as Helicone, OpenRouter, and Braintrust, and across frameworks such as LangChain, LangGraph, LlamaIndex, and Haystack.
 
 :::note
-Any vendor, SDK, or framework that emits spans following the GenAI Semantic Conventions (gen_ai.* attributes) is supported.
+Any vendor, SDK, or framework that emits spans using the GenAI Semantic Conventions (`gen_ai.*` attributes) is supported.
 :::
 
 Use this app to:
