@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/observability/ai-observability/AI-Observability-icon.png')} alt="AI Observability icon" width="60"/>
 
 :::info
-This app is in limited availability and will transition to an in-product experience in the future.
+This app is now in Limited Availability, offering early access to AI workload observability capabilities and allowing you to explore features and share feedback before it transitions to an in-product experience.
 :::
 
 The Sumo Logic app for AI Observability provides preconfigured dashboards and monitors to track the health, performance, cost, and behavior of your AI and LLM applications. Use the app to monitor request volume, error rate, latency, and token consumption; estimate LLM spend; troubleshoot authentication errors, rate limits, and truncated responses; understand agent workflows and tool usage; analyze multi-turn conversations; and review prompts and responses.
