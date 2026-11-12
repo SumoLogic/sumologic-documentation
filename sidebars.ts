@@ -1191,6 +1191,7 @@ module.exports = {
             'manage/security/saml/manage-permissions-with-adfs',
             'manage/security/saml/set-up-adfs-authenticate-users',
             'manage/security/saml/view-saml-debug-information',
+            'manage/security/saml/saml-destination-url-mismatch',
           ]
         },
         {
@@ -1376,7 +1377,7 @@ module.exports = {
         'dashboards/filter-template-variables',
         {
           type: 'category',
-          label: 'Migrate to Dashboard',
+          label: 'Migrate to Dashboards',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'dashboards/dashboards-migration/index'},
