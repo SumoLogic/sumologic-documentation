@@ -2070,6 +2070,7 @@ module.exports = {
                       items: [
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/update-aws-observability-stack-terraform',
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/add-fields-to-existing-host-metrics-sources',
                       ],
                     },
                     'observability/aws/deploy-use-aws-observability/v3.0.0/view-dashboards',
