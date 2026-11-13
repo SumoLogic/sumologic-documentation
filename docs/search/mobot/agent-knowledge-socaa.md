@@ -64,6 +64,16 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 | Post-mortem lesson | INC-2025-089: A rogue scheduled task named OneDriveUpdate bypassed triage because analysts assumed it was a native app. Inspect all newly registered tasks regardless of naming conventions. |
 | Forensic heuristic | TrueBot campaigns consistently use renamed 7z.exe binaries for exfiltration. Check file entropy and headers, not just the extension. |
 
+### Operational practices and workflows
+
+How your organization decides what to do, and the steps your team takes.
+
+| What to capture | Example knowledge entries |
+|:--|:--|
+| Investigation runbook | For an impossible-travel alert, first pull the last 5 Okta logins and check the ASN, not just geolocation. If the ASN matches `Zscaler-ZPA-APAC` (our corporate VPN range, listed on Confluence page NET-114), close as expected — Zscaler's APAC nodes often geolocate to Singapore/Tokyo regardless of the user's real location. If the ASN doesn't match, open a ticket in Jira project `SEC-INCIDENT` and page the on-call lead. |
+| Fraud investigation procedure | When triaging fraudulent B2B payout redirects, searching for standard webhook_updated events yields false negatives. Query tenant_config_change where attribute = "callback_endpoint_v2". Cross-reference b2b_admin_audit logs for the same session_id or user_id to check if the modification was preceded by mfa_bypass_flag = true or an MFA-skipped session event within 30 minutes prior to the change. |
+| Data exfiltration detection | When investigating mass data exfiltration on cloud storage, querying standard CloudTrail GetObject logs returns zero results because applications access storage through our custom proxy. Always search data_proxy_access where operation_type = "stream_export", and aggregate sum(bytes_sent) > 5GB per session_token (or user_id) over a rolling 1-hour window to detect unauthorized bulk exports. |
+
 
 ## How to add an agent knowledge source
 
