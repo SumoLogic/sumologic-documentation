@@ -170,7 +170,7 @@ If you maintain a multi-org implementation of Sumo Logic and you need to push Cl
 
 [Sigma](https://sigmahq.io/) is an open format for detection rules. You can bring Sigma rules into Cloud SIEM in two ways:
 - **Browse and import from the Cloud SIEM UI**. Cloud SIEM includes a library of community rules, including Sigma rules, that have already been converted to Cloud SIEM rules. You can browse the library, review each rule, and import the ones you want with a few clicks. No conversion step is needed. See [Browse community and Sigma rules](#browse-community-and-sigma-rules).
-- **Convert your own Sigma rules**. If you have your own Sigma rules, convert them to Cloud SIEM rule JSON using the Sumo Logic pySigma backend, and then import the JSON file as described in [Import a rule](#import-a-rule). See [Convert Sigma Rules](/docs/cse/rules/convert-sigma-rules/).
+- **Convert your own Sigma rules**. You can convert Sigma rules to Cloud SIEM rule JSON using the Sumo Logic pySigma backend, and then import the JSON file as described in [Import a rule](#import-a-rule). Sigma correlation rules and keyword-based detections (the `keywords` field) are not supported, and rules whose field mappings fall below the confidence threshold are blocked. For more information, see [Convert Sigma Rules](/docs/cse/rules/convert-sigma-rules/).
 
 ## Browse community and Sigma rules
 
@@ -256,7 +256,8 @@ Rules you import from the community library arrive as *templated match rules*. K
 - **They are match rules**. Each rule fires a signal when a single incoming record matches the rule expression. See [Match rule](#rule-types).
 - **They are templated**. The rule is generated from a template based on the original Sigma rule and is identified in the translated JSON by `pattern_type`: `templated_match`. The rule includes a name, description, severity, MITRE ATT&CK tags, and entity selectors (the [On Entity](#on-entity-configuration) attributes that signals are created on) already filled in.
 - **They record where they came from**. The `rule_source` field shows the origin of a rule. Rules from the community library carry `rule_source`: `community`. In the UI, the **Source** column and filter show the specific library, such as Sigma. 
-- **They behave like any other rule after import**. Once imported, you can open the rule from the **Rules** list and manage it like other rules, for example by disabling it. 
+- **They behave like any other rule after import**. Once imported, you can open the rule from the **Rules** list and manage it like other rules, for example by disabling it.
+- **Updates to the original Sigma rule are not applied automatically**. Once imported, changes to the original Sigma rule are not automatically reflected in the imported rule. To get the latest changes, import the rule again. This creates a new match rule. 
 - **Check coverage before relying on a rule**. Community rules are written to be broadly applicable. Review the rule expression, and the false positives noted in the original rule, and tune the rule for your environment.
 
 ## Rules and other content
