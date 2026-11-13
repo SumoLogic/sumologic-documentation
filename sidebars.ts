@@ -2540,6 +2540,19 @@ integrations: [
         items: [
           {
             type: 'category',
+            label: 'AI Observability',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'integrations/aiml/ai-observability/index'},
+            items: [
+              'integrations/aiml/ai-observability/ai-observability-app',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry',
+              'integrations/aiml/ai-observability/troubleshoot-ai-observability',
+            ],
+          },
+          {
+            type: 'category',
             label: 'OpenTelemetry',
             collapsible: true,
             collapsed: true,
