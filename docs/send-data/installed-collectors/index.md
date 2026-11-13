@@ -49,4 +49,10 @@ In this section, we'll introduce the following concepts:
   <p>Customize your Installed Collector with these configuration parameters and options.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/collection/upgrade-collectors#lifecycle-and-support-policy')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data Collection icon" width="30"/><h4>Lifecycle and Support Policy</h4></a>
+  <p>Learn how long collector versions stay available and supported, and how to keep them current.</p>
+  </div>
+</div>
 </div>
