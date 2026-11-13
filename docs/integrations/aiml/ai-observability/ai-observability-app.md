@@ -158,7 +158,7 @@ Create one OTLP/HTTP source for each LLM vendor or instrumentation method, and g
 
 You can then use the `_sourceCategory` filter on any AI Observability dashboard to view one vendor or method, or use a wildcard such as `ai/*/openllmetry` to view every OpenLLMetry workload. The `_sourceCategory` comparison panels show requests, errors, latency, tokens, and cost for each category side by side.
 
-This is useful when `gen_ai.provider.name` alone cannot tell workloads apart. For example, Groq and AI gateways called through the OpenAI SDK report the provider as `openai`. Spans from a source without a category appear as `unknown` in the comparison panels.
+This is useful when `gen_ai.provider.name` alone cannot tell workloads apart. For example, Groq and other AI gateways called through the OpenAI SDK report the provider as `openai`. Spans from a source without a category appear as `unknown` in the comparison panels.
 :::
 
 For more information, see [OTLP/HTTP Source](/docs/send-data/hosted-collectors/http-source/otlp).
