@@ -11,9 +11,15 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## App Central deprecation
+## October release
 
-App Central is retiring as of November 13, 2026, and is no longer accessible. Its content has moved to the unified App Catalog, so you now discover and install apps, integrations, and playbook templates from one place in Sumo Logic.
+The following updates were made in October 2026.
+
+### Platform 
+
+#### App Central deprecation
+
+App Central will be deprecated on November 20, 2026, after which it will no longer be accessible. Its content has moved to the unified App Catalog, so you now discover and install apps, integrations, and playbook templates from one place in Sumo Logic.
 
 **What changed**
 
@@ -28,3 +34,27 @@ App Central is retiring as of November 13, 2026, and is no longer accessible. It
 - Update any bookmarks or internal documentation that point to App Central.
 
 For more information, see [App Catalog](/docs/integrations/).
+
+#### Conversational Playbooks enhancements
+
+Mobot’s conversational playbook experience now includes the following:
+
+- **App Catalog integrations**. Mobot can search, filter, and recommend integrations you haven’t installed yet. Install and update messages now include a link to the integration in the App Catalog, so you can install it straight from the chat.
+- **Existing playbook check**. Once you confirm the plan, Mobot searches for similar playbooks and suggests the closest existing matches.
+- **Payload metadata exploration**. When working with playbook payload parameters, Mobot can look up what each field means and which values are allowed, such as for `status`. It uses this to guide you to the right fields for your use case. See Playbook Payloads.
+- **Stricter validation**. Playbooks created through Mobot are validated more strictly, which reduces runtime errors.
+
+For more on building playbooks with Mobot, see Sumo Logic Mobot and Playbooks.
+
+#### UI improvements
+
+- Dropdown menus and action items in all themes have refined spacing, shadows, and hover states, matching the rest of the platform.
+- Menus, dialogs, and tables now use the same rounded corners for a more consistent look.
+
+#### Cloud SIEM insight permissions
+
+Playbook and UI calls that fetch Cloud SIEM insight details now send the `viewCse` permission. Cloud SIEM enforces this permission on its insight APIs. The playbook test-run insight check now logs the underlying error when it fails.
+
+### Integrations
+
+For details on Automation Service Integrations updates, see [Automation Service Integrations](/release-notes-service/2026/10/30/apps/#automation-service-integrations-enhancements).
