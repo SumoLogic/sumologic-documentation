@@ -19,7 +19,7 @@ The following updates were made in October 2026.
 
 #### App Central deprecation
 
-App Central will be deprecated on November 20, 2026, after which it will no longer be accessible. Its content has moved to the unified App Catalog, so you now discover and install apps, integrations, and playbook templates from one place in Sumo Logic.
+App Central will be deprecated next week and will no longer be accessible. Its content has moved to the unified App Catalog, so you can now discover and install apps, integrations, and playbook templates from one place in Sumo Logic.
 
 **What changed**
 
@@ -30,7 +30,7 @@ App Central will be deprecated on November 20, 2026, after which it will no long
 
 **What you need to do**
 
-- To open the App Catalog, in the main Sumo Logic menu select **App Catalog**.
+- To open the App Catalog, in the main Sumo Logic menu, select **App Catalog**.
 - Update any bookmarks or internal documentation that point to App Central.
 
 For more information, see [App Catalog](/docs/integrations/).
