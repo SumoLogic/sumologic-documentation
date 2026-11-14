@@ -57,11 +57,11 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 1. Install Docker-CE following the [installation instructions in Docker Docs](https://docs.docker.com/engine/install/). Install at least version 20.10 (do not use nightly build).
 1. As soon as the Docker daemon is installed, start it with:
-   ```
+   ```sh
    systemctl start docker
    ```
 1. Enable it on boot:
-   ```
+   ```sh
    systemctl enable docker
    ```
 
@@ -71,7 +71,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
    mkdir -p /etc/systemd/system/docker.service.d
    ```
 1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
-   ```
+   ```ini
    [Service]
    Environment="HTTP_PROXY=http://proxy.example.com:8080"
    Environment="HTTPS_PROXY=http://proxy.example.com:8080"
@@ -156,16 +156,16 @@ For Ubuntu and CentOS/RedHat, the update process works as the installation proce
 If you are not using the SIEM:
 1. Set `SIEM_URL` to `NONE`.
 1. Restart the service with:
-   ```
+   ```sh
    systemctl restart automation-bridge
    ```
 1. If you need to allow automation-bridge communication through a proxy, edit the file `/etc/opt/automation-bridge/automation-bridge.conf` and set the correct value. Below is an example:
-   ```
+   ```ini
    HTTP_PROXY="http://proxy.example.com:8080\"
    HTTPS_PROXY="http://proxy.example.com:8080\"
    ```
 1. Restart the service with:
-   ```
+   ```sh
    systemctl restart automation-bridge
    ```
 :::
