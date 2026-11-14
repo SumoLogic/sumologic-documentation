@@ -1,6 +1,6 @@
 ---
 slug: /integrations/automation-integrations
-title: Automation Integrations
+title: Integrations
 description: Learn about the Sumo Logic automation integrations.
 ---
 
