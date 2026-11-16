@@ -23,7 +23,7 @@ This feature is in Extended Preview. For more information, contact your Sumo Log
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic's Platform Optimization Agent, part of [DojoAI](/docs/get-started/ai-machine-learning/#dojoai), is evolving from an on-demand Q&A agent into an always-on, proactive intelligence layer. Instead of waiting for you to ask [Mobot](/docs/search/mobot) a question or for your next quarterly business review, for example, the DojoAI agents continuously monitor your environment and surface performance issues, such as slow queries and dashboard sprawl, before they affect your workflows.
+Sumo Logic's Recommendations, part of [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) continuously monitors your environment and surfaces performance issues, such as slow queries and dashboard sprawl, before they affect your workflows."
 
 Use Recommendations to find opportunities to work faster and run your environment better. These proactive insights live on the **Recommendations** page: a single list of issues to review and fix, each with a plain-language explanation and a previewable fix. Practitioners, admins, and power users, such as dashboard owners and query and monitor authors, can act on individual recommendations.
 
