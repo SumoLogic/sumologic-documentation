@@ -92,7 +92,7 @@ If you have edit access, you see **Apply** and **Change at Source** buttons:
 Clicking **Apply** executes the change right away. Click **Change at Source** instead if you want to review or modify it manually before applying it.
 :::
 
-If you don't have edit access, you see **Contact Owner** instead, which shows the name of the resource's owner so you can ask them to apply the fix.
+If you do not have edit access, you see **Contact Owner** instead, which shows the name of the resource's owner so you can ask them to apply the fix.
 
 Everyone, regardless of permissions, can click **Reject**. This opens a confirmation dialog where you can optionally select a reason (**Not relevant**, **Incorrect recommendation**, **Already handled**, **Don't want this change**, or **Other**) before clicking **Confirm Rejection**.<br/><img src={useBaseUrl('img/search/mobot/reject-recommendation-dialog.png')} alt="Reject Recommendation confirmation dialog with optional rejection reasons and a warning that rejecting is irreversible and org-wide" style={{border: '1px solid gray'}} width="700" />
 
