@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This documnetation provides a consolidated overview of vendor-related content across the Sumo Logic platform, outlining the available content categories and vendor-specific details. It provides a structured view of the content ecosystem and helps assess vendor coverage and content availability.
+This documentation provides a consolidated overview of vendor-related content across the Sumo Logic platform, outlining the available content categories and vendor-specific details. It provides a structured view of the content ecosystem and helps assess vendor coverage and content availability.
 
 For descriptions of each content type, see [Vendors and Products](/docs/integrations/vendors-content-matrix).
 
