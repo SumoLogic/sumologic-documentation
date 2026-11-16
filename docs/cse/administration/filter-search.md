@@ -17,7 +17,7 @@ Use the Cloud SIEM search bar to find insights, signals, and entities from one p
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SIEM > Search Cloud SIEM**. You can also click the **Go To...** menu at the top of the screen and select **Search Cloud SIEM**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Cloud SIEM**.
 1. Click in the **Find Insights, Signals, Entities and more...** search bar at the top of the page.<br/><img src={useBaseUrl('img/cse/list-page-search.png')} alt="Search box at the top of the page" style={{border: '1px solid gray'}} width="600" />
-1. Enter a keyword, such as an IP address, hostname, username, or rule name, and hit enter. To clear the search, click the **X** at the right side of the search bar.<br/><img src={useBaseUrl('img/cse/keyword-search.png')} alt="search for a keyword" style={{border: '1px solid gray'}} width="600" />
+1. Enter a keyword, such as an IP address, hostname, username, or rule name, and press Enter. To clear the search, click the **X** at the right side of the search bar.<br/><img src={useBaseUrl('img/cse/keyword-search.png')} alt="search for a keyword" style={{border: '1px solid gray'}} width="600" />
 
 ### Keyword search results
 
