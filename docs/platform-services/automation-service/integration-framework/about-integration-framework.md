@@ -138,44 +138,51 @@ Both the integration definition file and the action definition file are YAML fil
      :::
 * **output** `*`: Expected fields from results.
 * **path** `*` [String]: JSON path for each field which may be returned by the action, using the following JSON as an example:
-      ```
-      { country: "US",
-      response_code: 1,
-      as_owner: "CloudFlare, Inc.",
-      detected_urls: {
-      url: "http://google.com/",
-      positives: 2
-      }}
-      ```
-       The following `output:path` attributes should be added:
-        * `country`
-        * `response_code`
-        * `as_owner`
-        * `detected_urls.[].url`
-        * `detected_urls.[].positives`
 
-      *Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:
-           ```
-           {
-             "payload": {
-               "headers": {
-                 "MIME-Version": "1.0",
-                 "From": "Joe Smith <joe.smith@example.com>",
-                 "Message-ID": "<193853.example.com>",
-                 "Subject": "Account Verification Required",
-                 "To": "verify@example.com",
-                 "Content-Type": "multipart/mixed; boundary=\"0000008\""
-               }
-             }
-           }
-           ```
-           To correctly parse `"MIME-Version"` in the example, use one of the following formats:
-           * `payload.headers."MIME-Version"`
-           * `payload.headers.["MIME-Version"]`
+```json
+{
+  country: "US",
+  response_code: 1,
+  as_owner: "CloudFlare, Inc.",
+  detected_urls: {
+    url: "http://google.com/",
+    positives: 2
+  }
+}
+```
 
-           In addition to using quotation marks to enclose text with special characters, you must separate nested output fields with a period (**.**). These formats will not parse correctly:
-           * `payload.headers["MIME-Version"]`
-           * `payload.headers[MIME-Version]`
+The following `output:path` attributes should be added:
+* `country`
+* `response_code`
+* `as_owner`
+* `detected_urls.[].url`
+* `detected_urls.[].positives`
+
+*Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:
+
+```json
+{
+  "payload": {
+    "headers": {
+      "MIME-Version": "1.0",
+      "From": "Joe Smith <joe.smith@example.com>",
+      "Message-ID": "<193853.example.com>",
+      "Subject": "Account Verification Required",
+      "To": "verify@example.com",
+      "Content-Type": "multipart/mixed; boundary=\"0000008\""
+    }
+  }
+}
+```
+
+To correctly parse `"MIME-Version"` in the example, use one of the following formats:
+* `payload.headers."MIME-Version"`
+* `payload.headers.["MIME-Version"]`
+
+In addition to using quotation marks to enclose text with special characters, you must separate nested output fields with a period (**.**). These formats will not parse correctly:
+* `payload.headers["MIME-Version"]`
+* `payload.headers[MIME-Version]`
+
 * **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
 * **table_view** `*`: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
    * **display_name** `*` [String]: Column name.
@@ -226,34 +233,35 @@ Both the integration definition file and the action definition file are YAML fil
 
 For security reasons, all action parameters are passed to the Docker container as an environment variable, with the variable name equal to the ID specified in YAML. For Python code you can always use:
 
-```
+```python
 argparse.ArgumentParser()
 ```
 
 But in that case, you have to specify a class to manage the environment variable:
 
-```
+```python
 class EnvDefault(argparse.Action):
   def __init__(self, required=True, default=None, **kwargs):
-       envvar = kwargs.get("dest")
-       default = os.environ.get(envvar, default) if envvar in os.environ else default
-       required = False if required and default else required
-       super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
-   def __call__(self, parser, namespace, values, option_string=None):
-       setattr(namespace, self.dest, values)
+    envvar = kwargs.get("dest")
+    default = os.environ.get(envvar, default) if envvar in os.environ else default
+    required = False if required and default else required
+    super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+  def __call__(self, parser, namespace, values, option_string=None):
+    setattr(namespace, self.dest, values)
 ```
 
 And you must add it into the action `kwargs`:
 
-```
+```python
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
 Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can use:
 
-```
+```python
 host = os.environ.get("host", "localhost")
 ```
+
 ## Working with integrations
 
 All integrations are configured by navigating to **Integrations** in the UI.
@@ -306,8 +314,17 @@ Uploading an action YAML file with type Daemon allows you to specify Daemon acti
 
 Daemon action must return an array of objects in JSON format:
 
-```
-[{ 'a': 'a1', 'b': 'b1' }, { 'a': 'a2', 'b': 'b2' }]
+```json
+[
+  {
+    "a": "a1",
+    "b": "b1"
+  },
+  {
+    "a": "a2",
+    "b": "b2"
+  }
+]
 ```
 
 Every object is processed by filter and action. It is also possible to define which output field should be passed to the next script run and an extra param key value pair to specialize each rule:
@@ -330,45 +347,45 @@ A _Scheduled action_ represents a particular type of action when the execution i
 
 YAML example:
 
-```
- integration: 'Incident tools'
- name: 'intervallo date loop'
- type: Scheduled
- script:
-    code: |
-        [......]
- exit_condition:
-   - path: 'exit_condition'
-     string: 'false'
- re-execution: 'force'
- scheduled:
-     - every: '10s'
-       expire: '120s'
- output:
-   - path : 'exit_condition'
+```yaml
+integration: 'Incident tools'
+name: 'intervallo date loop'
+type: Scheduled
+script:
+  code: |
+    [......]
+exit_condition:
+  - path: 'exit_condition'
+    string: 'false'
+re-execution: 'force'
+scheduled:
+  - every: '10s'
+    expire: '120s'
+output:
+  - path: 'exit_condition'
 ```
 
 Or using strings array:
 
-```
- integration: 'Incident tools'
- name: 'intervallo date loop'
- type: Scheduled
- script:
-    code: |
-        [......]
- exit_condition:
-   - path: 'exit_condition'
-     string:
-        - 'Open'
-        - 'Pending'
-        - 'Waiting'
- re-execution: 'force'
- scheduled:
-     - every: '10s'
-       expire: '120s'
- output:
-   - path : 'exit_condition'
+```yaml
+integration: 'Incident tools'
+name: 'intervallo date loop'
+type: Scheduled
+script:
+  code: |
+    [......]
+exit_condition:
+  - path: 'exit_condition'
+    string:
+      - 'Open'
+      - 'Pending'
+      - 'Waiting'
+re-execution: 'force'
+scheduled:
+  - every: '10s'
+    expire: '120s'
+output:
+  - path : 'exit_condition'
 ```
 
 Or using action's input:
@@ -377,7 +394,7 @@ Or using action's input:
 If you use an action's input, this input field should be `required = true*`.
 :::
 
-```sumo
+```yaml
 integration: 'Testing Purpose'
 name: 'testing Scheduled'
 type: Scheduled
@@ -496,24 +513,25 @@ Following are the hooks for [task](/docs/cloud-soar/incidents-triage/#tasks) eve
 * `updateTask`. When task is updated. Param is passed to scripts `tasksBeforeUpdate` and `tasksAfterUpdate`.
 
 Params `tasksDetail`, `tasksBeforeUpdate`, and `tasksAfterUpdate` are JSON strings with the form:
+
 ```json
 {
-reminder_time: <value>,
-report_time: <value>,
-assigned_to: <value>,
-priority: <value>,
-status: <value>,
-title: <value>,
-end_time: <value>,
-hours: <value>,
-opt_3: <value>,
-opt_6: <value>,
-opt_7: <value>,
-opt_8: <value>,
-opt_9: <value>,
-opt_10: <value>,
-opt_12: <value>,
-[....]
+  "reminder_time": "<value>",
+  "report_time": "<value>",
+  "assigned_to": "<value>",
+  "priority": "<value>",
+  "status": "<value>",
+  "title": "<value>",
+  "end_time": "<value>",
+  "hours": "<value>",
+  "opt_3": "<value>",
+  "opt_6": "<value>",
+  "opt_7": "<value>",
+  "opt_8": "<value>",
+  "opt_9": "<value>",
+  "opt_10": "<value>",
+  "opt_12": "<value>",
+  "[....]": "..."
 }
 ```
 
@@ -528,18 +546,19 @@ Param `triage_eventsDetail` is a JSON string with the form:
 
 ```json
 {
-id: <value>,
-status: <value>,
-operator: <value>,
-username: <value>,
-type: <value>,
-opt_1: <value>,
-opt_3: <value>,
-opt_4: <value>,
-opt_5: <value>,
-opt_7: <value>,
-opt_8: <value>,
-opt_11: <value>
+  "id": "<value>",
+  "status": "<value>",
+  "operator": "<value>",
+  "username": "<value>",
+  "type": "<value>",
+  "opt_1": "<value>",
+  "opt_3": "<value>",
+  "opt_4": "<value>",
+  "opt_5": "<value>",
+  "opt_7": "<value>",
+  "opt_8": "<value>",
+  "opt_11": "<value>",
+  "[....]": "..."
 }
 ```
 
@@ -555,23 +574,22 @@ Params `incidentsDetail`, `incidentsBeforeUpdate`, and `incidentsAfterUpdate` ar
 
 ```json
 {
-id: <value>,
-additional_info: <value>,
-status: <value>,
-investigation_number: <value>,
-starttime: <value>,
-type: [<value>],
-incident_kind: <value>,
-incident_category: [<value>],
-[...]
-opt_3: <value>,
-opt_6: <value>,
-opt_7: <value>,
-opt_8: <value>,
-opt_9: <value>,
-opt_10: <value>,
-opt_12: <value>,
-[....]
+  "id": "<value>",
+  "additional_info": "<value>",
+  "status": "<value>",
+  "investigation_number": "<value>",
+  "starttime": "<value>",
+  "type": ["<value>"],
+  "incident_kind": "<value>",
+  "incident_category": ["<value>"],
+  "opt_3": "<value>",
+  "opt_6": "<value>",
+  "opt_7": "<value>",
+  "opt_8": "<value>",
+  "opt_9": "<value>",
+  "opt_10": "<value>",
+  "opt_12": "<value>",
+  "[....]": "..."
 }
 ```
 
@@ -593,7 +611,7 @@ Clicking the button in the UI runs the trigger:
 
 When users interact with the custom action trigger button, they can provide a textual input that can be elaborated by the trigger. To elaborate the input of a custom action trigger, use the `text` param inside the code:
 
-```json
+```yaml
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
@@ -604,26 +622,33 @@ script:
    import argparse
    import requests
    import sys
+
    parser = argparse.ArgumentParser()
-   parser.add_argument('--incidentsDetail', help='incident before update', required=False) #param inherited by
- hook defined in the yaml
+   parser.add_argument('--incidentsDetail', help='incident before update' required=False) #param inherited by hook defined in the yaml
    parser.add_argument('--token', help='JWT token , REQUIRED', required=True)
    parser.add_argument('--incmanurl', help='IncMan URL , REQUIRED', required=True)
    parser.add_argument('--text', help='text', required=False) #param inherited by hook defined in the yaml
+   
    args, unknown = parser.parse_known_args()
+   
    inc_det_after = json.loads(args.incidentsDetail)
    incidentID = inc_det_after.get('id')
+   
    headers = {
       'Accept': 'application/json;charset=UTF-8',
       'Content-Type': 'application/x-www-form-urlencoded',
       'Authorization': 'Bearer ' + args.token
-   }
+    }
+
    end_point = '{incmanurl}/api/v2/incidents/{incidentid}'.format(incmanurl=args.incmanurl, incidentid=incidentID)
+   
    session = requests.Session()
    session.verify = False
+   
    additional_info = inc_det_after.get('additional_info')
    new_text = "<br>" + str(args.text if args.text else '')
    additional_info += new_text
+   
    payload = {
       "additional_info": additional_info,
    }
@@ -640,7 +665,8 @@ hook:
  - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
 null
 ```
-```json
+
+```yaml
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
@@ -684,6 +710,7 @@ hook:
  - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
 null
 ```
+
 For other example YAML files, see:
 * [Trigger taskCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
 * [Trigger incidentCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
@@ -698,10 +725,10 @@ Specifying the YAML field `check_not_null_field : <field ID>` inside a trigger, 
 
 For example, if we want to display our custom action trigger button only when our custom field with field ID `opt_15` is populated, inside the YAML file you can set:
 
-```json
+```yaml
 check_not_null_field: 'opt_15'
 hook:
- - incidentCustomAction
+  - incidentCustomAction
 ```
 
 #### Define a webhook trigger
@@ -712,7 +739,7 @@ Triggers with the hook `webhook` specified can interact with the payload that is
 
 In the following example, a trigger ingests the JSON payload posted to the webhook endpoint, and writes its content in the description widget of a specific incident (ID 1743):
 
-```json
+```yaml
 type: Trigger
 script:
  code: |
