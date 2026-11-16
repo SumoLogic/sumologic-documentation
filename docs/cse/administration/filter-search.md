@@ -17,7 +17,7 @@ Use the Cloud SIEM search bar to find insights, signals, and entities from one p
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SIEM > Search Cloud SIEM**. You can also click the **Go To...** menu at the top of the screen and select **Search Cloud SIEM**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Cloud SIEM**.
 1. Click in the **Find Insights, Signals, Entities and more...** search bar at the top of the page.<br/><img src={useBaseUrl('img/cse/list-page-search.png')} alt="Search box at the top of the page" style={{border: '1px solid gray'}} width="600" />
-1. Enter a keyword, such as an IP address, hostname, username, or rule name, and hit enter. To clear the search, click the **X** at the right side of the search bar.<br/><img src={useBaseUrl('img/cse/keyword-search.png')} alt="search for a keyword" style={{border: '1px solid gray'}} width="600" />
+1. Enter a keyword, such as an IP address, hostname, username, or rule name, and press Enter. To clear the search, click the **X** at the right side of the search bar.<br/><img src={useBaseUrl('img/cse/keyword-search.png')} alt="search for a keyword" style={{border: '1px solid gray'}} width="600" />
 
 ### Keyword search results
 
@@ -29,7 +29,7 @@ The results header shows:
 
 * **Total Results**. The total number of items that match your search.
 * **Counts by type**. The number of matching insights, signals, and entities. Select a type to view only those results.
-* **Sort**. The dropdown at the right side of the header, which sets the order of the results. See [Sort search results](#sort-search-results).
+* **Sort**. The menu at the right side of the header, which sets the order of the results. See [Sort search results](#sort-search-results).
 
 Each result shows a summary of the item. For example, an entity result shows its name, **Activity Score**, **Type**, and whether it is **Suppressed**. Click a result to open its details page.
 
@@ -39,7 +39,7 @@ Keyword search matches the text you enter. To match a pattern instead, use a [re
 
 ## Sort search results
 
-Use the sort dropdown in the results header to change the order of your search results. By default, results are sorted by **Relevance (desc.)**, which lists the best text matches first. Relevance sorting can list older items before newer ones, so switch to a time-based sort by clicking the **Event Time** option in the dropdown when you want to see the most recent activity first.
+Use the sort menu in the results header to change the order of your search results. By default, results are sorted by **Relevance (desc.)**, which lists the best text matches first. Relevance sorting can list older items before newer ones, so switch to a time-based sort by clicking the **Event Time** option in the menu when you want to see the most recent activity first.
 
 The sort options depend on the type of result:
 
@@ -52,12 +52,12 @@ The sort options depend on the type of result:
 
 * **Relevance**. Lists the closest matches to your search first.
 * **Event Time**. Sorts insights and signals by the time of the event.
-* **Last Seen**. Sorts entities by the time of the entity's last signal. Entities don't have an event time, so they use **Last Seen** instead.
+* **Last Seen**. Sorts entities by the time of the entity's last signal. Entities do not have an event time, so they use **Last Seen** instead.
 
 To sort results:
 
 1. Run a search.
-1. Click the sort dropdown at the right side of the results header, for example **Relevance (desc.)**.
+1. Click **Relevance (desc.)** at the right side of the results header.
 1. Select a sort option.
 1. To reverse the sort order, select **Relevance** from the dropdown and switch to ascending order. Time-based sorts list the newest results first (descending) by default.<br/><img src={useBaseUrl('img/cse/keyword-search-sort.png')} alt="Keyword Search Sort" style={{border: '1px solid gray'}} width="200" />
 
@@ -81,7 +81,7 @@ Filters and sort work together. Changing a filter or search term updates the res
 
 ## Search using regular expressions
 
-You can also enter a regular expression (regex) in the search bar and hit enter to run the search. Cloud SIEM's regular expression engine returns items that contain text matching the complete string. The engine implicitly adds anchors (`^` and `$`) to the beginning and end of your regex.
+You can also enter a regular expression (regex) in the search bar and press Enter to run the search. Cloud SIEM's regular expression engine returns items that contain text matching the complete string. The engine implicitly adds anchors (`^` and `$`) to the beginning and end of your regex.
 
 Cloud SIEM search uses Elasticsearch. For the regular expressions allowed in Cloud SIEM search, see [Regular expression syntax](https://www.elastic.co/guide/en/elasticsearch/reference/current/regexp-syntax.html) in the Elastic documentation.
 
