@@ -1,7 +1,7 @@
 ---
 id: platform-optimization-agent
 title: Platform Optimization Agent
-description: The Platform Optimization Agent is Sumo Logic's DojoAI agent for getting more out of your Sumo Logic environment. POA helps you troubleshoot issues, optimize queries, understand data usage, and tune your platform without digging through documentation or guessing at what's wrong.
+description: The Platform Optimization Agent is the DojoAI agent that helps you troubleshoot issues, optimize queries, and understand data usage in your Sumo Logic environment.
 keywords:
   - platform optimization agent
   - dojoai
