@@ -84,7 +84,7 @@ Filters and sort work together. Changing a filter or search term updates the res
 
 ## Search using regular expressions
 
-You can also enter a regular expression (regex) in the search bar and hit enter to run the search. Cloud SIEM's regular expression engine returns items that contain text matching the complete string. The engine implicitly adds anchors (`^` and `$`) to the beginning and end of your regex.
+You can also enter a regular expression (regex) in the search bar and press Enter to run the search. Cloud SIEM's regular expression engine returns items that contain text matching the complete string. The engine implicitly adds anchors (`^` and `$`) to the beginning and end of your regex.
 
 Cloud SIEM search uses Elasticsearch. For the regular expressions allowed in Cloud SIEM search, see [Regular expression syntax](https://www.elastic.co/guide/en/elasticsearch/reference/current/regexp-syntax.html) in the Elastic documentation.
 
