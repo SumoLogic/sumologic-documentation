@@ -31,7 +31,7 @@ The Platform Optimization Agent replaces the Knowledge Agent. The Knowledge Agen
 
 ### Will I see the Platform Optimization Agent in the UI?
 
-No. You always interact with it through the **Recommendations** page or DojoAI Studio.
+You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
 
 ### Will the Platform Optimization Agent make changes to my environment without asking?
 
