@@ -52,7 +52,7 @@ The sort options depend on the type of result:
 
 * **Relevance**. Lists the closest matches to your search first.
 * **Event Time**. Sorts insights and signals by the time of the event.
-* **Last Seen**. Sorts entities by the time of the entity's last signal. Entities don't have an event time, so they use **Last Seen** instead.
+* **Last Seen**. Sorts entities by the time of the entity's last signal. Entities do not have an event time, so they use **Last Seen** instead.
 
 To sort results:
 
