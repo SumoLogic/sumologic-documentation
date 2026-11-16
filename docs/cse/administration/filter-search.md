@@ -39,7 +39,7 @@ Keyword search matches the text you enter. To match a pattern instead, use a [re
 
 ## Sort search results
 
-Use the sort dropdown in the results header to change the order of your search results. By default, results are sorted by **Relevance (desc.)**, which lists the best text matches first. Relevance sorting can list older items before newer ones, so switch to a time-based sort by clicking the **Event Time** option in the dropdown when you want to see the most recent activity first.
+Use the sort menu in the results header to change the order of your search results. By default, results are sorted by **Relevance (desc.)**, which lists the best text matches first. Relevance sorting can list older items before newer ones, so switch to a time-based sort by clicking the **Event Time** option in the menu when you want to see the most recent activity first.
 
 The sort options depend on the type of result:
 
