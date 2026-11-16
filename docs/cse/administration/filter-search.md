@@ -29,7 +29,7 @@ The results header shows:
 
 * **Total Results**. The total number of items that match your search.
 * **Counts by type**. The number of matching **Insights**, **Signals**, and **Entities**. Select a type to view only those results.
-* **Sort**. The dropdown at the right side of the header, which sets the order of the results. See [Sort search results](#sort-search-results).
+* **Sort**. The menu at the right side of the header, which sets the order of the results. See [Sort search results](#sort-search-results).
 
 Each result shows a summary of the item. For example, an entity result shows its name, **Activity Score**, **Type**, and whether it is **Suppressed**. Click a result to open its details page.
 
