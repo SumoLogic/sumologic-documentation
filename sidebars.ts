@@ -1091,6 +1091,7 @@ module.exports = {
         'manage/manage-subscription/collection-overview',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/organization-usage-limits',
+        'manage/manage-subscription/value-overview',
         'manage/manage-subscription/scan-budgets',
         'manage/manage-subscription/fedramp-capabilities',
         'manage/manage-subscription/close-cancel-sumo-account',
