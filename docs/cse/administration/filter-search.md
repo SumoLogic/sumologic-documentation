@@ -21,7 +21,7 @@ Use the Cloud SIEM search bar to find insights, signals, and entities from one p
 
 ### Keyword search results
 
-Cloud SIEM searches across insights, signals, and entities and displays the matching items in one list. Matching text is highlighted in each result, so you can see why an item was returned. For example, a search for `1.1.1` highlights `1.1.1` in the **value** of each matching entity.
+Cloud SIEM searches across insights, signals, and entities and displays matching items in a single list. It highlights matching text in each result, so you can see why an item was returned. For example, a search for `1.1.1` highlights `1.1.1` in the **value** of each matching entity.
 
 <img src={useBaseUrl('img/cse/keyword-search-results.png')} alt="Keyword search results for 1.1.1 showing total results, counts by type, the sort dropdown, and matching entities" style={{border: '1px solid gray'}} width="800" />
 
@@ -29,7 +29,7 @@ The results header shows:
 
 * **Total Results**. The total number of items that match your search.
 * **Counts by type**. The number of matching insights, signals, and entities. Select a type to view only those results.
-* **Sort**. The menu at the right side of the header, which sets the order of the results. See [Sort search results](#sort-search-results).
+* **Sort**. The menu on the right side of the header, which sets the order of the results. See [Sort search results](#sort-search-results).
 
 Each result shows a summary of the item. For example, an entity result shows its name, **Activity Score**, **Type**, and whether it is **Suppressed**. Click a result to open its details page.
 
@@ -46,9 +46,9 @@ The sort options depend on the type of result:
 | Tab | Sort options | Default |
 |:--|:--|:--|
 | Total Results | Relevance, Event Time | Relevance |
-| Insights | Relevance, Event Time | Relevance |
-| Signals | Relevance, Event Time | Relevance |
-| Entities | Relevance, Last Seen | Relevance |
+| Insight | Relevance, Event Time | Relevance |
+| Signal | Relevance, Event Time | Relevance |
+| Entity | Relevance, Last Seen | Relevance |
 
 * **Relevance**. Lists the closest matches to your search first.
 * **Event Time**. Sorts insights and signals by the time of the event.
@@ -57,16 +57,18 @@ The sort options depend on the type of result:
 To sort results:
 
 1. Run a search.
-1. Click **Relevance (desc.)** at the right side of the results header.
-1. Select a sort option.
-1. To reverse the sort order, select **Relevance** from the dropdown and switch to ascending order. Time-based sorts list the newest results first (descending) by default.<br/><img src={useBaseUrl('img/cse/keyword-search-sort.png')} alt="Keyword Search Sort" style={{border: '1px solid gray'}} width="200" />
+1. Click **Relevance (desc.)** on the right side of the results header.
+1. Select a sort option:
+    * To reverse the sort order by relevance, select **Relevance** from the dropdown and switch to ascending order.
+    * To reverse the sort order by time, select **Event Time** from the dropdown. Time-based sorts list the newest results first (descending) by default.
+<br/><img src={useBaseUrl('img/cse/keyword-search-sort.png')} alt="Keyword Search Sort" style={{border: '1px solid gray'}} width="200" />
 
 How sorting behaves:
 
 * **Pagination resets**. Changing the sort returns you to the first page of results. Moving between pages keeps your selected sort.
-* **Tabs reset the sort**. Switching to another tab resets the sort to **Relevance**, because the available options differ by tab.
+* **Tabs reset the sort**. Switching tabs resets the sort to **Relevance**because the available options differ by tab.
 * **The sort is saved in the URL**. Your selection is stored in the `sort` parameter of the page URL, so it is preserved when you reload the page or share the link. **Relevance (desc.)** is the default and is not included in the URL.
-* **The Total Results tab lists entities last**. Insights and signals have an event time, which marks when something happened, such as when a rule fired or when the detected activity occurred. Each insight or signal is a single occurrence, so its time never changes. Entities don't have an event time. Instead, an entity has a **Last Seen** time, which is the time of its last signal. Because these times mean different things, when you sort the **Total Results** tab by **Event Time**, insights and signals are sorted by event time and listed first. Entities are listed after them, sorted by **Last Seen**. This order applies in either sort direction. To sort entities on their own by time, open the **Entities** tab and sort by **Last Seen**.
+* **The Total Results tab lists entities last**. Insights and signals have an **Event Time**, which marks when something happened, such as when a rule fired or when the detected activity occurred. Each insight or signal is a single occurrence, so its time never changes. Entities don't have an event time. Instead, an entity has a **Last Seen** time, which is the time of its last signal. Because these times mean different things, when you sort the **Total Results** tab by **Event Time**, it sorts insights and signals by event time and lists them first. Entities are listed after them, sorted by **Last Seen**. This order applies in either sort direction. To sort entities on their own by time, open the **Entity** tab and sort by **Last Seen**.
 
 ## Filter search results
 
@@ -85,6 +87,4 @@ You can also enter a regular expression (regex) in the search bar and press Ente
 
 Cloud SIEM search uses Elasticsearch. For the regular expressions allowed in Cloud SIEM search, see [Regular expression syntax](https://www.elastic.co/guide/en/elasticsearch/reference/current/regexp-syntax.html) in the Elastic documentation.
 
-To search for items that do not contain a particular keyword, use `not`. For example:
-
-`not:Initial Access`
+To search for items that do not contain a particular keyword, use `not`. For example, `not:Initial Access`.
