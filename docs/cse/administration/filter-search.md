@@ -57,7 +57,7 @@ The sort options depend on the type of result:
 To sort results:
 
 1. Run a search.
-1. Click the sort dropdown at the right side of the results header, for example **Relevance (desc.)**.
+1. Click **Relevance (desc.)** at the right side of the results header.
 1. Select a sort option.
 1. To reverse the order, change the sort direction in the dropdown. Time-based sorts list the newest results first (descending) by default.<br/><img src={useBaseUrl('img/cse/keyword-search-sort.png')} alt="Search sources" style={{border: '1px solid gray'}} width="200" />
 
