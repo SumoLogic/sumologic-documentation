@@ -19,14 +19,13 @@ keywords:
 <!--
 - RCA's specific DojoAI Credits cost and overage/cap behavior
 - Are Limitations the same for ga?
-- GA ships on-demand/manual triggering only, confirmed by Saksham Sharma (backend) in PR #7333 review. Background/auto-triggered investigations (rate-limited auto-investigation, manual after the limit) are planned as a follow-up, not GA scope. Revisit this doc when that ships.
 -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Root Cause Agent is one of the specialized agents in [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai), each built for a different job. Root Cause Agent investigates [observability alerts](/docs/alerts). After getting an alert, DevOps and SRE teams can launch an AI-driven investigation directly from an alert's details page. The Root Cause Agent gathers relevant telemetry on its own, follows the signal across your logs and metrics, and posts its findings to the alert's **AI Investigation** tab.
 
-Monitors and alert rules are deterministic - they fire when a predefined threshold or condition is met. The Root Cause Agent is agentic - it takes the alert as a starting point, investigates across available signals, forms a hypothesis, and explains why it believes a particular cause is responsible. The monitor tells you something happened; the agent helps investigate why. It is complementary to monitoring, not a replacement for it.
+Monitors and alert rules are deterministic: they fire when a predefined threshold or condition is met. The Root Cause Agent is agentic: it takes the alert as a starting point, investigates across available signals, forms a hypothesis, and explains why it believes a particular cause is responsible. The monitor tells you something happened; the agent helps investigate why. It is complementary to monitoring, not a replacement for it.
 
 The Root Cause Agent performs the following jobs:
 * **On-demand investigation**. Start an investigation from an alert's details page to get an evidence-backed root cause without manually digging through logs and metrics.
@@ -34,7 +33,7 @@ The Root Cause Agent performs the following jobs:
    * **What Happened**. A narrative summary of what occurred, backed by the knowledge sources the agent consulted.
    * **Key Findings**. The steps that led there, each backed by the log search or metrics query that produced it.
    * **Recommended Actions**. Suggested next steps for you to act on.
-* **Conversational follow-up (via Mobot)**. Lets you continue the investigation in [Mobot](/docs/search/mobot/), with the full context of the AI investigation already loaded.
+* **Conversational follow-up (via Mobot)**. Continue the investigation in [Mobot](/docs/search/mobot/), with the full context of the AI investigation already loaded.
 * **Related context**. Correlate the current alert with other alerts on the same entity or in the same time window, and review how often this monitor has fired and for how long.
 
 The Root Cause Agent provides the following functionality:
@@ -73,31 +72,31 @@ The agent surfaces a root cause only when it is confident in the conclusion; oth
 
 ### What Happened
 
-The **What Happened** section shows a summary, a confirmed root cause, a baseline check that compares the alert to earlier activity, and the causes the agent ruled out. Each investigation also lists the **Knowledge sources** it drew on, such as runbooks associated with the monitor.
+This section shows a summary, a confirmed root cause, a baseline check that compares the alert to earlier activity, and the causes the agent ruled out. Each investigation also lists the **Knowledge sources** it drew on, such as runbooks associated with the monitor.
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-what-happened.png')} alt="What Happened section with the investigation summary and knowledge sources" style={{border: '1px solid gray'}} width="800" />
 
 ### Execution history
 
-The **Execution History** table lists each run of the underlying monitor query, including the data scanned and credits consumed, so you can see the usage pattern that led to the alert.
+This table lists each run of the underlying monitor query, including the data scanned and credits consumed, so you can see the usage pattern that led to the alert.
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-ex-history.png')} alt="Execution History timeline for an investigation" style={{border: '1px solid gray'}} width="800" />
 
 ### What was ruled out
 
-**What was ruled out** lists the causes the agent considered and excluded, so you can see what did not explain the alert.
+This section lists the causes the agent considered and excluded, so you can see what did not explain the alert.
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-ruled-out.png')} alt="Causes the agent ruled out during the investigation" style={{border: '1px solid gray'}} width="800" />
 
 ### Key Findings
 
-**Key Findings** section lists the main points uncovered by investigation, each with a short statement of what it means. Each finding lists the evidence that produced it as chips named for the underlying query, so you can verify the result yourself.
+This section lists the main points uncovered by the investigation, each with a short statement of what it means. Each finding lists the evidence that produced it as chips named for the underlying query, so you can verify the result yourself.
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-key-findings.png')} alt="Key Findings section with evidence chips for each finding" style={{border: '1px solid gray'}} width="800" />
 
 ### Recommended Actions
 
-**Recommended Actions** lists suggested actions, each with a title and explanation, such as adding a time range to a query or reviewing a monitor definition. For some of the actions, you can run them by clicking **Execute** (not pictured). The agent will never execute without your consent.
+This section lists suggested actions, each with a title and explanation, such as adding a time range to a query or reviewing a monitor definition. For some of the actions, you can run them by clicking **Execute** (not pictured). The agent does not run an action unless you click **Execute**.
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-rec-actions.png')} alt="Recommended Actions list with suggested next steps" style={{border: '1px solid gray'}} width="800" />
 
@@ -153,7 +152,7 @@ After each response, Mobot retains the context of your investigation and present
 
 ### What is the Sumo Logic Root Cause Agent?
 
-The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). It applies agentic AI reasoning to observability triage — investigating observability alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface.
+The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). It applies agentic AI reasoning to observability triage: investigating observability alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface.
 
 ### How is this different from asking a chat assistant about my alerts?
 
@@ -178,4 +177,4 @@ No. See [Is customer data or PII used to train AI models?](/docs/get-started/ai-
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). How Sumo Logic's AI agents fit alongside Mobot, the SOC Analyst Agent, and the Sumo Logic MCP server.
 * [Alert Response](/docs/alerts/monitors/alert-response/). The alert page that hosts the AI Investigation tab.
 * [Mobot](/docs/search/mobot/). The conversational interface for Sumo Logic's AI agents.
-* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). The security counterpart to the Root Cause Agent — investigates Cloud SIEM insights for security teams.
+* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). The security counterpart to the Root Cause Agent. Investigates Cloud SIEM insights for security teams.

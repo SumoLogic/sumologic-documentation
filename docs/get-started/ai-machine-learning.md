@@ -67,9 +67,6 @@ See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
 The [Root Cause Agent](/docs/alerts/monitors/root-cause-agent) investigates observability alerts. It gathers telemetry, follows signals across logs and metrics, and returns a verdict, findings, supporting evidence, and recommended actions. Each finding links to the log search or metrics query that produced it, so you can verify the result yourself. You can continue the investigation in Mobot.
 
-<!-- Reviewer note (DOCS-1928): GA ships on-demand/manual triggering only, confirmed by backend in PR #7333 review; background/auto-triggered investigation is a planned follow-up, not GA scope. Still need to confirm whether external (non-Sumo Logic) alerts are investigable at GA - root-cause-agent.md currently says not yet. -->
-You start an investigation on demand from the **Alerts** list or an alert's details page.
-
 ### DojoAI Credits
 
 DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts, SOC Analyst Agent investigated insights, and Root Cause Agent investigations use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
