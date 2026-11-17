@@ -29,7 +29,7 @@ The Sumo Logic MCP (Model Context Protocol) server lets MCP clients (external AI
 - **Limitations**. Not intended for bulk data extraction, model training, or high-volume automated queries, and is subject to rate limits (4 requests per second, 10 concurrent).
 
 :::note
-Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](#improve-investigations-with-the-sumo-investigator-skill)), while [Mobot](/docs/search/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
+Prefer a built-in conversational experience? Use [Mobot](/docs/search/mobot), Sumo Logic's AI assistant, in the product or from your MCP client. See [Mobot in the MCP Server](/docs/api/mobot-in-mcp-server).
 :::
 
 :::training Sumo Logic Academy
@@ -128,7 +128,7 @@ MCP server access is enabled by default. An administrator can turn it on or off 
 
 Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [What do you need before getting started?](#prerequisites) and [How to enable CIMD for MCP clients](#how-to-enable-cimd-for-mcp-clients).
 
-Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot and Parse Assist, and from the **SOC Analyst Agent** toggle, so you can enable or disable the MCP server independently of those capabilities.
+Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot and Parse Assist, and from the **SOC Analyst Agent** toggle, so you can enable or disable the MCP server independently of those capabilities. Mobot in the MCP server has its own toggle. See [Enable or disable Mobot in the MCP server](/docs/api/mobot-in-mcp-server#enable-or-disable-mobot-in-the-mcp-server).
 
 ## How to enable CIMD for MCP clients
 
@@ -241,6 +241,7 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Cloud SIEM**. Manage insights, detection rules, and status updates.
 * **Log search**. Run log search queries and retrieve results.
 * **Discovery**. List custom fields, field extraction rules, and partitions to help scope log searches.
+* **Mobot**. Start, monitor, and cancel Mobot investigations, and respond to human-in-the-loop approval requests. See [Mobot in the MCP Server](/docs/api/mobot-in-mcp-server).
 
 All tools respect your Sumo Logic permission controls and access policies. See [Role capabilities](/docs/manage/users-roles/roles/role-capabilities) for details on each required scope.
 
@@ -342,6 +343,22 @@ Before running an unscoped query, the model first calls the Discovery tools belo
 
 * `What partitions and field extraction rules exist for security logs?`
 * `List all active partitions in the frequent tier`
+
+### Mobot
+
+| Tool | Description |
+| :--- | :---------- |
+| `mobot_invoke` | Start a Mobot investigation, or continue an existing conversation. |
+| `mobot_poll` | Check the status of an in-progress Mobot investigation and retrieve the result. |
+| `mobot_cancel` | Cancel a Mobot investigation that is in progress. |
+| `submit_hitl_feedback` | Approve or reject a Mobot step that is paused for human review. |
+
+Your MCP client calls these tools for you. For routing, plugin setup, rate limits, and audit logging, see [Mobot in the MCP Server](/docs/api/mobot-in-mcp-server).
+
+#### Example prompts
+
+* `Investigate why errors are spiking in the checkout service`
+* `/sumologic-mcp:mobot What is causing high latency in my API gateway?`
 
 ## Improve investigations with the sumo-investigator skill
 

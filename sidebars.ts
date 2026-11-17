@@ -3350,7 +3350,16 @@ integrations: [
             'api/about-apis/troubleshooting',
           ],
         },
-        'api/mcp-server',
+        {
+          type: 'category',
+          label: 'Sumo Logic MCP Server ✨',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'api/mcp-server'},
+          items: [
+            'api/mobot-in-mcp-server',
+          ],
+        },
         'api/access-keys',
         'api/account-management',
         'api/app-management',
