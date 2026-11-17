@@ -160,6 +160,9 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | :-- | :-- | :-- |
 | View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
 | Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
+| View Threat Indicators | View individual threat intelligence indicators and their details. | `ViewThreatIndicators` |
+| Manage Threat Indicators | Edit the confidence and expiration of individual indicators, and delete individual indicators. | `ManageThreatIndicators` |
+
 
 ## Macros
 

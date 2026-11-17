@@ -28,6 +28,10 @@ For example, use the function to match all records with a `srcDevice_ip` attribu
 hasThreatMatch([srcDevice_ip], confidence > 50)
 ```
 
+:::note
+Edits and deletions made on the [Indicators tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators) affect matching. A changed confidence score is used by `hasThreatMatch` conditions such as `confidence > 50`. A deleted indicator no longer matches until its source supplies it again.
+:::
+
 For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
 
 ## How to view threat indicator labels in the Cloud SIEM UI
