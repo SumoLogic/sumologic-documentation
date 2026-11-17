@@ -21,12 +21,12 @@ Processing capabilities in Sumo Logic, such as Field Extraction Rules (FERs), li
 
 Compared to FERs, Data Pipelines:
 
-- Apply only the first matching pipeline to each log message, instead of running every matching rule. This removes the need to manage the order of overlapping rules.
+- Apply only the first matching pipeline to each log message. FERs do not guarantee the order in which overlapping rules run. With pipelines, you control the order by arranging pipelines with overlapping routing expressions.
 - Show your processing steps as a graph.
-- Let you test the whole pipeline with sample data before you publish it.
+- Let you test a whole pipeline, or only specific processing groups, with sample data before you publish it.
 - Show input and output data volume and health events for each pipeline.
 
-Data Pipelines work with logs from any collection method, including installed Collectors, hosted Collectors, and Cloud-to-Cloud (C2C) sources. A message enters a pipeline if it matches the pipeline's routing expression.
+Data Pipelines work with logs from any collection method, including installed Collectors, hosted Collectors, OpenTelemetry Collectors, and Cloud-to-Cloud (C2C) sources. A message enters a pipeline if it matches the pipeline's routing expression.
 
 :::note
 Data Pipelines currently support logs only, and a pipeline can send data to one destination, Sumo Logic.
@@ -66,7 +66,7 @@ Within a processing group, you can add processors from the following categories:
 
 - **Parse**. JSON Parse, Regex Parse, and Anchor Parse.
 - **Transform**. Add Fields, Drop Fields, Replace Pattern, and Normalize. For example, Normalize can convert a value to lowercase or uppercase or trim whitespace.
-- **Advanced**. SIEM Forwarding and SUMOQL Parse.
+- **Advanced**. SIEM Forwarding and SumoQL Parse. The SIEM Forwarding processor appears only if Cloud SIEM is enabled for your organization.
 
 To mask sensitive data, such as email addresses, SSNs, and credit card numbers, use the Replace Pattern processor to replace or hash the matched text.
 
@@ -98,7 +98,7 @@ Extracts the text matched by `*` wildcards between literal anchors.
 
 #### SumoQL Parse
 
-Runs a SumoQL parse expression and adds the fields it produces.
+Runs a SumoQL expression and adds the fields it produces. This processor is not limited to parsing. It supports the same query options as a Field Extraction Rule (FER), and the same limitations apply to which operations you can use. Learn more about the [supported parsing and search operators](/docs/manage/field-extractions/create-field-extraction-rule/#supported-parsing-and-search-operators).
 
 - **Parse Expression**. The parse expression to run.
 - **Extracted Fields**. A read-only preview of the fields the expression produces.
@@ -133,14 +133,6 @@ Changes the case of values or trims whitespace.
 - **Normalization type**. **Lowercase** (default), **Uppercase**, or **Trim whitespace**.
 - **Fields to normalize**. The fields to change. The raw message is not available in the picker.
 
-#### Drop Messages by Condition
-
-Keeps or drops messages based on conditions.
-
-- **Action**. **Include** or **Exclude**. Default is **Exclude**.
-- **Match**. **All** or **Any**. Default is **All**.
-- **Conditions**. The list of conditions to check. Each condition can be up to 255 characters.
-
 #### SIEM Forwarding
 
 Tags matching messages with a parser and forwards them to Cloud SIEM.
@@ -162,7 +154,7 @@ Data Pipelines do not use versions. Each pipeline has a published version that p
 |:--|:--|
 | Draft | The pipeline was saved but is not processing live data. |
 | Published | The pipeline is processing live data. It is read-only. |
-| Published and draft | The pipeline has a live published version, and someone is editing a draft on top of it. The draft does not affect live data until it is published. |
+| Published and draft | The pipeline has a live published version and a saved draft on top of it. Each pipeline can have only one saved draft. The draft does not affect live data until it is published. |
 
 ## Prerequisites
 
@@ -190,13 +182,18 @@ You need the following permissions. If you do not have the permission for an act
 
 To add more groups or routers, insert them between existing nodes in the graph.
 
+:::note
+Any new field you create in a pipeline is enabled by default, which means it is available for search in Sumo Logic. If you create a temporary field that you only need inside the pipeline, disable it in the field limit dropdown. Your organization can also create only a limited number of new fields.
+:::
+
 ## Test and publish a pipeline
 
-Use **Test Mode** to run sample messages through your draft before you publish it. Test mode is especially useful when your pipeline has many parse or masking expressions.
+Use **Test Mode** to run sample messages through your draft before you publish it. Test mode is especially useful when your pipeline has many parse or masking expressions. You can test the whole pipeline or a single processing group. The test screens are the same for both.
 
 1. Open the pipeline in draft mode.
-1. In the graph, click the node you want to test. For example, click a processing group.
-1. In the right pane that shows the node details, turn on **Test Mode** at the top right.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-node-test-mode.png')} alt="Node details pane with the Test Mode toggle highlighted" style={{border: '1px solid gray'}} width="450"/>
+1. Choose what to test:
+   - **Whole pipeline**. Turn on **Test Mode** at the top right of the Data Pipelines page.<br/><img src={useBaseUrl('img/manage/data-pipelines/whole-pipeline-testing.png')} alt="Pipeline graph with the Test Mode toggle highlighted at the top right" style={{border: '1px solid gray'}} width="800"/>
+   - **Processing group**. In the graph, click the processing group you want to test. In the right pane that shows the node details, turn on **Test Mode** at the top right.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-node-test-mode.png')} alt="Node details pane with the Test Mode toggle highlighted" style={{border: '1px solid gray'}} width="450"/>
 1. On the **Input Sample** tab, enter a sample log message. You can also set metadata fields for the message, such as `_sourceCategory`.
    * Instead of pasting a sample, you can click **Upload** and select a file. Supported file types are `.log`, `.txt`, and `.json`, up to 1 MB and 100 messages.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-input-sample-upload.png')} alt="Input Sample tab with the Upload button highlighted" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Run Test**.
@@ -272,9 +269,8 @@ The following limits also apply to Data Pipelines.
 | Routing expression length | 2,048 characters |
 | Regex or anchor expression length | 16,384 characters |
 | Replace Pattern: pattern length per rule | 1,024 characters |
-| Drop Messages by Condition: length per condition | 255 characters |
 | Extracted field value length | 16,384 characters. Longer values are truncated. |
-| Message size | 64 KB |
+| Message size | 256 KB |
 | Pipeline name length | 256 characters |
 | Pipeline description length | 1,024 characters |
 | Import file size | 500 KB |
