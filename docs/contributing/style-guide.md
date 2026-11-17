@@ -688,7 +688,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 
 ### Bulleted lists
 
-Use bulleted lists when the items do not need to be presented in sequential order.  End each bullet in a terminal period.
+Use bulleted lists when the items do not need to be presented in sequential order. End each bullet in a terminal period.
 
 <Tabs
   defaultValue="Markdown"
