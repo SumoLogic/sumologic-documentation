@@ -147,7 +147,7 @@ To search your logs for activity related to an indicator, click **View in Log Se
 You can change the confidence score and expiration date of an individual indicator, for example to override a feed-provided score or extend an indicator's lifetime.
 
 :::note
-Editing and deleting indicators requires the **Manage Threat Indicators** role capability. See [Role capabilities](/docs/security/threat-intelligence/about-threat-intelligence/#role-capabilities).
+Editing and deleting indicators requires the **Manage Threat Intel Data Store** role capability. See [Role capabilities](/docs/security/threat-intelligence/about-threat-intelligence/#role-capabilities).
 :::
 
 1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Edit**. You can also click **Edit Indicator** in the indicator details panel.<br/><img src={useBaseUrl('img/security/edit-an-indicator.png')} alt="edit an indicator" style={{border: '1px solid gray'}} width="800" />

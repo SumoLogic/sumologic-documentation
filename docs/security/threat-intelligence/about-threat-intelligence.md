@@ -125,10 +125,8 @@ To view and manage [threat intelligence indicators](/docs/security/threat-intell
 1. Click **Add Role** to create a new role. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 Add the following capabilities:
    * **Threat Intel**
-      * **View Threat Intel Data Store**
-      * **Manage Threat Intel Data Store**
-      * **View Threat Indicators**. View individual indicators and their details.
-      * **Manage Threat Indicators**. Edit and delete individual indicators.
+      * **View Threat Intel Data Store**. View indicators and their details.
+      * **Manage Threat Intel Data Store**. Edit and delete indicators.
 
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
 
