@@ -5,7 +5,7 @@ description: Learn how to create and configure column charts in dashboards to vi
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Column charts are useful for visually comparing the number of events that have occurred, such as the type of error that occurs the most in your system. To create a Column chart, use a search query that provides at least a few data points in the **Aggregates** tab.
+Column charts are useful for visually comparing the number of events that have occurred, such as which type of error occurs most often in your system. To create a Column chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
 For example, you'd use the following query to create a simple column chart:
 
@@ -13,7 +13,7 @@ For example, you'd use the following query to create a simple column chart:
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count
 ```
 
-which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/categorical.png')} style={{border: '1px solid gray'}} alt="categorical" width="600"/>
+This query produces results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/categorical.png')} style={{border: '1px solid gray'}} alt="categorical" width="600"/>
 
 ## Create a Column chart
 
@@ -21,13 +21,13 @@ To add a panel with a column chart:
 
 1. Create or open a dashboard and click **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/time-series-or-categorical.png')} style={{border: '1px solid gray'}} alt="time series or categorical" width="700"/>
 1. Provide a metric or log query and press **Enter** for it to run.
-1. Once the query runs you will need to flip the chart type to **Column**.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/new-column-chart.png')} style={{border: '1px solid gray'}} alt="new column chart" width="800"/>
+1. After the query runs, change the chart type to **Column**.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/new-column-chart.png')} style={{border: '1px solid gray'}} alt="new column chart" width="800"/>
 1. [Modify the chart](./modify-chart.md) as desired.
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} style={{border: '1px solid gray'}} alt="Add to Dashboard button" width="300"/>
 
 ## Create a stacked column chart
 
-To create a stacked column chart, use a query that uses a multiple series that counts by at least two things, followed by a `transpose`. For example, this query from the Sumo Logic App for Apache creates a stacked column chart for visits by country over time
+To create a stacked column chart, use a query that returns multiple series, counts by at least two fields, and ends with a `transpose` operation. For example, this query from the Sumo Logic App for Apache creates a stacked column chart of visits by country over time:
 
 ```sumo
 _sourceCategory=Apache/Access
@@ -39,4 +39,4 @@ _sourceCategory=Apache/Access
 | transpose row _timeslice column country_name as *
 ```
 
-When your query is added to the panel builder press **Enter** to run it. In the Display options pane select a **Stacked** Display type.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/stacked-column-chart-and-setting.png')} style={{border: '1px solid gray'}} alt="stacked column chart and setting" width="800"/>
+After you add your query to the panel builder, press **Enter** to run it. In the **Display** options pane, select **Stacked** as the display type.<br/><img src={useBaseUrl('/img/dashboards/panels/column-charts/stacked-column-chart-and-setting.png')} style={{border: '1px solid gray'}} alt="stacked column chart and setting" width="800"/>

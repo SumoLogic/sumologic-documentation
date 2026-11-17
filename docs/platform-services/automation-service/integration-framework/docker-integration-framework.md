@@ -60,43 +60,49 @@ The following commands may be useful in performing some common actions in Docker
 ### Create Docker image (Python example)
 
 1. Create a file with name dockerfile inside a dedicated directory:
-   ```
+
+   ```dockerfile
    FROM python:2-slim
    RUN pip install --trusted-host pypi.python.org requests suds
    ```
+
 1. Inside this directory run:
-   ```
+
+   ```bash
    docker build -t <my_integration>
    ```
+
 1. If you run Docker image ls you can see your image with tag
-   ```
+
+   ```text
    <my_integration>
    ```
 1. Now you can use this tag in YAML:
-   ```
+
+   ```yaml
    docker_repo_tag: '<my_integration>:latest'
    ```
 
 ### Load an image from a tar archive
 
-```
+```bash
 docker load < docker_image.tar
 ```
 
 ### Add third-party libraries to the Docker image when building
 
-```
+```bash
 pip install --trusted-host pypi.python.org tenable_io mock==2.0.0 pytest==3.0.4 Sphinx==1.5.1
 ```
 
 ### List all Docker images
 
-```
+```bash
 docker image ls
 ```
 
 ### Show Docker disk usage
 
-```
+```bash
 docker system df
 ```
