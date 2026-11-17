@@ -150,7 +150,7 @@ You can change the confidence score and expiration date of an individual indicat
 Editing and deleting indicators requires the **Manage Threat Indicators** role capability. See [Role capabilities](/docs/security/threat-intelligence/about-threat-intelligence/#role-capabilities).
 :::
 
-1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Edit**. You can also click **Edit Indicator** in the indicator details panel.
+1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Edit**. You can also click **Edit Indicator** in the indicator details panel.<br/><img src={useBaseUrl('img/security/edit-an-indicator.png')} alt="edit an indicator" style={{border: '1px solid gray'}} width="800" />
 1. Update the following fields:
    * **Confidence**. Enter a whole number from 0 to 100, or use the slider.
    * **Expiration**. Select a future date, or turn on **No expiry** so the indicator never expires.
@@ -168,7 +168,7 @@ The **Indicator Value**, **Type**, and **Source** fields are read-only.
 
 Delete an indicator to remove a false positive or stale indicator that is causing noisy detections.
 
-1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Delete**. You can also click **Delete Indicator** in the indicator details panel.
+1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Delete**. You can also click **Delete Indicator** in the indicator details panel.<br/><img src={useBaseUrl('img/security/delete-an-indicator.png')} alt="delete an indicator" style={{border: '1px solid gray'}} width="800" />
 1. Review the indicator value, type, and source in the confirmation dialog.
 1. Click **Delete**.
 
