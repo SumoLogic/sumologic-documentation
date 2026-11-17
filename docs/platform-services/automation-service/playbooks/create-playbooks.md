@@ -335,7 +335,7 @@ Notification actions send a notification, for example, an email or a post in a m
 :::important
 Automation Service email notifications are sent from noreply@notifications.sumologic.com. To keep receiving them:
 
-Allowlist this address so the emails are not marked as spam.
+* Allowlist this address so the emails are not marked as spam.
 Update any email filters, inbox rules, distribution lists, or automated workflows that depend on the previous sender address.
 :::
 
