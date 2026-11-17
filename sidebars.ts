@@ -991,7 +991,6 @@ module.exports = {
         'manage/partitions/edit-data-forwarding-destinations-partition',
         'manage/partitions/manage-indexes-variable-retention',
         'manage/partitions/decommission-partition',
-        'manage/partitions/flex-to-tier-migration-report',
         'manage/partitions/faq',
       ]
     },
@@ -1193,6 +1192,7 @@ module.exports = {
             'manage/security/saml/manage-permissions-with-adfs',
             'manage/security/saml/set-up-adfs-authenticate-users',
             'manage/security/saml/view-saml-debug-information',
+            'manage/security/saml/saml-destination-url-mismatch',
           ]
         },
         {
@@ -1378,7 +1378,7 @@ module.exports = {
         'dashboards/filter-template-variables',
         {
           type: 'category',
-          label: 'Migrate to Dashboard',
+          label: 'Migrate to Dashboards',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'dashboards/dashboards-migration/index'},
@@ -2239,13 +2239,13 @@ integrations: [
     items: [
       {
         type: 'category',
-        label: 'Product List',
+        label: 'Vendors and Products',
         collapsible: true,
         collapsed: true,
-        link: {type: 'doc', id: 'integrations/product-list/index'},
+        link: {type: 'doc', id: 'integrations/vendors-content-matrix/index'},
         items: [
-          'integrations/product-list/product-list-a-l',
-          'integrations/product-list/product-list-m-z',
+          'integrations/vendors-content-matrix/vendors-content-matrix-a-z',
+          'integrations/vendors-content-matrix/faq',
         ],
       },
       {
@@ -2259,7 +2259,7 @@ integrations: [
       },
       {
         type: 'category',
-        label: 'Automation Integrations',
+        label: 'Integrations',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'integrations/automation-integrations/index'},
@@ -2539,6 +2539,19 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/aiml/index'},
         items: [
+          {
+            type: 'category',
+            label: 'AI Observability',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'integrations/aiml/ai-observability/index'},
+            items: [
+              'integrations/aiml/ai-observability/ai-observability-app',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry',
+              'integrations/aiml/ai-observability/troubleshoot-ai-observability',
+            ],
+          },
           {
             type: 'category',
             label: 'OpenTelemetry',
@@ -3097,6 +3110,7 @@ integrations: [
             'cse/records-signals-entities-insights/create-custom-entity-type',
             'cse/records-signals-entities-insights/create-an-entity-group',
             'cse/records-signals-entities-insights/configure-entity-lookup-table',
+            'cse/records-signals-entities-insights/signals-ui',
             'cse/records-signals-entities-insights/view-records-signal',
             'cse/records-signals-entities-insights/about-signal-suppression',
             'cse/records-signals-entities-insights/search-cse-records-in-sumo',
