@@ -59,7 +59,7 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 There are three tracing-specific dashboard panels available out of the box: **Services Map**, **Services List**, and **Trace List** panels, which explore your application environment and review all traces from your dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your org.
 
-See the [Dashboard guide](/docs/dashboards) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+See the [Dashboards guide](/docs/dashboards) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
 ### Services panels
 

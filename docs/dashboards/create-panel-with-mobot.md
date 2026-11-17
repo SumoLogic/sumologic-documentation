@@ -10,9 +10,9 @@ keywords:
   - dojoai
 ---
 
-[Mobot](/docs/search/mobot) enables you to create dashboard panels using natural language. Instead of manually building a query and configuring a visualization, describe the panel you want, and Mobot generates the query, selects an appropriate visualization, and adds the panel to a new or existing dashboard after your confirmation.
+[Mobot](/docs/search/mobot) enables you to create Sumo Logic dashboard panels using natural language. Instead of building a query and configuring a visualization yourself, describe the panel you want. Mobot generates the query, selects an appropriate visualization, and, after you confirm, adds the panel to a new or existing dashboard.
 
-Mobot supports logs panels only, not metrics panels, and can create multiple panels from a single prompt. It creates new panels only; it cannot update an existing panel.
+Mobot supports logs panels only, not metrics panels. It can create multiple panels from a single prompt, but it creates new panels only. It cannot update an existing panel.
 
 ## Which panel types and visualizations are supported?
 
@@ -32,11 +32,11 @@ For logs panels, Mobot can create the following visualization types:
 ## How to create a panel with Mobot
 
 1. Open [Mobot](/docs/search/mobot) and type a description of the panel you want directly into the chat. For example:<br/>`Add a panel showing request count by geo location on a map.`
-1. Mobot looks up a relevant data source or existing query, then shows you a breakdown of the source, parsing, aggregation, and visualization it plans to use, along with the draft query.
+1. Mobot looks up a relevant data source or existing query. It then shows you the draft query and a breakdown of the source, parsing, aggregation, and visualization it plans to use.
 1. Mobot asks which dashboard to add the panel to. Choose one of the suggested existing dashboards, or name a new dashboard to create.
-1. Confirm when Mobot asks if it should proceed. Mobot creates the dashboard (if new) and adds the panel.
+1. When Mobot asks if it should proceed, confirm. Mobot creates the dashboard (if new) and adds the panel.
 
-The new panel appears on the dashboard, the same as a panel created through the dashboard UI.
+The new panel appears on the dashboard like any panel created through the dashboard UI.
 
 For more prompts to try, see [Dashboard panel creation](/docs/search/mobot/example-prompts#dashboard-panel-creation) in the Mobot Example Prompts library.
 
@@ -81,7 +81,7 @@ Review the generated panel before confirming. You can reject the suggestion and 
 
 ### Can I edit the generated query?
 
-Yes. After the panel is created, you can modify it using the standard dashboard editor.
+Yes. After Mobot creates the panel, you can modify it using the standard dashboard editor.
 
 ## Related resources
 

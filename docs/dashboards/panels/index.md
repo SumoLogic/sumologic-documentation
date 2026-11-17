@@ -2,14 +2,14 @@
 slug: /dashboards/panels
 title: Dashboard Panels
 sidebar_label: Panels
-description: Learn about the various Dashboard panels and the types of data best suited for each.
+description: Learn about the various dashboard panels and the types of data best suited for each.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Panels are the building blocks used to create a dashboard. Each panel displays analytics for a specific query. The type of panel you choose to display your data depends on the type of query you want to run.
+Panels are the building blocks used to create a Sumo Logic dashboard. Each panel displays analytics for a specific query. The type of panel you choose to display your data depends on the type of query you want to run.
 
-In this section, we'll introduce the following concepts:
+This section covers the following topics:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -33,7 +33,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/panels/bar-charts')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Bar Charts</h4></a>
-  <p>Visually compare the number of events that have occurred.</p>
+  <p>Visually compare the number of events that occurred.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -93,7 +93,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/panels/scatter-charts')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Scatter Charts</h4></a>
-  <p>Show correlations between two fields against specific data.</p>
+  <p>Show the correlation between two fields.</p>
   </div>
 </div>
 <div className="box smallbox card">

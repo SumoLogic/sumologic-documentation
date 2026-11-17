@@ -72,13 +72,13 @@ As an account owner or administrator, you can manage feature availability for yo
 
 Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
 
-- **Opt-in**. You can explicitly enable them for your organization.
-- **Opt-out**. You can disable them if you do not require them.
+- **Opt-in**. You can explicitly enable them for one or more child organizations.
+- **Opt-out**. You can disable them for child organizations that do not require them.
 
 ### Opt in to a feature
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
-1. Click your organization. A details pane opens on the right.
+1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll down the details pane to the **Features** section and select **Manage Features**.
 1. In the **Manage Features** panel, toggle next to the feature you want to enable.
 1. Click **Save Changes** to apply your changes.
@@ -86,7 +86,7 @@ Features available for self-service management are controlled by Sumo Logic. Onl
 ### Opt out of a feature
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
-1. Click your organization. A details pane opens on the right.
+1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll down the details pane to the **Features** section and select **Manage Features**.
 1. In the **Manage Features** panel, toggle next to the feature you want to disable.
 1. Click **Save Changes** to apply your changes.

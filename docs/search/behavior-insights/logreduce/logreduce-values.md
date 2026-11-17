@@ -46,13 +46,13 @@ There are two methods you have to use the details option:
 
     A new search is created with the necessary identifiers from your initial LogReduce Values search. The search contains all of the raw logs from the selected data cluster.  
      
-* Manually provide the necessary identifiers. You can provide identifiers from previously run LogReduce Values searches. However, the only way to get the search identifier, given with the `shortcodeID` parameter, is to click the `_count` link from the interface. The query of the created search has the identifier that you can save for later use, up to 1,095 days. For example, the following query was created by clicking the `_count` link:  
+* Manually provide the necessary identifiers. You can provide identifiers from previously run LogReduce Values searches. However, the only way to get the search identifier, given with the `shortcodeID` parameter, is to click the `_count` link from the interface. The query of the created search has the identifier that you can save for later use, up to 1,095 days. For example, clicking the `_count` link creates a query in the following format:  
 
     ```sumo
-    | logreduce values details on %"region", %"partition" pCV6qgaOvASgi1j9KhcGaE6mts6jfOEk "C049BE180425642A"
+    | logreduce values details on <keys> <shortcodeID> "<cluster_id>"
     ```  
 
-    The `pCV6qgaOvASgi1j9KhcGaE6mts6jfOEk` value is the `shortcodeID`. While `C049BE180425642A` is a `cluster_id`.
+    Replace `<keys>` with the keys from your initial search, `<shortcodeID>` with the identifier from the created query, and `<cluster_id>` with the signature identifier of the data cluster. These values are specific to your search, so the query returns an error if you use values from a different search.
 
 ### Details Syntax
 

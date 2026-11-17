@@ -61,6 +61,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/cse/records-signals-entities-insights/signals-ui')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Icon of a shield on a flow diagram" width="40"/><h4>Signals UI</h4></a>
+  <p>Learn about the Cloud SIEM Signal details page.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/cse/records-signals-entities-insights/view-records-signal')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="Icon of a shield on a flow diagram" width="40"/><h4>View Records for a Signal</h4></a>
   <p>Learn how to view records associated with a signal in Cloud SIEM.</p>
   </div>
