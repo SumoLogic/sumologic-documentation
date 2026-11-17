@@ -21,7 +21,7 @@ With the Sumo Logic Kubernetes Solution, you can monitor and troubleshoot contai
 <details>
 <summary>What is Kubernetes?</summary>
 
-Kubernetes is an open source container orchestration platform developed by [Google](https://cloud.google.com/kubernetes/), that is now managed by the [Cloud Native Computing Foundation](https://www.cncf.io/). 
+Kubernetes is an open source container orchestration platform developed by [Google](https://cloud.google.com/kubernetes/), that is now managed by the [Cloud Native Computing Foundation](https://www.cncf.io/).
 
 Kubernetes provides for automatic deployment, scaling, and operations across clusters in your environment. Kubernetes provides Desired State Management for clusters by defining a system of cluster services that operates on a set of specified criteria. Kubernetes is ephemeral by design, with elastic scalability and control over how containers and pods are deployed. Kubernetes can run in a public cloud, on a private network, or on bare metal.
 
@@ -30,7 +30,7 @@ Kubernetes provides for automatic deployment, scaling, and operations across cl
 The Sumo Logic Kubernetes Solution provides observability into all the critical areas of your Kubernetes environment mentioned below. Falco events are utilized to monitor and detect abnormal container, application, host, and network activity.
 
 
-## Critical areas to monitor  
+## Critical areas to monitor
 
 The critical areas for monitoring in Kubernetes include the control plane, individual nodes, and pods. The following graphic provides a high-level view of the Kubernetes cluster architecture.
 
@@ -82,7 +82,7 @@ A node is a worker machine in a Kubernetes cluster that serves as a delivery veh
 
 Each node is managed by the cluster and contains the services necessary to run pods. Node services include kubelet and kube-proxy.
 
-<img src={useBaseUrl('img/kubernetes/Intro_Nodes-and-Pods.png')} alt="Inroduction to nodes and pods" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/kubernetes/Intro_Nodes-and-Pods.png')} alt="Introduction to nodes and pods" style={{border: '1px solid gray'}} width="600" />
 
 #### Kubelet
 
@@ -105,6 +105,6 @@ Pods reside on a given node, and a pod can contain several containers. For pods,
 
 ## Additional resources
 
-* Blogs: 
+* Blogs:
    * [Kubernetes DevSecOps](https://www.sumologic.com/blog/kubernetes-devsecops/)
    * [Logging and monitoring Kubernetes](https://www.sumologic.com/blog/kubernetes-logs/)

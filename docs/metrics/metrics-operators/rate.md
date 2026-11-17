@@ -6,12 +6,12 @@ description: Use the rate metrics operator to calculate the per-second rate of c
 ---
 
 
-The `rate` operator calculates the per-second rate of change between data points in the time series. There are two different modes in which the rate operator can work:
+The `rate` operator calculates the per-second rate of change between data points in the time series. There are two different modes in which the `rate` operator can work:
 
 * Regular `rate` (without `over` modifier) calculates the rate of change between consecutive data points. It divides the difference in values of consecutive data points by the difference in their timestamps in seconds.
 * `rate over TIME`, on the other hand, allows you to calculate an average rate of change over a specified time window. This is achieved by considering the first and the last metric value in the given time window, extrapolating to the ends of the window if necessary.
 
-The rate operator also assigns the value of the metric tag to be `rate($metric)` and the value of the unit metadata field to be `$unit/second` (for example, 1/second).
+The `rate` operator also assigns the value of the metric tag to be `rate($metric)` and the value of the unit metadata field to be `$unit/second` (for example, 1/second).
 
 ## Syntax
 

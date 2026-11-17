@@ -36,7 +36,7 @@ If a paused Scheduled View is still required, you can manually re-enable at any 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**.<br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. 
 1. To refine the table with Scheduled View paused results, use the **Add a filter** section located above the table and select **Status:Paused** from the dropdown.
-1. Click on the required Scheduled View and click **Start** button to resume.
+1. Click the required Scheduled View and click **Start** button to resume.
 
 <img src={useBaseUrl('/img/scheduled-views/Restart-SV.png')} alt="Restart scheduled view page" style={{border:'1px solid gray'}} width="400"/>
 
@@ -49,7 +49,7 @@ To resume indexing at a later time, click **Start**.
 
 ## Disable a scheduled view
 
-Once disabled, no additional data can be indexed in a scheduled view. A disabled scheduled view is not technically deleted, but it cannot be re-enabled. If you disable a view and later create a new view with the same name, you won't see duplicate results; instead all the data from both scheduled views are treated as one.
+Once disabled, no additional data can be indexed in a scheduled view. A disabled scheduled view is not technically deleted, but it cannot be re-enabled. If you disable a view and later create a new view with the same name, you will not see duplicate results; instead all the data from both scheduled views are treated as one.
 
 If you disable a view, it is no longer visible in Sumo Logic. If you create a new view with that same name, any query spanning the time range where both (the old and the new scheduled view) exist will search the union of the two scheduled views.
 

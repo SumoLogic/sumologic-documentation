@@ -44,6 +44,8 @@ For OpenTelemetry collector features:
 
 ### Step 1: Gather information
 
+**Ask one question at a time.** Walk the user through each item with its own question (use AskUserQuestion with suggested options where possible). Do not post a numbered list of questions for the user to answer all at once.
+
 Ask the user for:
 
 **For Installed Collector releases:**

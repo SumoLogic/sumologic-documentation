@@ -40,8 +40,8 @@ The Sumo Logic data pipeline makes collected data available for security analysi
 <img src={useBaseUrl('img/csa/data-pipeline.png')} alt="A diagram showing the data flow in Sumo Logic: Data collection, to searching and analyzing, to visualizing and monitoring, ending with sharing the findings." width="700"/>
 
 1. **Data collection**. First, you must set up an [OpenTelemetry collector](/docs/send-data/opentelemetry-collector), [installed collector](/docs/send-data/installed-collectors), or a [hosted collector](/docs/send-data/hosted-collectors) and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
-2. **Search and analyze**. Once data is in Sumo Logic, you can [write queries](/docs/search/get-started-with-search) to search events in real-time from the analytics platform UI.
-3. **Visualize and monitor**. Once you’ve found and analyzed data that’s interesting, you can [create dashboards](/docs/dashboards/create-dashboard-new) to visualize it and set up alerts to monitor your data in real-time. Certain pre-built [apps](/docs/integrations) come pre-configured with dashboards designed for security.
+2. **Search and analyze**. Once data is in Sumo Logic, you can [write queries](/docs/search/get-started-with-search) to search events in real time from the analytics platform UI.
+3. **Visualize and monitor**. Once you’ve found and analyzed data that’s interesting, you can [create dashboards](/docs/dashboards/create-dashboard-new) to visualize it and set up alerts to monitor your data in real time. Certain pre-built [apps](/docs/integrations) come pre-configured with dashboards designed for security.
 4. **Share the findings**. [Export your dashboards](/docs/dashboards/export-dashboard-new) or [share with others on your team](/docs/dashboards/share-dashboard-new). You can control who can view and edit your dashboards to keep your data secure.
 
 ## Build security analytics assets
@@ -54,7 +54,7 @@ Using the following skills with Sumo Logic's core platform, build the infrastruc
 Once your data is ingested, you’ll need to search and filter it to find log messages of interest for your security analytics. With field extraction rules (FERs) and scheduled searches, data processing and querying can be automated. Finally, once you've written these queries, you can visualize them with dashboards and create alerts based on certain thresholds.
 
 In addition to queries, dashboards, and alerts, Sumo Logic offers many other features for security analysis, including:
-* Integrations for common applications and services like AWS, Office365, SalesForce, and others
+* Integrations for common applications and services like AWS, Office 365, Salesforce, and others
 * Threat intelligence and security from CrowdStrike, AWS GuardDuty, Cylance, Cisco, and others
 * Maintains major compliance certifications, including PCI DSS, ISO 27001, and FedRAMP
 * Multi-cloud, hybrid cloud, and full stack security visibility

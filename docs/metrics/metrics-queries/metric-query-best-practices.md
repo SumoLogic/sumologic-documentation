@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl'
 
-Getting accurate metric queries in Sumo Logic means picking the right quantization, rollup, and aggregation for your use case, since metrics and logs use very different query languages even though they share a dashboard UI. This article covers key metric query best practices, patterns, and tips such as:
+Getting accurate metric queries in Sumo Logic means picking the right quantization, rollup, and aggregation for your use case, since metrics and logs use different query languages even though they share a dashboard UI. This article covers key metric query best practices, patterns, and tips such as:
 * [Logs vs metric queries](#logs-vs-metrics)
 * [Metrics query language tips and techniques](#key-tips-for-metric-query)
 * [Quantization and rollups](#quantization)
@@ -24,7 +24,7 @@ Getting accurate metric queries in Sumo Logic means picking the right quantizati
 
 ## Logs vs metrics
 
-Although they share a dashboard chart UI, logs and metrics query languages are very different.
+Although they share a dashboard chart UI, logs and metrics query languages are different.
 
 | Concept | Logs | Metrics |
 | :-- | :-- | :-- |
@@ -33,8 +33,8 @@ Although they share a dashboard chart UI, logs and metrics query languages are v
 | Aggregation | Specific to the log search query (for example, sum by host vs avg by host), and can have multiple aggregations. | All metrics have multiple rollups stored: `sum`, `min`, `max`, `count`, `latest`, `_value`. By default `avg` is used and this can have dramatic effects on output of the metric query. |
 | Retention | Set at partition level, logs stored immutably until retention is reached, but could be pre-summarized using scheduled views. | Raw metric is retained for 30 days, and a 1-hour rollup for 13 months. For historical 1-hour rollups Sumo Logic calculates the `max`, `min`, `avg`, `sum`, and `count` values for a metric per hour. Metrics transformation rules available for custom summarization. |
 |  Charting | Log search must produce aggregate data in correct format for chart type selected. | Formatting is inferred in charting UI, so in most cases the same query can produce time series or other charts without modification. |
-| Cardinality | High cardinality can impact query efficiency but has no impact on log ingest or storage costs. Very high cardinality is supported in log searches (>1m). | Greater cardinality in metric names or tags increases the DPM (data points per minute) and results in higher ingest charges. There are strict cardinality limits and metrics or tags may be disabled if limits are exceeded, for example, max of 5000 series per metric in 24 hours. See [High cardinality dimensions are dropped](/docs/metrics/manage-metric-volume/disabled-metrics-sources/#high-cardinality-dimensions-are-dropped). |
-| Query language flexibility | Over 100 log operators allow very complex query types (transactions, log reduce, etc.) and advanced parsing and transformation of fields and values including regex. | Limited metric operators for high performance aggregate charting of lower cardinality data. Parsing and transformation of metric names or values is limited compared to logs. |
+| Cardinality | High cardinality can impact query efficiency but has no impact on log ingest or storage costs. High cardinality is supported in log searches (>1m). | Greater cardinality in metric names or tags increases the DPM (data points per minute) and results in higher ingest charges. There are strict cardinality limits and metrics or tags may be disabled if limits are exceeded, for example, max of 5000 series per metric in 24 hours. See [High cardinality dimensions are dropped](/docs/metrics/manage-metric-volume/disabled-metrics-sources/#high-cardinality-dimensions-are-dropped). |
+| Query language flexibility | Over 100 log operators allow complex query types (for example, transactions and log reduce) and advanced parsing and transformation of fields and values including regex. | Limited metric operators for high performance aggregate charting of lower cardinality data. Parsing and transformation of metric names or values is limited compared to logs. |
 | Pricing plan | Either ingest based (ingest cost per GB + storage charge based on retention with free query) or scan based (most cost is generated based on volume of partition data scanned). For ingest based, larger log events (not metadata) drives cost. For scan-based plans, scoping of query, time range, and partition design has greatest impact. | DPM (data points per minute) are averaged over a 24 hour period. Sending more data points by shorter intervals (for example, 10s vs 1m), sending more metric names, or higher cardinality of tags will increase DPM cost. |
 
 ## Key tips for metric query
@@ -82,7 +82,7 @@ is the same as:
 
 ### Quantize
 
-Quantize is always applied to metrics (like time slicing in logs). Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum` and `count`. Quantize and rollup will have a very large impact on the resulting output. `avg` is the default.
+Quantize is always applied to metrics (like time slicing in logs). Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum` and `count`. Quantize and rollup will have a large impact on the resulting output. `avg` is the default.
 
 Pick the correct rollup for the query use case via the `quantize` operator. For example:
 
@@ -146,7 +146,7 @@ This further complicates the quantization type.
 
 ## Quantization
 
-Quantization is at the very heart of query output for metrics. You must use the correct quantization for every use case. 
+Quantization is at the heart of query output for metrics. You must use the correct quantization for every use case. 
 
 Every metric series has multiple rollup types: `min`, `max`, `latest`, `avg`, `sum`, and `count`. Every metric query has auto quantize by default using `avg`, but we override with the [`quantize` operator](/docs/metrics/metrics-operators/quantize/). The `quantize` operator has a time window (similar to the [`timeslice` search operator](/docs/search/search-query-language/search-operators/timeslice/) in logs), and a rollup type, for example, `avg` or `sum`.
 
@@ -189,7 +189,7 @@ But selecting the **Sum** statistic type for the same query yields a sum of `1,7
 
 ### Autocomplete
 
-Metric and tag discovery is a key activity in creating metric queries. [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) provides an autocomplete function to make it fast and easy to build out metric queries. Tag names and values are supplied in the query UI based on the current metric query scope. 
+Metric and tag discovery is a key activity in creating metric queries. [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) provides an autocomplete function to make it fast to build out metric queries. Tag names and values are supplied in the query UI based on the current metric query scope. 
 
 Autocomplete can show you:
 * Which metrics exist for a specific scope:<br/><img src={useBaseUrl('img/metrics/metric-query-which-metrics.png')} alt="Which metrics exist for a specific scope" style={{border: '1px solid gray'}} width="600" />
@@ -223,15 +223,15 @@ Notice the following:
 * There are 17 time series, so one or more tags must have unique values.
 * The `deployment` and `pod` columns both have 17 values (one per istio endpoint).
 * Use `avg` quantization (default), then `sum` for final total.
-* Don't use `sum` (total for all data points) or `count` (count of data points only).
+* Do not use `sum` (total for all data points) or `count` (count of data points only).
 
 ## Charting metrics
 
 ### Metric chart types
 
-Unlike log searches, you often don't need to format the query output to make different types or charts. Some panels like **Single Value** do need aggregate output formatted a certain way.
+Unlike log searches, you often do not need to format the query output to make different types or charts. Some panels like **Single Value** do need aggregate output formatted a certain way.
 
-For metrics, the UI has a very large impact on the resulting chart (compared to log search charting). The same query can produce many types of charts even when not aggregated (unlike in logs).
+For metrics, the UI has a large impact on the resulting chart (compared to log search charting). The same query can produce many types of charts even when not aggregated (unlike in logs).
 
 ### Why aggregate in metrics?
 
@@ -239,7 +239,7 @@ Good reasons to aggregate in metrics:
 * Better control over resulting time series from query.
 * Much easier to get the query output you want to chart.
 * Queries will scale to larger numbers of series and data points.<br/>For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
-* For monitors it makes it easy to have alert grouping, for example, per cluster, per pod, per host.
+* For monitors, you get alert grouping, for example, per cluster, per pod, per host.
 * In monitor payloads you can use `ResultsJson.<fieldname>` for custom alert text.
 
 ### Fix "too many timeseries in the output"
@@ -248,7 +248,7 @@ When you perform a metric query, you may see the following message: <br/> `There
 
 <img src={useBaseUrl('img/metrics/timeseries-error-message.png')} alt="Too many timeseries message" style={{border: '1px solid gray'}} width="400" />
 
-You can't have more than 1000 groups in aggregation or raw data series. This is called the "output limit". For more information, see [Output data limit](/docs/metrics/metrics-queries/metric-query-error-messages/#output-data-limit).
+You cannot have more than 1000 groups in aggregation or raw data series. This is called the "output limit". For more information, see [Output data limit](/docs/metrics/metrics-queries/metric-query-error-messages/#output-data-limit).
 
 Try the following fixes:
 * Perform a final aggregation by a dimension with less than 1000 groups:
@@ -275,7 +275,7 @@ Pay special attention to these UI options as they can impact your metrics chart 
 
 ### Overrides to improve series naming
 
-Use the **Display Overrides** tab to make it easy to read alias for metric series names in legends and popups, as well as the more usual options for custom chart formatting, such as the left/right axis. For more information, see [Override dashboard displays](/docs/dashboards/panels/modify-chart/#overridedashboard-displays).
+Use the **Display Overrides** tab to show readable aliases for metric series names in legends and popups, as well as the more usual options for custom chart formatting, such as the left/right axis. For more information, see [Override dashboard displays](/docs/dashboards/panels/modify-chart/#overridedashboard-displays).
 
 Following are examples of queries with and without override.
 
@@ -334,14 +334,14 @@ Use the **Bottom** or **Right** positions with table format and include aggregat
 
 ### ABC pattern
 
-To compute a third series C from two series A & B is the ABC pattern. Common examples are:
-* % usage where CPU, memory, or disk full % where metrics capacity and and usage are sent separately.
+To compute a third series C from two series A and B is the ABC pattern. Common examples are:
+* % usage where CPU, memory, or disk full % where metrics capacity and usage are sent separately.
 * Determine usage in Kubernetes metrics sent as multiple series such as requests versus limits for pods.
 
 When using the ABC pattern, keep in mind:
 * If this is `per x` it must be grouped correctly, for example, `sum by pod`. Take careful note of quantization period and type.
 * Create a #C series with required computation.
-* Make sure the quantization period is identical for all three series, or results will be very strange. 
+* Make sure the quantization period is identical for all three series, or results will be strange. 
 * If grouping, you must include [`along`](/docs/metrics/metrics-operators/along/) in #C. For an example, see [Join Metrics Queries](/docs/metrics/introduction/joins/).
 
 ### ABC example 1 - Disk usage % top 20
@@ -370,7 +370,7 @@ Create an #A and #B series with the queries above and then add a #C series:
 
 <img src={useBaseUrl('img/metrics/metric-query-abc-example-1.png')} alt="ABC example 1" style={{border: '1px solid gray'}} width="800" />
 
-For our top list output we've chosen a bar chart, with only #C visible, with sort by value descending, and latest value shown. Note that `along` is very important:<br/><img src={useBaseUrl('img/metrics/metric-query-abc-example-1a.png')} alt="ABC example 1 chart" style={{border: '1px solid gray'}} width="800" />
+For our top list output we've chosen a bar chart, with only #C visible, with sort by value descending, and latest value shown. Note that `along` is important:<br/><img src={useBaseUrl('img/metrics/metric-query-abc-example-1a.png')} alt="ABC example 1 chart" style={{border: '1px solid gray'}} width="800" />
 
 ### ABC example 2 - Kubernetes memory versus limits by pod
 
@@ -453,7 +453,7 @@ Excessively high cardinality for a metric or single tag might trigger rate limit
 
 #### Number of hosts, sources, or entities
 
-Having more of something sending metrics means more DPM. For example, ff you sent 50 metrics per host and have 1000 hosts, that will be 50,000 DPM.
+Having more of something sending metrics means more DPM. For example, if you sent 50 metrics per host and have 1000 hosts, that will be 50,000 DPM.
 
 In some use cases you can filter out unwanted hosts. For example, you could filter by Kubernetes namespace or AWS tag to reduce the total number of metric entities.
 
@@ -465,16 +465,16 @@ The cardinality (and hence DPM) of a single metric is the product of all possibl
 
 * host x10 and service x20 = up to 200 DPM 
 * host x10 and service x20  and url_path x 5000 = up to 10,000 DPM
-* host x10 and service x20  and thread_id x1000s and customer id and x2M customers = millions (very likely to get rate limited)
-* host x10 and service x20 and epoc nano sec `1737579476122` = every data point becomes a unique time series producing millions (very likely to get rate limited)
+* host x10 and service x20  and thread_id x1000s and customer id and x2M customers = millions (likely to get rate limited)
+* host x10 and service x20 and epoc nano sec `1737579476122` = every data point becomes a unique time series producing millions (likely to get rate limited)
 
-Ideally, tag value cardinality should be low (less than 100). If you need very high cardinality, logs are usually a better option. Log query engine is much more flexible and can handle very high cardinality by design.
+Ideally, tag value cardinality should be low (less than 100). If you need high cardinality, logs are usually a better option. Log query engine is much more flexible and can handle high cardinality by design.
 
 Never send high cardinality tag values where it's likely to have more than a few 1000 values per tag such as:
 * Timestamps or epoch times
 * User or customer IDs or usernames (where there could be more than 50k possible values, possibly millions)
 * Query string, for example, on a search form where any search text is a tag
-URL or paths with high cardinality such as unique per customer URLs (for example, `http://foo.bar/473639029/account`
+* URL or paths with high cardinality such as unique per customer URLs (for example, `http://foo.bar/473639029/account`)
 
 At best, metrics with 10k of tag values will be expensive to ingest and hard to query, and at worst, they will be blocked.
 
@@ -494,7 +494,7 @@ A common use case is reducing scape interval so 1m or 2m in Kubernetes collectio
 
 ### Why does my metric query show different results than expected?
 
-Most unexpected metric query results come down to quantization and rollup type. Every metric series stores multiple rollups (`min`, `max`, `latest`, `avg`, `sum`, `count`), and the default `avg` rollup can produce very different totals than `max` or `sum` for the same data, especially when summing across series.
+Most unexpected metric query results come down to quantization and rollup type. Every metric series stores multiple rollups (`min`, `max`, `latest`, `avg`, `sum`, `count`), and the default `avg` rollup can produce different totals than `max` or `sum` for the same data, especially when summing across series.
 
 ### How do I fix "too many timeseries in the output"?
 
@@ -506,7 +506,7 @@ DPM (data points per minute) increases with more metrics, more entities or hosts
 
 ### Should I use logs or metrics for high-cardinality data?
 
-Use logs. Metrics have strict cardinality limits and metrics or tags may be disabled if limits are exceeded, while the log search engine is much more flexible and can handle very high cardinality by design.
+Use logs. Metrics have strict cardinality limits and metrics or tags may be disabled if limits are exceeded, while the log search engine is much more flexible and can handle high cardinality by design.
 
 ### Do logs and metrics use the same query language?
 

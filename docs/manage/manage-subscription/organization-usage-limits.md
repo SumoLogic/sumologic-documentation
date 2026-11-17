@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page provides information about the query budget usage limits, which allows you to define spending limits for queries to prevent unexpected charges. This will help you manage Sumo Logic credits, especially in pay-per-use scenarios, by setting budgets on scan data volume. 
 
-## Ingestion - Throttling Limits
+## Ingestion - Throttling limits
 
 :::info
 Only administrators have the access to view the **Ingestion - Throttling Limits** section.
@@ -16,7 +16,7 @@ Only administrators have the access to view the **Ingestion - Throttling Limits*
 
 This section provides information about the baseline and throttling limits set. Click the **View Usage and Throttling Limits** button to view the logs, metrics, and traces ingestion rate over the selected time range. With the **View Recent Breaches** button you can view recent [throttling limit breaches](/docs/manage/security/audit-indexes/audit-index/#throttling-events).
 
-### Enable Ingestion Throttling Notifications
+### Enable ingestion throttling notifications
 
 :::note
 Only users with administrator access can enable this feature.

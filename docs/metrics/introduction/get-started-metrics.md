@@ -7,27 +7,27 @@ description: Learn how to get started with metrics and create your first visuali
 
 import Iframe from 'react-iframe';
 
-The easiest way get started with metrics is to add a Host Metrics Source, which allows you to collect data pertaining to the local Installed Collector host. 
+The easiest way get started with metrics is to add a Host Metrics source, which allows you to collect data pertaining to the local installed collector host. 
 
 :::note
 Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped.
 :::
 
-## 1. Add a Source to collect your data
+## 1. Add a source to collect your data
 
-The easiest way get started with metrics is to add a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/), which allows you to collect data pertaining to the local Installed Collector host.  
+The easiest way get started with metrics is to add a [Host Metrics source](/docs/send-data/installed-collectors/sources/host-metrics-source/), which allows you to collect data pertaining to the local installed collector host.  
 
-If you already have an Installed Collector, upgrade the Collector to start ingesting Host Metrics.
+If you already have an installed collector, upgrade the collector to start ingesting Host Metrics.
 
-Other metrics Source options are also available:
-* [**Amazon CloudWatch Source for Metrics**](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/). Allows you to gather metrics data from an Amazon resource. First grant access to read the CloudWatch metrics, and then set up the Amazon CloudWatch Source. 
-* [**Streaming Metrics Source**](/docs/send-data/installed-collectors/sources/streaming-metrics-source/). Receives data in the Graphite, Carbon 2.0, and Prometheus format sent over a TCP or UDP socket.
+Other metrics source options are also available:
+* [**Amazon CloudWatch source for Metrics**](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/). Allows you to gather metrics data from an Amazon resource. First grant access to read the CloudWatch metrics, and then set up the Amazon CloudWatch source. 
+* [**Streaming Metrics source**](/docs/send-data/installed-collectors/sources/streaming-metrics-source/). Receives data in the Graphite, Carbon 2.0, and Prometheus format sent over a TCP or UDP socket.
 
 ## 2. Query and visualize your data
 
-After you set up a Source, metrics data is ingested automatically and available for query and visualization.
+After you set up a source, metrics data is ingested automatically and available for query and visualization.
 
-To get started quickly after installing your Collector and Sources, you can install the [AWS EC2 Host Metrics app](/docs/integrations/amazon-aws/ec2-host-metrics/) with preconfigured searches and Dashboards, to analyze your metrics data. 
+To get started quickly after installing your collector and sources, you can install the [AWS EC2 Host Metrics app](/docs/integrations/amazon-aws/ec2-host-metrics/) with preconfigured searches and dashboards, to analyze your metrics data. 
 
 ## 3. Add your data to a dashboard
 

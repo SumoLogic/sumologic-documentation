@@ -1,24 +1,22 @@
 ---
 id: sumo-logic-ui
 title: Tour the Sumo Logic UI
-sidebar_label: Tour the Sumo Logic UI (New)
 description: Get to know the Sumo Logic platform user interface.
 ---
 
-<!--
-When officially GA'd (est. Apr-Aug 2025):
-retire the Classic UI version
+<!-- After Classic UI has retired:
+remove the Classic UI doc and all remaining references to it
 add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
 -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This guide will help you get started with the new and improved Sumo Logic user interface, designed for faster speed and a more intuitive experience.
+You open Sumo Logic to get answers, not to hunt for where things moved. This guide tours the Sumo Logic UI, the default experience for all users, so you can find your way around from the start.
 
 <img src={useBaseUrl('img/get-started/overview-new-ui.png')} alt="Overview screenshot example New UI" style={{border: '1px solid gray'}} width="800" />
 
-With the new UI, you'll benefit from:
+The current Sumo Logic UI offers:
 
 * **Everything in one place**. Unified experience across operational and security analytics products, so you do not have to switch between different interfaces.
 * **Accelerate your work**. Faster load times and improved caching mean less waiting and more doing.
@@ -26,7 +24,7 @@ With the new UI, you'll benefit from:
 * **Find what you need instantly**. Use-case-driven navigation helps you locate key features without digging through menus.
 
 :::training Micro Lesson
-Watch this quick overview video to explore the key features of the New UI.
+Watch this quick overview video to explore the key features of our UI.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/ydmxwi7ndm?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -43,7 +41,7 @@ Watch this quick overview video to explore the key features of the New UI.
 :::
 
 :::warning Classic UI retirement notice
-The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. For the best experience, we strongly recommend using the New UI. Need to reference the old interface? See the [Classic UI documentation](/docs/get-started/sumo-logic-ui-classic).
+Starting October 29, 2026, newly created standalone Sumo Logic accounts default to the New UI and do not have the option to switch to the Classic UI. Parent organizations, their child organizations, and existing accounts keep their current settings for now, and the Classic UI will eventually be retired for everyone. We will communicate the exact retirement date closer to the transition. Switching requires no data migration; everything carries over automatically. For the best experience, switch to the New UI now. Need to reference the old interface in the meantime? See the [Classic UI documentation](/docs/get-started/sumo-logic-ui-classic).
 :::
 
 
@@ -205,55 +203,38 @@ You'll need Sumo Logic Administrator role privileges to perform most of these t
 
 ## FAQ
 
-This FAQ provides answers to common questions about the Sumo Logic UI redesign, which involves transitioning from the legacy Classic UI to the New UI.
+This FAQ answers common questions about the Sumo Logic UI.
 
-### What is being launched?
-We are excited to introduce the Sumo Logic Unified Experience, internally known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
+### What is the Sumo Logic Unified Experience?
+The Sumo Logic Unified Experience, known internally as Project Kanso, takes its name from the Japanese principle of simplicity and clutter elimination. It brings Log Analytics, Cloud SIEM, and Cloud SOAR together under one navigation system, with interface enhancements that make every Sumo Logic feature more accessible and easier to use.
 
-### What issues does the New UI resolve?
-The disparate user interface and varying navigation patterns among Log Analytics, Cloud SIEM, and Cloud SOAR have made it challenging for users to effectively utilize these tools together for monitoring and troubleshooting.
+### How does navigation work across products?
+Log Analytics, Cloud SIEM, and Cloud SOAR share one navigation system, so you do not have to learn different interface patterns for different tools.
 
-The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
+The left nav panel organizes features around use cases, such as infrastructure monitoring, application monitoring, log analysis, and security monitoring and analytics, so you can find what you need without digging through a list of tool names.
 
-In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The New UI navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
+Each page you open runs in its own browser tab, so you can use your browser's native navigation features, like the back button and tab grouping, to organize your work.
 
-### What changes have been implemented that enhance my Sumo Logic experience?
-* **Unified Navigation**. You'll now notice a uniform navigation system across Log Analytics, Cloud SIEM, and Cloud SOAR products, ensuring a consistent experience for Sumo Logic users engaged in both observability and security use cases.
-* **Improved Product Discoverability**. The left nav panel now organizes product features in a solution-centric manner, emphasizing key use cases like infrastructure monitoring, application monitoring, log analysis, security monitoring, and analytics. This reorganization aims to facilitate easier access to Sumo Logic's product features.
-* **Enhanced Browsing Experience and Accelerated Performance**. In-app tabs will be replaced with native browser tabs, significantly improving _First Contentful Paint_ (FCP) and _Time to Interactive_ (TTI) metrics. With this change, you'll experience faster page load times and ability to organize tabs the way you are used to with other applications.
-* **Stateful URLs**. Most of the page URLs will now be stateful, allowing you to easily share content with your team members. Any changes made in the UI will be reflected in the URL parameters, making it simple for you to copy and share URLs. Additionally, this feature enables users to navigate back to previous states effortlessly by using the browser.
+### What are the key features of the UI?
+* **Unified navigation**. One consistent navigation system across Log Analytics, Cloud SIEM, and Cloud SOAR, for a single experience across observability and security use cases.
+* **Use-case-based organization**. The left nav panel organizes features around use cases like infrastructure monitoring, application monitoring, log analysis, and security monitoring.
+* **Native browser tabs**. Each page opens in its own browser tab, so pages load quickly and you can organize tabs the way you already do in other applications.
+* **Stateful URLs**. Most page URLs reflect your current view, so you can copy and share a URL with a teammate, or navigate back to a previous view using your browser's back button.
 
-### With all Sumo Logic tabs being grouped together in one browser tab, how can I prevent an excessive amount of tabs in my browser?
-We understand that the removal of in-app tabs in the New UI is a significant change in our user workflow, eliciting mixed feedback. While some users appreciate the convenience of consolidated tabs within the app, others question the need for this change. Addressing performance concerns, consolidating tabs aims to reduce browser clutter, albeit potentially complicating session management. For users who prefer centralized Sumo Logic tabs, you can enable in-app tabs for Log Search, Dashboards, and Metrics with the **Enable in-app tabs** [preference](/docs/get-started/account-settings-preferences/#in-app-tabs). You can also use [tab grouping functionality](#customize-your-environment-withtabs) for a seamless experience.
+### How can I avoid ending up with too many open browser tabs?
+Sumo Logic tabs use your browser's native tab capability, including tab grouping and coloring, so you can manage them the same way you manage any other browser tabs. If you prefer to keep Sumo Logic content inside a single tab, enable the **Enable in-app tabs** [preference](/docs/get-started/account-settings-preferences/#in-app-tabs) for Log Search, Dashboards, and Metrics, or use [tab grouping functionality](#customize-your-environment-withtabs) to keep your workspace organized.
 
-| Classic UI | New UI |
-|:---|:---|
-| In-house tabs solution. Always trying to keep up with browser tab improvements. | Utilizes browser’s native tab capability like tab grouping and coloring. |
-| User needs to learn new way of organizing tabs. Managing multiple Sumo Logic instances is difficult. | User utilizes what they already know. Managing multiple Sumo Logic instances is easier. |
-| Performance degrades over long usage because user is using one browser tab. | Memory usage is distributed over different tabs. |
-| Tab switches reload the tab. | Tab switches will not reload the tab. This will accelerate time to load, which is especially useful for data-rich features like Dashboards. |
-
-### Will the New UI retain the Classic UI feature of remembering previously opened tabs from my previous session?
-After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the New UI experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
+### Why do my browser tabs reload when I log back in?
+If you leave browser tabs open across sessions, Sumo Logic automatically reloads them when you log back in. Tab usage data showed that only a small portion of previously opened tabs are actively used, so leaving them open tends to clutter your browser instead of helping you.
 
 <img src={useBaseUrl('img/get-started/tab-reload.gif')} alt="Tab reload" />
 
-Moreover, we've made the **Recents** feature more prominent in the navigation bar and plan to extend it to other content types which will make it easier for users to open recently opened tabs.
+The **Recents** feature in the navigation bar gives you quick access to recently opened content instead. We're working to extend it to more content types over time.
 
-### How do I access the Classic UI?
-The New UI is the future of Sumo Logic, offering better performance, easier navigation, and exclusive new features. While we understand that transitions take time, we strongly recommend using the New UI for the best experience.
-
-If you switch back to the Classic UI, you will not have access to:
-* Faster load times and improved performance.
-* New UI enhancements and upcoming feature releases.
-* Stateful URLs that save your session and make sharing easier.
-* More intuitive navigation for faster workflows.
-
-The Classic UI will be retired in 2025 and will no longer receive updates. The exact date will be communicated closer to the transition. If you still need to access it temporarily, select **Switch to classic UI** from the left navigation menu.
+### Can I still use the Classic UI?
+Starting October 29, 2026, newly created standalone Sumo Logic accounts no longer have the option to switch to the Classic UI. Parent organizations and their child organizations keep their current settings for now. If your account still has access to the Classic UI, you can select **Switch to classic UI** from the left navigation menu to use it temporarily. See the [Classic UI documentation](/docs/get-started/sumo-logic-ui-classic) if you need it in the meantime. The Classic UI will eventually be retired for all accounts; we will communicate the exact date closer to the transition.
 
 <img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="Return to classic" width="200"/>
-
-We encourage you to stay in the New UI and take advantage of its benefits!
 
 ## Get support
 

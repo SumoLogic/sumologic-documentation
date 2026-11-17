@@ -6,7 +6,7 @@ description: Schedule log searches in Sumo Logic to run continuously and send al
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and execute to run on a schedule. Once configured, Scheduled Searches run continuously, making them a great tool for continuously monitoring your stack.
+A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and execute to run on a schedule. Once configured, scheduled searches run continuously, making them a great tool for continuously monitoring your stack.
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -18,37 +18,37 @@ A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and 
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/create-email-alert')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Create a Scheduled Search Email Alert</h4></a>
-  <p>Learn how to create a Scheduled Search email alert.</p>
+  <p>Learn how to create a scheduled search email alert.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/edit-cancel')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Edit or Cancel a Scheduled Search</h4></a>
-  <p>Learn how to edit or cancel a Scheduled Search at any time.</p>
+  <p>Learn how to edit or cancel a scheduled search at any time.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/save-to-index')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Save to Index</h4></a>
-  <p>Learn how to save the results to an Index after creating a Scheduled Search email alert.</p>
+  <p>Learn how to save the results to an index after creating a scheduled search email alert.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/save-to-lookup')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Save to Lookup</h4></a>
-  <p>Learn how to save the results of a Scheduled Search to a Lookup Table.</p>
+  <p>Learn how to save the results of a scheduled search to a lookup table.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/generate-cse-signals')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Generate Cloud SIEM Signals with a Scheduled Search</h4></a>
-  <p>Learn how to create a Scheduled Search that will trigger a Cloud SIEM Signal.</p>
+  <p>Learn how to create a scheduled search that will trigger a Cloud SIEM Signal.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/scheduled-searches/faq')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>FAQ</h4></a>
-  <p>Review frequently asked questions about Scheduled Searches and troubleshooting tips.</p>
+  <p>Review frequently asked questions about scheduled searches and troubleshooting tips.</p>
   </div>
 </div>
 </div>

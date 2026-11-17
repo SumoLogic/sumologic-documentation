@@ -6,16 +6,19 @@ resource "sumologic_cloud_to_cloud_source" "github-copilot-source" {
   }
 
   config = jsonencode({
-    name                = "Github Copilot"
-    organization        = "sanlabs"
-    patToken            = "github_pat_11AYxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    collectTeamMetrics  = true
-    metricPeriodInDays  = 1
-    teamNames           = ["dev-team", "cse-team"]
+    name                  = "GitHub Copilot"
+    description           = "GitHub Copilot usage metrics"
+    category              = "github/copilot"
+    baseURL               = "https://api.github.com"
+    organization          = "sanlabs"
+    patToken              = "github_pat_xxxz7ARP6EABxxxxxxx"
+    collectUserTeamReport = true
+    collectUserMetrics    = true
+    metricPeriodInDays    = 1
   })
 }
 
 resource "sumologic_collector" "collector" {
   name        = "my-collector"
-  description = "Just testing this"
+  description = "Sample collector for the GitHub Copilot source"
 }

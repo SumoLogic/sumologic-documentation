@@ -11,7 +11,7 @@ description: Use the along metrics statement to control what results are joined 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The `along` metrics statement is useful when you join queries – it allows you to control what results are joined based on the value of one or more result fields. For more information, see [Join Metrics Queries](/docs/metrics/introduction/joins).
+The `along` metrics statement is useful when you join queries. It allows you to control what results are joined based on the value of one or more result fields. For more information, see [Join Metrics Queries](/docs/metrics/introduction/joins).
 
 ## Syntax
 

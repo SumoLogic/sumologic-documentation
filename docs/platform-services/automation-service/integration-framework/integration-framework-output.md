@@ -2,7 +2,7 @@
 id: integration-framework-output
 title: Open Integration Framework Output
 sidebar_label: Output
-description: Learn how to work with output from the integration framework. 
+description: Learn how to work with output from the integration framework.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,30 +11,30 @@ This article describes the format of integration output. To edit the output of a
 
 ## About integration output
 
-Integrations primarily use JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, in order to pass data returned from an action to a future action in a runbook or to other internal components, the output from an integration action must be returned in JSON, and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas.
+Integrations primarily use JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, to pass data returned from an action to a future action in a runbook or to other internal components, the output from an integration action must be returned in JSON, and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas.
 
 Most APIs can return JSON data, either by default or as an option. If an integration does not return JSON natively, the returned data may be converted to JSON prior to being returned by the action code so long as it matches the structure specified in the output:path attributes of the action definition file. For example, to return JSON data using Python, the output should be printed as follows:
 
-```
-Import json
+```python
+import json
 ...
 print(json.dumps(<JSON Data>))
 ```
 
 The system will use the standard error and standard output to determinate if an action terminates successfully or not. So if you print a string in `stderr` like the following...
 
-```
+```text
 sys.stderr.write(str(err)) -> Action failed with reason string err
 ```
 
 ...output from each integration action can be viewed in either table view or JSON view when executed. Table view is used to display a subset of the data, defined in the action definition file `table_view` attributes listed above, in a table format. For example, the following code in an action definition file would result in a table view with columns for **ID**, **CVSS**, **A**, **C**, and **I**:
 
-```
+```yaml
 table_view:
 - display_name: 'ID'
-value : 'id'
+  value : 'id'
 - display_name: 'CVSS'
-value : cvss'
+  value : 'cvss'
 ```
 
 The following image shows the table view:
@@ -47,10 +47,10 @@ The JSON view will display the entire output of the integration action in JSON f
 
 Following is the setting for a link type:
 
-```
+```yaml
 - display_name: 'CVSS'
-value : 'cvss'
-type : 'link'
+  value : 'cvss'
+  type : 'link'
 ```
 
 <img src={useBaseUrl('img/cse/integration-framework-show-details.png')} style={{border:'1px solid gray'}} alt="Show details" width="600"/>
@@ -59,7 +59,7 @@ type : 'link'
 
 It's possible to specify a JSON path or use rawOutput to specify text output to use as `srcDoc` for iframe sandbox (it is not possible to use JavaScript):
 
-```
+```yaml
 integration: 'Incident tools'
 name: 'intervallo date 3ededed'
 type: Enrichment
@@ -86,7 +86,7 @@ script:
                </dl>
             </body>
           </html>
-    '''    
+    '''
     print(art)
 src_doc: 'rawOutput'
 ```
@@ -103,7 +103,7 @@ The `image_base64_png(jpg)` field provides the result path where to get base64 p
 
 ## Use multi-select in output
 
-```
+```json
     [
         {
             "_id": "5fda1d0faa3f39c44361b84e",
@@ -200,7 +200,7 @@ The `image_base64_png(jpg)` field provides the result path where to get base64 p
 ```
 With a result as shown above it's possible to add into OIF YAML output section:
 
-```
+```yaml
 output:
   - path : '[].{Name: name, ID: _id, Address: address}'
 
@@ -231,7 +231,7 @@ And so the next action will run one time with a string created join array elemen
 <img src={useBaseUrl('img/cse/integration-framework-app-e-image-2.png')} style={{border:'1px solid gray'}} alt="Separator specified" width="700"/>
 
 Pipe function `unique()`:
-```
+```yaml
 output:
   - path : '[].tags.[] | unique()'
 ```

@@ -7,7 +7,7 @@ description: Use the fillmissing metrics operator to fill empty time slices in q
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If a metric query returns results with empty timeslices, the visualization contains a straight line between the data points on either side of the empty timeslice(s).
+If a metric query returns results with empty time slices, the visualization contains a straight line between the data points on either side of the empty time slice(s).
 
 You can use the `fillmissing` operator to fill empty time slices in metric query results with a derived data point. You can choose between several methods of deriving a data point, or leave empty timeslices empty.
 

@@ -37,7 +37,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 ## Step 2: Download the CloudFormation template
 
-Download the `DLQLambdaCloudFormation.json` CloudFormation template [here](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormation.json).
+Download the `dlq_lambda_cloudformation.template.yaml` CloudFormation template [here](https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/refs/heads/main-v3x/cloudwatchlogs-with-dlq/dlq_lambda_cloudformation.template.yaml).
 
 ## Step 3: Tailor the CloudFormation template
 
@@ -62,15 +62,13 @@ If you are configuring log collection for VPC flow logs, see [Collect Amazon VP
 
 Define variables in the `Environment` section of the CloudFormation template.
 
-```
-"Environment": {
-    "Variables": {
-        "SOURCE_CATEGORY_OVERRIDE": "<insert-value-here>"
-        "SOURCE_HOST_OVERRIDE": "<insert-value-here>"
-        "SOURCE_NAME_OVERRIDE": "<insert-value-here>"
-        "SOURCE_FIELDS_OVERRIDE": "<insert-value-here>"
-    }
-}
+```yaml
+Environment:
+    Variables:
+        SOURCE_CATEGORY_OVERRIDE: <insert-value-here>
+        SOURCE_HOST_OVERRIDE: <insert-value-here>
+        SOURCE_NAME_OVERRIDE: <insert-value-here>
+        SOURCE_FIELDS_OVERRIDE: <insert-value-here>
 ```
 
 ### Configure threshold for DeadLetterQueue
@@ -81,83 +79,56 @@ If you don’t want to use the `SumoCWSpilloverAlarm`, as described below in [Re
 
 In the CloudFormation template, define the number of messages in the Dead Letter Queue that will trigger the SumoCWSpilloverAlarm, using the `Threshold` attribute in the alarm definition.  
 
-```json
-{
-  "SumoCWSpilloverAlarm":{
-    "Type":"AWS::CloudWatch::Alarm",
-    "Properties":{
-      "AlarmActions":[
-        {
-          "Ref":"SumoCWEmailSNSTopic"
-        }
-      ],
-      "AlarmDescription":"Notify via email if number of messages in DeadLetterQueue exceeds threshold",
-      "ComparisonOperator":"GreaterThanThreshold",
-      "Dimensions":[
-        {
-          "Name":"QueueName",
-          "Value":"SumoCWDeadLetterQueue"
-        }
-      ],
-      "EvaluationPeriods":"1",
-      "MetricName":"ApproximateNumberOfMessagesVisible",
-      "Namespace":"AWS/SQS",
-      "Period":"3600",
-      "Statistic":"Sum",
-      "Threshold":"100000"
-    },
-    "DependsOn":[
-      "SumoCWEmailSNSTopic"
-    ]
-  }
-}
+```yaml
+SumoCWSpilloverAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+        AlarmActions:
+            - !Ref SumoCWEmailSNSTopic
+        AlarmDescription: Notify via email if number of messages in DeadLetterQueue exceeds threshold
+        ComparisonOperator: GreaterThanThreshold
+        Dimensions:
+            - Name: QueueName
+              Value: !GetAtt SumoCWDeadLetterQueue.QueueName
+        EvaluationPeriods: '1'
+        MetricName: ApproximateNumberOfMessagesVisible
+        Namespace: AWS/SQS
+        Period: '3600'
+        Statistic: Sum
+        Threshold: '100000'
+    DependsOn:
+        - SumoCWEmailSNSTopic
 ```
 
 ### Remove alarm resources (Optional)
 
 If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the definitions of the `SumoCWEmailSNSTopic` and `SumoCWSpilloverAlarm` resources from the CloudFormation template. Delete the sections shown below.
 
-```json
-{
-  "SumoCWEmailSNSTopic":{
-    "Type":"AWS::SNS::Topic",
-    "Properties":{
-      "Subscription":[
-        {
-          "Endpoint":"xyz@sumologic.com",
-          "Protocol":"email"
-        }
-      ]
-    }
-  },
-  "SumoCWSpilloverAlarm":{
-    "Type":"AWS::CloudWatch::Alarm",
-    "Properties":{
-      "AlarmActions":[
-        {
-          "Ref":"SumoCWEmailSNSTopic"
-        }
-      ],
-      "AlarmDescription":"Notify via email if number of messages in DeadLetterQueue exceeds threshold",
-      "ComparisonOperator":"GreaterThanThreshold",
-      "Dimensions":[
-        {
-          "Name":"QueueName",
-          "Value":"SumoCWDeadLetterQueue"
-        }
-      ],
-      "EvaluationPeriods":"1",
-      "MetricName":"ApproximateNumberOfMessagesVisible",
-      "Namespace":"AWS/SQS",
-      "Period":"3600",
-      "Statistic":"Sum",
-      "Threshold":"100000"
-    },
-    "DependsOn":[
-      "SumoCWEmailSNSTopic"
-    ]
-  }
-}
+```yaml
+SumoCWEmailSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+        Subscription:
+            - Endpoint: !Ref EmailID
+              Protocol: email
+SumoCWSpilloverAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+        AlarmActions:
+            - !Ref SumoCWEmailSNSTopic
+        AlarmDescription: Notify via email if number of messages in DeadLetterQueue exceeds threshold
+        ComparisonOperator: GreaterThanThreshold
+        Dimensions:
+            - Name: QueueName
+              Value: !GetAtt SumoCWDeadLetterQueue.QueueName
+        EvaluationPeriods: '1'
+        MetricName: ApproximateNumberOfMessagesVisible
+        Namespace: AWS/SQS
+        Period: '3600'
+        Statistic: Sum
+        Threshold: '100000'
+    DependsOn:
+        - SumoCWEmailSNSTopic
 ```
 
 ## Step 4: Create a stack on the AWS CloudFormation console
@@ -165,9 +136,7 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
 1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com).
 1. In the **Management Tools** menu, select **CloudFormation**.
 1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard)**.<br/><img src={useBaseUrl('img/send-data/CF_animated.gif')} alt="Create a new stack" style={{border: '1px solid gray'}} width="600" />
-1. On the **Specify Template** window, do one of the following:
-   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormation.json` file, and then click **Next**.<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog.png')} alt="Upload a template file" style={{border: '1px solid gray'}} width="500" />
-   * Otherwise, if you did not modify the CloudFormation template, select **Specify an Amazon S3 template URL** and enter: `https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormation.json`<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog_2.png')} alt="Specify an Amazon S3 URL" style={{border: '1px solid gray'}} width="500" />
+1. On the **Specify Template** window, choose **Upload a template file**, upload the `dlq_lambda_cloudformation.template.yaml` file you downloaded (modified or not), and then click **Next**.<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog.png')} alt="Upload a template file" style={{border: '1px solid gray'}} width="500" />
 1. Select **Next** and the **Specify Stack Details** window appears. Enter the following:
    * **Stack Name**.
    * **EmailID** (Optional) Used for alerts.

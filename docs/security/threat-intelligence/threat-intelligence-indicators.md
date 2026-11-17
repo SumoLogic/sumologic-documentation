@@ -17,12 +17,9 @@ To access Threat Intelligence in Sumo Logic,
 1. Click **+Add Source** to add threat intelligence sources to your datastore:
     1. **New Source**. This flow lets you create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/), select from available threat intelligence sources and complete configuration in a streamlined workflow.
     1. **Upload**. Manually upload files that add threat intelligence indicators.
-1. **Actions**. Select to perform additional actions:
-    * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. **Status**. The current status of the indicator source (**Enabled** or **Disabled**).
 1. **Source Name**. The name of the threat intelligence indicator file. The name usually indicates the supplier of the indicators. 
 1. **Description**. The description of the threat intelligence indicator.
-1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
 1. **Number of Indicators**. The total count of threat intelligence indicators provided by the source. 
 
 :::note
@@ -39,8 +36,8 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
 
 ### New source
 
-1. Click **+ Add Source** and then select **New Source** from the dropdown.
-1. Select a collector from the **Collector** dropdown and a source (for example, CrowdStrike Threat Intel) from the available integrations grid.
+1. Click **+ Add Source** and then select **New Source** from the dropdown menu.
+1. Select a collector from the **Collector** dropdown list and a source (for example, CrowdStrike Threat Intel) from the available integrations grid.
 1. Click **Next**. <br/><img src={useBaseUrl('img/collector/select-threat-intel-source-and-collector.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. Enter the following details to configure the source:
     :::note
@@ -50,7 +47,7 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
     1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
     1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and a value.
         * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field does not exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but is not present or enabled in the schema, it’s ignored and marked as **Dropped**.
     1. **Region**. Select the region of your account from the dropdown.
     1. **Client ID**: Provide the client ID you want to use to authenticate collection requests.
     1. **Client Secret**. Provide the client secret key you want to use to authenticate collection requests.
@@ -58,14 +55,14 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
         :::note
         If no Application ID is provided, a random ID is generated. Any time this ID is changed, the Source will re-read the data stream starting at the beginning.
         :::
-    1. (Optional) **Malicious Confidence**. Select the confidence level of the threat type from the dropdown as High, Medium, Low, Unverified, or leave it empty for all types. 
+    1. (Optional) **Malicious Confidence**. Select the confidence level of the threat type from the dropdown list as High, Medium, Low, Unverified, or leave it empty for all types. 
 1. When you are finished configuring the Source, click **Next**.
 1. Once you have reviewed all the details, click **Done**. A confirmation message appears when the source is successfully configured.
 
 ### Upload
 
 To manually upload threat intelligence indicators from a file:
-1. Click **+ Add Source** and then select **Upload** from the dropdown. The upload dialog displays.
+1. Click **+ Add Source** and then select **Upload** from the dropdown menu. The upload dialog displays.
 1. Select the format of the file to upload (see [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use in the file):
     * **Normalized JSON**. A normalized JSON file. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
     * **CSV**. A comma-separated value (CSV) file. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators-csv.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
@@ -77,34 +74,82 @@ To manually upload threat intelligence indicators from a file:
 When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
 :::
 
+## Edit a source
+
+Follow the steps below to edit a source:
+1. Select a source in the list of sources. The source details appear in a sidebar.
+1. Click the **More Actions** dropdown and then select **Edit**.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source-from-sidebar.png')} alt="Edit source from sidebar panel" style={{border: '1px solid gray'}} width="800" /><br/>Or, click the ellipsis icon and select **Edit** from the source details page.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source.png')} alt="Edit source" style={{border: '1px solid gray'}} width="800" />
+    - You can edit the description of the source.
+    - You can click the **Search All Indicators** button to view all the active indicators associated with that source.
+        <img src={useBaseUrl('img/security/threat-intelligence-edit-source-panel.png')} alt="threat intelligence edit source panel" style={{border: '1px solid gray'}} width="800" />
+1. Click **Save**. A **Source updated successfully** confirmation message appears.
+
+## View and search indicators
+
+Follow the steps below to open the **Indicators** tab:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
+1. Click the **Indicators** tab.<br/><img src={useBaseUrl('img/security/indicators-threat-intelligence.png')} alt="Threat Intelligence indicators" style={{border: '1px solid gray'}} width="800" />
+
+:::note
+* The **Indicators** tab shows only active indicators. Expired indicators and indicators from deleted sources are not listed.
+* After a source ingests an indicator, it can take up to 10 minutes to appear on the **Indicators** tab. Search results are eventually consistent, so an indicator you just added may not be visible right away.
+:::
+
+The table lists indicators with the following details:
+
+| Column | Description |
+|:--|:--|
+| **Indicator Value** | The value of the indicator, such as an IP address, URL, domain, or file hash. Long values are truncated in the table. Select a row to see the full value. |
+| **Type** | The indicator type, such as `ipv4-addr`, `url`, `artifact`, `file:hashes.MD5`, or `file:hashes.'SHA-256'`. |
+| **Confidence** | The confidence score for the indicator, as a number. |
+| **Last Updated** | How long ago the indicator was last updated, for example "9 minutes ago". |
+| **Source** | The threat intelligence source that supplied the indicator. |
+| **Expires** | The date the indicator expires. |
+
+### Search indicators
+
+To find indicators by value, enter text in the **Search by indicator value** box. The search is case-sensitive.
+
+You can combine a search with filters. The table updates to show only indicators that match both.<br/><img src={useBaseUrl('img/security/threat-intelligence-search-indicators.png')} alt="Search indicators" style={{border: '1px solid gray'}} width="800" />
+
+### Filter indicators
+
+To narrow the list, click **Add a filter** and choose a field. You can add more than one filter.
+
+You can filter by:
+
+* **Source**. Select one or more sources. The list shows only sources that have at least one indicator.
+* **Type**. Select one or more indicator types. The list shows only types present in your indicators.
+* **Confidence**. Specify a range of confidence scores.
+
+### View indicator details
+
+To see more about an indicator, click its row. A details panel opens on the right side of the page with the following information:
+
+| Field | Description |
+|:--|:--|
+| **Indicator Value** | The full indicator value. |
+| **Type** | The indicator type. |
+| **Confidence** | The confidence score. |
+| **Source** | The source that supplied the indicator. |
+| **Last Updated** | When the indicator was last updated. |
+| **Expires** | The date the indicator expires. |
+| **Raw IOC Data** | The original indicator record in JSON format, as ingested. This is read-only. |
+
+<img src={useBaseUrl('img/security/threat-intelligence-indicator-details.png')} alt="Indicator details panel" style={{border: '1px solid gray'}} width="800" />
+
+To search your logs for activity related to an indicator, click **View in Log Search** at the top of the panel.
+
 ## Delete threat intelligence indicators
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
 1. Select a source in the list of sources. Details of the source appear in a sidebar.
-1. Click the **More Actions** dropdown and then select **Delete Indicators**.<br/><img src={useBaseUrl('img/security/threat-intelligence-source-delete.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
-<!-- 1. When the following dialog appears, select which indicators you'd like to delete from the source:<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
-   * **Delete all indicators**. Remove all indicators from the source.
-   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute, enter `validUntil` and for a value, enter a date. The attributes and values you enter must match attributes and values in the indicators. -->
-1. Click **Delete** on the **Delete Indicators** dialog.
+1. Click the **More Actions** dropdown and then selecting **Delete Indicators** to delete all indicators for that source.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-all-indicators.png')} alt="Delete all indicators" style={{border: '1px solid gray'}} width="800" />
+1. Click **Delete** in the confirmation dialog to delete the indicators.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-indicators-dialog-box.png')} alt="Delete threat intelligence indicators dialog box" style={{border: '1px solid gray'}} width="400" />
 
-You do not have to wait until indicators reach the end of their retention period to delete them. You can [delete indicators](#delete-threat-intelligence-indicators) from the **Sources** tab in the **Threat Intelligence** page, as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+You can delete indicators from the Sources tab in the Threat Intelligence page, as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 :::note
 When you remove indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
-:::
-
-## Change the retention period for expired indicators
-
-Indicators are deemed valid until they reach the date set by their "valid until" attribute (`validUntil` for [normalized JSON](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) and [CSV](/docs/security/threat-intelligence/upload-formats/#csv-format), and `valid_until` for [STIX](/docs/security/threat-intelligence/upload-formats/#stix-2x-json-format)). After that date, they are considered expired.
-
-Expired indicators are retained until they reach the end of the retention period. At the end of the retention period, expired indicators are automatically deleted. Between the time they expire and are deleted, expired indicators remain in the system but are excluded from search and the UI by default.
-
-By default, expired indicators are retained for 180 days. To change the retention period:
-1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
-1. Click the more actions button in the upper-right corner of the page.<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
-1. Click **Edit Retention Period**.
-1. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180.<br/><img src={useBaseUrl('img/security/threat-intelligence-retention-period.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="400" />
-1. Click **Save**.
-:::note
-When you change the retention period, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
 :::

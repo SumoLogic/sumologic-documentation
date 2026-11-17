@@ -6,7 +6,7 @@ description: Use the eval metrics operator to evaluate time series based on user
 ---
 
 
-The eval operator evaluates a time series based on a user-specified arithmetic or mathematical function.
+The `eval` operator evaluates a time series based on a user-specified arithmetic or mathematical function.
 
 ## Syntax
 

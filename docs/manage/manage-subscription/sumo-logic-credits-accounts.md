@@ -109,7 +109,7 @@ The following table provides a summary list of key features by credits package a
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 
-## Account Overview  
+## Account overview  
 
 :::note
 - To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
@@ -141,12 +141,12 @@ To access the **Account Overview** tab:
 ### Organization information panel  
 
 * **Organization**. Displays your organization’s name and hexadecimal ID.  
-* **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite).  
+* **Plan**. Shows your subscription type (for example, Trial, Enterprise Suite).  
 * **Contract period**. Lists the start and end dates of your contract period.  
 * **Credit blocks in Contract**. If your account has more than one active credit block, shows the number of blocks. See [Credit blocks](#credit-blocks) for details. Accounts with a single credit block do not show this field.
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays a count of live dashboards and real-time alerts.  
 
-### Total Credit Usage panel  
+### Total credit usage panel  
 
 * **Credits Used**. Total and percentage used since the start of the current contract.  
 * **Credits Remaining**. Remaining credits and percentage consumed.  
@@ -155,14 +155,14 @@ To access the **Account Overview** tab:
 
 If your account has a single credit block, this panel shows the total and percentage of credits consumed for that block. If your account has more than one credit block, such as Promotional Credit Block - 1, Paid Credit Block - 1, and Paid Credit Block - 2, this panel shows the combined total and percentage across all blocks. Hover over the bar to see the amount of credits consumed by each individual credit block.
 
-### Usage Forecast panel  
+### Usage forecast panel  
 
 * **Upgrade Plan**. Link to request an account upgrade.  
 * **Forecasted Use**. Predicts credit usage by the end of the contract period.  
 * **Credits Exhaustion**. Estimated number of days and date when credits will run out.  
 * **Dynamic Forecast**. Usage predictions based on trends for 7, 30, or 90 days.  
 
-### Details of Credit Usage panel  
+### Details of credit usage panel  
 
 This panel provides detailed analytics and comparisons for credit usage:  
 * **Usage Categories**. Displays credits used, percentage used, and units by type:
@@ -201,7 +201,7 @@ If your contract includes 100,000 credits and 10,000 promotional credits for "Me
 
 To monitor promotional credits:  
 * Deselect all other usage categories in **Usage Categories** to isolate promotional credits.  
-* Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
+* Refine further by deselecting specific credit types (for example, Continuous Ingest, Storage).  
 
 Promotional credits graphs display the rate of consumption for allocated promotional credits.  
 

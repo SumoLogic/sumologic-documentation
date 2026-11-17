@@ -216,7 +216,7 @@ Below are some FAQs about the Metrics Search.
 
 ### What value does Metrics Search provide?
 
-The Metrics Search gives you more visualization types and makes your metrics easier to  discover. Metrics Search provides the same visualizations available in dashboards, from tables and category charts, to time series charts and honeycomb visualizations. The Metrics Search has richer and more comprehensive autocomplete support, providing suggestions for even very high cardinality queries. The structured query builder approach also makes the metrics experience friendlier to infrequent and inexperienced metrics users.
+The Metrics Search gives you more visualization types and makes your metrics easier to  discover. Metrics Search provides the same visualizations available in dashboards, from tables and category charts, to time series charts and honeycomb visualizations. The Metrics Search has richer and more comprehensive autocomplete support, providing suggestions for even high cardinality queries. The structured query builder approach also makes the metrics experience friendlier to infrequent and inexperienced metrics users.
 
 ### Can I put logs and metrics on the same panel in the Metrics Search?
 
@@ -224,4 +224,4 @@ Yes you can. The experience is consistent with the dashboards experience and has
 
 ### How does autocomplete work when searching metrics?
 
-Autocomplete in the Metrics Search works by taking what you type and looking for tokenized prefixes that match your input. We tokenize based on spaces, underscores, hyphens, and a variety of other special characters. For example, assume you have a metric `metric_this_is`. If you enter `is` in the **Metric** field, Sumo Logic will suggest `metric_this_is` because `is` is a token in the metric. Similarly, entering `met` will result in the same recommendation because `met` is a prefix for the token `metric`. However, if you enter `ric`, we won't suggest `metric_this_is` because `ric` isn’t a prefix of any of the tokens in token in that metric name. 
+Autocomplete in the Metrics Search works by taking what you type and looking for tokenized prefixes that match your input. We tokenize based on spaces, underscores, hyphens, and a variety of other special characters. For example, assume you have a metric `metric_this_is`. If you enter `is` in the **Metric** field, Sumo Logic will suggest `metric_this_is` because `is` is a token in the metric. Similarly, entering `met` will result in the same recommendation because `met` is a prefix for the token `metric`. However, if you enter `ric`, we will not suggest `metric_this_is` because `ric` is not a prefix of any of the tokens in token in that metric name. 

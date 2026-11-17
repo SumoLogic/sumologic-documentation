@@ -58,7 +58,7 @@ KPIs listed in the table reflect the previous 15 minutes of data. Clicking any s
 
 ### Alerts
 
-Alerts in the Service List are displayed based on the configured [monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given service.
+Alerts in the Service List are displayed based on the configured [monitors](/docs/alerts/monitors/about/) in the Sumo Logic platform for a given service.
 
 The **Alert Status** column displays the most severe alert status along with the total number of alerts associated with a given service.
 

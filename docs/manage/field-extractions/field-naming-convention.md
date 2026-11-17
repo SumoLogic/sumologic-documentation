@@ -5,7 +5,7 @@ description: Sumo Logic recommends using the following naming convention for sta
 ---
 
 
-Sumo Logic recommends using the following naming convention for standard fields. This best practice creates standardization across your deployment for use with Field Extraction Rules (FER), searches and dashboards, makes it easier for users to recognize fields by their names, and can even improve search performance.
+Sumo Logic recommends using the following naming convention for standard fields. This best practice creates standardization across your deployment for use with field extraction rules (FER), searches and dashboards, makes it easier for users to recognize fields by their names, and can even improve search performance.
 
 For example, if you create your own FER for source IP, and at some point you want to count by source IPs across multiple sources, you can easily do so because you've used the same name for the field across all sources. In your query, simply use:
 
@@ -33,7 +33,7 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 | src_user | Source Username |
 | src_zone | Source Zone (mostly for firewall messages) |
 
-## Destination Information
+## Destination information
 
 | Field Name | Description |
 |:--|:--|
@@ -44,14 +44,14 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 | dest_zone | Destination Zone (mostly for firewall messages) |
 | user | Also Destination Username (for backward compatibility) |
 
-## Reporting Device
+## Reporting device
 
 | Field Name | Description |
 |:--|:--|
 | reporting_device | The hostname of the reporting device, such as a firewall, router, or switch |
 | reporting_device_ip | The IP address of the reporting device |
 
-## Network Information
+## Network information
 
 | Field Name | Description |
 |:--|:--|

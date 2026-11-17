@@ -62,7 +62,7 @@ In the following screenshot, the **Malicious** icon displays on the entity in th
 
 Since different sources can report different reputations, each source has a reputation icon on its row in the Cloud SIEM UI. In the following example, an indicator from the Palo Alto Networks Unit 42 source returned a reputation of **Malicious**, hence the red icon. The link to the right would open a log search window showing the matching indicators in detail.
 
-<img src={useBaseUrl('img/security/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="300" />
+<img src={useBaseUrl('img/cse/insights-enrichment.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="800" />
 
 ### Threat type mapping to reputation
 

@@ -141,7 +141,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 1. Select a user and click **Assign**.<br/><img src={useBaseUrl('img/security/provision-okta-select-user.png')} alt="Assign person" style={{border: '1px solid gray'}} width="500" />
 1. Select a role for the user.<br/><img src={useBaseUrl('img/security/provision-okta-assign-role.png')} alt="Assign a role to the person" style={{border: '1px solid gray'}} width="500" />
 1. Click **Save and go back**.
-1. Continue to assign users. When finished, click click **Done**.
+1. Continue to assign users. When finished, click **Done**.
 1. The assigned users are displayed in the **Assignments** tab.
 
 ### Step 6: Verify provisioning
@@ -155,7 +155,7 @@ As soon as users are assigned to the app, they are provisioned into Sumo Logic.
    1. Log in to the Sumo Logic instance that you linked to the provisioning app in [Step 2](#step-2-set-up-provisioning) when you provided the Assertion Consumer URL and entity ID.
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. 
    1. Search for the users provisioned from Okta. 
-   1. You should see the users listed, and with the role given to when you assigned them to the app in Okta.
+   1. You should see the users listed, and with the role given to them when you assigned them to the app in Okta.
 
 ## Syncing between Okta and Sumo Logic
 

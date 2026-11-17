@@ -163,9 +163,31 @@ If applicable, identify a set of logs to be pre-parsed by a FER. When you create
 
 ## Training and certification
 
-The [Sumo Logic Training and Certification](https://www.sumologic.com/learn/training/) program is offered to you at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, self-paced training, and a wide range of certifications. We’ve done studies showing that when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently, and build impactful dashboards.
+[Sumo Logic Academy](/docs/get-started/training-certification-faq/) offers self-paced courses and public virtual instructor-led classes at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, self-paced training, and a range of certifications. We’ve done studies showing that when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently, and build impactful dashboards.
 
 Our instructor-led training options include:
-* [Cert Jams.](https://www.sumologic.com/learn/training/#workshops) We deliver in-person public training classes called Cert Jams that train users and help them attain various certifications.
-* [Virtual Cert Jams.](https://www.sumologic.com/learn/training/#training-courses) In addition to in-person Cert Jams, online sessions covering the certification material are open to all.
+* [Public virtual classes.](https://www.sumologic.com/learn/training#section-2) Free online classes covering our training curriculum are open to all, whether you are a customer, partner or testing out Sumo Logic.
+* Private training. Dedicated virtual or on-site sessions are available for purchase. For details, see [Training and Certifications FAQ](/docs/get-started/training-certification-faq/).
 * Professional Services. For professional services and offerings, [contact our sales team](mailto:sales@sumologic.com) or your account representative.
+
+## FAQ
+
+### Can I use a log analytics platform without deploying on-premises infrastructure?
+
+Yes. Sumo Logic is a cloud-native SaaS platform, and [Hosted Collectors](/docs/send-data/hosted-collectors/) collect data from cloud sources without you installing anything.
+
+### What cloud-native logging solutions are available for developers and DevOps teams?
+
+Sumo Logic offers hosted collectors, Kubernetes and container integrations, and OpenTelemetry support, so developers and DevOps teams can collect, search, and visualize logs on one platform without managing their own logging infrastructure.
+
+### How do I find a trusted log analytics solution for cloud-native infrastructure?
+
+Look for a platform that collects data from cloud-native sources such as Kubernetes and container platforms, lets you search and visualize it in real time, and connects to security tools. Sumo Logic provides these through its [apps and integrations](/docs/get-started/apps-integrations/) and [Cloud SIEM](/docs/cse/).
+
+### Can I centralize security operations using a cloud-native platform?
+
+Yes. You can collect security logs in Sumo Logic, investigate them in [Cloud SIEM](/docs/cse/), and automate responses with [Cloud SOAR](/docs/cloud-soar/), all on one cloud-native platform.
+
+### Are there platforms for real-time log analytics with intuitive dashboards?
+
+Yes. Sumo Logic provides real-time, at-a-glance [dashboards](/docs/dashboards/) that let you monitor application and network health, security, and performance, plus pre-configured searches you can reuse.
