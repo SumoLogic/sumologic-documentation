@@ -69,6 +69,10 @@ A Sumo Logic administrator needs to connect your Slack workspace.
 1. In the top-right dropdown menu, confirm that the correct workspace is selected, and then click **Allow**.
 1. Go to the **Configure** tab. The workspace appears with the status **Connected**.
 
+<!--TODO: Add screenshot of the Sumo Logic Slack Extension tile in App Catalog > Integrations with the + Connect Workspace button.-->
+
+<!--TODO: Add screenshot of the Configure tab showing a workspace with the status Connected.-->
+
 If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Submit the request. You do not need to submit it again. Follow up with your Slack Admin to get the request approved. After the Slack Admin approves it in Slack, the workspace appears as **Connected** on the **Configure** tab automatically. Until then, the workspace is not listed.
 
 ### Disconnect a workspace
@@ -91,6 +95,10 @@ You do not need to run any command or complete any setup before you use Sumo Log
 
 The private prompt is visible only to you. Other channel members are not affected.
 
+<!--TODO: Add screenshot of the private prompt that asks the user to connect their Sumo Logic account.-->
+
+<!--TODO: Add screenshot of the org picker buttons shown when multiple orgs are mapped.-->
+
 ## Use Sumo Logic in Slack
 
 ### Mention Sumo Logic in a channel or thread
@@ -101,12 +109,18 @@ Type `@Sumo` followed by your question in any channel that Sumo Logic has joined
 
 Open a direct message with Sumo Logic from the **Apps** section of the Slack sidebar. Each message starts a new conversation thread. Replies within a thread continue the same conversation with full context.
 
+<!--TODO: Add screenshot of a direct message conversation with Sumo Logic from the Apps section of the Slack sidebar.-->
+
+<!--TODO: Add screenshot of the Sumo Logic app panel in the Slack sidebar.-->
+
 ### Response elements
 
 Every Sumo Logic response includes the following:
 
 * **Org label.** A footer that shows which Sumo Logic org was queried, for example `acme-corp · us2.sumologic.com`.
 * **Links to Sumo Logic.** Contextual links to Sumo Logic entities where applicable, for example **View this log search in Sumo Logic**.
+
+<!--TODO: Add screenshot of a response that shows the org label footer and a link to a Sumo Logic entity.-->
 
 ## Slash commands
 
