@@ -183,7 +183,7 @@ You need the following permissions. If you do not have the permission for an act
 To add more groups or routers, insert them between existing nodes in the graph.
 
 :::note
-Any new field you create in a pipeline is enabled by default, which means it is available for search in Sumo Logic. If you create a temporary field that you only need inside the pipeline, disable it in the field limit dropdown. Your organization can also create only a limited number of new fields.
+Any new field you create in a pipeline is enabled by default, which means it is available for search in Sumo Logic. If you create a temporary field that you only need inside the pipeline, you can disable it. To do this, click **Extracted Fields** at the top of the pipeline, then clear the check box next to the field under **New Fields**. A disabled field is still in your logs and you can access it with parse operators, but it is not searchable. Your organization can create only a limited number of new fields. The panel shows how many you have used.<br/><img src={useBaseUrl('img/manage/data-pipelines/disable-new-field.png')} alt="Extracted Fields panel with the New Fields check boxes highlighted" style={{border: '1px solid gray'}} width="600"/>
 :::
 
 ## Test and publish a pipeline
