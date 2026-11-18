@@ -29,12 +29,12 @@ You need:
 
 ## Choose a setup path
 
-| Client | Setup path |
-| :----- | :--------- |
-| GitHub Copilot (VS Code and CLI) | [Plugin](#set-up-github-copilot) |
-| Claude Code and Claude Cowork | [Plugin](#set-up-claude-code-and-claude-cowork) |
-| Kiro | [Power](#set-up-kiro) |
-| Any other MCP client | [Manual setup](#set-up-other-clients) |
+| Client | Setup path | Plugin or connector |
+| :----- | :--------- | :------------------ |
+| GitHub Copilot (VS Code and CLI) | [Plugin](#set-up-github-copilot) | `sumo-logic` |
+| Claude Code and Claude Cowork | [Plugin](#set-up-claude-code-and-claude-cowork) | `sumologic-mcp` |
+| Kiro | [Power](#set-up-kiro) | Sumo Logic power |
+| Cursor, Codex, and other MCP clients | [Manual setup](#set-up-other-clients) | None. Plugins for Cursor and Codex are coming soon. |
 
 ## Set up GitHub Copilot
 
@@ -80,6 +80,24 @@ When you first enable the plugin, you are prompted for your MCP server URL. Use 
 1. Run `/mcp` again to confirm that **sumo-logic** shows as connected.
 
 To connect to a different Sumo Logic org, see [How to switch Sumo Logic organizations](/docs/api/mcp-server#how-to-switch-sumo-logic-organizations).
+
+<details>
+<summary>Set up Claude Code manually without the plugin</summary>
+
+If you cannot use the plugin, register the MCP server directly. Replace `<MCP-server-URL>` with the [URL for your deployment](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
+
+1. In a terminal, register the server for all directories:
+   ```bash
+   claude mcp add --scope user --transport http \
+     sumo-logic "<MCP-server-URL>"
+   ```
+   To register it for the current directory only, use `--scope project` instead.
+1. Launch Claude Code, run `/mcp`, and select **sumo-logic** > **Authenticate**.
+1. Install the [sumo-investigator skill](/docs/api/mcp-server#improve-investigations-with-the-sumo-investigator-skill) so Claude Code can route investigative questions.
+
+For more detail, see [How to configure the MCP server in Claude Code CLI](/docs/api/mcp-server#how-to-configure-the-mcp-server-in-claude-code-cli).
+
+</details>
 
 ### Use the plugin
 
