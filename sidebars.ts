@@ -3357,6 +3357,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'api/mcp-server'},
           items: [
+            'api/mcp-server-client-setup',
             'api/mobot-in-mcp-server',
           ],
         },

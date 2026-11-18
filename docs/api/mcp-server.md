@@ -87,7 +87,7 @@ Subdomain URLs are available in all deployments that support the MCP server.
 
 ### MCP-compatible client
 
-The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
+The client must support remote HTTP/SSE transport and OAuth 2.0. For plugin-based setup guides for GitHub Copilot, Claude Code, Kiro, and other clients, see [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server-client-setup). The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
 
 CIMD ([Client ID Metadata Document](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/)) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
 
