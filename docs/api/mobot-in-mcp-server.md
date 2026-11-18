@@ -26,14 +26,10 @@ Mobot in the MCP server:
 - Counts prompts toward the same daily Mobot limit as the UI.
 - Can be turned on or off for the entire org by an administrator.
 
-<!--TODO (SME): Is "full parity with the UI" accurate for creating monitors, dashboards, and playbooks, for charts, and for Open in Log Search? Are there client-side rendering limits? Does resuming a UI conversation from MCP work too?-->
-
 ## Prerequisites
 
 - The Sumo Logic MCP server connected to your MCP client. See [Sumo Logic MCP Server](/docs/api/mcp-server).
 - MCP Server access and Mobot in the MCP server turned on for your org. Both are on by default. See [Enable or disable Mobot in the MCP server](#enable-or-disable-mobot-in-the-mcp-server).
-
-<!--TODO (SME): Are there availability limits for trial, free, or FedRAMP orgs? The Mobot page says trial accounts do not have Mobot enabled by default.-->
 
 ## Enable or disable Mobot in the MCP server
 
@@ -50,8 +46,6 @@ Mobot in the MCP server is on by default for all orgs. When you turn it off, `mo
 
 - Mobot in the Sumo Logic UI.
 - Other MCP tools, such as `runLogSearch`.
-
-<!--TODO (SME): Does turning off AI features or MCP Server access also turn off Mobot in MCP? The context doc only covers the reverse (turning off Mobot in MCP does not affect the UI).-->
 
 To turn off the MCP server entirely, or to manage the other AI features, see [How to enable or disable the MCP server](/docs/api/mcp-server#how-to-enable-or-disable-the-mcp-server) and [Opting out of Mobot](/docs/search/mobot/#opting-out).
 
@@ -72,8 +66,6 @@ Plugins are available for these clients:
 - Claude, through the Claude Connectors Directory
 - AWS DevOps Agent
 
-<!--TODO (SME): Does `/sumologic-mcp:mobot` need the plugin, and which clients support it? Should this page mention that Cursor and Codex plugins are upcoming (requested in a comment on SUMO-295372)? Add plugin install links here or defer to the client setup guides.-->
-
 For a client without a plugin, [download and install the sumo-investigator skill](/docs/api/mcp-server#improve-investigations-with-the-sumo-investigator-skill) manually, and then connect to the MCP server with a raw MCP configuration. See [Sumo Logic MCP Server](/docs/api/mcp-server) for setup steps.
 
 ## Mobot tools in the MCP server
@@ -88,11 +80,6 @@ The MCP server adds these tools for Mobot:
 | `submit_hitl_feedback` | Submits your approval or rejection for a paused step. See [Approve Mobot steps from your MCP client](#approve-mobot-steps-from-your-mcp-client). |
 
 You do not call these tools yourself. Your MCP client calls them for you.
-
-<!--TODO (SME): The context doc says two new tools but lists four. Is `submit_hitl_feedback` the correct name and casing? Does the Feature Management toggle remove it along with the other three?-->
-<!--TODO (SME): Does cancelling an investigation refund the prompt, or does it only stop further work?-->
-<!--TODO (SME): Do the Mobot tools need specific scopes, as the other MCP tools do? Does role-based data access work the same as in the UI? If scopes apply, add a Required scope column to the table.-->
-<!--TODO (SME): Is there a timeout for long investigations, and what does the client show when it hits one?-->
 
 ## How MCP clients route queries to Mobot
 
@@ -130,8 +117,6 @@ Routing is more accurate when the [Sumo Logic plugin](#set-up-mobot-with-the-sum
 
 When a step needs your sign-off, Mobot pauses and waits. Review the pending action in your MCP client, and then approve or reject it. The client sends your decision with the `submit_hitl_feedback` tool, and Mobot either continues or stops. You stay in control of complex, multi-step investigations without monitoring every query.
 
-<!--TODO (SME): Which Mobot actions pause for human approval? Add one or two examples here.-->
-
 <!--TODO: Add a screenshot of a Mobot human-in-the-loop approval request in an MCP client. <img src={useBaseUrl('img/api/mcp/mobot-in-mcp-hitl-approval.png')} alt="MCP client showing a Mobot step paused for approval or rejection" style={{border: '1px solid gray'}} width="800" />
 -->
 
@@ -148,13 +133,9 @@ Mobot in the MCP server uses the same limits as Mobot in the Sumo Logic UI. Ther
 
 Mobot calls are also subject to the [MCP server rate limits](/docs/api/mcp-server#what-are-the-mcp-server-rate-limits) that apply to all MCP tools.
 
-<!--TODO (SME): Does repeated `mobot_poll` count against the MCP rate limits (4 requests per second, 10 concurrent)? Confirm the line above is accurate.-->
-
 ## Audit Mobot activity from the MCP server
 
 Mobot prompts and investigations started through the MCP server are recorded in Sumo Logic audit logs, the same way as Mobot interactions from the UI. Organizations that need an audit trail of AI-initiated queries and investigations have full coverage of MCP-originated activity. To query these events, see [Audit Mobot queries](/docs/search/mobot/#audit-mobot-queries).
-
-<!--TODO (SME): Does the Mobot audit query return events started from MCP? Is there a field that shows the source (UI or MCP)?-->
 
 ## FAQ
 
