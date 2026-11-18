@@ -12,6 +12,6 @@ hide_table_of_contents: true
 
 You can now edit and delete individual indicators on the **Indicators** tab of the Threat Intelligence page. Use this to correct a feed-provided confidence score, change an expiration date, or remove false positive and stale indicators that cause noisy detections.
 
-Editing and deleting requires the **Manage Threat Indicators** role capability. Both actions are recorded in the Audit Event Index. If a source supplies an indicator again on a later poll, the source values can overwrite your edits and a deleted indicator can reappear.
+Editing and deleting requires the **Manage Threat Intel Data Store** role capability. Both actions are recorded in the Audit Event Index. If a source supplies an indicator again on a later poll, the source values can overwrite your edits and a deleted indicator can reappear.
 
 [Learn more](/docs/security/threat-intelligence/threat-intelligence-indicators/#edit-an-indicator).
