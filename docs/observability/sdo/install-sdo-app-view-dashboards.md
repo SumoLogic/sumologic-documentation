@@ -25,7 +25,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-Each of the Software Development Optimization Solution apps provides a set of preconfigured dashboards that display real-time data from across your environment. Being able to access this information behind a single pane of glass allows you to more effectively monitor and troubleshoot your DevOps projects from inception through deployment.
+Each of SDO app provides a set of preconfigured dashboards that display real-time data from across your environment. Being able to access this information behind a single pane of glass allows you to more effectively monitor and troubleshoot your DevOps projects from inception through deployment.
 
 ### SDO app folders
 
