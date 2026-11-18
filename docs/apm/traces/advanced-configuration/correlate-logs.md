@@ -13,7 +13,7 @@ Our configurations, available in several programming languages, will inject the 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/131px-Java_programming_language_logo.svg.png' alt="Java Programming Language icon" width="30"/>
+  <img src={useBaseUrl('img/icons/java-logo.svg')} alt="Java icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration')}>Java</a></h4>
   <p>Injects data into user logs in your Java applications.</p>
   </div>
@@ -34,7 +34,7 @@ Our configurations, available in several programming languages, will inject the 
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/512px-.NET_Core_Logo.svg.png' alt=".NET Core icon" width="60"/>
+    <img src={useBaseUrl('img/icons/net-logo.png')} alt=".Net icon" width="60"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs')}>.NET</a></h4>
     <p>Injects data into user logs from ASP.NET and .NET Core.</p>
     </div>
