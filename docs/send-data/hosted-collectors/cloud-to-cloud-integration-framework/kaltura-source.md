@@ -5,7 +5,7 @@ sidebar_label: Kaltura
 keywords:
   - cloud-to-cloud
   - kaltura
-description: Learn how to configure the Kaltura Cloud-to-Cloud source setup using the Sumo logic environment.
+description: Learn how to configure the Kaltura Cloud-to-Cloud source setup using the Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

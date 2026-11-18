@@ -22,7 +22,7 @@ Availability of the indexes differs according to your account type. You can enab
 You can use the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) to query your data usage.
 :::
 
-## Guide Contents
+## Guide contents
 
 In this section, we'll introduce the following concepts:
 

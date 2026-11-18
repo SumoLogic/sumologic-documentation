@@ -253,11 +253,11 @@ account=* region=* namespace=aws/bedrock
 ```
 
 
-```sql title="Invocation Latency By Model (CloudWatch Metric)"
+```metrics title="Invocation Latency By Model (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock modelid=* metric=InvocationLatency statistic=average | avg by modelid 
 ```
 
-```sql title="Trend Invocations By Model (CloudWatch Metric)"
+```metrics title="Trend Invocations By Model (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock modelid=* metric=Invocations statistic= sum | quantize using sum | sum by modelid
 ```
 
@@ -340,7 +340,7 @@ json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, a
 
 #### Create/Update Field Extraction Rule(s) for Bedrock CloudWatch logs
 
-```sql
+```metrics
 Rule Name: AwsObservabilityBedrockCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -359,7 +359,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs

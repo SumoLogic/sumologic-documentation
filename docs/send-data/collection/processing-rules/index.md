@@ -18,7 +18,7 @@ Filtered data is fed to the Collector, but does not upload to the Sumo Logic clo
 * [Include messages that match](include-and-exclude-rules.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include only messages coming from a firewall.
 * [Hash messages that match](hash-rules.md). Replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 * [Mask messages that match](mask-rules.md). Replace an expression with a mask string that you can customize—this is another option to protect data, such as passwords, that you wouldn't normally track.
-* [Forward messages that match](data-forwarding-rules.md). Send data from an Installed Collector Source to a selected non-Sumo location.
+* [Forward messages that match](data-forwarding-rules.md). Send data from an Installed Collector Source to a selected non-Sumo Logic location.
 
 **Metrics Sources** support the following rule types:
 

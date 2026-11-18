@@ -16,9 +16,9 @@ This feature is in Extended Preview. For more information, contact your Sumo Log
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Event Extraction Rules enables you to automatically extract, correlate, and enrich events directly from log data, making them available for event querying and analysis. By reducing noise and highlighting meaningful events, this capability accelerates troubleshooting and root cause analysis with minimal manual effort. You can precisely control how events are classified by configuring event type and priority, ensuring that the most impactful events are surfaced and clearly represented within log searches for faster, more informed insights.
+Event extraction rules enable you to automatically extract, correlate, and enrich events directly from log data, making them available for event querying and analysis. By reducing noise and highlighting meaningful events, this capability accelerates troubleshooting and root cause analysis with minimal manual effort. You can precisely control how events are classified by configuring event type and priority, ensuring that the most impactful events are surfaced and clearly represented within log searches for faster, more informed insights.
 
-## Create an Event Extraction Rule
+## Create an event extraction rule
 
 You can create an event extraction rule of your own from scratch by following the instructions below.
 
@@ -53,7 +53,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
     1. **Rule Details**. Enter the rule name and rule description (optional) of your choice that makes it easy to identify the rule.
 
 :::info
-When an Event Extraction Rule is created, events only from previous seven days are automatically backfilled into the event index.
+When an event extraction rule is created, events only from previous seven days are automatically backfilled into the event index.
 :::
 
 ## Edit a rule
@@ -81,7 +81,7 @@ To delete the existing event extraction rule, follow the below steps:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**.
 1. Navigate to the respective event rule which you wish to edit.
 1. On the left pane, click **Delete** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-event-extraction-rules.png')} alt="Delete event extraction rule" style={{border: '1px solid gray'}} width="400"/>
-1. In the **Delete [rule name] item** pop-up, click on **Delete**.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-confirm-event-extraction-rule.png')} alt="Delete confirm event extraction rule" style={{border: '1px solid gray'}} width="400"/>
+1. In the **Delete [rule name] item** pop-up, click **Delete**.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-confirm-event-extraction-rule.png')} alt="Delete confirm event extraction rule" style={{border: '1px solid gray'}} width="400"/>
 
 :::note
 A status of **Internal Cache Cleanup in Progress** means your requested data has already been deleted successfully. The remaining cache cleanup is an internal background operation managed by Sumo Logic and may take additional time to complete before the request is marked as fully complete.
@@ -89,7 +89,7 @@ A status of **Internal Cache Cleanup in Progress** means your requested data has
 
 ## Examples
 
-Cloud environments such as AWS CloudTrail, Azure Activity Logs, and GCP Audit Logs produce massive volumes of audit logs, and the events that matter are easily buried among millions of routine API calls. Event Extraction Rules surface those high-value events so you can quickly answer questions such as:
+Cloud environments such as AWS CloudTrail, Azure Activity Logs, and GCP Audit Logs produce massive volumes of audit logs, and the events that matter are easily buried among millions of routine API calls. Event extraction rules surface those high-value events so you can quickly answer questions such as:
 
 - Who deleted an IAM role?
 - Who modified a security group?
@@ -189,8 +189,8 @@ The rule extracts a **Production Instance Terminated** event for instance `i-123
 ## Operational considerations
 
 - To restrict user access to extracted events, you can deny access to the `sumologic_userdata_events` index for specific roles. Ensure that you have the **[Usage Management](/docs/manage/users-roles/roles/role-capabilities/#user-management)** capability enabled, as it is required to configure index-level access restrictions.
-- An Event Extraction Rule can generate a maximum of 1,000 events per hour. If this limit is exceeded, the rule may be automatically disabled and a system event will be generated. You can view those by querying the `_index=sumologic_system_events` and `_sourcecategory=eventExtractionRule`. To re-enable the rule, review and refine the rule query to reduce the event volume.
-- Audit logs for all create, read, update, and delete (CRUD) actions performed on Event Extraction Rules are available in the `_index=sumologic_audit_events ` and `_sourcecategory=eventExtractionRule`.
+- An event extraction rule can generate a maximum of 1,000 events per hour. If this limit is exceeded, the rule may be automatically disabled and a system event will be generated. You can view those by querying the `_index=sumologic_system_events` and `_sourcecategory=eventExtractionRule`. To re-enable the rule, review and refine the rule query to reduce the event volume.
+- Audit logs for all create, read, update, and delete (CRUD) actions performed on event extraction rules are available in the `_index=sumologic_audit_events ` and `_sourcecategory=eventExtractionRule`.
 
 ## Verify user data events
 

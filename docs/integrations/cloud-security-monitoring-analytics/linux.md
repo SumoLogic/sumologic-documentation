@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud Security monitoring and Analytics app for Linux ingests any distribution of linux data to gain a better understanding of your production environments, and surface relevant insights by tuning out-of-the-box content to align with your security team’s focus. Consolidate analytics across various instances by wildcarding on data sources and gain full visibility into your Linux data for both monitoring and analytics use cases.
 
-Follow the steps in this topic to install or uninstall a collector on Linux. See Installed Collectors for information on other OSs.
+Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
 
 ## System requirements
 
@@ -66,7 +66,7 @@ Run the installer on your server with root or Administrator privileges. If you a
  ```bash
  chmod +x SumoCollector.sh
  ```
-2. Run the script with the parameters that you want to configure. See Parameters for the Command Line Installer for a description of the parameters. By default, the Collector will be installed in either /opt/SumoCollector or /usr/local/SumoCollector.
+2. Run the script with the parameters that you want to configure. See [Parameters for the Command Line Installer](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer) for a description of the parameters. By default, the Collector will be installed in either /opt/SumoCollector or /usr/local/SumoCollector.
 
 **Examples**
 
@@ -104,7 +104,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
     ```
 
    The RPM and Debian packages install the collector in the /opt/SumoCollector directory.  By default, the Collector is installed as a system service, but not yet started.
-2. Configure the Collector user.properties file in the /opt/SumoCollector/config/ directory. The Collector uses the settings defined in user.properties to register and start. See user.properties for a full list of all the supported parameters.
+2. Configure the Collector user.properties file in the /opt/SumoCollector/config/ directory. The Collector uses the settings defined in user.properties to register and start. See [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) for a full list of all the supported parameters.
    * To use an access key, provide the accessid and accesskey parameters. For example:
     ```bash
     name = <collectorName>
@@ -120,11 +120,11 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
 
 :::note
 * Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group.
-* Modifying user.properties may require sudo privileges. For more information, see Enhanced File System Security for Installed Collectors.
+* Modifying user.properties may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](/docs/send-data/installed-collectors/collector-installation-reference/enhanced-file-system-security-installed-collectors).
 :::
 
-3. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources. Alternatively, you can configure Sources at any time by using the Sumo web app. See Sources.
-4. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See run as for a Collector.
+3. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo Logic web app. See [Sources](/docs/send-data/choose-collector-source).
+4. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](/docs/send-data/installed-collectors/collector-installation-reference/set-run-as-user-for-collector).
 5. (Optional on Collector version 19.253-3+ in the Fed deployment) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data to Sumo Logic's Fed deployment in US1 only. FIPS mode is not supported for any other deployment. If you are unsure whether you are on the Fed deployment, check our deployments. To enable, locate and run the script `configureFipsMode.sh` contained in Collector's installation directory under `/script`:
  ```bash
  $ sh ./script/configureFipsMode.sh
@@ -160,7 +160,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
  chmod ug+x collector
  chmod ug+x script/*
  ```
-6. Configure the Collector  user.properties file in the /opt/SumoCollector/config/ directory. The Collector uses the settings defined in user.properties to register and start. See user.properties for a full list of all the supported parameters. To use an access key, provide the accessid and accesskey parameters. For example:
+6. Configure the Collector  user.properties file in the /opt/SumoCollector/config/ directory. The Collector uses the settings defined in user.properties to register and start. See [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) for a full list of all the supported parameters. To use an access key, provide the accessid and accesskey parameters. For example:
  ```bash
  name = <collectorName>
  accessid = <accessId>
@@ -182,9 +182,9 @@ would be used as:
 sudo script/secureFiles.sh
 ```
 8. (Optional) Provide JSON Source information.
-You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources.
-Alternatively, you can configure sources at any time by using the Sumo web app. See Sources.
-9. (Optional) Set the run as user for the Collector if you want the Collector to run as a user other than root. See run as for a Collector.
+You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources).
+Alternatively, you can configure sources at any time by using the Sumo Logic web app. See [Sources](/docs/send-data/choose-collector-source).
+9. (Optional) Set the run as user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](/docs/send-data/installed-collectors/collector-installation-reference/set-run-as-user-for-collector).
 10. (Optional on Collector version 19.253-3+) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-3. To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**:
  ```bash
  $ sh ./script/configureFipsMode.sh

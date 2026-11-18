@@ -17,7 +17,7 @@ You cannot directly reference the `outlier` operator in a metrics monitor, howev
 
 ## Syntax
 
-```sql
+```metrics
 outlier [window=<time_unit_or_number>, threshold=<number>, direction=[ +- | + | - ]]
 ```
 

@@ -215,8 +215,8 @@ Here are a few important items:   
 
 ### Access Tokens
 
-An access token is granted by a third party service, such as Microsoft Office 365, to Sumo for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo will continue to try to update a token for about a week. After several failures, we recommend recreating the Office 365 Audit Source.
+An access token is granted by a third party service, such as Microsoft Office 365, to Sumo Logic for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo Logic automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo Logic will continue to try to update a token for about a week. After several failures, we recommend recreating the Office 365 Audit Source.
 
 ### Subscription Watchpoints
 
-A subscription is a channel established with the third party service to receive notification events. Similar to access tokens, subscriptions are valid only before the expiration time. Before a subscription expires, Sumo invalidates the current subscription and obtains a new subscription. In the event of failure to update a subscription, an entry is logged in the Audit Index.
+A subscription is a channel established with the third party service to receive notification events. Similar to access tokens, subscriptions are valid only before the expiration time. Before a subscription expires, Sumo Logic invalidates the current subscription and obtains a new subscription. In the event of failure to update a subscription, an entry is logged in the Audit Index.

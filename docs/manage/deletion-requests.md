@@ -26,6 +26,10 @@ Key features:
 This feature does not provide a certificate of destruction. If you require a certificate confirming complete destruction of all account data at the end of your subscription, create a Sumo Logic support ticket instead.
 :::
 
+:::important
+Deletion requests do not reduce your storage credit usage. Storage billing is based on the Data Volume Index (DVI), and data removed through a deletion request is not reflected in the DVI. To manage storage costs, set different retention periods for data in different [partitions](/docs/manage/partitions/).
+:::
+
 ## Prerequisites
 
 | Action | Required [role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) |

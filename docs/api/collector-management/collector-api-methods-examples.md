@@ -59,7 +59,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>Boolean</td>
    <td>Yes</td>
    <td></td>
-   <td>When a Collector is running, it sends Sumo a heartbeat message every 15 seconds. If no heartbeat message is received after 30 minutes, this becomes <code>false</code>.</td>
+   <td>When a Collector is running, it sends Sumo Logic a heartbeat message every 15 seconds. If no heartbeat message is received after 30 minutes, this becomes <code>false</code>.</td>
    <td>Transient</td>
   </tr>
   <tr>

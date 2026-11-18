@@ -12,16 +12,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 This topic has information about the Google Workspace Activities Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Data collected
@@ -31,7 +21,7 @@ This topic has information about the Google Workspace Activities Cloud-to-Cloud 
 | 5 minutes | [Activities data](https://developers.google.com/workspace/admin/reports/reference/rest/v1/activities/list) |
 
 :::note
-Google may deliver activity data with a delay for `calendar`, `groups`, `token`, and `cloud_search`. A 10 minute delay is already configured in the source, but that buffer may not be sufficient for these applications. For details, see Google's [document](https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times).
+Google may deliver activity data with a delay for few apps. A 10 minute delay is already configured in the source, but that buffer may not be sufficient for some of the applications. For details, see Google's [document](https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times).
 :::
 
 ## Setup

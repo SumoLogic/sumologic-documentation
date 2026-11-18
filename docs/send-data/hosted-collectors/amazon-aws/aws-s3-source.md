@@ -81,11 +81,11 @@ Cisco Umbrella offers logging to a Cisco-managed S3 bucket. Collection from thes
 
 ## S3 Event Notifications Integration
 
-Sumo’s S3 integration combines scan-based discovery and event based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped. When you enable event based notifications S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect them. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
+Sumo Logic’s S3 integration combines scan-based discovery and event based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped. When you enable event based notifications S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect them. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
 
 <img src={useBaseUrl('img/send-data/Cloud_AWS_icon.png')} alt="Diagram of AWS and Sumo Logic integration for S3 object notifications" width="600" />
 
-Enabling event based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket Sumo assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
+Enabling event based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket Sumo Logic assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo Logic when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
 
@@ -140,7 +140,7 @@ You can adjust the configuration of when and how AWS handles communication attem
     * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](aws-s3-scan-interval-sources.md).
     * **SNS Subscription Endpoint** (**Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
 
-        To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.     
+        To set up the subscription you need to get an endpoint URL from Sumo Logic to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.     
 
     <img src={useBaseUrl('img/send-data/SNS-create-URL-button.png')} alt="Log File Discovery settings with Create URL button highlighted" style={{border: '1px solid gray'}} width="500" />
 
@@ -198,12 +198,12 @@ The following steps use the Amazon SNS Console. You may instead use AWS CloudFo
 ### SNS with one bucket and multiple Sources
 
 :::important
-S3 Event Notifications do not allow you to have overlapping suffixes in two rules if the prefixes are overlapping for the same event type. In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
+S3 Event Notifications do not allow you to have overlapping suffixes in two rules if the prefixes are overlapping for the same event type. In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Logic Endpoint, and one that points elsewhere).
 :::
 
-When collecting from one Amazon S3 bucket with multiple Sumo Sources, you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
+When collecting from one Amazon S3 bucket with multiple Sumo Logic Sources, you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Logic Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo Logic would collect your objects multiple times.
 
-Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
+Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo Logic separately about new objects in different folders.
 
 <img src={useBaseUrl('img/send-data/S3-bucket-two-notifications-for-SNS.png')} alt="Events filter settings for SNS notifications in AWS S3" style={{border: '1px solid gray'}} width="400" />
 
@@ -233,7 +233,7 @@ In the web interface under **Log File Discovery** it shows a green check with "
 
 <img src={useBaseUrl('img/send-data/sns-green-tick.png')} alt="NS green tick mark" style={{border: '1px solid gray'}} width="400" />
 
-The green check confirms that the endpoint was used correctly, but it does not mean Sumo is receiving notifications successfully.
+The green check confirms that the endpoint was used correctly, but it does not mean Sumo Logic is receiving notifications successfully.
 
 Steps to troubleshoot:
 

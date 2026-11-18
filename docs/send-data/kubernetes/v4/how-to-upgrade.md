@@ -59,7 +59,7 @@ There are several scenarios here, depending on the exact use case:
 
 Recording rule metrics removed in version 4 were used in the Sumo Logic Kubernetes app. A new version of the app must be installed to ensure compatibility with version 4 of Helm Chart. See [here][k8s_app_upgrade] for upgrade instructions.
 
-[k8s_app_upgrade]: /docs/integrations/containers-orchestration/kubernetes/#upgradedowngrade-the-kubernetes-app
+[k8s_app_upgrade]: /docs/integrations/containers-orchestration/kubernetes/#upgradedowngrade-the-kubernetes-app-optional
 
 #### Using the new app with v3
 
@@ -205,7 +205,7 @@ If you've changed the values of either of these two options, you'll need to adju
 Both source types will be created by the setup job. The settings discussed here affect which source is actually used.
 :::
 
-**When?**: You use the `_sourceName` or `_source` fields in your Sumo queries.
+**When?**: You use the `_sourceName` or `_source` fields in your Sumo Logic queries.
 
 The only solution is to change the queries in question. In general, it's an antipattern to write queries against specific sources, instead of semantic attributes of the data.
 

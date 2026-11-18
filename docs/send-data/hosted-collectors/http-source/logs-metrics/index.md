@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
-With an HTTP Logs and Metrics Source you can upload logs and metrics from data sources where you cannot install a Collector. For example, you can export data from a platform as a service (PaaS) or an infrastructure as a service (IaaS) provider, allowing you to gain visibility, for instance, into your billing system service provider, leveraging the same Sumo tools your organization already uses. Check with your IaaS or PaaS providers for information about using their APIs to forward log or metric data to Sumo Logic's HTTP endpoint.
+With an HTTP Logs and Metrics Source you can upload logs and metrics from data sources where you cannot install a Collector. For example, you can export data from a platform as a service (PaaS) or an infrastructure as a service (IaaS) provider, allowing you to gain visibility, for instance, into your billing system service provider, leveraging the same Sumo Logic tools your organization already uses. Check with your IaaS or PaaS providers for information about using their APIs to forward log or metric data to Sumo Logic's HTTP endpoint.
 
 When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information, see [Generating a new URL](../generate-new-url.md).
 
@@ -36,7 +36,7 @@ To configure an HTTP Logs and Metrics Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
-1. Enter a **Name** to display for the Source in the Sumo web application. Description is optional.
+1. Enter a **Name** to display for the Source in the Sumo Logic web application. Description is optional.
 1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1. **Forward to SIEM**. This option is present if [Cloud SIEM](/docs/cse/) is enabled. Click the checkbox to send the logs collected by the source to Cloud SIEM.
 1. **Fields/Metadata.** Click the **+Add** link to define the fields you want to associate. Each field needs a name (key) and value.
@@ -119,7 +119,7 @@ For basic multiline processing, select **Infer Boundaries**; if this leads to ma
 
 Also, in your HTTP Source configuration, make sure that the check box **Enable One Message Per Request** is **deactivated**. This option allows you to specify that all data sent within an individual HTTP request to an HTTP Source endpoint should be considered to be one log message. 
 
-Sumo expects that the entire content of an individual log message will be sent to Sumo within the same HTTP request. Multiline processing rules are only applied within the bounds of the data sent within a single HTTP request. This means that a multiline log that is sent to Sumo across multiple HTTP requests will not be detected as a single message. It will be broken into separate log messages. Sumo does not currently have the ability to detect and thread together a distinct log message that has been sent via multiple HTTP requests. 
+Sumo Logic expects that the entire content of an individual log message will be sent to Sumo Logic within the same HTTP request. Multiline processing rules are only applied within the bounds of the data sent within a single HTTP request. This means that a multiline log that is sent to Sumo Logic across multiple HTTP requests will not be detected as a single message. It will be broken into separate log messages. Sumo Logic does not currently have the ability to detect and thread together a distinct log message that has been sent via multiple HTTP requests. 
 
 For tools to help you batch messages, see [Sumo Logic .NET Appenders](https://github.com/SumoLogic/sumologic-net-appenders).
 

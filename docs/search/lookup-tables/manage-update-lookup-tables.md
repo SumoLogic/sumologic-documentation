@@ -82,7 +82,7 @@ Follow the steps below to delete all of the contents of a lookup table:
 
 ### Update a lookup table with the save operator
 
-You can use the `save` operator to save the results of a Sumo log query to a lookup table you created using the Lookup UI or API. For more information, see [save Operator](/docs/search/search-query-language/search-operators/save).
+You can use the `save` operator to save the results of a Sumo Logic log query to a lookup table you created using the Lookup UI or API. For more information, see [save Operator](/docs/search/search-query-language/search-operators/save).
 
 To save the results of a query to a lookup table in a scheduled search, see [Save to Lookup](/docs/alerts/scheduled-searches/save-to-lookup/).
 

@@ -106,7 +106,7 @@ _sourceCategory=apache_error
 | count by _timeslice
 ```
 
-Yet even this simple query requires users to know about the query language, the use of pipes and fields in Sumo. You can specify the argument to timeslice as a parameter:
+Yet even this simple query requires users to know about the query language, the use of pipes and fields in Sumo Logic. You can specify the argument to timeslice as a parameter:
 
 ```sumo
 _sourceCategory=apache_error

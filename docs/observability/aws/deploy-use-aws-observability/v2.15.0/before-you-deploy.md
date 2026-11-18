@@ -7,7 +7,7 @@ description: Learn prerequisites and guidelines for deploying the AWS Observabil
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes prerequisites and guidelines for deploying Sumo Logic’s AWS Observability Solution. 
+This page describes prerequisites and guidelines for deploying Sumo Logic’s AWS Observability Solution.
 
 :::info
 If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. By overriding the configuration sources, we prevent them from being re-created in the AWS infrastructure or Sumo Logic.
@@ -26,11 +26,11 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
   * View Field Extraction Rules
   * Manage Content
   * Manage Connections
-  * Manage Metrics Rules  
+  * Manage Metrics Rules
   * Manage Monitors
   * View Monitors
-  * Create access keys  
-  * Manage Entity Type Configs  
+  * Create access keys
+  * Manage Entity Type Configs
   * Manage Apps
   * Run Log Search
   * [**Sumo Logic Access ID and Key**](/docs/manage/security/access-keys/#create-an-access-key). When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope and have the role capabilities listed above before generating the Access ID and Key. <br/><img src={useBaseUrl('img/observability/Default-Scope.png')} alt="Default scope" style={{border: '1px solid gray'}} width="500" />
@@ -38,7 +38,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
   For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
   :::
 * **[Disabled allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/) for login and APIs**. During the installation/upgrade of the AWSO solution, the allowlist for login and APIs must remain disabled because the solution creates Lambda functions that uses AWS-managed public network infrastructure. When this Lambda makes outbound calls (such as to Sumo Logic APIs), the traffic is routed through AWS public IP address ranges, which are dynamic and cannot be fixed or predicted.
-* The AWS Observability solution comes with [pre-packaged alerts](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/configure-alerts/) in the form of Sumo Logic Monitors. To understand more about their capabilities, please visit the [Monitors page](/docs/alerts/monitors/).
+* The AWS Observability solution comes with [pre-packaged alerts](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/configure-alerts/) in the form of Sumo Logic Monitors. To understand more about their capabilities, visit the [Monitors page](/docs/alerts/monitors/).
 * **AWS credentials**. To deploy the solution, you will need to log onto the AWS Console. For the CloudFormation template deployment option, your AWS role must have the permissions described by this [JSON file](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/AWSObservabilityCFTemplatePermissions.json). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). For Terraform deployment options, see the \*.tmpl files in this folder [aws-observability-terraform/source-module/templates/](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform/source-module/templates).
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and configure the AWS CLI as described in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) if you would like to use an AWS profile for Terraform script based deployment.
 * For AWS services exporting to CloudWatch Logs, make sure logs are exported to log groups:
@@ -51,9 +51,9 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 ## Deployment options
 
-You can deploy AWS Observability to a single AWS account and region, or to all of your accounts in all regions. We provide instructions for both alternatives. 
+You can deploy AWS Observability to a single AWS account and region, or to all of your accounts in all regions. We provide instructions for both alternatives.
 
-Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v2.15.0) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment. 
+Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v2.15.0) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment.
 
 You have two options for deploying:
 
@@ -84,16 +84,16 @@ The region(s) must be enabled and active before deploying the solution. <br />
 Middle East (Bahrain) - currently affected by the Middle East conflicts.
 :::
 
-## Deployment considerations  
+## Deployment considerations
 
 You deploy the solution by either running an AWS CloudFormation template or via Terraform scripts. When doing so, consider the following.
 
-### Do you already have the required sources? 
+### Do you already have the required sources?
 
 When you deploy, you are given the option to create the Sumo Logic sources that the solution applications rely upon. If you have already configured those sources, you do not have to create new ones. You can just provide the URLs of the relevant Sumo Logic sources as part of the AWS CloudFormation or Terraform configuration.
 
 :::note
-If you use existing sources for the AWS Observability solution, rather than create new ones, it is not necessary to modify the existing metadata and source categories associated with the sources. The metadata that the solution depends on will be added to the sources at deployment time. 
+If you use existing sources for the AWS Observability solution, rather than create new ones, it is not necessary to modify the existing metadata and source categories associated with the sources. The metadata that the solution depends on will be added to the sources at deployment time.
 :::
 
 ### Install the solution apps once
@@ -104,7 +104,7 @@ The Terraform script gives you the option to install the solution apps using app
 
 ### Bucket considerations
 
-In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don't supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. If you use an existing bucket for CloudTrail logs, you'll need to manually create an S3 Event Notification afterward. For more information, see [Sumo Logic AWS CloudTrail Source](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/#step-7sumo-logic-aws-cloudtrail-source). 
+In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you do not supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. If you use an existing bucket for CloudTrail logs, you'll need to manually create an S3 Event Notification afterward. For more information, see [Sumo Logic AWS CloudTrail Source](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/#step-7sumo-logic-aws-cloudtrail-source).
 
 ### Do you use AWS Control Tower?
 
@@ -117,29 +117,29 @@ This integration is supported only via AWS CloudFormation.
 
 ### Running the CloudFormation template from the command line
 
-If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/scripts/DeployTemplate), as an example. 
+If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/scripts/DeployTemplate), as an example.
 
-### Configure Host Metrics sources 
+### Configure Host Metrics sources
 
-Follow the instructions in this section to configure an Sumo Logic Installed Collector and a Host Metrics Source on each of your AWS EC2 hosts. You will assign `account` and `Namespace` metadata fields to the sources so that incoming logs and metrics will be appropriately tagged.
+Follow the instructions in this section to configure a [Sumo Logic Installed Collector](/docs/send-data/installed-collectors/) and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. You will assign `account` and `Namespace` metadata fields to the sources so that incoming logs and metrics will be appropriately tagged.
 
 :::note
-This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
+This step is not necessary if you already have an installed collector and Host Metrics tagged with account and Namespace metadata fields.
 :::
 
 Perform these steps for each EC2 host.
 
-1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors/).
-1. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/#manuallyconfigure-a-host-metrics-source). 
+1. Set up a [Sumo Logic Installed Collector](/docs/send-data/installed-collectors/).
+1. Add a Host Metrics Source to the installed collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/#manuallyconfigure-a-host-metrics-source).
 1. In the **Fields** portion of the configuration:
    1. Add a field named `account`, and set it to your AWS account alias.
-   1. Add a field `Namespace` named and set it to `AWS/EC2`. 
-   1. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute. 
+   1. Add a field `Namespace` named and set it to `AWS/EC2`.
+   1. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
     :::note
      A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
      :::
 
-To automate the above, see [Add Fields to Existing Host Metrics Sources](deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources.md). 
+To automate the above, see [Add Fields to Existing Host Metrics Sources](deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources.md).
 
 Going forward, you can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic).
 
@@ -197,7 +197,7 @@ Before setting up the AWS Observability solution we recommend testing permission
 1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/><img src={useBaseUrl('img/observability/Testing_sumo_Permission_1.png')} alt="Stack details" style={{border: '1px solid gray'}} width="800" />
 1. Click **Create Stack.**
 1. Verify that the AWS CloudFormation template has executed successfully in a CREATE_COMPLETE status.
-    * This indicates that you have all the right permissions on both the Sumo Logic and the AWS side to proceed with the installation of the solution. 
+    * This indicates that you have all the right permissions on both the Sumo Logic and the AWS side to proceed with the installation of the solution.
     * All the resources (Sumo Logic and AWS) created by template are also deleted.<br/><img src={useBaseUrl('img/observability/Testing_sumo_Permission_2.png')} alt="Testing Sumo Logic permissions" style={{border: '1px solid gray'}} width="800" />
-1. If the AWS CloudFormation template has not executed successfully, identify and fix any permission errors till the stack completes with a `CREATE_COMPLETE` status. 
+1. If the AWS CloudFormation template has not executed successfully, identify and fix any permission errors till the stack completes with a `CREATE_COMPLETE` status.
 1. Once the AWS CloudFormation stack has executed successfully, delete the AWS CloudFormation Stack.

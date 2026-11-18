@@ -95,7 +95,7 @@ This section describes the Sumo Logic pipeline for ingesting logs from Google Cl
 
 ### Collection Process for GCP Services
 
-The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo's Google Cloud Platform (GCP) source running on a hosted collector.
+The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo Logic's Google Cloud Platform (GCP) source running on a hosted collector.
 
 The GCP service generates logs that are exported and published to a Google Pub/Sub topic via the Google Cloud Logging [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source to subscribe to this topic and receive the exported log data.
 

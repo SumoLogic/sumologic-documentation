@@ -38,13 +38,13 @@ For example:
 "3","woo","6-13-12"
 ```
 
-### How Sumo processes malformed .csv files
+### How Sumo Logic processes malformed .csv files
 
-If your .csv file does not conform to the requirements described above, some or all of the rows in the table will not be indexed and saved, depending on the error encountered. Here’s how Sumo handles different types or errors in lookup files:
+If your .csv file does not conform to the requirements described above, some or all of the rows in the table will not be indexed and saved, depending on the error encountered. Here’s how Sumo Logic handles different types or errors in lookup files:
 
-* Data type mismatches. Sumo will not index and store a row if any of its columns contain data whose type varies from the type defined for that column in the table schema. For example, if a field whose type is numeric contains a non-numeric string (“foo”), or a field whose type is boolean contains a non-boolean string ("blah") instead of "true" or "false".
-* Schema mismatches. Sumo will not index and file any row in a file, if the schema of the .csv file does not match the schema of the lookup table. In this case, Sumo will reject the entire file.  
-* Overly large lookup file. Sumo will not index and file any row in a lookup file if the file is too large or has too many rows. In this case, Sumo will reject the entire file.  
+* Data type mismatches. Sumo Logic will not index and store a row if any of its columns contain data whose type varies from the type defined for that column in the table schema. For example, if a field whose type is numeric contains a non-numeric string (“foo”), or a field whose type is boolean contains a non-boolean string ("blah") instead of "true" or "false".
+* Schema mismatches. Sumo Logic will not index and file any row in a file, if the schema of the .csv file does not match the schema of the lookup table. In this case, Sumo Logic will reject the entire file.  
+* Overly large lookup file. Sumo Logic will not index and file any row in a lookup file if the file is too large or has too many rows. In this case, Sumo Logic will reject the entire file.  
 
 ### Dashboard limitation 
 

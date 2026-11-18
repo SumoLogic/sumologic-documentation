@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're happy to announce a new **Organizations** filter on the Insights page. If you manage an MSSP parent organization, use it to narrow the multi-insights list down to specific child organizations. 
+A new **Organizations** filter on the Insights page. If you manage an MSSP parent organization, use it to narrow the multi-insights list down to specific child organizations. 
 
 Follow the steps below to use the Organizations filter:
 

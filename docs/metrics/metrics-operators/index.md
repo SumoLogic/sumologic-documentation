@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide describes Sumo Logic metrics operators and provides usage examples.
 
-<a href={useBaseUrl('files/metrics-operators-cheat-sheet.pdf')} target="_blank">Download a Metrics cheat sheet</a>
+Want every operator in one place? <a href={useBaseUrl('files/metrics-operators-cheat-sheet.pdf')} target="_blank">Download the metrics operators cheat sheet</a> and keep it handy while you build queries.
 
 
 ## Guide contents
@@ -127,7 +127,7 @@ In this section, we'll introduce the following concepts:
   <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/metrics/metrics-operators/quantize')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>quantize</h4></a>
-    <p>Learn how to use this operator to control Sumo’s quantization behavior.</p>
+    <p>Learn how to use this operator to control Sumo Logic’s quantization behavior.</p>
     </div>
   </div>
   <div className="box smallbox card">

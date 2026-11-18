@@ -31,7 +31,7 @@ When you create the access key, copy its access ID and access key values. You wi
 
 ### Step 2: Set up single sign-on
 
-Follow the directions in [Configure Sumo as an Enterprise App in Azure AD](/docs/manage/security/saml/integrate-sumo-with-azure-ad/#configure-saml-in-sumo-logic) beginning with the step where you select **Set up single sign on**.
+Follow the directions in [Configure Sumo Logic as an Enterprise App in Azure AD](/docs/manage/security/saml/integrate-sumo-with-azure-ad/#configure-saml-in-sumo-logic) beginning with the step where you select **Set up single sign on**.
 
 <img src={useBaseUrl('img/security/provision-azure-set-up-sso.png')} alt="Set up single sign on" style={{border: '1px solid gray'}} width="600" />
 

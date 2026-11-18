@@ -12,7 +12,7 @@ Behavior Insights encompasses three log search operators to accelerate insights,
 * Which groups of users, apps, services, or resources are responsible for activity in logs?
 * Which groups of users, apps, services, or resources are responsible for unusual activity in logs?
 
-Modeled after our LogReduce log summarization feature, the LogReduce Values and LogReduce Keys operators cluster logs based on their structure or pattern and activity content respectively.
+Modeled after our LogReduce® log summarization feature, the LogReduce Values and LogReduce Keys operators cluster logs based on their structure or pattern and activity content respectively.
 
 In this section, we'll introduce the following concepts:
 

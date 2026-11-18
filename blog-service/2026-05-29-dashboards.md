@@ -8,7 +8,7 @@ keywords:
 hide_table_of_contents: true    
 ---
 
-We're excited to announce enhancements to dashboard execution controls with updates to **Auto Refresh** and the introduction of **Auto Run**, providing administrators with more flexibility and helping reduce unnecessary compute usage.
+Enhancements to dashboard execution controls with updates to **Auto Refresh** and the introduction of **Auto Run**, providing administrators with more flexibility and helping reduce unnecessary compute usage.
 
 **Auto Refresh enhancements:**
     - Disable auto refresh entirely, or

@@ -10,7 +10,7 @@ import Iframe from 'react-iframe';
 <img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="sumo logic academy" width="200"/><br/><br/>
 
 :::training Need to Access a Self-Paced Course?
-If you clicked a link to a self-paced course and can't see the content, you need to **[sign in to the learning portal first](#how-do-i-access-the-learning-portal)**.
+If you clicked a link to a self-paced course and cannot see the content, you need to **[sign in to the learning portal first](#how-do-i-access-the-learning-portal)**.
 :::
 
 Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free, with paid private instruction offerings available.

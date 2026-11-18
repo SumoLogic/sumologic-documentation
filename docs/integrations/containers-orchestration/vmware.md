@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 ### Step 2: Set up the Sumo Logic Installed Collector
 
-Our Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
+Our Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo Logic service. The Collector runs as a service and starts automatically after installing or rebooting.
 
 See [Installed Collectors](/docs/send-data/installed-collectors) for installation instructions.
 
@@ -167,7 +167,7 @@ Test running a Python script from the directory containing the Sumo Logic script
    </details>
 
 2. Once you are satisfied with the output, modify the **cron_vcenter_events.sh** with the required parameters and create a cron job to periodically run the **cron_vcenter_events.sh** script at the desired time interval.
-   * If utilizing a syslog source, provide the target and target port parameters where the Sumo Collector is installed. If utilizing a local or remote source, use the file parameter to generate the file and configure the **File Path** for a local file source or **Path Expression** for a Remote file source.
+   * If utilizing a syslog source, provide the target and target port parameters where the Sumo Logic Collector is installed. If utilizing a local or remote source, use the file parameter to generate the file and configure the **File Path** for a local file source or **Path Expression** for a Remote file source.
    * The cron job needs to run as root or as a user who has read and write access to the script directories.
    * For more detailed information, see the shell script for configuration options.
 

@@ -13,7 +13,7 @@ A funnel chart visualizes categorical data. It’s useful for visualizing the st
 
 1. [Create a metrics query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) in the Metrics Search.
    :::note
-   Don't include the [`outlier`](/docs/metrics/metrics-operators/outlier/) operator in your query, as it isn't supported in this chart type.
+   Do not include the [`outlier`](/docs/metrics/metrics-operators/outlier/) operator in your query, as it is not supported in this chart type.
 1. Click the **Chart** tab.
 1. Under **Panel Type**, click **Categorical**.
 1. Under **Visual Settings**, choose **Funnel** in the **Chart Type** pulldown.
@@ -21,7 +21,7 @@ A funnel chart visualizes categorical data. It’s useful for visualizing the st
 1. **Color Palette**. Choose an alternative color palette, if desired.
 1. **Fill Opacity**. You can adjust the opacity of the categories in the funnel chart by selecting or entering a decimal value greater than 0, and no greater than 1.
 1. **Maximum number of Slices**. By default, a maximum of 10 categories are displayed. Enter a different value, if desired.
-1. **Sort by**. By default the categories in the chart aren’t sorted. To sort them, select *Label* or *Value* from the **Sort By** pulldown.
+1. **Sort by**. By default the categories in the chart are not sorted. To sort them, select *Label* or *Value* from the **Sort By** pulldown.
 1. **Sort Direction**. This option appears when you choose a Sort By option other than none. The default value is *Ascending*. You can choose *Descending* from the pulldown.
 
 ## Example funnel chart

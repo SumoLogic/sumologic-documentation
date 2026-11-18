@@ -19,8 +19,8 @@ Sumo Logic also disables a logs-to-metrics rule that generates too many time ser
 
 Sumo Logic imposes a global limit across all of the  metric sources in your account:
 
-* 50M unique timeseries per week, for metrics with long term retention
-* 100M unique timeseries per week, for metrics with short term retention
+* 50M unique time series per week, for metrics with long term retention
+* 100M unique time series per week, for metrics with short term retention
 
 The storage is based on the metrics retention period, which you can control using [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
 
@@ -30,8 +30,8 @@ When you approach one of these limits, Sumo Logic generates a health event and w
 
 The health event and audit message are generated when your metric ingestion reaches these levels:
 
-* 35M unique timeseries per week, for metrics with long term retention
-* 70M unique timeseries per week, for metrics with short term retention
+* 35M unique time series per week, for metrics with long term retention
+* 70M unique time series per week, for metrics with short term retention
 
 The health event is named [`HighCardinalityMetricsDetected`](https://service.sumologic.com/audit/docs/#operation/getHighCardinalityMetricsDetected). 
 
@@ -97,13 +97,13 @@ This limit does not apply to the Kubernetes dimensions, Docker dimensions, or th
 * `label.com.docker.swarm.task.id`
 * `label.com.docker.swarm.task.name`
 
-For other dimensions that exceed the cardinality limit, Sumo generates a metric transformation rule to exclude the dimension. The rule appears in the UI in **Metrics Transformation Rules**.
+For other dimensions that exceed the cardinality limit, Sumo Logic generates a metric transformation rule to exclude the dimension. The rule appears in the UI in **Metrics Transformation Rules**.
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access **Metrics Transformation Rules**, in the main Sumo Logic menu select **Data Management** and then under **Metrics** select **Metrics Transformation Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Transformation Rules**. 
  
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  To access **Metrics Transformation Rules**, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Transformation Rules**. 
 
-You can delete the metric transformation rule, but you can’t disable or modify it. 
+You can delete the metric transformation rule, but you cannot disable or modify it. 
 <img src={useBaseUrl('img/metrics/transformation-rules.png')} alt="Transformation rules" style={{border: '1px solid gray'}} width="800" />
 
 :::note
@@ -120,7 +120,7 @@ Following is an example of the message written to the system event index:
 {"status":"UnHealthy","details":{"dimension":"monitoridentifier","trackerId":"HighCardinalityDimensionDropped","error":"Dropped highly cardinal metrics dimension","description":"This metrics source has sent metrics with too many unique values of one dimension. Therefore said dimension will be dropped from metrics coming from this source."},"eventType":"Health-Change","severityLevel":"Error","accountId":"0000000000000131","eventId":"7354fe41-bd6e-46e2-802b-bc6b42a97406","eventName":"HighCardinalityDimensionDropped","eventTime":"2020-06-18T15:49:57.803Z","eventFormatVersion":"1.0 beta","subsystem":"Metrics","resourceIdentity":{"collectorId":"00000000064C90BE","collectorName":"nite-alert-1","id":"000000000689D385","name":"carbon2udp","type":"Source"}}
 ```
 
-## Why Sumo disables a metrics source 
+## Why Sumo Logic disables a metrics source 
 
 Too many unique time series can occur with metrics whose names contain dynamically-generated strings, for example, a timestamp. This is sometimes the case with Graphite metrics. Similarly, Dropwizard metric names sometimes contain names of threads. With dynamically-generated metric names, a new time series is created with each new name. When this happens, the total number of time series can be subjected to unbounded growth over time. And the time series are typically of little use, given their ephemeral nature.
 

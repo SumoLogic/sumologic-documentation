@@ -102,7 +102,7 @@ Follow the steps below to configure the Druva webhook.
 6. Click **Test and Save** to validate the connection and save your configuration.
 7. Verify Druva events are getting ingested in Sumo Logic by executing the following query in Log Search:
 
-```sql
+```metrics
 _sourceCategory=Labs/Druva
 ```
 

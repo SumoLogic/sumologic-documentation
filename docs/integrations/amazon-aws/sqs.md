@@ -71,7 +71,7 @@ The Sumo Logic app for Amazon SNS uses the following logs and metrics:
 
 **Messages Received (Metrics-based)**
 
-```sql
+```metrics
 metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename
 ```
 

@@ -1,6 +1,6 @@
 ---
 slug: /contributing
-title: Contribute to Sumo Docs
+title: Contribute to Sumo Logic Docs
 description: Contribute to Sumo Logic's open-source documentation. Fix errors, clarify sections, add new docs, or share feedback through the GitHub fork-and-PR workflow.
 keywords:
   - contribute to documentation

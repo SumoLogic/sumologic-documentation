@@ -50,7 +50,7 @@ Optionally, you can configure Source using Sumo Logic after the Collector has 
 
 ## (Optional) Enable FIPS
 
-This option is only supported in specific deployments, ask your Sumo account representative for details.
+This option is only supported in specific deployments, ask your Sumo Logic account representative for details.
 
 On Collector version 19.253-3+ you can enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-1.
 

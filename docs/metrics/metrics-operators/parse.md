@@ -5,17 +5,17 @@ sidebar_label: parse
 description: Use the parse metrics operator to parse specified fields and create new fields for use in metrics queries.
 ---
 
-The parse operator parses the specified field to create new fields to use in the metrics query.
+The `parse` operator parses the specified field to create new fields to use in the metrics query.
 
 :::tip
 If you are querying Graphite metrics, and do not specify the field to be parsed, then the metric name will be parsed.
 :::
 
-Each wildcard in the pattern corresponds to a specified field. The parse operator supports both lazy (shortest match) and greedy (longest match wildcard matches.  Use '\*' for a lazy match, or '\*\*' for a greedy match.
+Each wildcard in the pattern corresponds to a specified field. The `parse` operator supports both lazy (shortest match) and greedy (longest match) wildcard matches. Use '\*' for a lazy match, or '\*\*' for a greedy match.
 
 ## Syntax
 
-```sql
+```metrics
 parse [field=FIELD] PATTERN as PARSED_FIELD [, PARSED_FIELD, ...]
 ```
 
@@ -31,13 +31,13 @@ Where:
 
 In this query, we parse the `LoadBalancer` field. The format of the field is `type/name/id`, for example:   
 
-```sql
+```metrics
 app/app-song-8d/4567223890123456
 ```
 
 This query creates a field for each of the forward-slash-separated segments:  
 
-```sql
+```metrics
 AvailabilityZone=us-west-1a metric=HTTPCode_Target_2XX_Count | parse field=LoadBalancer */*/* as type, name, id
 ```
 
@@ -47,6 +47,6 @@ The `parse` operator creates fields named `type`, `name`, and `id` that have the
 
 You can use the field(s) you’ve parsed within the same query, after the `parse` operator. for example, this query parses the `name` field out of the  `LoadBalancer` field, returns the average value of the `HTTPCode_Target_2XX_Count` metric by the `name` field.
 
-```sql
+```metrics
 AvailabilityZone=us-west-1a metric=HTTPCode_Target_2XX_Count | parse field=LoadBalancer */*/* as type, name, id | avg by name
 ```

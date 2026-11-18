@@ -508,7 +508,7 @@ sumologic:
 
 ### Multiline unstructured logs with HTTP sources
 
-By default, the Helm Chart sends data to Sumo using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain HTTP Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
+By default, the Helm Chart sends data to Sumo Logic using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain HTTP Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
 
 ```yaml
 sumologic:

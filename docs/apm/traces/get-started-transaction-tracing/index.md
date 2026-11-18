@@ -7,12 +7,12 @@ description: Learn how to send traces to Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic transaction tracing provides cloud-native transactional intelligence for distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. All telemetry signals are fully integrated to provide a seamless end-to-end experience during the process of managing and responding to production incidents and to reduce downtime by streamlining root cause analysis.
+Sumo Logic transaction tracing provides cloud-native transactional intelligence for distributed business workflows, by enriching and analyzing traces, logs, and metrics in real time with automated generated application topology. All telemetry signals are fully integrated to provide a seamless end-to-end experience during the process of managing and responding to production incidents and to reduce downtime by streamlining root cause analysis.
 
-Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy open standards and libraries for tracing (e.g., OpenTracing, OpenCensus, Jaeger, Zipkin) and leverages open source componentry from the Cloud Native Computing Foundation (CNCF) to collect distributed tracing data.
+Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy open standards and libraries for tracing (for example, OpenTracing, OpenCensus, Jaeger, Zipkin) and leverages open source componentry from the Cloud Native Computing Foundation (CNCF) to collect distributed tracing data.
 
 
-## Step 1: Set up Traces Collection
+## Step 1: Set up traces collection
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
@@ -36,7 +36,7 @@ Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy o
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/http-traces-source')}><img src={useBaseUrl('img/icons/traces.png')} alt="Traces icon" width="40"/><h4>Configure an HTTP Traces Source</h4></a>
-  <p>An HTTP Traces Source is an endpoint for receiving traces.</p>
+  <p>An HTTP Traces source is an endpoint for receiving traces.</p>
   </div>
 </div>
 </div>
@@ -46,7 +46,7 @@ Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy o
 Once you've set up collection, you can start [analyzing your traces in Sumo Logic](/docs/apm/traces/view-and-investigate-traces).
 
 
-## Step 2: Instrument Your App with OpenTelemetry
+## Step 2: Instrument your app with OpenTelemetry
 
 Learn how to collect telemetry data from applications written in the following programming languages:
 
@@ -135,7 +135,7 @@ Learn how to install and configure OpenTelemetry distributed tracing for AWS Lam
 
 ### Kubernetes environments
 
-Setting up Tracing instrumentation for applications deployed in Kubernetes just got easier. In a few steps, you can automatically instrument your app using the [OpenTelemetry Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) and send your Traces to Sumo Logic.
+Setting up Tracing instrumentation for applications deployed in Kubernetes is easier. In a few steps, you can automatically instrument your app using the [OpenTelemetry Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) and send your Traces to Sumo Logic.
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
@@ -158,7 +158,7 @@ Setting up Tracing instrumentation for applications deployed in Kubernetes just 
   </div>
 </div>
 
-## Optional: Advanced Configuration
+## Optional: Advanced configuration
 
 <div className="box-wrapper" >
 <div className="box smallbox card">

@@ -10,7 +10,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We're excited to introduce more control over your dashboard exporting and scheduled reports. When you [export a dashboard](/docs/dashboards/export-dashboard-new/) to PDF or PNG or create a [scheduled report](/docs/dashboards/scheduled-report/), you can now:
+More control over your dashboard exporting and scheduled reports. When you [export a dashboard](/docs/dashboards/export-dashboard-new/) to PDF or PNG or create a [scheduled report](/docs/dashboards/scheduled-report/), you can now:
 
 * Pick a **Light** or **Dark** theme for the output.
 * Set the resolution from 1,500 to 6,000 pixels for a sharper image on large displays.

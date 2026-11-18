@@ -78,7 +78,7 @@ Below are the inputs required:
 - The path to system.log is required here. This file is typically located in `/var/log/cassandra`. If you're using a customized path, check the respective conf file for this information.
 - For metrics, you're required to provide the JMX endpoint (default is `localhost:7199`) along with the `collection_interval` (default is 1 minute).
 
-You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to be tagged with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
 
 import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
 
@@ -206,7 +206,7 @@ Following is a query from the Cassandra app's **Cassandra - Overview** dashboard
 
 Following is the query from Cassandra App's overview Dashboard's Number of Requests Panel:
 
-```sql
+```metrics
 sumo.datasource=cassandra deployment.environment=* db.cluster.name=* db.node.name=* metric=cassandra.client.request.count | sum 
 ```
 

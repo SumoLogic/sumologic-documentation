@@ -17,15 +17,15 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* **Self-paced**: 
+* **Self-paced**:
    * [Fundamentals: Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
    * [Logs for Security Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-security-monitoring-and-analytics-self-paced-course)
-* **Instructor-led virtual classes**: 
+* **Instructor-led virtual classes**:
    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
    * [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security#section-2)
 :::
 
-In this section, we'll introduce the following concepts:
+This section covers the following topics:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -49,19 +49,19 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/explore-view/')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Explore Monitoring Dashboards</h4></a>
-  <p>Monitoring dashboards give you an easy way to view and navigate the hierarchy of your environment.</p>
+  <p>Monitoring dashboards let you view and navigate the hierarchy of your environment.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/drill-down-to-discover-root-causes')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Drill Down to Discover Root Causes</h4></a>
-  <p>Use dashboards to investigate root causes of a spike of interest.</p>
+  <p>Use dashboards to investigate the root causes of a spike.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/panels')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Dashboard Panels</h4></a>
-  <p>Learn about the various Dashboard panels and the types of data best suited for each.</p>
+  <p>Learn about the various dashboard panels and the types of data best suited for each.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -103,7 +103,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/dashboards/set-data-access-level/')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Set the Data Access Level for a Dashboard</h4></a>
-  <p>Learn how to set Data Access Level for a Dashboard to control the data that the user can see.</p>
+  <p>Learn how to set the data access level for a dashboard to control the data users can see.</p>
   </div>
 </div>
 <div className="box smallbox card">

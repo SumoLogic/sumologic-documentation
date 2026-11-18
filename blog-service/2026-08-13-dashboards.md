@@ -9,4 +9,4 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We're excited to introduce a new Mobot skill that lets you create dashboard panels from plain-language prompts, instead of configuring them manually. Describe what you want to see, and Mobot drafts the query, picks a visualization, and adds it to a new or existing dashboard. [Learn more](/docs/dashboards/create-panel-with-mobot).
+A new Mobot skill that lets you create dashboard panels from plain-language prompts, instead of configuring them manually. Describe what you want to see, and Mobot drafts the query, picks a visualization, and adds it to a new or existing dashboard. [Learn more](/docs/dashboards/create-panel-with-mobot).

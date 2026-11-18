@@ -5,7 +5,7 @@ sidebar_label: Metrics Formats
 description: Sumo Logic supports the Graphite, Carbon 2.0, and Prometheus metric formats.
 ---
 
-Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. 
+Sumo Logic supports the Graphite, Carbon 2.0, and Prometheus metric formats. 
 
 ## Graphite
 
@@ -34,12 +34,12 @@ In the metric above: 
 * The timestamp for the instant that the metric was measured is 1460061337.
 
 :::tip
-You can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s `metric_path`. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](/docs/metrics/metric-rules-editor#about-metrics-rules).
+You can use Sumo Logic's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s `metric_path`. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](/docs/metrics/metric-rules-editor#about-metrics-rules).
 :::
 
 ### Inferred metric name
 
-The Graphite format doesn't have a notion of named tags. Since Sumo Logic requires each metric to have a valid metric name, for Graphite metrics, the metric name must be inferred. To accomplish that, for every Graphite metric sent to our backend, Sumo Logic adds an additional `metric` tag, whose value is equal to the last segment of a dot-separated `metric_path`.
+The Graphite format does not have a notion of named tags. Since Sumo Logic requires each metric to have a valid metric name, for Graphite metrics, the metric name must be inferred. To accomplish that, for every Graphite metric sent to our backend, Sumo Logic adds an additional `metric` tag, whose value is equal to the last segment of a dot-separated `metric_path`.
 
 For example, for the below Graphite metric sent to Sumo Logic:
 ```
@@ -58,7 +58,7 @@ intrinsic_tags  meta_tags value timestamp
 ```
 
 :::tip
-There are two spaces between `intrinsic_tags` and `meta_tags`. If a tag is listed before the double space, then it is an intrinsic tag. If a tag is listed after the double space, then it is a meta tag.
+There are two spaces between `intrinsic_tags` and `meta_tags`. This is intentional. If a tag is listed before the double space, then it is an intrinsic tag. If a tag is listed after the double space, then it is a meta tag.
 :::
 
 Where:
@@ -69,7 +69,7 @@ Where:
   `intrinsic_tags` must be followed by two spaces.
   :::
 
-* `meta_tags` is zero or more space-separated key-value pairs that provide additional, but not identifying information about the thing being measured. A meta tag is a piece of metadata that might be useful in querying your metrics. It doesn’t identify the thing being measured, but provides additional information of interest. Meta tags are meant to be used in addition to intrinsic tags so that you can more conveniently select the metrics. For example, it might be interesting to know the collection agent that obtained the measurement. 
+* `meta_tags` is zero or more space-separated key-value pairs that provide additional, but not identifying information about the thing being measured. A meta tag is a piece of metadata that might be useful in querying your metrics. It does not identify the thing being measured, but provides additional information of interest. Meta tags are meant to be used in addition to intrinsic tags so that you can more conveniently select the metrics. For example, it might be interesting to know the collection agent that obtained the measurement. 
 * `value` is any numeric value.
 * `timestamp` is a UNIX timestamp.
 
@@ -97,7 +97,7 @@ cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 1460061337
 
 ### Mandatory metric name
 
-Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Health Events, see [Health Events](/docs/manage/health-events)).
+Unlike Prometheus, Carbon 2.0 format does not enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated metric source will be triggered (for more information on Health Events, see [Health Events](/docs/manage/health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```
@@ -139,4 +139,4 @@ See the table below for descriptions of the components of a Prometheus metric 
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
-The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
+The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo Logic. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).

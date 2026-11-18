@@ -1,8 +1,8 @@
 ---
 id: traceid-and-spanid-injection-into-logs
-title: Go TraceId and SpanId Injection into Logs
-sidebar_label: TraceId and SpanId injection into logs
-description: Learn how to configure traceId and spanId data injection into user logs in Go applications using Logrus logging library.
+title: Go Trace ID and Span ID Injection into Logs
+sidebar_label: Trace ID and Span ID injection into logs
+description: Learn how to configure trace ID and span ID data injection into user logs in Go applications using Logrus logging library.
 ---
 
 This page describes how to configure **spanId** and **traceId** data injection into user logs in Go applications using the Logrus logging library. The process involves adding the necessary tracing dependencies and injecting the `span_id` and `trace_id` into relevant logs.

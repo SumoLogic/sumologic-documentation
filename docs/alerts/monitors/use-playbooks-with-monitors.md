@@ -13,6 +13,10 @@ To add an automated playbook to a monitor, see [Add an automated playbook to a m
 
 To create a monitor that detects and automatically responds to suspicious behavior (anomalies), see [Create an anomaly monitor that runs an automated playbook](#create-an-anomaly-monitor-that-runs-an-automated-playbook) below.
 
+:::tip
+You can [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).
+:::
+
 ## Prerequisites
 
 Automated playbooks are managed by the [Automation Service](/docs/platform-services/automation-service). To use automated playbooks with monitors, you must perform tasks to enable the Automation Service. See [Prerequisites](/docs/platform-services/automation-service/about-automation-service/#prerequisites) for the Automation Service.
@@ -31,8 +35,8 @@ For more information, see [Add an automated playbook to a monitor](/docs/alerts/
 
 ### When viewing an alert
 
-1. Go to your **Alert List** and click on any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
-1. Click the **Playbook** button. The attached playbooks, if assigned during Monitor configuration, are displayed along with their execution status.
+1. Go to your **Alert List** and click any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
+1. Click the **Playbook** button. The attached playbooks, if assigned during monitor configuration, are displayed along with their execution status.
 1. Click the name of an attached playbook. <br/>The playbook is opened in the Automation Service.
 
 For more information, see [View automated playbooks for an alert](#view-automated-playbooks-for-an-alert) below.
@@ -57,7 +61,7 @@ After you add playbooks to the monitor, when the monitor triggers an alert, the 
 
 Once a monitor triggers an alert with one or more attached playbooks, you can view the playbooks for the alert.
 
-1. Go to your **Alert List** and click on any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
+1. Go to your **Alert List** and click any alert to open its [details page](/docs/alerts/monitors/alert-response/#alert-details).
 1. Click the **Playbook** button. The attached playbooks are displayed. <br/><img src={useBaseUrl('img/alerts/monitors/view-playbooks-on-alert.png')} alt="View playbooks for an alert" style={{border: '1px solid gray'}} width="800" />
 1. Hover your mouse over the icon to the right of the playbook name to view the status of the playbooks:
 
@@ -143,15 +147,15 @@ To create a playbook so you can add it to a monitor, see [Create a new playbook]
 
 [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) are connectors to applications from industry-leading network and security vendors. Integrations provide the actions run in playbooks.
 
-To use an integration's actions in a playbook, [install the integration from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central). To use an existing integration as the basis for a new integration, [duplicate the integration](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration).
+To use an integration's actions in a playbook, [install the integration from App Catalog](/docs/integrations/automation-integrations/install-automation-integrations/#install-an-integration-from-app-catalog). To use an existing integration as the basis for a new integration, [duplicate the integration](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration).
 
 Some integrations that have useful actions for monitors include:
-* [**Sumo Logic Log Analytics**](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/). Integration with Sumo Logic platform for logs, metrics, and monitors. Actions include:
+* [**Sumo Logic Log Analytics**](/docs/integrations/automation-integrations/sumo-logic-log-analytics/). Integration with Sumo Logic platform for logs, metrics, and monitors. Actions include:
    * **Resolve Alert**. Resolve the alert.
    * **Search Metrics**. Query metrics from Sumo Logic.
    * **Search Output Mapping**. Parse the output of a Search Sumo Logic action.
    * **Search Sumo Logic**. Query logs data from Sumo Logic.
-* [**Sumo Logic Notifications**](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/). Integration with the Sumo Logic platform for monitors and Slack notifications. Actions include:
+* [**Sumo Logic Notifications**](/docs/integrations/automation-integrations/sumo-logic-notifications/). Integration with the Sumo Logic platform for monitors and Slack notifications. Actions include:
    * **Assess Alert Status**. Periodically monitor status of a Sumo Logic alert and notify a Slack user if the alert is unresolved.
 
 ### Pass custom fields from a monitor to playbooks

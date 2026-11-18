@@ -32,7 +32,7 @@ This section contains articles about how to use the Sumo Logic APIs.
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/api/about-apis/troubleshooting')}><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Troubleshoot icon" width="50"/><h4>Troubleshooting</h4></a>
-  <p>Troubleshoot errors you may find when using the Sumo APIs.</p>
+  <p>Troubleshoot errors you may find when using the Sumo Logic APIs.</p>
   </div>
 </div>
 </div>

@@ -81,7 +81,7 @@ Each system event log has common keys that categorize it to a product area and p
 | eventName | The name of the event. | String |
 | eventTime | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | eventFormatVersion | The event log format version. | String |
-| operator | Information of who did the operation. If its missing, the Sumo service was the operator. | JSON object of Strings |
+| operator | Information of who did the operation. If it's missing, the Sumo Logic service was the operator. | JSON object of Strings |
 | subsystem | The product area of the event. | String |
 
 ```json
@@ -125,4 +125,4 @@ Each system event log has common keys that categorize it to a product area and p
 
 ## Index retention period
 
-By default, the retention period of the System index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition `sumologic_system_events`. For more information, see [Created and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
+By default, the retention period of the System index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partition `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

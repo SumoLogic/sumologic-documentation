@@ -319,7 +319,7 @@ The instructions for setting up the Oracle performance metrics script vary by op
    4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 3. **Set up Telegraf**.
    1. **Install Telegraf**, if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
-   2. **Install custom Python script to send Oracle metrics into Sumo** using the [following steps](https://github.com/SumoLogic/sumologic-integrations/tree/main/Oracle)
+   2. **Install custom Python script to send Oracle metrics into Sumo Logic** using the [following steps](https://github.com/SumoLogic/sumologic-integrations/tree/main/Oracle)
    3. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send it to Sumo Logic.
 
    You can create a `telegraf.conf` file or modify an existing `telegraf.conf` file, then copy and paste the text below:

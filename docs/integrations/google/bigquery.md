@@ -50,11 +50,11 @@ cloud.provider=gcp project_id=* location=* metric=query/count statistic=average
 
 ## Collect logs for Google BigQuery
 
-This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google BigQuery App.
+This section describes the Sumo Logic pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google BigQuery App.
 
 ### Collection Process for GCP Services
 
-The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
+The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo Logic’s Google Cloud Platform (GCP) source running on a hosted collector.
 
 The GCP service generates logs that are exported and published to a Google Pub/Sub topic via the Google Cloud Logging [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source to subscribe to this topic and receive the exported log data.
 

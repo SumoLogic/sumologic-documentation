@@ -29,7 +29,7 @@ As of version 3 of the Chart, Fluent Bit and Fluentd were replaced by the OpenTe
 
 ### Drop Prometheus recording rule metrics
 
-OpenTelemetry cannot collect Prometheus recording rule metrics. The new version therefore stops collecting recording rule metrics and updates will be made to the Kubernetes App to remove these metrics. See the [scraped metrics reference](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/scraped-metrics.md#aggregations-removed) for instructions on how to recover these recording rule metrics in Sumo.
+OpenTelemetry cannot collect Prometheus recording rule metrics. The new version therefore stops collecting recording rule metrics and updates will be made to the Kubernetes App to remove these metrics. See the [scraped metrics reference](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/scraped-metrics.md#aggregations-removed) for instructions on how to recover these recording rule metrics in Sumo Logic.
 
 ### Drop Histogram metrics
 
@@ -101,7 +101,7 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 
 ### Use OTLP sources by default
 
-This Helm Chart automatically creates the necessary Collector and Sources in Sumo. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo queries.
+This Helm Chart automatically creates the necessary Collector and Sources in Sumo Logic. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo Logic now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo Logic queries.
 
 ### Use Routing connector from release 4.19 onwards (breaking change)
 

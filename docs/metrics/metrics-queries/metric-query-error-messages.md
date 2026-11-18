@@ -48,7 +48,7 @@ Sumo Logic imposes limits on the input data for a query and the data output by t
 
 *Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
-For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
+For a single metrics query row, Sumo Logic limits the number of input time series to 3000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
 
 In addition, the total number of data points scanned by a single row of query limited to 500,000,000 (500M) raw data points, or 50,000,000 (50M) [rollup data points](/docs/metrics/introduction/metric-quantization/#rollup-types).
 
@@ -62,25 +62,25 @@ If the query that results in the message contains an aggregation operator, the r
 
 #### Output data limit
 
-When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo Logic also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
+When a single row of query returns more than 3000 time series after the input data limit is applied, Sumo Logic also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
 
-`There were too many timeseries in the output, showing first 1000`
+`There were too many timeseries in the output, showing first 3000`
 
 There will also be a tip like this:
 
 `Tip: Group your data by _sourceHost using avg to produce more readable result. Add operator to query.`
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example, by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators/topk), [bottomk](/docs/metrics/metrics-operators/bottomk), and [filter](/docs/metrics/metrics-operators/filter) operators. 
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example, by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [`topk`](/docs/metrics/metrics-operators/topk), [`bottomk`](/docs/metrics/metrics-operators/bottomk), and [`filter`](/docs/metrics/metrics-operators/filter) operators. 
 
 #### Join data limit
 
-When a cross-row calculation (e.g., #A+#B) produces more than 1000 time series, Sumo Logic will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
+When a cross-row calculation (for example, #A+#B) produces more than 1000 time series, Sumo Logic will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
 
 `The cross-row calculation resulted in too many time-series. Limiting results to 1000 series.`
 
 ### Quantization interval not supported
 
-When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo Logic’s quantization behavior, the following limitations will apply in sequence:
+When you use the [`quantize`](/docs/metrics/metrics-operators/quantize) operator to control Sumo Logic's quantization behavior, the following limitations will apply in sequence:
 
 - Each output time series will contain no more than 300 data points. If the quantization interval is too small, the following warning message will be displayed:
 

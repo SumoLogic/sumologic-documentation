@@ -90,7 +90,7 @@ For scheduled view query requirements, see [Scheduled Views Best Practices and E
     1. **Timezone**.
     1. **Enable AutoParse**.
     1. **Retention Period**. Either enter a retention period for the data in the index, in days, or click **Apply the retention period of sumologic_default**. For more information, see [Manage Indexes with Variable Retention](/docs/manage/partitions/manage-indexes-variable-retention).
-    1. (Optional) **Data Forwarding**. Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](/docs/manage/data-forwarding). The results from the Scheduled View are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. <br/><img src={useBaseUrl('/img/views/add-view.png')} alt="add-view" style={{border:'1px solid gray'}} width="400"/>
+    1. (Optional) **Data Forwarding**. Choose **Enable Data Forwarding** to [forward data from Sumo Logic to Amazon S3](/docs/manage/data-forwarding). The results from the Scheduled View are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. <br/><img src={useBaseUrl('/img/views/add-view.png')} alt="add-view" style={{border:'1px solid gray'}} width="400"/>
 1. Click **Save**.
 
 The view begins to index data as soon as you create it. Allow a few hours for the indexing to complete. If you have chosen to index a large amount of data and/or have chosen a long date range for the view, it could take longer.

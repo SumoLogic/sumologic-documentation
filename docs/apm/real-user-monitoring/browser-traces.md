@@ -2,6 +2,7 @@
 id: browser-traces
 title: Search RUM Browser Traces
 sidebar_label: RUM Browser Traces
+description: Search RUM browser traces in Sumo Logic with a trace query that uses your root service and operation names to find page loads, clicks, and navigation changes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,6 +12,6 @@ To collect browser RUM traces, create a [trace query](/docs/apm/traces/view-and-
 * `Click on *` as an operation name to detect click actions that most likely resulted in XHR calls
 * `Navigation: *` as an operation name to detect single-page app navigation changes
 
-Click on any of the load spans, such as `documentLoad`, `documentFetch`, or `resourceFetch` (for `documentLoad`), to open a right-side panel with detailed span metadata, including timing events.
+Click any of the load spans, such as `documentLoad`, `documentFetch`, or `resourceFetch` (for `documentLoad`), to open a right-side panel with detailed span metadata, including timing events.
 
 <img src={useBaseUrl('img/rum/RUM-trace-view-with-border.png')} alt="RUM trace view with border" style={{border: '1px solid gray'}} width="800" />

@@ -276,7 +276,7 @@ To prevent gaps in your LogCompare results, configure the **time range** of your
 When selecting the time range of your search, keep in mind:
 
 *   With a smaller time range, more emails will be generated, unless you configure it so that an email is only sent when there are results.
-*   When the time range is smaller, the LogReduce results are also less accurate. For example, if you were to use a 1s time range, any new signature information would likely be useless.
+*   When the time range is smaller, the LogReduce® results are also less accurate. For example, if you were to use a 1s time range, any new signature information would likely be useless.
 *   The larger the time range, the longer it takes for the email alert to be generated.
 
 By default, LogCompare email notifications provide details on the **Score**, **Count**, and **Signature**, as shown in the following email example. This is not configurable.

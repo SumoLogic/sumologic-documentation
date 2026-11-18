@@ -137,12 +137,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source')}><img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="Azure Event Hub icon" width="40"/><h4>Azure Event Hubs</h4></a>
-  <p>Provides a secure endpoint to receive data from Azure Event Hubs.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/bitwarden-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="Bitwarden icon" width="80" /><h4>Bitwarden</h4></a>
   <p>Learn how to collect event logs from the Bitwarden API.</p>
   </div>
@@ -355,6 +349,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source')}><img src={useBaseUrl('img/send-data/Google-Threat-Intel.png')} alt="Gmail" width="50"/><h4>Google Threat Intel</h4></a>
   <p>Learn how to collect data using the Google Threat Intel API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-activities')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="180"/><h4>Google Workspace Activities</h4></a>
+  <p>Configure Google Workspace Activities Cloud-to-Cloud connector.</p>
   </div>
 </div>
 <div className="box smallbox card">

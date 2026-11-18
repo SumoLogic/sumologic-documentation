@@ -2,7 +2,7 @@
 id: about-integration-framework
 title: About the Open Integration Framework
 sidebar_label: About
-description: Get an overview of how the open integration framework (OIF) works. 
+description: Get an overview of how the open integration framework (OIF) works.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -15,7 +15,7 @@ The second type of file is an action definition file, which is used to define a 
 
 The following diagram shows the integration file hierarchy:
 
-<img src={useBaseUrl('img/cse/integration-framework-container.png')} style={{border:'1px solid gray'}} alt="Integraton framework container" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-container.png')} style={{border:'1px solid gray'}} alt="Integration framework container" width="700"/>
 
 Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file.
 
@@ -41,7 +41,7 @@ Both the integration definition file and the action definition file are YAML fil
      * `perl`
      * `powershell`
      * `python`
-   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
+   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
 * **docker_repo_tag** `*` [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
 * **local_repo** [Boolean] (Cloud SOAR only): Indicates that the Docker image is a local one and not one present in the repository.
 * **configuration** `*`:
@@ -104,7 +104,7 @@ Both the integration definition file and the action definition file are YAML fil
       * `textarea`
       * `upload`
    * **required** `*` [Boolean]: Is the field required (true/false).
-   * **validator** `*` [String]: Input validator type. Acceptable values are:  
+   * **validator** `*` [String]: Input validator type. Acceptable values are:
      * `datetime`
      * `domain`
      * `e-mail`
@@ -138,44 +138,51 @@ Both the integration definition file and the action definition file are YAML fil
      :::
 * **output** `*`: Expected fields from results.
 * **path** `*` [String]: JSON path for each field which may be returned by the action, using the following JSON as an example:
-      ```
-      { country: "US",
-      response_code: 1,
-      as_owner: "CloudFlare, Inc.",
-      detected_urls: {
-      url: "http://google.com/",
-      positives: 2
-      }}
-      ```
-       The following `output:path` attributes should be added:
-        * `country`
-        * `response_code`
-        * `as_owner`
-        * `detected_urls.[].url`
-        * `detected_urls.[].positives`
 
-      *Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:   
-           ```
-           {
-             "payload": {
-               "headers": {
-                 "MIME-Version": "1.0",
-                 "From": "Joe Smith <joe.smith@example.com>",
-                 "Message-ID": "<193853.example.com>",
-                 "Subject": "Account Verification Required",
-                 "To": "verify@example.com",
-                 "Content-Type": "multipart/mixed; boundary=\"0000008\""
-               }
-             }
-           }
-           ```
-           To correctly parse `"MIME-Version"` in the example, use one of the following formats:
-           * `payload.headers."MIME-Version"`
-           * `payload.headers.["MIME-Version"]`
+```json
+{
+  country: "US",
+  response_code: 1,
+  as_owner: "CloudFlare, Inc.",
+  detected_urls: {
+    url: "http://google.com/",
+    positives: 2
+  }
+}
+```
 
-           In addition to using quotation marks to enclose text with special characters, you must separate nested output fields with a period (**.**). Note that these formats will not parse correctly:
-           * `payload.headers["MIME-Version"]`
-           * `payload.headers[MIME-Version]`
+The following `output:path` attributes should be added:
+* `country`
+* `response_code`
+* `as_owner`
+* `detected_urls.[].url`
+* `detected_urls.[].positives`
+
+*Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:
+
+```json
+{
+  "payload": {
+    "headers": {
+      "MIME-Version": "1.0",
+      "From": "Joe Smith <joe.smith@example.com>",
+      "Message-ID": "<193853.example.com>",
+      "Subject": "Account Verification Required",
+      "To": "verify@example.com",
+      "Content-Type": "multipart/mixed; boundary=\"0000008\""
+    }
+  }
+}
+```
+
+To correctly parse `"MIME-Version"` in the example, use one of the following formats:
+* `payload.headers."MIME-Version"`
+* `payload.headers.["MIME-Version"]`
+
+In addition to using quotation marks to enclose text with special characters, you must separate nested output fields with a period (**.**). These formats will not parse correctly:
+* `payload.headers["MIME-Version"]`
+* `payload.headers[MIME-Version]`
+
 * **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
 * **table_view** `*`: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
    * **display_name** `*` [String]: Column name.
@@ -209,11 +216,11 @@ Both the integration definition file and the action definition file are YAML fil
 * **image_base64_png(jpg)** `*` [String]: Result path of a base64 image png or jpg format.
 * **signature** [String]: Signature to indicate action is the original one written by Sumo Logic. Not to be set by user.
 * **exit_condition** (Cloud SOAR only): Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
-   * **path** `*` [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input i.e. input.path.
+   * **path** `*` [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input, that is, input.path.
    * **string** `*` [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input, for example, `input.matchString`.
 * **re-execution** `*` [String] (force) (Cloud SOAR only): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
 * **scheduled** (Cloud SOAR only):
-   * **every** `*` [String] format `<int><interval type>`: Time interval between one run and the next one (for example, 10m, 5d, etc.) or specify an action's input i.e. input.every:
+   * **every** `*` [String] format `<int><interval type>`: Time interval between one run and the next one (for example, 10m, 5d, and so on) or specify an action's input, that is, input.every:
      * d: DAYS
      * h: HOURS
      * m: MINUTES
@@ -226,41 +233,42 @@ Both the integration definition file and the action definition file are YAML fil
 
 For security reasons, all action parameters are passed to the Docker container as an environment variable, with the variable name equal to the ID specified in YAML. For Python code you can always use:
 
-```
+```python
 argparse.ArgumentParser()
 ```
 
 But in that case, you have to specify a class to manage the environment variable:
 
-```
+```python
 class EnvDefault(argparse.Action):
   def __init__(self, required=True, default=None, **kwargs):
-       envvar = kwargs.get("dest")
-       default = os.environ.get(envvar, default) if envvar in os.environ else default
-       required = False if required and default else required
-       super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
-   def __call__(self, parser, namespace, values, option_string=None):
-       setattr(namespace, self.dest, values)
+    envvar = kwargs.get("dest")
+    default = os.environ.get(envvar, default) if envvar in os.environ else default
+    required = False if required and default else required
+    super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+  def __call__(self, parser, namespace, values, option_string=None):
+    setattr(namespace, self.dest, values)
 ```
 
 And you must add it into the action `kwargs`:
 
-```
+```python
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
-Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can simply use:
+Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can use:
 
-```
+```python
 host = os.environ.get("host", "localhost")
 ```
+
 ## Working with integrations
 
 All integrations are configured by navigating to **Integrations** in the UI.
 
 ### Integration definitions
 
-To add a new integration, click on the **+** icon on the **Integrations** page.
+To add a new integration, click the **+** icon on the **Integrations** page.
 
 <img src={useBaseUrl('img/cse/integration-framework-definition.png')} style={{border:'1px solid gray'}} alt="Add integration" width="800"/>
 
@@ -268,11 +276,11 @@ The **New Integration** window allows you to upload an integration definition fi
 
 <img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} style={{border:'1px solid gray'}} alt="New integration" width="600"/>
 
-To edit an existing integration by uploading a new integration definition file , click on the **Edit** button. To export the integration definition file for the selected integration, click the **Export** icon.
+To edit an existing integration by uploading a new integration definition file , click the **Edit** button. To export the integration definition file for the selected integration, click the **Export** icon.
 
 ### Action definitions
 
-To add a new action, select the appropriate integration from the integrations list, then click on the **Upload** button to the right of the integration.
+To add a new action, select the appropriate integration from the integrations list, then click the **Upload** button to the right of the integration.
 
 The **New Action** window allows you to upload an action definition file by clicking **Select File**, and lets you select the kind of action.
 
@@ -284,7 +292,7 @@ Existing actions may be edited by clicking the **Upload** button below the actio
 
 <img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} style={{border:'1px solid gray'}} alt="Action editor" width="600"/>
 
-To test an action, click on the **Test Action** button below the action name.
+To test an action, click the **Test Action** button below the action name.
 
 <img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} style={{border:'1px solid gray'}} alt="Add integration" width="600"/>
 
@@ -292,7 +300,7 @@ Enter the required parameters and click **Test Action**.
 
 <img src={useBaseUrl('img/cse/integration-framework-test-action.png')} style={{border:'1px solid gray'}} alt="Test action" width="600"/>
 
-To export an action, click on the **Export** button below the action name.
+To export an action, click the **Export** button below the action name.
 
 ### Action definitions for Cloud SOAR
 
@@ -306,8 +314,17 @@ Uploading an action YAML file with type Daemon allows you to specify Daemon acti
 
 Daemon action must return an array of objects in JSON format:
 
-```
-[{ 'a': 'a1', 'b': 'b1' }, { 'a': 'a2', 'b': 'b2' }]
+```json
+[
+  {
+    "a": "a1",
+    "b": "b1"
+  },
+  {
+    "a": "a2",
+    "b": "b2"
+  }
+]
 ```
 
 Every object is processed by filter and action. It is also possible to define which output field should be passed to the next script run and an extra param key value pair to specialize each rule:
@@ -330,45 +347,45 @@ A _Scheduled action_ represents a particular type of action when the execution i
 
 YAML example:
 
-```
- integration: 'Incident tools'
- name: 'intervallo date loop'
- type: Scheduled
- script:
-    code: |
-        [......]
- exit_condition:
-   - path: 'exit_condition'
-     string: 'false'
- re-execution: 'force'  
- scheduled:
-     - every: '10s'
-       expire: '120s'
- output:
-   - path : 'exit_condition'
+```yaml
+integration: 'Incident tools'
+name: 'intervallo date loop'
+type: Scheduled
+script:
+  code: |
+    [......]
+exit_condition:
+  - path: 'exit_condition'
+    string: 'false'
+re-execution: 'force'
+scheduled:
+  - every: '10s'
+    expire: '120s'
+output:
+  - path: 'exit_condition'
 ```
 
 Or using strings array:
 
-```
- integration: 'Incident tools'
- name: 'intervallo date loop'
- type: Scheduled
- script:
-    code: |
-        [......]
- exit_condition:
-   - path: 'exit_condition'
-     string:
-        - 'Open'
-        - 'Pending'
-        - 'Waiting'
- re-execution: 'force'  
- scheduled:
-     - every: '10s'
-       expire: '120s'
- output:
-   - path : 'exit_condition'
+```yaml
+integration: 'Incident tools'
+name: 'intervallo date loop'
+type: Scheduled
+script:
+  code: |
+    [......]
+exit_condition:
+  - path: 'exit_condition'
+    string:
+      - 'Open'
+      - 'Pending'
+      - 'Waiting'
+re-execution: 'force'
+scheduled:
+  - every: '10s'
+    expire: '120s'
+output:
+  - path : 'exit_condition'
 ```
 
 Or using action's input:
@@ -377,7 +394,7 @@ Or using action's input:
 If you use an action's input, this input field should be `required = true*`.
 :::
 
-```sumo
+```yaml
 integration: 'Testing Purpose'
 name: 'testing Scheduled'
 type: Scheduled
@@ -496,24 +513,25 @@ Following are the hooks for [task](/docs/cloud-soar/incidents-triage/#tasks) eve
 * `updateTask`. When task is updated. Param is passed to scripts `tasksBeforeUpdate` and `tasksAfterUpdate`.
 
 Params `tasksDetail`, `tasksBeforeUpdate`, and `tasksAfterUpdate` are JSON strings with the form:
+
 ```json
 {
-reminder_time: <value>,
-report_time: <value>,
-assigned_to: <value>,
-priority: <value>,
-status: <value>,
-title: <value>,
-end_time: <value>,
-hours: <value>,
-opt_3: <value>,
-opt_6: <value>,
-opt_7: <value>,
-opt_8: <value>,
-opt_9: <value>,
-opt_10: <value>,
-opt_12: <value>,
-[....]
+  "reminder_time": "<value>",
+  "report_time": "<value>",
+  "assigned_to": "<value>",
+  "priority": "<value>",
+  "status": "<value>",
+  "title": "<value>",
+  "end_time": "<value>",
+  "hours": "<value>",
+  "opt_3": "<value>",
+  "opt_6": "<value>",
+  "opt_7": "<value>",
+  "opt_8": "<value>",
+  "opt_9": "<value>",
+  "opt_10": "<value>",
+  "opt_12": "<value>",
+  "[....]": "..."
 }
 ```
 
@@ -528,18 +546,19 @@ Param `triage_eventsDetail` is a JSON string with the form:
 
 ```json
 {
-id: <value>,
-status: <value>,
-operator: <value>,
-username: <value>,
-type: <value>,
-opt_1: <value>,
-opt_3: <value>,
-opt_4: <value>,
-opt_5: <value>,
-opt_7: <value>,
-opt_8: <value>,
-opt_11: <value>
+  "id": "<value>",
+  "status": "<value>",
+  "operator": "<value>",
+  "username": "<value>",
+  "type": "<value>",
+  "opt_1": "<value>",
+  "opt_3": "<value>",
+  "opt_4": "<value>",
+  "opt_5": "<value>",
+  "opt_7": "<value>",
+  "opt_8": "<value>",
+  "opt_11": "<value>",
+  "[....]": "..."
 }
 ```
 
@@ -555,23 +574,22 @@ Params `incidentsDetail`, `incidentsBeforeUpdate`, and `incidentsAfterUpdate` ar
 
 ```json
 {
-id: <value>,
-additional_info: <value>,
-status: <value>,
-investigation_number: <value>,
-starttime: <value>,
-type: [<value>],
-incident_kind: <value>,
-incident_category: [<value>],
-[...]
-opt_3: <value>,
-opt_6: <value>,
-opt_7: <value>,
-opt_8: <value>,
-opt_9: <value>,
-opt_10: <value>,
-opt_12: <value>,
-[....]
+  "id": "<value>",
+  "additional_info": "<value>",
+  "status": "<value>",
+  "investigation_number": "<value>",
+  "starttime": "<value>",
+  "type": ["<value>"],
+  "incident_kind": "<value>",
+  "incident_category": ["<value>"],
+  "opt_3": "<value>",
+  "opt_6": "<value>",
+  "opt_7": "<value>",
+  "opt_8": "<value>",
+  "opt_9": "<value>",
+  "opt_10": "<value>",
+  "opt_12": "<value>",
+  "[....]": "..."
 }
 ```
 
@@ -593,37 +611,44 @@ Clicking the button in the UI runs the trigger:
 
 When users interact with the custom action trigger button, they can provide a textual input that can be elaborated by the trigger. To elaborate the input of a custom action trigger, use the `text` param inside the code:
 
-```json
+```yaml
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
-show_modal: true        
+show_modal: true
 script:
  code: |
    import json
    import argparse
    import requests
    import sys
+
    parser = argparse.ArgumentParser()
-   parser.add_argument('--incidentsDetail', help='incident before update', required=False) #param inherited by
- hook defined in the yaml
+   parser.add_argument('--incidentsDetail', help='incident before update' required=False) #param inherited by hook defined in the yaml
    parser.add_argument('--token', help='JWT token , REQUIRED', required=True)
    parser.add_argument('--incmanurl', help='IncMan URL , REQUIRED', required=True)
    parser.add_argument('--text', help='text', required=False) #param inherited by hook defined in the yaml
+   
    args, unknown = parser.parse_known_args()
+   
    inc_det_after = json.loads(args.incidentsDetail)
    incidentID = inc_det_after.get('id')
+   
    headers = {
       'Accept': 'application/json;charset=UTF-8',
       'Content-Type': 'application/x-www-form-urlencoded',
       'Authorization': 'Bearer ' + args.token
-   }
+    }
+
    end_point = '{incmanurl}/api/v2/incidents/{incidentid}'.format(incmanurl=args.incmanurl, incidentid=incidentID)
+   
    session = requests.Session()
    session.verify = False
+   
    additional_info = inc_det_after.get('additional_info')
    new_text = "<br>" + str(args.text if args.text else '')
    additional_info += new_text
+   
    payload = {
       "additional_info": additional_info,
    }
@@ -640,11 +665,12 @@ hook:
  - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
 null
 ```
-```json
+
+```yaml
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
-show_modal: false        
+show_modal: false
 script:
  code: |
    import json
@@ -684,13 +710,14 @@ hook:
  - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
 null
 ```
+
 For other example YAML files, see:
 * [Trigger taskCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
 * [Trigger incidentCustomAction definition file (Incident Tools)](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
 
 #### show_modal
 
-Specifies whether to display the textual input. Default value is `true`. 
+Specifies whether to display the textual input. Default value is `true`.
 
 #### check_not_null_field
 
@@ -698,10 +725,10 @@ Specifying the YAML field `check_not_null_field : <field ID>` inside a trigger, 
 
 For example, if we want to display our custom action trigger button only when our custom field with field ID `opt_15` is populated, inside the YAML file you can set:
 
-```json
+```yaml
 check_not_null_field: 'opt_15'
 hook:
- - incidentCustomAction
+  - incidentCustomAction
 ```
 
 #### Define a webhook trigger
@@ -712,7 +739,7 @@ Triggers with the hook `webhook` specified can interact with the payload that is
 
 In the following example, a trigger ingests the JSON payload posted to the webhook endpoint, and writes its content in the description widget of a specific incident (ID 1743):
 
-```json
+```yaml
 type: Trigger
 script:
  code: |
@@ -759,6 +786,6 @@ For another example YAML file of a webhook trigger, see [Trigger webhook definit
 
 ## Additional resources
 
-Blogs: 
+Blogs:
 * [Uncovering the power of Cloud SOAR’s Open Integration Framework](https://www.sumologic.com/blog/uncovering-the-powers-of-cloud-soars-open-integration-framework)
 * [Daemons in Cloud SOAR: proactively enhancing SecOps](https://www.sumologic.com/blog/daemons-in-cloud-soar-proactively-enhancing-secops)

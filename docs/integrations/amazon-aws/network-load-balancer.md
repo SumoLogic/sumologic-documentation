@@ -81,7 +81,7 @@ The Sumo Logic app for AWS Network Load Balancer uses the following logs and met
 
 ### Sample queries
 
-```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
+```metrics title="Active Flows (Connections) by Load Balancer (Metric-based)"
 account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
 ```
 
@@ -156,7 +156,7 @@ Follow the steps below to collect logs for AWS Network Load Balancer (NLB):
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs

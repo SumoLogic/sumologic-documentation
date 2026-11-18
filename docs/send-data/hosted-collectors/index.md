@@ -14,7 +14,7 @@ A *Hosted Collector* is a Sumo Logic-managed Collector, hosted in AWS, that lets
 With a single Hosted Collector, you can create and configure Sources to collect data from any number of Sources, for example:
 
 * Cloud-to-Cloud collection from AWS, Azure, Google Cloud Platform, and more SaaS tools
-* Send data directly to a Sumo endpoint using your custom collection method
+* Send data directly to a Sumo Logic endpoint using your custom collection method
 
 Data collection flow for S3 buckets and HTTP requests:<br/><img src={useBaseUrl('img/send-data/team-built-hosted-diagram.png')} alt="Data flow diagram showing S3 data flow to Sumo Logic through a hosted collector" style={{border: '1px solid gray'}} width="800" />
 

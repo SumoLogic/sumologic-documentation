@@ -31,9 +31,9 @@ We recommend that the POST data payload have a size, before compression, of 100K
 * Method: POST
 * URL: <br/>Enter the URL obtained when you [configure the HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source) or when you [regenerate the URL](/docs/send-data/hosted-collectors/http-source/generate-new-url/). Enter either a presigned URL or a URL to be used with an auth header:
     * Presigned URL: `https://[SumoEndpoint]/receiver/v1/http/[UniqueHTTPCollectorCode]` <br/>where
-       * [SumoEndpoint] is your Sumo collection endpoint
+       * [SumoEndpoint] is your Sumo Logic collection endpoint
        * [UniqueHTTPCollectorCode] is the string that follows the last forward slash (`/`) in the upload URL for the HTTP source
-    * URL used with auth header: `https://[SumoEndpoint]/receiver/v1/http` <br/>where [SumoEndpoint] is your Sumo collection endpoint
+    * URL used with auth header: `https://[SumoEndpoint]/receiver/v1/http` <br/>where [SumoEndpoint] is your Sumo Logic collection endpoint
 * Body
   * Data line 1
   * Data line 2

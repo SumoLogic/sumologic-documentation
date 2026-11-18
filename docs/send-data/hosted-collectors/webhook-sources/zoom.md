@@ -73,7 +73,7 @@ To configure a Zoom Source:
 1. Enable **Event Subscriptions**. <br/><img src={useBaseUrl('img/send-data/events-subscriptions.png')} alt="Events subscriptions" width="550"/>
 1. Click **Add new event subscription** and provide the following information:
    * **Subscription Name** (for example, Sumo Logic)
-   * **Event notification endpoint URL.** Provide the Sumo logic endpoint URL copied after creating the Zoom source .
+   * **Event notification endpoint URL.** Provide the Sumo Logic endpoint URL copied after creating the Zoom source .
 1. Click **Add events** and subscribe to all the Webhook Events.
 1. Click **Done** and validate the endpoint by clicking on the **Validate** button.
 1. Once Validated, click on **Save**.

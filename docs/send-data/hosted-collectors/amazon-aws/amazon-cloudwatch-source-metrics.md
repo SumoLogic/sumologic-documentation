@@ -25,9 +25,9 @@ You can use Terraform to provide an Amazon CloudWatch source with the [`sumologi
 
 ## Supported AWS metrics
 
-A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a regular interval. It cannot ingest metrics that are emitted with significant latency, such as Amazon S3 Daily Storage Metrics or AWS Billing metrics, or at sporadic intervals, such as Amazon DynamoDB throttled events.
+A Sumo Logic CloudWatch Source only supports CloudWatch metrics that are emitted at a regular interval. It cannot ingest metrics that are emitted with significant latency, such as Amazon S3 Daily Storage Metrics or AWS Billing metrics, or at sporadic intervals, such as Amazon DynamoDB throttled events.
 
-Sumo does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
+Sumo Logic does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
 
 :::tip
 EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.
@@ -157,7 +157,7 @@ The scan interval defines how long Sumo Logic waits between calls to the CloudWa
 AWS reports CloudWatch metrics at different granularities (1-minute, 3-minute, and 5-minute intervals), so setting a scan interval that's too short could lead to excessive querying. Setting an interval that's too long can delay the update frequency of new metrics appearing in Sumo Logic.
 
 :::note
-Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by AWS. See Enable and Manage the Audit Index for details.
+Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by AWS. See [Enable and Manage the Audit Index](/docs/manage/security/audit-indexes/audit-index) for details.
 :::
 
 Querying the AWS CloudWatch Metrics API can incur data transfer charges that may appear on your AWS bill.

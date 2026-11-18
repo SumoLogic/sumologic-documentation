@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## How the OpenTelemetry Collector sends data to Sumo Logic
 
-After you complete source configuration on the Sumo Logic OpenTelemetry (OTel) Collector, you can start sending data to the Sumo Logic service. The Collector compresses (by a factor of 10x) and encrypts the data, then sends it to the Sumo service over HTTPS using the SumoLogic Exporter.
+After you complete source configuration on the Sumo Logic OpenTelemetry (OTel) Collector, you can start sending data to the Sumo Logic service. The Collector compresses (by a factor of 10x) and encrypts the data, then sends it to the Sumo Logic service over HTTPS using the SumoLogic Exporter.
 
 
 ## Data Sources

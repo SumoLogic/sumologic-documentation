@@ -166,7 +166,7 @@ host.name=*  cpu=cpu-total  metric=(host_cpu_usage_user OR host_cpu_usage_system
 
 **CPU Usage** panel in **Host and Process Metrics - Process Details** Dashboard
 
-```sql
+```metrics
 metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.name, process.executable.name | outlier
 ```
 

@@ -201,7 +201,7 @@ In the procedure below, you'll configure a Cloud Syslog Source. This will genera
 
 ### Configuring a cloud syslog source
 
-Cloud syslog configuration requires a token that is automatically generated when you configure a cloud syslog source. The token allows Sumo to distinguish your log messages from those of other customers. The token is tied to the source, but not to any specific user.
+Cloud syslog configuration requires a token that is automatically generated when you configure a cloud syslog source. The token allows Sumo Logic to distinguish your log messages from those of other customers. The token is tied to the source, but not to any specific user.
 
 Include the token as the [Structured ID](https://tools.ietf.org/html/rfc5424#section-7) in every syslog message that is sent to Sumo Logic. The token is removed by Sumo Logic during ingestion and is not included with your syslog message in search results.
 
@@ -211,7 +211,7 @@ To configure a cloud syslog source, do the following:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 3. Select **Cloud Syslog**.
-4. Enter a **Name** to display for this source in Sumo. Description is optional.
+4. Enter a **Name** to display for this source in Sumo Logic. Description is optional.
 5. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called `_sourceCategory`).
 6. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
@@ -219,14 +219,14 @@ To configure a cloud syslog source, do the following:
 7. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 8. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the new source.
 9. Click **Save**. The token information is displayed in a read-only dialog box, shown below.
 10. Click **Copy** to copy the information for use in the syslog client. The information is copied in the following format:
   ```bash
   Token: 9HFxoa6+lXBmvSM9koPjGzvTaxXDQvJ4POE/WCURPAo+w4H7PmZm8H3mSEKxPl0Q@41123, Host: syslog.collection.YOUR_DEPLOYMENT.sumologic.com, TCP TLS Port: 6514
   ```
-  The number 41123 in the token is the Sumo Private Enterprise Number (PEN). There are two options for including the token. You can include it in the structured data field or in the message body.
+  The number 41123 in the token is the Sumo Logic Private Enterprise Number (PEN). There are two options for including the token. You can include it in the structured data field or in the message body.
 
   In the following example, the token is in the structured data field.
   ```

@@ -55,7 +55,7 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 
 | Product Feature | _sourceCategory Value |
 |:--|:--|
-| [App Central packages](/docs/platform-services/automation-service/automation-service-app-central/)  | `oarAppCentralPackages`   |
+| [Playbook](/docs/integrations/playbook-templates/) & [Integration](/docs/integrations/automation-integrations/) packages | `oarAppCentralPackages`   |
 | [Automation action](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
 | [Automation action configuration](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
 | [Integration](/docs/platform-services/automation-service/automation-service-integrations/)   | `oarIntegrations`  |
@@ -146,7 +146,7 @@ Each audit event log has common keys that categorize it to a product area and pr
 | `eventName` | The name of the event. | String |
 | `eventTime` | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | `eventFormatVersion` | The event log format version. | String |
-| `operator` | Information of who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
+| `operator` | Information of who did the operation. If it's missing, the Sumo Logic service was the operator. | JSON object of Strings |
 | `subsystem` | The product area of the event. | String |
 
 ## Example event log

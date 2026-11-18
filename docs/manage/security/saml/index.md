@@ -11,12 +11,11 @@ description: Learn how to provision SAML for single sign-on (SSO) access to Sumo
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Learn how to provision SAML for single sign-on (SSO) access to Sumo
-Logic.
+Learn how to provision SAML for single sign-on (SSO) access to Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Guide Contents
+## Guide contents
 
 In this section, we'll introduce the following concepts:
 
@@ -53,13 +52,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/security/saml/integrate-aws-sso')}><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Padlock icon" width="40"/><h4>Integrate Sumo with AWS Single Sign-On</h4></a>
+  <a href={useBaseUrl('docs/manage/security/saml/integrate-aws-sso')}><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Padlock icon" width="40"/><h4>Integrate Sumo Logic with AWS Single Sign-On</h4></a>
   <p>Learn how to configure AWS Single Sign-On for Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/security/saml/integrate-sumo-with-azure-ad')}><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Padlock icon" width="40"/><h4>Integrate Sumo with Azure AD</h4></a>
+  <a href={useBaseUrl('docs/manage/security/saml/integrate-sumo-with-azure-ad')}><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Padlock icon" width="40"/><h4>Integrate Sumo Logic with Azure AD</h4></a>
   <p>Learn how to enable SSO for user access to Sumo Logic using Azure AD.</p>
   </div>
 </div>
@@ -79,6 +78,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/manage/security/saml/view-saml-debug-information')}><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Padlock icon" width="40"/><h4>View SAML Debug Information</h4></a>
   <p>Learn how to use the Debug Mode to troubleshoot SAML issues.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/manage/security/saml/saml-destination-url-mismatch')}><img src={useBaseUrl('img/icons/security/unlock.png')} alt="Padlock icon" width="40"/><h4>Fix SAML Destination URL Mismatch</h4></a>
+  <p>Learn how to fix a SAML Destination URL mismatch in your IdP configuration.</p>
   </div>
 </div>
 </div>

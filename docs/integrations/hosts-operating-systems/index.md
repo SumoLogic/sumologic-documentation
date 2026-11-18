@@ -6,7 +6,7 @@ description: Learn about Sumo Logic apps you can use to monitor host metrics and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide has documentation for Sumo apps for monitoring host metrics and the Linux operating system.  
+This guide has documentation for Sumo Logic apps for monitoring host metrics and the Linux operating system.  
 
 If you're looking for an app for Microsoft Windows, see [Microsoft and Azure](/docs/integrations/microsoft-azure).
 
