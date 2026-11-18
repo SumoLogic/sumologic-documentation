@@ -89,7 +89,7 @@ To add knowledge for the SOC Analyst Agent:
 1. Click **+ Add Source** to add a new knowledge source. Select **Add text** to type or paste content directly, or **Upload file** to add a TXT, MD, or PDF file.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source menu showing the Add text and Upload file options" style={{border: '1px solid gray'}} width="400" />
 1. Add your knowledge:
    * **Add text**. Give the source a name and type the fact, pattern, or practice in the content field, then click **Save** when you're done. Here's an example:<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" />
-   * **Upload file**. Select a TXT, MD, or PDF file from your computer, then click **Save**. <!--TODO: confirm with Twisa what the Upload file form shows (is a name required, is there a file preview) and add a screenshot if useful.-->
+   * **Upload file**. Select a TXT, MD, or PDF file from your computer, then click **Save**.
 
 :::important
 * **Plain text**. Up to 10,000 characters per entry. Each entry works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
