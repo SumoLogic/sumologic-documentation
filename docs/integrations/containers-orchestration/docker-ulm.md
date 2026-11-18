@@ -117,7 +117,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
    * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **`web_apps`** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure `sourceCategory` and `sourceHost` using variables](#configure-sourcecategory-and-sourcehost-using-variables).
    * **Fields**. Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
    * **Scan Interval**. This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 second.
-   * **Metrics** (Available if content type selected is Metrics). Select the Docker metrics you want to be ingested, see Docker metrics definitions for details.
+   * **Metrics** (Available if content type selected is Metrics). Select the Docker metrics you want to be ingested, see [Docker metrics definitions](/docs/send-data/installed-collectors/sources/docker-sources#docker-metrics-definitions) for details.
 
 
 ## Docker Metrics definitions

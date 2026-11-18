@@ -88,9 +88,15 @@ These settings apply only to your personal account and do not affect other users
    :::
 * **Web Session Timeout**. Choose how long your Sumo Logic session remains active before timing out. Options range from 5 minutes to 7 days. For details on web session timeouts and multi-account access, see [Multi-Account Access](/docs/manage/users-roles/users/multi-account-access).
 
+#### In-App Tabs
+
+* **Enable in-app tabs**. Select this checkbox to enable in-app tabs in the [**New UI**](/docs/get-started/sumo-logic-ui), letting you run and manage multiple Log Search, Dashboard, and Metrics tabs within a single browser window instead of separate browser tabs. Keep long-running or reference searches open while you switch between other queries, and compare results across searches without losing context. To open a new tab, click the **+** button next to your tabs and select **Log Search**, **Dashboard**, or **Metrics**, or use the keyboard shortcuts **Option + S**, **Option + D**, or **Option + M** (**Alt** on Windows). Switch between tabs at any time, reorder them by dragging, and scroll horizontally when you have more tabs open than fit on screen.<br/><img src={useBaseUrl('img/get-started/in-app-tabs-new-menu.png')} alt="In-app tab bar with the plus menu open, showing Log Search, Dashboard, and Metrics options" style={{border: '1px solid gray'}} width="600"/>
+  * If you switch from the Classic UI to the New UI, your open tabs, including Dashboard and Metrics tabs, are carried over up to a maximum number of tabs.
+* **Show confirmation dialog when closing a tab**. Enable this option if you want to be prompted with a confirmation dialog before you can close an in-app tab.
+
 #### Navigation
 
-* **Open all navigation menu items in new browser tabs by default**. This preference is disabled by default, so selecting a menu link in the left navigation pane opens it in the same tab. To open a specific link in a new tab instead, hover over it and click the **Open in New Tab** button that appears next to it.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="125" /> Enabling this preference makes every menu link open in a new tab automatically, and hides the **Open in New Tab** button since it's no longer needed. However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
+* **Open all navigation menu items in new browser tabs by default**. This preference is disabled by default, so selecting a menu link in the left navigation pane opens it in the same tab. To open a specific link in a new tab instead, hover over it and click the **Open in New Tab** button that appears next to it.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="125" /><br/>Enabling this preference makes every menu link open in a new tab automatically, and hides the **Open in New Tab** button since it's no longer needed. However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
 
 #### Default Starting Page
 
@@ -115,12 +121,10 @@ After making any changes, click **Save**.
 
 #### Log Search
 
-* **Show confirmation dialog when closing a tab**. On the Search page, enable this option if you want to be prompted with a confirmation dialog before you can close a search tab.
 * **Show search autocomplete suggestions while typing**. Keep this option selected to automatically open the search autocomplete dialog when editing a query.
    * To manually open the dialog, use `<Esc>` or `<Alt>` `<Space>`.
    * Deselect this option to disable [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete).
 * **Automatically run the search after selecting it from a list of saved searches**. By default, saved searches run automatically when selected. Deselect this option if you prefer to start searches manually.
-* **Enable in-app tabs for Logs Search**. Select this checkbox to enable in-app tabs in the [**New UI**](/docs/get-started/sumo-logic-ui), letting you run and manage multiple searches within a single Log Search window instead of separate browser tabs. Keep long-running or reference searches open while you switch between other queries, and compare results across searches without losing context. To use in-app tabs, open a new tab within Log Search and run a query in each one. Switch between tabs at any time, reorder them by dragging, and scroll horizontally when you have more tabs open than fit on screen.
 
 #### Alerts
 

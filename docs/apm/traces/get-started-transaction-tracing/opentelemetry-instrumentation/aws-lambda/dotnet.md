@@ -18,7 +18,7 @@ To obtain tracing data from AWS Lambda functions developed in .NET, you can use 
 
 ### OpenTelemetry Lambda layer
 
-[OpenTelemetry Lambda Layer for Collector](https://github.com/open-telemetry/opentelemetry-lambda/tree/main/collector#opentelemetry-collector-aws-lambda-extension-layer) includes OpenTelemetry Collector for Lambda components. Apply this layer to your Lambda handler that's already been instrumented with the OpenTelemetry Lambda .NET SDK to enable end-to-end tracing.
+[OpenTelemetry Lambda Layer for Collector](https://github.com/open-telemetry/opentelemetry-lambda/tree/main/collector#opentelemetry-collector-aws-lambda-extension-layer) includes [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for Lambda components. Apply this layer to your Lambda handler that's already been instrumented with the OpenTelemetry Lambda .NET SDK to enable end-to-end tracing.
 
 #### .NET Lambda layer supports
 
@@ -31,9 +31,9 @@ You'll need the following:
 
 * .NET 6 SDK or later
 * Lambda layers add permissions
-* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
+* Sumo Logic OTLP/HTTP source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
-## Quick Start
+## Quick start
 
 ### Overview
 
@@ -60,9 +60,9 @@ Navigate toÂ [functions](https://console.aws.amazon.com/lambda/home#/functions)Â
   Lambda layers are a regionalized resource, meaning that they can only be used in the Region in which they are published. Make sure to use the layer in the same region as your Lambda functions.
   :::
 
-  By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
+  By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the OpenTelemetry Collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
 
-* Configure the collector layer to send data to SumoLogic:
+* Configure the OpenTelemetry Collector layer to send data to SumoLogic:
 
     ```yaml
     receivers:
@@ -87,7 +87,7 @@ Navigate toÂ [functions](https://console.aws.amazon.com/lambda/home#/functions)Â
           exporters: [otlphttp]
     ```
 
-    Once the file has been deployed with a Lambda, configuring the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` will tell the OpenTelemetry extension where to find the collector configuration:
+    Once the file has been deployed with a Lambda, configuring the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` will tell the OpenTelemetry extension where to find the OpenTelemetry Collector configuration:
 
     ```bash
     aws lambda update-function-configuration --function-name Function --environment Variables={OPENTELEMETRY_COLLECTOR_CONFIG_URI=/var/task/collector.yaml}
@@ -95,7 +95,7 @@ Navigate toÂ [functions](https://console.aws.amazon.com/lambda/home#/functions)Â
 
 * Configure the following environment variables:
 
-  Navigate to the **Configuration > Environment variables** section and ensure that the following  environment variables are setup:
+  Navigate to the **Configuration > Environment variables** section and ensure that the following  environment variables are set up:
 
   | Variable | Value | Purpose |
   |:---------|:------|:--------|

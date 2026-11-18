@@ -33,7 +33,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
     </dependency>
     ```
 * Gradle projects
-    ```
+    ```gradle
     dependencies {
         compile 'io.opentelemetry:opentelemetry-sdk:1.40.0'
     }

@@ -316,7 +316,7 @@ Docker engine events log data doesn't support the tagging with metadata.
 
 ---
 **Namespace/VAR_TYPE**: `container`<br/>
-**Description**: Container metadata fields provided by Docker for use in the `--log-opt` tag option. These are automatically added to data points. For more information, see Log tags for logging driver in Docker help.<br/>
+**Description**: Container metadata fields provided by Docker for use in the `--log-opt` tag option. These are automatically added to data points. For more information, see [Log tags for logging driver](https://docs.docker.com/engine/admin/logging/log_tags/) in Docker help.<br/>
 **VAR_NAME**:
 * ID — The first 12 characters of the container ID.
 * FullID —The full container ID.

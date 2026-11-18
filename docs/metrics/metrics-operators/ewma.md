@@ -20,7 +20,7 @@ If you run `ewma` without specifying either `alpha` or `span`, it runs by defaul
 
 ## Syntax
 
-```sql
+```metrics
 ewma [alpha=<decimal> | span=<integer>]
 ```
 
@@ -33,12 +33,12 @@ Where:
 
 ### Using alpha
 
-```sql
+```metrics
 metric=CPU_Idle | ewma alpha=0.1
 ```
 
 ### Using span
 
-```sql
+```metrics
 metric=CPU_Idle | ewma span=10
 ```

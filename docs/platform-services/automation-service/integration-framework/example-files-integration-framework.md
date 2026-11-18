@@ -13,10 +13,10 @@ Following are example definition and action files for integrations. To see an ex
 
 ### Integration definition file (VirusTotal)
 
-```
+```yaml
 name: 'VirusTotal'
 version: '1.0'
-icon:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAAA8RnWXAAAABmJLR0...[snip...]QMq1BbQK47AAAAAASUVORK5CYII=
+icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAAA8RnWXAAAABmJLR0...[snip...]QMq1BbQK47AAAAAASUVORK5CYII=
 script:
     type: python
     test_connection_code: |
@@ -65,17 +65,19 @@ configuration:
 
 ### Action definition file (VirusTotal)
 
-```
+```yaml
 integration: 'VirusTotal Open Framework CS'
 name: 'scan file'
 type: Enrichment
 script:
-code: |
+  code: |
             import json
             import argparse
-            import virustotal from os import listdir
+            import virustotal
+            from os import listdir
             import subprocess
-            import os from os.path import isfile, join
+            import os
+            from os.path import isfile, join
             try:
 
                 class EnvDefault(argparse.Action):
@@ -86,35 +88,35 @@ code: |
                     super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
                   def __call__(self, parser, namespace, values, option_string=None):
                     setattr(namespace, self.dest, values)
-                 parser = argparse.ArgumentParser()
-                 parser.add_argument('--api_key', help='api_key , REQUIRED', required=True, action=EnvDefault)
-                 parser.add_argument('--filename', help='filename , REQUIRED', required=True, action=EnvDefault)
-                 args, unknown = parser.parse_known_args()
-                 v = virustotal.VirusTotal(args.api_key)
-                 report = v.scan(args.filename)
-                 report.join()
-                 assert report.done == True
-                 result = {
-                     'Resource UID': report.id,
-                     'Scan UID': report.scan_id,
-                     'Permalink': report.permalink,
-                     'Resource SHA1': report.sha1,
-                     'Resource SHA256': report.sha256,
-                     'Resource MD5': report.md5,
-                     'Resource status': report.status,
-                     'Antivirus total': report.total,
-                     'Antivirus positives': report.positives,
-                     'Malware': []
-                 }
-                 for antivirus, malware in report:
-                     if malware is not None:
-                        malware_obj = {'Antivirus': antivirus[0], 'Antivirus version': antivirus[1], 'Antivirus update': antivirus[2], 'Malware': malware}
-                        result['Malware'].append(malware_obj)
-                 print(json.dumps({'filepath': ['file1', 'file2'],'report': [result]}))
-                 exit(0)
+                parser = argparse.ArgumentParser()
+                parser.add_argument('--api_key', help='api_key , REQUIRED', required=True, action=EnvDefault)
+                parser.add_argument('--filename', help='filename , REQUIRED', required=True, action=EnvDefault)
+                args, unknown = parser.parse_known_args()
+                v = virustotal.VirusTotal(args.api_key)
+                report = v.scan(args.filename)
+                report.join()
+                assert report.done == True
+                result = {
+                    'Resource UID': report.id,
+                    'Scan UID': report.scan_id,
+                    'Permalink': report.permalink,
+                    'Resource SHA1': report.sha1,
+                    'Resource SHA256': report.sha256,
+                    'Resource MD5': report.md5,
+                    'Resource status': report.status,
+                    'Antivirus total': report.total,
+                    'Antivirus positives': report.positives,
+                    'Malware': []
+                }
+                for antivirus, malware in report:
+                    if malware is not None:
+                       malware_obj = {'Antivirus': antivirus[0], 'Antivirus version': antivirus[1], 'Antivirus update': antivirus[2], 'Malware': malware}
+                       result['Malware'].append(malware_obj)
+                print(json.dumps({'filepath': ['file1', 'file2'],'report': [result]}))
+                exit(0)
             except Exception as e:
-                 sys.stderr.write(str(e))
-                 exit(1)
+                sys.stderr.write(str(e))
+                exit(1)
 fields:
    - id: filename
      label: 'file to scan'
@@ -152,11 +154,11 @@ The following example files are for Cloud SOAR only.
 
 ### Integration definition file to change integration name from VirusTotal to VirusTotalNew 
 
-```
+```yaml
 name: 'VirusTotalNew'
 official_name: 'VirusTotal'
 version: '1.0'
-icon:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAAA8RnWXAAAABmJLR0...[snip...]QMq1BbQK47AAAAAASUVORK5CYII=
+icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAAA8RnWXAAAABmJLR0...[snip...]QMq1BbQK47AAAAAASUVORK5CYII=
 script:
     type: python
     test_connection_code: |
@@ -205,12 +207,12 @@ configuration:
 
 ### Daemon definition file (QRadar)
 
-```
+```yaml
 integration: 'IBM QRadar OIF'
 name: 'Get Offenses Daemon'
 type: Daemon
 script:
-code: |
+  code: |
     import argparse
     import base64
     import json
@@ -230,8 +232,7 @@ code: |
         setattr(namespace, self.dest, values)
     parser = argparse.ArgumentParser()
     parser.add_argument('--url', help='URL , REQUIRED', required=True, action=EnvDefault)
-    parser.add_argument('--authMethod', help='Authentication method ,
-    REQUIRED', required=True, action=EnvDefault)
+    parser.add_argument('--authMethod', help='Authentication method , REQUIRED', required=True, action=EnvDefault)
     parser.add_argument('--validateSSL', help='validateSSL , REQUIRED',
     required=True, action=EnvDefault)
     parser.add_argument('--id', help='last offense id', required=False, action=EnvDefault)
@@ -239,14 +240,14 @@ code: |
     parser.add_argument('--password', help='password', required=False, action=EnvDefault)
     parser.add_argument('--token', help='token', required=False, action=EnvDefault)
     parser.add_argument('--proxy_url', help='proxy url',
-   required=False, action=EnvDefault)
+        required=False, action=EnvDefault)
     args, unknown = parser.parse_known_args()
     max_destination_ip_to_get = 10
     host = str(args.url) + '/api/siem/offenses'
     if args.id:
-    host += "?filter=id>" + args.id
+        host += "?filter=id>" + args.id
     else:
-    host += "?filter=id>145366"
+        host += "?filter=id>145366"
     host += '&status!=CLOSED'
     header = {
         'Version': '5.0',
@@ -377,12 +378,12 @@ output:
 
 ### Trigger definition file (Incident Tools)
 
-```
+```yaml
 integration: 'Incident Tools'
 name: 'Change severity trigger'
 type: Trigger
 script:
-code: |
+  code: |
     import json
     import argparse
     from datetime import datetime
@@ -415,7 +416,7 @@ code: |
             'Content-Type': 'application/x-www-form-urlencoded',
             'Authorization': 'Bearer ' + args.token
         }
-        end_point = '{cloudsoarurl}/api/v2/incidents/{incidentid}'.format(cloudsoarurl=args.cloudsoarurl incidentid=incidentID)
+        end_point = '{cloudsoarurl}/api/v2/incidents/{incidentid}'.format(cloudsoarurl=args.cloudsoarurl, incidentid=incidentID)
         session = requests.Session()
         session.verify = False
         additional_info = inc_det_after.get('additional_info')
@@ -436,12 +437,12 @@ hook:
 
 ### Trigger taskCustomAction definition file (Incident Tools)
 
-```
+```yaml
 integration: 'Incident tools'
 name: 'ADDWORKINFO TASK'
 type: Trigger
 script:
-code: |
+  code: |
     import json
     import argparse
     from datetime import datetime
@@ -468,12 +469,12 @@ hook:
 
 ### Trigger incidentCustomAction definition file (Incident Tools)
 
-```
+```yaml
 integration: 'Incident tools'
 name: 'ADDWORKINFO'
 type: Trigger
 script:
-code:
+  code: |
     import json
     import argparse
     from datetime import datetime
@@ -500,12 +501,12 @@ hook:
 
 ### Scheduled definition file (Incident Tools)
 
-```
+```yaml
 integration: 'Incident tools'
 name: 'intervallo date loop'
 type: Scheduled
 script:
-code:
+  code: |
     import json
     import argparse
     from datetime import datetime
@@ -558,12 +559,12 @@ output:
 
 Other example (using strings array)
 
-```
+```yaml
 integration: 'Incident tools'
 name: 'intervallo date loop'
 type: Scheduled
 script:
-code:
+  code: |
     import json
     import argparse
     from datetime import datetime
@@ -619,12 +620,12 @@ output:
 
 Other example (using action's input):
 
-```sumo
+```yaml
 integration: 'Testing Purpose'
 name: 'testing Scheduled'
 type: Scheduled
 script:
- code: |
+  code: |
     import json
     import argparse
     from datetime import datetime
@@ -747,14 +748,14 @@ output:
 
 ### Trigger webhook definition file
 
-```
+```yaml
 integration: 'Testing Purpose'
 name: 'testing webhook'
 type: Trigger
 hook:
     - webHook
 script:
- code: |
+  code: |
     import json
     import argparse
     from datetime import datetime
@@ -801,9 +802,9 @@ Now you can perform a `POST` request to the [Cloud SOAR API](/docs/api/cloud-soa
 Your script will print `(print(payload.get("title")))` tests. (Cloud SOAR saves log-only action errors, but doesn’t save webhook trigger results.)
 
 You can add more than one webhook trigger. While you cannot discriminate execution at the API request, you can do so inside an action script. For example:
-```
+```python
 if payload.get("title") == "test":
-   print("OK")
+    print("OK")
 else:
-   return
+    return
 ```

@@ -1314,6 +1314,120 @@ html[data-theme='dark'] .node polygon {
   min-width: 65px; /* Can adjust based on layout needs */
 }
 
+// Sticky first two columns for wide vendors-content-matrix tables
+.sticky-cols-table {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-bottom: var(--ifm-spacing-vertical);
+
+  table {
+    display: table;
+    width: max-content;
+    min-width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    
+  }
+
+  // Column 1
+  th:nth-child(1),
+  td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    background-color: var(--ifm-background-color);
+  }
+
+  // Column 2 (left offset = width of column 1)
+  th:nth-child(2),
+  td:nth-child(2) {
+    position: sticky;
+    left: 200px;
+    z-index: 2;
+    width: 200px;
+    min-width: 200px;
+    background-color: var(--ifm-background-color);
+  }
+
+  // Divider line only on body cells, no blur
+  td:nth-child(2) {
+    box-shadow: 1px 0 0 var(--ifm-table-border-color);
+  }
+
+  th:nth-child(2) {
+    box-shadow: none;
+  }
+
+  // Keep zebra striping on the frozen columns, opaque so scrolled content doesn't show through
+  tr:nth-child(even) td:nth-child(-n+2) {
+    background-color: var(--ifm-background-color);
+    background-image: linear-gradient(var(--ifm-table-stripe-background), var(--ifm-table-stripe-background));
+  }
+
+    // Header cells stay above body cells
+  th:nth-child(-n+2) {
+    z-index: 3;
+    background-image: none;
+  }
+}
+
+// Frozen header cells: opaque equivalents of the theme header color
+html[data-theme='light'] .sticky-cols-table th:nth-child(-n+2) {
+  background-color: rgb(164, 204, 221);  // rgba(0,139,178,.397) over #fff
+}
+
+html[data-theme='dark'] .sticky-cols-table th:nth-child(-n+2) {
+  background-color: rgb(10, 73, 102);    // rgba(0,164,219,.35) over #101827
+}
+
+// Narrow screens: freeze only the first column
+@media (max-width: 768px) {
+  .sticky-cols-table {
+    th:nth-child(1),
+    td:nth-child(1) {
+      width: 140px;
+      min-width: 140px;
+      max-width: 140px;
+    }
+    th:nth-child(2),
+    td:nth-child(2) {
+      position: static;
+      box-shadow: none;
+    }
+  }
+}
+
+// "Jump to: A | B | C ..." line stays pinned under the navbar while scrolling
+:root {
+  --jump-bar-height: 3rem;
+}
+
+.jump-to-bar,
+.markdown p:has(> a[href="#a"]):has(> a[href="#z"]) {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  z-index: 20;                      // above content, below the navbar
+  display: flex;
+  align-items: center;
+  height: var(--jump-bar-height);
+  margin: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: var(--ifm-background-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+
+  p { margin: 0; }
+}
+
+// Anchor jumps (A, B, C...) shouldn't land under the sticky bar
+.markdown h2[id] {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + var(--jump-bar-height) + 0.5rem);
+}
+
 // Hub/Index pages
 
 /* Index page 'smallbox' cards/tiles */
@@ -1986,3 +2100,44 @@ article header h2[class*='title_'] {
 .language-sumo .token.time     { color: var(--sumo-number);   }
 .language-sumo .token.operator { color: var(--sumo-operator); }
 .language-sumo .token.regex    { color: var(--sumo-regex);    }
+
+/* ─── Metrics query syntax highlighting (DOCS-1952) ────────────────────────── */
+/* Mirrors the color scheme visible in the Sumo Logic metrics query editor.     */
+
+[data-theme='light'] .language-metrics {
+  /* keywords: pipe operators (rate, sum, avg, etc.) */
+  --metrics-keyword:      #CF222E;
+  /* unquoted values after = (metric name, cluster name, etc.) */
+  --metrics-value:        #005CC5;
+  /* time units: 5m, 1h, 30s */
+  --metrics-time:         #0086B3;
+  /* special variables: _value, _granularity */
+  --metrics-variable:     #953800;
+  /* quoted strings */
+  --metrics-string:       #C6105F;
+  /* plain numbers */
+  --metrics-number:       #005F73;
+  /* pipe and arithmetic operators */
+  --metrics-operator:     #555555;
+}
+
+[data-theme='dark'] .language-metrics {
+  --metrics-keyword:      #C586C0;
+  --metrics-value:        #4FC1FF;
+  --metrics-time:         #4EC9B0;
+  --metrics-variable:     #CE9178;
+  --metrics-string:       #CE9178;
+  --metrics-number:       #B5CEA8;
+  --metrics-operator:     #AAAAAA;
+}
+
+/* Reset Dracula italic and inline-style color bleed-through */
+.language-metrics .token                { font-style: normal !important; }
+.language-metrics .token.keyword        { color: var(--metrics-keyword)  !important; }
+.language-metrics .token.constant       { color: var(--metrics-value)    !important; }
+.language-metrics .token.time           { color: var(--metrics-time)     !important; }
+.language-metrics .token.variable       { color: var(--metrics-variable) !important; }
+.language-metrics .token.string         { color: var(--metrics-string)   !important; }
+.language-metrics .token.number         { color: var(--metrics-number)   !important; }
+.language-metrics .token.operator       { color: var(--metrics-operator) !important; }
+/* selector-key intentionally omitted — renders as plain text */

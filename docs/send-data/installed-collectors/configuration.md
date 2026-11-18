@@ -123,7 +123,7 @@ After a Collector is up and running, you can change some Installed Collector con
 
 A few Installed Collector behaviors, such as caching, are configured in the `collector.properties` file in the Collector’s `config` directory.  
 
-You can update the configuration of an Installed Collector using the Collector Management API. For more information, see Collector API Methods and Examples.
+You can update the configuration of an Installed Collector using the Collector Management API. For more information, see [Collector API Methods and Examples](/docs/api/collector-management/collector-api-methods-examples).
 
 :::note
 Any collector that has been inactive for 12 months or longer will be automatically deleted. To reuse the same collector, you need to uninstall any remaining services and perform a fresh installation.
@@ -183,7 +183,7 @@ To determine whether throttling is required, Sumo Logic measures the amount of d
 
 The Sumo Logic service tells the Collector it can speed up when throttling is no longer necessary.
 
-For more information, see Manage Ingestion. 
+For more information, see [Manage Ingestion](/docs/manage/ingestion-volume/log-ingestion). 
 
 #### Caching
 
@@ -207,4 +207,4 @@ A Collector enters flushing mode when less than 10% of free disk space remains o
 An Installed Collector sends a heartbeat to the Sumo Logic service every 15 seconds. If the Sumo Logic service does not receive a heartbeat for 30 minutes, it considers the Collector to be offline, and shows its health status as red in the **Collection** page of the Sumo Logic web app. The heartbeat is linked to the [`alive` parameter](/docs/send-data/use-json-configure-sources)in the JSON object. If an Installed Collector
 appears offline try restarting the service and [testing connectivity](collector-installation-reference/test-connectivity-sumo-collectors.md).
 
-The Collector uses the log4j2 framework. You can tailor log rotation behavior for `collector.log` by editing the `log4j2.xml` file in the collector’s `/config` directory. For more information, see Log Rotation Settings.
+The Collector uses the log4j2 framework. You can tailor log rotation behavior for `collector.log` by editing the `log4j2.xml` file in the collector’s `/config` directory. For more information, see [Log Rotation Settings](/docs/send-data/collection/collector-logs#log-rotation-settings).

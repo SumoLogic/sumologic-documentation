@@ -50,7 +50,7 @@ This page lists the maximum limits and quotas for various features, services, an
 | Essentials, Professional | 300              |
 | Free Trial               | 50               |
 
-* **[Execution delay](/docs/alerts/monitors/overview/#log-monitors)**. 2 minutes (to account for ingestion delays).
+* **[Execution delay](/docs/alerts/monitors/about/#log-monitors)**. 2 minutes (to account for ingestion delays).
 
 ### Metric monitors
 
@@ -60,12 +60,12 @@ This page lists the maximum limits and quotas for various features, services, an
 | Essentials, Professional | 500                 |
 | Free Trial               | 50                  |
 
-* **[Execution delay](/docs/alerts/monitors/overview/#metrics-monitors)**. 1 minute.
+* **[Execution delay](/docs/alerts/monitors/about/#metrics-monitors)**. 1 minute.
 
 ### Notification grouping
 
-* [Log monitors always group notifications.](/docs/alerts/monitors/overview/#alerts)
-* [Metric monitors can group notifications, resolving when all time series return to normal.](/docs/alerts/monitors/overview/#alerts)
+* [Log monitors always group notifications.](/docs/alerts/monitors/about/#alerts)
+* [Metric monitors can group notifications, resolving when all time series return to normal.](/docs/alerts/monitors/about/#alerts)
 
 ### Alert response
 

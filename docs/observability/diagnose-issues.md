@@ -21,7 +21,7 @@ Observe apps and microservices using [Transaction Tracing](/docs/apm/traces) and
 
 <img src={useBaseUrl('img/observability/transaction-tracing.png')} alt="Transaction tracing" style={{border: '1px solid gray'}} width="800" />
 
-## Analyze Key Metrics quickly using Metrics Search 
+## Analyze key metrics quickly using Metrics Search
 
 Easily find and visualize your metrics with [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/), which comes with a structured query builder, and an extended range of visualizations for ad hoc analysis. Mimicking the dashboard workflow, you now have the same unified experience in the main metrics tab.
 

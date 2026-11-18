@@ -78,7 +78,7 @@ To get to your Alert List:
 
 To search alerts, use the search bar and filters.<br/><img src={useBaseUrl('img/alerts/monitors/search-alert-list.png')} alt="Search alert list" style={{border: '1px solid gray'}} width="800" />
 
-To sort by category (for example, **Name**, **Severity**, **Status**), click on a column header.
+To sort by category (for example, **Name**, **Severity**, **Status**), click a column header.
 
 ### Tags
 
@@ -97,7 +97,7 @@ For example, when you open an alert response page in Metrics Search, you can see
 To view the alert response chart in Metrics Search, follow the steps below:
 
 1. Navigate to your [Alert List](#alert-list) and select the alert for which you want to view the corresponding metrics and threshold values.
-1. Click the **View in Metrics Search** button for that alert. You can click on either of the two buttons, and they both function the same way.
+1. Click the **View in Metrics Search** button for that alert. You can click either of the two buttons, and they both function the same way.
 1. The Metrics Search view will open with the graph of the metric associated with the alert.
 1. In the **Threshold** section of the Metrics Search, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="Threshold metrics explorer" width="800"/>
 1. The thresholds will be enabled and only the ones that are defined in the monitor will be displayed.
@@ -111,7 +111,7 @@ Note that the same threshold translating functionality supports to [Create Monit
 
 ## Alert details
 
-To view detailed information about an alert, go to your [Alert List](#alert-list) and click on any row. The upper section (above the [context cards](#alert-context-cards)) provides an overview of the alert that was triggered to help get to the root cause of an issue quickly, such as:
+To view detailed information about an alert, go to your [Alert List](#alert-list) and click any row. The upper section (above the [context cards](#alert-context-cards)) provides an overview of the alert that was triggered to help get to the root cause of an issue quickly, such as:
 
 * A chart visualizing the alerting KPI before and during the alert.
 * A table displaying the raw data that triggered the alert.
@@ -137,8 +137,8 @@ The following images and lists describe alert element on the page.<br/><img src=
    <img src={useBaseUrl('img/alerts/monitors/alert-page.png')} alt="Resolves the alert" style={{border: '1px solid gray'}} width="800" />
 * **K**. The red exclamation mark indicates the alert is still active and a white exclamation in the gray circle indicates it's resolved. <br/> <img src={useBaseUrl('img/alerts/monitors/k-label.png')} alt="labels" width="300"/>
   * **Related Alerts**. A panel with related alerts and the monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/alerts/monitors/related-alerts.png')} alt="related alerts" width="200"/>
-    * **Time**. Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
-    * **Entity**. Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow <img src={useBaseUrl('img/alerts/monitors/expand-arrow.png')} alt="Expand arrow" width="30" /> to view the alert's trigger condition and the white arrow in the square <img src={useBaseUrl('img/alerts/monitors/open-new-tab.png')} alt="Open in new tab icon" width="30" /> to open the alert in its own alert page.
+    * **Time**. Shows all the alerts that were triggered 30 minutes before or after the given alert that does not have another association.
+    * **Entity**. Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (such as node, pod, or cluster). You can click the expand arrow <img src={useBaseUrl('img/alerts/monitors/expand-arrow.png')} alt="Expand arrow" width="30" /> to view the alert's trigger condition and the white arrow in the square <img src={useBaseUrl('img/alerts/monitors/open-new-tab.png')} alt="Open in new tab icon" width="30" /> to open the alert in its own alert page.
   * **Monitor History**. Shows the past 30 days of similar alerts that were triggered by the monitor (that generated the current alert). Monitor History can be helpful to determine how frequently an alert has fired in the past and if the alert is flaky. You can then quickly correlate whether the current problem is similar to a past one by comparing the information shared for the alert.
 * **L**. The query of the monitor.<br/><img src={useBaseUrl('img/alerts/monitors/l-m-n-labels.png')} alt="labels" width="800"/>
 * **M**. A chart that visualizes the trend of the metric that was tracked as part of the alert condition of the monitor. The visualization tracks the *before* and *during* trends of the metric.
@@ -147,7 +147,7 @@ The following images and lists describe alert element on the page.<br/><img src=
 
 :::info Limitations
 * The alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
-* Related Alerts and Monitor History show the top 250 alerts.
+* Related Alerts and monitor history show the top 250 alerts.
 :::
 
 ## Alert Context cards
@@ -199,7 +199,7 @@ Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitor
 
 * **A**. Name and description of the context card.
 * **B**. Count of anomalies belonging to each golden signal type.
-* **C**. A timeline view of anomalies with their start time and duration, the domain (e.g. AWS, Kubernetes), and the entity on which it was detected. Anomalies may be grouped based on connections between entities and similarity of metrics. For example, anomalies on EC2 instances that are members of an AutoScaling group may be grouped together. The count shown in each anomaly refers to the number of grouped anomalies.
+* **C**. A timeline view of anomalies with their start time and duration, the domain (for example, AWS, Kubernetes), and the entity on which it was detected. Anomalies may be grouped based on connections between entities and similarity of metrics. For example, anomalies on EC2 instances that are members of an AutoScaling group may be grouped together. The count shown in each anomaly refers to the number of grouped anomalies.
 * **D**. A link to view the anomalies.
 
 :::note
@@ -229,17 +229,17 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 
 There are three places from your [Alerts List](#alert-list) to subscribe to a monitor:
 
-* Right-click on a row item > click **Subscribe**.
+* Right-click a row item > click **Subscribe**.
 * Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**.
-* Single-click on a row item > on the opened alert page, click the three-dot kebab menu > **Subscribe to Monitor**.
+* Single-click a row item > on the opened alert page, click the three-dot kebab menu > **Subscribe to Monitor**.
 
 ### From your Monitors list
 
 There are three places from your [Monitors list](/docs/alerts/monitors/settings/#accessing-monitors) to subscribe to a monitor:
 
-* Right-click on a row item > click **Subscribe**.
+* Right-click a row item > click **Subscribe**.
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**.
-* Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**.
+* Single-click a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**.
 
 #### From a folder
 

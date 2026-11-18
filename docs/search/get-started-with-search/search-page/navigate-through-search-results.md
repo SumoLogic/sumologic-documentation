@@ -10,7 +10,7 @@ When you run a search, the results are displayed in the **Messages** tab. If the
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/messages-aggregates-tab.png')} alt="Messages and Aggregates tab" style={{border: '1px solid gray'}} width="800" />
 
-The **Signatures** tab is shown when using the [LogReduce](/docs/search/behavior-insights/logreduce) operator.
+The **Signatures** tab is shown when using the [LogReduce®](/docs/search/behavior-insights/logreduce) operator.
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/signatures-tab.png')} alt="Signatures ta" style={{border: '1px solid gray'}} width="800" />
 

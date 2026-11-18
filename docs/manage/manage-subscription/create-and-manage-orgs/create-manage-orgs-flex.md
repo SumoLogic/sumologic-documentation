@@ -19,7 +19,7 @@ This feature is not enabled by default. If you’d like to have it enabled, cont
 
 This topic has information about Sumo Logic’s organizations feature for Flex licensing, which you can use to create and manage orgs. The term *parent org* refers to the organization from which you create a new organization, while *child orgs* are the organizations you create.
 
-Sumo Logic organitztions allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
+Sumo Logic organizations allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
 
 When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. When you provision a child org you use a credits calculator to estimate and allocate required credits for each product variable. 
 
@@ -53,7 +53,7 @@ You cannot delete a new child org once it is created.
       <img src={useBaseUrl('img/manage/subscriptions/allocate-credits-set-baseline.png')} alt="Allocate credits set baseline" style={{border:'1px solid gray'}} width="450" />
 1. In the credits calculator, enter the following:
       * **Average daily ingestion**. Enter the average daily ingestion of the Flex data.
-      * **Estimated Scans per GB of ingested data**. Adjust the toggle bar to specify how many times you expect the data to be scanned.. The default setting is 500X, which means the 1 GB of ingested data will be scanned 500 times. You can set this number based on your analytic usage profile. 
+      * **Estimated Scans per GB of ingested data**. Adjust the toggle bar to specify how many times you expect the data to be scanned. The default setting is 500X, which means the 1 GB of ingested data will be scanned 500 times. You can set this number based on your analytic usage profile. 
             - Set the value between 500-750 if your analytic usage profile is **Low**.
             - Set the value between 750-1500 if your analytic usage profile is **Medium**.
             - Set the value between 1500-2000 if your analytic usage profile is **High**.

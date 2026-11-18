@@ -52,7 +52,7 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 | [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
-| [Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai) | `dojo` |
+| [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) | `dojo` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
 | [Fields](/docs/manage/fields) | `fieldManagement` |
 | [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) | `ingestBudgets` |

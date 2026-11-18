@@ -22,7 +22,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/alerts/difference-from-scheduled-searches')}><img src={useBaseUrl('img/icons/alerts.png')} alt="Alerts icon" width="40"/><h4>Monitors vs. Scheduled Searches</h4></a>
-  <p>Learn about the feature differences between Monitors and Scheduled Searches.</p>
+  <p>Learn about the feature differences between monitors and scheduled searches.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -48,5 +48,5 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <br/>
 
 :::note
-You can configure Sumo Logic Monitors using [Terraform modules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor).
+You can configure Sumo Logic monitors using [Terraform modules](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor).
 :::

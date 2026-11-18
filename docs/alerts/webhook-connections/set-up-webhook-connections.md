@@ -69,7 +69,7 @@ Variables must be enclosed by double curly brackets.
 :::
 
 ### Common variables for alerts
-You can use variables to customize your notification payload from Monitors and Scheduled Searches. The table below shows a list of variables along with information on which area of the product these are supported. We have also provided a brief description of each of the variables.
+You can use variables to customize your notification payload from monitors and scheduled searches. The table below shows a list of variables along with information on which area of the product these are supported. We have also provided a brief description of each of the variables.
 
 :::note
 All variables are case-insensitive.
@@ -95,13 +95,13 @@ All variables are case-insensitive.
 | `{{TriggerTimeStart}}` | The start time of the time range that triggered the monitor in Unix format. For example, `1626189692042`. | &#10003; | &#10003; |
 | `{{TriggerTimeEnd}}` | The end time of the time range that triggered the monitor in Unix format. For example, `1626190592042`. | &#10003; | &#10003; |
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | &#10003; |  |
-| `{{AlertResponseUrl}}` | When your Monitor is triggered, it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#10003; | &#10003; |
+| `{{AlertResponseUrl}}` | When your monitor is triggered, it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#10003; | &#10003; |
 
 
 <details>
 <summary>Legacy variables</summary>
 
-This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
+This section provides the old variables available for alert notifications from metrics monitors and scheduled searches. The following table shows where the old variables are supported.
 
 :::tip
 We recommend using the new common variables instead of these legacy variables, which will be deprecated.
@@ -110,7 +110,7 @@ We recommend using the new common variables instead of these legacy variables, w
 | Variable | Description | Metrics Monitors | Scheduled Searches |
 | :-- | :-- | :-- | :--|
 | ` {{SearchName}}` |  | &#10003; | &#10003; |
-| `{{SearchDescription}}` | Description of the saved search or Monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or Monitor when you created it. | &#10003; | &#10003; |
+| `{{SearchDescription}}` | Description of the saved search or monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or monitor when you created it. | &#10003; | &#10003; |
 | `{{SearchQuery}}` | The query used to run the saved search. In the delivered payload, this variable is replaced by your saved search query or metric query. | &#10003; | &#10003; |
 | `{{SearchQueryUrl}}` | The URL to the search or metrics query. In the delivered payload, this is a URL that you can click to run the saved logs or metric query. | &#10003; | &#10003; |
 | `{{TimeRange}}` | The time range that triggered the alert. | &#10003; | &#10003; |
@@ -247,7 +247,7 @@ The following valid JSON is sent in the payload of the POST request.
 
 ### Example authorization header
 
-Use HTTP Basic Authentication, this is a standard used across the world wide web, Sumo Logic doesn't require anything different or special. The username and password are concatenated, base64-encoded, and passed in the `Authorization` HTTP header. The Authorization field is constructed as follows:
+Use HTTP Basic Authentication, this is a standard used across the world wide web, Sumo Logic does not require anything different or special. The username and password are concatenated, base64-encoded, and passed in the `Authorization` HTTP header. The Authorization field is constructed as follows:
 
 * Combine the username and password with a single colon.
 * Encode using the [RFC2045-MIME](https://www.ietf.org/rfc/rfc2045.txt) variant of Base64. You can use any encoder, including the [base64](/docs/search/search-query-language/search-operators/base64encode) search operator to do this.
@@ -279,7 +279,7 @@ After configuring the connection, click the **Test Connection** button at the 
 
 <img src={useBaseUrl('img/connection-and-integration/test-connection-button.png')} alt="Test connection button" style={{border: '1px solid gray'}} width="600" />
 
-If the connection is successful, you'll see a message appearing in the third-party tool. This won't contain any information from the scheduled search, it will just have the text in the payload.
+If the connection is successful, you'll see a message appearing in the third-party tool. This will not contain any information from the scheduled search, it will just have the text in the payload.
 
 ### Troubleshooting Webhook payload
 

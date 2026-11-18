@@ -61,7 +61,7 @@ System files:
 * [providers.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/providers.tf): Provides Terraform configurations to declare the providers they require to have Terraform install and use them. See [Providers](https://www.terraform.io/docs/language/providers/index.html) for more information.
 * [variables.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Use input variables to add module arguments](https://www.terraform.io/docs/language/values/variables.html) for more information.
 * [outputs.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/outputs.tf): Provides specific return values for a Terraform module. See [Use outputs to expose module data](https://www.terraform.io/docs/language/values/outputs.html) for more information.
-  
+
 ## Step 1: Set up the Terraform environment
 
 Before you run the Terraform, perform the following actions on a server machine of your choice:
@@ -143,7 +143,7 @@ Starting with v3.0.0, the AWS Observability Terraform module has moved to a new 
    * `sumologic_organization_id`: Sumo Logic Organization ID. You can find your organization ID on the [Preferences](/docs/get-started/account-settings-preferences/#my-profile) page in the Sumo Logic UI. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
    * `aws_account_alias`: The name/alias for the AWS environment from which you are collecting data. This name will appear in the metrics and logs. Leave this blank if you are going to deploy the solution in multiple AWS accounts. Do not include special characters in the alias.
     :::note
-    See the [variables.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/variables.tf) file and [README](https://github.com/SumoLogic/terraform-sumologic-aws-observability/tree/master#readme) in that folder for configuration information with permissible values for these variables. 
+    See the [variables.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/variables.tf) file and [README](https://github.com/SumoLogic/terraform-sumologic-aws-observability/tree/master#readme) in that folder for configuration information with permissible values for these variables.
     :::
 1. Configure the AWS region in **providers.tf**:
     ```hcl
@@ -585,7 +585,7 @@ To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer t
 If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. Overriding the configuration sources prevents them from being re-created in the AWS infrastructure or Sumo Logic.
 :::
 
-Source parameters define how collectors and their sources are set up in Sumo Logic. If needed, override the desired parameter in the module that you defined earlier for each AWS account and region in the **terraform-sumologic-aws-observability/main.tf** file. 
+Source parameters define how collectors and their sources are set up in Sumo Logic. If needed, override the desired parameter in the module that you defined earlier for each AWS account and region in the **terraform-sumologic-aws-observability/main.tf** file.
 
 The following examples demonstrate parameter overrides:
 
@@ -743,18 +743,18 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
    "AWS/NetworkELB",
    "AWS/SQS",
    "AWS/SNS"
- ], 
+ ],
  "tag_filters": [],
  "source_category": "aws/observability/cloudwatch/metrics",
  "source_name": "CloudWatch Metrics (Region)"
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following override example collects only DynamoDB and Lambda namespaces with source_category set to `"aws/observability/cloudwatch/metrics/us-east-1"`:
 
-```json title="cloudwatch_metrics_source_details"
+```hcl title="cloudwatch_metrics_source_details"
 cloudwatch_metrics_source_details = {
  "bucket_details": {
    "bucket_name": "",
@@ -767,7 +767,7 @@ cloudwatch_metrics_source_details = {
    "AWS/DynamoDB",
    "AWS/Lambda",
    "CWAgent"
-  ], 
+  ],
  "tag_filters": [{
       "type":"TagFilters",
       "namespace" : "AWS/DynamoDB",
@@ -796,11 +796,11 @@ Use this parameter if you are already collecting CloudWatch Metrics and want to 
 ""
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following is a default example:
 
-```json
+```hcl
 cloudwatch_metrics_source_url=""
 ```
 
@@ -831,9 +831,9 @@ When enabling ALB logs (setting to `true`), you need to provide [elb_source_deta
 "true"
 ```
 
-**Override Example JSON:**
+**Override example:**
 
-```json
+```hcl
 collect_elb_logs = true
 ```
 
@@ -864,7 +864,7 @@ To enable collection of application load balancer logs, set [collect_elb_logs](#
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following override example uses the bucket `"example-loadbalancer-logs"` with path expression `"*AWSLogs/*/elasticloadbalancing/*/*"`:
 
@@ -872,7 +872,7 @@ The following override example uses the bucket `"example-loadbalancer-logs"` wit
 # Enable Collection of ALB Access logs source
 collect_elb_logs   = true
 # Collect ALB Access logs, from user provided s3 bucket
-# Don't create a s3 bucket, use bucket details provided by the user. Don't force destroy bucket
+# Do not create a s3 bucket, use bucket details provided by the user. Do not force destroy bucket
 elb_source_details = {
  source_name     = "Elb Logs us-east-1"
  source_category = "aws/observability/alb/logs"
@@ -904,11 +904,11 @@ You have the following options:
 "Both"
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 Example JSON for newly created ALB resources only.
 
-```json
+```hcl
 auto_enable_access_logs = "New"
 ```
 
@@ -926,7 +926,7 @@ Required if you are already collecting ALB logs. Provide the existing Sumo Logic
 ""
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following is a default example:
 
@@ -949,7 +949,7 @@ Amazon Elastic load balancers have various [load balancers](https://aws.amazon.c
 
 You have the following options:
 
-`true`. Ingest Load Balancer logs into Sumo Logic. Creates a Sumo Logic Log Source that collects application load balancer  logs from an existing bucket or a new bucket.
+`true`. Ingest Load Balancer logs into Sumo Logic. Creates a Sumo Logic Log Source that collects application load balancer logs from an existing bucket or a new bucket.
 
 If true, configure "classic_lb_source_details" to ingest load balancer logs.
 
@@ -963,7 +963,7 @@ When enabling CLB logs (setting to `true`), you need to provide `classic_lb_sour
 true
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 ```hcl
 collect_classic_lb_logs = true
@@ -996,7 +996,7 @@ To enable collection of classic load balancer logs, set `collect_classic_lb_logs
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following override example uses the bucket `"example-loadbalancer-logs"` with path expression `"*AWSLogs/*/elasticloadbalancing/*/*"`:
 
@@ -1004,7 +1004,7 @@ The following override example uses the bucket `"example-loadbalancer-logs"` wit
 # Enable Collection of CLB Access logs source
 collect_classic_lb_logs   = true
 # Collect CLB Access logs, from user provided s3 bucket
-# Don't create a s3 bucket, use bucket details provided by the user. Don't force destroy bucket
+# Do not create a s3 bucket, use bucket details provided by the user. Do not force destroy bucket
 classic_lb_source_details = {
  source_name     = "Classic lb Logs us-east-1"
  source_category = "aws/observability/clb/logs"
@@ -1036,7 +1036,7 @@ You have the following options:
 "Both"
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 Example JSON for newly created ALB resources only.
 
@@ -1124,7 +1124,7 @@ To enable, set [collect_cloudtrail_logs](#collect_cloudtrail_logs) to `true` and
 }
 ```
 
-**Override Example:**
+**Override example:**
 
 The following override example uses the bucket `"aws-observability-logs"` with path expression `"*AWSLogs/*/CloudTrail/*/*"` path expression:
 
@@ -1132,7 +1132,7 @@ The following override example uses the bucket `"aws-observability-logs"` with p
 # Enable Collection of CloudTrail logs
 collect_cloudtrail_logs   = true
 # Collect CloudTrail logs, from user provided s3 bucket
-# Don't create a s3 bucket, use bucket details provided by the user. Don't force destroy bucket
+# Do not create a s3 bucket, use bucket details provided by the user. Do not force destroy bucket
 cloudtrail_source_details = {
  source_name     = "CloudTrail Logs us-east-1"
  source_category = "aws/observability/cloudtrail/logs"
@@ -1208,7 +1208,7 @@ For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 * Provide your `email_id` to receive alerts. You will receive a confirmation email after the deployment is complete. Follow the instructions in this email to validate the address.
 * `IncludeLogGroupInfo`. Set to `true` to include loggroup/logstream values in logs. For AWS Lambda Logs IncludeLogGroupInfo must be set to `true`.
 * `logformat`. For Lambda, the value should be set to "Others".
-* `log_stream_prefix`. Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s). LogGroup(s) still need to be subscribed to the created Lambda function.
+* `log_stream_prefix`. Enter a comma-separated list of logStream name prefixes to filter by logStream. Note that this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s). LogGroup(s) still need to be subscribed to the created Lambda function.
 * `workers`. Number of lambda function invocations for CloudWatch logs source Dead Letter Queue processing.
 
 **Default value:**
@@ -1234,7 +1234,7 @@ For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following override example sets the `aws-observability-cw-logs` bucket name and the email-id to `bob@company.com`:
 
@@ -1299,7 +1299,7 @@ Subscribe log groups to Sumo Logic Lambda Forwarder. You have the following opti
 "Both"
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 ```hcl
 auto_enable_logs_subscription="New"
@@ -1323,7 +1323,7 @@ auto_enable_logs_subscription="New"
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following example includes all log groups that match `"lambda-cloudwatch-logs"`:
 
@@ -1338,7 +1338,7 @@ auto_enable_logs_subscription_options = {
 
 Provide an existing Sumo Logic Collector ID. See [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
-If provided, all the provided sources will be created within the collector. If kept empty, a new Collector will be created and all provided sources will be created within that collector.
+If provided, all the provided sources will be created within the collector. If kept empty, a new collector will be created and all provided sources will be created within that collector.
 
 **Default value:**
 
@@ -1358,7 +1358,7 @@ sumologic_existing_collector_details = {
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 ```hcl
 # Use the same collector created for module production-us-east-1 for the new source module.
@@ -1372,7 +1372,7 @@ sumologic_existing_collector_details = {
 
 Provide details for the Sumo Logic collector. If not provided, then defaults will be used.
 
-The Collector will be created if any new source is created and sumologic_existing_collector_id is empty.
+The collector will be created if any new source is created and sumologic_existing_collector_id is empty.
 
 **Default value:**
 
@@ -1384,7 +1384,7 @@ The Collector will be created if any new source is created and sumologic_existin
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 The following override example creates a collector with the name "AWS Observability Prod".
 
@@ -1412,7 +1412,7 @@ For more details on permissions, check the IAM policy tmpl files at /modules/col
 }
 ```
 
-**Override Example JSON:**
+**Override example:**
 
 ```hcl
 existing_iam_details = {
@@ -1441,7 +1441,7 @@ wait_for_seconds = 180
 
 ### Override app content parameters
 
-In v3.0.0, AWS Observability apps are installed directly into the **Installed Apps** catalog in Sumo Logic using the `sumologic_app` Terraform resource. 
+In v3.0.0, AWS Observability apps are installed directly into the **Installed Apps** catalog in Sumo Logic using the `sumologic_app` Terraform resource.
 :::note
 In v3.0.0, All AWSO apps are now part of Next-Gen Apps in Sumo Logic. As a result, the Personal, Admin Recommended, and Monitors folders have been removed, and per-app monitor enable/disable configuration is no longer available.
 :::
@@ -1475,7 +1475,7 @@ module "app-module" {
 }
 ```
 
-**Override Example: Install additional apps**
+**Override example: Install additional apps**
 
 Use `installation_apps_list` to install apps beyond the defaults. Each entry requires a `uuid`, `name`, `version` (`"latest"` or semantic version such as `"1.0.0"`), and an optional `parameters` map.
 
@@ -1554,9 +1554,9 @@ Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
 #### Solution
 Run `terraform destroy` again.
 
-### Field with the given id can't be deleted because it is in use
+### Field with the given id cannot be deleted because it is in use
 #### Error Message
-`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id cannot be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
 #### Solution
 Run `terraform destroy` again.
 

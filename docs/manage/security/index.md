@@ -62,7 +62,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/security/create-allowlist-ip-cidr-addresses')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Create an Allowlist for IP or CIDR Addresses</h4></a>
-  <p>Learn how to explicitly grant access to specific IP OR CIDR Addresses.</p>
+  <p>Learn how to explicitly grant access to specific IP or CIDR addresses.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -80,7 +80,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/manage/security/installation-tokens')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Installation Tokens</h4></a>
-    <p>Learn how to use Installation Tokens to register Installed Collectors.</p>
+    <p>Learn how to use Installation Tokens to register Sumo Logic installed collectors.</p>
   </div>
 </div>
     <div className="box smallbox card">

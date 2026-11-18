@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The summarize operator has been renamed the LogReduce operator, to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with logreduce.
 :::
 
-The LogReduce&reg; algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
+The LogReduce® algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
 
 There are two ways to use the operator.
 

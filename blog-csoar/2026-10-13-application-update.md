@@ -17,7 +17,7 @@ The following updates were made in September 2026.
 
 #### General
 
-* **Unified App Catalog**. Migrated playbook templates and integrations from App Central to the unified App Catalog, delivering consistent navigation and discovery aligned with the rest of the Sumo Logic platform.
+* **Unified App Catalog**. Migrated playbook templates and integrations from App Central to the unified App Catalog, delivering consistent navigation and discovery aligned with the rest of the Sumo Logic platform. [Learn more](/docs/integrations/).
 * **Capability naming standardization**. Standardized capability labels across Cloud SOAR and Automation Service to align with platform-wide naming conventions. [Learn more](/docs/manage/users-roles/roles/role-capabilities).
 
 #### Playbooks

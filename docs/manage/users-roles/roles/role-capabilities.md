@@ -110,7 +110,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Access All Tasks| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
 | Edit Tasks| Create, edit, and close tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
 | Reassign Tasks | Reassign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
-| Access App Central | View and install packages from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
+| Access App Central | View and install [Playbook](/docs/integrations/playbook-templates/) & [Integration](/docs/integrations/automation-integrations/) packages. | `cloudSoarAppCentralAccess` |
 | Export App Central | Export integrations, playbooks, rules, actions, and templates from App Central. | `cloudSoarAppCentralExport` |
 | View Integrations | View and test [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
 | Manage Integrations | Create, edit, and manage integrations. | `cloudSoarIntegrationsConfigure` |
@@ -158,8 +158,8 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
-| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
+| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab to explore threat intelligence indicators and their details. | `viewThreatIntelDataStore` |
+| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources and indicators. | `manageThreatIntelDataStore` |
 
 ## Macros
 

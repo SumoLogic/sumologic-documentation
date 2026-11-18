@@ -2,32 +2,32 @@
 id: automation-service-integrations
 title: Integrations
 sidebar_label: Integrations
-description: Learn how integrations are connectors to applications from industry-leading network and security vendors.   
+description: Learn how integrations are connectors to applications from industry-leading network and security vendors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
+Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.
 
-Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View integrations](#view-integrations)). Integrations that are available for installation appear in App Central (see [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/)).
+Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View integrations](#view-integrations)). Integrations that are available for installation appear in App Catalog (see [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/)).
 
 ## Available integrations
 
-For a complete list of integrations that are available to install, see [Out-of-the-Box Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
+For a complete list of integrations that are available to install, see [Out-of-the-Box Integrations in App Catalog](/docs/integrations/automation-integrations/).
 
 :::warning Important
-All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication/).
 :::
 
 ## View integrations
 
-The following procedure describes how to view integrations already installed to your environment. You can also [install new integrations using App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central).
+The following procedure describes how to view integrations already installed to your environment. You can also [install new integrations using App Catalog](/docs/integrations/automation-integrations/install-automation-integrations/#install-an-integration-from-app-catalog).
 
 :::tip
 You can also create a custom integration. For an example for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
 :::
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar.
 1. Select an integration to see the actions on the resource. You call these actions when you [add an action node to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook).<br/><img src={useBaseUrl('img/cse/automations-integrations-actions-list.png')} style={{border:'1px solid gray'}} alt="Actions on an integration" width="700"/>
 
 :::tip
@@ -36,11 +36,11 @@ To add a new resource to an integration, click the **+** button to the left of *
 
 ## Certified integrations
 
-Certified integrations are those that are provided by Sumo Logic. You can [install certified integrations using App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central).
+Certified integrations are those that are provided by Sumo Logic. You can [install certified integrations using App Catalog](/docs/integrations/automation-integrations/install-automation-integrations/#install-an-integration-from-app-catalog).
 
 Certified integrations are designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cse/automations-integration-certified.png')} style={{border:'1px solid gray'}} alt="Certified integration" width="300"/>
 
-After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code can’t be edited using the Automation Service internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-2.png')} style={{border:'1px solid gray'}} alt="Certified integration message in resource code" width="400"/>
+After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code cannot be edited using the Automation Service internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-2.png')} style={{border:'1px solid gray'}} alt="Certified integration message in resource code" width="400"/>
 
 Certified actions are designated by a **Certified Action** check mark.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-action.png')} style={{border:'1px solid gray'}} alt="Certified action" width="300"/>
 
@@ -54,9 +54,9 @@ Following is a duplicated integration:<br/><img src={useBaseUrl('img/cse/automat
 
 If the certified integration resource was configured before the duplication process, all the settings will be saved and replicated inside the duplicated integration. There is no need to reset the duplicated integration.
 
-Note that in the following example a **(2)** follows the duplicated integration's name, as well as the resource name. A **(3)** would follow the name of the next duplicate, **(4)** the next, and so on. Also note that the actions listed in the integration do not have the **Certified Actions** check mark, because they exist on a duplicated integration.<br/><img src={useBaseUrl('img/cse/automations-integration-duplicated-resources-actions.png')} style={{border:'1px solid gray'}} alt="No changes to duplicated resource actions" width="600"/>
+In the following example a **(2)** follows the duplicated integration's name, as well as the resource name. A **(3)** would follow the name of the next duplicate, **(4)** the next, and so on. The actions listed in the integration do not have the **Certified Actions** check mark, because they exist on a duplicated integration.<br/><img src={useBaseUrl('img/cse/automations-integration-duplicated-resources-actions.png')} style={{border:'1px solid gray'}} alt="No changes to duplicated resource actions" width="600"/>
 
- If you choose a duplicated resource when you [add an acton node to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook), the actions available will be the ones belonging to the duplicated resource. The following example shows selecting an action from a duplicated resource.<br/><img src={useBaseUrl('img/cse/automations-integration-add-comment-to-issue.png')} style={{border:'1px solid gray'}} alt="Add comment to issue" width="600"/>
+ If you choose a duplicated resource when you [add an action node to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook), the actions available will be the ones belonging to the duplicated resource. The following example shows selecting an action from a duplicated resource.<br/><img src={useBaseUrl('img/cse/automations-integration-add-comment-to-issue.png')} style={{border:'1px solid gray'}} alt="Add comment to issue" width="600"/>
 
 ## Create a new integration
 
@@ -65,8 +65,8 @@ Note that in the following example a **(2)** follows the duplicated integration'
 To create a new integration in the Automation Service, you must supply an integration definition YAML file, as well as an action definition YAML file for each of the actions contained in the integration. For an example of creating a new integration by supplying YAML files, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration). For sample YAML files, see [example files](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/). To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#integration-framework-file-formats).
 
 To create a new integration:
-1. Create an integration definition YAML file, as well as an action definition YAML file for each action in the integration. 
-1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar.  
+1. Create an integration definition YAML file, as well as an action definition YAML file for each action in the integration.
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar.
 1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="500"/>
 1. A **New Integration** dialog appears. Drag the integration definition YAML file into the **New Integration** dialog.<br/><img src={useBaseUrl('img/platform-services/automation-service/new-integration-dialog.png')} alt="Add Integration button" width="300"/>
 1. Click **Upload**. The new integration is listed on the **Integrations** page.
@@ -81,15 +81,13 @@ To create a new integration:
    1. Click the **+** button to the left of **Resources**.
    1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Add Resource dialog" width="400"/>
    1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="VirusTotal example integration" width="600"/>
-1. To test an action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
-
-To make your custom integration available for everyone in App Central, see [Publish an integration to App Central](/docs/platform-services/automation-service/automation-service-app-central/#publish-an-integration-to-app-central).
+1. To test an action, click the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
 
 ### In Cloud SOAR
 
 If you have Cloud SOAR installed, you can build basic integrations without having to provide custom YAML files.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Cloud SOAR**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right of the screen, select **Automation**, and then select **Integrations** in the left nav bar. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Cloud SOAR**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right of the screen, select **Automation**, and then select **Integrations** in the left nav bar.
 1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="500"/>
 1. Fill out the **New Integration** dialog:
    1. Upload a **Logo** for your integration.
@@ -112,20 +110,18 @@ If you have Cloud SOAR installed, you can build basic integrations without havin
    1. Click the **+** button to the left of **Resources**.
    1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Add Resource dialog" width="400"/>
    1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="VirusTotal example integration" width="600"/>
-1. To test an action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
-
-To make your custom integration available for everyone in App Central, see [Publish an integration to App Central](/docs/platform-services/automation-service/automation-service-app-central/#publish-an-integration-to-app-central).
+1. To test an action, click the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Test action dialog" width="400"/>
 
 ## Test action
 
 You can test an action on an integration to ensure that it is working correctly.
 
-1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations). 
-1. [Ensure that authentication is configured for the integration](/docs/platform-services/automation-service/configure-authentication-for-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 
+1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations).
+1. [Ensure that authentication is configured for the integration](/docs/integrations/automation-integrations/configure-authentication/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic.
 1. Select an action on the integration. For our example shown below, we'll select the **List Users** action on the Atlassian Jira V2 integration. <br/><img src={useBaseUrl('img/platform-services/automation-service/example-action-for-test-action.png')} alt="Example action" style={{border: '1px solid gray'}} width="700" />
 1. Enter any values needed for the action to run and click **TEST ACTION**.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-test-action.png')} alt="Example test action" style={{border: '1px solid gray'}} width="400" />
    :::tip
-   In some cases, you'll need to provide data for required fields before **TEST ACTION** is enabled. This is data that normally would be provided by the output of other actions running earlier in a playbook sequence, and so must be provided here to test if the action runs correctly. In the example below, note that you need to provide information for the **Issue (ID or Key)** field in order to test the action. Also note that under the **Issue Type** field there is helpful text telling you that you can get the issue type ID and key from the **List Issue Types** action.<br/><img src={useBaseUrl('img/platform-services/automation-service/test-action-required-fields.png')} alt="Required fields for test action" style={{border: '1px solid gray'}} width="400" />
+   In some cases, you will need to provide data for required fields before **TEST ACTION** is enabled. This is data that normally would be provided by the output of other actions running earlier in a playbook sequence, and so must be provided here to test if the action runs correctly. In the example below, you need to provide information for the **Issue (ID or Key)** field to test the action. Also, under the **Issue Type** field there is helpful text telling you that you can get the issue type ID and key from the **List Issue Types** action.<br/><img src={useBaseUrl('img/platform-services/automation-service/test-action-required-fields.png')} alt="Required fields for test action" style={{border: '1px solid gray'}} width="400" />
    :::
 1. After you click **TEST ACTION**, results of the test are displayed:<br/><img src={useBaseUrl('img/platform-services/automation-service/test-action-results.png')} alt="Test action results" style={{border: '1px solid gray'}} width="600" />
 1.  The table in the **Show Details** dialog only shows data that is configured to display. To see the complete output in JSON format, including data not configured to display, click the **JSON details** button:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action-json-details.png')} alt="Output JSON details button" style={{border: '1px solid gray'}} width="500" /><br/>In this dialog you can click expand arrows to examine the output in JSON format. Click buttons at the top of the dialog to return to the display view, download the JSON, or copy the output:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-json-details.png')} alt="Output in JSON view" style={{border: '1px solid gray'}} width="500" />
@@ -139,8 +135,8 @@ When an integration's action runs, it typically generates output that is passed 
 You may want to change the output of an action to allow playbooks to execute different activities downstream from the action. Perform the following steps to edit the output of an action:
 
 1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) and do the following:
-   1. [Ensure that it is a certified integration](/docs/platform-services/automation-service/automation-service-integrations/#certified-integrations). Only certified integrations allow you to edit the output of their actions. 
-   1. [Ensure that authentication is configured for the integration](/docs/platform-services/automation-service/configure-authentication-for-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 
+   1. [Ensure that it is a certified integration](/docs/platform-services/automation-service/automation-service-integrations/#certified-integrations). Only certified integrations allow you to edit the output of their actions.
+   1. [Ensure that authentication is configured for the integration](/docs/integrations/automation-integrations/configure-authentication/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic.
 1. Select an action on the integration. For our example, we'll edit the output for the **List Users** action on the Atlassian Jira V2 integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-example-action.png')} alt="Example action" style={{border: '1px solid gray'}} width="700" />
 1. First, let's [test the action](#test-action) to see the output it generates. Enter any values needed for the action to run and click **TEST ACTION**:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action.png')} alt="Test action" style={{border: '1px solid gray'}} width="400" />
 1. Output of the action is displayed in the **Show Details** dialog. Although this dialog shows the user IDs and names, there is much more output that is generated by the action. We'll see that when we edit the action next.<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action-results.png')} alt="Test action results" style={{border: '1px solid gray'}} width="500" />
@@ -157,8 +153,7 @@ You may want to change the output of an action to allow playbooks to execute dif
 
 You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/platform-services/automation-service/automation-service-bridge/).
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar.
 1. Select an integration.
 1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-button.png')} alt="Resource edit button" width="600"/>
 1. In the **Edit resource** dialog, click the **Automation engine** field to select **Cloud execution** (for certified integrations only) or select a Bridge option (for custom integrations).<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-cloud-execution.png')} alt="Automation engine field" width="400"/>
-

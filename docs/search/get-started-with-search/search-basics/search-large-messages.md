@@ -32,7 +32,7 @@ Keep the following limitations in mind when you work with messages larger than 6
 
 These features process large messages differently within Sumo Logic itself:
 
-- **LogCompare and LogReduce**. These operators truncate raw 256KB messages to 64KB before matching and grouping the logs into signatures, so content beyond 64KB is not considered. This can also affect response time when you run them against large messages. Learn more in [LogReduce](/docs/search/behavior-insights/logreduce/) and [LogCompare](/docs/search/behavior-insights/logcompare/).
+- **LogCompare and LogReduce®**. These operators truncate raw 256KB messages to 64KB before matching and grouping the logs into signatures, so content beyond 64KB is not considered. This can also affect response time when you run them against large messages. Learn more in [LogReduce](/docs/search/behavior-insights/logreduce/) and [LogCompare](/docs/search/behavior-insights/logcompare/).
 - **Log Search messages table**. The messages table displays up to 25,000 characters of a message, even after you expand it. If a message larger than 25,000 characters contains JSON values as strings, those values are not rendered as JSON fields by default in the table. To view a complete message, or to view large JSON values as structured JSON, use the [Log Message Inspector](/docs/search/get-started-with-search/search-page/log-message-inspector).
 - **Cloud SIEM**. Parsing and mapping might not process messages larger than 64KB correctly.
 - **Field Extraction Rules**. The cumulative size of all fields extracted by a rule for a message is limited to 64KB, regardless of the message size. Learn more in [Field Extraction Rule limitations](/docs/manage/field-extractions/create-field-extraction-rule/#limitations).
