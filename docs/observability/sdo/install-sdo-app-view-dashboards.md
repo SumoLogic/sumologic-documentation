@@ -199,7 +199,7 @@ Use this dashboard to:
 
 ### SDO - Deployments
 
-The **Software Development Optimization - Deployments** dashboard provides detailed information about all deploy events across your environments. It shows deploy results, successful versus failed deploys, a one day comparison, and the last 10 deployments, and breaks down deploys by repository, service, team, and environment, helping you track release activity and troubleshoot failed deploys.
+The **Software Development Optimization - Deployments** dashboard provides detailed information about all deploy events across your environments. It shows deploy results, successful versus failed deploys, a one-day comparison, and the last 10 deployments, and breaks down deploys by repository, service, team, and environment, helping you track release activity and troubleshoot failed deploys.
 
 Use this dashboard to:
 
