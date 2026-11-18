@@ -93,8 +93,8 @@ Follow the steps below to open the **Indicators** tab:
 
 :::note
 * The **Indicators** tab shows only active indicators. Expired indicators and indicators from deleted sources are not listed.
-* After a source ingests an indicator, it can take up to 10 minutes to appear on the **Indicators** tab. Search results are eventually consistent, so an indicator you just added may not be visible right away.
-* Only indicators from your custom sources are shown. Indicators from Sumo Logic global feeds cannot be edited or deleted.
+* After a source ingests an indicator, it can take up to 10 minutes to appear on the **Indicators** tab. Search results are eventually consistent, so you may not see an indicator you just added right away.
+* Only indicators from your custom sources appear in the **Indicators** tab, which you can edit and delete.
 :::
 
 The table lists indicators with the following details:
