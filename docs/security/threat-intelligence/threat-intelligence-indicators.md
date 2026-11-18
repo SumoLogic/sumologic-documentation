@@ -150,10 +150,11 @@ You can change the confidence score and expiration date of an individual indicat
 Editing and deleting indicators requires the **Manage Threat Intel Data Store** role capability. See [Role capabilities](/docs/security/threat-intelligence/about-threat-intelligence/#role-capabilities).
 :::
 
-1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Edit**. You can also click **Edit Indicator** in the indicator details panel.<br/><img src={useBaseUrl('img/security/edit-an-indicator.png')} alt="edit an indicator" style={{border: '1px solid gray'}} width="800" />
+1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Edit**. You can also click **Edit** in the indicator details panel.
 1. Update the following fields:
-   * **Confidence**. Enter a whole number from 0 to 100, or use the slider.
    * **Expiration**. Select a future date, or turn on **No expiry** so the indicator never expires.
+   * **Confidence Score**. Enter a whole number from 0 to 100, or use the slider.
+   <img src={useBaseUrl('img/security/edit-an-indicator.png')} alt="Indicator details panel with the Expiration and Confidence Score fields highlighted" style={{border: '1px solid gray'}} width="800" />
 1. Click **Save**.
 
 The **Indicator Value**, **Type**, and **Source** fields are read-only.
