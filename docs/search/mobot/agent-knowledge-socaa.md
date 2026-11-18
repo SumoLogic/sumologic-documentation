@@ -36,15 +36,15 @@ You can teach your DojoAI agents organizational information you want it to remem
 ## How to add an agent knowledge source
 
 :::info
-Adding, changing, or deleting knowledge requires admin-level access to the SOC Analyst Agent's settings. Admins can share that access with other users. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
+Adding, changing, or deleting knowledge requires the Administrator role or the Manage SOC Analyst Settings (`cseManageSocAnalystSettings`) role capability. Your added context is stored as knowledge that only the SOC Analyst Agent can access.
 :::
 
 To add knowledge for the SOC Analyst Agent:
 
 1. In the left navigation, click **DojoAI**, then click **SOC Analyst Agent**.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
-1. Add a new knowledge source by clicking **Sources** > **+ Add Source**, then select a source type: text input or a file (.txt, .pdf, .md, or .csv).<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" /><br/>On this page, you can also view, edit, and delete existing knowledge sources.
+1. Add a new knowledge source by clicking **Sources** > **+ Add Source**, then select a source type: text input or a file (TXT, MD, PDF, or CSV).<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" /><br/>On this page, you can also view, edit, and delete existing knowledge sources.
 1. If you choose text input (**Add text**), enter a **Name**, then under **Content**, type the fact, pattern, or practice. Click **Save** when you're done.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-source-text.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" />
-1. If you choose a file (**Upload file**), select a .txt, .md, .pdf, or .csv file from your computer, then click **Save**.
+1. If you choose a file (**Upload file**), select a TXT, MD, PDF, or CSV file from your computer, then click **Save**.
 
 See [Example knowledge sources](#example-knowledge-sources) for more sample knowledge source entries.
 
@@ -79,6 +79,9 @@ The procedures and standards your team follows when it investigates and resolves
 | Postmortem requirements | Our postmortem process requires a root-cause writeup before closing any P1. |
 | Investigation steps | To investigate unauthorized AWS IAM creation alerts, run the CloudTrail query for EventName 'CreateUser', correlate with the source IP, and verify against the Jira change queue. |
 | Remediation workflow | To handle suspected phishing alerts, extract the header 'X-Distribution-List', check the attachment hash on VirusTotal, and run the O365 'Search-Mailbox' script to purge duplicates. |
+| Investigation runbook | For an impossible-travel alert, first pull the last five Okta logins and check the ASN, not just geolocation. If the ASN matches `Zscaler-ZPA-APAC` (our corporate VPN range, listed on Confluence page NET-114), close as expected — Zscaler's APAC nodes often geolocate to Singapore/Tokyo regardless of the user's real location. If the ASN does not match, open a ticket in Jira project `SEC-INCIDENT` and page the on-call lead. |
+| Fraud investigation procedure | When triaging fraudulent B2B payout redirects, searching for standard webhook_updated events yields false negatives. Query tenant_config_change where attribute = "callback_endpoint_v2". Cross-reference b2b_admin_audit logs for the same session_id or user_id to check if the modification was preceded by mfa_bypass_flag = true or an MFA-skipped session event within 30 minutes prior to the change. |
+| Data exfiltration detection | When investigating mass data exfiltration on cloud storage, querying standard CloudTrail GetObject logs returns zero results because applications access storage through our custom proxy. Always search data_proxy_access where operation_type = "stream_export", and aggregate sum(bytes_sent) > 5 GB per session_token (or user_id) over a rolling 1-hour window to detect unauthorized bulk exports. |
 
 ### Historical learning and team judgment
 
@@ -95,6 +98,7 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 
 * **Scope**. Knowledge powers the SOC Analyst Agent only. Support for other DojoAI agents is planned for upcoming phases.
 * **Plain text entry limit**. For the **Add text** source option, only plain text is supported. Up to 10,000 characters per entry. Each knowledge source item works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
+* **File types and limits**. For the **Upload file** source option, only TXT, MD, PDF, and CSV files are supported. Up to 5 MB per file and up to 50 files per agent in total.
 * **Security guardrails**. Security guardrails on knowledge content are planned for upcoming phases.
 * **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
 * **One knowledge base per agent**. Everyone on your team draws on the same shared knowledge for a given agent. No per-team partitioning.

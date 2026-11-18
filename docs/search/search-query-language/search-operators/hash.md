@@ -30,7 +30,7 @@ Hash a field of email addresses.
 ```sumo
 _sourceCategory=myLogs
 | parse "email=*" as email_address
-| hash("email_address", "md5") as hashed_email
+| hash(email_address, "md5") as hashed_email
 ```
 
 ### Username
