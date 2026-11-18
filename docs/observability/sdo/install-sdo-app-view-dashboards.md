@@ -186,7 +186,7 @@ Use this dashboard to:
 
 ### SDO - Alerts
 
-The **Software Development Optimization - Alerts** dashboard provides insights into how alerts are created, escalated, and resolved across your incident management tools. It shows alerts created versus closed over time and breaks down alerts by team, service, and priority, helping you spot noisy services, high priority alerts, and trends in incident volume.
+The **Software Development Optimization - Alerts** dashboard provides insights into how alerts are created, escalated, and resolved across your incident management tools. It shows alerts created versus closed over time and breaks down alerts by team, service, and priority, helping you spot noisy services, high-priority alerts, and trends in incident volume.
 
 Use this dashboard to:
 
