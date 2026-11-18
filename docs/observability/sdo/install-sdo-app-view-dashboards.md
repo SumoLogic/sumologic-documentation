@@ -87,7 +87,7 @@ Use this dashboard to:
 
 ### SDO - Deployment Frequency
 
-The **Software Development Optimization - Deployment Frequency** dashboard provides insights into the DORA Deployment Frequency metric by showing how often code is deployed to production. It shows deploys over time, average deploys per week, successful versus failed deploys, a one week comparison, and deploys by repository, helping you understand release cadence and detect unusual changes in deployment activity.
+The **Software Development Optimization - Deployment Frequency** dashboard provides insights into the DORA Deployment Frequency metric by showing how often code is deployed to production. It shows deploys over time, average deploys per week, successful versus failed deploys, a one-week comparison, and deploys by repository, helping you understand release cadence and detect unusual changes in deployment activity.
 
 Use this dashboard to:
 
