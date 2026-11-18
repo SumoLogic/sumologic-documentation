@@ -160,8 +160,8 @@ Editing or deleting an individual indicator also creates an audit event:
 
 | Event name | Created when | Includes |
 |:--|:--|:--|
-| `ThreatIndicatorUpdated` | When you edit an indicator's confidence or expiration. | Who made the change, the indicator, and the previous and new `confidence` and `validUntil` values. |
-| `ThreatIndicatorDeleted` | When you delete an indicator. One event is created per deleted indicator. | Who made the change and the indicator. |
+| `ThreatIndicatorUpdated` | You edit an indicator's confidence or expiration. | Who made the change, the indicator, and the previous and new `confidence` and `validUntil` values. |
+| `ThreatIndicatorDeleted` | You delete an indicator. One event is created per deleted indicator. | Who made the change and the indicator. |
 
 Audit events for these actions can arrive shortly after the change, and an event can occasionally appear more than once.
 
