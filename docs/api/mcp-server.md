@@ -128,7 +128,7 @@ MCP server access is enabled by default. An administrator can turn it on or off 
 
 Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [What do you need before getting started?](#prerequisites) and [How to enable CIMD for MCP clients](#how-to-enable-cimd-for-mcp-clients).
 
-Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot and Parse Assist, and from the **SOC Analyst Agent** toggle, so you can enable or disable the MCP server independently of those capabilities. Mobot in the MCP server has its own toggle. See [Enable or disable Mobot in the MCP server](/docs/api/mobot-in-mcp-server#enable-or-disable-mobot-in-the-mcp-server).
+Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot and Parse Assist, and from the **SOC Analyst Agent** toggle, so you can enable or disable the MCP server independently of those capabilities.
 
 ## How to enable CIMD for MCP clients
 
