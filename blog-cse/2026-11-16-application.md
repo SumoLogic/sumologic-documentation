@@ -14,4 +14,4 @@ You can now edit and delete individual indicators on the **Indicators** tab of t
 
 Editing and deleting requires the **Manage Threat Indicators** role capability. Both actions are recorded in the Audit Event Index. If a source supplies an indicator again on a later poll, the source values can overwrite your edits and a deleted indicator can reappear.
 
-[Learn more](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators).
+[Learn more](/docs/security/threat-intelligence/threat-intelligence-indicators/#edit-an-indicator).
