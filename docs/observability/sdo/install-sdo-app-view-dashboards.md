@@ -100,7 +100,7 @@ Use this dashboard to:
 
 ### SDO - Change Failure Rate
 
-The **Software Development Optimization - Change Failure Rate** dashboard provides insights into the DORA Change Failure Rate metric, the percentage of production deploys that result in high priority incidents. It shows the average change failure rate trend, top services by P1 incidents, and a weekly comparison of the top alerting services, helping you identify the services and trends that affect release quality.
+The **Software Development Optimization - Change Failure Rate** dashboard provides insights into the DORA Change Failure Rate metric, the percentage of production deploys that result in high-priority incidents. It shows the average change failure rate trend, top services by P1 incidents, and a weekly comparison of the top alerting services, helping you identify the services and trends that affect release quality.
 
 Use this dashboard to:
 
