@@ -1507,6 +1507,7 @@ module.exports = {
       link: {type: 'doc', id: 'search/mobot/index'},
       items: [
           'search/mobot/example-prompts',
+          'search/mobot/log-analysis-agent',
           'dashboards/create-panel-with-mobot',
           'alerts/monitors/create-monitor-with-mobot',
           'platform-services/automation-service/playbooks/create-playbooks-with-mobot',

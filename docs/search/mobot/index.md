@@ -522,15 +522,14 @@ When Mobot runs a log analysis, the underlying data scan is charged the same way
 
 If your organization previously turned off Sumo Logic AI or an earlier version of Mobot, an administrator needs to turn it back on before you can use it. See [Opting out](#opting-out).
 
-### What happened to Query Agent and Knowledge Agent?
+### What happened to Knowledge Agent and Summary Agent?
 
-They're still here, working behind the scenes, but renamed and repositioned as their capabilities have evolved. As with the original agents, you do not select between them; Mobot routes your prompt to the right one automatically.
+They've been renamed and repositioned as their capabilities have evolved. As with the original agents, you do not select between them; Mobot routes your prompt to the right one automatically.
 
-* **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
 * **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
 * **Summary Agent → part of SOC Analyst Agent**. The Summary Agent is no longer a separate agent. Its signal summarization is now a core part of how the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) contextualizes and presents its findings.
 
-Log Analysis Agent and Platform Optimization Agent aren't names you'll see anywhere in the UI; you always interact with them through Mobot's single chat interface. Don't confuse the Log Analysis Agent with [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) or [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist), which are UI features you use directly on the Search page rather than through a conversation.
+Platform Optimization Agent isn't a name you'll see anywhere in the UI; you always interact with it through Mobot's single chat interface.
 
 ### Can Mobot detect what sources or integrations I don't have set up?
 
