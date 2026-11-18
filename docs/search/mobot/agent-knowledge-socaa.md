@@ -93,7 +93,7 @@ To add knowledge for the SOC Analyst Agent:
 
    **TXT, MD, or PDF file**
    * File size: up to 5 MB per file
-   * File count: up to 50 files per team, across file formats
+   * File count: up to 50 files per agent, across file formats
    :::
 
 See [What you can teach your DojoAI agents](#what-you-can-teach-your-dojoai-agents) for more sample knowledge source entries.
