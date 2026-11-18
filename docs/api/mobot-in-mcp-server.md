@@ -6,11 +6,7 @@ description: Run Mobot investigations from Claude Code, GitHub Copilot, and othe
 keywords:
   - mobot
   - mcp server
-  - mobot_invoke
-  - mobot_poll
-  - sumo investigator
-  - claude code
-  - ai assistant
+  - dojoai
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
