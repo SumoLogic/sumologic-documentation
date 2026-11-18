@@ -56,7 +56,7 @@ These dashboards calculate four DORA metrics that help measure application relea
 
 ### SDO - DORA Metrics Overview
 
-The **Software Development Optimization - DORA Metrics Overview** dashboard calculates the four key DORA metrics identified in the [State of DevOps](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) report, which help you measure application development velocity and reliability: Lead Time for Changes, Deployment Frequency, Change Failure Rate, and Time to Restore Service. It shows the current value and trend of each metric, helping you track engineering performance over time.
+The **Software Development Optimization - DORA Metrics Overview** dashboard calculates the four key DORA metrics identified in the [State of DevOps](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) report, which help you measure application development velocity and reliability. It shows the current value and trend of each metric, helping you track engineering performance over time.
 
 The four metrics are:
 
