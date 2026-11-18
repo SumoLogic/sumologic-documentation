@@ -125,8 +125,8 @@ To view and manage [threat intelligence indicators](/docs/security/threat-intell
 1. Click **Add Role** to create a new role. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 Add the following capabilities:
    * **Threat Intel**
-      * **View Threat Intel Data Store**
-      * **Manage Threat Intel Data Store**
+      * **View Threat Intel Data Store**. View indicators and their details.
+      * **Manage Threat Intel Data Store**. Edit and delete indicators.
 
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
 
@@ -144,7 +144,7 @@ Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) and configure the source such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source) to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the Threat Intelligence **Sources** tab. You can manually add more indicators as needed, such as your own private indicators, using the Threat Intelligence **Sources** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
 1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
-1. A system administrator occasionally checks to see why a connector is not ingesting data, or to see how much storage all the indicators are using. They can use the [**Indicators** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators) to search for and examine indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
+1. A system administrator occasionally checks to see why a connector is not ingesting data, or to see how much storage all the indicators are using. They can use the [**Indicators** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators) to search for and examine indicators. If needed, they can [edit an indicator](/docs/security/threat-intelligence/threat-intelligence-indicators/#edit-an-indicator), [delete an indicator](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-an-indicator), or [delete all indicators from a source](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-all-indicators-from-a-source).
 
 ## Audit logging for threat intelligence
 
@@ -155,6 +155,15 @@ Use a search like the following:
 ```sumo
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
 ```
+
+Editing or deleting an individual indicator also creates an audit event:
+
+| Event name | Created when | Includes |
+|:--|:--|:--|
+| `ThreatIndicatorUpdated` | You edit an indicator's confidence or expiration. | Who made the change, the indicator, and the previous and new `confidence` and `validUntil` values. |
+| `ThreatIndicatorDeleted` | You delete an indicator. One event is created per deleted indicator. | Who made the change and the indicator. |
+
+Audit events for these actions can arrive shortly after the change, and an event can occasionally appear more than once.
 
 ## Additional resources
 
