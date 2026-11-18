@@ -112,7 +112,7 @@ Use this dashboard to:
 
 ### SDO - Time to Restore Service
 
-The **Software Development Optimization - Time to Restore Service** dashboard provides insights into the DORA Time to Restore Service metric, the time it takes to recover from a high priority incident. It shows the average time to restore service and its daily trend, along with P1 incidents by service, helping you identify the services and trends that affect recovery time.
+The **Software Development Optimization - Time to Restore Service** dashboard provides insights into the DORA Time to Restore Service metric, the time it takes to recover from a high-priority incident. It shows the average time to restore service and its daily trend, along with P1 incidents by service, helping you identify the services and trends that affect recovery time.
 
 Use this dashboard to:
 
