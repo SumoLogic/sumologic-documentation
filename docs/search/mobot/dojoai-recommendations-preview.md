@@ -1,7 +1,7 @@
 ---
 id: dojoai-recommendations-preview
 title: DojoAI Recommendations
-description: DojoAI Recommendations proactively flags platform issues, like slow queries, bloated dashboards, and data gaps, with previewable fixes.
+description: DojoAI Recommendations proactively flags platform issues, such as slow queries, bloated dashboards, and missing data sources, with fixes you can preview first.
 keywords:
   - dojoai
   - recommendations
@@ -15,15 +15,15 @@ keywords:
   <meta name="robots" content="noindex" />
 </head>
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
 :::info
 This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-Sumo Logic's Recommendations, part of [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) continuously monitors your environment and surfaces performance issues, such as slow queries and dashboard sprawl, before they affect your workflows."
+Recommendations is a [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) capability powered by the [Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent). It continuously monitors your environment and surfaces performance issues, such as slow queries and dashboard sprawl, before they affect your workflows.
 
 Use Recommendations to find opportunities to work faster and run your environment better. These proactive insights live on the **Recommendations** page: a single list of issues to review and fix, each with a plain-language explanation and a previewable fix. Practitioners, admins, and power users, such as dashboard owners and query and monitor authors, can act on individual recommendations.
 
@@ -37,9 +37,9 @@ Recommendations fall into two operational areas, matching the **Outcome** catego
 * **Manageability**
    * **Data source gaps**. Scans your telemetry environment to pinpoint missing sources, so you have complete observability across critical infrastructure and services. Shown in the UI as **Add Missing Telemetry**.
 
-## View your Recommendations
+## View your recommendations
 
-1. In the left nav, click **DojoAI** > **Recommendations**.<br/><img src={useBaseUrl('img/search/mobot/recommendations-list.png')} alt="Recommendations list in the left nav, showing the Recommendation, Outcome, Impact, Status, Generated, and Actions columns" style={{border: '1px solid gray'}} width="800" /><br/>The list is ranked automatically by confidence, impact, and relevance to you, and each row shows:
+1. In the left nav, click **DojoAI** > **Recommendations**.<br/><img src={useBaseUrl('img/search/mobot/recommendations-list.png')} alt="Recommendations page showing the Recommendation, Outcome, Impact, Status, Generated, and Actions columns" style={{border: '1px solid gray'}} width="800" /><br/>The list is ranked automatically by confidence, impact, and relevance to you, and each row shows:
    - **Recommendation**. The issue and the specific resource it affects, for example **Reduce Query Latency | MySQL - Excessive Slow Query Detected**, with a short description of the expected outcome, such as a percentage reduction in query latency.
    - **Outcome**. **Performance** or **Manageability**. See [Recommendation types](#recommendation-types).
    - **Impact**. The expected impact of applying the fix, based on improvement percentage: **High** or **Medium**.
@@ -59,13 +59,13 @@ Not every detected issue is worth surfacing. Before a recommendation reaches you
 
 All active recommendations across types are ranked by a single, unified score that combines confidence, expected impact, and relevance. You do not need to compare, for example, a query optimization recommendation with a telemetry gap. The highest-value recommendations for your account appear first, regardless of type.
 
-## Review your Recommendation
+## Review a recommendation
 
 Click **Preview** in the **Actions** column, or click anywhere on a recommendation, to open its detail panel.<br/><img src={useBaseUrl('img/search/mobot/recommendations-list-preview-click.png')} alt="Recommendations list with the Preview link in the Actions column highlighted" style={{border: '1px solid gray'}} width="800" />
 
 The panel shows:
 
-* **Status chips**. Repeats the status, impact, and generated-time from the list, plus which agent generated it.
+* **Status chips**. Repeats the status, impact, and generated-time from the list, plus the agent that generated it (shown as **Teammate**).
 * **Expected Outcome**. The measurable benefit of applying the fix.
 * **Recommended Actions**. A plain-language explanation of what the fix changes and why, including which monitor, dashboard, or other resource it affects, and whether applying it changes query results.
 * **Recommended Query or Dashboard Layout**. A diff of the current query and the recommended view that you toggle between.
@@ -73,13 +73,13 @@ The panel shows:
    * **Side-by-side**. The **Current Query** and **Recommended Query** shown in separate columns.<br/><img src={useBaseUrl('img/search/mobot/recommendation-preview-side-by-side.png')} alt="Recommended Query shown in Side-by-side view, with Current Query and Recommended Query in separate columns" style={{border: '1px solid gray'}} width="800" />
    * Click **Copy Recommended Query** to copy it without applying it.
 
-## Apply a Recommendation fix
+## Apply a recommendation fix
 
 What you can do from the panel depends on your permissions on the affected resource:
 
 If you have edit access, you see **Apply** and **Change at Source** buttons:
 * **Apply** button. Executes the change right away.
-* **Change at Source** button. Opens the underlying resource's own edit page, such as a monitor's **Trigger Conditions** step, with the query field pre-filled with the recommended query and flagged by an info banner ("This query is filled with Recommended query"). Press **Enter** in the query editor to execute the query, then click **Save** to apply it from there.
+* **Change at Source** button. Opens the underlying resource's own edit page. For query recommendations, such as a monitor's **Trigger Conditions** step, the query field is pre-filled with the recommended query and flagged by an info banner ("This query is filled with Recommended query"). Press **Enter** in the query editor to execute the query, then click **Save** to apply it from there.
 
   | Recommendation | Resource | Where **Change at Source** takes you |
   |:--|:--|:--|
@@ -88,13 +88,9 @@ If you have edit access, you see **Apply** and **Change at Source** buttons:
   | **Reduce Query Latency** | Monitor | The monitor's **Trigger Conditions** step, with the recommended query filled in. |
   | **Reduce Query Latency** | Scheduled search | The scheduled search's edit page, with the recommended query filled in. |
 
-:::note
-Clicking **Apply** executes the change right away. Click **Change at Source** instead if you want to review or modify it manually before applying it.
-:::
-
 If you do not have edit access, you see **Contact Owner** instead, which shows the name of the resource's owner so you can ask them to apply the fix.
 
-Everyone, regardless of permissions, can click **Reject**. This opens a confirmation dialog where you can optionally select a reason (**Not relevant**, **Incorrect recommendation**, **Already handled**, **Don't want this change**, or **Other**) before clicking **Confirm Rejection**.<br/><img src={useBaseUrl('img/search/mobot/reject-recommendation-dialog.png')} alt="Reject Recommendation confirmation dialog with optional rejection reasons and a warning that rejecting is irreversible and org-wide" style={{border: '1px solid gray'}} width="700" />
+Everyone, regardless of permissions, can click **Reject**. This opens a confirmation dialog where you can optionally select a reason (**Not relevant**, **Already handled**, **Incorrect recommendation**, **Don't want this change**, or **Other**) before clicking **Confirm Rejection**.<br/><img src={useBaseUrl('img/search/mobot/reject-recommendation-dialog.png')} alt="Reject Recommendation confirmation dialog with optional rejection reasons and a warning that rejecting is irreversible and org-wide" style={{border: '1px solid gray'}} width="700" />
 
 :::warning
 Rejecting a recommendation makes it unavailable for your entire organization, not just for you. This action is irreversible.
@@ -106,7 +102,7 @@ A recommendation has one of the following statuses:
 
 * **Active**. The recommendation has been generated and is awaiting your review.
 * **Applied**. The fix has been committed, either through one-click **Apply** or after you make the change yourself and it is verified.
-* **Rejected**. You dismissed the recommendation with a reason (**Not relevant**, **Already handled**, **Incorrect recommendation**, **Don't want this change**, or **Other**).
+* **Rejected**. You dismissed the recommendation. See [Apply a recommendation fix](#apply-a-recommendation-fix).
 
 ## Limitations
 
@@ -117,7 +113,7 @@ The following apply during Extended Preview:
 
 ## FAQ
 
-### Is Recommendations available to me?
+### Is the Recommendations page available to me?
 
 Recommendations is rolling out in phases. It is currently available to a curated set of preview customers. Contact your Sumo Logic account team to ask about access.
 
@@ -147,4 +143,5 @@ Yes. Contact your Sumo Logic account team or open a support ticket to opt out, t
 
 ## Additional resources
 
+* [Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent). Learn about the DojoAI agent that generates recommendations.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). How DojoAI Recommendations fits alongside Mobot, the Root Cause Agent, the SOC Analyst Agent, and the Sumo Logic MCP server.
