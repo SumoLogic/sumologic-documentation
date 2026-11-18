@@ -16,11 +16,6 @@ keywords:
   - sre
 ---
 
-<!--
-- RCA's specific DojoAI Credits cost and overage/cap behavior
-- Are Limitations the same for ga?
--->
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Root Cause Agent is one of the specialized agents in [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai), each built for a different job. Root Cause Agent investigates [observability alerts](/docs/alerts). After getting an alert, DevOps and SRE teams can launch an AI-driven investigation directly from an alert's details page. The Root Cause Agent gathers relevant telemetry on its own, follows the signal across your logs and metrics, and posts its findings to the alert's **AI Investigation** tab.
@@ -139,8 +134,6 @@ After each response, Mobot retains the context of your investigation and present
 
 
 ## Limitations
-
-<!-- confirm which of these still apply -->
 
 * **Traces and APM-based investigation**. Investigations run across logs and metrics. Distributed trace reasoning and service map awareness are not currently part of the investigation.
 * **Deduplication of investigations**. If the same incident arrives through more than one alert, you may see more than one investigation.

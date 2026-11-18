@@ -73,8 +73,6 @@ DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usa
 
 You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
 
-<!-- Reviewer note (DOCS-1928): confirm Root Cause Agent's specific credit cost per investigation (not given in the source meeting), the 60-day GA promo terms and daily caps, and overage/cap behavior once the capping capability ships (expected end of November). -->
-
 ### SOC Analyst Agent
 
 <img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="45"/>
