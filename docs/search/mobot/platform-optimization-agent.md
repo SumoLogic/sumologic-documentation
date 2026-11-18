@@ -13,11 +13,10 @@ The Platform Optimization Agent is the [DojoAI](/docs/get-started/ai-machine-lea
 
 The agent has the following skills:
 
-- **Product questions**. Answers how-to questions from the official Sumo Logic documentation, through [Mobot](/docs/search/mobot).
-- **Performance tuning**
+- **Performance**
   - **Query optimization**. Identifies inefficient, resource-heavy searches and suggests rewritten queries for faster results and lower compute load.
   - **Dashboard layout optimization**. Highlights slow-loading or bloated dashboards and provides structural fixes to speed up page load times during critical investigations.
-- **Platform manageability and health**
+- **Reliability**
   - **Data source gaps**. Scans your telemetry environment to pinpoint missing sources, ensuring complete observability across critical infrastructure and services.
 
 ## Availability

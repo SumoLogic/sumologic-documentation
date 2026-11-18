@@ -29,24 +29,24 @@ Use Recommendations to find opportunities to work faster and run your environmen
 
 ## Recommendation types
 
-Recommendations fall into two operational areas, matching the **Outcome** category you see in the Recommendations list: speeding up slow queries and dashboards, and closing telemetry gaps. More are planned for future releases.
+Recommendations fall into two operational areas, matching the **Category** you see in the Recommendations list: speeding up slow queries and dashboards, and closing telemetry gaps. More are planned for future releases.
 
 * **Performance**
    * **Query optimization**. Identifies inefficient, resource-heavy searches and suggests a rewritten query for faster results and lower compute load. Shown in the UI as **Reduce Query Latency**.
    * **Dashboard layout optimization**. Highlights slow-loading or bloated dashboards and suggests structural fixes to speed up page load times. Shown in the UI as **Reduce Dashboard Load Time**.
-* **Manageability**
+* **Reliability**
    * **Data source gaps**. Scans your telemetry environment to pinpoint missing sources, so you have complete observability across critical infrastructure and services. Shown in the UI as **Add Missing Telemetry**.
 
 ## View your recommendations
 
-1. In the left nav, click **DojoAI** > **Recommendations**.<br/><img src={useBaseUrl('img/search/mobot/recommendations-list.png')} alt="Recommendations page showing the Recommendation, Outcome, Impact, Status, Generated, and Actions columns" style={{border: '1px solid gray'}} width="800" /><br/>The list is ranked automatically by confidence, impact, and relevance to you, and each row shows:
+1. In the left nav, click **DojoAI** > **Recommendations**.<br/><img src={useBaseUrl('img/search/mobot/recommendations-list.png')} alt="Recommendations page showing the Recommendation, Category, Impact, Status, Generated, and Actions columns" style={{border: '1px solid gray'}} width="800" /><br/>The list is ranked automatically by confidence, impact, and relevance to you, and each row shows:
    - **Recommendation**. The issue and the specific resource it affects, for example **Reduce Query Latency | MySQL - Excessive Slow Query Detected**, with a short description of the expected outcome, such as a percentage reduction in query latency.
-   - **Outcome**. **Performance** or **Manageability**. See [Recommendation types](#recommendation-types).
+   - **Category**. **Performance** or **Reliability**. See [Recommendation types](#recommendation-types).
    - **Impact**. The expected impact of applying the fix, based on improvement percentage: **High** or **Medium**.
    - **Status**. **Active**, **Applied**, or **Rejected**.
    - **Generated**. How long ago the recommendation was generated.
    - **Actions**. Click **Preview** to see the fix before applying it.
-1. Use the **Search recommendations** field or **Status** filter to narrow the list. You can also sort or filter by type, outcome, and impact.
+1. Use the **Search recommendations** field or **Status** filter to narrow the list. You can also sort or filter by type, category, and impact.
 
 Dashboard layout optimization recommendations also surface directly on the affected dashboard: an optimization icon appears in the dashboard toolbar, and clicking it opens the same preview, with **Accept** and **Reject** controls, without leaving the page.
 
