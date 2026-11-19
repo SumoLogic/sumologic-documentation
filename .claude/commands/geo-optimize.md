@@ -121,7 +121,7 @@ Full rules and examples for each pattern live in [`geo-guide/SKILL.md`](.claude/
 |---------|------------------|-------------|
 | Strengthen the opening paragraph | Weak openers that bury the point | [Principle 1 — Answer first (BLUF)](.claude/skills/geo-guide/SKILL.md#principle-1--answer-first-bluf) |
 | Add an "At a glance" section | No citable summary near the top | [Principle 1 — Answer first (BLUF)](.claude/skills/geo-guide/SKILL.md#principle-1--answer-first-bluf) |
-| Rewrite headings as statements | Section headings that don't signal the question being answered. Use "How to X" or a plain statement; never end a body heading with a question mark | [Principle 3 — Statement-style headings](.claude/skills/geo-guide/SKILL.md#principle-3--statement-style-headings) |
+| Rewrite headings as statements | Section headings that don't signal the question being answered. Search the repo for links to the old anchor, or keep it with an explicit heading ID | [Principle 3 — Statement-style headings](.claude/skills/geo-guide/SKILL.md#principle-3--statement-style-headings) |
 | Make facts citation-ready | Key facts buried in long sentences | [AEO patterns — Make facts citation-ready](.claude/skills/geo-guide/SKILL.md#make-facts-citation-ready) |
 | Replace vague version references | "latest", "current", "recent" without specifics | [AEO patterns — Replace vague version references](.claude/skills/geo-guide/SKILL.md#replace-vague-version-references) |
 | Define acronyms and terms | Undefined abbreviations or domain terms | [AEO patterns — Define acronyms and terms](.claude/skills/geo-guide/SKILL.md#define-acronyms-and-terms) |
