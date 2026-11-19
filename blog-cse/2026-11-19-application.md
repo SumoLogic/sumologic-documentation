@@ -8,11 +8,11 @@ keywords:
 hide_table_of_contents: true
 ---
 
-## Insights list now supports the OR operator
+## OR operator support in the Insights list APIs
 
-You can now combine filters in the Insights list across multiple assignees, statuses, or severities with the `OR` operator. Previously, adding a second filter in the search bar always returned only the insights that matched both.
+The insight list APIs now support the `OR` condition for filtering insights across multiple assignees, statuses, severities, and many more. Previously, multiple filters could only be combined using the `AND` condition.
 
-For example, filtering on `Assignee is Dang Dong` and `Assignee is John` now returns insights assigned to either person.
+For example, filtering on `Assignee is Amy` `OR` `Assignee is John` now returns insights assigned to either person.
 
 :::note
 Existing saved filters and API queries keep working, and `AND` is still supported.
