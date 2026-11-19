@@ -60,7 +60,8 @@ Use the Read tool to read the complete file content including frontmatter.
 
 AEO focuses on getting content surfaced as direct answers in search results.
 
-* [ ] H2/H3 body headings are statement-style or "How to" task statements (e.g., "How to configure Y", "Limitations of X") and none end in a question mark — **Warning** if a body heading is a literal question or uses first person ("How do I"); **Suggestion** if no heading signals the question the section answers on docs over 600 words. Question marks belong only in FAQ entries
+* [ ] H2/H3 body headings are statement-style or "How to" task statements (for example, "How to configure Y", "Limitations of X") with no question marks outside FAQ entries — **Warning** if a body heading is a literal question or uses first person ("How do I")
+* [ ] H2/H3 body headings signal the question each section answers — **Suggestion** if they do not, on docs over 600 words
 * [ ] The first 1–2 sentences directly state what the subject is or what the doc accomplishes — **Warning** if the intro buries the answer
 * [ ] At least one structured list (bulleted or numbered) on pages over 400 words — **Suggestion** if none (search engines extract lists for "People also ask" answers)
 * [ ] At least one definition or "X is..." or "X means..." statement for concept-heavy docs — **Suggestion** if absent
