@@ -14,9 +14,7 @@ keywords:
   - soc
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. Agent Knowledge is part of DojoAI Studio, where you manage your DojoAI agents. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional DojoAI agents planned for later phases.
+Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. Agent Knowledge is part of Dojo Studio, where you manage your DojoAI agents. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional DojoAI agents planned for later phases.
 
 Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, or that a Friday spike in authentication failures is your scheduled penetration test. Knowledge closes that gap and keeps it closed — over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
@@ -41,14 +39,14 @@ Adding, changing, or deleting knowledge requires the Administrator role or the M
 
 To add knowledge for the SOC Analyst Agent:
 
-1. In the left navigation, click **DojoAI**, then click **SOC Analyst Agent**.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
-1. Add a new knowledge source by clicking **Sources** > **+ Add Source**, then select a source type: text input or a file (TXT, MD, PDF, or CSV).<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" /><br/>On this page, you can also view, edit, and delete existing knowledge sources.
-1. If you choose text input (**Add text**), enter a **Name**, then under **Content**, type the fact, pattern, or practice. Click **Save** when you're done.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-source-text.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" />
+1. In the left navigation, click **DojoAI**, then click **SOC Analyst Agent**.
+1. Add a new knowledge source by clicking **Sources** > **+ Add Source**, then select a source type: text input or a file (TXT, MD, PDF, or CSV). On this page, you can also view, edit, and delete existing knowledge sources.
+1. If you choose text input (**Add text**), enter a **Name**, then under **Content**, type the fact, pattern, or practice. Click **Save** when you're done.
 1. If you choose a file (**Upload file**), select a TXT, MD, PDF, or CSV file from your computer, then click **Save**.
 
 See [Example knowledge sources](#example-knowledge-sources) for more sample knowledge source entries.
 
-Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
+Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.
 
 ## Example knowledge sources
 
