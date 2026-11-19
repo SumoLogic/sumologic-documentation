@@ -139,9 +139,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ```markdown
 This content release includes:
-    - {High-level summary point 1}
-    - {High-level summary point 2}
-    - {High-level summary point 3}
+- {High-level summary point 1}
+- {High-level summary point 2}
+- {High-level summary point 3}
 
 Additional changes are enumerated below.
 
@@ -159,7 +159,8 @@ Additional changes are enumerated below.
 
 **Content Release Guidelines:**
 * Start with bulleted summary (3-5 high-level points).
-* Use indentation (4 spaces) for bullet points.
+* Do not indent the summary bullets or put a bullet in front of "This content release includes:".
+* Put "Additional changes are enumerated below." on its own line after the summary bullets, with a period. Do not make it a bullet.
 * Group changes by type: Rules, Log Mappers, Parsers
 * Use `[New]` or `[Updated]` tags.
 * Rule IDs use format: `MATCH-SXXXX`, `FIRST-SXXXX`, `THRESHOLD-SXXXX`

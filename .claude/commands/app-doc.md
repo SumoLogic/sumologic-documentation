@@ -73,7 +73,7 @@ Read `docs/contributing/templates/app-template-v2.md` and use it as the exact st
 - **`description`**: must start with `"The Sumo Logic app for {Vendor} analyzes..."`
 - **Intro paragraph**: must start with `"The Sumo Logic app for {Vendor Name}..."`
 - **Install section**: the template uses `<AppInstall2/>` — never replace this with manually written steps
-- **Dashboard sections**: follow the comment example in the template exactly — `width="800"`, `style={{border: '1px solid gray'}}`, and `Use this dashboard to:` with `*` bullet points
+- **Dashboard sections**: follow the comment example in the template exactly — `width="800"`, `style={{border: '1px solid gray'}}`, and `Use this dashboard to:` with bullet points
 
 **Path adjustment for imports**: The template uses `../../reuse/...` which is correct for files two levels deep (`docs/integrations/{category}/`). Use `../../..` for three levels.
 
@@ -167,7 +167,7 @@ Use this dashboard to:
 
 Key rules:
 * `width="800"` and `style={{border: '1px solid gray'}}` should be included on every dashboard screenshot.
-* "Use this dashboard to:" is plain text (not bold), followed by `*` bullet points — not a prose sentence.
+* "Use this dashboard to:" is plain text (not bold), followed by bullet points — not a prose sentence.
 * Dashboard image filenames use Title-Case-With-Hyphens (e.g., `Acme-Overview.png`).
 
 **Optional sections:**
@@ -192,7 +192,7 @@ Before finishing, verify:
 * [ ] Install section uses `<AppInstall2/>` — not manually written steps.
 * [ ] Dashboard viewing section uses `<ViewDashboards/>`.
 * [ ] Every dashboard has `width="800"` on its screenshot.
-* [ ] Every dashboard has a `Use this dashboard to:` bulleted list using `*` (not bold, not prose).
+* [ ] Every dashboard has a `Use this dashboard to:` bulleted list (not bold, not prose).
 * [ ] Upgrade section uses `<AppUpdate/>`.
 * [ ] Uninstall section uses `<AppUninstall/>`.
 * [ ] All placeholder text replaced or removed.
