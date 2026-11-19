@@ -40,7 +40,7 @@ Plugins are available for these clients:
 
 - Claude Code
 - GitHub Copilot
-- Claude, through the Claude Connectors Directory
+- Claude, through Claude plugins or the Claude Connectors Directory
 - AWS DevOps Agent
 
 Plugins for Cursor and Codex are coming soon.

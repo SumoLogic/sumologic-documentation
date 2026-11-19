@@ -2,7 +2,7 @@
 id: mcp-server-client-setup
 title: Set Up MCP Clients for Sumo Logic
 sidebar_label: Client Setup Guides
-description: Connect GitHub Copilot, Claude Code, Kiro, and other AI clients to the Sumo Logic MCP server with the Sumo Logic plugin, or set up a client manually.
+description: Connect GitHub Copilot, Claude Code, Kiro, AWS DevOps Agent, and other AI clients to the Sumo Logic MCP server with the plugin, or set up a client manually.
 keywords:
   - mcp server
   - mcp client
@@ -34,7 +34,8 @@ You need:
 | GitHub Copilot (VS Code and CLI) | [Plugin](#set-up-github-copilot) | `sumo-logic` |
 | Claude Code and Claude Cowork | [Plugin](#set-up-claude-code-and-claude-cowork) | `sumologic-mcp` |
 | Kiro | [Power](#set-up-kiro) | Sumo Logic power |
-| Cursor, Codex, and other MCP clients | [Manual setup](#set-up-other-clients) | None. Plugins for Cursor and Codex are coming soon. |
+| AWS DevOps Agent | [Capability provider](#set-up-aws-devops-agent) | Sumo Logic capability provider |
+| Cursor, Codex, ChatGPT, and other MCP clients | [Manual setup](#set-up-other-clients) | None. Plugins for Cursor and Codex are coming soon. |
 
 ## Set up GitHub Copilot
 
@@ -145,9 +146,54 @@ Kiro also lists a second server whose name starts with `power-` and ends with `-
 
 To switch deployments, clear the stored authentication for the `sumo-logic` server in the Kiro MCP Servers panel, and then run setup again.
 
+## Set up AWS DevOps Agent
+
+AWS DevOps Agent connects to Sumo Logic through a Sumo Logic capability provider. This client uses a pre-registered OAuth client instead of CIMD, so complete the steps in Sumo Logic before you connect in the AWS console.
+
+### Find your deployment
+
+In Sumo Logic, open your profile menu and note the deployment in your URL. For example, `service.us2.sumologic.com` is US2. You select the matching region label when you connect. The labels are US1, US2, EU, DE, JP, AU, KR, CA, and FED.
+
+### Create an OAuth client
+
+You need the Administrator role, or a role that can manage OAuth clients.
+
+1. Create an **Authorization Code** OAuth client. See [How to create an OAuth client](/docs/api/mcp-server#how-to-create-an-oauth-client).
+1. For **Redirect URI**, add the callback URLs that the DevOps Agent console shows for your AWS region.
+1. Under **Scopes**, expand each category and select only the **View** check boxes for the resources listed in [Check permissions](#check-permissions), plus **Run Log Search**. Leave every **Manage** check box cleared.
+1. Copy the **Client ID** and **Client Secret**. The secret is shown only once.
+
+:::warning
+If you leave all scopes cleared, the client is granted all of them. Some scopes, such as **Manage Library**, which allows creating and updating dashboards, are granted regardless of the user's role, so a role alone cannot remove dashboard writes.
+:::
+
+Sumo Logic supports PKCE (S256) on its authorization server, and DevOps Agent sends the challenge. You do not need to turn on a setting.
+
+### Check permissions
+
+The agent acts as the person who signs in, so it can only do what that user's roles allow. For investigations, a role with these capabilities is enough:
+
+- View Partitions
+- View Field Extraction Rules
+- View Fields
+- Run Log Search
+- View Alerts (Monitors)
+- View Library (dashboards)
+- View CSE, for Cloud SIEM insights
+
+The MCP server also has write tools, such as creating dashboards and detection rules or updating insights. Clearing the **Manage** scopes removes these tools from the connection. If you keep them, disable them in DevOps Agent or require approval, unless you want the agent to change Sumo Logic content.
+
+### Connect in the DevOps Agent console
+
+1. In AWS, go to the DevOps Agent console and follow the prompts to add the Sumo Logic capability provider.
+1. Choose the region that matches your deployment.
+1. Enter the **Client ID** and **Client Secret** from the OAuth client you created.
+
+After you configure the capability provider, you can use it in any Agent Space.
+
 ## Set up other clients
 
-For a client without a Sumo Logic plugin, such as Cursor or Codex, connect to the MCP server manually and install the skill file yourself:
+For a client without a Sumo Logic plugin, such as Cursor, Codex, or ChatGPT, connect to the MCP server manually and install the skill file yourself:
 
 1. Register the MCP server in your client. See [How to configure the MCP server in Claude Code CLI](/docs/api/mcp-server#how-to-configure-the-mcp-server-in-claude-code-cli) for an example, and use the [URL for your deployment](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
 1. Download and install the sumo-investigator skill. See [Improve investigations with the sumo-investigator skill](/docs/api/mcp-server#improve-investigations-with-the-sumo-investigator-skill).
