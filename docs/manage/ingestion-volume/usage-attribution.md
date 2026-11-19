@@ -138,7 +138,7 @@ To delete the mapping, click **Remove** under **Lookup Mapping**, and then click
 
 ## High-cardinality tags
 
-A tag with many distinct values, such as a request ID or a user ID, is a high-cardinality tag. High-cardinality tags make breakdowns harder to read and can slow the dashboard. Sumo Logic may show a warning when a tag has a large number of distinct values. The warning is a soft warning and does not block you from using the tag.
+A tag with many distinct values, such as a request ID or a user ID, is a high-cardinality tag. High-cardinality tags make breakdowns harder to read and can slow the dashboard. Sumo Logic may show a soft warning when a tag has a large number of distinct values. The warning does not block you from using the tag.
 
 To keep breakdowns useful:
 
