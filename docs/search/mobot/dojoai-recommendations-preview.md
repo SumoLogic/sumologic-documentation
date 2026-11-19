@@ -23,7 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-Recommendations is a [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) capability powered by the [Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent). It continuously monitors your environment and surfaces performance issues, such as slow queries and dashboard sprawl, before they affect your workflows.
+Recommendations is a [DojoAI](/docs/get-started/ai-machine-learning/#dojoai) capability powered by the [DojoAI agents](/docs/search/mobot/platform-optimization-agent). It continuously monitors your environment and surfaces performance issues, such as slow queries and dashboard sprawl, before they affect your workflows.
 
 Use Recommendations to find opportunities to work faster and run your environment better. These proactive insights live on the **Recommendations** page: a single list of issues to review and fix, each with a plain-language explanation and a previewable fix. Practitioners, admins, and power users, such as dashboard owners and query and monitor authors, can act on individual recommendations.
 
