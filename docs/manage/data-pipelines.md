@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Data Pipelines give you a single place to define how your logs are processed and routed in Sumo Logic. You build a pipeline on a visual graph, test it with sample data, and publish it when you are confident it works.
 
-## About Data Pipelines
+## Benefits of Data Pipelines
 
 Processing capabilities in Sumo Logic, such as Field Extraction Rules (FERs), live in different places and follow different patterns. Data Pipelines bring these steps together so you can see how data flows and manage it in one place.
 
@@ -26,10 +26,10 @@ Compared to FERs, Data Pipelines:
 - Let you test a whole pipeline, or only specific processing groups, with sample data before you publish it.
 - Show input and output data volume and health events for each pipeline.
 
-Data Pipelines work with logs from any collection method, including installed Collectors, hosted Collectors, OpenTelemetry Collectors, and Cloud-to-Cloud (C2C) sources. A message enters a pipeline if it matches the pipeline's routing expression.
+Data Pipelines work with logs from any collection method, including installed collectors, hosted collectors, OpenTelemetry Collectors, and Cloud-to-Cloud (C2C) sources. A message enters a pipeline if it matches the pipeline's routing expression.
 
 :::note
-Data Pipelines currently support logs only, and a pipeline can send data to one destination, Sumo Logic.
+Data Pipelines support logs only, and a pipeline can send data to one destination, Sumo Logic.
 :::
 
 ## Key concepts
@@ -39,16 +39,11 @@ Data Pipelines currently support logs only, and a pipeline can send data to one 
 - **Processing group**. An ordered group of processors. You can set a condition so the group runs only on messages that meet it.
 - **Processor**. A single processing step, such as adding a field, masking text, or parsing JSON. Processors in a group run in sequence.
 - **Router**. A node that sends a message to the next node based on a condition, such as the value of `_sourceHost`. A router can have a default route.
-- **Destination**. Where processed data goes. Currently this is always Sumo Logic.
+- **Destination**. Where processed data goes. This is always Sumo Logic.
 
 ## How a pipeline processes data
 
-A pipeline is a graph that starts at the routing expression and ends at the destination. A graph can contain the following nodes:
-
-1. **Routing expression**. Selects the logs that enter the pipeline.
-1. **Processing groups**. Transform, enrich, parse, or mask the data.
-1. **Routers**. Split the flow into different branches based on a condition.
-1. **Sumo Logic destination**. Receives the processed data.
+A pipeline is a graph that starts at the routing expression and ends at the Sumo Logic destination, with processing groups and routers in between.
 
 Masking and routing by source are not separate node types. You configure masking as a processing group and routing by source as a router.
 
@@ -65,7 +60,7 @@ To change the order, drag a pipeline to a new position in the list and save.
 Within a processing group, you can add processors from the following categories:
 
 - **Parse**. JSON Parse, Regex Parse, and Anchor Parse.
-- **Transform**. Add Fields, Drop Fields, Replace Pattern, and Normalize. For example, Normalize can convert a value to lowercase or uppercase or trim whitespace.
+- **Transform**. Add Fields, Drop Fields, Replace Pattern, and Normalize Values. For example, Normalize Values can convert a value to lowercase or uppercase or trim whitespace.
 - **Advanced**. SIEM Forwarding and SumoQL Parse. The SIEM Forwarding processor appears only if Cloud SIEM is enabled for your organization.
 
 To mask sensitive data, such as email addresses, SSNs, and credit card numbers, use the Replace Pattern processor to replace or hash the matched text.
@@ -175,7 +170,7 @@ You need the following permissions. If you do not have the permission for an act
 
 1. In the graph, select a processing group.
 1. Enter a name that describes its purpose, such as `Extract required fields`. To rename a group, click its name.
-1. To run the group only on some messages, under **Filter Condition**, turn on **Filter Expression**. Select a **Key** and enter a **Value**. Messages that don't meet the condition skip the group. To write the condition as a query, click **Switch to Advanced**.<br/><img src={useBaseUrl('img/manage/data-pipelines/processor-group-filter-condition.png')} alt="Processor group Filter Condition and Add Processor button" style={{border: '1px solid gray'}} width="450"/>
+1. To run the group only on some messages, under **Filter Condition**, turn on **Filter Expression**. Select a **Key** and enter a **Value**. Messages that do not meet the condition skip the group. To write the condition as a query, click **Switch to Advanced**.<br/><img src={useBaseUrl('img/manage/data-pipelines/processor-group-filter-condition.png')} alt="Processor group Filter Condition and Add Processor button" style={{border: '1px solid gray'}} width="450"/>
 1. Under **Processing Steps**, click **Add Processor**, choose a processor type, and click **Add**. Then configure it. For example, add a field named `environment` with a value.<br/><img src={useBaseUrl('img/manage/data-pipelines/add-processor-dialog.png')} alt="Add Processor dialog" style={{border: '1px solid gray'}} width="450"/>
 1. Repeat to add more processors. They run in the order listed.
 1. Click **Save**.
@@ -183,7 +178,7 @@ You need the following permissions. If you do not have the permission for an act
 To add more groups or routers, insert them between existing nodes in the graph.
 
 :::note
-Any new field you create in a pipeline is enabled by default, which means it is available for search in Sumo Logic. If you create a temporary field that you only need inside the pipeline, you can disable it. To do this, click **Extracted Fields** at the top of the pipeline, then clear the check box next to the field under **New Fields**. A disabled field is still in your logs and you can access it with parse operators, but it is not searchable. Your organization can create only a limited number of new fields, 200 by default for small organizations and 400 for large organizations. The panel shows how many you have used.<br/><img src={useBaseUrl('img/manage/data-pipelines/disable-new-field.png')} alt="Extracted Fields panel with the New Fields check boxes highlighted" style={{border: '1px solid gray'}} width="600"/>
+Any new field you create in a pipeline is enabled by default, which means it is available for search in Sumo Logic. If you create a temporary field that you only need inside the pipeline, you can disable it. To do this, click **Extracted Fields** at the top of the pipeline, then clear the checkbox next to the field under **New Fields**. A disabled field is still in your logs and you can access it with parse operators, but it is not searchable. Your organization can create only a limited number of new fields, 200 by default for small organizations and 400 for large organizations. The panel shows how many you have used.<br/><img src={useBaseUrl('img/manage/data-pipelines/disable-new-field.png')} alt="Extracted Fields panel with the New Fields checkboxes highlighted" style={{border: '1px solid gray'}} width="600"/>
 :::
 
 ## Test and publish a pipeline
@@ -195,7 +190,7 @@ Use **Test Mode** to run sample messages through your draft before you publish i
    - **Whole pipeline**. Turn on **Test Mode** at the top right of the Data Pipelines page.<br/><img src={useBaseUrl('img/manage/data-pipelines/whole-pipeline-testing.png')} alt="Pipeline graph with the Test Mode toggle highlighted at the top right" style={{border: '1px solid gray'}} width="800"/>
    - **Processing group**. In the graph, click the processing group you want to test. In the right pane that shows the node details, turn on **Test Mode** at the top right.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-node-test-mode.png')} alt="Node details pane with the Test Mode toggle highlighted" style={{border: '1px solid gray'}} width="450"/>
 1. On the **Input Sample** tab, enter a sample log message. You can also set metadata fields for the message, such as `_sourceCategory`.
-   * Instead of pasting a sample, you can click **Upload** and select a file. Supported file types are `.log`, `.txt`, and `.json`, up to 1 MB and 100 messages.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-input-sample-upload.png')} alt="Input Sample tab with the Upload button highlighted" style={{border: '1px solid gray'}} width="800"/>
+   - Instead of pasting a sample, you can click **Upload** and select a file. Supported file types are `.log`, `.txt`, and `.json`, up to 1 MB and 100 messages.<br/><img src={useBaseUrl('img/manage/data-pipelines/test-input-sample-upload.png')} alt="Input Sample tab with the Upload button highlighted" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Run Test**.
 1. Open the **Processed Output** tab to compare the raw input with the processed output.
 1. When you are satisfied with the results, click **Publish**.
@@ -239,7 +234,7 @@ To open the **Duplicate**, **Disable**, **Export as JSON**, and **Delete** optio
 The Data Pipelines page shows the status of each pipeline and its data volume. The **Health** column lists each pipeline as a green **Healthy** or a red **Error**. **Healthy** means the pipeline is working as expected. For each pipeline, you can see:
 
 - Input and output data volume for the last 24 hours.
-- The data type. Currently this is logs only.
+- The data type, which is logs only.
 - Health events, such as execution failures in a processing group, with the error message.
 
 To investigate, select a pipeline in the list and click **View Health Details**. The dialog shows the latest open health events with their severity, resource name, event name, and the time they opened. Click **View All Health Events** to see the full list.
@@ -274,7 +269,6 @@ The following limits also apply to Data Pipelines.
 | Message size | 256 KB |
 | Pipeline name length | 256 characters |
 | Pipeline description length | 1,024 characters |
-| Import file size | 500 KB |
 | Test sample file size | 1 MB |
 | Test sample messages | 100 |
 
