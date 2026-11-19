@@ -41,8 +41,8 @@ Responses are scoped to your Sumo Logic role and org, and every response include
 
 ### In Sumo Logic
 
-* You need the Administrator role to install the integration and connect a Slack workspace.
-* You install the integration from the Sumo Logic product, not from the Slack Marketplace.
+* You need the Administrator role to install the Sumo Logic Slack App and connect a Slack workspace.
+* You install the Sumo Logic Slack App from the Sumo Logic product, not from the Slack Marketplace.
 * Your Sumo Logic org must be in one of the following deployments: US1, US2, EU, DE, AU, JP, CA, KR, or CH. FedRAMP and ESC deployments are not currently supported.
 
 ### In Slack
@@ -53,7 +53,7 @@ Responses are scoped to your Sumo Logic role and org, and every response include
 
 ## How it works
 
-An administrator starts the installation from inside Sumo Logic, under **Integrations**. The installation binds the Slack workspace to the correct Sumo Logic org and establishes the OAuth trust needed for user-level authentication.
+An administrator starts the installation from inside Sumo Logic, under **App Catalog** > **Integrations** > **Inbound Integrations** > **Sumo Logic Slack App Extension**. The installation binds the Slack workspace to the correct Sumo Logic org and establishes the OAuth trust needed for user-level authentication.
 
 After installation, any channel member can add Sumo Logic to a channel with `/invite @Sumo`. The first time you mention Sumo Logic, you receive a private prompt to connect your Sumo Logic account. After a brief OAuth login, Sumo Logic processes your original query automatically. Later mentions work without any extra steps.
 
@@ -63,8 +63,8 @@ Responses are scoped to the role and permissions of the user who mentions Sumo L
 
 A Sumo Logic administrator needs to connect your Slack workspace.
 
-1. In Sumo Logic, select **App Catalog** > **Integrations** in the navigation menu.
-1. Find the **Sumo Logic Slack Extension** tile.
+1. In Sumo Logic, select **App Catalog** > **Integrations** > **Inbound Integrations** in the navigation menu.
+1. Find the **Sumo Logic Slack App Extension** tile.
 1. Click **+ Connect Workspace**. The Slack authorization screen opens.
 1. In the top-right dropdown menu, confirm that the correct workspace is selected, and then click **Allow**.
 1. Go to the **Configure** tab. The workspace appears with the status **Connected**.
@@ -73,7 +73,7 @@ A Sumo Logic administrator needs to connect your Slack workspace.
 
 <!--TODO: Add screenshot of the Configure tab showing a workspace with the status Connected.-->
 
-If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Submit the request. You do not need to submit it again. Follow up with your Slack Admin to get the request approved. After the Slack Admin approves it in Slack, the workspace appears as **Connected** on the **Configure** tab automatically. Until then, the workspace is not listed.
+If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Submit the request. You do not need to submit it again. Follow up with your Slack Admin to get the request approved. After the Slack Admin approves it in Slack, you must reconnect the workspace to your Sumo Logic org to finish the installation. Until then, the workspace is not linked to your Sumo Logic org.
 
 ### Disconnect a workspace
 
@@ -103,7 +103,7 @@ The private prompt is visible only to you. Other channel members are not affecte
 
 ### Mention Sumo Logic in a channel or thread
 
-Type `@Sumo` followed by your question in any channel that Sumo Logic has joined. Sumo Logic reacts with a ⏳ to confirm that it received your message, and then responds in a thread. If you mention Sumo Logic inside an existing thread, Sumo Logic reads all prior messages in the thread for context before it responds.
+Type `@Sumo` followed by your question in any channel that Sumo Logic has joined. Sumo Logic processes your question and then responds in a thread. If you mention Sumo Logic inside an existing thread, Sumo Logic reads all prior messages in the thread for context before it responds.
 
 ### Send a direct message
 
@@ -148,6 +148,10 @@ Sumo Logic requests the following Slack OAuth scopes when you connect a Slack wo
 | `users:read.email` | View member email addresses, used to match Slack users to their Sumo Logic accounts during authentication. |
 | `team:read` | View the workspace name and domain, used to populate the workspace row in the **Configure** tab. |
 
+## Rate limits
+
+Mobot in Slack shares the same daily quota as Mobot in the UI. There is no separate Slack allowance. A user's prompt limit is shared across all surfaces.
+
 ## FAQ
 
 ### Does Sumo Logic read all messages in my Slack workspace?
@@ -157,10 +161,6 @@ No. Sumo Logic reads messages only in channels it has been explicitly added to, 
 ### Are responses scoped to my Sumo Logic permissions?
 
 Yes. Every response is generated against the role and org of the user who mentions Sumo Logic. You cannot receive data through Sumo Logic in Slack that you cannot access in Sumo Logic directly.
-
-### Can I connect multiple Sumo Logic orgs to one Slack workspace?
-
-Yes. An administrator can map multiple orgs to a workspace from the **Configure** tab. You can query any of those orgs and use `/sumo-set-org` to manage your default.
 
 ### What happens if multiple people mention Sumo Logic in the same thread at the same time?
 
@@ -176,4 +176,4 @@ No. Installation must start from inside Sumo Logic. This requirement ensures tha
 
 ### What if my Slack workspace restricts app installs?
 
-An administrator can still start the installation from Sumo Logic. Slack sends an approval request to your Slack Admin. After the Slack Admin approves the request, the workspace status updates to **Connected** automatically.
+An administrator can still start the installation from Sumo Logic. Slack sends an approval request to your Slack Admin. After the Slack Admin approves the request, you must reconnect the workspace to your Sumo Logic org to finish the installation. Until then, the workspace is not linked to your Sumo Logic org.
