@@ -1,6 +1,6 @@
 ---
 id: mobot-in-mcp-server
-title: Mobot in the MCP Server
+title: Use Mobot in the Sumo Logic MCP Server
 sidebar_label: Mobot in the MCP Server
 description: Run Mobot investigations from Claude Code, GitHub Copilot, and other MCP clients through the Sumo Logic MCP server, with the same functionality as the UI.
 keywords:
@@ -13,13 +13,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="35"/>
 
-[Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant, is available as a tool in the [Sumo Logic MCP server](/docs/api/mcp-server). MCP-compatible clients such as Claude Code, GitHub Copilot, and Cursor can start, monitor, and cancel Mobot investigations across your logs, metrics, and telemetry, so you do not need to leave your IDE or terminal. Mobot's findings become part of the same session where you read source code, file Jira tickets, or check Slack threads.
+[Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant, is available as a tool in the [Sumo Logic MCP server](/docs/api/mcp-server). MCP-compatible clients such as Claude Code, GitHub Copilot, and Cursor can start, monitor, and cancel Mobot investigations across your logs, metrics, and telemetry, so you do not need to leave your integrated development environment (IDE) or terminal. Mobot's findings become part of the same session where you read source code, file Jira tickets, or check Slack threads.
 
-Mobot in the MCP server:
-
-- Uses the same engine, toolset, and functionality as Mobot in the Sumo Logic UI. Nothing is withheld or reduced.
-- Works best with the Sumo Logic plugin for your client, which adds automatic routing and more reliable multi-turn conversations.
-- Counts prompts toward the same daily Mobot limit as the UI.
+Mobot in the MCP server uses the same engine, toolset, and functionality as Mobot in the Sumo Logic UI. Nothing is withheld or reduced.
 
 ## Prerequisites
 
@@ -43,9 +39,7 @@ Plugins are available for these clients:
 - Claude, through Claude plugins or the Claude Connectors Directory
 - AWS DevOps Agent
 
-Plugins for Cursor and Codex are coming soon.
-
-For a client without a plugin, [download and install the sumo-investigator skill](/docs/api/mcp-server#improve-investigations-with-the-sumo-investigator-skill) manually, and then connect to the MCP server with a raw MCP configuration. See [Sumo Logic MCP Server](/docs/api/mcp-server) for setup steps.
+Plugins for Cursor and Codex are coming soon. For setup steps for each client, including clients without a plugin, see [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server/mcp-server-client-setup).
 
 ## Mobot tools in the MCP server
 
@@ -85,8 +79,6 @@ For example:
 <img src={useBaseUrl('img/api/mcp/mobot-in-mcp-result.png')} alt="Mobot investigation result returned in an MCP client" style={{border: '1px solid gray'}} width="800" />
 -->
 
-Routing is more accurate when the [Sumo Logic plugin](#set-up-mobot-with-the-sumo-logic-plugin) is installed. Without it, you may need to include explicit investigative phrasing, such as "use Mobot to investigate", for consistent routing.
-
 ## Benefits of Mobot in the MCP server
 
 - **Multi-turn conversations with persistent context**. Mobot keeps session context for the full length of a conversation, including field names, schema context, the investigation approach set earlier in the session, and hypotheses already explored. You can run extended investigations across many turns without re-priming Mobot.
@@ -110,31 +102,23 @@ Conversations you start through the MCP server appear in the **My Conversations*
 
 ## Mobot usage limits in the MCP server
 
-Mobot in the MCP server uses the same limits as Mobot in the Sumo Logic UI. There is no separate MCP limit. Your daily Mobot allowance is shared across the UI, the MCP server, and any other place you use Mobot. When you reach the limit, your MCP client shows an error message. See [Is there a limit to how many prompts I can send?](/docs/search/mobot/#is-there-a-limit-to-how-many-prompts-i-can-send) for the current limit and when it resets.
+Mobot in the MCP server shares the daily Mobot prompt limit with the Sumo Logic UI and any other place you use Mobot. There is no separate MCP limit. When you reach the limit, your MCP client shows an error message. See [Is there a limit to how many prompts I can send?](/docs/search/mobot/#is-there-a-limit-to-how-many-prompts-i-can-send) for the current limit and when it resets.
 
 Mobot calls are also subject to the [MCP server rate limits](/docs/api/mcp-server#what-are-the-mcp-server-rate-limits) that apply to all MCP tools. Clients poll about once a minute, so polling is unlikely to approach those limits.
 
 ## Audit Mobot activity from the MCP server
 
-Mobot prompts and investigations started through the MCP server are recorded in Sumo Logic audit logs, the same way as Mobot interactions from the UI. Organizations that need an audit trail of AI-initiated queries and investigations have full coverage of MCP-originated activity. To query these events, see [Audit Mobot queries](/docs/search/mobot/#audit-mobot-queries).
+Mobot prompts and investigations started through the MCP server are recorded in Sumo Logic audit logs, the same way as Mobot interactions from the UI. To query these events, see [Audit Mobot queries](/docs/search/mobot/#audit-mobot-queries).
 
 ## FAQ
 
-### Is Mobot in the MCP server the same as Mobot in the Sumo Logic UI?
-
-Yes. It uses the same engine, toolset, and functionality. The MCP server is a different way to reach Mobot, and nothing is withheld or reduced.
-
-### Do I need the Sumo Logic plugin to use Mobot in the MCP server?
+### Do I need the plugin to use Mobot in the MCP server?
 
 No, but it is recommended, and the `/sumologic-mcp:mobot` slash command requires it. Without the plugin, you can still connect to the MCP server and install the sumo-investigator skill manually. You may need to include explicit phrasing, such as "use Mobot to investigate", so your client routes the query to Mobot. See [Set up Mobot with the Sumo Logic plugin](#set-up-mobot-with-the-sumo-logic-plugin).
 
 ### How is Mobot different from the runLogSearch tool?
 
 `runLogSearch` runs a log search query you describe and returns the results. Mobot runs a broader investigation across your data and keeps the context of the conversation. Your client chooses between them based on how you phrase the query. See [How MCP clients route queries to Mobot](#how-mcp-clients-route-queries-to-mobot).
-
-### Does Mobot in the MCP server have its own prompt limit?
-
-No. Mobot prompts from MCP count toward the same daily limit as Mobot in the UI. See [Mobot usage limits in the MCP server](#mobot-usage-limits-in-the-mcp-server).
 
 ### Can I continue an MCP conversation in the Sumo Logic UI?
 
@@ -147,6 +131,7 @@ Yes. They are recorded in Sumo Logic audit logs the same way as Mobot interactio
 ## Additional resources
 
 - [Sumo Logic MCP Server](/docs/api/mcp-server)
+- [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server/mcp-server-client-setup)
 - [Sumo Logic Mobot](/docs/search/mobot)
 - [Mobot Example Prompts](/docs/search/mobot/example-prompts)
 - [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)

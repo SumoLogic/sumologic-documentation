@@ -3355,10 +3355,10 @@ integrations: [
           label: 'Sumo Logic MCP Server ✨',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'api/mcp-server'},
+          link: {type: 'doc', id: 'api/mcp-server/index'},
           items: [
-            'api/mcp-server-client-setup',
-            'api/mobot-in-mcp-server',
+            'api/mcp-server/mcp-server-client-setup',
+            'api/mcp-server/mobot-in-mcp-server',
           ],
         },
         'api/access-keys',

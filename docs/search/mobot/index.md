@@ -347,7 +347,7 @@ For the full walkthrough, see [Create Playbooks with Mobot](/docs/platform-servi
 
 Your past conversations live in the **My Conversations** panel. There is no button labeled **My Conversations**. To open (or hide) the panel, click the panel icon to the left of the conversation title at the top of Mobot.
 
-To resume a conversation, open the **My Conversations** panel and click the one you want. Conversations you start from an MCP client appear here too. See [Mobot in the MCP Server](/docs/api/mobot-in-mcp-server).
+To resume a conversation, open the **My Conversations** panel and click the one you want. Conversations you start from an MCP client appear here too. See [Mobot in the MCP Server](/docs/api/mcp-server/mobot-in-mcp-server).
 
 Mobot automatically titles conversations based on your first question. You can rename a conversation by hovering over it in the panel and clicking the pencil icon.
 
@@ -646,7 +646,7 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 ## Additional resources
 
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
-* [Mobot in the MCP Server](/docs/api/mobot-in-mcp-server). Run Mobot investigations from Claude Code, GitHub Copilot, and other MCP clients.
+* [Mobot in the MCP Server](/docs/api/mcp-server/mobot-in-mcp-server). Run Mobot investigations from Claude Code, GitHub Copilot, and other MCP clients.
 * **Self-paced**. [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 * [DojoAI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.
