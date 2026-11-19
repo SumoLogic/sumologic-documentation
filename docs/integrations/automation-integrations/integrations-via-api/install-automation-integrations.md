@@ -19,6 +19,13 @@ Integrations are connectors to applications from industry-leading network and se
 Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 :::
 
+## Custom integration
+
+Follow the steps below to add an integration that is not in the App Catalog:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/custom-integration-api.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
+1. Click **+ Add Custom**.
+1. Select **API Integration** from the dropdown. You will be redirected to the [Integrations](/docs/platform-services/automation-service/automation-service-integrations/#create-a-new-integration) page where you can create a custom integration.
+
 ## Upgrade an integration from App Catalog
 
 If a newer version of an installed integration is available, an **Upgrade Available** tag appears in the top-right corner of the card.

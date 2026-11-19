@@ -12,7 +12,7 @@ This article provides a quick reference to configure authentication for [automat
 
 ## How to configure authentication for automation integrations
 
-1. [Install the integration](/docs/integrations/automation-integrations/install-automation-integrations/#install-an-integration-from-app-catalog) from App Catalog.<br/>
+1. [Install the integration](/docs/integrations/automation-integrations/integrations-via-api/install-automation-integrations/#install-an-integration-from-app-catalog) from App Catalog.<br/>
 Before you can access integrations, you must have the Access App Central role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).<br/>
 1. Select the integration you want to configure in the App Catalog and then click **Configure Integration**. You will be redirected to the [**Automation Service Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) page.
 1. Hover your cursor over the resource name and click the **Edit** icon that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="800"/>
