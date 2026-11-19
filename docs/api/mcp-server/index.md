@@ -60,7 +60,7 @@ If you sign in at `service.us2.sumologic.com`, your deployment domain is `us2.su
 
 ### How to use your org subdomain in MCP server endpoints
 
-Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-custom-subdomain) to the front of the MCP server endpoint so MCP clients that authenticate with [CIMD](#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
+Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain) to the front of the MCP server endpoint so MCP clients that authenticate with [CIMD](#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
 
 To build the endpoint, add `<subdomain>.` before `mcp.` in your deployment's endpoint from the [MCP server endpoints table](#mcp-server-endpoints). For example, if your subdomain is `acme` and your org is in US2 (US West, Oregon), use `https://acme.mcp.us2.sumologic.com/mcp`.
 
