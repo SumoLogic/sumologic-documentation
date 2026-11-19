@@ -1,4 +1,4 @@
-| Account Type | Lookup Tables per org |
+| Account type | Lookup tables per org |
 |:--|:--|
 | Professional (Cloud Flex) | 10 |
 | Enterprise (Cloud Flex) | 100 |
