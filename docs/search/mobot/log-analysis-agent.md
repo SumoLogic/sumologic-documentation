@@ -1,7 +1,7 @@
 ---
 id: log-analysis-agent
 title: Log Analysis Agent
-sidebar_label: Log Analysis Agent
+sidebar_label: Log Analysis Agent ✨
 description: See how the Log Analysis Agent guides log analysis through Mobot and recommends monitors and ingest savings from repeated searches and duplicate or debug logs.
 keywords:
   - log analysis agent
@@ -47,15 +47,11 @@ Each monitor recommendation shows:
 
 Recommendations appear in the Recommendation Hub, the page where agents surface recommendations for you to review. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily, and items you accept or dismiss clear on the next refresh.
 
-<!--TODO: The Log Analysis Agent FAQ says the first phase uses an internal interface before the customer-facing Recommendation Hub, while the Recommendation Hub FAQ says a curated Preview cohort gets the Hub starting Nov 16. Confirm with the PM that all customers see these recommendations in the Hub.-->
-
 For a monitor recommendation, you can:
 
 * **Create monitor**. Opens the monitor creation window with the query and suggested threshold filled in, so you can save the monitor or customize it first.
 * **Acknowledge**. Confirms you have seen the recommendation.
 * **Dismiss**. Removes the recommendation from the active list.
-
-<!--TODO: Confirm the available actions for the Remove duplicate logs and Reduce debug log ingestion recommendations and document them here.-->
 
 ## Limitations
 
