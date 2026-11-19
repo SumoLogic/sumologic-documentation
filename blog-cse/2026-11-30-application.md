@@ -4,12 +4,13 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 keywords:
   - soc analyst agent
   - agent knowledge
+  - dojoai studio
   - cloud siem
   - ai
   - agent
 hide_table_of_contents: true
 ---
 
-### Agent Knowledge for SOC Analyst Agent
+### DojoAI Studio: Agent Knowledge for SOC Analyst Agent
 
-Agent Knowledge for the SOC Analyst Agent is now generally available. Org administrators can give the agent persistent knowledge about their environment, operational workflows, and team judgment. Teach the agent once, and it applies that knowledge to every auto-investigation and Mobot follow-up, with full transparency into which knowledge shaped each verdict. [Learn more](/docs/search/mobot/agent-knowledge-socaa/).
+Agent Knowledge for the SOC Analyst Agent is now generally available in DojoAI Studio. Org administrators can give the agent persistent knowledge about their environment, operational workflows, and team judgment. Teach the agent once, and it applies that knowledge to every auto-investigation and Mobot follow-up, with full transparency into which knowledge shaped each verdict. [Learn more](/docs/search/mobot/agent-knowledge-socaa/).
