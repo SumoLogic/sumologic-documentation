@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Usage Attribution (also called Granular Usage Visibility) is a dashboard in Sumo Logic that attributes your ingest volume to teams, services, environments, and owners. It breaks down volume and data tier by fields such as `_sourceCategory`, collector, and host, or by your own custom tags and ownership fields such as team and owner. It reports volume and data tier only. It does not calculate dollar or credit costs.
 
-Use this to find the teams, services, and environments that ingest the most data, see how that volume splits across data tiers, and map raw source fields to the team and owner responsible for the data. You can also track how much of your volume is still unassigned so you can improve your tagging, and review usage trends over time for chargeback and showback reporting, without building custom dashboards.
+Use it to find the teams, services, and environments that ingest the most data, see how that volume splits across data tiers, and map raw source fields to the team and owner responsible for the data. You can also track how much of your volume is still unassigned so you can improve your tagging, and review usage trends over time for chargeback and showback reporting, without building custom dashboards.
 
 ## Pre-requisites
 
