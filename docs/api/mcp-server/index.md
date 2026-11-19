@@ -22,8 +22,8 @@ The Sumo Logic MCP Server lets MCP clients (external AI models) connect to Sumo 
 
 - **What it does**. Lets external AI clients query Sumo Logic logs, Cloud SIEM insights, alerts, and dashboards using natural language, through a set of MCP tools.
 - **How it works**. MCP clients authenticate over OAuth 2.0 (CIMD recommended) and call MCP tools that are scoped to your Sumo Logic role permissions.
-- **Supported deployments**. All commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud. See [MCP server endpoints](#mcp-server-url-for-your-deployment) for your deployment.
-- **Subdomain endpoints**. Add your org's subdomain to the MCP server endpoint so CIMD clients go straight to your org's login page. See [How to use your org subdomain in the MCP server endpoint](#how-to-use-your-org-subdomain-in-the-mcp-server-url).
+- **Supported deployments**. All commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud. See [MCP server endpoints](#mcp-server-endpoints) for your deployment.
+- **Subdomain endpoints**. Add your org's subdomain to the MCP server endpoint so CIMD clients go straight to your org's login page. See [How to use your org subdomain in the MCP server endpoint](#how-to-use-your-org-subdomain-in-mcp-server-endpoints).
 - **Prerequisites**. An MCP-compatible client that supports HTTP/SSE transport and OAuth 2.0; MCP Server access enabled (on by default); CIMD enabled by an administrator (recommended).
 - **Limitations**. Not intended for bulk data extraction, model training, or high-volume automated queries, and is subject to rate limits (4 requests per second, 10 concurrent).
 
@@ -38,7 +38,7 @@ Prefer a built-in conversational experience? Use [Mobot](/docs/search/mobot), Su
 * **Self-paced**. [Extending Sumo Logic with MCP, API and Terraform](https://learn.sumologic.com/extending-sumo-logic-with-mcp-api-terraform).
 :::
 
-## MCP server endpoints {#mcp-server-url-for-your-deployment}
+## MCP server endpoints
 
 Use the MCP server endpoint that matches your deployment. OAuth tokens are bound to a single Sumo Logic deployment, so a client that authenticated against one deployment cannot use the endpoint for another. To build the endpoint, add `mcp.` before your deployment domain and append `/mcp`.
 
@@ -58,11 +58,11 @@ If you sign in at `service.us2.sumologic.com`, your deployment domain is `us2.su
 | CH (Switzerland, Zurich) | `ch.sumologic.com` | Not supported |
 | ESC (AWS European Sovereign Cloud) | `esc.sumologic.com` | Not supported |
 
-### How to use your org subdomain in the MCP server endpoint {#how-to-use-your-org-subdomain-in-the-mcp-server-url}
+### How to use your org subdomain in MCP server endpoints
 
 Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-custom-subdomain) to the front of the MCP server endpoint so MCP clients that authenticate with [CIMD](#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
 
-To build the endpoint, add `<subdomain>.` before `mcp.` in your deployment's endpoint from the [MCP server endpoints table](#mcp-server-url-for-your-deployment). For example, if your subdomain is `acme` and your org is in US2 (US West, Oregon), use `https://acme.mcp.us2.sumologic.com/mcp`.
+To build the endpoint, add `<subdomain>.` before `mcp.` in your deployment's endpoint from the [MCP server endpoints table](#mcp-server-endpoints). For example, if your subdomain is `acme` and your org is in US2 (US West, Oregon), use `https://acme.mcp.us2.sumologic.com/mcp`.
 
 Subdomain endpoints are available in all deployments that support the MCP server.
 
@@ -128,16 +128,16 @@ Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an admini
 
 ### Setup
 
-1. In a Terminal window, register the MCP server. Replace `<MCP-server-URL>` with your deployment's URL from the [MCP server endpoints](#mcp-server-url-for-your-deployment). Choose a scope:
+1. In a Terminal window, register the MCP server. Replace `<MCP-server-endpoint>` with your deployment's endpoint from the [MCP server endpoints](#mcp-server-endpoints). Choose a scope:
    * **User scope** (available in all directories, recommended).
      ```bash
      claude mcp add --scope user --transport http \
-       sumo-logic "<MCP-server-URL>"
+       sumo-logic "<MCP-server-endpoint>"
      ```
    * **Project scope** (available only in the current directory, writes to `.mcp.json`).
      ```bash
      claude mcp add --scope project --transport http \
-       sumo-logic "<MCP-server-URL>"
+       sumo-logic "<MCP-server-endpoint>"
      ```
 1. Launch Claude Code. With **user scope**, run `claude` from any directory. With **project scope**, run it from the directory where you registered the server.
    ```bash
@@ -145,7 +145,7 @@ Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an admini
    ```
 1. In Claude Code, run `/mcp`.
 1. Select **sumo-logic** and then **Authenticate**.
-1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If you registered the server with a [subdomain endpoint](#how-to-use-your-org-subdomain-in-the-mcp-server-url), the browser opens your org's login page directly. Otherwise, if your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
+1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If you registered the server with a [subdomain endpoint](#how-to-use-your-org-subdomain-in-mcp-server-endpoints), the browser opens your org's login page directly. Otherwise, if your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [What MCP tools are available?](#what-mcp-tools-are-available)
 
@@ -191,20 +191,20 @@ Both require the **Sumo Logic Administrator role** to create the OAuth client an
 
 #### How to register the MCP server
 
-1. Open a Terminal window (not inside the Claude Code CLI session) and copy one of the snippets below, replacing `<client-id>` with the Client ID from the [OAuth client you created above](#how-to-create-an-oauth-client), and replacing `<mcp-server-url>` with your [Sumo Logic deployment's MCP server endpoint](#mcp-server-url-for-your-deployment).
+1. Open a Terminal window (not inside the Claude Code CLI session) and copy one of the snippets below, replacing `<client-id>` with the Client ID from the [OAuth client you created above](#how-to-create-an-oauth-client), and replacing `<mcp-server-endpoint>` with your [Sumo Logic deployment's MCP server endpoint](#mcp-server-endpoints).
    * **User scope** (available in all directories, recommended).
      ```bash
      claude mcp add --transport http \
        --scope user \
        --client-id "<client-id>" --client-secret \
-       sumo-logic "<mcp-server-url>"
+       sumo-logic "<mcp-server-endpoint>"
      ```
    * **Project scope** (available only in the current directory, writes to `.mcp.json`).
      ```bash
      claude mcp add --transport http \
        --scope project \
        --client-id "<client-id>" --client-secret \
-       sumo-logic "<mcp-server-url>"
+       sumo-logic "<mcp-server-endpoint>"
      ```
 1. Run one of the above commands. Claude Code then prompts you to enter the client secret securely.
 1. Continue with the remaining steps in [Setup](#setup) above: launch Claude Code, run `/mcp`, and authenticate.
@@ -572,9 +572,9 @@ MCP clients can no longer connect, but no data is deleted. Disabling MCP Server 
 
 No. Sumo Logic never uses customer data to train AI models, regardless of which MCP tools or clients you connect.
 
-### Can I use my org subdomain in the MCP server URL?
+### Can I use my org subdomain in the MCP server endpoint?
 
-Yes. Add your subdomain to the front of your deployment's MCP server endpoint, for example `https://<subdomain>.mcp.us2.sumologic.com/mcp`. MCP clients that authenticate with CIMD then go directly to your org's login page instead of asking users to enter the subdomain first. See [How to use your org subdomain in the MCP server endpoint](#how-to-use-your-org-subdomain-in-the-mcp-server-url).
+Yes. Add your subdomain to the front of your deployment's MCP server endpoint, for example `https://<subdomain>.mcp.us2.sumologic.com/mcp`. MCP clients that authenticate with CIMD then go directly to your org's login page instead of asking users to enter the subdomain first. See [How to use your org subdomain in the MCP server endpoint](#how-to-use-your-org-subdomain-in-mcp-server-endpoints).
 
 ### What client authentication does MCP require?
 
@@ -590,7 +590,7 @@ Model Context Protocol (MCP) is a protocol that lets AI clients connect to exter
 
 ### Which observability or SIEM tools have an MCP server?
 
-Sumo Logic provides an MCP server for log search, Cloud SIEM insights, alerts, and dashboards. It's available in all commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud, including the FedRAMP deployment. See the [MCP server endpoints](#mcp-server-url-for-your-deployment).
+Sumo Logic provides an MCP server for log search, Cloud SIEM insights, alerts, and dashboards. It's available in all commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud, including the FedRAMP deployment. See the [MCP server endpoints](#mcp-server-endpoints).
 
 ### How do autonomous agents connect to the MCP server?
 

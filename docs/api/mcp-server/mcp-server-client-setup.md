@@ -25,7 +25,7 @@ The Sumo Logic plugin is the recommended setup path. It connects the client to t
 
 You need:
 
-- The MCP server endpoint for your deployment. See [MCP server endpoints](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
+- The MCP server endpoint for your deployment. See [MCP server endpoints](/docs/api/mcp-server#mcp-server-endpoints).
 - An administrator to [enable Client ID Metadata Document (CIMD)](/docs/api/mcp-server#how-to-enable-cimd-for-mcp-clients) support for your org, which GitHub Copilot, Claude Code, Kiro, and most other clients use to authenticate with OAuth 2.0. You do not need to create OAuth credentials for these clients.
 - A Sumo Logic account. The plugin does not require the Administrator role.
 
@@ -74,7 +74,7 @@ To invoke the investigation skill directly, use `/sumo-investigator`, for exampl
 - **Claude Code**. Run `/plugins`, search for `sumologic-mcp`, and install it.
 - **Claude Cowork**. Select **Customize** > **Plugins** > **Discover**, search for `sumologic-mcp`, and add it.
 
-When you first enable the plugin, you are prompted for your MCP server URL. Use the endpoint for your deployment from the [MCP server endpoints](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
+When you first enable the plugin, you are prompted for your MCP server URL. Use the endpoint for your deployment from the [MCP server endpoints](/docs/api/mcp-server#mcp-server-endpoints).
 
 ### Authenticate
 
@@ -89,7 +89,7 @@ To connect to a different Sumo Logic org, see [How to switch Sumo Logic organiza
 <details>
 <summary>Set up Claude Code manually without the plugin</summary>
 
-If you cannot use the plugin, register the MCP server directly. Replace `<MCP-server-URL>` with the [endpoint for your deployment](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
+If you cannot use the plugin, register the MCP server directly. Replace `<MCP-server-URL>` with the [endpoint for your deployment](/docs/api/mcp-server#mcp-server-endpoints).
 
 1. In a terminal, register the server for all directories:
    ```bash
@@ -130,7 +130,7 @@ Kiro uses a Sumo Logic power, which is built to the [Agent Plugins](https://agen
 ### Connect Kiro to your deployment
 
 1. Ask Kiro to set up Sumo Logic. The built-in `sumosetup` skill asks which deployment you use and adds a `sumo-logic` server to your Kiro MCP settings.
-1. If Kiro cannot edit the settings file, add the following entry under the top-level `mcpServers` key in `~/.kiro/settings/mcp.json`. Replace `<mcp-domain>` with the domain for your deployment, for example `mcp.sumologic.com`. If your org uses a [subdomain](/docs/api/mcp-server#how-to-use-your-org-subdomain-in-the-mcp-server-url), add it to the front of the domain in both URLs.
+1. If Kiro cannot edit the settings file, add the following entry under the top-level `mcpServers` key in `~/.kiro/settings/mcp.json`. Replace `<mcp-domain>` with the domain for your deployment, for example `mcp.sumologic.com`. If your org uses a [subdomain](/docs/api/mcp-server#how-to-use-your-org-subdomain-in-mcp-server-endpoints), add it to the front of the domain in both URLs.
    ```json
    "sumo-logic": {
      "url": "https://<mcp-domain>/mcp",
@@ -210,7 +210,7 @@ DevOps Agent then shows the tools that are available from the Sumo Logic MCP ser
 
 For a client without a Sumo Logic plugin, such as Cursor, Codex, or ChatGPT, connect to the MCP server manually and install the skill file yourself:
 
-1. Register the MCP server in your client. See [How to configure the MCP server in Claude Code CLI](/docs/api/mcp-server#how-to-configure-the-mcp-server-in-claude-code-cli) for an example, and use the [endpoint for your deployment](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
+1. Register the MCP server in your client. See [How to configure the MCP server in Claude Code CLI](/docs/api/mcp-server#how-to-configure-the-mcp-server-in-claude-code-cli) for an example, and use the [endpoint for your deployment](/docs/api/mcp-server#mcp-server-endpoints).
 1. Download and install the sumo-investigator skill. See [Improve investigations with the sumo-investigator skill](/docs/api/mcp-server#improve-investigations-with-the-sumo-investigator-skill).
 
 If your client does not support CIMD, see [How to set up MCP without CIMD](/docs/api/mcp-server#how-to-set-up-mcp-without-cimd).
