@@ -93,7 +93,8 @@ Follow the steps below to open the **Indicators** tab:
 
 :::note
 * The **Indicators** tab shows only active indicators. Expired indicators and indicators from deleted sources are not listed.
-* After a source ingests an indicator, it can take up to 10 minutes to appear on the **Indicators** tab. Search results are eventually consistent, so an indicator you just added may not be visible right away.
+* After a source ingests an indicator, it can take up to 10 minutes to appear on the **Indicators** tab. Search results are eventually consistent, so you may not see an indicator you just added right away.
+* Only indicators from your custom sources appear in the **Indicators** tab, which you can edit and delete.
 :::
 
 The table lists indicators with the following details:
@@ -141,7 +142,46 @@ To see more about an indicator, click its row. A details panel opens on the righ
 
 To search your logs for activity related to an indicator, click **View in Log Search** at the top of the panel.
 
-## Delete threat intelligence indicators
+### Edit an indicator
+
+You can change the confidence score and expiration date of an individual indicator, for example to override a feed-provided score or extend an indicator's lifetime.
+
+:::note
+Editing and deleting indicators requires the **Manage Threat Intel Data Store** role capability. See [Role capabilities](/docs/security/threat-intelligence/about-threat-intelligence/#role-capabilities).
+:::
+
+1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Edit**. You can also click **Edit** in the indicator details panel.
+1. Update the following fields:
+   * **Expiration**. Select a future date, or turn on **No expiry** so the indicator never expires.
+   * **Confidence Score**. Enter a whole number from 0 to 100, or use the slider.
+   <img src={useBaseUrl('img/security/edit-an-indicator.png')} alt="Indicator details panel with the Expiration and Confidence Score fields highlighted" style={{border: '1px solid gray'}} width="800" />
+1. Click **Save**.
+
+The **Indicator Value**, **Type**, and **Source** fields are read-only.
+
+:::note
+- Changes can take a few minutes to appear on the **Indicators** tab.
+- Edits are not locked. The next scheduled poll of the source can overwrite your changes with the values from the source. To undo an edit, edit the indicator again.
+- Each edit is recorded in the [Audit Event Index](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
+:::
+
+### Delete an indicator
+
+Delete an indicator to remove a false positive or stale indicator that is causing noisy detections.
+
+1. On the **Indicators** tab, click the more actions icon (⋮) on the indicator's row and select **Delete**. You can also click **Delete** in the indicator details panel.<br/><img src={useBaseUrl('img/security/delete-an-indicator.png')} alt="Indicator details panel with the Delete button highlighted" style={{border: '1px solid gray'}} width="800" />
+1. Review the indicator value, type, and source in the confirmation dialog.
+1. Click **Delete**.
+
+Any Cloud SIEM rules that match on the indicator stop firing for it. The indicator is removed from the list and a confirmation message appears.
+
+:::note
+- If the source supplies the indicator again on a later poll, the indicator reappears.
+- Deleting an indicator is recorded in the [Audit Event Index](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
+- To remove every indicator from a source at once, see [Delete all indicators from a source](#delete-all-indicators-from-a-source).
+:::
+
+## Delete all indicators from a source
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
 1. Select a source in the list of sources. Details of the source appear in a sidebar.
