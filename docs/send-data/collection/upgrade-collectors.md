@@ -120,7 +120,7 @@ Keeping your installed collectors up to date is the only supported way to receiv
 
 - **Download availability**. Each collector version stays available for download for at least one year after its release.
 - **Updates and patches**. Upgrade to the latest collector version and keep it current to receive new functionality, bug fixes, and security patches.
-- **Operating system end of life**. Sumo Logic stops supporting new collector versions on an operating system or runtime when that operating system or runtime reaches its own end of life. You can continue to use earlier collector versions on those platforms, but they do not receive further bug fixes or security patches.
+- **Operating system end of life**. When an operating system or runtime reaches its own end of life, Sumo Logic stops supporting collectors on it. Existing collectors keep working, but they do not receive further bug fixes or security patches.
 
 :::important
 Follow the [upgrade best practices](#collector-upgrade-best-practices) and review the [Collector release notes](/release-notes-collector) to see what changed in each version.
