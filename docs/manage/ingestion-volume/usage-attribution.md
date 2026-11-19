@@ -35,7 +35,7 @@ Usage Attribution data starts from the time you enable it. Sumo Logic does not r
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**.
 1. Click the **Usage Attribution** tab.
 
-### Read the dashboard
+## Read the dashboard
 
 The Usage Attribution dashboard is an out-of-the-box dashboard for your organization. Most panels follow the field you select in **Breakdown by**. The default time range is the last 24 hours. Click the time range at the top right of the dashboard to change it.
 
