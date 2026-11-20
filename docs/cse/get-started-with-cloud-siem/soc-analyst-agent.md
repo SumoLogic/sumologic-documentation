@@ -16,7 +16,7 @@ The SOC Analyst Agent automatically investigates Cloud SIEM insights and deliver
 
 By cutting manual triage and reducing mean time to resolution, the agent lets SOC teams focus on real threats instead of repetitive work. It shows the data it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith.
 
-The SOC Analyst Agent performs four distinct jobs that mirror an analyst's daily responsibilities:
+The SOC Analyst Agent performs several distinct jobs that mirror an analyst's daily responsibilities:
 * **Auto-investigation**. Automatically delivers a verdict on each insight as it arrives, without requiring analyst action. The agent determines whether the insight is malicious, suspicious, or benign, summarizes the threat incident based on triggered signals, and presents key findings from the signals that fired. Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals). It does not yet integrate with external MCP connectors or automation services.
 * **Investigation (user-led)**. Supports analysts in Mobot with a hypothesis-driven approach to assess the scope, context, and likely impact of an event. Mobot isn't limited to normalized security data: you can ask it about other data in your account that is relevant to the insight, such as raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health.
 * **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken to ensure consistent documentation across analysts and teams.
