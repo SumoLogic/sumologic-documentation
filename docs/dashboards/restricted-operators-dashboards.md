@@ -57,7 +57,7 @@ You can use the following operators in dashboard panels, but only after the firs
 * [`RollingStd`](/docs/search/search-query-language/search-operators/rollingstd/)
 * [`Smooth`](/docs/search/search-query-language/search-operators/smooth/)
 * [`Sort`](/docs/search/search-query-language/search-operators/sort/)
-* [`Top`](/docs/search/search-query-language/search-operators/top/)
+* [`Top`](/docs/search/search-query-language/group-aggregate-operators/top/)
 * [`Total`](/docs/search/search-query-language/search-operators/total/)
 * [`Transaction`](/docs/search/search-query-language/transaction-analytics/transaction-operator/) By Flow
 
