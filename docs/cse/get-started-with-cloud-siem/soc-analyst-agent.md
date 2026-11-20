@@ -20,7 +20,7 @@ The SOC Analyst Agent performs four distinct jobs that mirror an analyst's daily
 * **Auto-investigation**. Automatically delivers a verdict on each insight as it arrives, without requiring analyst action. The agent determines whether the insight is malicious, suspicious, or benign, summarizes the threat incident based on triggered signals, and presents key findings from the signals that fired. Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals). It does not yet integrate with external MCP connectors or automation services.
 * **Investigation (user-led)**. Supports analysts in Mobot with a hypothesis-driven approach to assess the scope, context, and likely impact of an event. Mobot isn't limited to normalized security data: you can ask it about other data in your account that is relevant to the insight, such as raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health.
 * **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken to ensure consistent documentation across analysts and teams.
-* **Recommended actions and response**. After triage, recommends response actions that you can review and execute from Cloud SIEM or Mobot. Every action requires analyst approval. See [Recommended actions and response](#recommended-actions-and-response).
+* **Recommended Actions**. After triage, recommends response actions that you can review directly from Cloud SIEM or Mobot. See [Recommended actions](#recommended-actions).
 
 You work with the agent in two places:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
@@ -102,23 +102,15 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
       :::tip
       Help us refine the tool by using the thumbs-up or thumbs-down buttons to rate the effectiveness of the summary. Clicking the thumbs-down button allows you to provide additional feedback.
       :::
-      <!-- 1. **Recommended Actions**. Actions you can take to remediate the incident.
-       1. Click **Execute Action** to run a [playbook](/docs/platform-services/automation-service/playbooks/) to take the recommended action:<br/><img src={useBaseUrl('img/cse/recommended-actions.png')} alt="Recommended actions" style={{border: '1px solid gray'}} width="700" />
-       1. Click **View Details** on the confirmation to see details about the playbook automation, and then you should see a confirmation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
-       1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
-          :::note
-          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication/).
-          :::
-          -->
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
-   1. **Recommended Actions**. Response actions you can review and execute. See [Recommended actions and response](#recommended-actions-and-response).
+   1. **Recommended Actions**. Recommended response actions that you can review (see [Recommended actions](#recommended-actions)). Executing them is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
 1. Click **Ask Mobot** to continue the investigation conversationally in [Mobot](#investigate-the-insight-in-mobot), with the full context of the AI analysis already loaded.
 
 ## Investigate the insight in Mobot
 
-Follow these steps once you're in Mobot:
+Opening an insight investigation in [Mobot](/docs/search/mobot/), DojoAI's chat interface, lets you continue your investigation conversationally.
 
-1. From the insight's **Details** page, click **Ask Mobot** to open the investigation in [Mobot](/docs/search/mobot/), DojoAI's chat interface.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
+1. From an **Insight**, click **Ask Mobot**.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
 1. The full AI investigation appears in Mobot. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="800" />
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (i.e., hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can also query other data in your account, such as raw cloud logs, metrics, lookup tables, and collector health. When Mobot returns information from outside the Cloud SIEM index, it indicates the source.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
 1. After executing a prompt like the one above, Mobot analyzes your request and fashions a log search query based on it.
@@ -177,60 +169,24 @@ To start a new investigation, navigate back to Cloud SIEM, select another insigh
 
 To share the current investigation with other users, see [Share conversation](/docs/search/mobot/#share-conversation).
 
-## Recommended actions and response
+## Recommended actions
 
-After the SOC Analyst Agent triages an insight, it generates contextually appropriate **AI Recommended Actions** that you can review and execute without leaving Cloud SIEM. You can also request recommendations directly in a [Mobot](/docs/search/mobot/) investigation by asking the agent to recommend actions.
-
-* Recommendations appear as cards with a title and a rationale. Each card is one of two types:
-  * **Executable**. The required integration is installed. The card shows a blue **Execute** button.
-  * **Suggested** (text-only). The integration is not installed. The card has no **Execute** button and serves as a manual follow-up prompt.
-* **Audit trail**. Every action, analyst decision, and execution result is logged immutably.
-
-### Prerequisites
-
-* Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [Availability](#availability).
-* SOC analysts have a role with the **Manage Integrations** [role capability](/docs/manage/users-roles/roles/role-capabilities/#automation-service), which is required to execute response actions.
-* The Response Agent feature has been enabled for your org by your Sumo Logic representative.
-* For executable actions, the corresponding integration must be installed and configured in Sumo Logic's integrations platform. Contact your Sumo Logic representative for the list of supported integrations and the permissions required for each.
-
-:::note
-Every action requires explicit analyst approval before execution. The agent never takes autonomous action.
-:::
+After the SOC Analyst Agent triages an insight, it generates contextually appropriate **Recommended Actions** that you can review without leaving Cloud SIEM. You can also request recommendations directly in a [Mobot](/docs/search/mobot/) investigation by asking the agent to recommend actions.
 
 ### Review recommendations after triage
 
-After the SOC Analyst Agent completes an investigation, recommendations appear in four places:
+After the SOC Analyst Agent completes an investigation, you can find recommendations in:
 
-* The **Insights** list side panel when you click an insight row.<br/><img src={useBaseUrl('img/cse/soc-rr-side-panel.png')} alt="Insights list side panel showing Recommended Actions with text-only and executable cards" style={{border: '1px solid gray'}} width="700" />
-* The insight's **Overview** tab > **AI Recommended Actions** section (right panel).<br/><img src={useBaseUrl('img/cse/soc-rr-overview-tab.png')} alt="AI Recommended Actions panel on the Overview tab of an insight, showing one text-only card and two cards with Execute buttons" style={{border: '1px solid gray'}} width="700" />
-* The insight's **AI Investigation** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-ai-inv-tab.png')} alt="AI Investigation tab of an insight showing the AI Verdict, the What Happened summary, and Recommended Actions with Execute buttons" style={{border: '1px solid gray'}} width="700" />
-* In Mobot, when you open the investigation, they appear inline under the **Assessment** heading.<br/><img src={useBaseUrl('img/cse/soc-rr-mobot-assessment.png')} alt="Mobot Assessment section showing the agent verdict and two recommendation cards below it" style={{border: '1px solid gray'}} width="700" />
+* An **Insight**'s **Overview** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-overview-tab.png')} alt="AI Recommended Actions panel on the Overview tab of an insight, showing one text-only card and two cards with Execute buttons" style={{border: '1px solid gray'}} width="700" />
+* An **Insight**'s **AI Investigation** tab<br/><img src={useBaseUrl('img/cse/soc-rr-ai-inv-tab.png')} alt="AI Investigation tab of an insight showing the AI Verdict, the What Happened summary, and Recommended Actions with Execute buttons" style={{border: '1px solid gray'}} width="700" />
 
-### Execute a recommended action
+You'll also see them in Mobot after you [open an investigation from an **Insight**](#investigate-the-insight-in-mobot).
 
-1. Click **Execute** on a card to open the confirmation dialog.<br/><img src={useBaseUrl('img/cse/soc-rr-execute-blue.png')} alt="Recommendation card with a blue Execute button" style={{border: '1px solid gray'}} width="500" />
-1. Review the **Reasoning** and edit the **Payload** (JSON) if needed.
-1. Click **Confirm**.
-
-The system records your approval with your analyst identity and a timestamp, then runs the action in the background. The card updates when execution completes. To analyze the result further, you can continue the conversation in Mobot.
-
-When execution completes, the card shows a green **Executed** badge. If an action fails, it shows a red **Failed** badge with an inline error message, and you can execute it again.
-
-<img src={useBaseUrl('img/cse/soc-rr-mobot-execute-green.png')} alt="Mobot recommendation card showing a green Executed badge and the execution result message below the card title" style={{border: '1px solid gray'}} width="800" />
+Executing a recommended action directly from Cloud SIEM or Mobot is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
 
 ### Use investigation context with recommendations
 
 If you investigate an insight in Mobot before acting, recommendations update as Mobot uncovers additional context. The UI indicates when recommendations are informed by investigation findings.
-
-### Known limitations
-
-The following capabilities are not currently available:
-
-* **Recommending uninstalled integrations**. Uninstalled integrations appear as text-only suggestions; the agent will not guide you through installation.
-* **Multi-action plans**. Execute actions individually; coordinated multi-action plans are not yet supported.
-* **Playbook recommendations**. Customer-created playbooks are not suggested alongside recommended actions.
-* **Autonomous execution**. All actions require explicit analyst approval. Fully autonomous execution is planned for a future phase.
-* **Automated rollback**. Reversal of executed actions requires manual steps.
 
 ## Configure SOC Analyst Agent settings
 
@@ -343,7 +299,7 @@ Yes. An insight's **AI Verdict**, **Key Findings**, and **What Happened** summar
 
 ### Can the agent take containment actions on its own?
 
-No. The agent never takes action autonomously. With [recommended actions and response](#recommended-actions-and-response), it recommends response actions after triage and can execute them, but only after an analyst reviews and approves each one.
+No. The agent never takes action autonomously.
 
 ### Is an AI SOC deterministic?
 
@@ -355,7 +311,7 @@ Verdicts draw on your normalized security data, correlated entities, threat inte
 
 ### What guardrails apply to autonomous action for an AI SOC?
 
-The agent cannot take remediation or containment actions without analyst approval. Each recommended action requires explicit approval before it runs, and every action, decision, and result is logged. The agent also investigates insights only up to your organization's committed daily volume and lets you exclude insights from auto-investigation. See [Recommended actions and response](#recommended-actions-and-response) and [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
+The agent doesn't take remediation or containment actions on its own. It recommends actions for you to review, and executing a recommended action, which requires your explicit approval, is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/). The agent also investigates insights only up to your organization's committed daily volume and lets you exclude insights from auto-investigation. See [Recommended actions](#recommended-actions) and [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
 
 ### How much manual work is required with an AI SOC?
 
