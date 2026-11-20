@@ -56,7 +56,7 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 
 [Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
 
-* **Log Analysis Agent**. Guides you through analysis using natural language prompts, delivering structured findings and suggested next steps. It also allows you to create and edit dashboards and monitors without writing complex queries.
+* **[Log Analysis Agent](/docs/search/mobot/log-analysis-agent)**. Guides you through analysis using natural language prompts, delivering structured findings and suggested next steps. It also allows you to create and edit dashboards and monitors without writing complex queries.
 * **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
 
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language such as monitors, dashboards, and playbooks.
@@ -168,6 +168,10 @@ AI features are on by default. We offer two methods for opting out:
 **Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
+
+### Does the Log Analysis Agent make recommendations on its own?
+
+Yes. In the background, the Log Analysis Agent finds searches your team repeats and recommends monitors for them. It also flags duplicate logs and debug logs that add to your ingest volume. You review each recommendation and decide what to do, so nothing changes automatically. Recommendations are in Public Preview, and your Sumo Logic account representative needs to enable them. Learn more in [Log Analysis Agent](/docs/search/mobot/log-analysis-agent).
 
 ### Can DojoAI access be controlled at a user level?
 
