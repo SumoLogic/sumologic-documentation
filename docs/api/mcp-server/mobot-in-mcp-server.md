@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="35"/>
 
-[Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant, is available as a tool in the [Sumo Logic MCP server](/docs/api/mcp-server). MCP-compatible clients such as Claude Code, GitHub Copilot, and Cursor can start, monitor, and cancel Mobot investigations across your logs, metrics, and telemetry, so you do not need to leave your integrated development environment (IDE) or terminal. Mobot's findings become part of the same session where you read source code, file Jira tickets, or check Slack threads.
+[Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant, is available as a tool in the [Sumo Logic MCP server](/docs/api/mcp-server). MCP-compatible clients such as Claude Code and GitHub Copilot can start, monitor, and cancel Mobot investigations across your logs, metrics, and telemetry, so you do not need to leave your integrated development environment (IDE) or terminal. Mobot's findings become part of the same session where you read source code, file Jira tickets, or check Slack threads.
 
 Mobot in the MCP server uses the same engine, toolset, and functionality as Mobot in the Sumo Logic UI. Nothing is withheld or reduced.
 
@@ -53,6 +53,8 @@ The MCP server adds these tools for Mobot:
 | `submit_hitl_feedback` | Submits your approval or rejection for a paused step. See [Approve Mobot steps from your MCP client](#approve-mobot-steps-from-your-mcp-client). |
 
 You do not call these tools yourself. Your MCP client calls them for you.
+
+The Mobot tools do not require a specific role capability to appear. What Mobot can do when you use them is still limited by your role-based access control (RBAC) capabilities, the scopes of the OAuth client in use, and the scopes requested during the OAuth flow.
 
 ## How MCP clients route queries to Mobot
 
@@ -102,7 +104,7 @@ Conversations you start through the MCP server appear in the **My Conversations*
 
 ## Mobot usage limits in the MCP server
 
-Mobot in the MCP server shares the daily Mobot prompt limit with the Sumo Logic UI and any other place you use Mobot. There is no separate MCP limit. When you reach the limit, your MCP client shows an error message. See [Is there a limit to how many prompts I can send?](/docs/search/mobot/#is-there-a-limit-to-how-many-prompts-i-can-send) for the current limit and when it resets.
+Mobot in the MCP server shares the daily Mobot prompt limit with the Sumo Logic UI and any other place you use Mobot. There is no separate MCP limit. For credit-based customers, Mobot usage through the MCP server also counts toward overall credit usage. When you reach the limit, your MCP client shows an error message. See [Is there a limit to how many prompts I can send?](/docs/search/mobot/#is-there-a-limit-to-how-many-prompts-i-can-send) for the current limit and when it resets.
 
 Mobot calls are also subject to the [MCP server rate limits](/docs/api/mcp-server#what-are-the-mcp-server-rate-limits) that apply to all MCP tools. Clients poll about once a minute, so polling is unlikely to approach those limits.
 
