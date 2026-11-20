@@ -91,8 +91,6 @@ Use instructions for behavior, and use [knowledge](#knowledge) for reference mat
 
 Instructions are not shown as citations in the agent's results.
 
-<!--TODO: Confirm character limit. UI shows 12,000 characters, Twisa's help doc says recommended under 1,000 with no hard limit. -->
-
 ### Knowledge
 
 Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. Agent Knowledge is part of Dojo Studio, where you manage your DojoAI agents.
@@ -106,8 +104,6 @@ For the SOC Analyst Agent, knowledge applies in two places:
 
 <img src={useBaseUrl('img/get-started/dojo-studio/knowledge.png')} alt="Knowledge page showing the item count, suggestions for what to add, and a table of knowledge items" style={{border: '1px solid gray'}} width="800" />
 
-<!--TODO: Agent-agnostic changes vs the DOCS-1890 text: removed the 'first agent to support it' sentence, the 'only the SOC Analyst Agent can access' sentence, the 'Scope' limitation, and 'per agent' wording. Confirm the steps below match the new UI (Dojo Studio > agent > Settings > Knowledge > Add Knowledge), whether Knowledge sources is now Knowledge used, who can add knowledge (demo: admins only), and the limits. Twisa also wants a mix of security and observability examples, with detailed examples on a separate page. -->
-
 #### What you can teach your DojoAI agents
 
 You can teach your DojoAI agents organizational information you want it to remember going forward, such as the following:
@@ -115,6 +111,8 @@ You can teach your DojoAI agents organizational information you want it to remem
 * **Environment**. The standing facts about how your organization is set up, how it normally behaves, and what it is required to meet. [See example entries](#your-environment).
 * **Operational workflows**. The procedures and standards your team follows when it investigates and resolves incidents. [See example entries](#operational-workflows).
 * **Historical learning and team judgment**. Specific past incidents, and the recurring patterns your team has learned to recognize. [See example entries](#historical-learning-and-team-judgment).
+
+Start with the facts that most often send an investigation the wrong way: which internal IP addresses and accounts are expected to behave unusually, your maintenance and deploy windows, and the alert patterns your team already knows the cause of. Then add the runbooks that define how your team investigates.
 
 #### How to add an agent knowledge source
 
@@ -132,6 +130,12 @@ To add knowledge:
 See [Example knowledge sources](#example-knowledge-sources) for more sample knowledge source entries.
 
 Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.
+
+#### How knowledge changes take effect
+
+Knowledge does not retrain the agent's model. It is retrieved and applied as context at investigation time, so you can update or remove an item and the next investigation reflects the change. New knowledge takes effect on the next investigation that runs after you save it. Saving knowledge does not re-run past investigations.
+
+To test whether an entry is working, ask an agent to answer without your knowledge applied, then compare that response to the knowledge-enriched result. This lets you validate whether a specific entry is shaping the agent's output as expected.
 
 #### Example knowledge sources
 
@@ -186,25 +190,7 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 * **One shared knowledge base**. Everyone on your team draws on the same shared knowledge. No per-team partitioning.
 * **Audit logging for knowledge**. A comprehensive record of who added or changed a fact, and when, is not yet available. Planned for a later phase.
 
-#### FAQ
-
-##### What should I add first?
-
-Start with the facts that most often send an investigation the wrong way: which internal IP addresses and accounts are expected to behave unusually, your maintenance and deploy windows, and the alert patterns your team already knows the cause of. Then add the runbooks that define how your team investigates.
-
-##### Can I test whether a knowledge entry is working?
-
-Yes. You can ask an agent to answer without your knowledge applied, then compare that response to the knowledge-enriched result. This lets you validate whether a specific entry is shaping the agent's output as expected.
-
-##### Does adding knowledge retrain the agent's model?
-
-No. Knowledge is retrieved and applied as context at investigation time. It does not change the underlying model, so you can update or remove an item and the next investigation reflects the change.
-
-##### When does new knowledge take effect?
-
-On the next investigation that runs after you save it. Saving knowledge does not re-run past investigations.
-
-##### How is it priced?
+#### Pricing
 
 Pricing and packaging are being finalized. Your account team will have details before general availability.
 
@@ -222,8 +208,6 @@ The **Memories** page shows an AI-generated summary of what the agent has learne
 
 To stop an agent from using and adding memories, turn off **Memory** in [General settings](#general-settings).
 
-<!--TODO: The Twisa demo shows Update and Forget buttons on memory cards; Vishwendra only described asking Mobot to update or delete. Confirm and add the buttons if they ship. Do not mention "View memories" (not customer-facing). -->
-
 ### Skills
 
 Skills are procedures an agent can run. The **Skills** page lists the skills available to the agent, along with each skill's origin, scope, and last update.
@@ -234,8 +218,6 @@ Skills are procedures an agent can run. The **Skills** page lists the skills ava
 * **Custom skills**. Skills you write yourself. Click **Add Skill**, then enter a name, a short description, and what the skill does.
 
 If a custom skill is relevant to an investigation, for example it lists steps to include, the agent uses it.
-
-<!--TODO: Confirm the exact fields in the Add Skill form once the UI is available. -->
 
 ### Permissions
 
@@ -253,19 +235,9 @@ Each agent has exactly one owner. The owner is the only person who can connect [
 
 #### Change the owner
 
-To change the owner of an agent:
-
-1. Open the agent's settings and click **Permissions**.
-1. Click **Change Ownership**.
-1. Review the change, then click **Change Ownership** again to confirm.
+To change the owner of an agent, click **Permissions** > **Change Ownership**.
 
 <img src={useBaseUrl('img/get-started/dojo-studio/change-ownership.png')} alt="Change Ownership dialog showing the current owner, the new owner, and a warning that the agent's integrations are disconnected" style={{border: '1px solid gray'}} width="800" />
-
-:::warning
-Changing ownership disconnects the agent's integrations and removes their tool permissions. The new owner reconnects them with their own credentials. The agent's scheduled and triggered runs then act as the new owner, with that person's roles.
-:::
-
-<!--TODO: Confirm who can change ownership (current owner, or anyone with Manage access) and the new owner picker: the dialog shows the person making the change as the new owner ("you"). -->
 
 ### Sharing
 
@@ -280,8 +252,7 @@ By default, **Your Entire Organization** has **Use** access, and the owner has *
 
 To share an agent:
 
-1. Open the agent's settings and click **Sharing**.
-1. Click **Share**.
+1. Click **Sharing** > **Share**.
 1. In **Add people or roles**, select the users or roles to add.
 1. Select **Manage** or **Use** from the access dropdown menu.
 1. Click **Done**.
@@ -289,8 +260,6 @@ To share an agent:
 <img src={useBaseUrl('img/get-started/dojo-studio/share-agent.png')} alt="Share Agent dialog with the Manage and Use access levels in the dropdown menu" style={{border: '1px solid gray'}} width="500" />
 
 To change someone's access, select a different level in the **Access** column of the **See who has access** list in the Share dialog. To transfer ownership of the agent, click **Change Ownership** next to the owner. Learn more in [Permissions](#change-the-owner).
-
-<!--TODO: Confirm the steps for removing someone's access, and who can use Change Ownership (current owner, or any user with Manage access). Adjust the Permissions section if needed. -->
 
 ### Integrations
 
@@ -312,8 +281,6 @@ Only the agent's owner can connect integrations. Other users with manage access 
 
 For the SOC Analyst Agent, the integrations you connect also determine which recommended actions the agent can offer as executable. Learn more in [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
 
-<!--TODO: Vishwendra to confirm Integrations tab visibility for customers outside the executable actions private preview, and whether suggestions become executable once an integration is connected. -->
-
 ### Tasks
 
 Tasks are the jobs an agent runs. Each task has its own instructions and trigger. Sumo Logic provides built-in tasks, such as triaging new Insights or investigating new alerts, and manages them for you. The **Tasks** page lists each task with its trigger, when it last ran, whether it is enabled, and when it was last updated.
@@ -327,15 +294,13 @@ Tasks are the jobs an agent runs. Each task has its own instructions and trigger
 
 To add a task:
 
-1. Open the agent's settings and click **Tasks**.
-1. Click **Add Task**.
+1. Click **Tasks** > **Add Task**.
 1. Pick a pre-defined task from the library, then click **Next**.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-library.png')} alt="Add Task dialog showing the task library with the Investigate new alerts task" style={{border: '1px solid gray'}} width="500" />
 1. Enter a **Name** for the task. In **Instructions**, add anything you want the agent to do on top of Sumo Logic's built-in instructions for the task. Your instructions run after the built-in instructions, which are not shown, and can be up to 12,000 characters.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-details.png')} alt="Add Task dialog showing the Name and Instructions text boxes and the trigger" style={{border: '1px solid gray'}} width="500" />
 1. Set the **Trigger**, which is the event that starts the task. For an alert trigger, choose how to apply it:
    * **Only run when matched**. The task runs only for alerts that match the conditions you add.
-   * **Run on everything except**. The task runs on every alert except those that match the conditions you add.
-
-   Click **Add condition** to add a condition.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-trigger.png')} alt="Add Task dialog showing trigger options Only run when matched and Run on everything except, with the Add condition button and the Enabled toggle" style={{border: '1px solid gray'}} width="500" />
+   * **Run on everything except**. The task runs on every alert except those that match the conditions you add.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-trigger.png')} alt="Add Task dialog showing trigger options Only run when matched and Run on everything except, with the Add condition button and the Enabled toggle" style={{border: '1px solid gray'}} width="500" />
+   * Click **Add condition** to add a condition.
 1. Turn on **Enabled** to start running the task. New tasks are off by default.
 1. Click **Save**.
 
@@ -349,19 +314,19 @@ To edit or delete a task, click the three-dot menu at the end of its row, then c
 
 <img src={useBaseUrl('img/get-started/dojo-studio/edit-task.png')} alt="Edit Task panel showing the name and instructions of a custom task with Delete, Cancel, and Save buttons" style={{border: '1px solid gray'}} width="500" />
 
-<!--TODO: Confirm the trigger types and condition fields available for each agent (alert and monitor conditions for the Root Cause Agent; Insight severity, name, and so on for the SOC Analyst Agent), and whether the screenshots (Root Cause Agent, Disabled status) should be retaken with an enabled agent. -->
-
 ### Volume and overage
 
-For the SOC Analyst Agent, the **Volume & Overage** page tracks how many Insights the agent investigates. Volume and overage tracking is available for the SOC Analyst Agent only.
+:::note
+Volume and overage tracking is available for the SOC Analyst Agent only.
+:::
+
+For the SOC Analyst Agent, the **Volume & Overage** page tracks how many Cloud SIEM Insights the agent investigates.
 
 * **Daily allowance**. Your plan includes a daily allowance of Investigated Insights, metered per org. The allowance does not roll over, and it resets at midnight PST.
 * **Automatic investigations**. When auto-investigation is on, the agent investigates Insights in the order they are generated, starting at the beginning of each day. After the daily allowance is reached, you can still investigate additional Insights manually.
 * **Overage**. Investigations beyond the daily allowance draw credits from your existing subscription credit pool at your contract rate. All Investigated Insights consume credits, whether they are triggered automatically or manually, and regardless of the verdict.
 
 To limit usage, you can restrict who can trigger manual investigations with the **Can trigger manual investigation** role capability, and you can add instructions or task triggers that keep the agent from running on low-signal Insights.
-
-<!--TODO: Describe the controls on the Volume & Overage page (no screenshot yet). Source for the text above is the DojoAI FAQs (usage, allocations, and overage), which are internal: confirm the wording with Twisa, and confirm whether overage policies and spend caps are available at GA. -->
 
 ## Additional resources
 
