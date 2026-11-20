@@ -528,7 +528,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td>[sort](/docs/search/search-query-language/search-operators/sort)</td>
-   <td>The sort operator orders aggregated search results. The default sort order is descending. Then you can use the [top](/docs/search/search-query-language/search-operators/top) or [limit](/docs/search/search-query-language/search-operators/limit) operators to reduce the number of sorted results returned.</td>
+   <td>The sort operator orders aggregated search results. The default sort order is descending. Then you can use the [top](/docs/search/search-query-language/group-aggregate-operators/top) or [limit](/docs/search/search-query-language/search-operators/limit) operators to reduce the number of sorted results returned.</td>
    <td></td>
    <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>
    <td><code>| count as page_hits by _sourceHost<br/>| sort by page_hits asc</code></td>
@@ -555,14 +555,14 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| toUpperCase(_sourceHost) as _sourceHost <br/>| where _sourceHost matches "*NITE*"</code></td>
   </tr>
   <tr>
-   <td>[topk](/docs/search/search-query-language/search-operators/topk)</td>
+   <td>[topk](/docs/search/search-query-language/group-aggregate-operators/topk)</td>
    <td>Select the top values from fields and group them by other fields.</td>
    <td>_rank</td>
    <td></td>
    <td><code>| topk(5, _count)</code></td>
   </tr>
   <tr>
-   <td>[top](/docs/search/search-query-language/search-operators/top)</td>
+   <td>[top](/docs/search/search-query-language/group-aggregate-operators/top)</td>
    <td>Use the top operator with the sort operator, to reduce the number of sorted results returned.</td>
    <td></td>
    <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>

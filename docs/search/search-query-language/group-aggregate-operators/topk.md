@@ -36,7 +36,7 @@ error
 | topk(5, _count)
 ```
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/topk/basic-error-ranking-results.png')} alt="basic error ranking results" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/topk/basic-error-ranking-results.png')} alt="basic error ranking results" style={{border: '1px solid gray'}} width="600" />
 
 #### Top 2 results
 
@@ -51,7 +51,7 @@ error
 
 Let's figure out what is the maximum error count for each sourceHost for the given time range slightly changing our query. We’ll add a by clause to the given operator and provide sourceHost as an argument. This tells the system that we want to look for the top “x” counts for each source Host.
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/topk/basic-top-2-rank.png')} alt="Basic top 2 rank" style={{border: '1px solid gray'}} width="700" />
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/topk/basic-top-2-rank.png')} alt="Basic top 2 rank" style={{border: '1px solid gray'}} width="700" />
 
 Find the top two source host, source category pairs.
 
@@ -64,4 +64,4 @@ error
 
 We can specify more than one argument to group by. In the query above, we are looking for the top 2 results for each source host, source Category pairs.
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/topk/basic-top-with-group-by.png')} alt="Basic top with group by" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/topk/basic-top-with-group-by.png')} alt="Basic top with group by" style={{border: '1px solid gray'}} width="800" />

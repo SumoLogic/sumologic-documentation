@@ -413,18 +413,6 @@ In this section, we'll introduce the following concepts:
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <a href={useBaseUrl('docs/search/search-query-language/search-operators/top')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Queries icon" width="40"/><h4>top</h4></a>
-          <p>Use the `top` operator with the sort operator to reduce the number of sorted results returned.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
-          <a href={useBaseUrl('docs/search/search-query-language/search-operators/topk')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Queries icon" width="40"/><h4>topk</h4></a>
-          <p>The `topk` operator allows you to select the top values from fields and group them by fields.</p>
-          </div>
-        </div>
-        <div className="box smallbox card">
-          <div className="container">
           <a href={useBaseUrl('docs/search/search-query-language/search-operators/total')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Queries icon" width="40"/><h4>total</h4></a>
           <p>The `total` operator inserts the sum of a set of fields into every row of the set.</p>
           </div>
