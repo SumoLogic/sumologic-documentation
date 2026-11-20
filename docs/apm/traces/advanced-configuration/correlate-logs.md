@@ -13,14 +13,14 @@ Our configurations, available in several programming languages, will inject the 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/icons/java-logo.svg')} alt="Java icon" width="30"/>
+  <img src={useBaseUrl('img/apm/traces/java-logo.svg')} alt="Java icon" width="30"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration')}>Java</a></h4>
   <p>Injects data into user logs in your Java applications.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' alt="JavaScript icon" width="95"/>
+  <img src={useBaseUrl('img/apm/traces/javascript-logo.png')} alt="JavaScript icon" width="95"/>
   <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/traceid-spanid-injection-into-logs')}>JavaScript</a></h4>
   <p>Injects data into user logs in your JavaScript apps.</p>
   </div>
@@ -34,14 +34,14 @@ Our configurations, available in several programming languages, will inject the 
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/icons/net-logo.png')} alt=".NET icon" width="60"/>
+    <img src={useBaseUrl('img/apm/traces/net-logo.png')} alt=".NET icon" width="60"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs')}>.NET</a></h4>
     <p>Injects data into user logs from ASP.NET and .NET Core.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' alt="Python Logo Notext icon" width="55"/>
+    <img src={useBaseUrl('img/apm/traces/python-logo.svg')} alt="Python Logo Notext icon" width="55"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/traceid-spanid-injection-into-logs')}>Python</a></h4>
     <p>Injects data into your Python lambda logs.</p>
     </div>
