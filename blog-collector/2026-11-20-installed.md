@@ -6,7 +6,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-This release includes security fixes.
+In this release, we've upgraded the Collector JRE and several dependencies to address security vulnerabilities.
 
 #### Security fixes
 
