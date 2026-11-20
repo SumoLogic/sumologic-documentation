@@ -8,26 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of the funnel begins with all your current Sumo Logic data, and you narrow the funnel by entering keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator so that you can progressively filter and pinpoint your search until you find exactly what you’re looking for.
 
-import Iframe from 'react-iframe';
-
-:::training Micro Lesson
-
-How to search data using the Basic Search Mode in Sumo Logic.
-
-<Iframe url="https://fast.wistia.net/embed/iframe/deo5m3f7jy?web_component=true&seo=true&videoFoam=false"
-  width="854px"
-  height="480px"
-  title="Micro Lesson: Basic Search Mode Video"
-  id="wistiaVideo"
-  className="video-container"
-  display="initial"
-  position="relative"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-/>
-
-:::
-
 In the **Search** tab, a search query is typically formatted something like this:
 
 `keyword search | parse | where | group-by | sort | limit`

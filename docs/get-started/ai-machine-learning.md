@@ -169,14 +169,6 @@ AI features are on by default. We offer two methods for opting out:
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
-### What happened to Query Agent, Knowledge Agent, and Summary Agent?
-
-They're still here, but renamed and repositioned as their capabilities have evolved.
-
-- **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
-- **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
-- **Summary Agent → absorbed into SOC Analyst Agent**. Summary Agent's signal summarization capability is now a core part of how the SOC Analyst Agent contextualizes and presents its findings.
-
 ### Can DojoAI access be controlled at a user level?
 
 Not at this time. DojoAI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions. Users cannot access data or execute platform actions they are not authorized to perform manually.
