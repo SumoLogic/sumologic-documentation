@@ -34,7 +34,7 @@ Our configurations, available in several programming languages, will inject the 
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/icons/net-logo.png')} alt=".Net icon" width="60"/>
+    <img src={useBaseUrl('img/icons/net-logo.png')} alt=".NET icon" width="60"/>
     <h4><a href={useBaseUrl('docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs')}>.NET</a></h4>
     <p>Injects data into user logs from ASP.NET and .NET Core.</p>
     </div>
