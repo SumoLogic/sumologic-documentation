@@ -688,7 +688,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 
 ### Bulleted lists
 
-Use bulleted lists when the items do not need to be presented in sequential order.  Use asterisks `*` or hyphens `-`, and end each bullet in a terminal period.
+Use bulleted lists when the items do not need to be presented in sequential order. End each bullet in a terminal period.
 
 <Tabs
   defaultValue="Markdown"
@@ -722,7 +722,6 @@ Use bulleted lists when the items do not need to be presented in sequential orde
 You can configure your editor to always use this format for lists. For Visual Studio Code, configure the following settings:
 
 * **Ordered List: Marker** set to *one*.
-* **Unordered List: Marker** set to *.
 
 Ensure parallel grammatical structure - that is, start each bullet with the same part of speech.
 

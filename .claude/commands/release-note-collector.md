@@ -140,7 +140,7 @@ This release includes security and stability fixes.
 **Installed Collector Guidelines:**
 * Start with a direct intro: "This release includes {security patches/bug fixes/features}."
 * Use H4 (`####`) for section headings: Security fix, Bug fix, Feature
-* List items use bullet points with dashes.
+* List items use bullet points.
 * Include specific version numbers for dependencies.
 * Reference CVE numbers when applicable (format: CVE-YYYY-NNNNN or GHSA-XXXX-XXXX-XXXX)
 * Order: Security fixes first, then bug fixes, then features
