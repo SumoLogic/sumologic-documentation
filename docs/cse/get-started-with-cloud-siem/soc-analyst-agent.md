@@ -244,7 +244,7 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
 
 ### Does the agent learn from past investigations?
 
-Not automatically. The SOC Analyst Agent does not retrain its model or change its reasoning based on past investigations on its own. Org administrators can give the agent persistent [Agent Knowledge](/docs/get-started/dojo-studio#agent-knowledge) about your environment, operational workflows, and past incidents, and the agent applies that knowledge to every investigation until someone updates or removes it.
+Not automatically. The SOC Analyst Agent does not retrain its model or change its reasoning based on past investigations on its own. Org administrators can give the agent persistent [Agent Knowledge](/docs/get-started/dojo-studio#knowledge) about your environment, operational workflows, and past incidents, and the agent applies that knowledge to every investigation until someone updates or removes it.
 
 ### How does investigation rate limiting work?
 
@@ -327,7 +327,7 @@ Cloud SIEM groups related signals for the same entity into insights, so analysts
 ## Additional resources
 
 * [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
-* [Agent Knowledge for SOC Analyst Agent](/docs/get-started/dojo-studio#agent-knowledge). Teach SOC Analyst Agent your environment, operational workflows, and past incidents so its investigations reflect how your team works.
+* [Agent Knowledge for SOC Analyst Agent](/docs/get-started/dojo-studio#knowledge). Teach SOC Analyst Agent your environment, operational workflows, and past incidents so its investigations reflect how your team works.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). See how the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
 * [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
 * [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats)
