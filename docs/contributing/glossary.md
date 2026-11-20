@@ -185,7 +185,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local configuration file management allows you to set up and manage sources on an installed collector using one or more JSON files.
 
-**[Log Analysis Agent](/docs/search/mobot/log-analysis-agent)**. One of the specialized agents that powers Mobot. The Log Analysis Agent interprets intent, guides investigations, and surfaces relevant data from your logs through natural language. Formerly called the Query Agent.
+**[Log Analysis Agent](/docs/search/mobot/log-analysis-agent)**. One of the specialized agents that powers [Mobot](/docs/search/mobot). The Log Analysis Agent interprets intent, guides investigations, and surfaces relevant data from your logs through natural language. Formerly called the Query Agent.
 
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 

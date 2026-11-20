@@ -21,7 +21,7 @@ Agent recommendations are in Public Preview. To participate, contact your Sumo L
 
 The Log Analysis Agent is one of DojoAI's specialized agents. It guides log analysis from plain-language questions, so you do not need deep knowledge of your data schema or the Sumo Logic query language. In the background, it recommends monitors for searches your team keeps repeating and flags duplicate and debug logs that add to your ingest volume.
 
-You reach the agent through [Mobot](/docs/search/mobot/), which routes your prompt to it automatically. You do not see the agent's name in the UI. It was formerly the Query Agent, and query writing is now one of its skills, alongside conversational content and recommendations.
+You reach the agent through [Mobot](/docs/search/mobot/), which routes your prompt to it automatically. You do not see the agent's name in the UI. It was formerly the Query Agent, and query writing is one of its skills, alongside conversational content and recommendations.
 
 ## Analyze logs with Mobot
 
@@ -53,7 +53,7 @@ Each monitor recommendation shows:
 
 ### Work with a recommendation
 
-Recommendations appear in the Recommendation Hub, the page where agents surface recommendations for you to review. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily, and items you accept or dismiss clear on the next refresh.
+Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily, and items you accept or dismiss clear on the next refresh.
 
 For a monitor recommendation, you can:
 
@@ -66,7 +66,6 @@ For a monitor recommendation, you can:
 * **Logs only**. The agent does not cover metrics, traces, or other telemetry types.
 * **Read-only analysis**. The agent can query and analyze data but cannot modify, delete, or ingest data, and it has no access to external systems.
 * **Retained data only**. The agent works only with ingested data that is still within your retention window. Time ranges of 30 or more days can be slow or time out.
-* **Planned actions**. Snoozing recommendations and sending feedback on them are planned for later releases.
 
 ## Additional resources
 
