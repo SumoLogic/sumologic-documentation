@@ -34,6 +34,7 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
+        'get-started/limitations',
         'preview/index',
         'get-started/help',
         'get-started/faq',

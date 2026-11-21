@@ -5,6 +5,7 @@ description: Learn how to create and manage lookup tables in Sumo Logic to enric
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import LookupTableLimits from '../../reuse/lookup-table-limits.md';
 
 This section has instructions for creating Lookup Tables using the Sumo Logic UI.
 
@@ -62,16 +63,7 @@ Currently, the ability to reference a field in a new style Lookup Table in a
 
 The number of Lookup Tables you can have depends on what type of Sumo Logic account you have, as shown in the table below.
 
-| Account Type | Lookup Tables allowed per org |
-| :-- | :-- |
-| Professional (Cloud Flex) | 10 |
-| Enterprise (Cloud Flex) | 100 |
-| Essentials (Cloud Flex Credits) | 10 |
-| Enterprise Ops (Cloud Flex Credits) | 100 |
-| Enterprise Security (Cloud Flex Credits) | 100 |
-| Enterprise Suite (Cloud Flex Credits) | 100 |
-| Trials | Depends on the account type being trialed |
-| Free | None | 
+<LookupTableLimits/>
 
 ## Create a Lookup Table
 
