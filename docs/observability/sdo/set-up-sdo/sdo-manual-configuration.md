@@ -48,15 +48,13 @@ When you copy the scope, replace the `$$<toolname>` variable with the source ca
 
 ## Install the SDO app
 
-Install the Sumo Logic App for Software Development Optimization to use the pre-configured searches and [dashboards](/docs/observability/sdo/install-sdo-app-view-dashboards/) that provide you insights and visibility into your DevOps phases and pipelines.
+Install the Sumo Logic app for Software Development Optimization to use the preconfigured searches and [dashboards](/docs/observability/sdo/install-sdo-app-view-dashboards/) that provide you insights and visibility into your DevOps phases and pipelines.
 
-import AppInstall from '../../../reuse/apps/app-install.md';
+The SDO app is a next-gen app. When you install it, Sumo Logic creates the fields the dashboards use, such as `event_type`, `status`, `team`, `service`, and `environment_name`. The app does not create the field extraction rules (FERs). Create them as described in [Create new FERs](#create-new-fers).
 
-<AppInstall/>
+import AppInstall2 from '../../../reuse/apps/app-install-v2.md';
 
-## Complete post-setup configurations
-
-After setting up the SDO solution, you can complete post-setup configuration.
+<AppInstall2/>
 
 ## Post-setup configuration
 

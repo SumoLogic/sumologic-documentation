@@ -25,6 +25,6 @@ These include:
   * Manage Collectors
   * View Collectors
   * Manage Fields
-  * Manage c\Connections
+  * Manage Connections
   * Manage Content
 * Create a [Sumo Logic access key and ID](/docs/manage/security/access-keys) for the above user.
