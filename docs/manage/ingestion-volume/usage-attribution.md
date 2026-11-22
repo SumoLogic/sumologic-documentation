@@ -27,7 +27,7 @@ Usage Attribution builds on the Data Volume Index. Before you use it:
 - Make sure you have the permissions to view or configure Usage Attribution. Contact your Sumo Logic administrator if you do not see the tab.
 
 :::note
-Usage Attribution data starts from the time you enable it. Sumo Logic does not rebuild historical data.
+Usage Attribution data starts when the Data Volume Index is enabled. Sumo Logic does not rebuild historical data.
 :::
 
 ## How to open Usage Attribution
@@ -37,9 +37,9 @@ Usage Attribution data starts from the time you enable it. Sumo Logic does not r
 
 ## Read the dashboard
 
-The Usage Attribution dashboard is an out-of-the-box dashboard for your organization. Most panels follow the field you select in **Breakdown by**. The default time range is the last 24 hours. Click the time range at the top right of the dashboard to change it.
+The Usage Attribution dashboard is an out-of-the-box dashboard for your organization. Most panels follow the field you select in **Breakdown by**. The default time range is the last 24 hours. Click the time range to change it.
 
-<img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/usage-attributes-dashboard.png')} alt="Usage Attributes Dashboard" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/usage-attributes-dashboard-top.png')} alt="Top of the Usage Attribution dashboard with volume, tier, and ingestion metadata panels" style={{border: '1px solid gray'}} width="800" />
 
 The dashboard includes the following panels:
 
@@ -58,19 +58,21 @@ The dashboard includes the following panels:
 - **Combination Breakdown.** A table of volume for each combination of dimension values and tier, including the share of the volume in scope.
 - **Cross-Dimension Matrix: *field* x Tier.** A table of volume and total bytes for each value of the selected field, split by tier.
 
-### How to filter the dashboard
+<img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/usage-attributes-dashboard-bottom.png')} alt="Bottom of the Usage Attribution dashboard with top consumers, attribution dimensions, and breakdown panels" style={{border: '1px solid gray'}} width="800" />
 
-Use the variables at the top of the dashboard to filter the data. The variables are hidden by default. Click the filter icon at the top right of the dashboard to show or hide them.
+## How to filter the dashboard
+
+Use the variables to filter the data. The variables are hidden by default. Click the filter icon to show or hide them.
 
 The variables are:
 
-- **Breakdown by.** A dropdown at the left of the variables that sets the field the dashboard groups volume by. Select `bladeName`, `collector`, `owner`, `partitionName`, `sourceCategory`, `sourceHost`, or `team`. The panels that follow the selected field update to match. For example, select `collector` to see **Volume by collector (Top 10)**, **Top Consumers by collector**, and the other collector panels. The list also includes any custom tags you add and the columns from your ownership lookup CSV.
+- **Breakdown by.** A dropdown list that sets the field the dashboard groups volume by. Select `bladeName`, `collector`, `owner`, `partitionName`, `sourceCategory`, `sourceHost`, or `team`. The panels that follow the selected field update to match. For example, select `collector` to see **Volume by collector (Top 10)**, **Top Consumers by collector**, and the other collector panels. The list also includes any custom tags you add and the columns from your ownership lookup CSV.
 - **Field boxes.** One box for each field in the **Breakdown by** list: `bladeName`, `collector`, `owner`, `partitionName`, `sourceCategory`, `sourceHost`, and `team`. Enter a value in a box to narrow every panel to data that matches it. For example, enter `prod-k8s-us-west` in the **collector** box to see only the volume, tiers, and entities for that collector. Filtering by a field from your ownership lookup, such as `team` or `owner`, narrows every panel in the same way.
 - **Tier.** Select a data tier to show only that tier. The default is **All**.
 
 <img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/filters-and-time-panels.png')} alt="Usage Attribution dashboard with the filter variables open, including Breakdown by, a box for each field, and Tier" style={{border: '1px solid gray'}} width="800" />
 
-Sumo Logic saves your filters and **Breakdown by** selection, so they remain when you reload the page. You type filter values manually. Autocomplete and multi-select for filter values are not available.
+Sumo Logic saves your filters and **Breakdown by** selection, so they remain when you reload the page. You enter filter values manually. Autocomplete and multi-select for filter values are not available.
 
 ## How to configure Usage Attribution
 
@@ -78,7 +80,7 @@ Use the **Configure Usage Attribution** panel to add custom tags and to manage y
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration**, and then under **Account** select **Account Overview**.
 1. Click the **Usage Attribution** tab.
-1. Click **Configure** at the top right of the dashboard.
+1. Click **Configure**.
 
 <img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/configure-button-highlight.png')} alt="Usage Attribution tab with a red box around the Configure button at the top right" style={{border: '1px solid gray'}} width="800" />
 
@@ -154,7 +156,7 @@ Make sure you have the required permissions and that the Data Volume Index is en
 
 ### Why is my dashboard empty or missing recent data?
 
-Usage Attribution data starts from the time you enable it, and Sumo Logic does not backfill earlier data. If you enabled it recently, wait for data to populate, and then reload the page.
+Usage Attribution data starts when the Data Volume Index is enabled, and Sumo Logic does not backfill earlier data. If you enabled the index recently, wait for data to populate, and then reload the page.
 
 ### Why does my new tag show no data?
 
