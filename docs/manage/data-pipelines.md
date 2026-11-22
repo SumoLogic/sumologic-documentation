@@ -53,7 +53,7 @@ Pipelines are evaluated in order, and each log message passes through only the f
 
 For example, if a pipeline at the top of the list matches everything with a wildcard, no pipeline below it receives any data. You can create multiple pipelines with the same or overlapping routing expressions, but only the first one in the order processes the message.
 
-To change the order, drag a pipeline to a new position in the list and save.
+To change the order, drag a pipeline to a new position in the list and confirm the change.
 
 ### Processors
 
