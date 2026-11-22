@@ -63,7 +63,7 @@ Within a processing group, you can add processors from the following categories:
 - **Transform**. Add Fields, Drop Fields, Replace Pattern, and Normalize Values. For example, Normalize Values can convert a value to lowercase or uppercase or trim whitespace.
 - **Advanced**. SIEM Forwarding and SumoQL Parse. The SIEM Forwarding processor appears only if Cloud SIEM is enabled for your organization.
 
-To mask sensitive data, such as email addresses, SSNs, and credit card numbers, use the Replace Pattern processor to replace or hash the matched text.
+To mask sensitive data, such as email addresses, Social Security numbers (SSNs), and credit card numbers, use the Replace Pattern processor to replace or hash the matched text. For how this relates to masking rules, see [Data Masking](/docs/manage/data-masking).
 
 You can disable a processing group without deleting it.
 
@@ -153,10 +153,10 @@ Data Pipelines do not use versions. Each pipeline has a published version that p
 
 ## Prerequisites
 
-You need the following permissions. If you do not have the permission for an action, Sumo Logic returns a 403 error.
+You need the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#data-management). If you do not have the capability for an action, Sumo Logic returns a 403 error.
 
-- **View**. List pipelines, open a pipeline, and read pipeline metrics.
-- **Manage**. Create, update, delete, and reorder pipelines. Enable and disable pipelines. Validate and test a pipeline with sample data. Publish a pipeline, discard a draft, and update pipeline details.
+- **View Data Pipelines**. List pipelines, open a pipeline, and read pipeline metrics.
+- **Manage Data Pipelines**. Create, update, delete, and reorder pipelines. Enable and disable pipelines. Validate and test a pipeline with sample data. Publish a pipeline, discard a draft, and update pipeline details.
 
 ## Create a pipeline
 
@@ -177,9 +177,12 @@ You need the following permissions. If you do not have the permission for an act
 
 To add more groups or routers, insert them between existing nodes in the graph.
 
-:::note
-Any new field you create in a pipeline is enabled by default, which means it is available for search in Sumo Logic. If you create a temporary field that you only need inside the pipeline, you can disable it. To do this, click **Extracted Fields** at the top of the pipeline, then clear the checkbox next to the field under **New Fields**. A disabled field is still in your logs and you can access it with parse operators, but it is not searchable. Your organization can create only a limited number of new fields, 200 by default for small organizations and 400 for large organizations. The panel shows how many you have used.<br/><img src={useBaseUrl('img/manage/data-pipelines/disable-new-field.png')} alt="Extracted Fields panel with the New Fields checkboxes highlighted" style={{border: '1px solid gray'}} width="600"/>
-:::
+### Disable a new field
+
+Any new field you create in a pipeline is enabled by default, which means it is searchable in Sumo Logic. If a field is temporary and you only need it inside the pipeline, you can disable it. A disabled field stays in your logs and you can access it with parse operators, but it is not searchable. For the number of new fields your organization can create, see [Limitations](#limitations).
+
+1. At the top of the pipeline, click **Extracted Fields**.
+1. Under **New Fields**, clear the checkbox next to the field.<br/><img src={useBaseUrl('img/manage/data-pipelines/disable-new-field.png')} alt="Extracted Fields panel with the New Fields checkboxes highlighted" style={{border: '1px solid gray'}} width="600"/>
 
 ## Test and publish a pipeline
 
@@ -234,7 +237,6 @@ To open the **Duplicate**, **Disable**, **Export as JSON**, and **Delete** optio
 The Data Pipelines page shows the status of each pipeline and its data volume. The **Health** column lists each pipeline as a green **Healthy** or a red **Error**. **Healthy** means the pipeline is working as expected. For each pipeline, you can see:
 
 - Input and output data volume for the last 24 hours.
-- The data type, which is logs only.
 - Health events, such as execution failures in a processing group, with the error message.
 
 To investigate, select a pipeline in the list and click **View Health Details**. The dialog shows the latest open health events with their severity, resource name, event name, and the time they opened. Click **View All Health Events** to see the full list.
