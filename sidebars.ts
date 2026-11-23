@@ -2138,6 +2138,7 @@ module.exports = {
               items: [
                 'observability/aws/other-configurations-tools/integrate-control-tower-accounts',
                 'observability/aws/other-configurations-tools/backfill-aws-account-alias',
+                'observability/aws/other-configurations-tools/static-outbound-ip-api-allowlist',
               ],
             },
             {
