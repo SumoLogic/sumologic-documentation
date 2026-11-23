@@ -39,12 +39,12 @@ Usage Attribution data starts when the Data Volume Index is enabled. Sumo Logic 
 
 The Usage Attribution dashboard is an out-of-the-box dashboard for your organization. Most panels follow the field you select in **Breakdown by**. The default time range is the last 24 hours. Click the time range to change it.
 
-<img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/usage-attributes-dashboard-top.png')} alt="Top of the Usage Attribution dashboard with volume, tier, and ingestion metadata panels" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/usage-attributes-dashboard.png')} alt="Usage Attribution dashboard with volume, tier, top consumers, attribution dimensions, and breakdown panels" style={{border: '1px solid gray'}} width="800" />
 
 The dashboard includes the following panels:
 
 - **Total Ingested Volume (GB).** The volume ingested in the selected time range.
-- **Entity Count.** The number of distinct values (entities) for the field you selected in **Breakdown by**. For example, if you break down by `collector`, it shows how many collectors sent data.
+- **Distinct field values.** The number of distinct values (entities) for the field you selected in **Breakdown by**. For example, if you break down by `collector`, it shows how many collectors sent data.
 - **% Volume Tagged.** The share of volume that has a value for the selected field. Use this coverage figure to find how much volume is still unassigned.
 - **Tier Share** and **Volume by Tier (GB).** How the volume splits across data tiers (Continuous, Frequent, Infrequent, and Flex).
 - **Volume by *field* (Top 10).** The 10 values that account for the most volume for the selected field.
@@ -58,16 +58,14 @@ The dashboard includes the following panels:
 - **Combination Breakdown.** A table of volume for each combination of dimension values and tier, including the share of the volume in scope.
 - **Cross-Dimension Matrix: *field* x Tier.** A table of volume and total bytes for each value of the selected field, split by tier.
 
-<img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/usage-attributes-dashboard-bottom.png')} alt="Bottom of the Usage Attribution dashboard with top consumers, attribution dimensions, and breakdown panels" style={{border: '1px solid gray'}} width="800" />
-
 ## How to filter the dashboard
 
 Use the variables to filter the data. The variables are hidden by default. Click the filter icon to show or hide them.
 
 The variables are:
 
-- **Breakdown by.** A dropdown list that sets the field the dashboard groups volume by. Select `bladeName`, `collector`, `owner`, `partitionName`, `sourceCategory`, `sourceHost`, or `team`. The panels that follow the selected field update to match. For example, select `collector` to see **Volume by collector (Top 10)**, **Top Consumers by collector**, and the other collector panels. The list also includes any custom tags you add and the columns from your ownership lookup CSV.
-- **Field boxes.** One box for each field in the **Breakdown by** list: `bladeName`, `collector`, `owner`, `partitionName`, `sourceCategory`, `sourceHost`, and `team`. Enter a value in a box to narrow every panel to data that matches it. For example, enter `prod-k8s-us-west` in the **collector** box to see only the volume, tiers, and entities for that collector. Filtering by a field from your ownership lookup, such as `team` or `owner`, narrows every panel in the same way.
+- **Breakdown by.** A dropdown list that sets the field the dashboard groups volume by. Select `collector`, `owner`, `sourceCategory`, `sourceHost`, `sourceName`, `team`, or `viewName`. The panels that follow the selected field update to match. For example, select `collector` to see **Volume by collector (Top 10)**, **Top Consumers by collector**, and the other collector panels. The list also includes any custom tags you add and the columns from your ownership lookup CSV.
+- **Field boxes.** One box for each field in the **Breakdown by** list: `collector`, `owner`, `sourceCategory`, `sourceHost`, `sourceName`, `team`, and `viewName`. Enter a value in a box to narrow every panel to data that matches it. For example, enter `prod-k8s-us-west` in the **collector** box to see only the volume, tiers, and entities for that collector. Filtering by a field from your ownership lookup, such as `team` or `owner`, narrows every panel in the same way.
 - **Tier.** Select a data tier to show only that tier. The default is **All**.
 
 <img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/filters-and-time-panels.png')} alt="Usage Attribution dashboard with the filter variables open, including Breakdown by, a box for each field, and Tier" style={{border: '1px solid gray'}} width="800" />
@@ -145,7 +143,7 @@ A tag with many distinct values, such as a request ID or a user ID, is a high-ca
 To keep breakdowns useful:
 
 - Choose tags that group data by a team, service, environment, or cost center instead of by an individual event or user.
-- Use the **Entity Count** panel to check how many distinct values a field has.
+- Use the **Distinct field values** panel to check how many distinct values a field has.
 - Map detailed values to a smaller set of values with a lookup CSV, such as mapping many source categories to one team.
 
 ## FAQ
