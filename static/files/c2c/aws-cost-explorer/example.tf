@@ -4,17 +4,25 @@ resource "sumologic_cloud_to_cloud_source" "AWS_cost_explorer_source" {
     type = "AWS Cost Explorer"
   }
   config = jsonencode({
-      "accessID":"********",
-      "name":"billing200",
-      "description":"billing200",
-      "fields":{
-        "_siemForward":false,
-        "account":"prod"
-      },
-      "accessKey":"********",
-      "granularity":["daily","monthly"],
-      "costMetrics":["AmortizedCost","BlendedCost","NetAmortizedCost","NetUnblendedCost","UnblendedCost"],
-      "category":"aws/billing"
+    "name": "AWS Cost Explorer",
+    "description": "Daily AWS cost and usage",
+    "category": "aws/cost",
+    "fields": {
+      "_siemForward": false,
+      "account": "prod"
+    },
+    "authentication": {
+      "type": "AWSRoleBasedAuthentication",
+      "roleARN": "arn:aws:iam::123456789012:role/SumoCostExplorerRole"
+    },
+    "groupings": ["SERVICE,LINKED_ACCOUNT", "SERVICE,REGION"],
+    "metrics": ["UnblendedCost", "AmortizedCost"],
+    "enableTagGrouping": true,
+    "tagKeys": "team,project",
+    "filterAccountIds": "111111111111,222222222222",
+    "filterRegions": ["us-east-1", "global"],
+    "backfillDays": 30,
+    "pollingIntervalHour": "12h"
   })
 }
 resource "sumologic_collector" "collector" {
