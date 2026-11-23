@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/okta.png')} alt="okta" width="50"/>
 
-***Version: 1.5  
-Updated: April 30, 2026***
+***Version: 1.6.0  
+Updated: November 23, 2026***
 
 Interact with Okta users, groups, and system logging information.
 
@@ -51,7 +51,19 @@ import IntegrationTimeout from '../../reuse/automation-service/integration-timeo
 * <IntegrationLabel/>
 * **Domain**. Enter your [Okta domain](https://developer.okta.com/docs/guides/find-your-domain/main/).
 
-* **Token**. Enter an [Okta token](https://support.okta.com/help/s/article/How-to-create-an-API-token?language=en_US).
+* **Authentication Type**. Select how Sumo Logic authenticates to Okta:
+  * **API Token (SSWS)**. Authenticate with a static Okta API token.
+  * **OAuth 2.0 (Private Key JWT)**. Authenticate with an Okta service app using a private key. This option is the default for new configurations and lets you grant only the scopes the integration needs.
+
+  Existing configurations that use an API token continue to work without changes.
+
+* **Token**. Shown when **Authentication Type** is **API Token (SSWS)**. Enter an [Okta token](https://support.okta.com/help/s/article/How-to-create-an-API-token?language=en_US).
+
+* **Client ID**. Shown when **Authentication Type** is **OAuth 2.0 (Private Key JWT)**. Enter the client ID of your Okta service app.
+
+* **Private Key**. Shown when **Authentication Type** is **OAuth 2.0 (Private Key JWT)**. Enter the private key in PEM or JWK JSON format. The key needs to match the public key registered on your Okta app.
+
+* **Key ID**. Shown when **Authentication Type** is **OAuth 2.0 (Private Key JWT)**. Enter the key ID (`kid`) of the public key registered on your Okta app. This field is optional when the private key is a JWK that includes a `kid`.
 
 * **API Version**. Enter your [Okta API version](https://developer.okta.com/docs/api/#api-versions).
 * <IntegrationTimeout/>
@@ -61,18 +73,50 @@ import IntegrationTimeout from '../../reuse/automation-service/integration-timeo
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/okta-configuration.png')} style={{border:'1px solid gray'}} alt="Okta configuration" width="400"/>
 
+### Set up OAuth 2.0 authentication in Okta
+
+To use OAuth 2.0 authentication, create an API service app in Okta and grant it the scopes for the actions you plan to run.
+
+1. In the Okta Admin Console, go to **Applications** > **Applications** and click **Create App Integration**.
+1. Select **API Services** and click **Next**.
+1. Enter an app name and click **Save**.
+1. On the **General** tab, in **Client Credentials**, click **Edit** and set **Client authentication** to **Public key / Private key**.
+1. Add a public key, either by generating a key pair in Okta or by pasting your own. Save the private key and note the key ID.
+1. On the **Okta API Scopes** tab, grant the scopes listed in the following table.
+1. On the **Admin roles** tab, assign a role that allows the app to perform the actions you need.
+1. In Sumo Logic, select **OAuth 2.0 (Private Key JWT)** as the **Authentication Type** and enter the **Client ID**, **Private Key**, and **Key ID**.
+
+For more information, see [Implement OAuth for Okta with a service app](https://developer.okta.com/docs/guides/implement-oauth-for-okta-serviceapp/main/) in the Okta documentation.
+
+### Required OAuth scopes
+
+Each action requests only the scope it needs. Grant the following scopes to the Okta app.
+
+| Scope | Actions |
+|:--|:--|
+| `okta.users.read` | **Get User**, **List Users** |
+| `okta.users.manage` | **Activate User**, **Create User**, **Deactivate User**, **Suspend User**, **Unlock User**, **Unsuspend User**, **Update User** |
+| `okta.groups.read` | **Get Group**, **List Group Members**, **List Groups** |
+| `okta.groups.manage` | **Add User To Group**, **Create Group**, **Remove User From Group** |
+| `okta.networkZones.read` | **Get Network Zone**, **List Network Zones** |
+| `okta.networkZones.manage` | **Activate Network Zone**, **Create Network Zone**, **Deactivate Network Zone**, **Delete Network Zone**, **Update Network Zone** |
+| `okta.logs.read` | **System Logs** |
+
+The connection test requests the `okta.users.read` scope.
+
 For information about Okta, see [Okta documentation](https://help.okta.com/en-us/content/index.htm).
 
 ## Change Log
 
 | Version | Date | Description |
-|:--|:--|:--|
-| v1.5 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.4 | April 24, 2024 | Added new actions: **Activate Network Zone**, **Create Network Zone**, **Deactivate Network Zone**, **Delete Network Zone**, **Get Network Zone**, **List Network Zones**, and **Update Network Zone**. |
-| v1.3 | July 18, 2023 | Refactored the integration code. |
-| v1.2 | June 21, 2023 | Updated the integration with Environmental Variables. |
-| | July 18, 2022 | <ul><li>Updated the logo in Okta integration.</li><li>Added missing incident artifacts.</li></ul> |
-| | March 20, 2020 | Initial release of the Okta integration. |
+|:--------|:--|:--|
+| v1.6.0  | November 23, 2026 | <ul><li>Added OAuth 2.0 (private key JWT) authentication as an alternative to API token (SSWS) authentication. Existing API token configurations continue to work.</li><li>Refactored all actions to use sessions and improved error handling.</li></ul> |
+| v1.5    | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4    | April 24, 2024 | Added new actions: **Activate Network Zone**, **Create Network Zone**, **Deactivate Network Zone**, **Delete Network Zone**, **Get Network Zone**, **List Network Zones**, and **Update Network Zone**. |
+| v1.3    | July 18, 2023 | Refactored the integration code. |
+| v1.2    | June 21, 2023 | Updated the integration with Environmental Variables. |
+|         | July 18, 2022 | <ul><li>Updated the logo in Okta integration.</li><li>Added missing incident artifacts.</li></ul> |
+|         | March 20, 2020 | Initial release of the Okta integration. |
 
 ## Additional resources
 
