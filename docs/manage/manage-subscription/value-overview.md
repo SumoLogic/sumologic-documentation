@@ -203,4 +203,5 @@ These metrics describe the time Mobot saves when you author content with it, and
 - [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/)
 - [Root Cause Analysis Agent](/docs/alerts/monitors/root-cause-agent-preview/)
 - [Sumo Logic Mobot](/docs/search/mobot/)
+- [Value Realization APIs](/docs/api/value-realization/)
 - [Role capabilities](/docs/manage/users-roles/roles/role-capabilities/)

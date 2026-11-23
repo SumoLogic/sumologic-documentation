@@ -3402,6 +3402,7 @@ integrations: [
         'api/token-management',
         'api/tracing',
         'api/user-management',
+        'api/value-realization',
       ],
     },
   ],
