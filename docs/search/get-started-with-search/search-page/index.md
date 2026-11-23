@@ -16,13 +16,13 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 
 | Letter | Purpose |
 |:--|:--|
-| A | [Basic or Advanced mode](search-modes.md) search text box. Advanced mode searches are limited to a maximum of 15,000 characters in length.<br/><br/>Click the clock icon to see recent searches. Previously run searches are saved automatically for your reference. Instead of recreating your search, you can select it from the dropdown.<br/><br/>As you make changes, a message displays if you have not pressed enter to execute the query:<br/><img src={useBaseUrl('img/search/get-started-search/search-page/query-changes-detected.png')} alt="Query detected" style={{border: '1px solid gray'}} width="400" /> |
+| A | Search text box. Searches are limited to a maximum of 15,000 characters in length.<br/><br/>Click the clock icon to see recent searches. Previously run searches are saved automatically for your reference. Instead of recreating your search, you can select it from the dropdown.<br/><br/>As you make changes, a message displays if you have not pressed enter to execute the query:<br/><img src={useBaseUrl('img/search/get-started-search/search-page/query-changes-detected.png')} alt="Query detected" style={{border: '1px solid gray'}} width="400" /> |
 | B | [Time range](../build-search/set-time-range.md) of the search. |
 | C | Start the search. |
 | D | Click the gear icon to open the Search Config menu that has the options to use the [receipt time](../build-search/use-receipt-time.md) or [searchable time](../build-search/use-searchable-time.md) timestamps and [Auto Parse Mode](../build-search/dynamic-parsing.md). |
 | E | [Share a link](../search-basics/share-link-to-search.md) for the currently running search. |
 | F | [Save or schedule](../search-basics/save-search.md) a search. |
-| G | Click the three-dot kebab icon to open a menu with the following options:<ul><li>Select between Basic or Advanced search mode.</li><li>Link to [search cheat sheets](/docs/search/search-cheat-sheets).</li><li>Edit the search, if it has already been saved.</li><li>[Save or schedule](../search-basics/save-search.md) a search.</li><li>[Share a link](../search-basics/share-link-to-search.md) for the currently running search.</li><li>Info provides detailed information about the search.</li><li>[Pin](/docs/search/get-started-with-search/search-page/pin-a-search) the search to run in the background independent of the browser session.</li><li>[Favorite](add-saved-search-to-favorites.md) a saved search.</li><li>[Add a new monitor](/docs/alerts/monitors) based on the existing query in the search text box.</li><li>Use [Live Tail](/docs/search/live-tail) to see a real-time live feed of log events.</li></ul>The menu options are dynamically provided so depending on if you have run or saved the search or conducted aggregation some options will be grayed out and unclickable. |
+| G | Click the three-dot kebab icon to open a menu with the following options:<ul><li>Link to [search cheat sheets](/docs/search/search-cheat-sheets).</li><li>Edit the search, if it has already been saved.</li><li>[Save or schedule](../search-basics/save-search.md) a search.</li><li>[Share a link](../search-basics/share-link-to-search.md) for the currently running search.</li><li>Info provides detailed information about the search.</li><li>[Pin](/docs/search/get-started-with-search/search-page/pin-a-search) the search to run in the background independent of the browser session.</li><li>[Favorite](add-saved-search-to-favorites.md) a saved search.</li><li>[Add a new monitor](/docs/alerts/monitors) based on the existing query in the search text box.</li><li>Use [Live Tail](/docs/search/live-tail) to see a real-time live feed of log events.</li></ul>The menu options are dynamically provided so depending on if you have run or saved the search or conducted aggregation some options will be grayed out and unclickable. |
 | H | [Histogram](navigate-through-search-results.md) of the messages. |
 | I | Search Details such as session, status, elapsed time, results, raw count, search expression, and [load](search-load-indicator.md). When searching an [Infrequent Partition](/docs/manage/partitions/data-tiers) the estimated and actual amount of data scanned is displayed. |
 | J | Search results as messages. |
@@ -111,12 +111,6 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/search/get-started-with-search/search-page/search-load-indicator')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Search Load Indicator</h4></a>
   <p>Learn how to reduce system load by making your queries more specific.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/search-modes')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Search Modes</h4></a>
-  <p>Learn about the new search modes of our Log Search page.</p>
   </div>
 </div>
 <div className="box smallbox card">

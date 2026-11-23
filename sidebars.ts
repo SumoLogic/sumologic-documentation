@@ -953,6 +953,7 @@ module.exports = {
         'manage/field-extractions/safend-field-extraction',
       ]
     },
+    'manage/data-pipelines',
     {
       type: 'category',
       label: 'Partitions',
@@ -1460,7 +1461,6 @@ module.exports = {
             'search/get-started-with-search/search-page/navigate-through-search-results',
             'search/get-started-with-search/search-page/search-highlighting',
             'search/get-started-with-search/search-page/search-load-indicator',
-            'search/get-started-with-search/search-page/search-modes',
             'search/get-started-with-search/search-page/set-messages-tab-preferences',
             'search/get-started-with-search/search-page/wildcards-in-full-text-searches',
           ],
