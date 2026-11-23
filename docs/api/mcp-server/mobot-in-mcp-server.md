@@ -24,13 +24,7 @@ Mobot in the MCP server uses the same engine, toolset, and functionality as Mobo
 
 ## Set up Mobot with the Sumo Logic plugin
 
-The Sumo Logic plugin is the recommended way to set up Mobot in the MCP server. It bundles the sumo-investigator skill with the MCP server connection. The skill adds routing logic and session guidance directly to your MCP client's context.
-
-With the plugin installed:
-
-- Queries route to Mobot automatically, so you do not need to include "use Mobot" in every query.
-- Conversations stay connected more reliably across multiple turns.
-- Session and context management is cleaner than with a raw MCP setup.
+The Sumo Logic plugin bundles the sumo-investigator skill with the MCP server connection. With the Mobot skill updates, queries route to Mobot automatically, and conversations stay connected more reliably across multiple turns.
 
 Plugins are available for these clients:
 
@@ -39,7 +33,11 @@ Plugins are available for these clients:
 - Claude, through Claude plugins or the Claude Connectors Directory
 - AWS DevOps Agent
 
-Plugins for Cursor and Codex are coming soon. For setup steps for each client, including clients without a plugin, see [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server/mcp-server-client-setup).
+:::note
+The Mobot skill updates for these plugins are pending approval in each marketplace, so the plugins do not include Mobot support yet. Until they do, connect your client to the MCP server without the plugin and include "use Mobot" in your query, for example, "Use Mobot to investigate why errors are spiking." For setup steps, see [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server/mcp-server-client-setup).
+:::
+
+Plugins for Cursor and Codex are coming soon.
 
 ## Mobot tools in the MCP server
 
@@ -76,11 +74,6 @@ For example:
 /sumologic-mcp:mobot Why are errors spiking in the checkout service?
 ```
 
-<!--TODO: Add a screenshot of the client's confirmation prompt shown before a Mobot investigation runs, and of the investigation result returned in the client.
-<img src={useBaseUrl('img/api/mcp/mobot-in-mcp-confirmation.png')} alt="MCP client asking for confirmation before running a Mobot investigation" style={{border: '1px solid gray'}} width="800" />
-<img src={useBaseUrl('img/api/mcp/mobot-in-mcp-result.png')} alt="Mobot investigation result returned in an MCP client" style={{border: '1px solid gray'}} width="800" />
--->
-
 ## Benefits of Mobot in the MCP server
 
 - **Multi-turn conversations with persistent context**. Mobot keeps session context for the full length of a conversation, including field names, schema context, the investigation approach set earlier in the session, and hypotheses already explored. You can run extended investigations across many turns without re-priming Mobot.
@@ -92,15 +85,9 @@ When a step needs your sign-off, Mobot pauses and waits. Review the pending acti
 
 For example, Mobot can pause before it creates or updates a monitor or dashboard, or before it takes an action in an external integration such as creating a Jira ticket.
 
-<!--TODO: Add a screenshot of a Mobot human-in-the-loop approval request in an MCP client. <img src={useBaseUrl('img/api/mcp/mobot-in-mcp-hitl-approval.png')} alt="MCP client showing a Mobot step paused for approval or rejection" style={{border: '1px solid gray'}} width="800" />
--->
-
 ### Resume MCP conversations in the Sumo Logic UI
 
 Conversations you start through the MCP server appear in the **My Conversations** panel in Sumo Logic, next to conversations you started in the UI. To review or resume one, open Mobot and select it from the panel. See [Managing conversations](/docs/search/mobot/#managing-conversations).
-
-<!--TODO: Add a screenshot of the My Conversations panel showing a conversation that was started from an MCP client. <img src={useBaseUrl('img/api/mcp/mobot-in-mcp-conversation-history.png')} alt="Mobot My Conversations panel showing a conversation started from an MCP client" style={{border: '1px solid gray'}} width="800" />
--->
 
 ## Mobot usage limits in the MCP server
 
@@ -116,7 +103,7 @@ Mobot prompts and investigations started through the MCP server are recorded in 
 
 ### Do I need the plugin to use Mobot in the MCP server?
 
-No, but it is recommended, and the `/sumologic-mcp:mobot` slash command requires it. Without the plugin, you can still connect to the MCP server and install the sumo-investigator skill manually. You may need to include explicit phrasing, such as "use Mobot to investigate", so your client routes the query to Mobot. See [Set up Mobot with the Sumo Logic plugin](#set-up-mobot-with-the-sumo-logic-plugin).
+No. Without the plugin, you can still connect to the MCP server and include explicit phrasing, such as "use Mobot to investigate", so your client routes the query to Mobot. The `/sumologic-mcp:mobot` slash command requires a plugin with Mobot support. See [Set up Mobot with the Sumo Logic plugin](#set-up-mobot-with-the-sumo-logic-plugin).
 
 ### How is Mobot different from the runLogSearch tool?
 
