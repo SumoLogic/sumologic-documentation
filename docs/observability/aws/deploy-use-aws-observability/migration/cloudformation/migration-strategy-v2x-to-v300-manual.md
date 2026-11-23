@@ -100,7 +100,7 @@ The v3.0.0 deployment creates 4 AWSO Metric Rules that may already exist from yo
 
 ## Step 6: Deploy v3.0.0
 
-Deploy the v3.0.0 CloudFormation stack using the parameter mapping table below. Use the same account alias, Sumo Logic credentials, and source creation options as your v2.x stack. When v3.0.0 detects existing Sumo Logic sources with matching names on the collector, it reuses them — no data gap occurs and no duplicate sources are created.
+Deploy the v3.0.0 CloudFormation stack using the parameter mapping table below. Use the same account alias, Sumo Logic credentials, and source creation options as your v2.x stack. When v3.0.0 detects existing Sumo Logic sources with matching names on the collector, it reuses them and does not create duplicate sources.
 
 Template URL:
 ```
@@ -158,7 +158,7 @@ Use the following table to map your v2.x parameter values to v3.0.0:
 </table>
 
 :::note
-Setting the source URL parameter (for example, `Section5cALBLogsSourceUrl`) to an empty string forces v3.0.0 into **create new** mode. When v3.0.0 detects existing sources with matching names on the collector, it reuses them. So, there's no data gap.
+Setting the source URL parameter (for example, `Section5cALBLogsSourceUrl`) to an empty string forces v3.0.0 into **create new** mode. When v3.0.0 detects existing sources with matching names on the collector, it reuses them.
 :::
 
 ## Step 7: Update source IAM role ARNs

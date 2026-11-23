@@ -91,6 +91,7 @@
 - [Users and roles](https://www.sumologic.com/help/docs/manage/users-roles/): Access control and permissions
 - [Partitions](https://www.sumologic.com/help/docs/manage/partitions/): Optimizing search with data partitions
 - [Field extractions](https://www.sumologic.com/help/docs/manage/field-extractions/): Parsing fields from log data at ingest
+- [Data Pipelines](https://www.sumologic.com/help/docs/manage/data-pipelines/): Building, testing, and publishing rules that process and route logs
 
 ### API
 - [API overview](https://www.sumologic.com/help/docs/api/about-apis/): Authentication, endpoints, and getting started with the API

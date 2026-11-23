@@ -1,0 +1,34 @@
+{
+    "api.version": "v1",
+    "source": {
+        "schemaRef": {
+            "type": "Snowflake Logs"
+        },
+        "config": {
+            "name": "Snowflake Logs",
+            "authType": "oauth",
+            "oauthClientId": "ABCDxxxxxxxxxxxxxxxxxxxxxxx=",
+            "oauthClientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
+            "oauthAuthorizationCode": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "accountIdentifier": "gsy64-cnkc8",
+            "collectQueryHistory": true,
+            "collectSecurity": true,
+            "securityTables": ["all"],
+            "collectEvents": true,
+            "customEventTables": [
+                {
+                    "tableName": "SNOW_DB.SCHEMA.TABLE1",
+                    "delayTime": "0m",
+                    "timestampField": "TIMESTAMP"
+                },
+                {
+                    "tableName": "SNOW_INFO.SCHEMA_VAL.TABLE2",
+                    "delayTime": "10m",
+                    "timestampField": "TIMESTAMP"
+                }
+            ],
+            "pollingInterval": "1h"
+        },
+        "sourceType": "Universal"
+    }
+}
