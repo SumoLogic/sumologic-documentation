@@ -1,7 +1,7 @@
 ---
 id: mobot-in-slack
 title: Mobot in Slack
-description: Ask Mobot about your Sumo Logic data without leaving Slack by @mentioning Sumo Logic in channels, sending direct messages, or using the Sumo Logic app panel.
+description: Ask Mobot about your Sumo Logic data without leaving Slack by @mentioning Sumo Logic in channels or sending direct messages.
 keywords:
   - mobot
   - dojoai
@@ -23,7 +23,7 @@ This feature is in Public Preview. To participate, contact your Sumo Logic accou
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="35"/>
 
-The Sumo Logic Slack app lets your team use [Mobot](/docs/search/mobot/) directly from Slack. Mention `@Sumo` in an incident channel, investigate alerts and log data by direct message, or run multi-step investigations from the Sumo Logic app panel, all without leaving Slack.
+The Sumo Logic Slack app lets your team use [Mobot](/docs/search/mobot/) directly from Slack. Mention `@Sumo` in any channel or investigate alerts and data in Sumo Logic by direct message, all without leaving Slack.
 
 Responses are scoped to your Sumo Logic role and org, and every response includes a link back to the relevant entity in Sumo Logic. Sumo Logic passes the full thread context to Mobot automatically, so you do not need to re-explain what your team has already discussed.
 
@@ -33,16 +33,16 @@ Responses are scoped to your Sumo Logic role and org, and every response include
 
 * **Ask in channels and threads.** Mention `@Sumo` in any channel or thread to get AI-generated answers from your Sumo Logic data.
 * **Ask privately.** Send direct messages to Sumo Logic for private, exploratory queries.
-* **Run investigations.** Run multi-step investigations from the Sumo Logic app panel in the Slack sidebar.
-* **Jump back to Sumo Logic.** Use the links in each response to open the log search, alert, or dashboard that Sumo Logic referenced.
+* **Jump back to Sumo Logic.** Use the links in each response to open the log search, alert, or dashboard that Mobot referenced.
 * **Work across orgs.** Use Sumo Logic across multiple orgs from a single Slack workspace.
 
 ## Requirements
 
 ### In Sumo Logic
 
-* You need the Administrator role to install the Sumo Logic Slack App and connect a Slack workspace.
+* You need the Administrator role or any role with the Manage Integrations capability to install the Sumo Logic Slack App and connect Slack.
 * You install the Sumo Logic Slack App from the Sumo Logic product, not from the Slack Marketplace.
+* An administrator needs to enable CIMD for your org, or installation will not work. Learn more in [Enable CIMD](/docs/manage/security/oauth/#enable-cimd).
 * Your Sumo Logic org must be in one of the following deployments: US1, US2, EU, DE, AU, JP, CA, KR, or CH. FedRAMP and ESC deployments are not currently supported.
 
 ### In Slack
@@ -55,19 +55,19 @@ Responses are scoped to your Sumo Logic role and org, and every response include
 
 An administrator starts the installation from inside Sumo Logic, under **App Catalog** > **Integrations** > **Inbound Integrations** > **Sumo Logic Slack App Extension**. The installation binds the Slack workspace to the correct Sumo Logic org and establishes the OAuth trust needed for user-level authentication.
 
-After installation, any channel member can add Sumo Logic to a channel with `/invite @Sumo`. The first time you mention Sumo Logic, you receive a private prompt to connect your Sumo Logic account. After a brief OAuth login, Sumo Logic processes your original query automatically. Later mentions work without any extra steps.
+After installation, add Sumo Logic to a channel like any other Slack app. The first time you mention Sumo Logic, you receive a private prompt to connect your Sumo Logic account. After a brief OAuth login, Sumo Logic processes your original query automatically. Later mentions work without any extra steps.
 
 Responses are scoped to the role and permissions of the user who mentions Sumo Logic. In a shared channel, different users who query the same thread can receive different answers based on their individual access levels.
 
-## Connect a Slack workspace
+## Connect Slack
 
-A Sumo Logic administrator needs to connect your Slack workspace.
+A Sumo Logic administrator needs to connect Slack to your org.
 
 1. In Sumo Logic, select **App Catalog** > **Integrations** > **Inbound Integrations** in the navigation menu.
 1. Find the **Sumo Logic Slack App Extension** tile.
 1. Click **+ Connect Workspace**. The Slack authorization screen opens.
 1. In the top-right dropdown menu, confirm that the correct workspace is selected, and then click **Allow**.
-1. Go to the **Configure** tab. The workspace appears with the status **Connected**.
+1. The workspace appears with the status **Connected**.
 
 <!--TODO: Add screenshot of the Sumo Logic Slack Extension tile in App Catalog > Integrations with the + Connect Workspace button.-->
 
@@ -75,29 +75,23 @@ A Sumo Logic administrator needs to connect your Slack workspace.
 
 If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Submit the request. You do not need to submit it again. Follow up with your Slack Admin to get the request approved. After the Slack Admin approves it in Slack, you must reconnect the workspace to your Sumo Logic org to finish the installation. Until then, the workspace is not linked to your Sumo Logic org.
 
-### Disconnect a workspace
+### Disconnect Slack
 
-To disconnect a workspace, open the overflow menu on the workspace row in the **Configure** tab and select **Disconnect workspace**. This disassociates your Sumo Logic org from that Slack workspace.
+You need the Administrator role or any role with the Manage Integrations capability to disconnect Slack. To disconnect, open the overflow menu on the workspace row in the **Configure** tab and select **Disconnect workspace**. This disassociates your Sumo Logic org from that Slack workspace.
 
 ## Add Sumo Logic to channels
 
-After installation, Sumo Logic exists as a bot user in your Slack workspace, but it is not in any channel. You can add Sumo Logic to a channel in either of the following ways:
-
-* **Explicit invite.** Any channel member with invite permissions can type `/invite @Sumo` in the channel. Sumo Logic joins and is immediately available to mention.
-* **Just-in-time invite.** If you mention Sumo Logic in a channel it has not joined, Slack prompts you to invite it. Confirm the prompt, and Sumo Logic joins the channel and processes your original query.
+After installation, Sumo Logic is not in any channel. Add it to a channel like any other Slack app. If you mention Sumo Logic in a channel it has not joined, Slack prompts you to add it. Confirm the prompt, and Sumo Logic joins the channel and processes your original query.
 
 ## Connect your Sumo Logic account
 
-You do not need to run any command or complete any setup before you use Sumo Logic in Slack. The first time you mention Sumo Logic, the experience depends on how many Sumo Logic orgs are mapped to your Slack workspace:
+You do not need to run any command or complete any setup before you use Sumo Logic in Slack. The first time you mention Sumo Logic, you receive a private prompt that only you can see. The prompt asks you to connect your Sumo Logic account. You are redirected to Sumo Logic for a brief OAuth login, and then Sumo Logic processes your original query automatically.
 
-* **One org mapped.** If you are not yet authenticated, you receive a private prompt that only you can see. The prompt asks you to connect your Sumo Logic account. You are redirected to Sumo Logic for a brief OAuth login, and then Sumo Logic processes your original query automatically.
-* **Multiple orgs mapped.** Sumo Logic shows all available orgs as buttons. Select an org. If you are already authenticated to that org, the query runs. If not, you complete the OAuth login for that org, and then the query runs.
+If multiple orgs are connected to your Slack, choose the org and authenticate.
 
 The private prompt is visible only to you. Other channel members are not affected.
 
 <!--TODO: Add screenshot of the private prompt that asks the user to connect their Sumo Logic account.-->
-
-<!--TODO: Add screenshot of the org picker buttons shown when multiple orgs are mapped.-->
 
 ## Use Sumo Logic in Slack
 
@@ -111,13 +105,11 @@ Open a direct message with Sumo Logic from the **Apps** section of the Slack sid
 
 <!--TODO: Add screenshot of a direct message conversation with Sumo Logic from the Apps section of the Slack sidebar.-->
 
-<!--TODO: Add screenshot of the Sumo Logic app panel in the Slack sidebar.-->
-
 ### Response elements
 
 Every Sumo Logic response includes the following:
 
-* **Org label.** A footer that shows which Sumo Logic org was queried, for example `acme-corp · us2.sumologic.com`.
+* **Org label.** A footer that shows which Sumo Logic org was queried, for example `proddata(us2) · 0000000000124DBA`.
 * **Links to Sumo Logic.** Contextual links to Sumo Logic entities where applicable, for example **View this log search in Sumo Logic**.
 
 <!--TODO: Add screenshot of a response that shows the org label footer and a link to a Sumo Logic entity.-->
