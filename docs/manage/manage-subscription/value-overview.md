@@ -50,11 +50,11 @@ Before you begin, you need a role with the following [role capabilities](/docs/m
 1. In the main Sumo Logic menu, select **Administration** > **Account**.
 1. Select the **Value Overview** tab.
 
-The text at the top left of the page shows the date your data is current through, for example, "Showing data as of Nov 17, 2026". Data does not include activity after that date.
+The page shows the date your data is current through, for example, "Showing data as of Nov 17, 2026". Data does not include activity after that date.
 
 ## How to change the date range
 
-Use the date range selector at the top right of the page. The headline, agent breakdown, and all metric tiles update to the range you select.
+Use the date range selector. The headline, agent breakdown, and all metric tiles update to the range you select.
 
 ## How to find metrics
 
@@ -103,12 +103,12 @@ If your team estimates that a manual investigation takes 20 minutes, the estimat
 ## Interpreting the metrics
 
 - **Zero or missing values.** A metric shows no activity when the agent did not investigate or author anything in the selected range. Select a longer date range to confirm.
-- **Data freshness.** Values reflect data through the date shown at the top left of the page, not the current moment.
+- **Data freshness.** Values reflect data through the date shown on the page, not the current moment.
 - **Investigated is not resolved.** Metrics such as **Insight Coverage** count insights the agent investigated. They do not mean the agent resolved the insight or that an analyst accepted a recommended verdict.
 
 ## Metric reference
 
-Use this section to understand what each metric measures and how Sumo Logic calculates it.
+Use this section to understand what each metric measures and how Sumo Logic calculates it. Formulas and evidence names use SOCAA for the SOC Analyst Agent and RCA for the Root Cause Analysis Agent.
 
 ### Metric categories
 
@@ -129,8 +129,6 @@ For the SOC Analyst Agent, the formula is:
 ```
 (socaa_insight_investigation_count * manual_insight_investigation_time - socaa_investigation_time_min) / 60
 ```
-
-In formulas, `socaa` stands for the SOC Analyst Agent.
 
 The **Combined Time Reclaimed** headline is the sum of **Investigation Time Saved** for the SOC Analyst Agent, **Investigation Time Saved (Alerts)** for the Root Cause Analysis Agent, and the three Mobot time saved metrics.
 
@@ -167,7 +165,7 @@ These metrics describe how the [SOC Analyst Agent](/docs/cse/get-started-with-cl
 
 ### Root Cause Analysis Agent metrics
 
-These metrics describe how the Root Cause Analysis Agent investigates alerts. Learn more about the agent in [Root Cause Agent](/docs/alerts/monitors/root-cause-agent-preview/).
+These metrics describe how the Root Cause Analysis Agent investigates alerts. Learn more about the agent in [Root Cause Analysis Agent](/docs/alerts/monitors/root-cause-agent-preview/).
 
 <img src={useBaseUrl('img/manage/value-overview/value-overview-show-more-rca.png')} alt="Expanded Root Cause Analysis Agent section showing time saved, MTTR, time to verdict, auto investigations, and alert coverage tiles" style={{border: '1px solid gray'}} width="800" />
 
@@ -196,13 +194,13 @@ These metrics describe the time Mobot saves when you author content with it, and
 
 ### Limitations
 
-- Value Overview reports estimated time savings in hours. It does not report dollar savings.
+- Value Overview reports time savings in hours. It does not report dollar savings.
 - Coverage and auto investigation metrics count agent activity. They do not indicate that an insight or alert was resolved, or that a person accepted the agent's verdict.
-- Data is current through the date shown at the top left of the page.
+- Data is current through the date shown on the page.
 
 ## Related topics
 
 - [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/)
-- [Root Cause Agent](/docs/alerts/monitors/root-cause-agent-preview/)
+- [Root Cause Analysis Agent](/docs/alerts/monitors/root-cause-agent-preview/)
 - [Sumo Logic Mobot](/docs/search/mobot/)
 - [Role capabilities](/docs/manage/users-roles/roles/role-capabilities/)
