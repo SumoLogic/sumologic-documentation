@@ -62,5 +62,4 @@ For a monitor recommendation, you can click an item on **Recommendations** to op
 
 ## Additional resources
 
-* [Mobot](/docs/search/mobot/). The conversational interface for Sumo Logic's AI agents.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). How the Log Analysis Agent fits alongside DojoAI's other agents.
