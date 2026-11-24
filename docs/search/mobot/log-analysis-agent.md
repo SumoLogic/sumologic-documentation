@@ -13,7 +13,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 :::info
 Log Analysis Agent is in Private Preview. To participate, contact your Sumo Logic account representative.
