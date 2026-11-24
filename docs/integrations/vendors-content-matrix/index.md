@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Use this section to learn about the vendors or products in Sumo Logic. Sumo Logic offers the following types of content:
 
 * **Apps**. Pre-built dashboards and analytics for a product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps and Integrations](/docs/integrations/).
-* **Automation**. Integrations for the Automation Service and Cloud SOAR. See [Integrations in App Catalog](/docs/integrations/automation-integrations/).
+* **Automation**. Integrations for the Automation Service and Cloud SOAR. See [Integrations in App Catalog](/docs/integrations/integrations-overview/).
 * **Cloud SIEM**. Rules, mappers, parsers, and normalization schema for external products. See [Cloud SIEM Content Catalog](/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog) and the [complete list of vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md).
 * **Collectors**. Agents that collect data from the product. See [Send Data](/docs/send-data/).
 * **Community apps**. Apps from Sumo Logic users and our creator community. See [Sumo Logic Community Ecosystem Apps](/docs/integrations/community-ecosystem-apps/).

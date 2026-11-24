@@ -171,4 +171,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Upwind Automation Service Integration](/docs/integrations/automation-integrations/upwind/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Upwind Automation Service Integration](/docs/integrations/outbound/integrations-via-api/upwind/) to automate response actions directly from Cloud SOAR playbooks.

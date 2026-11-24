@@ -308,4 +308,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [OneLogin Automation Service Integration](/docs/integrations/automation-integrations/onelogin/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [OneLogin Automation Service Integration](/docs/integrations/outbound/integrations-via-api/onelogin/) to automate response actions directly from Cloud SOAR playbooks.

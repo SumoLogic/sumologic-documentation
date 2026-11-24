@@ -272,4 +272,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Netskope Automation Service Integration](/docs/integrations/automation-integrations/netskope/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Netskope Automation Service Integration](/docs/integrations/outbound/integrations-via-api/netskope/) to automate response actions directly from Cloud SOAR playbooks.

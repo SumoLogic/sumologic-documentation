@@ -25,7 +25,7 @@ The Sumo Logic App Catalog provides a unified place to discover, explore, and in
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/automation-integrations/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Integrations</h4></a>
+  <a href={useBaseUrl('docs/integrations/integrations-overview/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Integrations</h4></a>
   <p>Learn about the automation integrations available in Sumo Logic</p>
   </div>
 </div>

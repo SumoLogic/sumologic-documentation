@@ -174,4 +174,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Cisco Meraki Automation Service Integration](/docs/integrations/automation-integrations/cisco-meraki/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Cisco Meraki Automation Service Integration](/docs/integrations/outbound/integrations-via-api/cisco-meraki/) to automate response actions directly from Cloud SOAR playbooks.

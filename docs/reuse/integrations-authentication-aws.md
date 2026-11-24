@@ -1,1 +1,1 @@
-For configuration information specific to AWS integrations, see the [AWS integrations](/docs/integrations/automation-integrations/integrations-via-api/configure-authentication/#aws-integrations) section. 
+For configuration information specific to AWS integrations, see the [AWS integrations](/docs/integrations/outbound/integrations-via-api/configure-authentication/#aws-integrations) section. 
