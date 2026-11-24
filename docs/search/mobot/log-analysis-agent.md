@@ -65,7 +65,7 @@ For a monitor recommendation, you can:
 
 * **Logs only**. The agent does not cover metrics, traces, or other telemetry types.
 * **Read-only analysis**. The agent can query and analyze data but cannot modify, delete, or ingest data, and it has no access to external systems.
-* **Retained data only**. The agent works only with ingested data that is still within your retention window. Time ranges of 30 or more days can be slow or time out.
+* **Retained data only**. The agent works only with ingested data that is still within your retention window. 
 
 ## Additional resources
 
