@@ -183,7 +183,7 @@ To share the current investigation with other users, see [Share conversation](/d
 
 ## Recommended actions
 
-After the SOC Analyst Agent triages an insight, it generates contextually appropriate **Recommended Actions** that you can review without leaving Cloud SIEM. You can also request recommendations directly in a [Mobot](/docs/search/mobot/) investigation by asking the agent to recommend actions.
+After the SOC Analyst Agent triages an insight, it generates contextually appropriate **Recommended Actions** that you can review without leaving Cloud SIEM.
 
 ### Review recommendations after triage
 
@@ -192,13 +192,11 @@ After the SOC Analyst Agent completes an investigation, you can find recommendat
 * An **Insight**'s **Overview** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-overview-tab.png')} alt="AI Recommended Actions panel on the Overview tab of an insight, showing one text-only card and two cards with Execute buttons" style={{border: '1px solid gray'}} width="700" />
 * An **Insight**'s **AI Investigation** tab<br/><img src={useBaseUrl('img/cse/soc-rr-ai-inv-tab.png')} alt="AI Investigation tab of an insight showing the AI Verdict, the What Happened summary, and Recommended Actions with Execute buttons" style={{border: '1px solid gray'}} width="700" />
 
-You'll also see them in Mobot after you [open an investigation from an **Insight**](#investigate-the-insight-in-mobot).
-
-Executing a recommended action directly from Cloud SIEM or Mobot is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
+Executing a recommended action directly from Cloud SIEM is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
 
 ### Use investigation context with recommendations
 
-If you investigate an insight in Mobot before acting, recommendations update as Mobot uncovers additional context. The UI indicates when recommendations are informed by investigation findings.
+If you investigate an insight by conversing with the SOC Analyst Agent or the Root Cause Agent before acting, recommendations update as the agent uncovers additional context. The UI indicates when recommendations are informed by investigation findings.
 
 ## Configure SOC Analyst Agent settings
 

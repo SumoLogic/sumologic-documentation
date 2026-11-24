@@ -17,20 +17,36 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Executing a recommended action is in Private Preview. For more information, contact your Sumo Logic account representative. [Recommended Actions](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#recommended-actions) themselves are generally available.
 :::
 
-<!--TODO (DOCS-2055): Update for the Dojo Studio flow: executable actions depend on integrations connected to the SOC agent in Dojo Studio, prerequisites, and the note that actions run with the clicking user's credentials.-->
-
 Each recommended action appears as a card with a title and a rationale. A card is one of two types:
-* **Executable**. The required integration is installed. The card shows a blue **Execute** button.
-* **Suggested** (text-only). The integration is not installed. The card has no **Execute** button and serves as a manual follow-up prompt.
+* **Executable**. The recommendation matches a tool from an integration that is enabled for the agent in Dojo Studio. The card shows a blue **Execute** button.
+* **Suggested** (text-only). No enabled integration matches the recommendation. The card has no **Execute** button and serves as a manual follow-up prompt.
 
-**Audit trail**. Every action, analyst decision, and execution result is logged immutably.
+**Audit trail**. Every action, analyst decision, and execution result is logged.
+
+## How executable actions work
+
+Executable actions depend on the integrations that are enabled for the agent in Dojo Studio. When the agent investigates an insight and suggests recommendations, it checks each recommendation against the tools of the enabled integrations. If a recommendation matches an enabled integration tool, the action appears as executable. Recommendations with no matching enabled integration stay informational.
+
+:::important
+When you click **Execute**, the action runs with your credentials and access in the integrated tool. It does not use the credentials of the agent owner or any shared credentials. Results depend on your permissions in that tool.
+:::
 
 ## Prerequisites
 
 * Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 * SOC analysts have a role with the **Manage Integrations** [role capability](/docs/manage/users-roles/roles/role-capabilities/#automation-service), which is required to execute response actions.
 * The Response Agent feature has been enabled for your org by your Sumo Logic representative.
-* For executable actions, the corresponding integration must be installed and configured in Sumo Logic's integrations platform. Contact your Sumo Logic representative for the list of supported integrations and the permissions required for each.
+* Someone in your org has taken ownership of the agent in Dojo Studio.
+* For executable actions, the agent owner has enabled the corresponding integrations in Dojo Studio. See [Enable integrations for the agent](#enable-integrations-for-the-agent).
+* You have access to the integrated tool, because actions run with your credentials.
+
+## Enable integrations for the agent
+
+You can choose the SOC Analyst Agent or the Root Cause Agent in Dojo Studio. To make recommended actions executable, take ownership of the agent and enable the integrations you need.
+
+1. In Dojo Studio, select the agent and take ownership of it.
+1. Go to **Dojo Studio** > **SOC Agent** > **Integrations**.
+1. Enable the integrations you need.
 
 ## Execute a recommended action
 
@@ -40,7 +56,7 @@ Every action requires explicit analyst approval before execution. The agent neve
 1. Review the **Reasoning** and edit the **Payload** (JSON) if needed.
 1. Click **Confirm**.
 
-The system records your approval with your analyst identity and a timestamp, then runs the action in the background. The card updates when execution completes. To analyze the result further, you can continue the conversation in Mobot.
+The system records your approval with your analyst identity and a timestamp, then runs the action in the background. The card updates when execution completes. To analyze the result further, you can continue the conversation with the SOC Analyst Agent or the Root Cause Agent. Executed actions are recorded in audit logs.
 
 If the action runs successfully, the card turns green and shows an **Executed** badge. If it doesn't, the card shows a red **Retry** button with an inline error message. Click **Retry** to run the action again.
 
@@ -50,7 +66,7 @@ If the action runs successfully, the card turns green and shows an **Executed** 
 
 The following capabilities are not currently available:
 
-* **Recommending uninstalled integrations**. Uninstalled integrations appear as text-only suggestions; the agent will not guide you through installation.
+* **Recommending disabled integrations**. Recommendations without an enabled integration appear as text-only suggestions; the agent will not guide you through enabling the integration.
 * **Multi-action plans**. Execute actions individually; coordinated multi-action plans are not yet supported.
 * **Playbook recommendations**. Customer-created playbooks are not suggested alongside recommended actions.
 * **Autonomous execution**. All actions require explicit analyst approval. Fully autonomous execution is planned for a future phase.
