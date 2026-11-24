@@ -55,7 +55,7 @@ Each monitor recommendation shows:
 
 Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily.
 
-For a monitor recommendation, you can:
+For a monitor recommendation, you can click an item on **Recommendations** to open the preview drawer, which shows a plain-language summary, estimated outcome and the recommended actions. Then:
 
 * **Create monitor**. Opens the monitor creation window with the query and suggested threshold filled in, so you can save the monitor or customize it first.
 * **Change at source**. Review recommendation and customize it at the product page directly.
