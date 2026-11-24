@@ -252,6 +252,31 @@ See information on scheduled searches that have been triggered, along with detai
 
 **Count of Status Codes for Webhooks**. A listing of status codes for Webhooks and their respective counts.
 
+
+### Mobot Usage Overview
+
+See Mobot interactions, unique users, top users, interface usage breakdown and trend, recent prompts, and geolocation of Mobot interactions. Use the **interface**, **status**, and **user_email** filters at the top of the dashboard to narrow the results.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-mobot-usage-overview.png')} alt="Mobot Usage Overview dashboard" />
+
+**Mobot Interactions.** Counts the total number of Mobot interactions and displays the number in a single value chart for the last 24 hours.
+
+**Unique Users.** Counts the number of distinct users who interacted with Mobot and displays the number in a single value chart for the last 24 hours.
+
+**Threat Count.** Counts the Mobot interactions that originate from IP addresses flagged as malicious by threat intelligence and displays the number in a single value chart for the last 24 hours.
+
+**Top 10 Users by Interactions.** Shows an aggregation table of the 10 users with the most Mobot interactions, with columns for the user email and number of interactions, for the last 24 hours.
+
+**Interface Usage Breakdown (UI vs MCP vs API).** Displays the number of Mobot interactions by interface on a pie chart for the last 24 hours.
+
+**Interface Usage Trend.** Shows the number of Mobot interactions by interface in a stacked column chart on a timeline of hours for the last 24 hours.
+
+**Recent Prompts.** Shows an aggregation table of the 10 most recent Mobot prompts, with columns for the time, prompt, user email, interface, and frequency, for the last 24 hours.
+
+**Threat Details.** Shows an aggregation table of Mobot interactions from malicious IP addresses, with columns for the IP address, malicious confidence, actor, label name, and threat count, for the last 24 hours.
+
+**Geolocation of Mobot Interactions.** Performs a geo lookup query and displays the location and number of Mobot interactions on a map of the world for the last 24 hours.
+
 ## Create monitors for the Sumo Logic Audit app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
