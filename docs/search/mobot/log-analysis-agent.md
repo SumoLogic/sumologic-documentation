@@ -43,11 +43,6 @@ Instead of waiting for a question, the agent analyzes how your team searches and
 
 For monitor recommendations, the agent looks at log patterns across the tenant's log data. It identifies coverage gaps and makes recommendations to create the missing monitor which detects anomalies proactively. It then checks whether an equivalent or substantially similar monitor already exists. If one does, it makes no recommendation.
 
-Each monitor recommendation shows:
-
-* **Observation**. What the agent noticed, for example a query that 11 users ran 186 times across four services.
-* **Reasoning and confidence**. Why a monitor is worthwhile and how confident the agent is.
-* **Suggested monitor**. A name, the query, and an alert threshold.
 
 ### Work with a recommendation
 
