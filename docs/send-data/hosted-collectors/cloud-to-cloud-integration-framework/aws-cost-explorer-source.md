@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="AWS Cost Explorer icon" width="50"/>
 
-The AWS Cost Explorer Source collects daily cost and usage data from [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/). You choose how the cost is broken down (for example by service and account, or by service and region), which [cost metrics](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html) to collect, and how often the Source polls.
+The Sumo Logic source for AWS Cost Explorer collects daily cost and usage data from [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/). You choose how the cost is broken down (for example by service and account, or by service and region), which [cost metrics](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html) to collect, and how often the source polls.
 
 :::important
 AWS charges **$0.01 for each Cost Explorer API request**, and most settings on this Source change the number of requests. Review [AWS API cost](#aws-api-cost) before you enable more than the default cost groupings or load a long history.
