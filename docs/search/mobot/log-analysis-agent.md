@@ -23,11 +23,6 @@ The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging 
 
 You reach the agent through DojoAI. You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
 
-## Analyze logs with Mobot
-
-Ask Mobot a question in plain language, such as `Show me services with the highest error rates in the last hour`. The agent interprets your intent, finds the right data, runs a multi-step analysis, and returns findings with suggested next steps. See [Mobot](/docs/search/mobot/) to work with results and [Mobot Example Prompts](/docs/search/mobot/example-prompts) for more prompts.
-
-To create a monitor from a conversation, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
 :::note
 Do not confuse the Log Analysis Agent with [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) or [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist). Those are UI features you use directly on the Search page, not through a conversation.
