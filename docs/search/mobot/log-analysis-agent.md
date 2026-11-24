@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
 
 :::info
-Agent recommendations are in Public Preview. To participate, contact your Sumo Logic account representative.
+Log Analysis Agent is in Private Preview. To participate, contact your Sumo Logic account representative.
 :::
 
 The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging issues in log patterns and recommends monitors for them, so coverage gaps close before the next incident occurs to improve reliability.
