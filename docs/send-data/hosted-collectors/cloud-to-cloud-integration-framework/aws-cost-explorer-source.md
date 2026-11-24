@@ -113,6 +113,7 @@ Only long-term access keys (starting with `AKIA`) are supported. Temporary crede
 When you create an AWS Cost Explorer Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an AWS Cost Explorer Source:
+
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **AWS Cost Explorer**.
