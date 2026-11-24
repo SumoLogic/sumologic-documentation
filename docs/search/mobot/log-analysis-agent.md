@@ -52,7 +52,7 @@ For a monitor recommendation, you can click an item on **Recommendations** to op
 
 * **Apply**. Commits the fix in one click.
 * **Change at source**. Review recommendation and customize it at the product page directly.
-* **Dismiss**. Removes the recommendation from the active list.
+* **Contact owner**. Notifies the asset maintainer if the user lacks edit permission.
 **Reject**. dismisses it with a reason tag. Rejections apply to everyone in the organization.
 ## Limitations
 
