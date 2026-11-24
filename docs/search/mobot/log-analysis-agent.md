@@ -21,7 +21,7 @@ Agent recommendations are in Public Preview. To participate, contact your Sumo L
 
 The Log Analysis Agent is one of DojoAI's specialized agents. It guides log analysis from plain-language questions, so you do not need deep knowledge of your data schema or the Sumo Logic query language. In the background, it recommends monitors for searches your team keeps repeating and flags duplicate and debug logs that add to your ingest volume.
 
-You reach the agent through [Mobot](/docs/search/mobot/), which routes your prompt to it automatically. You do not see the agent's name in the UI. It was formerly the Query Agent, and query writing is one of its skills, alongside conversational content and recommendations.
+You reach the agent through DojoAI. You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
 
 ## Analyze logs with Mobot
 
