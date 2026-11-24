@@ -50,7 +50,7 @@ Use this script [MigrateAWSOStackToV300.sh](https://raw.githubusercontent.com/Su
 ### What stays the same
 
 - Your Sumo Logic collector (same name and ID)
-- All Sumo Logic sources (reused by name — same IDs, no data gap)
+- All Sumo Logic sources (reused by name, same IDs)
 - Your S3 log buckets and all existing log data
 
 ### What changes
@@ -421,7 +421,7 @@ The script:
 ### What stays the same
 
 - Your Sumo Logic collectors (same names and IDs — one per account)
-- All Sumo Logic sources (reused by name — same IDs, no data gap)
+- All Sumo Logic sources (reused by name, same IDs)
 - Your S3 log buckets and all existing log data
 - The existing StackSet, when using `all` mode without `-n` (updated in-place).
 

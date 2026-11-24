@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatconnect.png')} alt="ThreatConnect icon" width="100"/>
 
-***Version: 1.4  
-Updated: October 15, 2026***
+***Version: 1.5.0  
+Updated: November 20, 2026***
 
 [ThreatConnect](https://knowledge.threatconnect.com/docs/threatconnect-platform) is a threat intelligence platform that supports threat detection, security operations, and cyber risk management. Utilize ThreatConnect intelligence data during incident investigations using V3 APIs.
 
@@ -47,6 +47,7 @@ For information about ThreatConnect, see [ThreatConnect documentation](https://d
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.5.0 | November 20, 2026 | <ul><li>Added **ATT&CK Tags**, **Description**, and **Additional Analysis and Context** fields to the **Update Intelligence** action. You can now add MITRE ATT&CK techniques as tags and add descriptive attributes to an indicator.</li><li>Improved the **Update Intelligence** action to avoid adding duplicate attributes when it runs more than once on the same indicator.</li></ul> |
 | v1.4 | October 15, 2026 | <ul><li>Added **Tags** and **Tags Mode** fields to the **Update Intelligence** action. You can now add, replace, or remove tags on an indicator.</li><li>Added the **Owner** field to the **Update Intelligence** action, matching the **Search Intelligence** action, so you can specify the owner of the indicator you want to update.</li><li>Fixed an issue where the **Search Intelligence** action could fail when you didn't select an indicator type.</li></ul> |
 | v1.3 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | | February 19, 2026 | <ul><li>Added an observations parameter to the **Update Intelligence** action to enable recording observation counts for indicators.</li><li>Added output field definitions, which help with playbook data mapping.</li></ul> |
