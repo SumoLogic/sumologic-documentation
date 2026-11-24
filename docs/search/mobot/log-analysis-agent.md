@@ -60,7 +60,7 @@ For a monitor recommendation, you can:
 * **Create monitor**. Opens the monitor creation window with the query and suggested threshold filled in, so you can save the monitor or customize it first.
 * **Change at source**. Review recommendation and customize it at the product page directly.
 * **Dismiss**. Removes the recommendation from the active list.
-
+**Reject**. dismisses it with a reason tag. Rejections apply to everyone in the organization.
 ## Limitations
 
 * **Logs only**. The agent does not cover metrics, traces, or other telemetry types.
