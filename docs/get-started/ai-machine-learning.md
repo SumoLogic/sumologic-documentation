@@ -54,7 +54,7 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot head icon" width="45"/>
 
-[Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
+[Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, such as the ones listed in forthcoming sections.
 
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language such as monitors, dashboards, and playbooks.
 
@@ -72,11 +72,7 @@ The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Conta
 
 ### Log Analysis Agent
 
-[Log Analysis Agent](/docs/search/mobot/log-analysis-agent) analyzes logs and gives recommendations to detect emerging issues proactively before the next incident occurs and impacts your customers.
-
-### Platform Optimization Agent
-
-[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
+[Log Analysis Agent](/docs/search/mobot/log-analysis-agent) analyzes logs and gives recommendations to detect emerging issues proactively before the next incident occurs and impacts your customers. Currently in Private Preview. To participate, contact your Sumo Logic account representative.
 
 ### SOC Analyst Agent
 
@@ -87,6 +83,16 @@ Investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/ge
 :::note
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 :::
+
+### Platform Optimization Agent
+
+[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
+
+### DojoAI credits
+
+DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts and SOC Analyst Agent investigated insights use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
+
+You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
 
 ### Sumo Logic MCP server
 
