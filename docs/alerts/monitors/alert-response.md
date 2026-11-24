@@ -97,7 +97,7 @@ For example, when you open an alert response page in Metrics Search, you can see
 To view the alert response chart in Metrics Search, follow the steps below:
 
 1. Navigate to your [Alert List](#alert-list) and select the alert for which you want to view the corresponding metrics and threshold values.
-1. Click the **View in Metrics Search** button for that alert. You can click either of the two buttons, and they both function the same way.
+1. Click the **View in Metrics Explorer** button for that alert. You can click either of the two buttons, and they both function the same way. <br/> <img src={useBaseUrl('img/alerts/view-in-metrics-explorer.png')} alt="Threshold metrics explorer" width="800"/>
 1. The Metrics Search view will open with the graph of the metric associated with the alert.
 1. In the **Threshold** section of the Metrics Search, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="Threshold metrics explorer" width="800"/>
 1. The thresholds will be enabled and only the ones that are defined in the monitor will be displayed.
@@ -111,7 +111,11 @@ Note that the same threshold translating functionality supports to [Create Monit
 
 ## Alert details
 
-To view detailed information about an alert, go to your [Alert List](#alert-list) and click any row. The upper section (above the [context cards](#alert-context-cards)) provides an overview of the alert that was triggered to help get to the root cause of an issue quickly, such as:
+Follow the steps below to view detailed information about an alert:
+1. Navigate to your [Alert List](#alert-list) and click any row. 
+1. Click **Open**.<br/><img src={useBaseUrl('img/alerts/open-alerts-details-page.png')} alt="open alerts details page" style={{border: '1px solid gray'}} width="800" />
+
+The upper section (above the [context cards](#alert-context-cards)) provides an overview of the alert that was triggered to help get to the root cause of an issue quickly, such as:
 
 * A chart visualizing the alerting KPI before and during the alert.
 * A table displaying the raw data that triggered the alert.
