@@ -39,7 +39,7 @@ Instead of waiting for a question, the agent analyzes how your team searches and
 
 | Category | Recommendation | What the agent does |
 |:--|:--|:--|
-| Reliability | **Create monitor** | Spots searches your team keeps repeating and recommends a monitor for them, so coverage gaps close before the next incident. |
+| Reliability | **Create monitor** | Spots emerging issues in your logs and recommends what to monitor, so coverage gaps close before the next incident. |
 | Cost efficiency | **Remove duplicate logs** | Detects identical log streams that are ingested more than once. |
 | Cost efficiency | **Reduce debug log ingestion** | Flags debug logs that run continuously in production, so you can trim unneeded log volume. |
 
