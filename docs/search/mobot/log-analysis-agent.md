@@ -2,7 +2,7 @@
 id: log-analysis-agent
 title: Log Analysis Agent
 sidebar_label: Log Analysis Agent ✨
-description: See how the Log Analysis Agent guides log analysis through Mobot and recommends monitors and ingest savings from repeated searches and duplicate or debug logs.
+description: Use the Sumo Logic Log Analysis Agent, a DojoAI agent in Mobot, to guide log analysis and get monitor recommendations for proactive anomaly detection.
 keywords:
   - log analysis agent
   - query agent
