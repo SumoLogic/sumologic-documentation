@@ -150,6 +150,11 @@ module.exports = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
+          // A category that links to its own index doc must not list that doc again as an item.
+          async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+            const items = await defaultSidebarItemsGenerator(args);
+            return items.filter((item) => !(item.type === 'doc' && item.id.endsWith('/index')));
+          },
           editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
           //sidebarCollapsible: true,
           //sidebarCollapsed: false,

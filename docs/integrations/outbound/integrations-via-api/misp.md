@@ -1,0 +1,60 @@
+---
+title: MISP
+description: ''
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/misp.png')} alt="misp" width="100"/>
+
+***Version: 1.4  
+Updated: April 30, 2026***
+
+Utilize MISP intelligence data during incident investigations.
+
+## Actions
+
+* **Get Object Templates** (*Enrichment*) - Gather all object templates.
+* **Get Tags** (*Enrichment*) - Gather all tags.
+* **Search Intelligence** (*Enrichment*) - Search MISP data for information matching the specified query.
+* **Search MISP Attribute** (*Daemon*) - Search MISP attributes.
+* **Search MISP Intelligence** (*Daemon*) - Search MISP intelligence.
+* **Add Attribute** (*Notification*) - Add a new attribute.
+* **Add Event** (*Notification*) - Add a new event.
+* **Add Object** (*Notification*) - Add a new object.
+* **Update Attribute** (*Enrichment*) - Update an existing attribute.
+* **Update Event** (*Enrichment*) - Update an existing attribute.
+
+## Configure MISP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your MISP server URL, for example, `https://192.0.0.1`
+
+* **API Key**. Enter your MISP [API key](https://www.circl.lu/doc/misp/automation/#creating-an-automation-key-using-advanced-authkeys).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/misp-configuration.png')} style={{border:'1px solid gray'}} alt="MISP configuration" width="400"/>
+
+For information about MISP, see [MISP documentation](https://www.circl.lu/doc/misp/).
+
+## Change Log
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.2 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from MISP OIF to MISP.</li></ul> |
+| | August 02, 2022 | <ul><li>Updated the **Search MISP Intelligence** action to remove duplicate data from the Daemon.</li><li>Updated the **Search MISP Attribute** action to remove duplicate data from the Daemon.</li><li>Updated the **Search Intelligence** action to add a new field, Search All.</li></ul> |
+| | July 1, 2020 | Added new actions. |
+| | December 19, 2019 | Initial release of the MISP integration. |
