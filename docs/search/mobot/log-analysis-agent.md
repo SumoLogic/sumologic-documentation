@@ -58,7 +58,7 @@ Recommendations appear on the **Recommendations** page, where you review them. T
 For a monitor recommendation, you can:
 
 * **Create monitor**. Opens the monitor creation window with the query and suggested threshold filled in, so you can save the monitor or customize it first.
-* **Acknowledge**. Confirms you have seen the recommendation.
+* **Change at source**. Review recommendation and customize it at the product page directly.
 * **Dismiss**. Removes the recommendation from the active list.
 
 ## Limitations
