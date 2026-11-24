@@ -2,7 +2,7 @@
 id: log-analysis-agent
 title: Log Analysis Agent
 sidebar_label: Log Analysis Agent ✨
-description: Use the Sumo Logic Log Analysis Agent, a DojoAI agent in Mobot, to guide log analysis and get monitor recommendations for proactive anomaly detection.
+description: Log Analysis Agent is the DojoAI agent that guides log analysis and recommends creating monitors for proactive anomaly detection.
 keywords:
   - log analysis agent
   - query agent
@@ -13,10 +13,10 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 :::info
-Agent recommendations are in Public Preview. To participate, contact your Sumo Logic account representative.
+Log Analysis Agent is in Private Preview. To participate, contact your Sumo Logic account representative.
 :::
 
 The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging issues in log patterns and recommends monitors for them, so coverage gaps close before the next incident occurs to improve reliability.
@@ -53,7 +53,7 @@ For a monitor recommendation, you can click an item on **Recommendations** to op
 
 * **Logs only**. The agent does not cover metrics, traces, or other telemetry types.
 * **Read-only analysis**. The agent can query and analyze data but cannot modify, delete, or ingest data, and it has no access to external systems.
-* **Retained data only**. The agent works only with ingested data that is still within your retention window. 
+* **Retained data only**. The agent works only with ingested data that is still within your retention window.
 
 ## Additional resources
 
