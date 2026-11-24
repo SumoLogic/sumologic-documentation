@@ -13,7 +13,7 @@ hide_table_of_contents: true
 
 ## SOC Analyst Agent: Investigation trace
 
-You can now see how the SOC Analyst Agent reached its verdict on an insight. Click **View investigation trace** on the insight's **AI Investigation** tab to review each step the agent took, the queries it ran, and the findings behind its conclusion. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#view-the-investigation-trace).
+You can now see how the SOC Analyst Agent reached its verdict on an insight. Click **View Full Investigation Process** on the insight's **AI Investigation** tab to review each step the agent took, the queries it ran, and the findings behind its conclusion. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#view-the-investigation-trace).
 
 ## SOC Analyst Agent: Recommended Actions
 
