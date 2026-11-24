@@ -60,7 +60,7 @@ The Source needs one read-only permission, `ce:GetCostAndUsage`. Attach the foll
 }
 ```
 
-Cost Explorer does not support resource-level permissions, so `Resource` must be `"*"`.
+Cost Explorer does not support resource-level permissions, so you need to set `Resource` to `"*"`.
 
 #### Cost allocation tags (optional)
 
