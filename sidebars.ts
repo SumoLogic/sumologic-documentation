@@ -953,6 +953,7 @@ module.exports = {
         'manage/field-extractions/safend-field-extraction',
       ]
     },
+    'manage/data-pipelines',
     {
       type: 'category',
       label: 'Partitions',
@@ -1460,7 +1461,6 @@ module.exports = {
             'search/get-started-with-search/search-page/navigate-through-search-results',
             'search/get-started-with-search/search-page/search-highlighting',
             'search/get-started-with-search/search-page/search-load-indicator',
-            'search/get-started-with-search/search-page/search-modes',
             'search/get-started-with-search/search-page/set-messages-tab-preferences',
             'search/get-started-with-search/search-page/wildcards-in-full-text-searches',
           ],
@@ -3351,7 +3351,15 @@ integrations: [
             'api/about-apis/troubleshooting',
           ],
         },
-        'api/mcp-server',
+        {
+          type: 'category',
+          label: 'Sumo Logic MCP Server ✨',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'api/mcp-server/index'},
+          items: [
+          ],
+        },
         'api/access-keys',
         'api/account-management',
         'api/app-management',
