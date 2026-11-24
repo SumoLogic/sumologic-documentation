@@ -53,7 +53,7 @@ Each monitor recommendation shows:
 
 ### Work with a recommendation
 
-Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily, and items you accept or dismiss clear on the next refresh.
+Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily.
 
 For a monitor recommendation, you can:
 
