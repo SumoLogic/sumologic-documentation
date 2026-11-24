@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Agent recommendations are in Public Preview. To participate, contact your Sumo Logic account representative.
 :::
 
-The Log Analysis Agent is one of DojoAI's specialized agents. It guides log analysis from plain-language questions, so you do not need deep knowledge of your data schema or the Sumo Logic query language. In the background, it recommends monitors for searches your team keeps repeating and flags duplicate and debug logs that add to your ingest volume.
+The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging issues in log patterns and recommends monitors for them, so coverage gaps close before the next incident occurs to improve reliability.
 
 You reach the agent through DojoAI. You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
 
