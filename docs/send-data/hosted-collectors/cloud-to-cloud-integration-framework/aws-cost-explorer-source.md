@@ -156,7 +156,7 @@ AWS charges **$0.01 per Cost Explorer API request**, and each page of results is
 
 (number of groupings × pages per grouping) × polls per day × 30 × $0.01
 
-For example, with the two default groupings, 3 pages each and a 12-hour interval, that is 6 × 2 × 30 × $0.01, about $3.60 per month. Adding one tag key makes it about $5.40 per month. The number of pages depends on the size of your organization, so treat this as a rough guide.
+For example, with the two default groupings, three pages each and a 12-hour interval, that is 6 × 2 × 30 × $0.01, about $3.60 per month. Adding one tag key makes it about $5.40 per month. The number of pages depends on the size of your organization, so treat this as a rough guide.
 
 | Setting | Effect on AWS requests |
 |:--|:--|
