@@ -124,7 +124,7 @@ To configure an AWS Cost Explorer Source:
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **AWS Access**. Select **Role-based access** (recommended) and enter the **Role ARN**, or select **Key access** and enter the **Access Key ID** and **Secret Access Key**. See [Authentication](#authentication).
 1. **Cost Data**.
-   * **Cost Groupings**. Select how the cost is broken down. Each grouping is a separate series of paid AWS requests and a full view of the same total cost, so groupings must not be added together. The default is **Service by account** and **Service by region**.
+   * **Cost Groupings**. Select how the cost is broken down. Each grouping is a separate series of paid AWS requests and a full view of the same total cost, so do not add groupings together. The default is **Service by account** and **Service by region**.
 
      | Grouping | `grouping` value | Use it to see |
      |:--|:--|:--|
