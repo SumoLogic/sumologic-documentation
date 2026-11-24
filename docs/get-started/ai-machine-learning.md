@@ -56,9 +56,6 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 
 [Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
 
-* **[Log Analysis Agent](/docs/search/mobot/log-analysis-agent)** analyzes logs and gives recommendations to detect emerging issues proactively before the next incident occurs and impacts your customers. 
-* **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
-
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language such as monitors, dashboards, and playbooks.
 
 See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
@@ -73,11 +70,13 @@ Investigations start when an alert matches a trigger you configure, or you can s
 The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Contact your Sumo Logic account representative for access.
 :::
 
-### DojoAI Credits
+### Log Analysis Agent
 
-DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts and SOC Analyst Agent investigated insights use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
+[Log Analysis Agent](/docs/search/mobot/log-analysis-agent) analyzes logs and gives recommendations to detect emerging issues proactively before the next incident occurs and impacts your customers.
 
-You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
+### Platform Optimization Agent
+
+[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
 
 ### SOC Analyst Agent
 
