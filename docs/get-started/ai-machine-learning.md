@@ -171,7 +171,9 @@ AI features are on by default. We offer two methods for opting out:
 
 ### Does the Log Analysis Agent make recommendations on its own?
 
-Yes. In the background, the Log Analysis Agent finds searches your team repeats and recommends monitors for them. It also flags duplicate logs and debug logs that add to your ingest volume. You review each recommendation and decide what to do, so nothing changes automatically. Recommendations are in Public Preview, and your Sumo Logic account representative needs to enable them. Learn more in [Log Analysis Agent](/docs/search/mobot/log-analysis-agent).
+Yes. In the background, the Log Analysis Agent finds coverage gaps across the Sumo environment and suggests creating monitors on them to catch issues proactively. You review each recommendation and decide what to do, so nothing changes automatically.
+
+The Recommendations feature is in Extended Preview. To participate, contact your Sumo Logic account representative. [Learn more](/docs/search/mobot/log-analysis-agent).
 
 ### Can DojoAI access be controlled at a user level?
 
