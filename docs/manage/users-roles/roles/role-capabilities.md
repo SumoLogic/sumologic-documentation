@@ -269,8 +269,8 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Value Overview | View the **Summary** card on the [Insights page](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#summary-card), which shows insight volume and SOC Analyst Agent activity. | {/* TBD */} |
-| Manage Value Overview | Manage Value Overview. | {/* TBD */} |
+| View Value Overview | View the **Summary** card on the [Insights page](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#summary-card), which shows insight volume and SOC Analyst Agent activity. | `viewValueOverview` |
+| Manage Value Overview | Manage Value Overview. | `manageValueOverview` |
 
 ### Content
 
