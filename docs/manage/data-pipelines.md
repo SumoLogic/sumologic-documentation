@@ -12,8 +12,26 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Data Pipelines give you a single place to define how your logs are processed and routed in Sumo Logic. You build a pipeline on a visual graph, test it with sample data, and publish it when you are confident it works.
+
+:::training Micro Lesson
+Watch this micro lesson to get an introduction to Data Pipelines.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/ltgehjdp7i?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Introducing Data Pipelines"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## Benefits of Data Pipelines
 

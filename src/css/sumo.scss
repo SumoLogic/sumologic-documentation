@@ -633,17 +633,20 @@ html[data-theme='dark'] .DocSearch-Search-Icon {
 }
 
 div[class*="announcementBar_"] {
+  // Matches the re:Invent campaign look: dark navy through blue into purple and magenta
   background: linear-gradient(
     to right,
-    #003A82 0%,
-    #0055B7 35%,
-    #1A73D4 70%,
-    #2E86C1 100%
+    #020146 0%, // Dark Blue 2
+    #000099 30%, // Sumo Blue
+    #0800FF 55%, // Vivid Blue
+    #9B00DF 80%, // Sumo Purple
+    #DB0283 100% // Sumo Magenta
   ) !important;
+  color: #fff;
 }
 
 div[class*="announcementBar_"] a {
-  color: #C5E3FF;
+  color: #fff;
   font-weight: 600;
   text-decoration: underline;
 }
