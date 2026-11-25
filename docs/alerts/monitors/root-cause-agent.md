@@ -2,7 +2,7 @@
 id: root-cause-agent
 title: Root Cause Agent
 sidebar_label: Root Cause Agent ✨
-description: Root Cause Agent, one of Sumo Logic's DojoAI agents, investigates observability alerts on demand and returns evidence-backed root causes based on relevant telemetry across your logs and metrics.
+description: Root Cause Agent, one of Sumo Logic's DojoAI agents, investigates observability alerts automatically (if configured) or on demand and returns evidence-backed root causes based on relevant telemetry across your logs and metrics.
 keywords:
   - mobot
   - dojoai
@@ -18,13 +18,14 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Root Cause Agent is one of the specialized agents in [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai), each built for a different job. Root Cause Agent investigates [observability alerts](/docs/alerts). After getting an alert, DevOps and SRE teams can launch an AI-driven investigation directly from an alert's details page. The Root Cause Agent gathers relevant telemetry on its own, follows the signal across your logs and metrics, and posts its findings to the alert's **AI Investigation** tab.
+The Root Cause Agent is one of the specialized agents in [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai), each built for a different job. Root Cause Agent investigates [observability alerts](/docs/alerts). After getting an alert, DevOps and SRE teams can launch a manual AI-driven investigation directly from an alert's details page or configure it to auto-trigger on alert creation via Dojo Studio. The Root Cause Agent gathers relevant telemetry on its own, follows the signal across your logs and metrics, and posts its findings to the alert's **AI Investigation** tab.
 
 Monitors and alert rules are deterministic: they fire when a predefined threshold or condition is met. The Root Cause Agent is agentic: it takes the alert as a starting point, investigates across available signals, forms a hypothesis, and explains why it believes a particular cause is responsible. The monitor tells you something happened; the agent helps investigate why. It is complementary to monitoring, not a replacement for it.
 
 The Root Cause Agent performs the following jobs:
+* **Automatic investigation**. Configure the agent in Dojo Studio to investigate alerts automatically when they are created.
 * **On-demand investigation**. Start an investigation from an alert's details page to get an evidence-backed root cause without manually digging through logs and metrics.
-   * **AI Verdict**. What it believes the root cause is, or a clear statement that it could not conclude.
+   * **AI Verdict**. The status of the investigation and whether the agent was able to find the root cause: **Not Investigated**, **In Progress**, **Investigation Error**, **Root Cause Identified**, **Inconclusive**, or **False Positive**. See [AI Verdict](#ai-verdict).
    * **What Happened**. A narrative summary of what occurred, backed by the knowledge sources the agent consulted.
    * **Key Findings**. The steps that led there, each backed by the log search or metrics query that produced it.
    * **Recommended Actions**. Suggested next steps for you to act on.
@@ -38,7 +39,7 @@ The Root Cause Agent provides the following functionality:
 
 ## Run a root cause analysis
 
-You start investigations on demand from an alert's details page. The Root Cause Agent runs one investigation per alert and posts its findings to the **AI Investigation** tab of each individual alert's details page.
+You start investigations on demand from an alert's details page or auto-trigger it via Triggers in Dojo Studio. The Root Cause Agent runs one investigation per alert and posts its findings to the **AI Investigation** tab of each individual alert's details page.
 
 1. From your left navigation, click **Alerts**.
 1. In your **Alert List**, the **AI Verdict** column shows whether the alert has been investigated. Click any alert row to open its details.<br/><img src={useBaseUrl('img/alerts/monitors/root-cause-agent-alerts.png')} alt="Alert List with the AI Verdict column" style={{border: '1px solid gray'}} width="800" />
@@ -99,6 +100,10 @@ This section lists suggested actions, each with a title and explanation, such as
 
 The agent operates with read-only access to your logs and metrics data. It investigates and recommends, and does not take action on your systems.
 
+Investigations run in the following context:
+* **Automatic investigations**. The agent owner, if one is configured. Otherwise, the `runAs` user for the monitor.
+* **Manual investigations**. The user who starts the investigation.
+
 Each investigation is recorded as an audit event in the Sumo Logic audit index, which you can search to track agent activity. Agent-level governance covering permissions, roles, and scoping is planned for a future release. Compliance and security reviews go through the standard review path with your account team.
 
 ## Review relevant alerts and monitor history
@@ -138,7 +143,7 @@ After each response, Mobot retains the context of your investigation and present
 * **Traces and APM-based investigation**. Investigations run across logs and metrics. Distributed trace reasoning and service map awareness are not currently part of the investigation.
 * **Deduplication of investigations**. If the same incident arrives through more than one alert, you may see more than one investigation.
 * **External alerts**. Investigation covers alerts from Sumo Logic monitors. Investigation from external alerting systems is planned for a future release.
-* **Alerts**. Limit of 10 alerts investigated per minute.
+* **Investigation limit**. Limit of 5 investigations per day.
 * **Not conclusive on every alert**. A meaningful share of investigations return **Inconclusive** by design. See [AI Verdict](#ai-verdict).
 
 ## FAQ
