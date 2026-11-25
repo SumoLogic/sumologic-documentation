@@ -19,7 +19,7 @@ Usage Attribution (also called Granular Usage Visibility) is a dashboard in Sumo
 
 Use it to find the teams, services, and environments that ingest the most data, see how that volume splits across data tiers, and map raw source fields to the team and owner responsible for the data. You can also track how much of your volume is still unassigned so you can improve your tagging, and review usage trends over time for chargeback and showback reporting, without building custom dashboards.
 
-## Pre-requisites
+## Prerequisites
 
 Usage Attribution builds on the Data Volume Index. Before you use it:
 
