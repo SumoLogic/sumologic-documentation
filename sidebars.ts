@@ -3400,6 +3400,7 @@ integrations: [
         'api/threat-intel-ingest',
         'api/token-management',
         'api/tracing',
+        'api/usage-attribution',
         'api/user-management',
       ],
     },

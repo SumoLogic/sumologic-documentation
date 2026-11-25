@@ -15,7 +15,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Usage Attribution (also called Granular Usage Visibility) is a dashboard in Sumo Logic that attributes your ingest volume to teams, services, environments, and owners. It breaks down volume and data tier by fields such as `_sourceCategory`, collector, and host, or by your own custom tags and ownership fields such as team and owner. It reports volume and data tier only. It does not calculate dollar or credit costs.
+Usage Attribution (also called Granular Usage Visibility) is a dashboard in Sumo Logic that attributes your ingest volume to teams, services, environments, and owners. It breaks down volume and data tier by fields such as `_sourceCategory`, collector, and host, or by your own custom tags and the columns from your ownership lookup CSV, such as team and owner. It reports volume and data tier only. It does not calculate dollar or credit costs.
 
 Use it to find the teams, services, and environments that ingest the most data, see how that volume splits across data tiers, and map raw source fields to the team and owner responsible for the data. You can also track how much of your volume is still unassigned so you can improve your tagging, and review usage trends over time for chargeback and showback reporting, without building custom dashboards.
 
@@ -24,7 +24,7 @@ Use it to find the teams, services, and environments that ingest the most data, 
 Usage Attribution builds on the Data Volume Index. Before you use it:
 
 - Make sure the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) is enabled for your organization. Credits accounts need an administrator to turn on **Enable Granular Data Tracking**.
-- Make sure you have the permissions to view or configure Usage Attribution. Contact your Sumo Logic administrator if you do not see the tab.
+- Make sure you have the [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#usage-management) you need. The **View Usage Management** capability lets you see the **Usage Attribution** tab and its data. The **Manage Usage Management** capability lets you change the configuration, such as custom tags and the lookup CSV. Contact your Sumo Logic administrator if you do not see the tab.
 
 :::note
 Usage Attribution data starts when the Data Volume Index is enabled. Sumo Logic does not rebuild historical data.
@@ -64,8 +64,8 @@ Use the variables to filter the data. The variables are hidden by default. Click
 
 The variables are:
 
-- **Breakdown by.** A dropdown list that sets the field the dashboard groups volume by. Select `collector`, `owner`, `sourceCategory`, `sourceHost`, `sourceName`, `team`, or `viewName`. The panels that follow the selected field update to match. For example, select `collector` to see **Volume by collector (Top 10)**, **Top Consumers by collector**, and the other collector panels. The list also includes any custom tags you add and the columns from your ownership lookup CSV.
-- **Field boxes.** One box for each field in the **Breakdown by** list: `collector`, `owner`, `sourceCategory`, `sourceHost`, `sourceName`, `team`, and `viewName`. Enter a value in a box to narrow every panel to data that matches it. For example, enter `prod-k8s-us-west` in the **collector** box to see only the volume, tiers, and entities for that collector. Filtering by a field from your ownership lookup, such as `team` or `owner`, narrows every panel in the same way.
+- **Breakdown by.** A dropdown list that sets the field the dashboard groups volume by. By default, you can select `collector`, `sourceCategory`, `sourceHost`, `sourceName`, or `viewName`. The list also includes any custom tags you add and every column from your ownership lookup CSV, such as `team` or `owner`. The panels that follow the selected field update to match. For example, select `collector` to see **Volume by collector (Top 10)**, **Top Consumers by collector**, and the other collector panels.
+- **Field boxes.** One box for each field in the **Breakdown by** list. Enter a value in a box to narrow every panel to data that matches it. For example, enter `prod-k8s-us-west` in the **collector** box to see only the volume, tiers, and entities for that collector. Filtering by a custom tag or a column from your ownership lookup CSV, such as `team` or `owner`, narrows every panel in the same way.
 - **Tier.** Select a data tier to show only that tier. The default is **All**.
 
 <img src={useBaseUrl('img/manage/ingestion-volume/usage-attribution/filters-and-time-panels.png')} alt="Usage Attribution dashboard with the filter variables open, including Breakdown by, a box for each field, and Tier" style={{border: '1px solid gray'}} width="800" />
@@ -150,7 +150,7 @@ To keep breakdowns useful:
 
 ### Why is the Usage Attribution tab missing for me?
 
-Make sure you have the required permissions and that the Data Volume Index is enabled for your organization. If both are in place and the tab is still missing, contact your Sumo Logic administrator.
+Make sure you have the **View Usage Management** role capability and that the Data Volume Index is enabled for your organization. If both are in place and the tab is still missing, contact your Sumo Logic administrator.
 
 ### Why is my dashboard empty or missing recent data?
 
@@ -178,6 +178,7 @@ Select `team` in **Breakdown by**, and then read **Top Consumers by team**. This
 
 ## Related documentation
 
+- [Usage Attribution APIs](/docs/api/usage-attribution)
 - [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/)
 - [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets/)
 - [Manage Plan](/docs/manage/manage-subscription/)

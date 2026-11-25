@@ -144,8 +144,8 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Usage Management | View [scan budget](/docs/manage/manage-subscription/scan-budgets/). | `viewUsageManagement` |
-| Manage Usage Management | Manage scan budget. | `manageUsageManagement` |
+| View Usage Management | View [scan budget](/docs/manage/manage-subscription/scan-budgets/) and the [Usage Attribution](/docs/manage/ingestion-volume/usage-attribution/) tab and data. | `viewUsageManagement` |
+| Manage Usage Management | Manage scan budget and change the [Usage Attribution](/docs/manage/ingestion-volume/usage-attribution/) configuration, such as custom tags and the lookup CSV. | `manageUsageManagement` |
 
 ## Reliability Management
 
