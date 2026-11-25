@@ -43,12 +43,27 @@ For monitor recommendations, the agent looks at log patterns across the tenant's
 
 Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily.
 
-For a monitor recommendation, you can click an item on **Recommendations** to open the preview drawer, which shows a plain-language summary, estimated outcome and the recommended actions. Then:
+<img src={useBaseUrl('img/search/mobot/log-analysis-agent-recommendations.png')} alt="Recommendations page listing Monitor Gap recommendations with Category, Impact, Status, and Generated columns" style={{border: '1px solid gray'}} width="800" />
 
-* **Apply**. Commits the fix in one click.
-* **Change at source**. Review recommendation and customize it at the product page directly.
-* **Contact owner**. Notifies the asset maintainer if the user lacks edit permission.
-**Reject**. dismisses it with a reason tag. Rejections apply to everyone in the organization.
+Monitor recommendations are labeled **Monitor Gap** and have the **Reliability** category. Each row shows the recommendation, its category, impact, status, and when it was generated.
+
+To review a monitor recommendation, click it on the **Recommendations** page to open the preview drawer.
+
+<img src={useBaseUrl('img/search/mobot/log-analysis-agent-monitor-recommendation.png')} alt="Preview drawer for a Monitor Gap recommendation showing the expected outcome, recommended actions, and the recommended monitor name, query, and threshold" style={{border: '1px solid gray'}} width="800" />
+
+The drawer shows:
+
+* **Expected Outcome**. What the monitor would cover, based on your recent searches.
+* **Recommended Actions**. A plain-language explanation of why the agent recommends the monitor.
+* **Recommended Monitor**. The monitor name, query, and alert threshold.
+
+You can click the thumbs up or thumbs down icon under **Was this Recommendation useful?** to give feedback. Then choose one of the following:
+
+* **Apply**. Creates the recommended monitor immediately.
+* **Change at Source**. Opens the recommendation in the product so you can review and customize it before saving.
+* **Contact owner**. Notifies the asset maintainer if you lack edit permission.
+* **Reject**. Dismisses the recommendation with a reason tag. Rejections apply to everyone in the organization.
+
 ## Limitations
 
 * **Logs only**. The agent does not cover metrics, traces, or other telemetry types.

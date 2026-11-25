@@ -178,7 +178,7 @@ AI features are on by default. We offer two methods for opting out:
 
 Yes. In the background, the Log Analysis Agent finds coverage gaps across the Sumo environment and suggests creating monitors on them to catch issues proactively. You review each recommendation and decide what to do, so nothing changes automatically.
 
-The Recommendations feature is in Extended Preview. To participate, contact your Sumo Logic account representative. [Learn more](/docs/search/mobot/log-analysis-agent).
+The Recommendations feature is in Private Preview. To participate, contact your Sumo Logic account representative. [Learn more](/docs/search/mobot/log-analysis-agent).
 
 ### Can DojoAI access be controlled at a user level?
 
