@@ -46,7 +46,7 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 * **Content creation and management**. Create and manage monitors, dashboards, and playbooks through conversation, with a human in the loop before anything is deployed or activated. See [Create and manage content](#create-and-manage-content).
 * **Cloud SIEM investigations**. On a Cloud SIEM insight, click **Ask Mobot** to continue a [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) investigation in Mobot with the insight's evidence-backed verdict and context loaded. You start this from the insight, not from Mobot directly.
 * **Conversation history**. Saved conversations let you resume, revisit, or branch previous investigations.
-* **Mobot sidebar**. Open Mobot beside the page you are working on, with that page as context. See [Mobot Sidebar (Public Preview)](/docs/search/mobot/mobot-sidebar-preview).
+* **Mobot sidebar**. Open Mobot beside the page you are working on, with that page as context. See [Mobot Sidebar (Extended Preview)](/docs/search/mobot/mobot-sidebar-preview).
 
 ## At a glance
 

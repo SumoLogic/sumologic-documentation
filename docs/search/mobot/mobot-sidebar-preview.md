@@ -17,10 +17,10 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
 
 :::info
-This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+This feature is in Extended Preview. To participate, contact your Sumo Logic account team.
 :::
 
 The Mobot sidebar brings [Mobot](/docs/search/mobot) to the page you are already working on. Instead of switching to a separate chat window and copying queries, errors, and screen details into it, you open Mobot beside your work. Mobot sees the page you are on and can use that context to answer your questions.
@@ -29,7 +29,7 @@ With the sidebar, you can:
 
 * **Keep your place**. Ask Mobot about the page in front of you without leaving it.
 * **Use page context automatically**. Mobot starts with the context of your current page, such as the dashboard you are viewing.
-* **Work with Sumo Logic resources directly**. Mobot has more than 60 native tools that can analyze, create, and debug resources such as dashboards, queries, monitors, field extraction rules (FERs), and collectors.
+* **Get an AI collaborator for your workflows**. Mobot helps you analyze, create, and debug as you work, across the pages you use.
 
 ## Open the sidebar
 
@@ -38,6 +38,8 @@ With the sidebar, you can:
 
 Mobot runs the analysis and returns the results, including the queries it ran and a summary of what it found, in the sidebar.
 
+<img src={useBaseUrl('img/search/mobot/mobot-sidebar-open.png')} alt="Mobot sidebar open beside a page, with the Ask Mobot button highlighted in the top nav bar" style={{border: '1px solid gray'}} width="500" />
+
 For example, while viewing a dashboard of Amazon Bedrock AgentCore gateway metrics, you ask `Why do invocations drop on Nov 8th?` Mobot queries the invocations metric around that date, shows hourly invocation counts in a table, and explains that the drop reflects a weekend traffic pattern rather than an outage.
 
 ## Page context
@@ -45,6 +47,8 @@ For example, while viewing a dashboard of Amazon Bedrock AgentCore gateway metri
 Mobot uses the page you are on as context for your conversation. Every page provides context, though the depth of what Mobot can do may differ by page. A **Context** chip at the bottom of the sidebar, above the question field, shows the name of the page Mobot is using, for example **Dashboard**.
 
 To stop Mobot from using the page as context, click the **X** on the chip.
+
+<img src={useBaseUrl('img/search/mobot/mobot-sidebar-context-chip.png')} alt="Mobot sidebar showing a response from the SOC Analyst Agent, with the agent selector at the bottom right of the question field" style={{border: '1px solid gray'}} width="600" />
 
 When you move to another page:
 
@@ -55,22 +59,25 @@ When you move to another page:
 
 The top of the sidebar shows the title of the current conversation, with controls to:
 
-* View your conversation history.
-* Start a new conversation. Click the plus icon.
-* Change the view. Click the layout icon, and then under **Switch to**, select **Floating**, **Sidebar**, or **Full screen**.
-* Close the sidebar.
+<img src={useBaseUrl('img/search/mobot/mobot-sidebar-controls.png')} alt="Mobot sidebar header with the menu (a), plus (b), layout (c), and close (d) icons labeled" style={{border: '1px solid gray'}} width="500" />
+
+* **a. Menu icon**. View your conversation history.
+* **b. Plus icon**. Start a new conversation.
+* **c. Layout icon**. Change the view. Under **Switch to**, select **Floating**, **Sidebar**, or **Full screen**.
+* **d. Close icon**. Close the sidebar.
 
 ## What Mobot can do from the sidebar
 
-Mobot can use its native tools to work with Sumo Logic resources on any page, including:
-
-* Dashboards
-* Queries
-* Monitors
-* Field extraction rules (FERs)
-* Collectors
+Mobot can analyze, create, and debug as you work on any page. For example, you can ask about a dashboard, a query, a monitor, or a collector.
 
 Mobot asks for the same confirmation before creating content as it does on the Mobot page. After Mobot creates or changes content from the sidebar, refresh the page to see the updated content.
+
+## Limitations
+
+* The depth of functionality differs by workflow and page.
+* After Mobot creates or changes content from the sidebar, you need to refresh the page to see the update.
+
+Your feedback during Preview helps us improve. Share it with your Sumo Logic account team.
 
 ## FAQ
 
