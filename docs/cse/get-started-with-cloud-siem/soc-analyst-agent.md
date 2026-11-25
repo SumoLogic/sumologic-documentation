@@ -244,7 +244,7 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
 
 ### Does the agent learn from past investigations?
 
-Not automatically. The SOC Analyst Agent does not retrain its model or change its reasoning based on past investigations on its own. Org administrators can give the agent persistent [Agent Knowledge](/docs/get-started/dojo-studio#knowledge) about your environment, operational workflows, and past incidents, and the agent applies that knowledge to every investigation until someone updates or removes it.
+Yes, through memories and knowledge. The SOC Analyst Agent does not retrain its model, but it starts learning automatically from its runs and feedback with [Memory](/docs/get-started/dojo-studio#memories). To turn Memory on or off, go to **DojoAI** > **Studio** > **SOC Analyst Agent** > **General**. Administrators can also give the agent persistent [Agent Knowledge](/docs/get-started/dojo-studio#knowledge) about your environment, operational workflows, and past incidents, and the agent applies that knowledge to every investigation until someone updates or removes it.
 
 ### How does investigation rate limiting work?
 
