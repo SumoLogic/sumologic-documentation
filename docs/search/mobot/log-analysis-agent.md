@@ -34,7 +34,7 @@ Instead of waiting for a question, the agent analyzes how your team searches and
 The agent has the following skills:
 | Category | Recommendation | What the agent does |
 |:--|:--|:--|
-| Reliability | **Create monitor** | Spots emerging issues in your logs and recommends what to monitor, so coverage gaps close before the next incident. |
+| Reliability | **Create monitor** | Spots emerging issues in your logs and recommends what to monitor, to detect recurring issues sooner |
 
 For monitor recommendations, the agent looks at log patterns across the tenant's log data. It identifies coverage gaps and makes recommendations to create the missing monitor which detects anomalies proactively. It then checks whether an equivalent or substantially similar monitor already exists. If one does, it makes no recommendation.
 
