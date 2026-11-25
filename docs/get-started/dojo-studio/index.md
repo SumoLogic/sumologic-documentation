@@ -402,12 +402,12 @@ Tasks are the jobs an agent runs. Each task has its own instructions and trigger
 To add a task:
 
 1. Click **Tasks** > **Add Task**.
-1. Pick a pre-defined task from the library, then click **Next**.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-library.png')} alt="Add Task dialog showing the task library with the Investigate new alerts task" style={{border: '1px solid gray'}} width="500" />
+1. Pick a pre-defined task from the library, then click **Next**.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-library.png')} alt="Add Task dialog showing the task library with the Investigate new alerts and Triage new insights tasks" style={{border: '1px solid gray'}} width="500" />
 1. Enter a **Name** for the task. In **Instructions**, add anything you want the agent to do on top of Sumo Logic's built-in instructions for the task. Your instructions run after the built-in instructions, which are not shown, and can be up to 12,000 characters.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-details.png')} alt="Add Task dialog showing the Name and Instructions text boxes and the trigger" style={{border: '1px solid gray'}} width="500" />
 1. Set the **Trigger**, which is the event that starts the task. Choose how to apply it:
    * **Only run when matched**. The task runs only for alerts or Insights that match the conditions you add.
    * **Run on everything except**. The task runs on every alert or Insight except those that match the conditions you add.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-trigger.png')} alt="Add Task dialog showing trigger options Only run when matched and Run on everything except, with the Add condition button and the Enabled toggle" style={{border: '1px solid gray'}} width="500" />
-   * Click **Add condition** to add a condition. Select the condition field and its value from the dropdown menus. For example, the SOC Analyst Agent can run only when the Insight severity is Critical or High.
+   * Click **Add condition** to add a condition. Select the condition field and its value from the dropdown menus. For example, the SOC Analyst Agent can run only when the Insight severity is Critical or High.<br/><img src={useBaseUrl('img/get-started/dojo-studio/add-task-trigger-condition.png')} alt="Edit Task panel with a trigger set to run only when the Insight severity equals Critical or High" style={{border: '1px solid gray'}} width="800" />
 1. Turn on **Enabled** to start running the task. New tasks are off by default.
 1. Click **Save**.
 
