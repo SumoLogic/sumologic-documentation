@@ -31,7 +31,7 @@ Do not confuse the Log Analysis Agent with [search autocomplete](/docs/search/ge
 ## Recommendations
 
 Instead of waiting for a question, the agent analyzes how your team searches and what you ingest, then suggests an action. You review each recommendation and decide what to do. Nothing changes automatically.
-
+The agent has the following skills:
 | Category | Recommendation | What the agent does |
 |:--|:--|:--|
 | Reliability | **Create monitor** | Spots emerging issues in your logs and recommends what to monitor, so coverage gaps close before the next incident. |
