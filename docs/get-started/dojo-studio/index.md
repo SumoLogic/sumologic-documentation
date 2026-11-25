@@ -257,9 +257,6 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 * **Scoped to the agent**. Knowledge belongs to the agent you add it to. Each agent uses only its own knowledge, so add the same entry to each agent that needs it.
 * **Audit logging for knowledge**. A comprehensive record of who added or changed a fact, and when, is not yet available. Planned for a later phase.
 
-#### Pricing
-
-Pricing and packaging are being finalized. Your account team will have details before general availability.
 
 ### Memories
 
