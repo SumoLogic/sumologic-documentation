@@ -41,20 +41,20 @@ For monitor recommendations, the agent looks at log patterns across the tenant's
 
 ### Work with a recommendation
 
-Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily.
+Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily. For more about filtering, rejecting, and applying recommendations, see the [Recommendations page](/docs/search/mobot/dojoai-recommendations-preview) doc.
 
-<img src={useBaseUrl('img/search/mobot/log-analysis-agent-recommendations.png')} alt="Recommendations page listing Monitor Gap recommendations with Category, Impact, Status, and Generated columns" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/mobot/log-analysis-agent-recommendations.png')} alt="Recommendations page listing monitor recommendations with Category, Impact, Status, and Generated columns" style={{border: '1px solid gray'}} width="800" />
 
-Monitor recommendations are labeled **Monitor Gap** and have the **Reliability** category. Each row shows the recommendation, its category, impact, status, and when it was generated.
+Monitor recommendations start with **Create a monitor for** and have the **Reliability** category. Each row shows the recommendation, its category, impact, status, and when it was generated.
 
 To review a monitor recommendation, click it on the **Recommendations** page to open the preview drawer.
 
-<img src={useBaseUrl('img/search/mobot/log-analysis-agent-monitor-recommendation.png')} alt="Preview drawer for a Monitor Gap recommendation showing the expected outcome, recommended actions, and the recommended monitor name, query, and threshold" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/mobot/log-analysis-agent-monitor-recommendation.png')} alt="Preview drawer for a monitor recommendation showing the expected outcome, recommended actions, and the recommended monitor name, query, and threshold" style={{border: '1px solid gray'}} width="800" />
 
 The drawer shows:
 
-* **Expected Outcome**. What the monitor would cover, based on your recent searches.
-* **Recommended Actions**. A plain-language explanation of why the agent recommends the monitor.
+* **Expected Outcome**. What the monitor helps you detect.
+* **Recommended Actions**. How often the threshold would have triggered over the last seven days, with a reminder to configure a notification channel.
 * **Recommended Monitor**. The monitor name, query, and alert threshold.
 
 You can click the thumbs up or thumbs down icon under **Was this Recommendation useful?** to give feedback. Then choose one of the following:
