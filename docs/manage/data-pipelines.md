@@ -37,14 +37,20 @@ Watch this micro lesson to get an introduction to Data Pipelines.
 
 Processing capabilities in Sumo Logic, such as Field Extraction Rules (FERs), live in different places and follow different patterns. Data Pipelines bring these steps together so you can see how data flows and manage it in one place.
 
-Compared to FERs, Data Pipelines:
+Data Pipelines give you the following benefits:
 
-- Apply only the first matching pipeline to each log message. FERs do not guarantee the order in which overlapping rules run. With pipelines, you control the order by arranging pipelines with overlapping routing expressions.
-- Show your processing steps as a graph.
-- Let you test a whole pipeline, or only specific processing groups, with sample data before you publish it.
-- Show input and output data volume and health events for each pipeline.
+- **See your processing at a glance.** Each pipeline appears as a graph that runs from the routing expression through processing groups and routers to the Sumo Logic destination. You can see what happens to your data at every step.
+- **Process data the way you need.** Parse JSON, regex, and anchor patterns. Add, drop, and normalize fields. Mask or hash sensitive values such as email addresses, Social Security numbers, and credit card numbers. Run a SumoQL expression when you need more flexibility.
+- **Control where and when processing applies.** Use routing expressions to choose which logs enter a pipeline. Use routers to send messages down different paths, and filter conditions to run a processing group only on the messages that need it.
+- **Get predictable results.** Each log message is processed by only the first pipeline whose routing expression it matches. FERs do not guarantee the order in which overlapping rules run. With pipelines, you decide the order by arranging your pipelines, so you always know which one applies.
+- **Test before you publish.** Run sample messages through a whole pipeline or a single processing group, and compare the raw input to the processed output. Point to any field to see how each step changed it.
+- **Change with confidence.** Published pipelines are read-only. Edit a draft, test it, and publish it when you are ready. Your live data is not affected until you publish.
+- **Monitor pipeline health.** See input and output data volume for the last 24 hours and health events for each pipeline. If a step fails, a warning icon on the node in the graph shows you where.
+- **Work with logs from any collection method.** Pipelines handle logs from installed collectors, hosted collectors, OpenTelemetry Collectors, and Cloud-to-Cloud (C2C) sources. A message enters a pipeline if it matches the pipeline's routing expression.
 
-Data Pipelines work with logs from any collection method, including installed collectors, hosted collectors, OpenTelemetry Collectors, and Cloud-to-Cloud (C2C) sources. A message enters a pipeline if it matches the pipeline's routing expression.
+### Should you migrate from FERs?
+
+For new processing, and for new Sumo Logic organizations, Data Pipelines are the best place to start. If you already have working ingest-time FERs that you do not need to change, migrating gives you fewer benefits today, and FERs keep working. You can still choose to move them to get the graph view, ordered processing, form-based processors, step metrics, and pipeline health. To move existing rules, see [Migrate FERs to Data Pipelines](/docs/manage/field-extractions/migrate-fers-to-data-pipelines).
 
 :::note
 Data Pipelines support logs only, and a pipeline can send data to one destination, Sumo Logic.
@@ -53,7 +59,7 @@ Data Pipelines support logs only, and a pipeline can send data to one destinatio
 ## Key concepts
 
 - **Pipeline**. A set of processing steps that applies to the logs matching its routing expression.
-- **Routing expression**. A query-style condition that decides which logs enter the pipeline. For example, `_sourceCategory=prod/abc/*`.
+- **Routing expression**. A query-style condition that decides which logs enter the pipeline. For example, `_sourceCategory=prod/abc/*`. To match on keywords or combine conditions, write the expression in advanced mode.
 - **Processing group**. An ordered group of processors. You can set a condition so the group runs only on messages that meet it.
 - **Processor**. A single processing step, such as adding a field, masking text, or parsing JSON. Processors in a group run in sequence.
 - **Router**. A node that sends a message to the next node based on a condition, such as the value of `_sourceHost`. A router can have a default route.
@@ -84,6 +90,8 @@ Within a processing group, you can add processors from the following categories:
 To mask sensitive data, such as email addresses, Social Security numbers (SSNs), and credit card numbers, use the Replace Pattern processor to replace or hash the matched text. For how this relates to masking rules, see [Data Masking](/docs/manage/data-masking).
 
 You can disable a processing group without deleting it.
+
+All processors fail open. If a message does not match a parse expression, or a processor fails for another reason, the message passes to the next step of the pipeline. This differs from FERs, where a parse without `nodrop` that does not match stops the rule and produces no fields for that message. In a SumoQL Parse processor, you still need to add `nodrop` to the expression, as you do in an FER. A message that an FER would have filtered out continues to the next step of the pipeline.
 
 Each processor takes the parameters listed in the following sections. Fields marked with a default are prefilled. In most processors, the field to read from defaults to `_raw`, which is the raw log message.
 
@@ -157,7 +165,7 @@ Tags matching messages with a parser and forwards them to Cloud SIEM.
 
 Pipelines run after your data has passed through existing [Field Extraction Rules (FERs)](/docs/manage/field-extractions). Your existing processing continues to work, and pipelines add processing on top of it.
 
-Because pipelines do not replace FERs, you can move from FERs to pipelines gradually, without interrupting your current data flows.
+Because pipelines do not replace FERs, you can move from FERs to pipelines gradually, without interrupting your current data flows. If a pipeline and an FER use the same field name but extract different values, the pipeline value wins. For the full order of precedence, see [Fields](/docs/manage/fields). To move your rules, see [Migrate FERs to Data Pipelines](/docs/manage/field-extractions/migrate-fers-to-data-pipelines).
 
 ## Pipeline states
 
@@ -181,7 +189,7 @@ You need the following [role capabilities](/docs/manage/users-roles/roles/role-c
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Data Management** > **Data Pipelines**. You can also click the **Go To...** menu at the top of the screen and select **Data Pipelines**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data** > **Data Pipelines**.
 1. The page shows the number of active pipelines, their health, and the overall data volume for the last 24 hours. Below that, it lists your pipelines in order. Click **Add Pipeline**.<br/><img src={useBaseUrl('img/manage/data-pipelines/pipelines-page.png')} alt="Data Pipelines page with the Add Pipeline button highlighted" style={{border: '1px solid gray'}} width="800"/>
 1. Enter a **Pipeline Name** and optionally a **Description**.
-1. Enter a **Routing Expression**. Select a **Key** and enter a **Value**, such as `prod/app/logs`. To write the expression as a query, click **Switch to Advanced**.<br/><img src={useBaseUrl('img/manage/data-pipelines/add-pipeline-dialog.png')} alt="Add Pipeline dialog" style={{border: '1px solid gray'}} width="450"/>
+1. Enter a **Routing Expression**. Select a **Key** and enter a **Value**, such as `prod/app/logs`. To match on keywords or combine conditions, such as `_sourceCategory=prod/abc/* AND _collector=xyz`, click **Switch to Advanced** and write the expression as a query.<br/><img src={useBaseUrl('img/manage/data-pipelines/add-pipeline-dialog.png')} alt="Add Pipeline dialog" style={{border: '1px solid gray'}} width="450"/>
 1. Click **Add Pipeline**. The pipeline opens in a graph view with a routing expression, one processing group, and the Sumo Logic destination.<br/><img src={useBaseUrl('img/manage/data-pipelines/pipeline-graph.png')} alt="New pipeline graph" style={{border: '1px solid gray'}} width="700"/>
 
 ## Configure a processing group
@@ -296,5 +304,6 @@ The following limits also apply to Data Pipelines.
 
 - [Health Events](/docs/manage/health-events)
 - [Field Extraction Rules](/docs/manage/field-extractions)
+- [Migrate FERs to Data Pipelines](/docs/manage/field-extractions/migrate-fers-to-data-pipelines)
 - [Partitions](/docs/manage/partitions)
 - [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets)
