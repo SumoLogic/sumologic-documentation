@@ -1142,6 +1142,7 @@ module.exports = {
             'manage/ingestion-volume/ingest-budgets/minute-volume',
         ]
         },
+        'manage/ingestion-volume/usage-attribution',
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
     },
@@ -3422,6 +3423,7 @@ integrations: [
         'api/threat-intel-ingest',
         'api/token-management',
         'api/tracing',
+        'api/usage-attribution',
         'api/user-management',
       ],
     },
