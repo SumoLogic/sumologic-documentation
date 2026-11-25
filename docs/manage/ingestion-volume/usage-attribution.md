@@ -51,7 +51,7 @@ The dashboard includes the following panels:
 - **Tier Share** and **Volume by Tier (GB).** How the volume splits across data tiers (Continuous, Frequent, Infrequent, and Flex).
 - **Volume by *field* (Top 10).** The 10 values that account for the most volume for the selected field.
 - **Volume Over Time (GB)** and **Volume by Tier Over Time.** Volume over the selected time range, in total and by tier.
-- **Ingestion Metadata Detail.** A table of volume by source category and view. For each row, it shows the tier, total events, volume in GB, and bytes per event.
+- **Ingestion Metadata Detail.** A table of volume by source category and partition. For each row, it shows the tier, total events, volume in GB, and bytes per event.
 - **Top Consumers by *field*.** A table that ranks the values of the selected field by volume in GB.
 - **Unassigned Volume (GB).** The volume that has no value for the selected field.
 - **Active Attribution Dimensions.** The standard tags and custom tags currently configured for Usage Attribution.
