@@ -56,8 +56,8 @@ When you move to another page:
 The top of the sidebar shows the title of the current conversation, with controls to:
 
 * View your conversation history.
-* Start a new conversation.
-* Expand the sidebar.
+* Start a new conversation. Click the plus icon.
+* Change the view. Click the layout icon, and then under **Switch to**, select **Floating**, **Sidebar**, or **Full screen**.
 * Close the sidebar.
 
 ## What Mobot can do from the sidebar
