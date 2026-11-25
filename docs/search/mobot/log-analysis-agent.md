@@ -34,10 +34,12 @@ You reach the agent through DojoAI. You do not see it as a separate item. It sur
 ## Recommendations
 
 Instead of waiting for a question, the agent analyzes how your team searches and what you ingest, then suggests an action. You review each recommendation and decide what to do. Nothing changes automatically.
+
 The agent has the following skills:
+
 | Category | Recommendation | What the agent does |
 |:--|:--|:--|
-| Reliability | **Create monitor** | Spots emerging issues in your logs and recommends what to monitor, to detect recurring issues sooner |
+| Reliability | **Create monitor** | Spots emerging issues in your logs and recommends what to monitor, to detect recurring issues sooner. |
 
 For monitor recommendations, the agent looks at log patterns across the tenant's log data. It identifies coverage gaps and makes recommendations to create the missing monitor which detects anomalies proactively. It then checks whether an equivalent or substantially similar monitor already exists. If one does, it makes no recommendation.
 
@@ -74,5 +76,6 @@ You can click the thumbs up or thumbs down icon under **Was this Recommendation 
 * **Retained data only**. The agent works only with ingested data that is still within your retention window.
 
 ## Additional resources
-* [DojoAI Recommendations](/docs/search/mobot/dojoai-recommendations-preview). Learn how the Log Anlaysis Agent proactively recommends ways to improve your Sumo Logic environment.
+
+* [DojoAI Recommendations](/docs/search/mobot/dojoai-recommendations-preview). Learn how the Log Analysis Agent proactively recommends ways to improve your Sumo Logic environment.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). How the Log Analysis Agent fits alongside DojoAI's other agents.
