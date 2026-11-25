@@ -184,7 +184,7 @@ To share the current investigation with other users, see [Share conversation](/d
 
 ## Recommended actions
 
-After the SOC Analyst Agent triages an insight, it generates contextually appropriate **Recommended Actions** that you can review without leaving Cloud SIEM.
+After the SOC Analyst Agent triages an insight, it generates contextually appropriate **Recommended Actions** that you can review without leaving Cloud SIEM. The agent generates recommendations for every investigated insight, whatever the verdict (**Malicious**, **Suspicious**, or **Benign**).
 
 ### Review recommendations after triage
 
@@ -201,48 +201,9 @@ If you investigate an insight by conversing with the SOC Analyst Agent or the Ro
 
 ## Configure SOC Analyst Agent settings
 
-The SOC Analyst Agent automatically investigates every insight that flows into Cloud SIEM, in order of priority, up to your organization's committed daily investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when you reach your committed volume.
+You manage SOC Analyst Agent settings, including tasks, triggers, volume, and overage, in Dojo Studio. Select **DojoAI** > **Studio** > **SOC Analyst Agent**.
 
-By default, only administrators can view or manage SOC Analyst Settings, and federated tenants do not have access. An administrator can grant analysts the **View SOC Analyst Settings** permission to view the settings; with view-only access, the controls are visible but disabled. Changing settings always requires the **Manage SOC Analyst Settings** permission, limited to administrators. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
-
-To open the settings, select **Cloud SIEM** > **Cloud SIEM Workflow Configuration** > **SOC Analyst Settings**.
-
-### Auto-Investigation Filter
-
-Insights that match the conditions you define are excluded from auto-investigation, keeping investigation capacity focused on higher-priority signals. Excluded insights receive a **Not Investigated** verdict and do not consume investigation capacity. Analysts can still investigate them manually because manual investigation ignores the filter. If you do not define any conditions, all insights are eligible for auto-investigation up to your committed volume.
-
-At GA, you can define a single filter (with any combination of AND/OR condition groups) per org. Support for multiple, separately prioritized filter rules is planned for a future release.
-
-The filter has an **Active** / **Disabled** toggle in the top right of the section. When it is set to **Disabled**, no insights are excluded, and the conditions are hidden ("Filter is currently disabled. Enable the toggle to configure filter criteria."). Set it to **Active** to define conditions.
-
-To build the conditions:
-
-1. In a condition row, select a type, an operator, and a value. The types are:
-   * **Insight Severity**. Select Critical, High, Medium, or Low.
-   * **Entity Type**. Select the entity type from the **Select type...** dropdown. Options include IP Address, MAC Address, Username, Hostname, Process, Command, Hash, Domain, User Agent, Email, URL, File, Deployment, Pod, ReplicaSet, and Resource.
-   * **Signal Name**. The name of a signal in the insight. Enter the value as text.
-   * **Signal Rule ID**. The rule ID of a signal in the insight. Enter the value as text.<br/><img src={useBaseUrl('img/cse/auto-investigation-filter.png')} alt="Auto-Investigation Filter with two condition groups joined by AND" style={{border: '1px solid gray'}} width="800" />
-1. For the operator, select **equals** or **does not equal**.
-1. Combine conditions with **OR** and **AND**:
-   * Click **+ OR** to add a condition to a group. An insight matches the group if any of its conditions are true.
-   * Click **+ AND** to add another group. An insight matches the filter only when every group is true.
-
-To remove a condition, click the **X** next to it. To remove an entire group, click the **X** in the top-right corner of the group.
-
-After changing this setting, click **Save Settings** to apply your changes, or **Cancel** to discard them.
-
-### Volume & Overage Settings
-
-When your committed daily investigation volume is reached, new insights are marked as **Not Investigated**, and analysts can still manually trigger an investigation.
-
-The section has an **Active** / **Disabled** toggle in the top right, similar to the Auto-Investigation Filter's toggle.
-
-* **Allow overages**. This checkbox is cleared by default. Select it to continue auto-investigating past your committed volume. Overage investigations are billed separately.
-* **Ceiling**. When **Allow overages** is selected, a **Ceiling** field appears, defaulted to 20%. Enter the maximum percentage above your committed volume that auto-investigation can consume.
-
-<img src={useBaseUrl('img/cse/volume-overage-settings.png')} alt="Volume and Overage Settings with Allow overages selected and the Ceiling field" style={{border: '1px solid gray'}} width="800" />
-
-After changing this setting, click **Save Settings** to apply your changes, or **Cancel** to discard them.
+<!--TODO: Link to the Dojo Studio doc after DOCS-2057 merges.-->
 
 ## FAQ
 
