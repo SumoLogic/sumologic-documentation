@@ -13,6 +13,8 @@ Fields are extracted from the time you create your FER moving forward. Theref
 
 For best practices on naming your fields, see [Field Naming Convention](field-naming-convention.md).
 
+[Data Pipelines](/docs/manage/data-pipelines) can also parse fields from your logs. Pipelines run after FERs, so your existing rules keep working. To move FERs to pipelines, see [Migrate FERs to Data Pipelines](/docs/manage/field-extractions/migrate-fers-to-data-pipelines).
+
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Field Extraction Rules page, in the main Sumo Logic menu select **Manage Data > Logs > Field Extraction Rules**.
