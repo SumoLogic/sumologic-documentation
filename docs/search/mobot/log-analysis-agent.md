@@ -19,29 +19,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Log Analysis Agent is in Private Preview. To participate, contact your Sumo Logic account representative.
 :::
 
-The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging issues in log patterns and recommends monitors for them, so coverage gaps are closed to improve reliability.
+The Log Analysis Agent is one of DojoAI's specialized agents. It helps teams identify gaps in log monitoring so they can detect recurring issues sooner. It recommends monitors that you can review, customize, and create to improve reliability.
 
-Monitoring coverage often grows after an incident, when a team builds the monitor it wished it had. The Log Analysis Agent works from your log data instead. It looks for patterns that no monitor covers, checks that an equivalent monitor does not already exist, and recommends a new monitor with the query and alert threshold filled in.
+Monitoring coverage often grows after an incident, when a team builds the monitor it wished it had. The Log Analysis Agent works from your log data instead. It looks for patterns that no monitor covers, checks that an equivalent monitor does not already exist, and recommends a new monitor.
 
 With the Log Analysis Agent, you can:
 
 * Find gaps in your log monitoring.
-* Review a ready-to-use monitor, including its query and threshold, instead of building one from scratch.
+* Review a ready-to-use monitor instead of building one from scratch.
 * Decide what happens to each recommendation. Nothing changes until you apply it.
 
 You reach the agent through DojoAI. You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
 
 ## Recommendations
 
-Instead of waiting for a question, the agent analyzes how your team searches and what you ingest, then suggests an action. You review each recommendation and decide what to do. Nothing changes automatically.
+Instead of waiting for a question, the agent analyzes logs, then suggests an action. You review each recommendation and decide what to do. Nothing changes automatically.
 
 The agent has the following skills:
 
 | Category | Recommendation | What the agent does |
 |:--|:--|:--|
-| Reliability | **Create monitor** | Spots emerging issues in your logs and recommends what to monitor, to detect recurring issues sooner. |
-
-For monitor recommendations, the agent looks at log patterns across the tenant's log data. It identifies coverage gaps and makes recommendations to create the missing monitor which detects anomalies proactively. It then checks whether an equivalent or substantially similar monitor already exists. If one does, it makes no recommendation.
+| Reliability | **Create monitor** | Spots emerging issues in your logs and recommends a monitor, including its query and alert threshold. |
 
 
 ### Work with a recommendation
