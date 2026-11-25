@@ -263,8 +263,6 @@ See Mobot interactions, unique users, top users, interface usage breakdown and t
 
 **Unique Users.** Counts the number of distinct users who interacted with Mobot and displays the number in a single value chart for the last 24 hours.
 
-**Threat Count.** Counts the Mobot interactions that originate from IP addresses flagged as malicious by threat intelligence and displays the number in a single value chart for the last 24 hours.
-
 **Top 10 Users by Interactions.** Shows an aggregation table of the 10 users with the most Mobot interactions, with columns for the user email and number of interactions, for the last 24 hours.
 
 **Interface Usage Breakdown (UI vs MCP vs API).** Displays the number of Mobot interactions by interface on a pie chart for the last 24 hours.
@@ -273,9 +271,11 @@ See Mobot interactions, unique users, top users, interface usage breakdown and t
 
 **Recent Prompts.** Shows an aggregation table of the 10 most recent Mobot prompts, with columns for the time, prompt, user email, interface, and frequency, for the last 24 hours.
 
-**Threat Details.** Shows an aggregation table of Mobot interactions from malicious IP addresses, with columns for the IP address, malicious confidence, actor, label name, and threat count, for the last 24 hours.
-
 **Geolocation of Mobot Interactions.** Performs a geo lookup query and displays the location and number of Mobot interactions on a map of the world for the last 24 hours.
+
+**Threat Count.** Counts the Mobot interactions that originate from IP addresses flagged as malicious by threat intelligence and displays the number in a single value chart for the last 24 hours.
+
+**Threat Details.** Shows an aggregation table of Mobot interactions from malicious IP addresses, with columns for the IP address, malicious confidence, actor, label name, and threat count, for the last 24 hours.
 
 ## Create monitors for the Sumo Logic Audit app
 
