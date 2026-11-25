@@ -48,8 +48,6 @@ Mobot uses the page you are on as context for your conversation. Every page prov
 
 To stop Mobot from using the page as context, click the **X** on the chip.
 
-<img src={useBaseUrl('img/search/mobot/mobot-sidebar-context-chip.png')} alt="Mobot sidebar showing a response from the SOC Analyst Agent, with the agent selector at the bottom right of the question field" style={{border: '1px solid gray'}} width="500" />
-
 When you move to another page:
 
 * **In an ongoing conversation**, the context changes to the new page, and the chip updates. The conversation history from the previous page carries over, so Mobot has the context of both pages.
