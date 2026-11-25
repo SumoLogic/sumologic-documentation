@@ -2,7 +2,7 @@
 id: usage-attribution
 title: Usage Attribution APIs
 sidebar_label: Usage Attribution
-description: Usage Attribution APIs allow you to read the configuration, turn Usage Attribution on or off, set custom tags, and create or rebuild the dashboard.
+description: The Usage Attribution APIs allow you to manage the custom tags that Usage Attribution uses to attribute your ingest volume.
 keywords:
   - usage attribution api
   - granular usage visibility
@@ -17,7 +17,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Data Volume icon" width="50"/>
 
-The Usage Attribution APIs allow you to manage [Usage Attribution](/docs/manage/ingestion-volume/usage-attribution), also called Granular Usage Visibility. You can read the configuration, turn Usage Attribution on or off, set custom tags, and create or rebuild the Usage Attribution dashboard.
+The Usage Attribution APIs allow you to manage the custom tags that [Usage Attribution](/docs/manage/ingestion-volume/usage-attribution) uses to attribute your ingest volume.
 
 ## Documentation
 
@@ -45,4 +45,4 @@ The Usage Attribution APIs allow you to manage [Usage Attribution](/docs/manage/
     * View Usage Management
     * Manage Usage Management
 
-The **View Usage Management** capability lets you read the configuration. The **Manage Usage Management** capability lets you change it and create or rebuild the dashboard. These are the same capabilities the Usage Attribution tab requires in the UI.
+The **View Usage Management** capability lets you view the Usage Attribution configuration. The **Manage Usage Management** capability lets you change it. These are the same capabilities the Usage Attribution tab requires in the UI.
