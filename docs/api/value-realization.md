@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/value.png')} alt="Value icon" width="50"/>
 
-The Value Realization APIs let you work with the data behind [Value Overview](/docs/manage/manage-subscription/value-overview/) from HTTP endpoints. Use them to get the estimated time that Mobot, the SOC Analyst Agent, and the Root Cause Analysis Agent save your team, and to view and change the assumptions that Value Overview uses to calculate hours saved.
+The Value Realization APIs let you work with the data behind [Value Overview](/docs/manage/manage-subscription/value-overview/) from HTTP endpoints. Use them to get the estimated time that Mobot, the SOC Analyst Agent, and the Root Cause Agent save your team, and to view and change the assumptions that Value Overview uses to calculate hours saved.
 
 ## Documentation
 

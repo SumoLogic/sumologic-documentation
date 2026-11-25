@@ -1,14 +1,14 @@
 ---
 id: value-overview
 title: Value Overview
-description: See the estimated time Mobot, the SOC Analyst Agent, and the Root Cause Analysis Agent save your team, and adjust the assumptions behind each estimate.
+description: See the estimated time Mobot, the SOC Analyst Agent, and the Root Cause Agent save your team, and adjust the assumptions behind each estimate.
 keywords:
   - value overview
   - time reclaimed
   - hours saved
   - mobot
   - soc analyst agent
-  - root cause analysis agent
+  - root cause agent
   - roi
   - metric reference
   - assumptions
@@ -19,14 +19,14 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Value Overview shows the estimated time that Mobot, the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), and the Root Cause Analysis Agent save your team. Use it to see how much time each agent gives back, review supporting activity and performance metrics, and adjust the assumptions behind each estimate to match your team's workflow.
+Value Overview shows the estimated time that Mobot, the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), and the Root Cause Agent save your team. Use it to see how much time each agent gives back, review supporting activity and performance metrics, and adjust the assumptions behind each estimate to match your team's workflow.
 
 The page displays the **Combined Time Reclaimed**, which is the total of the hours saved by the three agents for the date range you select. A color bar beside the headline shows how much each agent contributes.
 
 Metrics are grouped by agent:
 
 - **SOC Analyst Agent.** Time saved, mean time to detect and respond, time to verdict, coverage, verdicts, and severity for Cloud SIEM insights.
-- **Root Cause Analysis Agent.** Time saved, mean time to respond, time to verdict, and coverage for alert investigations.
+- **Root Cause Agent.** Time saved, mean time to respond, time to verdict, and coverage for alert investigations.
 - **Mobot.** Time saved, and the number of playbooks, dashboards, and monitors Mobot helped you author.
 
 Each metric tile has a category label: **Value**, **Activity**, or **Performance**. A small trend line shows how the metric changed over the selected range, and a month-over-month (MoM) change appears on tiles that have enough data to compare.
@@ -44,7 +44,7 @@ You need the **View Value Overview** and **View Account Overview** [role capabil
 ## How to open Value Overview
 
 1. Log in to Sumo Logic as a user with the **View Value Overview** and **View Account Overview** capabilities.
-1. In the main Sumo Logic menu, select **Administration** > **Account**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration**, and then under **Account** select **Account Overview**.
 1. Select the **Value Overview** tab.
 
 The page shows the date your data is current through, for example, "Showing data as of Nov 17, 2026". Data does not include activity after that date.
@@ -58,7 +58,7 @@ Use the date range selector. The headline, agent breakdown, and all metric tiles
 You can narrow what the page shows in two ways:
 
 - **Search metric.** Enter part of a metric name, for example, `time saved`. Matching metrics appear in their agent section. If nothing matches, the page shows **No Results Found**.
-- **Add a filter.** Select **Add a filter**, and then select options from the dropdown that appears: first **Source**, then an operator, and then which of **Mobot**, **Root Cause Analysis Agent**, and **SOC Analyst Agent** to show.
+- **Add a filter.** Select **Add a filter**, and then select options from the dropdown menu that appears: first **Source**, then an operator, and then which of **Mobot**, **Root Cause Agent**, and **SOC Analyst Agent** to show.
 
 <img src={useBaseUrl('img/manage/value-overview/value-overview-search-filter.png')} alt="Search metric box and Add a filter field with the Source filter and its operator dropdown open" style={{border: '1px solid gray'}} width="800" />
 
@@ -87,13 +87,13 @@ Assumptions are the manual-time estimates that Sumo Logic compares against agent
 
 The page recalculates hours saved and the **Combined Time Reclaimed** headline using the new values. The **Set by** and **Updated** columns show who last changed each value and when.
 
-<img src={useBaseUrl('img/manage/value-overview/value-overview-assumptions.png')} alt="Assumptions panel listing manual-time inputs for Mobot, the Root Cause Analysis Agent, and the SOC Analyst Agent with a Save Changes button" style={{border: '1px solid gray'}} width="400" />
+<img src={useBaseUrl('img/manage/value-overview/value-overview-assumptions.png')} alt="Assumptions panel listing manual-time inputs for Mobot, the Root Cause Agent, and the SOC Analyst Agent with a Save Changes button" style={{border: '1px solid gray'}} width="400" />
 
 ### Example: changing an assumption
 
 This example is illustrative and does not represent customer results.
 
-Suppose the SOC Analyst Agent investigated 124 insights over the selected range and spent 251.79 minutes in total on those investigations. With a manual baseline of 15 minutes per insight, the agent saved (124 × 15 − 251.79) ÷ 60 = 26.80 hours.
+Suppose the SOC Analyst Agent investigated 124 insights over the selected range and spent 251.79 minutes in total on those investigations. With the manual baseline set to 15 minutes per insight, the agent saved (124 × 15 − 251.79) ÷ 60 = 26.80 hours.
 
 If your team estimates that a manual investigation takes 20 minutes, the estimate becomes (124 × 20 − 251.79) ÷ 60 = 37.14 hours. **Combined Time Reclaimed** increases by the same amount, about 10.3 hours. A lower manual-time assumption lowers the estimated hours saved.
 
@@ -105,7 +105,7 @@ If your team estimates that a manual investigation takes 20 minutes, the estimat
 
 ## Metric reference
 
-Use this section to understand what each metric measures and how Sumo Logic calculates it. Formulas and evidence names use SOCAA for the SOC Analyst Agent and RCA for the Root Cause Analysis Agent.
+Use this section to understand what each metric measures and how Sumo Logic calculates it. Formulas and evidence names use SOCAA for the SOC Analyst Agent and RCA for the Root Cause Agent.
 
 ### Metric categories
 
@@ -127,7 +127,7 @@ For the SOC Analyst Agent, the formula is:
 (socaa_insight_investigation_count * manual_insight_investigation_time - socaa_investigation_time_min) / 60
 ```
 
-The **Combined Time Reclaimed** headline is the sum of **Investigation Time Saved** for the SOC Analyst Agent, **Investigation Time Saved (Alerts)** for the Root Cause Analysis Agent, and the three Mobot time saved metrics.
+The **Combined Time Reclaimed** headline is the sum of **Investigation Time Saved** for the SOC Analyst Agent, **Investigation Time Saved (Alerts)** for the Root Cause Agent, and the three Mobot time saved metrics.
 
 ### Default assumptions
 
@@ -136,7 +136,7 @@ Assumptions are the manual-time values used in hours saved calculations. You can
 | Agent | Assumption | Default value |
 | :-- | :-- | :-- |
 | SOC Analyst Agent | Manual Insight Investigation Time | 50 minutes |
-| Root Cause Analysis Agent | Manual Alert Investigation Time | 50 minutes |
+| Root Cause Agent | Manual Alert Investigation Time | 50 minutes |
 | Mobot | Manual Dashboard Authoring Time | 75 minutes |
 | Mobot | Manual Monitor Setup Time | 15 minutes |
 | Mobot | Manual Playbook Authoring Time | 75 minutes |
@@ -160,11 +160,11 @@ These metrics describe how the [SOC Analyst Agent](/docs/cse/get-started-with-cl
 | Insights by Severity | Activity | Distribution | Distribution of insights by severity. |
 | Top Entities for Insights | Activity | Distribution | Entities that appear most often in insights. |
 
-### Root Cause Analysis Agent metrics
+### Root Cause Agent metrics
 
-These metrics describe how the Root Cause Analysis Agent investigates alerts. Learn more about the agent in [Root Cause Analysis Agent](/docs/alerts/monitors/root-cause-agent-preview/).
+These metrics describe how the Root Cause Agent investigates alerts. Learn more about the agent in [Root Cause Agent](/docs/alerts/monitors/root-cause-agent-preview/).
 
-<img src={useBaseUrl('img/manage/value-overview/value-overview-show-more-rca.png')} alt="Expanded Root Cause Analysis Agent section showing time saved, MTTR, time to verdict, auto investigations, and alert coverage tiles" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/manage/value-overview/value-overview-show-more-rca.png')} alt="Expanded Root Cause Agent section showing time saved, MTTR, time to verdict, auto investigations, and alert coverage tiles" style={{border: '1px solid gray'}} width="800" />
 
 | Metric | Category | Unit | Description |
 | :-- | :-- | :-- | :-- |
@@ -198,7 +198,7 @@ These metrics describe the time Mobot saves when you author content with it, and
 ## Related topics
 
 - [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/)
-- [Root Cause Analysis Agent](/docs/alerts/monitors/root-cause-agent-preview/)
+- [Root Cause Agent](/docs/alerts/monitors/root-cause-agent-preview/)
 - [Sumo Logic Mobot](/docs/search/mobot/)
 - [Value Realization APIs](/docs/api/value-realization/)
 - [Role capabilities](/docs/manage/users-roles/roles/role-capabilities/)
