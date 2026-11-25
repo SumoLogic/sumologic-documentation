@@ -954,6 +954,7 @@ module.exports = {
         'manage/field-extractions/safend-field-extraction',
       ]
     },
+    'manage/data-pipelines',
     {
       type: 'category',
       label: 'Partitions',
