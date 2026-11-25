@@ -953,6 +953,7 @@ module.exports = {
         'manage/field-extractions/safend-field-extraction',
       ]
     },
+    'manage/data-pipelines',
     {
       type: 'category',
       label: 'Partitions',
@@ -1141,6 +1142,7 @@ module.exports = {
             'manage/ingestion-volume/ingest-budgets/minute-volume',
         ]
         },
+        'manage/ingestion-volume/usage-attribution',
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
     },
@@ -1461,7 +1463,6 @@ module.exports = {
             'search/get-started-with-search/search-page/navigate-through-search-results',
             'search/get-started-with-search/search-page/search-highlighting',
             'search/get-started-with-search/search-page/search-load-indicator',
-            'search/get-started-with-search/search-page/search-modes',
             'search/get-started-with-search/search-page/set-messages-tab-preferences',
             'search/get-started-with-search/search-page/wildcards-in-full-text-searches',
           ],
@@ -2239,13 +2240,13 @@ integrations: [
     items: [
       {
         type: 'category',
-        label: 'Product List',
+        label: 'Vendors and Products',
         collapsible: true,
         collapsed: true,
-        link: {type: 'doc', id: 'integrations/product-list/index'},
+        link: {type: 'doc', id: 'integrations/vendors-content-matrix/index'},
         items: [
-          'integrations/product-list/product-list-a-l',
-          'integrations/product-list/product-list-m-z',
+          'integrations/vendors-content-matrix/vendors-content-matrix-a-z',
+          'integrations/vendors-content-matrix/faq',
         ],
       },
       {
@@ -2259,7 +2260,7 @@ integrations: [
       },
       {
         type: 'category',
-        label: 'Automation Integrations',
+        label: 'Integrations',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'integrations/automation-integrations/index'},
@@ -2539,6 +2540,19 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/aiml/index'},
         items: [
+          {
+            type: 'category',
+            label: 'AI Observability',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'integrations/aiml/ai-observability/index'},
+            items: [
+              'integrations/aiml/ai-observability/ai-observability-app',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-openllmetry',
+              'integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry',
+              'integrations/aiml/ai-observability/troubleshoot-ai-observability',
+            ],
+          },
           {
             type: 'category',
             label: 'OpenTelemetry',
@@ -3338,7 +3352,15 @@ integrations: [
             'api/about-apis/troubleshooting',
           ],
         },
-        'api/mcp-server',
+        {
+          type: 'category',
+          label: 'Sumo Logic MCP Server ✨',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'api/mcp-server/index'},
+          items: [
+          ],
+        },
         'api/access-keys',
         'api/account-management',
         'api/app-management',
@@ -3401,6 +3423,7 @@ integrations: [
         'api/threat-intel-ingest',
         'api/token-management',
         'api/tracing',
+        'api/usage-attribution',
         'api/user-management',
         'api/value-realization',
       ],
