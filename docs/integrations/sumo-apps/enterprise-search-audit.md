@@ -118,7 +118,7 @@ Use this dashboard to:
 * Review the most recent Mobot-generated queries with their user and status.
 * Identify the locations from which users interact with Mobot, and check for activity from malicious IP addresses.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/enterprise-search-audit-mobot-generated-queries.png')} alt="Enterprise Search Audit - Mobot Generated Queries" />
+<img src={useBaseUrl('img/integrations/sumo-apps/enterprise-search-audit-mobot-generated-queries.png')} alt="Enterprise Search Audit - Mobot Generated Queries" width="800" />
 
 The dashboard contains the following panels, in the order they appear:
 
