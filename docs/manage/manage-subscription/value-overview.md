@@ -39,14 +39,11 @@ Hours saved are estimates, not measured time. Sumo Logic calculates them from th
 
 ## Prerequisites
 
-Before you begin, you need a role with the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities/) in the **Usage Management** group:
-
-- **View Value Overview.** Required to open the page and see metrics.
-- **Manage Value Overview.** Required to change assumptions.
+You need the **View Value Overview** and **View Account Overview** [role capabilities](/docs/manage/users-roles/roles/role-capabilities/) to see the page, and the **Manage Value Overview** capability to change assumptions.
 
 ## How to open Value Overview
 
-1. Log in to Sumo Logic as a user with the **View Value Overview** capability.
+1. Log in to Sumo Logic as a user with the **View Value Overview** and **View Account Overview** capabilities.
 1. In the main Sumo Logic menu, select **Administration** > **Account**.
 1. Select the **Value Overview** tab.
 
@@ -138,15 +135,15 @@ Assumptions are the manual-time values used in hours saved calculations. You can
 
 | Agent | Assumption | Default value |
 | :-- | :-- | :-- |
-| SOC Analyst Agent | Manual Insight Investigation Time | 15 minutes |
-| Root Cause Analysis Agent | Manual Alert Investigation Time | 15 minutes |
-| Mobot | Manual Dashboard Authoring Time | 15 minutes |
+| SOC Analyst Agent | Manual Insight Investigation Time | 50 minutes |
+| Root Cause Analysis Agent | Manual Alert Investigation Time | 50 minutes |
+| Mobot | Manual Dashboard Authoring Time | 75 minutes |
 | Mobot | Manual Monitor Setup Time | 15 minutes |
-| Mobot | Manual Playbook Authoring Time | 15 minutes |
+| Mobot | Manual Playbook Authoring Time | 75 minutes |
 
 ### SOC Analyst Agent metrics
 
-These metrics describe how the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) investigates Cloud SIEM insights.
+These metrics describe how the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) investigates Cloud SIEM insights. If the SOC Analyst Agent is not enabled for your organization, its metrics and assumptions are excluded from the dashboard.
 
 <img src={useBaseUrl('img/manage/value-overview/value-overview-show-more.png')} alt="Expanded SOC Analyst Agent section showing all metric tiles, including time to verdict, coverage, verdicts by type, and insights by severity" style={{border: '1px solid gray'}} width="800" />
 
