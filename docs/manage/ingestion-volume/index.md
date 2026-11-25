@@ -37,6 +37,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/manage/ingestion-volume/usage-attribution')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Data Volume icon" width="40"/><h4>Usage Attribution</h4></a>
+  <p>Learn how to attribute ingest volume to teams, services, and owners.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/manage/ingestion-volume/monitor-ingestion-receive-alerts')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Data Volume icon" width="40"/><h4>Monitor Log Ingestion and Alerts</h4></a>
   <p>Add scheduled searches that monitor ingestion and send alerts.</p>
   </div>
