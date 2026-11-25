@@ -71,5 +71,5 @@ You can click the thumbs up or thumbs down icon under **Was this Recommendation 
 * **Retained data only**. The agent works only with ingested data that is still within your retention window.
 
 ## Additional resources
-
+[DojoAI Recommendations (Extended Preview)](/docs/search/mobot/dojoai-recommendations-preview). Learn how the Log Anlaysis Agent proactively recommends ways to improve your Sumo Logic environment.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). How the Log Analysis Agent fits alongside DojoAI's other agents.
