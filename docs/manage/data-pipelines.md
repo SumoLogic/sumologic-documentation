@@ -12,6 +12,7 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Data Pipelines give you a single place to define how your logs are processed and routed in Sumo Logic. You build a pipeline on a visual graph, test it with sample data, and publish it when you are confident it works.
 
