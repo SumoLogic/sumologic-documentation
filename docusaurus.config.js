@@ -314,7 +314,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'aws-reinvent-banner-v1',
-      content: `Heading to AWS re:Invent? Visit Sumo Logic at booth #587 to see Data Pipelines and DojoAI features. <a href="https://www.sumologic.com/events/aws-reinvent"><strong>Book a meeting</strong></a>`,
+      content: `Heading to AWS re:Invent? Visit Sumo Logic at booth #587 to see AI Driven Telemetry, Data Pipelines, and DojoAI features. <a href="https://www.sumologic.com/events/aws-reinvent"><strong>Book a meeting</strong></a>`,
       backgroundColor: '#020146',
       textColor: '#fff',
     },
