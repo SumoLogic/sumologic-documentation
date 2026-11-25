@@ -41,7 +41,6 @@ The agent has the following skills:
 |:--|:--|:--|
 | Reliability | **Create monitor** | Spots emerging issues in your logs and recommends a monitor, including its query and alert threshold. |
 
-
 ### Work with a recommendation
 
 Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily. For more about filtering, rejecting, and applying recommendations, see [DojoAI Recommendations](/docs/search/mobot/dojoai-recommendations-preview).
