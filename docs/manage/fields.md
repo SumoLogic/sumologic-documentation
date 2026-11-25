@@ -21,7 +21,7 @@ The order of precedence for field assignment from highest to lowest is:
 1. Source
 1. Collector
 
-So, if you have a field defined at the collector or source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment. FERs run first and pipelines add on top of them. If a pipeline and a FER use the same field name but extract different values, the pipeline value wins. If they extract the same value under different field names, the message has both fields.
+So, if you have a field defined at the collector or source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment. Pipelines run after FERs, so if a pipeline and a FER use the same field name but extract different values, the pipeline value overwrites the FER value. If they extract the same value under different field names, the message has both fields.
 
 Any fields you want assigned to log data need to exist in a fields schema. Each account has its own fields schema that is available to manage in the Sumo Logic web interface. When a field is defined and enabled in the fields schema it is assigned to the appropriate log data as configured. If a field is sent to Sumo Logic but is not present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
