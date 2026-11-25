@@ -72,7 +72,7 @@ The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Conta
 
 ### Log Analysis Agent
 
-[Log Analysis Agent](/docs/search/mobot/log-analysis-agent) analyzes logs and gives recommendations to detect emerging issues proactively before the next incident occurs and impacts your customers. Currently in Private Preview. To participate, contact your Sumo Logic account representative.
+[Log Analysis Agent](/docs/search/mobot/log-analysis-agent) analyzes logs and helps teams identify gaps in log monitoring so they can detect recurring issues sooner. It recommends monitors that you can review, customize, and create to improve reliability. Currently in Private Preview. To participate, contact your Sumo Logic account representative.
 
 ### SOC Analyst Agent
 
@@ -86,7 +86,7 @@ The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Ava
 
 ### Platform Optimization Agent
 
-[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
+[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) helps you optimize queries, tune dashboards and find data blind spots to get more from the Sumo platform.
 
 ### DojoAI credits
 

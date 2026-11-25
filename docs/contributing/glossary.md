@@ -185,7 +185,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local configuration file management allows you to set up and manage sources on an installed collector using one or more JSON files.
 
-**[Log Analysis Agent](/docs/search/mobot/log-analysis-agent)**. The Log Analysis Agent is the DojoAI agent that helps teams identify gaps in log monitoring so they can detect recurring issues sooner. In this preview, it recommends monitors that you can review, customize, and create.
+**[Log Analysis Agent](/docs/search/mobot/log-analysis-agent)**. The Log Analysis Agent is the DojoAI agent that helps teams identify gaps in log monitoring so they can detect recurring issues sooner. It recommends monitors that you can review, customize, and create to improve reliability.
 
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 

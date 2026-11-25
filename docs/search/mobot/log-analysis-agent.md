@@ -2,7 +2,7 @@
 id: log-analysis-agent
 title: Log Analysis Agent
 sidebar_label: Log Analysis Agent ✨
-description: Log Analysis Agent is the DojoAI agent that guides log analysis and recommends creating monitors for proactive anomaly detection.
+description: Log Analysis Agent is the DojoAI agent that helps teams identify gaps in log monitoring so they can detect recurring issues sooner. It recommends monitors that you can review, customize, and create.
 keywords:
   - log analysis agent
   - query agent
@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Log Analysis Agent is in Private Preview. To participate, contact your Sumo Logic account representative.
 :::
 
-The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging issues in log patterns and recommends monitors for them, so coverage gaps close before the next incident occurs to improve reliability.
+The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging issues in log patterns and recommends monitors for them, so coverage gaps are closed to improve reliability.
 
 You reach the agent through DojoAI. You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
 
@@ -67,7 +67,7 @@ You can click the thumbs up or thumbs down icon under **Was this Recommendation 
 ## Limitations
 
 * **Logs only**. The agent does not cover metrics, traces, or other telemetry types.
-* **Read-only analysis**. The agent can query and analyze data but cannot modify, delete, or ingest data, and it has no access to external systems.
+* **Read-only analysis**. The agent can analyze data but cannot modify, delete, or ingest data, and it has no access to external systems.
 * **Retained data only**. The agent works only with ingested data that is still within your retention window.
 
 ## Additional resources
