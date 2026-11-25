@@ -47,13 +47,13 @@ Sumo Logic connects to the server to check the details. If it cannot connect, yo
 
 ### Authentication configuration
 
-For when to use each method, see [Select a sign-in method](#select-a-sign-in-method).
+For when to use each method, see [Authentication method](#authentication-method).
 
 :::note
 Credentials are stored encrypted and are never shown again. These methods have no automatic renewal, so you must replace a credential before it expires. To change a credential, add a new connection with the new value, make it the default if needed, and delete the old one.
 :::
 
-### authentication method
+### Authentication method
 
 Choose a sign-in method for each connection based on the authentication methods supported by the vendor and your organization's security requirements.
 

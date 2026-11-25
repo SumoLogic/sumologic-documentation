@@ -31,7 +31,7 @@ Each card shows one integration. Select a card to open the integration. From the
 | Operations | **Actions**. The number of actions an API integration provides. You add actions to playbooks. To view the Actions details, navigate to **App Catalog > Integrations > API integration card > What's Included**. {/* Image placeholder */} | **Tools**. The number of tools an MCP server provides per connection. Dojo AI agents use tools. To view the Tools details, navigate to **App Catalog > Integrations > MCP integration card > Connections > Tools**. {/* Image placeholder */} |
 
 <!--
-Some cards show the **Configure in Dojo AI** lable which opens Dojo AI, where you configure how agents use this integration. TO CONFIRM: exact behavior and which cards show it. */}
+Some cards show the **Configure in Dojo AI** label which opens Dojo AI, where you configure how agents use this integration. TO CONFIRM: exact behavior and which cards show it. */}
 
 ## Filters
 
