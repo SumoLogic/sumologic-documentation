@@ -159,6 +159,7 @@ See [Example knowledge sources](#example-knowledge-sources) for more sample know
 Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open the alert or Insight the agent investigated and scroll down in the agent's analysis, such as the **AI Analysis** panel of a Cloud SIEM Insight. A **Knowledge used** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set. If the agent created a memory during the investigation, a **Memory created** section appears as well.
 
 <img src={useBaseUrl('img/get-started/dojo-studio/knowledge-used.png')} alt="Cloud SIEM Insight with the Knowledge used section listing the knowledge entries the agent applied" style={{border: '1px solid gray'}} width="500" />
+
 #### How knowledge changes take effect
 
 Knowledge does not retrain the agent's model. It is retrieved and applied as context at investigation time, so you can update or remove an item and the next investigation reflects the change. New knowledge takes effect on the next investigation that runs after you save it. Saving knowledge does not re-run past investigations.
@@ -363,8 +364,6 @@ To connect an integration to an agent:
 For MCP-based integrations, you can connect directly to the third-party system and share access. The same connection also applies to that integration's page in the App Catalog.
 
 Only the agent's owner can connect integrations. Other users with manage access can edit the agent's other settings but cannot add integrations. To connect an integration when you are not the owner, [change ownership](#change-the-owner) first. Changing ownership disconnects the agent's existing integrations.
-
-For the SOC Analyst Agent in private preview, the integrations you connect also determine which recommended actions the agent can offer as executable. Learn more in [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
 
 #### Integration FAQs
 
