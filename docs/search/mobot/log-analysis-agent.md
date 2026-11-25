@@ -41,7 +41,7 @@ For monitor recommendations, the agent looks at log patterns across the tenant's
 
 ### Work with a recommendation
 
-Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily. For more about filtering, rejecting, and applying recommendations, see the [Recommendations page](/docs/search/mobot/dojoai-recommendations-preview) doc.
+Recommendations appear on the **Recommendations** page, where you review them. To open it, go to **DojoAI** > **Recommendations** in the left navigation. The agent refreshes recommendations daily. For more about filtering, rejecting, and applying recommendations, see [DojoAI Recommendations](/docs/search/mobot/dojoai-recommendations-preview).
 
 <img src={useBaseUrl('img/search/mobot/log-analysis-agent-recommendations.png')} alt="Recommendations page listing monitor recommendations with Category, Impact, Status, and Generated columns" style={{border: '1px solid gray'}} width="800" />
 
