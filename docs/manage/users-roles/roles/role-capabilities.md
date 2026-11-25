@@ -158,8 +158,8 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab. | `viewThreatIntelDataStore` |
-| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources. | `manageThreatIntelDataStore` |
+| View Threat Intel Data Store | View the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab to explore threat intelligence indicators and their details. | `viewThreatIntelDataStore` |
+| Manage Threat Intel Data Store | Create, edit, and delete threat intel sources and indicators. | `manageThreatIntelDataStore` |
 
 ## Macros
 

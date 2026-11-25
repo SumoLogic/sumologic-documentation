@@ -97,7 +97,7 @@ keywords:              # optional but recommended
 ## Lists
 
 - **Numbered lists** for sequential steps.
-- **Bulleted lists** (using `-`) for non-sequential items.
+- **Bulleted lists** for non-sequential items.
 - **Always use `1.`** for all numbered steps -- Docusaurus auto-numbers on build.
 - **End each bullet with a terminal period.**
 - **Introduce lists with a stem sentence** before the list.
