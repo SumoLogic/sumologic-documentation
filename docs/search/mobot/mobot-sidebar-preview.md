@@ -38,7 +38,7 @@ With the sidebar, you can:
 
 Mobot runs the analysis and returns the results, including the queries it ran and a summary of what it found, in the sidebar.
 
-<img src={useBaseUrl('img/search/mobot/mobot-sidebar-open.png')} alt="Mobot sidebar open beside a page, with the Ask Mobot button highlighted in the top nav bar" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/search/mobot/mobot-sidebar-open.png')} alt="Mobot sidebar open beside a page, with the Ask Mobot button highlighted in the top nav bar" style={{border: '1px solid gray'}} width="400" />
 
 For example, while viewing a dashboard of Amazon Bedrock AgentCore gateway metrics, you ask `Why do invocations drop on Nov 8th?` Mobot queries the invocations metric around that date, shows hourly invocation counts in a table, and explains that the drop reflects a weekend traffic pattern rather than an outage.
 
@@ -48,7 +48,7 @@ Mobot uses the page you are on as context for your conversation. Every page prov
 
 To stop Mobot from using the page as context, click the **X** on the chip.
 
-<img src={useBaseUrl('img/search/mobot/mobot-sidebar-context-chip.png')} alt="Mobot sidebar showing a response from the SOC Analyst Agent, with the agent selector at the bottom right of the question field" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/mobot/mobot-sidebar-context-chip.png')} alt="Mobot sidebar showing a response from the SOC Analyst Agent, with the agent selector at the bottom right of the question field" style={{border: '1px solid gray'}} width="500" />
 
 When you move to another page:
 
@@ -59,7 +59,7 @@ When you move to another page:
 
 The top of the sidebar shows the title of the current conversation, with controls to:
 
-<img src={useBaseUrl('img/search/mobot/mobot-sidebar-controls.png')} alt="Mobot sidebar header with the menu (a), plus (b), layout (c), and close (d) icons labeled" style={{border: '1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/search/mobot/mobot-sidebar-controls.png')} alt="Mobot sidebar header with the menu (a), plus (b), layout (c), and close (d) icons labeled" style={{border: '1px solid gray'}} width="400" />
 
 * **a. Menu icon**. View your conversation history.
 * **b. Plus icon**. Start a new conversation.
@@ -76,8 +76,6 @@ Mobot asks for the same confirmation before creating content as it does on the M
 
 * The depth of functionality differs by workflow and page.
 * After Mobot creates or changes content from the sidebar, you need to refresh the page to see the update.
-
-Your feedback during Preview helps us improve. Share it with your Sumo Logic account team.
 
 ## FAQ
 
