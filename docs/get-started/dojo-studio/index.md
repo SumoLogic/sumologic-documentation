@@ -440,7 +440,7 @@ The SOC Analyst Agent settings you previously managed in Cloud SIEM are moving t
 * **SOC Analyst Settings link**. Clicking **SOC Analyst Settings** on the **Insights** page now takes you to the SOC Analyst Agent in Dojo Studio.
 * **Triggers, volume, and overage**. Your current settings migrate to [Tasks](#tasks) and [Volume and overage](#volume-and-overage).
 * **Enable or disable the agent**. The SOC Analyst Agent toggle in **Feature Management** moves to the **Enabled** setting in [General settings](#general-settings).
-* **Permissions**. Administrators can manage SOC Analyst Agent settings in Dojo Studio. By default, all users with the View CSE capability can use the SOC Analyst Agent.
+* **Permissions**. Users with the Administrator role or the Manage SOC Analyst Settings capability get Manage access to the SOC Analyst Agent in Dojo Studio. By default, all users with the View CSE capability get Use access.
 
 ## Additional resources
 
