@@ -21,12 +21,15 @@ Log Analysis Agent is in Private Preview. To participate, contact your Sumo Logi
 
 The Log Analysis Agent is one of DojoAI's specialized agents. It spots emerging issues in log patterns and recommends monitors for them, so coverage gaps are closed to improve reliability.
 
+Monitoring coverage often grows after an incident, when a team builds the monitor it wished it had. The Log Analysis Agent works from your log data instead. It looks for patterns that no monitor covers, checks that an equivalent monitor does not already exist, and recommends a new monitor with the query and alert threshold filled in.
+
+With the Log Analysis Agent, you can:
+
+* Find gaps in your log monitoring.
+* Review a ready-to-use monitor, including its query and threshold, instead of building one from scratch.
+* Decide what happens to each recommendation. Nothing changes until you apply it.
+
 You reach the agent through DojoAI. You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
-
-
-:::note
-Do not confuse the Log Analysis Agent with [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) or [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist). Those are UI features you use directly on the Search page, not through a conversation.
-:::
 
 ## Recommendations
 
