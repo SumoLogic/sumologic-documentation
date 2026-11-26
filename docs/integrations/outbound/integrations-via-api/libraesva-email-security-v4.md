@@ -1,0 +1,57 @@
+---
+title: Libraesva Email Security V4
+description: ''
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v4.png')} alt="Libraesva Email Security V4 icon" width="100"/>
+
+***Version: 4.2  
+Updated: April 29, 2026***
+
+Libraesva Email Security V4 provides security, continuity, and compliance capabilities that include the Email Security Gateway, the Email Load Balancer and the Email Archiver.
+
+## Actions
+
+* **Get Black List** (*Enrichment*) - Return a list of blacklist for a mailbox.
+* **Get Mail Log** (*Enrichment*) - View the emails of a user for a given day (ISO notation Y / m / d or Ymd).
+* **Get Spam Log** (*Enrichment*) - Display a user’s email for a given day (ISO notation Y / m / d or Ymd).
+* **Get Valid Recipients** (*Enrichment*) - Get All Address in Valid Recipient.
+* **Get Recipients Exist** (*Enrichment*) - Check if an address belongs to a Valid Recipient.
+* **Get User List** (*Enrichment*) - Show the list of users with attributes.
+* **Get White List** (*Enrichment*) - Return the list of whitelisted for a mailbox, code 802 if the list is empty.
+
+## Category
+
+Email Security
+
+## Configure Libraesva Email Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Libraesva URL.
+
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/libraesva-v4-configuration.png')} style={{border:'1px solid gray'}} alt="Libraesa V4 configuration" width="400"/>
+
+For information about Libraesva Email Security V4, see [Libraesva Email Security V4 documentation](https://docs.libraesva.com/doc/libraesva-esg-4/).
+
+## Change Log
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v4.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v4.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
+| | September 12, 2022 | Changed the integration name and logo. |
+| | May 11, 2021 | Initial release of the Libraesva Email Security V4 integration. |

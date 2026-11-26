@@ -202,4 +202,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Netskope Automation Service Integration](/docs/integrations/automation-integrations/netskope/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Netskope Automation Service Integration](/docs/integrations/outbound/integrations-via-api/netskope/) to automate response actions directly from Cloud SOAR playbooks.

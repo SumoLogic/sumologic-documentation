@@ -19,30 +19,30 @@ Following are the updates made in March 2026.
 
 New integrations for the following services:
 
-- [1Password](/docs/integrations/automation-integrations/1password)
-- [Sumo Logic Cloud Monitor](/docs/integrations/automation-integrations/sumo-logic-cloud-monitor/)
-- [Sumo Logic Lookup Table](/docs/integrations/automation-integrations/sumo-logic-lookup-table/)
-- [Sumo Logic Rules Tuning](/docs/integrations/automation-integrations/sumo-logic-rules-tuning)
-- [Upwind](/docs/integrations/automation-integrations/upwind/)
+- [1Password](/docs/integrations/outbound/integrations-via-api/1password)
+- [Sumo Logic Cloud Monitor](/docs/integrations/outbound/integrations-via-api/sumo-logic-cloud-monitor/)
+- [Sumo Logic Lookup Table](/docs/integrations/outbound/integrations-via-api/sumo-logic-lookup-table/)
+- [Sumo Logic Rules Tuning](/docs/integrations/outbound/integrations-via-api/sumo-logic-rules-tuning)
+- [Upwind](/docs/integrations/outbound/integrations-via-api/upwind/)
 
 #### Enhancements
 
 Upgraded the `python3_generic` **(Python 3.8)** Docker image to `python3_12_generic` **(Python 3.12)** across the following integrations to address Python 3.8 end-of-life and enhance security and performance:
-- [Abuse.ch SSLBL Feed](/docs/integrations/automation-integrations/abuse.ch-sslbl-feed/)
-- [AbuseIPDB](/docs/integrations/automation-integrations/abuseipdb/)
-- [Airtable](/docs/integrations/automation-integrations/airtable/)
-- [Atlassian Jira Cloud](/docs/integrations/automation-integrations/atlassian-jira-cloud/)
-- [Atlassian Jira V2](/docs/integrations/automation-integrations/atlassian-jira-v2/)
-- [Atlassian Opsgenie](/docs/integrations/automation-integrations/atlassian-opsgenie/)
-- [Censys V3](/docs/integrations/automation-integrations/censys-v3/)
-- [Cloudflare](/docs/integrations/automation-integrations/cloudflare/)
-- [CrowdStrike Falcon](/docs/integrations/automation-integrations/crowdstrike-falcon/)
-- [CrowdStrike Falcon Discover](/docs/integrations/automation-integrations/crowdstrike-falcon-discover/)
-- [CrowdStrike Falcon Intelligence](/docs/integrations/automation-integrations/crowdstrike-falcon-intelligence/)
-- [CrowdStrike Falcon Sandbox](/docs/integrations/automation-integrations/crowdstrike-falcon-sandbox/)
-- [Microsoft OneDrive](/docs/integrations/automation-integrations/microsoft-onedrive/)
-- [ThreatConnect V3](/docs/integrations/automation-integrations/threatconnect-v3/)
-- [URLScan.io](/docs/integrations/automation-integrations/urlscan.io/)
+- [Abuse.ch SSLBL Feed](/docs/integrations/outbound/integrations-via-api/abuse.ch-sslbl-feed/)
+- [AbuseIPDB](/docs/integrations/outbound/integrations-via-api/abuseipdb/)
+- [Airtable](/docs/integrations/outbound/integrations-via-api/airtable/)
+- [Atlassian Jira Cloud](/docs/integrations/outbound/integrations-via-api/atlassian-jira-cloud/)
+- [Atlassian Jira V2](/docs/integrations/outbound/integrations-via-api/atlassian-jira-v2/)
+- [Atlassian Opsgenie](/docs/integrations/outbound/integrations-via-api/atlassian-opsgenie/)
+- [Censys V3](/docs/integrations/outbound/integrations-via-api/censys-v3/)
+- [Cloudflare](/docs/integrations/outbound/integrations-via-api/cloudflare/)
+- [CrowdStrike Falcon](/docs/integrations/outbound/integrations-via-api/crowdstrike-falcon/)
+- [CrowdStrike Falcon Discover](/docs/integrations/outbound/integrations-via-api/crowdstrike-falcon-discover/)
+- [CrowdStrike Falcon Intelligence](/docs/integrations/outbound/integrations-via-api/crowdstrike-falcon-intelligence/)
+- [CrowdStrike Falcon Sandbox](/docs/integrations/outbound/integrations-via-api/crowdstrike-falcon-sandbox/)
+- [Microsoft OneDrive](/docs/integrations/outbound/integrations-via-api/microsoft-onedrive/)
+- [ThreatConnect V3](/docs/integrations/outbound/integrations-via-api/threatconnect-v3/)
+- [URLScan.io](/docs/integrations/outbound/integrations-via-api/urlscan.io/)
 
 #### Platform
 
@@ -59,8 +59,8 @@ Upgraded the `python3_generic` **(Python 3.8)** Docker image to `python3_12_gene
 
 #### Integrations
 
-- **Incident Tools**. Set the default start time to the current time when it is not specified in the Create Incident From Template action. [Learn more](/docs/integrations/automation-integrations/incident-tools/).
-- **Microsoft Azure Security Center**. Updated the integration to use Microsoft’s recommended app-only authentication. [Learn more](/docs/integrations/automation-integrations/microsoft-azure-security-center/).
+- **Incident Tools**. Set the default start time to the current time when it is not specified in the Create Incident From Template action. [Learn more](/docs/integrations/outbound/integrations-via-api/incident-tools/).
+- **Microsoft Azure Security Center**. Updated the integration to use Microsoft’s recommended app-only authentication. [Learn more](/docs/integrations/outbound/integrations-via-api/microsoft-azure-security-center/).
 
 #### Playbooks
 

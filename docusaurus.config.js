@@ -104,7 +104,7 @@ module.exports = {
           async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
             const items = await defaultSidebarItemsGenerator(args);
             return items.filter((item) => !(item.type === 'doc' && item.id.endsWith('/index')));
-          },        
+          },
           editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
           //sidebarCollapsible: true,
           //sidebarCollapsed: false,

@@ -36,12 +36,12 @@ Alongside the new agent, the Playbook pages have also been refreshed:
 
 This section includes upgrades to the existing integrations.
 
-- **[Atlassian Jira Cloud](/docs/integrations/automation-integrations/atlassian-jira-cloud/)**
-- **[Atlassian Jira V2](/docs/integrations/automation-integrations/atlassian-jira-v2/)**
-- **[Azure AD](/docs/integrations/automation-integrations/azure-ad/)**
-- **CrowdStrike Falcon Intelligence**. Implemented a schedule action in the [CrowdStrike Falcon Intelligence](/docs/integrations/automation-integrations/crowdstrike-falcon-intelligence/) integration.
-- **[Sumo Logic Cloud (SIEM)](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/)**
-- **[VirusTotal V3](/docs/integrations/automation-integrations/virustotal-v3/)**
+- **[Atlassian Jira Cloud](/docs/integrations/outbound/integrations-via-api/atlassian-jira-cloud/)**
+- **[Atlassian Jira V2](/docs/integrations/outbound/integrations-via-api/atlassian-jira-v2/)**
+- **[Azure AD](/docs/integrations/outbound/integrations-via-api/azure-ad/)**
+- **CrowdStrike Falcon Intelligence**. Implemented a schedule action in the [CrowdStrike Falcon Intelligence](/docs/integrations/outbound/integrations-via-api/crowdstrike-falcon-intelligence/) integration.
+- **[Sumo Logic Cloud (SIEM)](/docs/integrations/outbound/integrations-via-api/sumo-logic-cloud-siem/)**
+- **[VirusTotal V3](/docs/integrations/outbound/integrations-via-api/virustotal-v3/)**
 
 ### Automation Bridge
 

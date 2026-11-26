@@ -120,4 +120,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Zendesk Automation Service Integration](/docs/integrations/automation-integrations/zendesk/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Zendesk Automation Service Integration](/docs/integrations/outbound/integrations-via-api/zendesk/) to automate response actions directly from Cloud SOAR playbooks.

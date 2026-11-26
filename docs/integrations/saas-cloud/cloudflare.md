@@ -239,4 +239,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Cloudflare Automation Service Integration](/docs/integrations/automation-integrations/cloudflare/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Cloudflare Automation Service Integration](/docs/integrations/outbound/integrations-via-api/cloudflare/) to automate response actions directly from Cloud SOAR playbooks.

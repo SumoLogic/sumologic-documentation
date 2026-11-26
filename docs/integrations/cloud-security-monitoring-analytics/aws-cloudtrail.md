@@ -196,4 +196,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [AWS CloudTrail Automation Service Integration](/docs/integrations/automation-integrations/aws-cloudtrail/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [AWS CloudTrail Automation Service Integration](/docs/integrations/outbound/integrations-via-api/aws-cloudtrail/) to automate response actions directly from Cloud SOAR playbooks.

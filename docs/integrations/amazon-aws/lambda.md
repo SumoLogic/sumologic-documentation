@@ -433,4 +433,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [AWS Lambda Automation Service Integration](/docs/integrations/automation-integrations/aws-lambda/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [AWS Lambda Automation Service Integration](/docs/integrations/outbound/integrations-via-api/aws-lambda/) to automate response actions directly from Cloud SOAR playbooks.
