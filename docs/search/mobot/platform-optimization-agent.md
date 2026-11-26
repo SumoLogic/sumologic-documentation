@@ -25,10 +25,6 @@ The agent has the following skills:
 
 ## FAQ
 
-### What happened to the Knowledge Agent?
-
-The Platform Optimization Agent replaces the Knowledge Agent. The Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent keeps that skill and adds query optimization guidance, data usage insight, and proactive recommendations.
-
 ### Will I see the Platform Optimization Agent in the UI?
 
 You do not see it as a separate item. It surfaces through the Recommendations page and DojoAI Studio.
