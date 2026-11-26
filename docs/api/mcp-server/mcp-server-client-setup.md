@@ -22,7 +22,7 @@ Connect your AI client to the [Sumo Logic MCP server](/docs/api/mcp-server) to q
 The Sumo Logic plugin is the recommended setup path. It connects the client to the MCP server and adds the [sumo-investigator skill](/docs/api/mcp-server/#improve-investigations-with-the-sumo-investigator-skill), which guides the client through log searches, alerts, insights, and dashboards.
 
 :::note
-The plugins do not include Mobot support yet because the updates are pending marketplace approval. To use [Mobot](/docs/api/mcp-server/mobot-in-mcp-server) in the meantime, connect to the MCP server and include "use Mobot" in your query.
+The GitHub Copilot plugin includes Mobot support. The other plugins do not include it yet because the updates are pending marketplace approval. To use [Mobot](/docs/api/mcp-server/mobot-in-mcp-server) with those clients in the meantime, connect to the MCP server and include "use Mobot" in your query.
 :::
 
 ## Before you begin
@@ -67,7 +67,7 @@ The Sumo Logic plugin works with both the Copilot extension for VS Code and the 
 
 To invoke the investigation skill directly, use `/sumo-investigator`, for example:
 
-```
+```text
 /sumo-investigator what errors are happening in the API gateway?
 ```
 
@@ -75,7 +75,7 @@ To invoke the investigation skill directly, use `/sumo-investigator`, for exampl
 
 ### Install the Claude plugin
 
-- **Claude Code**. Run `/plugins`, search for `sumologic-mcp`, and install it.
+- **Claude Code**. Run `/plugin`, search for `sumologic-mcp`, and install it.
 - **Claude Cowork**. Select **Customize** > **Plugins** > **Discover**, search for `sumologic-mcp`, and add it.
 
 When you first enable the plugin, you are prompted for your MCP server URL. Use the endpoint for your deployment from the [MCP server endpoints](/docs/api/mcp-server#mcp-server-endpoints).
@@ -112,13 +112,13 @@ For more detail, see [How to configure the MCP server in Claude Code CLI](/docs/
 
 Invoke the investigation skill with a question:
 
-```
+```text
 /sumologic-mcp:sumo-investigator what errors are happening in the API gateway in the last hour?
 ```
 
 You can also ask in plain language, and Claude calls the MCP tools directly:
 
-```
+```text
 Show me critical security insights from this week
 ```
 
