@@ -34,6 +34,9 @@ With the sidebar, you can:
 ## Open the sidebar
 
 1. Click **Ask Mobot** in the top nav bar on any page.
+1. Use the agent selector at the bottom right of the question field to choose who you talk to:
+   * Mobot, as a personal assistant.
+   * A Dojo Studio agent, such as the SOC Analyst Agent, Root Cause Agent, or a custom agent.
 1. Type a question in the **Ask Something** field and press Enter or click the send button.
 
 Mobot runs the analysis and returns the results, including the queries it ran and a summary of what it found, in the sidebar.
@@ -44,7 +47,7 @@ For example, while viewing a dashboard of Amazon Bedrock AgentCore gateway metri
 
 ## Page context
 
-Mobot uses the page you are on as context for your conversation. Every page provides context, though the depth of what Mobot can do may differ by page. A **Context** chip at the bottom of the sidebar, above the question field, shows the name of the page Mobot is using, for example **Dashboard**.
+Mobot uses the page you are on as context for your conversation. Every page provides context, though the depth of what Mobot can do may differ by page. A **Context** chip at the bottom of the sidebar, above the question field, shows the name of the page Mobot is using, for example **Log Search**.
 
 To stop Mobot from using the page as context, click the **X** on the chip.
 
@@ -82,11 +85,6 @@ Mobot asks for the same confirmation before creating content as it does on the M
 ### How is the sidebar different from the Mobot page?
 
 Both use the same agent architecture. The sidebar stays open beside the page you are working on and uses that page as context, so you do not need to copy information into a separate chat window.
-
-In the sidebar and on the Mobot page, use the agent selector at the bottom right of the question field to choose who you talk to:
-
-* Mobot, as a personal assistant.
-* A Dojo Studio agent, such as the SOC Analyst Agent, Root Cause Agent, or a custom agent.
 
 ### Can I turn off Mobot?
 
