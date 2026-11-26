@@ -39,7 +39,7 @@ Recommendations fall into two operational areas, matching the **Category** you s
 
 ## View your recommendations
 
-1. In the left nav, click **DojoAI** > **Recommendations**.<br/><img src={useBaseUrl('img/search/mobot/recommendations-list.png')} alt="Recommendations page showing the Recommendation, Category, Impact, Status, Generated, and Actions columns" style={{border: '1px solid gray'}} width="800" /><br/>The list is ranked automatically by confidence, impact, and relevance to you, and each row shows:
+1. In the left nav, click **DojoAI** > **Recommendations**.<br/><img src={useBaseUrl('img/search/mobot/recommendations-list.png')} alt="Recommendations page showing the Recommendation, Category, Impact, Status, and Generated columns, with a tooltip on the Recommendations tab" style={{border: '1px solid gray'}} width="800" /><br/>The list is ranked automatically by confidence, impact, and relevance to you, and each row shows:
    - **Recommendation**. The issue and the specific resource it affects, for example **Reduce Query Latency | MySQL - Excessive Slow Query Detected**, with a short description of the expected outcome, such as a percentage reduction in query latency.
    - **Category**. **Performance** or **Reliability**. See [Recommendation types](#recommendation-types).
    - **Impact**. The expected impact of applying the fix, based on improvement percentage: **High** or **Medium**.

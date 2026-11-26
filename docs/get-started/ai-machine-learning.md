@@ -70,6 +70,10 @@ Investigations start when an alert matches a trigger you configure, or you can s
 The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Contact your Sumo Logic account representative for access.
 :::
 
+### Log Analysis Agent
+
+[Log Analysis Agent](/docs/search/mobot/log-analysis-agent) analyzes logs and helps teams identify gaps in log monitoring so they can detect recurring issues sooner. It recommends monitors that you can review, customize, and create to improve reliability. Currently in Private Preview. To participate, contact your Sumo Logic account representative.
+
 ### SOC Analyst Agent
 
 <img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="45"/>
@@ -82,7 +86,7 @@ The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Ava
 
 ### Platform Optimization Agent
 
-[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
+[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) helps you optimize queries, tune dashboards and find data blind spots to get more from the Sumo platform.
 
 ### DojoAI credits
 
@@ -169,6 +173,12 @@ AI features are on by default. We offer two methods for opting out:
 **Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
+
+### Does the Log Analysis Agent make recommendations on its own?
+
+Yes. In the background, the Log Analysis Agent finds coverage gaps across the Sumo environment and suggests creating monitors on them to catch issues proactively. You review each recommendation and decide what to do, so nothing changes automatically.
+
+The Recommendations feature is in Private Preview. To participate, contact your Sumo Logic account representative. [Learn more](/docs/search/mobot/log-analysis-agent).
 
 ### Can DojoAI access be controlled at a user level?
 

@@ -3055,6 +3055,7 @@
   "/cid/1164": "/docs/integrations/aiml/ai-observability/instrument-your-llm-application-with-opentelemetry",
   "/cid/1172": "/docs/search/mobot/dojoai-recommendations-preview",
   "/cid/1173": "/docs/search/mobot/platform-optimization-agent",
+  "/cid/1174": "/docs/search/mobot/log-analysis-agent",
   "/release-notes-collector/2026/04/11/hosted/": "/release-notes-collector/2026/05/11/hosted/",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-metrics-source/",
