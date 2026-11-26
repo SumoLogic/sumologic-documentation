@@ -8,13 +8,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Observability Solution is a framework to simplify the monitoring and troubleshooting of your AWS cloud infrastructure. You can use the Sumo Logic observability app dashboards to isolate and solve problems faster.
 
-The AWS Observability Solution is available in two versions. Choose the version that matches the release you're deploying:
+The AWS Observability Solution is available in three versions. Choose the version that matches the release you're deploying:
 
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/v3.0.0/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>v3.0.0 (latest)</h4></a>
+  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/v3.1.0/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>v3.1.0 (latest)</h4></a>
   <p>Deploy and use the latest version of the AWS Observability Solution.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/v3.0.0/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>v3.0.0</h4></a>
+  <p>Deploy and use version 3.0.0 of the AWS Observability Solution.</p>
   </div>
 </div>
 <div className="box smallbox card">

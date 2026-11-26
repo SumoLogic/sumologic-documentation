@@ -23,7 +23,7 @@ You deploy a separate network template, `static_outbound_ip.template.yaml`, **be
 
 * Only `LambdaHelper` and `LambdaHelperAlias` (the functions that call the Sumo Logic API) are attached to the VPC. Other AWS Observability Lambda functions are unchanged.
 * If the network template has not been deployed, AWS Observability behaves exactly as before.
-* Deploy the network once per AWS account and region where AWS Observability is deployed.
+* Deploy the network once per AWS account and region where AWS Observability is deployed. Only one network stack can own the `/sumologic/awso/network/` parameters in an account and region.
 
 ## Prerequisites
 
@@ -44,8 +44,22 @@ The network template has two options, set with **Network Option**.
 | Elastic IP | Created, or the one you provide | Used with the existing NAT gateway; created only if a NAT gateway has to be created. |
 | Private subnets | Two created | Reused if they already route to a NAT gateway; otherwise two small (/28) subnets are created. |
 | Security group | Created (no inbound rules, outbound `tcp/443` only) | The one you provide, or one is created. |
+| SSM parameters | Written by the stack. Existing values under `/sumologic/awso/network/` are overwritten (see [If the SSM parameters already exist](#if-the-ssm-parameters-already-exist-newvpc)). | Written by the stack, except the inputs you published. |
 
 With `ExistingVPC`, resources you own are validated but never modified or deleted. Everything the template creates is tagged `CreatedBy=sumologic-awso` and is the only thing removed when you delete the stack.
+
+### If the SSM parameters already exist (NewVPC)
+
+The network stack writes `vpc-id`, `private-subnet-ids`, `security-group-id`, and `nat-public-ip` under `/sumologic/awso/network/`. If a parameter with the same name already exists, `NewVPC` replaces its value and tags it as belonging to the new stack, instead of failing with a "Resource name conflict" error. What happens depends on where the existing parameter came from:
+
+| Existing parameter | What happens |
+|:--|:--|
+| Left behind by a stack that was deleted | Overwritten. |
+| Published by you, or by the `StaticIpSsmInputsPopulate.py` script | Overwritten. `NewVPC` builds its own VPC, so those inputs do not apply. |
+| Written by this same stack (an update) | Overwritten with the current values. |
+| Owned by **another network stack that still exists** | The stack fails and names that stack. Nothing is changed. Delete that stack first. |
+
+All four parameters are checked before any is written, so a failure leaves the existing values untouched. `nat-public-ip` is always written last. AWS Observability treats the network as configured only when it exists, so it never sees a new IP paired with old subnets.
 
 ### Use a pre-allocated Elastic IP (optional)
 
@@ -127,7 +141,7 @@ aws ssm put-parameter --name /sumologic/awso/network/vpc-id --type String --valu
 For many accounts and regions, use the [`StaticIpSsmInputsPopulate.py`](https://github.com/SumoLogic/sumologic-solution-templates/blob/master-v3x/cloudformation-sumologic-aws-observability/scripts/StaticIpSsmInputsPopulate.py) script, which reads a CSV file with one row per account and region.
 
 :::note
-Do not publish these inputs in an account and region where you deploy the network with `NewVPC`. `NewVPC` creates the same SSM parameters itself and ignores the inputs.
+Do not publish these inputs in an account and region where you deploy the network with `NewVPC`. `NewVPC` writes the same SSM parameters itself and overwrites the inputs you published. Afterward, the script reports those parameters as a `conflict`, because the network stack now owns them.
 :::
 
 #### CSV file
@@ -228,7 +242,7 @@ If you provide a value, it is validated and never modified: subnets must route `
 
 * **Network changes.** Update the AWS Observability stack with any parameter change, or upgrade it, to apply a changed network. If you change an SSM input but not the stack parameters, the stack does not notice.
 * **Delete order.** Delete AWS Observability **first**, because removing its Sumo Logic resources still needs the NAT gateway. Then delete the network stack. For StackSets, delete the AWS Observability StackSet before the network StackSet. Expect subnet deletion to take a few minutes while Lambda network interfaces are released.
-* **What is removed.** Only resources the template created are removed. Your VPC, other networking resources, and the SSM inputs you published are kept. A pre-allocated Elastic IP is not released.
+* **What is removed.** Only resources the template created are removed, along with the SSM parameters the stack wrote. A parameter that another stack or the populate script has since taken over is kept. With `ExistingVPC`, your VPC, other networking resources, and the SSM inputs you published are kept. A pre-allocated Elastic IP is not released.
 
 ## Cost
 
@@ -243,6 +257,8 @@ AWS charges for the NAT gateway and Elastic IP this setup uses. If the VPC alrea
 | Network stack fails naming a subnet | The subnet does not route `0.0.0.0/0` to a NAT gateway. Fix the route table, or remove the subnet input so subnets are found or created. |
 | Network stack fails with no free CIDR | The VPC has no room for the subnets. Add a secondary CIDR to the VPC, or pass existing private subnet IDs. |
 | Network stack fails because the VPC ID is missing | `ExistingVPC` needs a VPC ID. Enter **Existing VPC ID** or publish `vpc-id` in SSM in that account and region. |
+| Network stack fails with `belongs to stack … which still exists` | `NewVPC` found `/sumologic/awso/network/` parameters written by another network stack in this account and region. Delete that stack, or use only one network stack per account and region. |
+| Network stack fails with `Resource name conflict` on an SSM parameter | You are deploying a template version older than the one that overwrites existing parameters. Use the current `static_outbound_ip.template.yaml`, or delete the existing `/sumologic/awso/network/*` parameters first. |
 | Network stack fails because DNS support is off | Enable DNS support on the VPC. Lambda cannot resolve Sumo Logic host names without it. |
 | AWS Observability fails with `Incomplete static outbound IP configuration` | The `nat-public-ip` SSM parameter exists but others are missing. Redeploy the network stack in that account and region. |
 | AWS Observability fails with an allowlist error (401 or 403) | The IP in the **SumoAPIOutboundIP** output is not on the Sumo Logic allowlist, or the network is not configured. Add the IP, then retry. |

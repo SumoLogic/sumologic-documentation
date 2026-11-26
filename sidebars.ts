@@ -2040,7 +2040,45 @@ module.exports = {
               items: [
                 {
                   type: 'category',
-                  label: 'v3.0.0 (latest)',
+                  label: 'v3.1.0 (latest)',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.1.0/index'},
+                  items: [
+                    'observability/aws/deploy-use-aws-observability/v3.1.0/before-you-deploy',
+                    {
+                      type: 'category',
+                      label: 'Deploy with AWS CloudFormation',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-aws-cloudformation/index'},
+                      items: [
+                        'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
+                        'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-aws-cloudformation/automatic-installation-script',
+                        'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
+                        'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-aws-cloudformation/update-aws-observability-stack-cloudformation',
+                        'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Deploy with Terraform',
+                      collapsible: true,
+                      collapsed: true,
+                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-terraform/index'},
+                      items: [
+                        'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-terraform/update-aws-observability-stack-terraform',
+                        'observability/aws/deploy-use-aws-observability/v3.1.0/deploy-with-terraform/migration-strategy-using-terraform',
+                      ],
+                    },
+                    'observability/aws/deploy-use-aws-observability/v3.1.0/view-dashboards',
+                    'observability/aws/deploy-use-aws-observability/v3.1.0/configure-alerts',
+                    'observability/aws/deploy-use-aws-observability/v3.1.0/resources',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'v3.0.0',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.0.0/index'},

@@ -13,6 +13,7 @@ To install or upgrade to the required version of the CloudFormation template, u
 
 | Release (AWSO) | Release Date   | Active Support | Additional Notes |
 |:---------------|:---------------|:--|:--|
+| 3.1.0          | TBD            | Yes | Adds support for the Sumo Logic API allowlist (static outbound IP). |
 | 3.0.0          | 23rd Sep, 2026 | Yes | AWSO deployment is not supported in the AWS European Sovereign Cloud and Sumo Logic ESC environments due to the unavailability of the Serverless Application Repository.                         |
 | 2.15.0         | 28th May, 2026 | Yes | AWSO deployment is not supported in the AWS European Sovereign Cloud and Sumo Logic ESC environments due to the unavailability of the Serverless Application Repository.                         |
 | 2.14.0         | 14th Apr, 2026 | Yes - Ends on 1st May, 2027 | AWSO is not supported in the AWS Zurich region, as the Serverless Application Repository is not available there.<br /><br />AWS Lambda runtime Node.js 22.x will be deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2027                                                                 |
@@ -23,6 +24,20 @@ To install or upgrade to the required version of the CloudFormation template, u
 | 2.9.0          | 2nd Aug, 2024  | No | AWS Lambda runtime Node.js 20.x was deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)) on 30th Apr, 2025 |
 | 2.8.0 or Less  | 17th May, 2024 | No | AWS Lambda runtime Node.js 18.x was deprecated by AWS ([Lambda Runtimes Documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtimes-deprecated)) |
 
+
+## v3.1.0, TBD
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.1.0/templates/sumologic_observability.master.template.yaml`
+
+New Features:
+* Supports installing and upgrading AWS Observability with the Sumo Logic API allowlist enabled. Deploy the new `static_outbound_ip.template.yaml` network template first, add its `NatPublicIp` output to the allowlist, then deploy AWS Observability, which attaches the Lambda functions that call Sumo Logic APIs to the VPC automatically. See [Deploy AWS Observability with the Sumo Logic API Allowlist](/docs/observability/aws/other-configurations-tools/static-outbound-ip-api-allowlist/).
+* Log groups are now subscribed when a matching tag is added to an existing log group, not only when the log group is created with the tag.
+
+Updates:
+* Changing **Tags for filtering CloudWatch Log Groups** now subscribes existing log groups that match the new tags, when **Subscribe log groups to destination** is **Existing** or **Both**.
+* The log group connector Lambda function now writes its own logs to CloudWatch.
+* Upgraded SAM app versions:
+   - sumologic-app-utils → 3.1.0
+   - sumologic-loggroup-connector → v1.0.17
 
 ## v3.0.0, 23-Sep-2026
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml`
