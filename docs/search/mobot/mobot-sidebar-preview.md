@@ -47,7 +47,7 @@ For example, while viewing a dashboard of Amazon Bedrock AgentCore gateway metri
 
 ## Page context
 
-Mobot uses the page you are on as context for your conversation. Every page provides context, though the depth of what Mobot can do may differ by page. A **Context** chip at the bottom of the sidebar, above the question field, shows the name of the page Mobot is using, for example **Dashboard**.
+Mobot uses the page you are on as context for your conversation. Every page provides context, though the depth of what Mobot can do may differ by page. A **Context** chip at the bottom of the sidebar, above the question field, shows the name of the page Mobot is using, for example **Log Search**.
 
 To stop Mobot from using the page as context, click the **X** on the chip.
 
