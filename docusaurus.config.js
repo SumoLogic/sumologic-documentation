@@ -43,56 +43,6 @@ module.exports = {
         title: 'LLM Documentation Index',
       },
     },
-    // Intellimize
-    {
-      tagName: 'style',
-      attributes: {},
-      innerHTML:
-        '.anti-flicker, .anti-flicker * { visibility: hidden !important; opacity: 0 !important; }',
-    },
-    {
-      tagName: 'script',
-      attributes: {},
-      innerHTML:
-        "(function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=' '+p,setTimeout(function(){n.className=n.className.replace(RegExp(' ?'+p),'')},t)})(window, 4000, 'anti-flicker');",
-    },
-    {
-      tagName: 'script',
-      attributes: {},
-      innerHTML: `(function() {
-        var s = document.createElement('script');
-        s.src = 'https://cdn.intellimize.co/snippet/117845498.js';
-        s.async = true;
-        s.onerror = function() {
-          document.documentElement.className =
-            document.documentElement.className.replace(RegExp(' ?anti-flicker'), '');
-        };
-        document.head.appendChild(s);
-      })();`,
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://api.intellimize.co',
-        crossorigin: 'anonymous'
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://117845498.intellimizeio.com'
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://log.intellimize.co',
-        crossorigin: 'anonymous'
-      },
-    },
     // Sumo Logic RUM
     {
       tagName: 'script',
@@ -150,6 +100,11 @@ module.exports = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
+          // A category that links to its own index doc must not list that doc again as an item.
+          async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+            const items = await defaultSidebarItemsGenerator(args);
+            return items.filter((item) => !(item.type === 'doc' && item.id.endsWith('/index')));
+          },        
           editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
           //sidebarCollapsible: true,
           //sidebarCollapsed: false,
@@ -363,9 +318,9 @@ module.exports = {
       { property: 'og:type', content: 'article' },
     ],
     announcementBar: {
-      id: 'mobot-banner-v3',
-      content: `<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
-      backgroundColor: '#0055B7',
+      id: 'aws-reinvent-banner-v1',
+      content: `Heading to AWS re:Invent? Visit Sumo Logic at booth #587 to see AI Driven Telemetry, Data Pipelines, and DojoAI features. <a href="https://www.sumologic.com/events/aws-reinvent"><strong>Book a meeting</strong></a>`,
+      backgroundColor: '#020146',
       textColor: '#fff',
     },
     imageZoom: {

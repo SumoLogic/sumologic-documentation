@@ -54,10 +54,7 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot head icon" width="45"/>
 
-[Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
-
-* **Log Analysis Agent**. Guides you through analysis using natural language prompts, delivering structured findings and suggested next steps. It also allows you to create and edit dashboards and monitors without writing complex queries.
-* **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
+[Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, such as the ones listed in forthcoming sections.
 
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language such as monitors, dashboards, and playbooks.
 
@@ -73,12 +70,6 @@ Investigations start when an alert matches a trigger you configure, or you can s
 The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Contact your Sumo Logic account representative for access.
 :::
 
-### DojoAI Credits
-
-DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts and SOC Analyst Agent investigated insights use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
-
-You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
-
 ### SOC Analyst Agent
 
 <img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="45"/>
@@ -88,6 +79,16 @@ Investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/ge
 :::note
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 :::
+
+### Platform Optimization Agent
+
+[Platform Optimization Agent](/docs/search/mobot/platform-optimization-agent) answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
+
+### DojoAI credits
+
+DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts and SOC Analyst Agent investigated insights use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
+
+You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
 
 ### Sumo Logic MCP server
 
