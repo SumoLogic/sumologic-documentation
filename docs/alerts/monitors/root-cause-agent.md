@@ -66,6 +66,18 @@ The verdict also appears in the **AI Verdict** column of the **Alert List**, so 
 
 The agent surfaces a root cause only when it is confident in the conclusion; otherwise, it returns an **Inconclusive** status rather than a lower-confidence guess.
 
+### View the investigation trace
+
+The investigation trace is a step-by-step record of what the agent checked, what came back, and how it reached its verdict. Use it to verify a verdict without re-running the investigation yourself. Anyone who can view the alert can view its trace.
+
+On the **AI Investigation** tab, click **View Full Investigation Process** in the **AI Verdict** box.
+
+The trace opens in a side panel next to the alert. Review the trace:
+
+* **What was done**. The agent's verdict and the explanation behind it. Click the arrow to collapse or expand it.
+* **How it got here**. The numbered steps the agent took, in order.
+* **Show query**. Click this under a step to see the query the agent ran.
+
 ### What Happened
 
 This section shows a summary, a confirmed root cause, a baseline check that compares the alert to earlier activity, and the causes the agent ruled out. Each investigation also lists the **Knowledge sources** it drew on, such as runbooks associated with the monitor, knowledge you provide in Dojo Studio, and what the agent learned from previous investigations.
@@ -92,7 +104,7 @@ This section lists the main points uncovered by the investigation, each with a s
 
 ### Recommended Actions
 
-This section lists suggested actions, each with a title and explanation, such as adding a time range to a query or reviewing a monitor definition. For some of the actions, you can run them by clicking **Execute** (not pictured). The agent does not run an action unless you click **Execute**.
+After the Root Cause Agent investigates an alert, it generates contextually appropriate **Recommended Actions** that you can review without leaving the alert page. Each action has a title and an explanation, such as adding a time range to a query or reviewing a monitor definition. The agent generates recommendations for every investigated alert, and they update as the agent uncovers more context when you continue the investigation in Mobot. The agent doesn't take remediation actions on its own. Executing a recommended action by clicking **Execute**, which requires your explicit approval, is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-rec-actions.png')} alt="Recommended Actions list with suggested next steps" style={{border: '1px solid gray'}} width="800" />
 
@@ -121,7 +133,7 @@ From the **AI Investigation** tab, you can continue the investigation conversati
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-mobot.png')} alt="Continuing an investigation conversationally in Mobot" style={{border: '1px solid gray'}} width="800" />
 
-Click one of the suggested follow-up questions to autopopulate it in Mobot, or click **Ask Mobot** at the top of the alert page. When Mobot opens, it shows all AI investigation details. From here, ask a follow-up question specific to the alert you're investigating.
+Click **Ask Mobot** at the top of the alert page to continue with the Root Cause Agent. To switch to a custom agent, click the dropdown next to **Ask Mobot** and select it. You can also click one of the suggested follow-up questions to autopopulate it in Mobot. The full AI investigation appears in Mobot under the selected agent. From here, ask a follow-up question specific to the alert you're investigating.
 
 Here are more examples to get you started. For the most useful responses, ask questions specific to the alert you are investigating.
 
@@ -143,7 +155,7 @@ After each response, Mobot retains the context of your investigation and present
 * **Traces and APM-based investigation**. Investigations run across logs and metrics. Distributed trace reasoning and service map awareness are not currently part of the investigation.
 * **Deduplication of investigations**. If the same incident arrives through more than one alert, you may see more than one investigation.
 * **External alerts**. The **AI Investigation** tab covers alerts from Sumo Logic monitors. You can investigate alerts from external alerting systems in [Mobot](/docs/search/mobot/), but those investigations do not appear on the alert response page.
-* **Investigation limit**. Your organization can run 5 investigations per day, shared between automatic and manual investigations. If automatic investigations are rate limited, you can still start them manually.
+* **Investigation limit**. Your organization can run 5 investigations per day, shared between automatic and manual investigations.
 
 ## FAQ
 
