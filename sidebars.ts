@@ -927,6 +927,7 @@ module.exports = {
         'manage/field-extractions/field-naming-convention',
         'manage/field-extractions/create-field-extraction-rule',
         'manage/field-extractions/edit-field-extraction-rules',
+        'manage/field-extractions/migrate-fers-to-data-pipelines',
         {
           type: 'category',
           label: 'FER Templates',
