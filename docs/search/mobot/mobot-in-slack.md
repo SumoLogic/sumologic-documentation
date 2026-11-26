@@ -102,7 +102,7 @@ Sumo Logic requests the following Slack OAuth scopes when you connect a Slack wo
 
 ## Rate limits
 
-Mobot in Slack shares the same daily quota as Mobot in the UI. There is no separate Slack allowance. A user's prompt limit is shared across all surfaces.
+Mobot in Slack shares the same daily quota as Mobot in the UI. There is no separate Slack allowance. A user's prompt limit is shared across all surfaces. Learn more in [Is there a limit to how many prompts I can send?](/docs/search/mobot/#is-there-a-limit-to-how-many-prompts-i-can-send)
 
 ## FAQ
 
