@@ -86,11 +86,6 @@ Mobot asks for the same confirmation before creating content as it does on the M
 
 Both use the same agent architecture. The sidebar stays open beside the page you are working on and uses that page as context, so you do not need to copy information into a separate chat window.
 
-In the sidebar and on the Mobot page, use the agent selector at the bottom right of the question field to choose who you talk to:
-
-* Mobot, as a personal assistant.
-* A Dojo Studio agent, such as the SOC Analyst Agent, Root Cause Agent, or a custom agent.
-
 ### Can I turn off Mobot?
 
 Yes. Contact your Sumo Logic account team or open a support ticket to opt out, the same way you can for other DojoAI capabilities. See [Can I opt out of AI features?](/docs/get-started/ai-machine-learning/#can-i-opt-out-of-ai-features)
