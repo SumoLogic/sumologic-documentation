@@ -1,7 +1,7 @@
 ---
 id: mobot-in-slack
 title: Mobot in Slack
-description: Ask Mobot about your Sumo Logic data without leaving Slack by @mentioning Sumo Logic in channels or sending direct messages.
+description: Ask Mobot about your Sumo Logic data without leaving Slack. Mention @Sumo in a channel or send a direct message, and get answers that link back to Sumo Logic.
 keywords:
   - mobot
   - dojoai
