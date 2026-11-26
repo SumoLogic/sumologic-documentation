@@ -34,6 +34,9 @@ With the sidebar, you can:
 ## Open the sidebar
 
 1. Click **Ask Mobot** in the top nav bar on any page.
+1. Use the agent selector at the bottom right of the question field to choose who you talk to:
+   * Mobot, as a personal assistant.
+   * A Dojo Studio agent, such as the SOC Analyst Agent, Root Cause Agent, or a custom agent.
 1. Type a question in the **Ask Something** field and press Enter or click the send button.
 
 Mobot runs the analysis and returns the results, including the queries it ran and a summary of what it found, in the sidebar.
