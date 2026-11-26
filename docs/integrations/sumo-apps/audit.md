@@ -255,7 +255,7 @@ See information on scheduled searches that have been triggered, along with detai
 
 ### Mobot Usage Overview
 
-See Mobot interactions, unique users, top users, interface usage breakdown and trend, recent prompts, geolocation of Mobot interactions, and interactions from malicious IP addresses. Use the **interface**, **status**, and **user_email** filters at the top of the dashboard to narrow the results.
+See Mobot interactions, unique users, top users, interface usage breakdown and trend, recent prompts, geolocation of Mobot interactions, and interactions from malicious IP addresses. Use the **interface**, **user_email**, and **status** filters at the top of the dashboard to narrow the results.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/audit-mobot-usage-overview.png')} alt="Mobot Usage Overview dashboard" width="800" />
 
