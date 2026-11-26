@@ -23,7 +23,7 @@ This feature is in Public Preview. To participate, contact your Sumo Logic accou
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="35"/>
 
-The Sumo Logic Slack app lets your team use [Mobot](/docs/search/mobot/) directly from Slack. Mention `@Sumo` in any channel or investigate alerts and data in Sumo Logic by direct message, all without leaving Slack.
+The Sumo Logic Slack app lets your team use [Mobot](/docs/search/mobot/) directly from Slack. Mention `@Sumo` in any channel, or investigate alerts and data in Sumo Logic by direct message.
 
 Responses are scoped to your Sumo Logic role and org, and every response includes a link back to the relevant entity in Sumo Logic. Sumo Logic passes the full thread context to Mobot automatically, so you do not need to re-explain what your team has already discussed.
 
