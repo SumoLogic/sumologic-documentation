@@ -68,7 +68,7 @@ The first time you mention Sumo Logic, you receive a private prompt that only yo
 
 ### Mention Sumo Logic in a channel or thread
 
-Type `@Sumo` followed by your question in any channel. If Sumo Logic has not joined the channel, Slack prompts you to add it. Confirm the prompt, and Sumo Logic joins the channel and processes your question. Sumo Logic responds in a thread with a footer that shows which org was queried, for example `proddata(us2) · 0000000000124DBA`, and links to the relevant entities in Sumo Logic. If you mention Sumo Logic inside an existing thread, Sumo Logic reads all prior messages in the thread for context before it responds.
+Type `@Sumo` followed by your question in any channel. If Sumo Logic has not joined the channel, Slack prompts you to add it. Confirm the prompt, and Sumo Logic joins the channel and processes your question. Sumo Logic responds in a thread with a footer that shows which org was queried, for example `<org-name>(us2) · <org-id>`, and links to the relevant entities in Sumo Logic. If you mention Sumo Logic inside an existing thread, Sumo Logic reads all prior messages in the thread for context before it responds.
 
 ### Send a direct message
 
