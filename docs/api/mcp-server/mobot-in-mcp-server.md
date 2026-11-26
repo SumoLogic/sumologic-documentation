@@ -30,9 +30,8 @@ The Sumo Logic plugin bundles the sumo-investigator skill with the MCP server co
 For the clients that have a plugin, and how each one is set up, see [Choose a setup path](/docs/api/mcp-server/mcp-server-client-setup#choose-a-setup-path).
 
 :::note
-The GitHub Copilot plugin includes Mobot support. The Mobot skill updates for the other plugins are pending approval in each marketplace. Until they are available, connect your client to the MCP server without the plugin and include "use Mobot" in your query, for example, "Use Mobot to investigate why errors are spiking." For setup steps, see [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server/mcp-server-client-setup).
+The GitHub Copilot plugin and the Claude plugin include Mobot support. The AWS DevOps Agent update is in progress. Until it is available, connect AWS DevOps Agent to the MCP server without the plugin and include "use Mobot" in your query, for example, "Use Mobot to investigate why errors are spiking." For setup steps, see [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server/mcp-server-client-setup).
 :::
-{/* TODO DOCS-2027: remove the pending-approval caveat here, on the client setup page, and the "coming soon" line below once the marketplace updates and the Cursor and Codex plugins are available. */}
 
 Plugins for Cursor and Codex are coming soon.
 
@@ -94,7 +93,16 @@ Mobot calls are also subject to the [MCP server rate limits](/docs/api/mcp-serve
 
 ## Audit Mobot activity from the MCP server
 
-Mobot prompts and investigations started through the MCP server are recorded in Sumo Logic audit logs, the same way as Mobot interactions from the UI. To query these events, see [Audit Mobot queries](/docs/search/mobot/#audit-mobot-queries).
+Mobot prompts and investigations started through the MCP server are recorded in Sumo Logic audit logs, the same way as Mobot interactions from the UI. The `operator.interface` field shows where the activity started, `MCP` for the MCP server. For example, to find Mobot activity started from the MCP server:
+
+```sumo
+_index=sumologic_audit_events
+| where invocationdetails.agentname in ("mobot")
+| json field=_raw "operator.interface" as iface
+| where iface = "MCP"
+```
+
+For the prerequisites and other audit queries, see [Audit Mobot queries](/docs/search/mobot/#audit-mobot-queries).
 
 ## FAQ
 

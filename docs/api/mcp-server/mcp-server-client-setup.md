@@ -22,7 +22,7 @@ Connect your AI client to the [Sumo Logic MCP server](/docs/api/mcp-server) to q
 The Sumo Logic plugin is the recommended setup path. It connects the client to the MCP server and adds the [sumo-investigator skill](/docs/api/mcp-server/#improve-investigations-with-the-sumo-investigator-skill), which guides the client through log searches, alerts, insights, and dashboards.
 
 :::note
-The GitHub Copilot plugin includes Mobot support. The other plugins do not include it yet because the updates are pending marketplace approval. To use [Mobot](/docs/api/mcp-server/mobot-in-mcp-server) with those clients in the meantime, connect to the MCP server and include "use Mobot" in your query.
+The GitHub Copilot plugin and the Claude plugin include Mobot support. The AWS DevOps Agent update is in progress. To use [Mobot](/docs/api/mcp-server/mobot-in-mcp-server) with AWS DevOps Agent in the meantime, connect to the MCP server and include "use Mobot" in your query.
 :::
 
 ## Before you begin
