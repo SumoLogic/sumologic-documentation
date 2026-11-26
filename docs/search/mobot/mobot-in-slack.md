@@ -54,7 +54,7 @@ A Sumo Logic administrator needs to connect Slack to your org.
 1. In the top-right dropdown menu, confirm that the correct workspace is selected, and then click **Allow**.
 1. The workspace appears with the status **Connected**.
 
-If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Submit the request. You do not need to submit it again. Follow up with your Slack Admin to get the request approved. After the Slack Admin approves it in Slack, you must reconnect the workspace to your Sumo Logic org to finish the installation. Until then, the workspace is not linked to your Sumo Logic org.
+If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Submit the request. You do not need to submit it again. Follow up with your Slack Admin to get the request approved. After the Slack Admin approves it in Slack, you need to reconnect the workspace to your Sumo Logic org to finish the installation. Until then, the workspace is not linked to your Sumo Logic org.
 
 ### Disconnect Slack
 
