@@ -58,7 +58,13 @@ If your Slack workspace restricts app installs, the authorization screen shows *
 
 ### Disconnect Slack
 
-You need the Administrator role or any role with the Manage Integrations capability to disconnect Slack. To disconnect, open the overflow menu on the workspace row in the **Configure** tab and select **Disconnect workspace**. This disassociates your Sumo Logic org from that Slack workspace.
+You need the Administrator role or any role with the Manage Integrations capability to disconnect Slack.
+
+1. In Sumo Logic, select **App Catalog** > **Integrations** > **Inbound Integrations** in the navigation menu.
+1. In the **Configure** tab, open the overflow menu on the workspace row.
+1. Select **Disconnect workspace**.
+
+This disassociates your Sumo Logic org from that Slack workspace.
 
 ## Connect your Sumo Logic account
 
