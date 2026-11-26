@@ -74,8 +74,6 @@ For example:
 
 - **Multi-turn conversations with persistent context**. Mobot keeps session context for the full length of a conversation, including field names, schema context, the investigation approach set earlier in the session, and hypotheses already explored. You can run extended investigations across many turns without re-priming Mobot.
 - **Cross-tool orchestration**. Because Mobot runs inside your MCP client session, its findings are available as input to the other tools connected in that session, such as Jira, Slack, Confluence, code search, and cost analysis tools. You can go from a Mobot result to filing a Jira ticket or searching a codebase without switching context.
-- **Finds your data for you**. Say "checkout service" and Mobot works out which logs you mean. You do not need to know the exact source names.
-- **Learns how your team works**. Mobot picks up the searches and sources your team already uses, so results fit your setup.
 - **Draws on your own knowledge**. Mobot looks through your runbooks and docs and remembers past findings, so answers reflect your environment.
 - **Built for Sumo Logic**. Mobot writes correct Sumo Logic searches and uses purpose-built tools for logs, metrics, alerts, dashboards, and security.
 - **Investigates end to end**. Ask an open-ended question such as "Why is checkout slow?" and Mobot works through logs, metrics, and alerts to find the cause.
