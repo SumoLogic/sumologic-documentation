@@ -100,6 +100,11 @@ module.exports = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
+          // A category that links to its own index doc must not list that doc again as an item.
+          async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+            const items = await defaultSidebarItemsGenerator(args);
+            return items.filter((item) => !(item.type === 'doc' && item.id.endsWith('/index')));
+          },        
           editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
           //sidebarCollapsible: true,
           //sidebarCollapsed: false,
@@ -313,9 +318,9 @@ module.exports = {
       { property: 'og:type', content: 'article' },
     ],
     announcementBar: {
-      id: 'mobot-banner-v3',
-      content: `<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
-      backgroundColor: '#0055B7',
+      id: 'aws-reinvent-banner-v1',
+      content: `Heading to AWS re:Invent? Visit Sumo Logic at booth #587 to see AI Driven Telemetry, Data Pipelines, and DojoAI features. <a href="https://www.sumologic.com/events/aws-reinvent"><strong>Book a meeting</strong></a>`,
+      backgroundColor: '#020146',
       textColor: '#fff',
     },
     imageZoom: {

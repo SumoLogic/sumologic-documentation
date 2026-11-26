@@ -927,6 +927,7 @@ module.exports = {
         'manage/field-extractions/field-naming-convention',
         'manage/field-extractions/create-field-extraction-rule',
         'manage/field-extractions/edit-field-extraction-rules',
+        'manage/field-extractions/migrate-fers-to-data-pipelines',
         {
           type: 'category',
           label: 'FER Templates',
@@ -1141,6 +1142,7 @@ module.exports = {
             'manage/ingestion-volume/ingest-budgets/minute-volume',
         ]
         },
+        'manage/ingestion-volume/usage-attribution',
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
     },
@@ -3421,6 +3423,7 @@ integrations: [
         'api/threat-intel-ingest',
         'api/token-management',
         'api/tracing',
+        'api/usage-attribution',
         'api/user-management',
       ],
     },
