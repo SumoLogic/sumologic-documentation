@@ -33,6 +33,7 @@ module.exports = {
         'get-started/library',
         'get-started/system-requirements',
         'get-started/ai-machine-learning',
+        'get-started/dojo-studio/index',
         'get-started/keyboard-shortcuts',
         'preview/index',
         'get-started/help',
