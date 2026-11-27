@@ -67,6 +67,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/manage/manage-subscription/value-overview')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="Manage icon" width="40"/><h4>Value Overview</h4></a>
+  <p>Learn how to see the estimated time that Mobot, the SOC Analyst Agent, and the Root Cause Agent save your team.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/manage/manage-subscription/fedramp-capabilities')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="Manage icon" width="40"/><h4>FedRAMP Capabilities</h4></a>
   <p>Learn the capabilities included with Sumo Logic’s FedRAMP solution.</p>
   </div>
