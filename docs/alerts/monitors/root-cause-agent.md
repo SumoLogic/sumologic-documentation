@@ -18,32 +18,21 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Root Cause Agent is one of the specialized agents in [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai), each built for a different job. Root Cause Agent investigates [observability alerts](/docs/alerts). After getting an alert, DevOps and SRE teams can launch a manual AI-driven investigation directly from an alert's sidebar or details page or configure it to auto-trigger on alert creation via Dojo Studio. The Root Cause Agent gathers relevant telemetry on its own, follows the signal across your logs and metrics, and posts its findings to the alert's **AI Investigation** tab.
+The Root Cause Agent is one of the specialized agents in [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). It investigates [observability alerts](/docs/alerts) for DevOps and SRE teams. The agent gathers telemetry from your logs and metrics, follows the signal to a likely cause, and posts its findings, with supporting evidence, to the **AI Investigation** tab of the alert.
 
-Monitors and alert rules are deterministic: they fire when a predefined threshold or condition is met. The Root Cause Agent is agentic: it takes the alert as a starting point, investigates across available signals, forms a hypothesis, and explains why it believes a particular cause is responsible. The monitor tells you something happened; the agent helps investigate why. It is complementary to monitoring, not a replacement for it.
+You can start an investigation from an alert, or you can have Dojo Studio start one automatically when an alert is created. After an investigation, you can continue the conversation in [Mobot](/docs/search/mobot/) with the full context already loaded.
 
-The Root Cause Agent performs the following jobs:
-* **Automatic investigation**. Configure the agent in Dojo Studio to investigate alerts automatically when they are created.
-* **On-demand investigation**. Start an investigation from an alert's sidebar or details page to get an evidence-backed root cause without manually digging through logs and metrics.
-   * **AI Verdict**. The status of the investigation and whether the agent was able to find the root cause: **Not Investigated**, **In Progress**, **Investigation Error**, **Root Cause Identified**, **Inconclusive**, or **False Positive**. See [AI Verdict](#ai-verdict).
-   * **What Happened**. A narrative summary of what occurred, backed by the knowledge sources the agent consulted.
-   * **Key Findings**. The steps that led there, each backed by the log search or metrics query that produced it.
-   * **Recommended Actions**. Suggested next steps for you to act on.
-* **Conversational follow-up (via Mobot)**. Continue the investigation in [Mobot](/docs/search/mobot/), with the full context of the AI investigation already loaded.
-* **Related context**. Correlate the current alert with other alerts on the same entity or in the same time window, and review how often this monitor has fired and for how long.
-
-The Root Cause Agent provides the following functionality:
-* [Run a root cause analysis](#run-a-root-cause-analysis)
-* [Review relevant alerts and monitor history](#review-relevant-alerts-and-monitor-history)
-* [Continuing the investigation in Mobot](#continue-investigating-in-mobot)
+A monitor tells you that something happened. The Root Cause Agent takes that alert as a starting point and helps you understand why it happened. It complements your monitors and does not replace them.
 
 ## Run a root cause analysis
 
-You start investigations on demand from an alert's sidebar or details page, or auto-trigger them via Triggers in Dojo Studio. The Root Cause Agent runs one investigation per alert and posts its findings to the **AI Investigation** tab of each individual alert's details page.
+Investigations start in one of two ways. You can start one on demand from an alert's sidebar or details page, or you can use Triggers in Dojo Studio to start them automatically. The agent runs one investigation per alert.
+
+Follow these steps to start an investigation on demand.
 
 1. From your left navigation, click **Alerts**.
 1. In your **Alert List**, the **AI Verdict** column shows whether the alert has been investigated. Click any alert row to open its sidebar, or open the alert's details page.<br/><img src={useBaseUrl('img/alerts/monitors/root-cause-agent-alerts.png')} alt="Alert List with the AI Verdict column" style={{border: '1px solid gray'}} width="800" />
-1. In the sidebar or on the details page, click **Start Investigation**. On the details page, this is on the **AI Investigation** tab.<br/><img src={useBaseUrl('img/alerts/monitors/root-cause-agent-ai-investigation-tab.png')} alt="Root Cause Agent investigation running with a progress bar" style={{border: '1px solid gray'}} width="800" />
+1. In the sidebar or on the details page, click **Investigate**. On the details page, the button is in the alert header and the **AI Investigation** tab shows **Not Investigated** until you run one.<br/><img src={useBaseUrl('img/alerts/monitors/root-cause-agent-ai-investigation-tab.png')} alt="Root Cause Agent investigation running with a progress bar" style={{border: '1px solid gray'}} width="800" />
 
 Full results populate in the **AI Investigation** tab.
 
@@ -64,19 +53,20 @@ When an investigation finishes, you'll see a box showing the AI verdict with a p
 
 The verdict also appears in the **AI Verdict** column of the **Alert List**, so you can scan investigation status across alerts without opening each one.
 
-The agent surfaces a root cause only when it is confident in the conclusion; otherwise, it returns an **Inconclusive** status rather than a lower-confidence guess.
-
 ### View the investigation trace
 
 The investigation trace is a step-by-step record of what the agent checked, what came back, and how it reached its verdict. Use it to verify a verdict without re-running the investigation yourself. Anyone who can view the alert can view its trace.
 
-On the **AI Investigation** tab, click **View Full Investigation Process** in the **AI Verdict** box.
+On the **AI Investigation** tab, click **View Full Investigation Process** in the **AI Verdict** box.<br/><img src={useBaseUrl('img/alerts/monitors/root-cause-agent-trace-link.png')} alt="AI Verdict box with the View Full Investigation Process link highlighted" style={{border: '1px solid gray'}} width="800" />
 
-The trace opens in a side panel next to the alert. Review the trace:
+The trace opens in a side panel next to the alert, titled **How this investigation got to its answer**. While an investigation is running, the panel adds steps as the agent works. The panel includes the following sections.
 
-* **What was done**. The agent's verdict and the explanation behind it. Click the arrow to collapse or expand it.
-* **How it got here**. The numbered steps the agent took, in order.
-* **Show query**. Click this under a step to see the query the agent ran.
+* **Steps**. Numbered steps show what the agent checked, in order, with the explanation for each step and the queries it ran.
+* **Verdict**. The last step shows the verdict, followed by the written report the agent produced.
+* **Confidence**. How confident the agent is in the verdict, and why.
+* **Integrations Consulted**. The integrations the agent considered, and whether it queried them.
+
+Click **View Alert in Sumo Logic** at the bottom of the panel to return to the alert.
 
 ### What Happened
 
@@ -104,15 +94,15 @@ This section lists the main points uncovered by the investigation, each with a s
 
 ### Recommended Actions
 
-After the Root Cause Agent investigates an alert, it generates contextually appropriate **Recommended Actions** that you can review without leaving the alert page. Each action has a title and an explanation, such as adding a time range to a query or reviewing a monitor definition. The agent generates recommendations for every investigated alert, and they update as the agent uncovers more context when you continue the investigation in Mobot. The agent doesn't take remediation actions on its own. Executing a recommended action by clicking **Execute**, which requires your explicit approval, is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
+After the Root Cause Agent investigates an alert, it generates contextually appropriate **Recommended Actions** that you can review without leaving the alert page. Each action has a title and an explanation, such as adding a time range to a query or reviewing a monitor definition. The agent generates recommendations for every investigated alert, and they update as the agent uncovers more context when you continue the investigation in Mobot. The agent does not take remediation actions on its own. Executing a recommended action by clicking **Execute**, which requires your explicit approval, is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-rec-actions.png')} alt="Recommended Actions list with suggested next steps" style={{border: '1px solid gray'}} width="800" />
 
 ## Permissions and data access
 
-The agent operates with read-only access to your logs and metrics data. It investigates and recommends, and does not take action on your systems.
+The agent has read-only access to your logs and metrics data.
 
-Investigations run in the following context:
+Investigations run with the permissions of the following users.
 * **Automatic investigations**. The agent owner, if one is configured. Otherwise, the monitor's creator.
 * **Manual investigations**. The user who starts the investigation.
 
@@ -120,12 +110,12 @@ Each investigation is recorded as an audit event in the Sumo Logic audit index, 
 
 ## Review relevant alerts and monitor history
 
-Two additional tabs on the alert response page give you more context alongside the AI investigation:
+Two additional tabs on the alert details page give you more context alongside the AI investigation.
 
-* **Relevant Alerts**. Alerts related to the current one, grouped either by **Entity** (other alerts on the same entity) or by **Time** (other alerts that share a time window with this one). Each related alert shows its own AI verdict, severity, status, and duration, so you can spot a broader incident without leaving the page.
-* **Monitor History**. How often this monitor has fired over the last 30 days, shown as a frequency heatmap, along with the median alert duration and a list of past firings and their verdicts. Use this to judge whether the current alert is a one-off or part of a recurring pattern.
+* **Relevant Alerts**. Other alerts on the same entity or in the same time window, each with its own AI verdict.
+* **Monitor History**. How often this monitor has fired over the past 30 days, and the verdicts of past firings.
 
-The **Alert Details** tab also surfaces **Log Fluctuations**, comparing log activity for the alert's query between the current window and a prior one, so you can see what's new, missing, or changed before diving into the AI investigation.
+Learn more about these tabs in [Alert Response](/docs/alerts/monitors/alert-response/).
 
 ## Continue investigating in Mobot
 
@@ -133,7 +123,9 @@ From the **AI Investigation** tab, you can continue the investigation conversati
 
 <img src={useBaseUrl('img/alerts/monitors/root-cause-agent-mobot.png')} alt="Continuing an investigation conversationally in Mobot" style={{border: '1px solid gray'}} width="800" />
 
-Click **Ask Mobot** at the top of the alert page to continue with the Root Cause Agent. To switch to a custom agent, click the dropdown next to **Ask Mobot** and select it. You can also click one of the suggested follow-up questions to autopopulate it in Mobot. The full AI investigation appears in Mobot under the selected agent. From here, ask a follow-up question specific to the alert you're investigating.
+Click **Ask Mobot** at the top of the alert page to continue with the Root Cause Agent. To switch to a custom agent, click the dropdown next to **Ask Mobot** and select it.<br/><img src={useBaseUrl('img/alerts/monitors/root-cause-agent-ask-mobot.png')} alt="Ask Mobot button with the dropdown for switching agents highlighted" style={{border: '1px solid gray'}} width="400" />
+
+You can also click one of the suggested follow-up questions to autopopulate it in Mobot. The full AI investigation appears in Mobot under the selected agent. From here, ask a follow-up question specific to the alert you're investigating.
 
 Here are more examples to get you started. For the most useful responses, ask questions specific to the alert you are investigating.
 
@@ -146,7 +138,7 @@ After each response, Mobot retains the context of your investigation and present
 
 ## Best practices
 
-* **Verify findings against the telemetry**. The agent is only as good as the telemetry it can reach: if the deciding data is not in Sumo Logic, it cannot see it. Check key findings against the log search or metrics query behind them before acting.
+* **Verify findings against the telemetry**. The agent can only use the telemetry it can reach, so it cannot see deciding data that is not in Sumo Logic. Check key findings against the log search or metrics query behind them before acting.
 * **Keep your on-call in the loop**. The agent compresses the first phase of triage, but the engineer still owns the decision.
 
 
@@ -159,13 +151,9 @@ After each response, Mobot retains the context of your investigation and present
 
 ## FAQ
 
-### What is the Sumo Logic Root Cause Agent?
-
-The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). It applies agentic AI reasoning to observability triage: investigating observability alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface.
-
 ### How is this different from asking a chat assistant about my alerts?
 
-A chat assistant like Mobot is a surface you type into: you ask a question, it answers. The Root Cause Agent is an investigator you launch from an alert. You start an investigation from an alert's sidebar or details page, the agent gathers evidence across your logs and metrics on its own, and presents a root cause. From there, you can continue the investigation conversationally in Mobot, now with that evidence already loaded.
+With a chat assistant like Mobot, you ask a question and it answers. The Root Cause Agent works on its own once you launch it from an alert. It gathers the evidence and presents a root cause, and you can then continue in Mobot with that evidence already loaded.
 
 ### How is this different from the SOC Analyst Agent?
 
