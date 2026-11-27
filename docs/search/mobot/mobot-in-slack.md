@@ -27,8 +27,6 @@ The Sumo Logic Slack app lets your team use [Mobot](/docs/search/mobot/) directl
 
 Responses are scoped to your Sumo Logic role and org, and every response includes a link back to the relevant entity in Sumo Logic. Sumo Logic passes the full thread context to Mobot automatically, so you do not need to re-explain what your team has already discussed.
 
-<img src={useBaseUrl('img/search/mobot/slack-mobot-thread.png')} alt="Slack thread in an incident channel where a user mentions Sumo Logic and receives a root cause analysis with recommended actions" style={{border: '1px solid gray'}} width="800" />
-
 ## Prerequisites
 
 ### In Sumo Logic
@@ -87,6 +85,8 @@ The first time you mention `@Sumo`, you need to connect your Sumo Logic account 
 ### Mention Sumo Logic in a channel or thread
 
 Type `@Sumo` followed by your question in any channel. If Sumo Logic has not joined the channel, Slack prompts you to add it. Confirm the prompt, and Sumo Logic joins the channel and processes your question. Sumo Logic responds in a thread with a footer that shows which org was queried, for example `<org-name>(us2) · <org-id>`, and links to the relevant entities in Sumo Logic. If you mention Sumo Logic inside an existing thread, Sumo Logic reads all prior messages in the thread for context before it responds.
+
+<img src={useBaseUrl('img/search/mobot/slack-mobot-thread.png')} alt="Slack thread in an incident channel where a user mentions Sumo Logic and receives a root cause analysis with recommended actions" style={{border: '1px solid gray'}} width="800" />
 
 ### Send a direct message
 
