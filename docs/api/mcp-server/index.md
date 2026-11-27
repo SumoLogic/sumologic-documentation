@@ -28,7 +28,7 @@ The Sumo Logic MCP Server lets MCP clients (external AI models) connect to Sumo 
 - **Limitations**. Not intended for bulk data extraction, model training, or high-volume automated queries, and is subject to rate limits (4 requests per second, 10 concurrent).
 
 :::note
-Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](#improve-investigations-with-the-sumo-investigator-skill)), while [Mobot](/docs/search/mobot), Sumo Logic's AI assistant, is built directly into the product.
+Prefer a built-in conversational experience? Use [Mobot](/docs/search/mobot), Sumo Logic's AI assistant, in the product or from your MCP client. See [Mobot in the MCP Server](/docs/api/mcp-server/mobot-in-mcp-server).
 :::
 
 :::training Sumo Logic Academy
@@ -68,7 +68,7 @@ Subdomain endpoints are available in all deployments that support the MCP server
 
 ## Requirements for MCP-compatible clients
 
-The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
+The client must support remote HTTP/SSE transport and OAuth 2.0. For plugin-based setup guides for GitHub Copilot, Claude Code, Kiro, and other clients, see [Set Up MCP Clients for Sumo Logic](/docs/api/mcp-server/mcp-server-client-setup). The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
 
 CIMD ([Client ID Metadata Document](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/)) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
 
@@ -222,6 +222,7 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Cloud SIEM**. Manage insights, detection rules, and status updates.
 * **Log search**. Run log search queries and retrieve results.
 * **Discovery**. List custom fields, field extraction rules, and partitions to help scope log searches.
+* **Mobot**. Start, monitor, and cancel Mobot investigations, and respond to human-in-the-loop approval requests. See [Mobot in the MCP Server](/docs/api/mcp-server/mobot-in-mcp-server).
 
 All tools respect your Sumo Logic permission controls and access policies. See [Role capabilities](/docs/manage/users-roles/roles/role-capabilities) for details on each required scope.
 
@@ -323,6 +324,22 @@ Before running an unscoped query, the model first calls the Discovery tools belo
 
 * `What partitions and field extraction rules exist for security logs?`
 * `List all active partitions in the frequent tier`
+
+### Mobot
+
+| Tool | Description |
+| :--- | :---------- |
+| `mobot_invoke` | Start a Mobot investigation, or continue an existing conversation. |
+| `mobot_poll` | Check the status of an in-progress Mobot investigation and retrieve the result. |
+| `mobot_cancel` | Cancel a Mobot investigation that is in progress. |
+| `submit_hitl_feedback` | Approve or reject a Mobot step that is paused for human review. |
+
+Your MCP client calls these tools for you. For routing, plugin setup, rate limits, and audit logging, see [Mobot in the MCP Server](/docs/api/mcp-server/mobot-in-mcp-server).
+
+#### Example prompts
+
+* `Investigate why errors are spiking in the checkout service`
+* `/sumologic-mcp:mobot What is causing high latency in my API gateway?`
 
 ## Improve investigations with the sumo-investigator skill
 
