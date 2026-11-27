@@ -16,28 +16,60 @@ This topic describes the Cloud SIEM UI for working with insights. 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the insights page, click **Insights** at the top of the screen. 
  
-By default, the **Insights** page presents all insights whose status is not “Closed”, in descending order by event time in a list view. You can sort the list by one or more columns (see [Sort insights](#sort-insights)). If you’d like to see insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
+By default, the **Insights** page presents all insights whose status is not “Closed”, in descending order by event time in a list view. You can sort the list by one or more columns (see [Sort insights](#sort-insights)). If you’d like to see insights organized by their status, click the **Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
 
 :::note
-Cloud SIEM displays insights and the signals attached to them in the Cloud SIEM UI through the end of the data retention period defined in your account agreement. 
+- Cloud SIEM displays insights and the signals attached to them in the Cloud SIEM UI through the end of the data retention period defined in your account agreement.
 :::
+
+### Summary
+
+:::info
+To see the Summary card, you need a role with the **View Value Overview** or **Manage Value Overview** [role capability](/docs/manage/users-roles/roles/role-capabilities/#value-overview). Users without either capability don't see the card.
+:::
+
+The **Summary** card at the top of the **Insights** page gives you an at-a-glance view of insight volume and, if the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is enabled, the agent's activity.
+
+:::note
+To open the SOC Analyst Agent settings, click **SOC Analyst Settings** at the top right of the **Insights** page.
+:::
+
+<img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
+
+When the SOC Analyst Agent is enabled, the card shows the following widgets:
+
+| Widget | What it shows |
+|:--|:--|
+| **AI Investigations** | The number of insights the agent investigated in the selected date range. |
+| **Verdict Breakdown** | The percentage split of the agent's verdicts: **Malicious** (red), **Suspicious** (amber), **Benign** (blue), and **Inconclusive** (grey). |
+| **Time to Verdict** | The average time the agent takes to deliver a verdict. |
+| **Agent Coverage** | The percentage of insights the agent investigated. |
 
 ### List view
 
-By default, insights are displayed in the list view:
-
-<img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
+By default, insights are displayed in the list view.
 
 Following are the columns in the list view. The order of columns in your UI may differ since you can drag and drop the columns into the order you want:
 * **Status**. The [status](/docs/cse/administration/manage-custom-insight-statuses/) of the insight.
 * **ID**. The insight name, made up of the insight ID, and the MITRE stage or stages associated with the signals in the insight.
 * **Severity**. The severity of the insight. The value is a function of the configured entity activity score threshold for insight generation. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
+* **AI Verdict**. The verdict from the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), if the agent is enabled.
 * **Assignee**. The analyst assigned to the Incident.
 * **GCS**. If sufficient data is available, a [Global Confidence Score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown.
 * **Entity**. The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) associated with the insight.
 * **Signals**. The total count of signals on the insight entity during the detection window.
 * **Created**. When the insight was created.
 * **Age**. The elapsed time since the insight was created.
+
+#### Change the date range
+
+The card shows the last 30 days by default. To change it, use the date range picker at the top right of the card. All widgets in the card update to match the selected range.
+
+#### Loading, empty, and error states
+
+- While data loads, each widget shows a placeholder.
+- A widget with no data for the selected range shows **No data**.
+- If the card can't retrieve its metrics, it replaces the widgets with an error message and a refresh option. Click the refresh option to try again.
 
 #### Sort insights
 
@@ -54,7 +86,7 @@ This screenshot shows the insights page with the signals organized as a board. E
 
 The information displayed in the board view is similar to the information in the [list view](#list-view). 
 
-You can switch back to the list view by clicking the **Show List** icon, near the top right corner of the Cloud SIEM UI.
+You can switch back to the list view by clicking the **List** icon, near the top right corner of the Cloud SIEM UI.
 
 <img src={useBaseUrl('img/cse/board.png')} alt="Board view" style={{border: '1px solid gray'}} width="800"/>
 

@@ -76,6 +76,9 @@ The SOC Analyst Agent runs in the background against all insights that flow into
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu, select **Cloud SIEM** and then click **Insights** at the top of the screen.
 1. In the **Insights** page, note that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
+   :::tip
+   For an overview of the agent's activity, see the [Summary card](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#summary-card) at the top of the **Insights** page. It shows the number of AI investigations, the verdict breakdown, time to verdict, and agent coverage.
+   :::
 1. Click **Start typing here to create a filter** near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned:<br/><img src={useBaseUrl('img/cse/insight-ai-filter.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="600" />
    * **Malicious**. AI analysis determined that the insight is malicious and warrants immediate investigation by your SOC team.
    * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team.

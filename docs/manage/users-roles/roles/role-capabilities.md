@@ -267,6 +267,13 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 |Manage Insight Status|Change an insight’s status.|`cseManageInsightStatus`|
 |Manage Insight Tags|Add/delete [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules).|`cseManageInsightTags`|
 
+### Value Overview
+
+| Capability | Description | <ApiCreateRole/> |
+| :-- | :-- | :-- |
+| View Value Overview | View the **Summary** card on the [Insights page](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#summary-card), which shows insight volume and SOC Analyst Agent activity. | `viewValueOverview` |
+| Manage Value Overview | Manage Value Overview. | `manageValueOverview` |
+
 ### Content
 
 | Capability| Description | <ApiCreateRole/> |
