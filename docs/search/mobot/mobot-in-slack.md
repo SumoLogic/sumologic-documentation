@@ -29,46 +29,58 @@ Responses are scoped to your Sumo Logic role and org, and every response include
 
 <img src={useBaseUrl('img/search/mobot/slack-mobot-thread.png')} alt="Slack thread in an incident channel where a user mentions Sumo Logic and receives a root cause analysis with recommended actions" style={{border: '1px solid gray'}} width="800" />
 
-## Requirements
+## Prerequisites
 
 ### In Sumo Logic
 
-* You need the Administrator role or any role with the Manage Integrations capability to install the Sumo Logic Slack App and connect Slack.
-* You install the Sumo Logic Slack App from the Sumo Logic product, not from the Slack Marketplace.
-* An administrator needs to enable CIMD for your org, or installation will not work. Learn more in [Enable CIMD](/docs/manage/security/oauth/#enable-cimd).
-* Your Sumo Logic org must be in one of the following deployments: US1, US2, EU, DE, AU, JP, CA, KR, or CH. FedRAMP and ESC deployments are not currently supported.
+* Your role needs the following capabilities to install the Sumo Logic Slack Extension and connect Slack:
+  * **View Integrations**. Lets you open the **Integrations** tab in the App Catalog.
+  * **Manage Integrations**. Lets you start the installation and connect or disconnect a workspace.
+* You install the Sumo Logic Slack Extension from Sumo Logic, not from the Slack Marketplace.
+* An administrator needs to enable CIMD for your org. Installation does not work without it. Learn more in [Enable CIMD](/docs/manage/security/oauth/#enable-cimd).
+
+:::note
+Mobot in Slack is available in the US1, US2, EU, DE, AU, JP, CA, KR, and CH deployments. It is not available in FedRAMP or European Sovereign Cloud (ESC) deployments.
+:::
 
 ### In Slack
 
-* To install an app in an unrestricted workspace, you need Workspace Admin or Owner permissions, or the workspace must allow member-initiated installs.
-* For restricted workspaces, a Slack Admin must approve the app before it activates.
-* Mobot in Slack is supported on all Slack plans: Free, Pro, Business+, and Enterprise Grid.
+* To install the app, you need to be a Workspace Admin or Owner, or your workspace needs to allow members to install apps.
+* If your workspace restricts app installs, a Slack Admin needs to approve the app before it works.
 
 ## Connect Slack
 
-A Sumo Logic administrator needs to connect Slack to your org.
+Connect your Slack workspace to your Sumo Logic org so your team can use Mobot in Slack. You start in Sumo Logic and finish by approving the app in Slack.
 
-1. In Sumo Logic, select **App Catalog** > **Integrations** > **Inbound Integrations** in the navigation menu.
-1. Find the **Sumo Logic Slack App Extension** tile.
-1. Click **+ Connect Workspace**. The Slack authorization screen opens.
-1. In the top-right dropdown menu, confirm that the correct workspace is selected, and then click **Allow**.
-1. The workspace appears with the status **Connected**.
+1. In Sumo Logic, select **App Catalog** in the navigation menu, and then click the **Integrations** tab.<br/><img src={useBaseUrl('img/search/mobot/slack-app-catalog-integrations.png')} alt="App Catalog page with the Integrations tab and App Catalog menu item highlighted" style={{border: '1px solid gray'}} width="800" />
+1. In the left pane, select **Inbound Integrations**.
+1. Find the **Sumo Logic Slack Extension** tile. You can search with a keyword to find it faster.<br/><img src={useBaseUrl('img/search/mobot/slack-inbound-integrations.png')} alt="Inbound Integrations page with the Sumo Logic Slack Extension tile highlighted" style={{border: '1px solid gray'}} width="800" />
+1. Click the tile, and then click the **Workspaces** tab.
+1. Click **+ Connect Workspace**. You are redirected to Slack.<br/><img src={useBaseUrl('img/search/mobot/slack-connect-workspace.png')} alt="Workspaces tab of the Sumo Logic Slack Extension with the Connect Workspace button highlighted" style={{border: '1px solid gray'}} width="800" />
+1. If you are not already signed in to Slack, enter your workspace's Slack URL, click **Continue**, and then sign in.<br/><img src={useBaseUrl('img/search/mobot/slack-sign-in-workspace.png')} alt="Slack sign-in page asking for the workspace URL" style={{border: '1px solid gray'}} width="400" />
+1. On the Slack authorization screen, use the dropdown menu to confirm the correct workspace, review the permissions, and then click **Allow**. See [Slack permissions](#slack-permissions) for the scopes Sumo Logic requests.<br/><img src={useBaseUrl('img/search/mobot/slack-authorize-app.png')} alt="Slack authorization screen with the workspace dropdown and Allow button highlighted" style={{border: '1px solid gray'}} width="600" />
+1. Back in Sumo Logic, confirm that the workspace appears in the **Workspaces** tab with the status **Connected**.
 
-If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Submit the request. You do not need to submit it again. Follow up with your Slack Admin to get the request approved. After the Slack Admin approves it in Slack, you need to reconnect the workspace to your Sumo Logic org to finish the installation. Until then, the workspace is not linked to your Sumo Logic org.
+If your Slack workspace restricts app installs, the authorization screen shows **Request App Approval** instead of **Allow**. Click it to send the request to your Slack Admin. You only need to send it once. After the Slack Admin approves the request, connect the workspace again from Sumo Logic to finish the setup. Until then, the workspace is not linked to your Sumo Logic org.
 
 ### Disconnect Slack
 
-You need the Administrator role or any role with the Manage Integrations capability to disconnect Slack.
+Disconnect a workspace when you no longer want your team to use Mobot in Slack from it. This removes the link between your Sumo Logic org and that Slack workspace.
 
-1. In Sumo Logic, select **App Catalog** > **Integrations** > **Inbound Integrations** in the navigation menu.
-1. In the **Configure** tab, open the overflow menu on the workspace row.
-1. Select **Disconnect workspace**.
-
-This disassociates your Sumo Logic org from that Slack workspace.
+1. In Sumo Logic, select **App Catalog** in the navigation menu, and then click the **Integrations** tab.
+1. Select **Inbound Integrations**, and then click the **Sumo Logic Slack Extension** tile.
+1. In the **Workspaces** tab, click the three-dot menu on the workspace row.
+1. Select **Disconnect**.<br/><img src={useBaseUrl('img/search/mobot/slack-disconnect-workspace.png')} alt="Workspaces tab with the three-dot menu and Disconnect option highlighted" style={{border: '1px solid gray'}} width="800" />
 
 ## Connect your Sumo Logic account
 
-The first time you mention Sumo Logic, you receive a private prompt that only you can see. The prompt asks you to connect your Sumo Logic account. You are redirected to Sumo Logic for a brief OAuth login, and then Sumo Logic processes your original query automatically. If multiple orgs are connected to your Slack, choose the org and authenticate.
+The first time you mention `@Sumo`, you need to connect your Sumo Logic account to Slack.
+
+1. In Slack, mention `@Sumo` with your question in a channel or direct message. Sumo Logic sends you a private prompt that only you can see.
+1. In the prompt, choose to connect your Sumo Logic account. You are redirected to Sumo Logic.
+1. If multiple orgs are connected to your Slack workspace, choose the org you want to use.
+1. Complete the OAuth login to authenticate.
+1. Sumo Logic processes your original question automatically and posts the response in Slack.
 
 ## Use Sumo Logic in Slack
 
