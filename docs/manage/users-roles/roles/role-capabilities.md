@@ -146,6 +146,8 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | :-- | :-- | :-- |
 | View Usage Management | View [scan budget](/docs/manage/manage-subscription/scan-budgets/) and the [Usage Attribution](/docs/manage/ingestion-volume/usage-attribution/) tab and data. | `viewUsageManagement` |
 | Manage Usage Management | Manage scan budget and change the [Usage Attribution](/docs/manage/ingestion-volume/usage-attribution/) configuration, such as custom tags and the lookup CSV. | `manageUsageManagement` |
+| View Value Overview | View the [Value Overview](/docs/manage/manage-subscription/value-overview/) tab and its metrics. Also requires the **View Account Overview** capability. | `viewValueOverview` |
+| Manage Value Overview | Change the assumptions that Value Overview uses to calculate hours saved. | `manageValueOverview` |
 
 ## Reliability Management
 
