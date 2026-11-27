@@ -297,7 +297,17 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/api/usage-attribution')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Data Volume icon" width="50"/><h4>Usage Attribution</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/api/user-management')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User Permissions icon" width="50"/><h4>Users</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/api/value-realization')}><img src={useBaseUrl('img/icons/operations/value.png')} alt="Value icon" width="50"/><h4>Value Realization</h4></a>
   </div>
 </div>
 </div>

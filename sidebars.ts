@@ -927,6 +927,7 @@ module.exports = {
         'manage/field-extractions/field-naming-convention',
         'manage/field-extractions/create-field-extraction-rule',
         'manage/field-extractions/edit-field-extraction-rules',
+        'manage/field-extractions/migrate-fers-to-data-pipelines',
         {
           type: 'category',
           label: 'FER Templates',
@@ -953,6 +954,7 @@ module.exports = {
         'manage/field-extractions/safend-field-extraction',
       ]
     },
+    'manage/data-pipelines',
     {
       type: 'category',
       label: 'Partitions',
@@ -1090,6 +1092,7 @@ module.exports = {
         },
         'manage/manage-subscription/collection-overview',
         'manage/manage-subscription/manage-billing-information',
+        'manage/manage-subscription/value-overview',
         'manage/manage-subscription/organization-usage-limits',
         'manage/manage-subscription/scan-budgets',
         'manage/manage-subscription/fedramp-capabilities',
@@ -1140,6 +1143,7 @@ module.exports = {
             'manage/ingestion-volume/ingest-budgets/minute-volume',
         ]
         },
+        'manage/ingestion-volume/usage-attribution',
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
     },
@@ -3420,7 +3424,9 @@ integrations: [
         'api/threat-intel-ingest',
         'api/token-management',
         'api/tracing',
+        'api/usage-attribution',
         'api/user-management',
+        'api/value-realization',
       ],
     },
   ],
