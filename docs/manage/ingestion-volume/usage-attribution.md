@@ -111,8 +111,8 @@ Upload a CSV file to map the values of a tag to the team, owner, and other detai
 
 The CSV needs to follow these rules:
 
-- The first column is the key. Its header needs to match a tag configured for Usage Attribution, such as `sourceCategory`.
-- Each remaining column becomes a new field you can use in **Breakdown by** and in filters. For example, `team`, `owner`, or `business_unit`.
+- The first column is the key. Its header needs to match one of your configured usage attribution dimensions: `collector`, `sourceCategory`, `sourceHost`, `sourceName`, `viewName`, or a custom tag.
+- Each remaining column becomes a new field you can use in **Breakdown by** and in filters. For example, `team`, `owner`, or `business_unit`. These columns can have any names. They do not need to match parsed fields or field extraction rules (FERs) in your logs.
 - Each row maps one value of the key field to the values for the other columns.
 
 Sample CSV:
@@ -126,6 +126,27 @@ infra/k8s/kubelet,SRE,alex@example.com
 ```
 
 After you upload a CSV, the **Lookup Mapping** section shows the key field and the columns it provides.
+
+#### Example: map usage attribution dimensions to business attributes
+
+Suppose you configured `sourceCategory` as a usage attribution dimension and you upload this CSV:
+
+```csv
+sourceCategory,team,cost_center
+prod/payments/app,Payments,CC-1001
+prod/checkout/web,Checkout,CC-1002
+dev/payments/app,Payments,CC-2001
+```
+
+Sumo Logic joins your usage data to this table on `sourceCategory`. It then adds `team` and `cost_center` to each matching usage record. Existing dashboards do not change. You can query the new fields from the granular volume data:
+
+```sql
+_index=sumologic_volume _sourcecategory=granular_volume
+| sum(sizeInBytes) as bytes by team, cost_center
+| sort by bytes
+```
+
+This query shows ingest volume by team and cost center.
 
 To upload a CSV:
 
