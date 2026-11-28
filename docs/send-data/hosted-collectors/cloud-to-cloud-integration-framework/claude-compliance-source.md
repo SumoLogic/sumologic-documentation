@@ -21,6 +21,8 @@ The Compliance API enables enterprise customers to access structured local sessi
 :::info
 Anthropic is making changes to its Chats API that may affect chat data collection for Claude Compliance Source **1.x.x** version starting **September 22, 2026**. If you are using Claude Compliance Source **1.x.x**, you may experience an interruption in chat data collection after the changes take effect. To avoid any interruption, **upgrade your source to version 2.x.x before September 22, 2026**.
 
+When upgrading to source version **3.x.x**, the activity endpoint collects data only for the **Organization UUID** (`orgUUID`) configured in the source. Activity data from other organizations may no longer be collected after the upgrade. To collect data from another organization, create a separate Claude Compliance source using that organization's UUID and API key. Verify the configured organization UUID before upgrading.
+
 For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions). For more information about the Anthropic API change, see [List Chats](https://platform.claude.com/docs/en/api/http/compliance/apps/chats/list).
 :::
 
