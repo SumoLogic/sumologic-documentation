@@ -129,7 +129,7 @@ By default, data deletion requests require approval from two of your org admins 
 - Maximum 100 deletion requests at a time.
 - Each request can include up to 1 petabyte (PB) of scanned data.
 - Maximum 1,000,000 messages per request.
-- Maximum time range of one year per request.
+- Maximum time range of 400 days per request.
 - Up to 10 active concurrent deletion tasks across different customers.
 - Requests cannot delete data prior to February 1, 2024. Requests before this timestamp will fail.
 
