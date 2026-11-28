@@ -2,7 +2,7 @@
 id: soc-recommendation-and-response
 title: SOC Recommendation and Response
 sidebar_label: SOC Recommendation and Response ✨
-description: Execute recommended actions from the SOC Analyst Agent to respond to Cloud SIEM insights.
+description: Execute recommended actions from the SOC Analyst Agent to respond to Cloud SIEM insights, with explicit analyst approval and your own credentials.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -35,17 +35,17 @@ When you click **Execute**, the action runs with your credentials and access in 
 
 * Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 * SOC analysts have a role with the **Manage Integrations** [role capability](/docs/manage/users-roles/roles/role-capabilities/#automation-service), which is required to execute response actions.
-* The Response Agent feature has been enabled for your org by your Sumo Logic representative.
+* Executing recommended actions has been enabled for your org by your Sumo Logic representative.
 * Someone in your org has taken ownership of the agent in Dojo Studio.
 * For executable actions, the agent owner has enabled the corresponding integrations in Dojo Studio. See [Enable integrations for the agent](#enable-integrations-for-the-agent).
 * You have access to the integrated tool, because actions run with your credentials.
 
 ## Enable integrations for the agent
 
-You can choose the SOC Analyst Agent or the Root Cause Agent in Dojo Studio. To make recommended actions executable, take ownership of the agent and enable the integrations you need.
+You can choose the SOC Analyst Agent or the Root Cause Agent (the DojoAI agent that identifies the underlying cause of an issue) in Dojo Studio. To make recommended actions executable, take ownership of the agent and enable the integrations you need.
 
 1. In Dojo Studio, select the agent and take ownership of it.
-1. Go to **Dojo Studio** > **SOC Agent** > **Integrations**.
+1. Go to **DojoAI** > **Studio** > **SOC Analyst Agent** > **Integrations**.
 1. Enable the integrations you need.
 
 ## Execute a recommended action
@@ -58,9 +58,9 @@ Every action requires explicit analyst approval before execution. The agent neve
 
 The system records your approval with your analyst identity and a timestamp, then runs the action in the background. The card updates when execution completes. To analyze the result further, you can continue the conversation with the SOC Analyst Agent or the Root Cause Agent. Executed actions are recorded in audit logs.
 
-If the action runs successfully, the card turns green and shows an **Executed** badge. If it doesn't, the card shows a red **Retry** button with an inline error message. Click **Retry** to run the action again.
+If the action runs successfully, the card turns green and shows an **Executed** badge. If it does not, the card shows a red **Retry** button with an inline error message. Click **Retry** to run the action again.
 
-<img src={useBaseUrl('img/cse/soc-rr-execute-results.png')} alt="Recommended Actions showing a red Retry button on an action that didn't run, a green Executed badge on an action that ran successfully, and unexecuted actions" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/cse/soc-rr-execute-results.png')} alt="Recommended Actions showing a red Retry button on an action that did not run, a green Executed badge on an action that ran successfully, and unexecuted actions" style={{border: '1px solid gray'}} width="800" />
 
 ## Known limitations
 

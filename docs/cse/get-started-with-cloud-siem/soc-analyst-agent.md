@@ -16,7 +16,7 @@ The SOC Analyst Agent automatically investigates Cloud SIEM insights and deliver
 
 By cutting manual triage and reducing mean time to resolution, the agent lets SOC teams focus on real threats instead of repetitive work. It shows the data it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith.
 
-The SOC Analyst Agent performs several distinct jobs that mirror an analyst's daily responsibilities:
+The SOC Analyst Agent performs four distinct jobs that mirror an analyst's daily responsibilities:
 * **Auto-investigation**. Automatically delivers a verdict on each insight as it arrives, without requiring analyst action. The agent determines whether the insight is malicious, suspicious, or benign, summarizes the threat incident based on triggered signals, and presents key findings from the signals that fired. Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals). It does not yet integrate with external MCP connectors or automation services.
 * **Investigation (user-led)**. Supports analysts in Mobot with a hypothesis-driven approach to assess the scope, context, and likely impact of an event. Mobot isn't limited to normalized security data: you can ask it about other data in your account that is relevant to the insight, such as raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health.
 * **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken to ensure consistent documentation across analysts and teams.
@@ -115,7 +115,7 @@ On the **AI Investigation** tab, click **View Full Investigation Process** in th
 
 The trace opens in a side panel next to the insight. Review the trace:
 * **What was done**. The agent's verdict and the explanation behind it. Click the arrow to collapse or expand it.
-* **How it got here**. The numbered steps the agent took, in order. For example, the agent loads the insight, retrieves the signals and records for the primary entity, checks the 30-day signal baseline, entity profile, and threat intelligence, and then pushes the verdict. The final step lists the key findings, the confidence level, and a sensitivity note describing what would change the verdict.
+* **How it got here**. The numbered steps the agent took, in order. For example, the agent loads the insight, retrieves the signals and records for the primary entity, checks the 30-day signal baseline, entity profile, and threat intelligence, and then delivers the verdict. The final step lists the key findings, the confidence level, and a sensitivity note describing what would change the verdict.
 * **Show query**. Click this under a step to see the query the agent ran.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-investigation-trace.png')} alt="Investigation trace side panel showing the What was done verdict card and the numbered steps under How it got here, each with a Show query link" style={{border: '1px solid gray'}} width="350" />
 
 
@@ -123,8 +123,8 @@ The trace opens in a side panel next to the insight. Review the trace:
 
 Opening an insight investigation in [Mobot](/docs/search/mobot/), DojoAI's chat interface, lets you continue your investigation conversationally.
 
-1. From an **Insight**, click **Ask Mobot**.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
-1. The full AI investigation appears in Mobot. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="800" />
+1. From the insight's details page, click **Ask Mobot** to continue with the SOC Analyst Agent. To switch to a custom agent, click the dropdown next to **Ask Mobot** and select it.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
+1. The full AI investigation appears in Mobot under the selected agent. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="800" />
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (i.e., hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can also query other data in your account, such as raw cloud logs, metrics, lookup tables, and collector health. When Mobot returns information from outside the Cloud SIEM index, it indicates the source.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
 1. After executing a prompt like the one above, Mobot analyzes your request and fashions a log search query based on it.
 1. Click the log search results card to see the results of your request in the Log Search UI. You can also click the suggestions provided to drill down further. As you ask questions, Mobot retains the context of your conversation about the insight, making it easier to obtain details. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
@@ -190,14 +190,14 @@ After the SOC Analyst Agent triages an insight, it generates contextually approp
 
 After the SOC Analyst Agent completes an investigation, you can find recommendations in:
 
-* An **Insight**'s **Overview** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-overview-tab.png')} alt="AI Recommended Actions panel on the Overview tab of an insight, showing one text-only card and two cards with Execute buttons" style={{border: '1px solid gray'}} width="700" />
-* An **Insight**'s **AI Investigation** tab<br/><img src={useBaseUrl('img/cse/soc-rr-ai-inv-tab.png')} alt="AI Investigation tab of an insight showing the AI Verdict, the What Happened summary, and Recommended Actions with Execute buttons" style={{border: '1px solid gray'}} width="700" />
+* The insight's **Overview** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-overview-tab.png')} alt="AI Recommended Actions panel on the Overview tab of an insight, showing one text-only card and two cards with Execute buttons" style={{border: '1px solid gray'}} width="700" />
+* The insight's **AI Investigation** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-ai-inv-tab.png')} alt="AI Investigation tab of an insight showing the AI Verdict, the What Happened summary, and Recommended Actions with Execute buttons" style={{border: '1px solid gray'}} width="700" />
 
 Executing a recommended action directly from Cloud SIEM is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/).
 
 ### Use investigation context with recommendations
 
-If you investigate an insight by conversing with the SOC Analyst Agent or the Root Cause Agent before acting, recommendations update as the agent uncovers additional context. The UI indicates when recommendations are informed by investigation findings.
+If you investigate an insight by conversing with the SOC Analyst Agent or the Root Cause Agent (the DojoAI agent that identifies the underlying cause of an issue) before acting, recommendations update as the agent uncovers additional context. The UI indicates when recommendations are informed by investigation findings.
 
 ## Configure SOC Analyst Agent settings
 
@@ -241,7 +241,7 @@ If you have questions about your organization's investigation volume, ask your S
 
 ### Does continuing an investigation in Mobot count against Mobot's usage limits?
 
-No. Continuing an investigation in [Mobot](/docs/search/mobot) from an insight (via **Ask Mobot**) is metered under SOC Analyst Agent licensing, not standard Mobot limits — up to 30 prompts per user per day, separate from your organization's standard Mobot limit.
+Yes. Continuing an investigation in [Mobot](/docs/search/mobot) from an insight (via **Ask Mobot**) counts against Mobot's usage limits. There are 10 prompts per user per day across DojoAI agents.
 
 ### Does the agent automatically investigate things that are not entities in Cloud SIEM?
 
@@ -271,7 +271,7 @@ Yes. An insight's **AI Verdict**, **Key Findings**, and **What Happened** summar
 
 ### Can the agent take containment actions on its own?
 
-No. The agent never takes action autonomously.
+No. The agent never takes action autonomously. You approve every action before it runs.
 
 ### Is an AI SOC deterministic?
 
@@ -283,7 +283,7 @@ Verdicts draw on your normalized security data, correlated entities, threat inte
 
 ### What guardrails apply to autonomous action for an AI SOC?
 
-The agent doesn't take remediation or containment actions on its own. It recommends actions for you to review, and executing a recommended action, which requires your explicit approval, is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/). The agent also investigates insights only up to your organization's committed daily volume and lets you exclude insights from auto-investigation. See [Recommended actions](#recommended-actions) and [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
+The agent does not take remediation or containment actions on its own. It recommends actions for you to review, and executing a recommended action, which requires your explicit approval, is in [Private Preview](/docs/cse/get-started-with-cloud-siem/soc-recommendation-and-response/). The agent also investigates insights only up to your organization's committed daily volume and lets you exclude insights from auto-investigation. See [Recommended actions](#recommended-actions) and [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
 
 ### How much manual work is required with an AI SOC?
 
