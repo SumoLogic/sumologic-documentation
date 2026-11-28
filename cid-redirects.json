@@ -635,8 +635,8 @@
   "/05Search/Search-Query-Language/Search-Operators/timeslice": "/docs/search/search-query-language/search-operators/timeslice",
   "/05Search/Search-Query-Language/Search-Operators/Timeslice-Join-Results": "/docs/search/search-query-language/search-operators/timeslice",
   "/05Search/Search-Query-Language/Search-Operators/toLowerCase-and-toUpperCase": "/docs/search/search-query-language/search-operators/tolowercase-touppercase",
-  "/05Search/Search-Query-Language/Search-Operators/top": "/docs/search/search-query-language/search-operators/top",
-  "/05Search/Search-Query-Language/Search-Operators/topk": "/docs/search/search-query-language/search-operators/topk",
+  "/05Search/Search-Query-Language/Search-Operators/top": "/docs/search/search-query-language/group-aggregate-operators/top",
+  "/05Search/Search-Query-Language/Search-Operators/topk": "/docs/search/search-query-language/group-aggregate-operators/topk",
   "/05Search/Search-Query-Language/Search-Operators/total": "/docs/search/search-query-language/search-operators/total",
   "/05Search/Search-Query-Language/Search-Operators/tourl": "/docs/search/search-query-language/search-operators/tourl",
   "/05Search/Search-Query-Language/Search-Operators/trace": "/docs/search/search-query-language/search-operators/trace",
@@ -1806,7 +1806,7 @@
   "/cid/1019": "/docs/search/search-query-language/search-operators/format",
   "/cid/1020": "/docs/send-data/installed-collectors/sources/syslog-source",
   "/cid/1021": "/docs/search/search-query-language/parse-operators/parse-csv-formatted-logs",
-  "/cid/1022": "/docs/search/search-query-language/search-operators/top",
+  "/cid/1022": "/docs/search/search-query-language/group-aggregate-operators/top",
   "/cid/1023": "/docs/manage/partitions/data-tiers",
   "/cid/1024": "/docs/search/search-query-language/search-operators/tolowercase-touppercase",
   "/cid/10240": "/docs/cse/records-signals-entities-insights/create-an-entity-group",
@@ -2157,7 +2157,7 @@
   "/cid/2323": "/docs/integrations/saas-cloud/zoom",
   "/cid/23239": "/docs/integrations/saas-cloud/lastpass",
   "/cid/2324": "/docs/integrations/saas-cloud/workday",
-  "/cid/23433": "/docs/search/search-query-language/search-operators/topk",
+  "/cid/23433": "/docs/search/search-query-language/group-aggregate-operators/topk",
   "/cid/24000": "/docs/send-data/installed-collectors/sources/preconfigure-machine-collect-remote-windows-events",
   "/cid/24841": "/docs/integrations/security-threat-detection/palo-alto-networks-9",
   "/cid/25611": "/docs/integrations/saas-cloud/akamai-cloud-monitor",
@@ -6430,5 +6430,7 @@
   "/release-notes-service/2025/09/30/apps": "/release-notes-service/2025/12/31/#september-30-2025-apps",
   "/release-notes-service/2025/10/06/manage": "/release-notes-service/2025/12/31",
   "/release-notes-service/2025/11/20/manage": "/release-notes-service/2025/12/31/#november-20-2025-manage",
-  "/docs/search/get-started-with-search/search-page/search-modes": "/docs/search/get-started-with-search/search-page"
+  "/docs/search/get-started-with-search/search-page/search-modes": "/docs/search/get-started-with-search/search-page",
+  "/docs/search/search-query-language/search-operators/top": "/docs/search/search-query-language/group-aggregate-operators/top",
+  "/docs/search/search-query-language/search-operators/topk": "/docs/search/search-query-language/group-aggregate-operators/topk"
 }

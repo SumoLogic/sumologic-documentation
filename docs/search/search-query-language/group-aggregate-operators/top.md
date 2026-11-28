@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Use the `top` operator with the [`sort`](/docs/search/search-query-language/search-operators/sort) operator to reduce the number of sorted results returned.
 
 :::tip
-We recommend you use the [`topk`](/docs/search/search-query-language/search-operators/topk) operator instead so you can take advantage of its additional functionality.
+We recommend you use the [`topk`](/docs/search/search-query-language/group-aggregate-operators/topk) operator instead so you can take advantage of its additional functionality.
 :::
 
 ## Syntax
