@@ -263,7 +263,7 @@ Recurring reviews are also conducted with every major update, particularly when 
 
 ### How do I use AI in a SOC with Sumo Logic?
 
-Use the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) to get an AI verdict on each Cloud SIEM insight, continue investigations conversationally in [Mobot](/docs/search/mobot/), and connect external AI clients through the [Sumo Logic MCP server](/docs/api/mcp-server/). The agent doesn't take containment actions itself, so analysts stay in control of the response.
+Use the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) to get an AI verdict on each Cloud SIEM insight, continue investigations conversationally in [Mobot](/docs/search/mobot/), and connect external AI clients through the [Sumo Logic MCP server](/docs/api/mcp-server/). The agent also provides [recommended actions](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#recommended-actions) to take.
 
 ## Additional resources
 
